@@ -1,0 +1,3 @@
+appkey,EFS_APP
+token,62deeb72b8b2d9be868f9425b61c53d8da8b58f4
+server,http://psqcs1s1.nysboelan.elections.ny.gov:9000/

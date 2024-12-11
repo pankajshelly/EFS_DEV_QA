@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "TestGrid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TestGrid</h2>
+<input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+<div id="divGrid" class="container">
+    <table id="grdTest" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+        <thead id="thdGrid" class="header">
+            <tr>
+                <th class="never">FilingTransId</th> @* 0 *@
+                <th class="never">FilingSchedId</th> @* 1 *@
+                <th class="never">FilingEntityId</th> @* 2 *@
+                <th class="never">ContributorTypeId</th> @* 3 *@
+                <th class="never">ContributionTypeId</th> @* 4 *@
+                <th class="never">PaymentTypeId</th> @* 5 *@
+                <th class="never">R_Liability</th> @* 6 *@
+                <th class="never">R_Subcontractor</th> @* 7 *@
+                <th></th> @* 8 *@
+                <th>Action</th> @* 9 *@
+                <th>Transaction Date</th> @* 10 *@
+                <th>Transaction Type</th> @* 11 *@
+                <th>Contributor Code</th> @* 12 *@
+                <th>Entity Name</th> @* 13 *@
+                <th>First Name</th> @* 14 *@
+                <th>Middle Name</th> @* 15 *@
+                <th>Last Name</th> @* 16 *@
+                <th>Country</th> @* 17 *@
+                <th>Street Address</th> @* 18 *@
+                <th>City</th> @* 19 *@
+                <th>State</th> @* 20 *@
+                <th>Zip Code</th> @* 21 *@
+                <th>Method</th> @* 22 *@
+                <th>Check #</th> @* 23 *@
+                <th>Amount $</th> @* 24 *@
+                <th>Outstanding Amount $</th> @* 25 *@
+                <th>Receipt Type</th> @* 26 *@
+                <th>Transfer Type</th> @* 27 *@
+                <th>Contribution Type</th> @* 28 *@
+                <th>Purpose Code</th> @* 29 *@
+                <th>Reciept Code</th> @* 30 *@
+                <th>Original Date</th> @* 31 *@
+                <th>Loaner Code</th> @* 32 *@
+                <th>Election Year</th> @* 33 *@
+                <th>Office</th> @* 34 *@
+                <th>District</th> @* 35 *@
+                <th>Explanation</th> @* 36 *@
+                <th>Itemized</th> @* 37 *@
+                <th>County</th> @* 38 *@
+                <th>Municipality</th> @* 39 *@
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>    
+</div>
+<script>
+    $m = jQuery.noConflict();
+</script>
+<script type="text/javascript">
+    $m(document).ready(function () {        
+        var tableGrdTest = 'undefined';
+        var tableGrdTest1 = 'undefined';
+
+        $m("#btnCommonSearch").click(function () {
+            if (tableGrdTest == 'undefined') {
+                tableGrdTest = $m('#grdTest').DataTable({                                        
+                    "bProcessing": true,
+                    "responsive": true,
+                    "deferRender": true,                                       
+                    "fnServerData": function (url, data, callback) {
+                        $.ajax({
+                            "url": "@Url.Content("~/TestGrid/GetAllTransactionTypesData/")",
+                            "data": {
+                                txtFilerID: "113070",
+                                lstElectionCycle: 16,
+                                lstUCOfficeType: 1,
+                                lstDisclosurePeriod: 1,
+                            },
+                            "success": callback,
+                            "dataType": "json",
+                            "type": "POST",
+                            "error": function () {
+                            }
+                        });
+                    }
+                });
+                $m('#grdTest').DataTable().ajax.reload();
+            }
+            else {
+                $.ajax({
+                    "url": "@Url.Content("~/TestGrid/GetAllTransactionTypesData/")",
+                            "data": {
+                                txtFilerID: "113070",
+                                lstElectionCycle: "16",
+                                lstUCOfficeType: "1",
+                                lstDisclosurePeriod: "1"
+                                //lstFilingSchedID: "1,2,3,4,5,6,7,8,9,10,11,12"
+                            },
+                    "success": tableGrdTest,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                    }
+                });                
+                $m('#grdTest').DataTable().ajax.reload();
+            }
+        });
+    });
+</script>

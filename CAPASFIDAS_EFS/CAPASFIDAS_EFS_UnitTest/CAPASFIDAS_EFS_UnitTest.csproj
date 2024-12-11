@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDDE5075-2D0C-49EE-8476-8C842FF17488}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPASFIDAS_EFS_UnitTest</RootNamespace>
+    <AssemblyName>CAPASFIDAS_EFS_UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ContributionCandIndFamilySchedABCUT.cs" />
+    <Compile Include="ContributionInKindSchedDUT.cs" />
+    <Compile Include="ContributionRefundedSchedMUT.cs" />
+    <Compile Include="ExpenditureRefundsSchedLUT.cs" />
+    <Compile Include="InLieuOfStatementUnitTest.cs" />
+    <Compile Include="ItemizedReportsUnitTest.cs" />
+    <Compile Include="NoActivityReportUnitTest.cs" />
+    <Compile Include="NonCampaignHousekeepingReceiptsSchedPUT.cs" />
+    <Compile Include="NonItemizedCampaignMaterialUT.cs" />
+    <Compile Include="NonItemizedIE24HContrTransSchedAUT.cs" />
+    <Compile Include="NonItemizedIE24HContrTransSchedBUT.cs" />
+    <Compile Include="NonItemizedIE24HContrTransSchedCUT.cs" />
+    <Compile Include="NonItemizedIE24HContrTransSchedDUT.cs" />
+    <Compile Include="NonItemizedIE24HContrTransSchedIUT.cs" />
+    <Compile Include="NonItemizedIE24HourExpTransSchedFUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyContrTransSchedAUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyContrTransSchedBUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyContrTransSchedCUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyContrTransSchedDUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyContrTransSchedIUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyExpTransSchedFUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyLiabIncrTransSchedNUT.cs" />
+    <Compile Include="NonItemizedIEWeeklyPIDAExpTransSchedFUT.cs" />
+    <Compile Include="NonItemizedTransactionSchedAUT.cs" />
+    <Compile Include="NonItemizedTransactionSchedBUT.cs" />
+    <Compile Include="NonItemizedTransactionSchedCUT.cs" />
+    <Compile Include="NonItemizedTransactionSchedDUT.cs" />
+    <Compile Include="LoanAndLiabilityReconciliationUT.cs" />
+    <Compile Include="ViewSupportingDocumentsUT.cs" />
+    <Compile Include="ViewAllDisclosuresUT.cs" />
+    <Compile Include="NonItemizedTransactionSchedIUT.cs" />
+    <Compile Include="NoticeOfNonParticipationUnitTest.cs" />
+    <Compile Include="OtherReceiptsReceivedSchedEUT.cs" />
+    <Compile Include="OutstandingLiabilityLoansSchedNUT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EFS_Service_UnitTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\CAPASFIDAS_EFS_UnitTest.dll.config" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.AddressTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompFLNameAddressContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.BankAccountTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.BestContactTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.CandAuthCommitteesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.CandidateHeaderDataContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.CheckAmendStatusContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContactTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributionTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContrInKindPartnersContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.CountyContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DepositoryBankInfoContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosureGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosurePreiodContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosureTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DocumentInfoData.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.DocumentTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionDateContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionYearContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpenditurePaymentGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentTransIdPopUpSchedFContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerCommitteeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingDatesOffCycleContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingMthodContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.LiabilityDetailsContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.LiabilityLoanForgivenGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanPaymentGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanReceivedGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.MunicipalityContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemCampaignMaterialDataContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.PIDADownloadObject.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.PIDAReturnVal.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ReceiptCodeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ReceiptTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ResigTermTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowAddressContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowContactContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.SupportingDocumentsGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionDetailsGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionGridContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransferTypeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAdditionalCommitteeContactContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAssistantInformationContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAuthorizedToSignCheckContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasBallotIssuesContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasCandidateSupportOpposeContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasDepositoryBankInformationContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerCommitteeInformationContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerHistoryContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerProfileContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewableColumnContract.datasource" />
+    <None Include="Properties\DataSources\BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewSupportingDocumentsGridContract.datasource" />
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE.wsdl" />
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE.xsd" />
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE1.xsd" />
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE2.xsd" />
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EFS_Service_UnitTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFS_Service_UnitTest\CAPASFIDAS_EFS_SERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFS_Service_UnitTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFS_Service_UnitTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFS_Service_UnitTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BOE.CAPASFIDAS_EFS.Domain\BOE.CAPASFIDAS_EFS.Domain.csproj">
+      <Project>{77ba0916-0c1a-4339-a02b-b3fa43b5f168}</Project>
+      <Name>BOE.CAPASFIDAS_EFS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAPASFIDAS_EFS\CAPASFIDAS_EFS.csproj">
+      <Project>{7207aa74-d77e-49ee-8be6-18cc960da8f0}</Project>
+      <Name>CAPASFIDAS_EFS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BOE.CAPASFIDAS_EFS.Domain.dll" />
+    <Content Include="bin\Debug\BOE.CAPASFIDAS_EFS.Domain.pdb" />
+    <Content Include="bin\Debug\CAPASFIDAS_EFS.dll" />
+    <Content Include="bin\Debug\CAPASFIDAS_EFS.pdb" />
+    <Content Include="bin\Debug\CAPASFIDAS_EFS_UnitTest.dll" />
+    <Content Include="bin\Debug\CAPASFIDAS_EFS_UnitTest.pdb" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Debug\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.xml" />
+    <Content Include="bin\Debug\Owin.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Optimization.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77BA0916-0C1A-4339-A02B-B3FA43B5F168}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOE.CAPASFIDAS_EFS.Domain</RootNamespace>
+    <AssemblyName>BOE.CAPASFIDAS_EFS.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CandidateProfileBLL.cs" />
+    <Compile Include="BLL\ContributionLimitsBLL.cs" />
+    <Compile Include="BLL\LoanAndLiabilityReconciliationBLL.cs" />
+    <Compile Include="BLL\ViewSupportingDocumentsBLL.cs" />
+    <Compile Include="BLL\ViewAllDisclosuresBLL.cs" />
+    <Compile Include="BLL\ItemizedReportsBLL.cs" />
+    <Compile Include="BLL\TreasurerProfileBLL.cs" />
+    <Compile Include="Broker\CandidateProfileBroker.cs" />
+    <Compile Include="Broker\ContributionLimitsBroker.cs" />
+    <Compile Include="Broker\LoanAndLiabilityReconciliationBroker.cs" />
+    <Compile Include="Broker\ViewSupportingDocumentsBroker.cs" />
+    <Compile Include="Broker\ViewAllDisclosuresBroker.cs" />
+    <Compile Include="Broker\ItemizedReportsBroker.cs" />
+    <Compile Include="Broker\TreasurerProfileBroker.cs" />
+    <Compile Include="DAL\CandidateProfileDAL.cs" />
+    <Compile Include="DAL\ContributionLimitsDAL.cs" />
+    <Compile Include="DAL\ItemizedReportsDAL.cs" />
+    <Compile Include="DAL\LoanAndLiabilityReconciliationDAL.cs" />
+    <Compile Include="DAL\ViewSupportingDocumentsDAL.cs" />
+    <Compile Include="DAL\ViewAllDisclosuresDAL.cs" />
+    <Compile Include="DAL\TreasurerProfileDAL.cs" />
+    <Compile Include="Models\AmendDisclosureModel.cs" />
+    <Compile Include="Models\CandidateProfileModel.cs" />
+    <Compile Include="Models\ContributionLimitsModel.cs" />
+    <Compile Include="Models\ContributionsMonetaryModel.cs" />
+    <Compile Include="Models\LoanAndLiabilityReconciliationModel.cs" />
+    <Compile Include="Models\ViewAllDisclosuresModel.cs" />
+    <Compile Include="Models\ItemizedReportsModel.cs" />
+    <Compile Include="Models\TreasurerProfileModel.cs" />
+    <Compile Include="Models\ViewableColumnModel.cs" />
+    <Compile Include="Models\ViewSupportingDocumentsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EFSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.AddressTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompFLNameAddressContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.BankAccountTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.BestContactTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CampaignMaterialsContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CandAuthCommitteesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CandidateHeaderDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CheckAmendStatusContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CheckFilingDateContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CommunicationTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContactTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributionTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ContrInKindPartnersContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.CountyContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DepositoryBankInfoContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosureGridContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosurePreiodContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DisclosureTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DocumentInfoData1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.DocumentTypeContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.EFSPDFResponseContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionDateContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ElectionYearContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpenditurePaymentGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentTransIdPopUpSchedFContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerCommitteeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingDatesOffCycleContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingMthodContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingsForFilingCutOffDateContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ImportDisclosureRptsDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.LiabilityDetailsContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.LiabilityLoanForgivenGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanPaymentGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanReceivedGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.MunicipalityContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemCampaignMaterialDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PIDADownloadObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PIDAGridContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PIDAReturnVal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ReceiptCodeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ReceiptTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ReportSourceContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ResigTermTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowAddressContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowContactContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.SupportingDocumentsGridContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionDetailsGridContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionGridContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TransferTypeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAdditionalCommitteeContactContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAssistantInformationContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasAuthorizedToSignCheckContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasBallotIssuesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasCandidateSupportOpposeContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasDepositoryBankInformationContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerCommitteeInformationContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerHistoryContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.TreasurerProfileContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.VendorImportValidationContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.VendorNamesContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewableColumnContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewSupportingDocumentsGridContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE.xsd" />
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE1.xsd" />
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EFSService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFSService\CAPASFIDAS_EFS_SERVICE3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EFSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EFSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

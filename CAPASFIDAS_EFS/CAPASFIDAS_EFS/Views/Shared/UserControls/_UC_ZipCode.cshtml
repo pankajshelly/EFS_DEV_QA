@@ -1,0 +1,24 @@
+﻿<script>
+    $m = jQuery.noConflict();
+</script>
+<script>
+    $m(document).ready(function () {
+        event.preventDefault();
+
+        // Watermark TextBox. ////////////////////////////////////////////////////
+        // Zip Code
+        var watermarkZipCode = '00000-0000';
+        $('#txtZipCode').blur(function () {
+            if ($(this).val().length == 0)
+                $(this).val(watermarkZipCode).addClass('watermark');
+        }).focus(function () {
+            if ($(this).val() == watermarkZipCode)
+                $(this).val('').removeClass('watermark');
+        }).val(watermarkZipCode).addClass('watermark');
+        // Watermark TextBox. ////////////////////////////////////////////////////
+
+    });
+</script>
+<span>
+    @Html.TextBox("searchTerm", null, new { id = "txtZipCode", @class = "txtWidthForDialog", @maxlength = "10" })
+</span>

@@ -1,0 +1,507 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_M_ContributionRefunded", "_UC_M_ContributionRefunded", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridContriRefunds" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <input type="button" id="btnUploadCreate" class="btn btn-default clsCommonSearch" name="Command" value="Search Contributions" title="Search Contributions" style="font-size:12px;" />&nbsp;
+                    &nbsp;&nbsp;
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdContriRefunds" class="border1pxCls" style="padding-left:2em;">Date Refunded</th>
+                <th id="thContributorNameContriRefunds" class="border1pxCls">Contributor Name</th>
+                <th id="thStreetContriRefunds" class="border1pxCls">Street #</th>
+                <th id="thStreetNameContriRefunds" class="border1pxCls">Street Name</th>
+                <th id="thCityContriRefunds" class="border1pxCls">City</th>
+                <th id="thStateContriRefunds" class="border1pxCls">State</th>
+                <th id="thZip5ContriRefunds" class="border1pxCls">Zip5</th>
+                <th id="thZip4ContriRefunds" class="border1pxCls">Zip4</th>
+                <th id="thOriginalExpensesDateContriRefunds" class="border1pxCls">Original Cntrb Date</th>
+                <th id="thOriginalAmtContriRefunds" class="border1pxCls">Original Cntrb Amt</th>
+                <th id="thMethodContriRefunds" class="border1pxCls">Method</th>
+                <th id="thAmtRefundedContriRefunds" class="border1pxCls">Refunded Amt</th>
+                <th id="thExplanationContriRefunds" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdContriRefunds" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdPayorNameContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPayorName", @class = "txtWidth" })</td>
+                <td id="tdStreetContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5ContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4ContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdOriginalExpenseDateContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtOriginalExpensesDateContriRefunds", @class = "txtWidth" })</td>
+                <td id="tOriginalAmtContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtOriginalAmtContriRefunds", @class = "txtWidth" })</td>
+                <td id="tdMethodContriRefunds" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tAmtContriRefunds" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtContriRefunds", @class = "txtWidth" })</td>
+                <td id="tdExplanationContriRefunds" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationContriRefunds", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTContriRefunds">
+            <table id="UC_ContributionRefundsGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Refunded</th>
+                        <th>Contributor Name</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Original Cntrb Date</th>
+                        <th>Original Cntrb Amt</th>
+                        <th>Method</th>
+                        <th>Refund Amt</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTContriRefunds").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridContriRefunds").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#UC_ContributionRefundsGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                //"scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_M_ContributionRefunded/GetContributionRefundsSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#UC_ContributionRefundsGrid').DataTable());
+                },
+                //},
+                //"fnServerData": function (url, data, callback) {
+                //    $.ajax({
+                //        "url": url,
+                //        "data": null,
+                //        "success": callback,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error...");
+                //        }
+                //    });
+                //}
+            });
+            $m('#UC_ContributionRefundsGrid').DataTable().ajax.reload();
+        });
+
+        //// Edit a record
+        //$m('#UC_ContributionRefundsGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataContriRefunds").show();
+        //    table = $m('#PartnersGridContriRefunds').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //            //Accessibility: Applies various Accessibility features to this dataTable.
+        //            makeDataTableAccessible($m('#PartnersGridContriRefunds').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridContriRefunds').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#UC_ContributionRefundsGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Edit a record
+        $m('#UC_ContributionRefundsGrid tbody').on('click', 'a.editor_AttributionContriRefunds', function (e) {
+            e.preventDefault();
+            $("#divShowPartnerAdddataContriRefunds").show();
+            table = $m('#PartnersGridContriRefunds').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#PartnersGridContriRefunds').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#PartnersGridContriRefunds').DataTable().ajax.reload();
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationContriRefunds").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTContriRefunds").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationContriRefunds").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridContriRefunds').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#UC_ContributionRefundsGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameContriRefunds option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtContriRefundsContriRefunds").val(data[15].toString());
+            $("#txtExplanationContriRefunds").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameContriRefunds").show("slow");
+                $("#thMIContriRefunds").show("slow");
+                $("#thLastNameContriRefunds").show("slow");
+                $("#thStreetContriRefunds").show("slow");
+                $("#thStreetNameContriRefunds").show("slow");
+                $("#thCityContriRefunds").show("slow");
+                $("#thStateContriRefunds").show("slow");
+                $("#thZip5ContriRefunds").show("slow");
+                $("#thZip4ContriRefunds").show("slow");
+                $("#thContributionTypeContriRefunds").show("slow");
+                $("#thMethodContriRefunds").show("slow");
+                $("#thCheckContriRefunds").show("slow");
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameContriRefunds").show("slow");
+                $("#tdMIContriRefunds").show("slow");
+                $("#tdLastNameContriRefunds").show("slow");
+                $("#tdStreetContriRefunds").show("slow");
+                $("#tdStreetNameContriRefunds").show("slow");
+                $("#tdCityContriRefunds").show("slow");
+                $("#tdStateContriRefunds").show("slow");
+                $("#tdZip5ContriRefunds").show("slow");
+                $("#tdZip4ContriRefunds").show("slow");
+                $("#tdContributionTypeContriRefunds").show("slow");
+                $("#tdMethodContriRefunds").show("slow");
+                $("#tdCheckContriRefunds").show("slow");
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+
+                $("#thParterShipNameContriRefunds").hide("slow");
+                $("#tdPartnershipNameContriRefunds").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                $("#thFirstNameContriRefunds").hide("slow");
+                $("#thMIContriRefunds").hide("slow");
+                $("#thLastNameContriRefunds").hide("slow");
+                $("#thStreetContriRefunds").hide("slow");
+                $("#thStreetNameContriRefunds").hide("slow");
+                $("#thCityContriRefunds").hide("slow");
+                $("#thStateContriRefunds").hide("slow");
+                $("#thZip5ContriRefunds").hide("slow");
+                $("#thZip4ContriRefunds").hide("slow");
+                $("#thContributionTypeContriRefunds").hide("slow");
+                $("#thMethodContriRefunds").hide("slow");
+                $("#thCheckContriRefunds").hide("slow");
+
+                //Show All TD
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+
+                $("#tdFirstNameContriRefunds").hide("slow");
+                $("#tdMIContriRefunds").hide("slow");
+                $("#tdLastNameContriRefunds").hide("slow");
+                $("#tdStreetContriRefunds").hide("slow");
+                $("#tdStreetNameContriRefunds").hide("slow");
+                $("#tdCityContriRefunds").hide("slow");
+                $("#tdStateContriRefunds").hide("slow");
+                $("#tdZip5ContriRefunds").hide("slow");
+                $("#tdZip4ContriRefunds").hide("slow");
+                $("#tdContributionTypeContriRefunds").hide("slow");
+                $("#tdMethodContriRefunds").hide("slow");
+                $("#tdCheckContriRefunds").hide("slow");
+
+                $("#thParterShipNameContriRefunds").hide("slow");
+                $("#tdPartnershipNameContriRefunds").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameContriRefunds").show("slow");
+                $("#tdPartnershipNameContriRefunds").show("slow");
+
+                //Show All TR
+                $("#thFirstNameContriRefunds").hide("slow");
+                $("#thMIContriRefunds").hide("slow");
+                $("#thLastNameContriRefunds").hide("slow");
+                $("#thStreetContriRefunds").show("slow");
+                $("#thStreetNameContriRefunds").show("slow");
+                $("#thCityContriRefunds").show("slow");
+                $("#thStateContriRefunds").show("slow");
+                $("#thZip5ContriRefunds").show("slow");
+                $("#thZip4ContriRefunds").show("slow");
+                $("#thContributionTypeContriRefunds").show("slow");
+                $("#thMethodContriRefunds").show("slow");
+                $("#thCheckContriRefunds").show("slow");
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameContriRefunds").hide("slow");
+                $("#tdMIContriRefunds").hide("slow");
+                $("#tdLastNameContriRefunds").hide("slow");
+                $("#tdStreetContriRefunds").show("slow");
+                $("#tdStreetNameContriRefunds").show("slow");
+                $("#tdCityContriRefunds").show("slow");
+                $("#tdStateContriRefunds").show("slow");
+                $("#tdZip5ContriRefunds").show("slow");
+                $("#tdZip4ContriRefunds").show("slow");
+                $("#tdContributionTypeContriRefunds").show("slow");
+                $("#tdMethodContriRefunds").show("slow");
+                $("#tdCheckContriRefunds").show("slow");
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameContriRefunds").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameContriRefunds option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameContriRefunds").show("slow");
+                $("#thMIContriRefunds").show("slow");
+                $("#thLastNameContriRefunds").show("slow");
+                $("#thStreetContriRefunds").show("slow");
+                $("#thStreetNameContriRefunds").show("slow");
+                $("#thCityContriRefunds").show("slow");
+                $("#thStateContriRefunds").show("slow");
+                $("#thZip5ContriRefunds").show("slow");
+                $("#thZip4ContriRefunds").show("slow");
+                $("#thContributionTypeContriRefunds").show("slow");
+                $("#thMethodContriRefunds").show("slow");
+                $("#thCheckContriRefunds").show("slow");
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameContriRefunds").show("slow");
+                $("#tdMIContriRefunds").show("slow");
+                $("#tdLastNameContriRefunds").show("slow");
+                $("#tdStreetContriRefunds").show("slow");
+                $("#tdStreetNameContriRefunds").show("slow");
+                $("#tdCityContriRefunds").show("slow");
+                $("#tdStateContriRefunds").show("slow");
+                $("#tdZip5ContriRefunds").show("slow");
+                $("#tdZip4ContriRefunds").show("slow");
+                $("#tdContributionTypeContriRefunds").show("slow");
+                $("#tdMethodContriRefunds").show("slow");
+                $("#tdCheckContriRefunds").show("slow");
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+
+                $("#thParterShipNameContriRefunds").hide("slow");
+                $("#tdPartnershipNameContriRefunds").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                $("#thFirstNameContriRefunds").hide("slow");
+                $("#thMIContriRefunds").hide("slow");
+                $("#thLastNameContriRefunds").hide("slow");
+                $("#thStreetContriRefunds").hide("slow");
+                $("#thStreetNameContriRefunds").hide("slow");
+                $("#thCityContriRefunds").hide("slow");
+                $("#thStateContriRefunds").hide("slow");
+                $("#thZip5ContriRefunds").hide("slow");
+                $("#thZip4ContriRefunds").hide("slow");
+                $("#thContributionTypeContriRefunds").hide("slow");
+                $("#thMethodContriRefunds").hide("slow");
+                $("#thCheckContriRefunds").hide("slow");
+
+                //Show All TD
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+
+                $("#tdFirstNameContriRefunds").hide("slow");
+                $("#tdMIContriRefunds").hide("slow");
+                $("#tdLastNameContriRefunds").hide("slow");
+                $("#tdStreetContriRefunds").hide("slow");
+                $("#tdStreetNameContriRefunds").hide("slow");
+                $("#tdCityContriRefunds").hide("slow");
+                $("#tdStateContriRefunds").hide("slow");
+                $("#tdZip5ContriRefunds").hide("slow");
+                $("#tdZip4ContriRefunds").hide("slow");
+                $("#tdContributionTypeContriRefunds").hide("slow");
+                $("#tdMethodContriRefunds").hide("slow");
+                $("#tdCheckContriRefunds").hide("slow");
+
+                $("#thParterShipNameContriRefunds").hide("slow");
+                $("#tdPartnershipNameContriRefunds").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameContriRefunds").show("slow");
+                $("#tdPartnershipNameContriRefunds").show("slow");
+
+                //Show All TR
+                $("#thFirstNameContriRefunds").hide("slow");
+                $("#thMIContriRefunds").hide("slow");
+                $("#thLastNameContriRefunds").hide("slow");
+                $("#thStreetContriRefunds").show("slow");
+                $("#thStreetNameContriRefunds").show("slow");
+                $("#thCityContriRefunds").show("slow");
+                $("#thStateContriRefunds").show("slow");
+                $("#thZip5ContriRefunds").show("slow");
+                $("#thZip4ContriRefunds").show("slow");
+                $("#thContributionTypeContriRefunds").show("slow");
+                $("#thMethodContriRefunds").show("slow");
+                $("#thCheckContriRefunds").show("slow");
+                $("#thAmtContriRefunds").show("slow");
+                $("#thExplanationContriRefunds").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameContriRefunds").hide("slow");
+                $("#tdMIContriRefunds").hide("slow");
+                $("#tdLastNameContriRefunds").hide("slow");
+                $("#tdStreetContriRefunds").show("slow");
+                $("#tdStreetNameContriRefunds").show("slow");
+                $("#tdCityContriRefunds").show("slow");
+                $("#tdStateContriRefunds").show("slow");
+                $("#tdZip5ContriRefunds").show("slow");
+                $("#tdZip4ContriRefunds").show("slow");
+                $("#tdContributionTypeContriRefunds").show("slow");
+                $("#tdMethodContriRefunds").show("slow");
+                $("#tdCheckContriRefunds").show("slow");
+                $("#tAmtContriRefunds").show("slow");
+                $("#tdExplanationContriRefunds").show("slow");
+            }
+        });
+    });
+</script>

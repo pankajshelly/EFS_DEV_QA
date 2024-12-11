@@ -1,0 +1,602 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_I_LoanReceived", "_UC_I_LoanReceived", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridLoanReceived" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <input type="button" id="btnUploadCreate" class="btn btn-default clsCommonSearch" name="Command" value="Upload/Create Letter of Indebtendness" title="Upload/Create Letter of Indebtendness" style="font-size:12px;" />&nbsp;
+                    &nbsp;&nbsp;
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thLoanRcvdLoanReceived" class="border1pxCls" style="padding-left:2em;">Loan Rcvd</th>
+                <th id="thLoanerCodeLoanReceived" class="border1pxCls">@Html.Label("Loaner Code", new { @id = "lblLoanerCode" })</th>
+                <th id="thLenderSignerNameLoanReceived" class="border1pxCls">Lender, Guarantor, or Co-Singer Name</th>
+                <th id="thFirstNameLoanReceived" class="border1pxCls">First Name</th>
+                <th id="thMILoanReceived" class="border1pxCls">MI</th>
+                <th id="thLastNameLoanReceived" class="border1pxCls">Last Name</th>
+                <th id="thStreetLoanReceived" class="border1pxCls">Street #</th>
+                <th id="thStreetNameLoanReceived" class="border1pxCls">Street Name</th>
+                <th id="thCityLoanReceived" class="border1pxCls">City</th>
+                <th id="thStateLoanReceived" class="border1pxCls">State</th>
+                <th id="thZip5LoanReceived" class="border1pxCls">Zip5</th>
+                <th id="thZip4LoanReceived" class="border1pxCls">Zip4</th>                
+                <th id="thMethodLoanReceived" class="border1pxCls">Method</th>                
+                <th id="thAmtLoanReceived" class="border1pxCls">Amt</th>
+                <th id="thExplanationLoanReceived" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdLoanReceived" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>                
+                <td id="tdLoanerCodeLoanReceived" class="border1pxCls" valign="bottom">@Html.DropDownList("lstContributionNameInKind", ViewData["lstContributionName"] as SelectList, new { @class = "" })</td>
+                <td id="tdLenderSingerNameLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLenderSingerNameName", @class = "txtWidth" })</td>
+                <td id="tdFirstNameLoanReceived" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtFirstName", @class = "txtWidth" })</td>
+                <td id="tdMILoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtMI", @class = "txtWidth" })</td>
+                <td id="tdLastNameLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLastName", @class = "txtWidth" })</td>
+                <td id="tdStreetLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5LoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4LoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>                
+                <td id="tdMethodLoanReceived" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>                
+                <td id="tAmtLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtLoanReceived", @class = "txtWidth" })</td>
+                <td id="tdExplanationLoanReceived" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationLoanReceived", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTLoanReceived" style="padding-bottom:3em;">
+            <table id="ContributionsLoanReceivedGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Loan Date</th>
+                        <th>Lender Code</th>
+                        <th>Lender, Guarantor, or Co-Singer Name</th>
+                        <th>FirstName</th>
+                        <th>MI</th>
+                        <th>LastName</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>                        
+                        <th>Method</th>                        
+                        <th>Amount</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Attribution</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="divShowPartnerAdddataLoanReceived" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thPartner" class="border1pxCls" style="padding-left:2em;">Partners</th>
+                <th id="thPartFirstName" class="border1pxCls">First Name</th>
+                <th id="thPartMI" class="border1pxCls">MI</th>
+                <th id="thPartLastName" class="border1pxCls">Last Name</th>
+                <th id="thPartStreet" class="border1pxCls">Street #</th>
+                <th id="thPartStreetName" class="border1pxCls">Street Name</th>
+                <th id="thPartCity" class="border1pxCls">City</th>
+                <th id="thPartState" class="border1pxCls">State</th>
+                <th id="thPartZip5" class="border1pxCls">Zip5</th>
+                <th id="thPartZip4" class="border1pxCls">Zip4</th>
+                <th id="thPartAmt" class="border1pxCls">Amt Attributed</th>
+                <th id="thPartExplanation" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdPartner" class="border1pxCls" style="padding-left:2em;" valign="bottom">@Html.DropDownList("lstPartner", ViewData["lstPartner"] as SelectList, new { @class = "" })</td>
+                <td id="tdPartFirstName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartFirstName", @class = "txtWidth" })</td>
+                <td id="tdPartMI" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartMI", @class = "txtWidth" })</td>
+                <td id="tdPartLastName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartLastName", @class = "txtWidth" })</td>
+                <td id="tdPartStreet" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreet", @class = "txtWidth" })</td>
+                <td id="tdPartStreetName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreetName", @class = "txtWidth" })</td>
+                <td id="tdPartCity" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartCity", @class = "txtWidth" })</td>
+                <td id="tdPartState" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartState", @class = "txtWidth" })</td>
+                <td id="tdPartZip5" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip5", @class = "txtWidth" })</td>
+                <td id="tdPartZip4" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip4", @class = "txtWidth" })</td>
+                <td id="tdPartAmt" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartAmt", @class = "txtWidth" })</td>
+                <td id="tdPartExplanation" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtPartExplanationLoanReceived", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divPartnerLoanReceived">
+            <table id="PartnersGridLoanReceived" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Partners</th>
+                        <th>First Name</th>
+                        <th>MI</th>
+                        <th>Last Name</th>
+                        <th>Street #</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Amt Attributed</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+        $("#thParterShipNameLoanReceived").hide("slow");
+        $("#tdPartnershipNameLoanReceived").hide("slow");
+
+        $("#divDTLoanReceived").hide();
+        $("#divShowPartnerAdddataLoanReceived").hide();
+        $("#divPartnerLoanReceived").hide();
+        $("#PartnersGridLoanReceived").addClass("Per100hideShowButtonCSS");
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridLoanReceived").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#ContributionsLoanReceivedGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_I_LoanReceived/GetLoanReceivedSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -4, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -3, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -2, data: null, defaultContent: '', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#ContributionsLoanReceivedGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    if (aaData[2] != "") {
+                        $m('td:eq(17)', nRow).html('<a class="editor_AttributionLoanReceived" href="">Attribution</a>');                        
+                    }
+                    else {
+                        $m('td:eq(17)', nRow).html('<a href="" class="lnkTotalsBySchedule"></a>');
+                    }
+                    $m('td:eq(18)', nRow).html('<a class="editor_LinkLoanReceived" href="">Link</a>');
+                    return nRow;
+                }
+                //},
+                //"fnServerData": function (url, data, callback) {
+                //    $.ajax({
+                //        "url": url,
+                //        "data": null,
+                //        "success": callback,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error...");
+                //        }
+                //    });
+                //}
+            });
+            $m('#ContributionsLoanReceivedGrid').DataTable().ajax.reload();
+        });
+
+        //// Edit a record
+        //$m('#ContributionsLoanReceivedGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataLoanReceived").show();
+        //    table = $m('#PartnersGridLoanReceived').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //          //Accessibility: Applies various Accessibility features to this dataTable.
+        //          makeDataTableAccessible($m('#PartnersGridLoanReceived').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridLoanReceived').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#ContributionsLoanReceivedGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Edit a record
+        $m('#ContributionsLoanReceivedGrid tbody').on('click', 'a.editor_AttributionLoanReceived', function (e) {
+            e.preventDefault();
+            $("#divShowPartnerAdddataLoanReceived").show();
+            table = $m('#PartnersGridLoanReceived').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#PartnersGridLoanReceived').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#PartnersGridLoanReceived').DataTable().ajax.reload();
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationLoanReceived").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTLoanReceived").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationLoanReceived").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerLoanReceived").show();
+            $m('#PartnersGridLoanReceived').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#ContributionsLoanReceivedGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameLoanReceived option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtLoanReceivedLoanReceived").val(data[15].toString());
+            $("#txtExplanationLoanReceived").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameLoanReceived").show("slow");
+                $("#thMILoanReceived").show("slow");
+                $("#thLastNameLoanReceived").show("slow");
+                $("#thStreetLoanReceived").show("slow");
+                $("#thStreetNameLoanReceived").show("slow");
+                $("#thCityLoanReceived").show("slow");
+                $("#thStateLoanReceived").show("slow");
+                $("#thZip5LoanReceived").show("slow");
+                $("#thZip4LoanReceived").show("slow");
+                $("#thContributionTypeLoanReceived").show("slow");
+                $("#thMethodLoanReceived").show("slow");
+                $("#thCheckLoanReceived").show("slow");
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameLoanReceived").show("slow");
+                $("#tdMILoanReceived").show("slow");
+                $("#tdLastNameLoanReceived").show("slow");
+                $("#tdStreetLoanReceived").show("slow");
+                $("#tdStreetNameLoanReceived").show("slow");
+                $("#tdCityLoanReceived").show("slow");
+                $("#tdStateLoanReceived").show("slow");
+                $("#tdZip5LoanReceived").show("slow");
+                $("#tdZip4LoanReceived").show("slow");
+                $("#tdContributionTypeLoanReceived").show("slow");
+                $("#tdMethodLoanReceived").show("slow");
+                $("#tdCheckLoanReceived").show("slow");
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+
+                $("#thParterShipNameLoanReceived").hide("slow");
+                $("#tdPartnershipNameLoanReceived").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                $("#thFirstNameLoanReceived").hide("slow");
+                $("#thMILoanReceived").hide("slow");
+                $("#thLastNameLoanReceived").hide("slow");
+                $("#thStreetLoanReceived").hide("slow");
+                $("#thStreetNameLoanReceived").hide("slow");
+                $("#thCityLoanReceived").hide("slow");
+                $("#thStateLoanReceived").hide("slow");
+                $("#thZip5LoanReceived").hide("slow");
+                $("#thZip4LoanReceived").hide("slow");
+                $("#thContributionTypeLoanReceived").hide("slow");
+                $("#thMethodLoanReceived").hide("slow");
+                $("#thCheckLoanReceived").hide("slow");
+
+                //Show All TD
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+
+                $("#tdFirstNameLoanReceived").hide("slow");
+                $("#tdMILoanReceived").hide("slow");
+                $("#tdLastNameLoanReceived").hide("slow");
+                $("#tdStreetLoanReceived").hide("slow");
+                $("#tdStreetNameLoanReceived").hide("slow");
+                $("#tdCityLoanReceived").hide("slow");
+                $("#tdStateLoanReceived").hide("slow");
+                $("#tdZip5LoanReceived").hide("slow");
+                $("#tdZip4LoanReceived").hide("slow");
+                $("#tdContributionTypeLoanReceived").hide("slow");
+                $("#tdMethodLoanReceived").hide("slow");
+                $("#tdCheckLoanReceived").hide("slow");
+
+                $("#thParterShipNameLoanReceived").hide("slow");
+                $("#tdPartnershipNameLoanReceived").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameLoanReceived").show("slow");
+                $("#tdPartnershipNameLoanReceived").show("slow");
+
+                //Show All TR
+                $("#thFirstNameLoanReceived").hide("slow");
+                $("#thMILoanReceived").hide("slow");
+                $("#thLastNameLoanReceived").hide("slow");
+                $("#thStreetLoanReceived").show("slow");
+                $("#thStreetNameLoanReceived").show("slow");
+                $("#thCityLoanReceived").show("slow");
+                $("#thStateLoanReceived").show("slow");
+                $("#thZip5LoanReceived").show("slow");
+                $("#thZip4LoanReceived").show("slow");
+                $("#thContributionTypeLoanReceived").show("slow");
+                $("#thMethodLoanReceived").show("slow");
+                $("#thCheckLoanReceived").show("slow");
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameLoanReceived").hide("slow");
+                $("#tdMILoanReceived").hide("slow");
+                $("#tdLastNameLoanReceived").hide("slow");
+                $("#tdStreetLoanReceived").show("slow");
+                $("#tdStreetNameLoanReceived").show("slow");
+                $("#tdCityLoanReceived").show("slow");
+                $("#tdStateLoanReceived").show("slow");
+                $("#tdZip5LoanReceived").show("slow");
+                $("#tdZip4LoanReceived").show("slow");
+                $("#tdContributionTypeLoanReceived").show("slow");
+                $("#tdMethodLoanReceived").show("slow");
+                $("#tdCheckLoanReceived").show("slow");
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameLoanReceived").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameLoanReceived option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameLoanReceived").show("slow");
+                $("#thMILoanReceived").show("slow");
+                $("#thLastNameLoanReceived").show("slow");
+                $("#thStreetLoanReceived").show("slow");
+                $("#thStreetNameLoanReceived").show("slow");
+                $("#thCityLoanReceived").show("slow");
+                $("#thStateLoanReceived").show("slow");
+                $("#thZip5LoanReceived").show("slow");
+                $("#thZip4LoanReceived").show("slow");
+                $("#thContributionTypeLoanReceived").show("slow");
+                $("#thMethodLoanReceived").show("slow");
+                $("#thCheckLoanReceived").show("slow");
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameLoanReceived").show("slow");
+                $("#tdMILoanReceived").show("slow");
+                $("#tdLastNameLoanReceived").show("slow");
+                $("#tdStreetLoanReceived").show("slow");
+                $("#tdStreetNameLoanReceived").show("slow");
+                $("#tdCityLoanReceived").show("slow");
+                $("#tdStateLoanReceived").show("slow");
+                $("#tdZip5LoanReceived").show("slow");
+                $("#tdZip4LoanReceived").show("slow");
+                $("#tdContributionTypeLoanReceived").show("slow");
+                $("#tdMethodLoanReceived").show("slow");
+                $("#tdCheckLoanReceived").show("slow");
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+
+                $("#thParterShipNameLoanReceived").hide("slow");
+                $("#tdPartnershipNameLoanReceived").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                $("#thFirstNameLoanReceived").hide("slow");
+                $("#thMILoanReceived").hide("slow");
+                $("#thLastNameLoanReceived").hide("slow");
+                $("#thStreetLoanReceived").hide("slow");
+                $("#thStreetNameLoanReceived").hide("slow");
+                $("#thCityLoanReceived").hide("slow");
+                $("#thStateLoanReceived").hide("slow");
+                $("#thZip5LoanReceived").hide("slow");
+                $("#thZip4LoanReceived").hide("slow");
+                $("#thContributionTypeLoanReceived").hide("slow");
+                $("#thMethodLoanReceived").hide("slow");
+                $("#thCheckLoanReceived").hide("slow");
+
+                //Show All TD
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+
+                $("#tdFirstNameLoanReceived").hide("slow");
+                $("#tdMILoanReceived").hide("slow");
+                $("#tdLastNameLoanReceived").hide("slow");
+                $("#tdStreetLoanReceived").hide("slow");
+                $("#tdStreetNameLoanReceived").hide("slow");
+                $("#tdCityLoanReceived").hide("slow");
+                $("#tdStateLoanReceived").hide("slow");
+                $("#tdZip5LoanReceived").hide("slow");
+                $("#tdZip4LoanReceived").hide("slow");
+                $("#tdContributionTypeLoanReceived").hide("slow");
+                $("#tdMethodLoanReceived").hide("slow");
+                $("#tdCheckLoanReceived").hide("slow");
+
+                $("#thParterShipNameLoanReceived").hide("slow");
+                $("#tdPartnershipNameLoanReceived").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameLoanReceived").show("slow");
+                $("#tdPartnershipNameLoanReceived").show("slow");
+
+                //Show All TR
+                $("#thFirstNameLoanReceived").hide("slow");
+                $("#thMILoanReceived").hide("slow");
+                $("#thLastNameLoanReceived").hide("slow");
+                $("#thStreetLoanReceived").show("slow");
+                $("#thStreetNameLoanReceived").show("slow");
+                $("#thCityLoanReceived").show("slow");
+                $("#thStateLoanReceived").show("slow");
+                $("#thZip5LoanReceived").show("slow");
+                $("#thZip4LoanReceived").show("slow");
+                $("#thContributionTypeLoanReceived").show("slow");
+                $("#thMethodLoanReceived").show("slow");
+                $("#thCheckLoanReceived").show("slow");
+                $("#thAmtLoanReceived").show("slow");
+                $("#thExplanationLoanReceived").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameLoanReceived").hide("slow");
+                $("#tdMILoanReceived").hide("slow");
+                $("#tdLastNameLoanReceived").hide("slow");
+                $("#tdStreetLoanReceived").show("slow");
+                $("#tdStreetNameLoanReceived").show("slow");
+                $("#tdCityLoanReceived").show("slow");
+                $("#tdStateLoanReceived").show("slow");
+                $("#tdZip5LoanReceived").show("slow");
+                $("#tdZip4LoanReceived").show("slow");
+                $("#tdContributionTypeLoanReceived").show("slow");
+                $("#tdMethodLoanReceived").show("slow");
+                $("#tdCheckLoanReceived").show("slow");
+                $("#tAmtLoanReceived").show("slow");
+                $("#tdExplanationLoanReceived").show("slow");
+            }
+        });
+    });
+</script>

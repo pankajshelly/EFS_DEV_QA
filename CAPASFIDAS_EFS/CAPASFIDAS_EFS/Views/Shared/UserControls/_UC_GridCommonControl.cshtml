@@ -1,0 +1,516 @@
+﻿
+<div class="divWidth">
+    <div id="divTransactionType">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            <span id="lblTransactionType">Transaction Type</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstTransactionType", ViewData["lstTransactionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblTransactionType" })
+        </div>
+        <div class="verticalCSSDestopTISForCommonGrid DDLCSS">
+            <input type="button" id="btnApplyForTrans" class="btn btn-default clsApplyForTrans ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            <input type="button" id="btnAddNewTransaction" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Add New Transaction" title="Add New Transaction" style="font-size:12px; text-decoration:none;" />
+            &nbsp;&nbsp;
+            <span id="spanImportData">
+                <input type="button" id="btnImportData" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Import" title="Import" style="font-size:12px;" />
+                <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelpImport();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelpImport" /></button>
+            </span>
+        </div>
+    </div>
+    <div id="divSortColumns" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            <span id="lblColumnName">Sort</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstSortColumnName", ViewData["lstSortColumnName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+        <div class="verticalCSSDestopTISForCommonGrid DDLCSS">
+            @Html.DropDownList("lstSortColumnNameOrder", ViewData["lstSortColumnNameOrder"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            <input type="button" id="btnSort" class="btn btn-default clsSort ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Sort" title="Sort" style="font-size:12px;" />
+        </div>
+    </div>
+    <div id="divViewableColumn" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS">
+            <span id = "lblColumns">Select columns to view</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("ddlViewableColumn", ViewData["lstViewableColumns"] as SelectList, new { @class = "spanMobileWidth clsMultiSelect", aria_labelledby = "lblColumns", multiple = "multiple" })
+        </div>
+        <div class="verticalCSSDestopTISForCommonGrid DDLCSS" style="padding-bottom:2em;">
+            <input type="button" id="btnSetPreferences" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Set Preferences" title="Set Preferences" style="font-size:12px;" />
+        </div>
+    </div>
+</div>
+
+<div id="dvMonetaryAllocAmt" class="floatLeft paddingAllTransText">
+    <h3 id="lblAllTransText" style="font-weight:bolder">All Transactions</h3>
+</div>
+<div>
+    <table id="gridFilingTransactions" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+        <thead class="header">
+            <tr>
+                <th class="never">FilingTransId</th> @* 0 *@
+                <th class="never">FilingSchedId</th> @* 1 *@
+                <th class="never">FilingEntityId</th> @* 2 *@
+                <th class="never">ContributorTypeId</th> @* 3 *@
+                <th class="never">ContributionTypeId</th> @* 4 *@
+                <th class="never">PaymentTypeId</th> @* 5 *@
+                <th class="never">R_Liability</th> @* 6 *@
+                <th class="never">R_Subcontractor</th> @* 7 *@
+                <th>Expand</th> @* 8 *@
+                <th>Action</th> @* 9 *@
+                <th>Transaction Date</th> @* 10 *@
+                <th>Transaction Type</th> @* 11 *@
+                <th>Contributor Type</th> @* 12 *@
+                <th>Entity Name</th> @* 13 *@
+                <th>First Name</th> @* 14 *@
+                <th>Middle Name</th> @* 15 *@
+                <th>Last Name</th> @* 16 *@
+                <th>Country</th> @* 17 *@
+                <th>Street Address</th> @* 18 *@
+                <th>City</th> @* 19 *@
+                <th>State</th> @* 20 *@
+                <th>Zip Code</th> @* 21 *@
+                <th>Method</th> @* 22 *@
+                <th>Check/Money Order #</th> @* 23 *@
+                <th>Amount $</th> @* 24 *@
+                <th>Outstanding Amount $</th> @* 25 *@
+                <th>Receipt Type</th> @* 26 *@
+                <th>Transfer Type</th> @* 27 *@
+                <th>Contribution Type</th> @* 28 *@
+                <th>Purpose Code</th> @* 29 *@
+                <th>Receipt Code</th> @* 30 *@
+                <th>Original Date</th> @* 31 *@
+                <th>Lender Code</th> @* 32 *@
+                <th>Election Year</th> @* 33 *@
+                <th>Office</th> @* 34 *@
+                <th>District</th> @* 35 *@
+                <th>Explanation</th> @* 36 *@
+                <th>Itemized</th> @* 37 *@
+                <th class="never">County</th> @* 38 *@
+                <th class="never">Municipality</th> @* 39 *@
+                <th>Created Date</th> @* 40 *@
+                <th class="never">LoanLiabilityNumber</th> @* 41 *@
+                <th class="never">TransNumber</th> @* 42 *@
+                <th class="never">TransMapping</th> @* 43 *@
+                <th class="never">FilingsId</th> @* 44 *@
+                <th class="never">Office_ID</th> @* 45 *@
+                <th>Is Transaction Being Submitted for Claim?</th> @* 46 *@
+                <th>In District</th> @* 47 *@
+                <th>Minor</th> @* 48 *@
+                <th>Vendor</th> @* 49 *@
+                <th>Lobbyist</th> @* 50 *@
+                <th>Is Contribution greater than or equal to $100 in the aggregate?</th> @* 51 *@
+                <th>Employer</th> @* 52 *@
+                <th>Occupation</th> @* 53 *@
+                <th>Employer Address</th> @* 54 *@
+                <th class="never"></th> @* 55 *@
+                <th class="never"></th> @* 56 *@
+                <th class="never"></th> @* 57 *@
+                <th class="never"></th> @* 58 *@
+                <th>Is Support or Oppose</th> @* 59 *@
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        $('#lstTransactionType').val(sessionStorage.getItem("TransactionType").toString());
+        $('#lstTransactionType').focus();
+        $("#lstSortColumnName")[0].selectedIndex = 7; // Created Date.
+        $("#lstSortColumnNameOrder")[0].selectedIndex = 1;
+
+        $("#spanImportData").hide();        
+
+        $m('#ddlViewableColumn').multipleSelect({
+            styler: function (value) {
+                return 'padding-left: 0.2em;';
+            },
+            width: '100%',
+            placeholder: "Select columns to view",
+            filter: true,
+            selectAll: true
+        });
+
+        var options = {};
+        options.url = "@Url.Content("~/_UC_GridCommonControl/GetColumns/")";
+        options.type = "POST";
+        options.data = JSON.stringify(
+            {
+                uniqudId: @Session["FilerID"],
+                applicationName: 'EFS',
+                pageName: 'FileDisclosureReport'
+            });
+        options.dataType = "json";
+        options.contentType = "application/json";
+        options.success = function (data) {
+            var val = '';
+            for (var i = 0; i < data.length; i++) {
+                if (i == (data.length - 1)) {
+
+                    val += parseFloat(data[i].Value);
+                    break;
+                }
+                else {
+                    val += parseFloat(data[i].Value) + ',';
+                }
+            }
+            var resultArray = val.split(',').map(function (val) { return Number(val); });
+            $m("#ddlViewableColumn").multipleSelect("setSelects", resultArray);
+
+            $m('#ddlViewableColumn option:contains("Entity Name")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Last Name")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("First Name")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Date")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Type")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Amount")').each(function () {                
+                if ($(this).text() == 'Amount') {
+                    $(this).attr('disabled', 'disabled');
+                    return false;
+                }
+                return true;
+            });
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            $m("#ddlViewableColumn").multipleSelect("refresh");
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            var selectedValuesArray =  [];
+
+            // CALL VIEWABLE COLUMN METHOD AND SET THE SELECTED CHECK BOX BASED ON FROM DATABASE VALUE 'Y' OR 'N'
+            // SO THAT BY DEFAULT IT WON'T SELECT ALL CHECK BOXES IN MULTISELECT CONTROL.
+            $.post("@Url.Content("~/_UC_GridCommonControl/GetColumnUpdatedValue/")", {uniqudId: @Session["FilerID"].ToString()}, function (results) {
+                $.each(results, function (i, item) {
+                    if (item.Viewable.toString() == "Y") {
+                        selectedValuesArray[i] = parseInt(item.ViewableFieldID.toString());
+                    }
+                });
+                $m('#ddlViewableColumn').multipleSelect('setSelects', selectedValuesArray);
+            });
+        };
+        options.error = function () {
+            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+        };
+        $.ajax(options);
+
+
+
+        var tableFilingTransactions = '';
+
+        $m(".clsSort").bind('click', function () {
+            var data_table = $m('#gridFilingTransactions').DataTable();
+            var sortCount = '';
+            if ($("#lstSortColumnName option:selected").text() == "Transaction Date") {
+                sortCount = 10;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transaction Type") {
+                sortCount = 11;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Type") {
+                sortCount = 12;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Entity Name") {
+                sortCount = 13;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "First Name") {
+                sortCount = 14;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Middle Name") {
+                sortCount = 15;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Last Name") {
+                sortCount = 16;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Country") {
+                sortCount = 17;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Street Address") {
+                sortCount = 18;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "City") {
+                sortCount = 19;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "State") {
+                sortCount = 20;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Zip Code") {
+                sortCount = 21;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Method") {
+                sortCount = 22;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Check") {
+                sortCount = 23;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Amount") {
+                sortCount = 24;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Outstanding Amount") {
+                sortCount = 25;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Receipt Type") {
+                sortCount = 26;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transfer Type") {
+                sortCount = 27;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contribution Type") {
+                sortCount = 28;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Purpose Code") {
+                sortCount = 29;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Reciept Code") {
+                sortCount = 30;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Original Date") {
+                sortCount = 31;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Loaner Code") {
+                sortCount = 32;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Election Year") {
+                sortCount = 33;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "District") {
+                sortCount = 34;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Office") {
+                sortCount = 35;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Explanation") {
+                sortCount = 36;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Itemized") {
+                sortCount = 37;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "County") {
+                sortCount = 38;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Municipality") {
+                sortCount = 39;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Created Date") {
+                sortCount = 40;
+            }
+            data_table.order([sortCount, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        });
+
+        $m(".clsApplyForTrans").bind('click', function () {
+
+            $("#divLoading").show();
+
+            var selectedlstTransactionType = $("#lstTransactionType option:selected").val().toString();
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("OfficeType", $("#lstUCOfficeType option:selected").val());
+            sessionStorage.setItem("County", $("#lstUCCounty option:selected").val());
+            sessionStorage.setItem("Municipality", $("#lstUCMuncipality option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            if ($("#lstElectionType option:selected").val() == "6") {
+                sessionStorage.setItem("FilingDate", $("#txtNewFilingDate").val());
+             }
+            else {
+                sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            }
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriodText", $("#lstDisclosurePeriod option:selected").text());
+            sessionStorage.setItem("DisclosureTypeText", $("#lstDisclosureType option:selected").text());
+            sessionStorage.setItem("ElectionCycleText", $("#lstElectionCycle option:selected").text());
+            sessionStorage.setItem("CountyId", $("#lstUCCounty option:selected").val());
+            sessionStorage.setItem("lstResigTermType", $("#lstResigTermType option:selected").val());
+            sessionStorage.setItem("lstFilingDate", $("#lstFilingDate option:selected").val());
+
+            // WHEN YOU EDIT FROM ONE SCHEDULE TO ANOTHER SCHEDULE THEN SESSION WILL SET 
+            // .... ONCE YOU CHANGE TRANSACTION TYPE IT SHOULD NOT USE EDIT COMMON SESSION TO LOAD PAGE.
+            sessionStorage.removeItem("EditFlag");
+
+            $("#lstTransactionType").show();
+            if (selectedlstTransactionType == "1") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From Individual & Partnerships");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("IndPart", "Yes");
+                sessionStorage.setItem("Corporate", "No");
+                sessionStorage.setItem("Other", "No");
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionType == "2") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From Corporate");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("Corporate", "Yes");
+                sessionStorage.setItem("IndPart", "No");
+                sessionStorage.setItem("Other", "No");
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionType == "3") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From All Other");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("Other", "Yes");
+                sessionStorage.setItem("IndPart", "No");
+                sessionStorage.setItem("Corporate", "No");
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionType == "4") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - In Kind");
+                var urlContributionInKind = "@Url.Content("~/ContributionInKind/ContributionInKind/")";
+                window.location.href = urlContributionInKind;
+            }
+            if (selectedlstTransactionType == "5") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Other Receipts Received");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/OtherReceiptsReceivedSchedE/OtherReceiptsReceivedSchedE/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "6") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Expenditure Payments");
+                var urlExpenditurePaymentsSchedF = "@Url.Content("~/ExpenditurePaymentsSchedF/ExpenditurePaymentsSchedF/")";
+                window.location.href = urlExpenditurePaymentsSchedF;
+            }
+            if (selectedlstTransactionType == "7") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Transfer In");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/TransferInScheG/TransferInScheG/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "8") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Transfer Out");
+                var urlTransferOut = "@Url.Content("~/TransferOutSchedH/TransferOutSchedH/")";
+                window.location.href = urlTransferOut;
+            }
+            if (selectedlstTransactionType == "9") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Loan Received");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LoanReceivedSchedI/LoanReceivedSchedI/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "10") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Loan Repayments");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LoanRepaymentsSchedJ/LoanRepaymentsSchedJ/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "11") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Liabilities/Loans Forgiven");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LiabilitiesLoansForgivenSchedK/LiabilitiesLoansForgivenSchedK/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "12") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Expenditure Refund");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ExpenditureRefundsSchedL/ExpenditureRefundsSchedL/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "13") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions Refunded");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ContributionRefundedSchedM/ContributionRefundedSchedM/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "14") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Outstanding Liabilities/Loans");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/OutStandingLiabilityLoansSchedN/OutStandingLiabilityLoansSchedN/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "15") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Partnership/Subcontractor");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/OtherReceiptsReceivedSchedE/OtherReceiptsReceivedSchedE/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "16") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign HouseKeeping Receipts");
+                var urlNonCompHKReceipts = "@Url.Content("~/NonCampaignHousekeepingReceiptsSchedP/NonCampaignHousekeepingReceiptsSchedP/")";
+                window.location.href = urlNonCompHKReceipts;
+            }
+            if (selectedlstTransactionType == "17") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign HouseKeeping Expenses");
+                var urlNonCompHKExpenses = "@Url.Content("~/NonCampaignHousekeepingExpensesSchedQ/NonCampaignHousekeepingExpensesSchedQ/")";
+                window.location.href = urlNonCompHKExpenses;
+            }
+            if (selectedlstTransactionType == "18") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Amount Allocated");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ExpensesAllocationScheR/ExpensesAllocationScheR/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "19") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Public Fund Receipts");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/PublicFundReceiptsSchedS/PublicFundReceiptsSchedS/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "20") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Public Fund Expenses");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/PublicFundExpensesSchedT/PublicFundExpensesSchedT/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            if (selectedlstTransactionType == "21") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Public Fund Repayment");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/PublicFundRepaymentSchedU/PublicFundRepaymentSchedU/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+        });
+
+
+        //Bind Clear Click
+        $(".clsCommonClear").bind('click', function () {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridTransferOut").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+
+    });
+    </script>

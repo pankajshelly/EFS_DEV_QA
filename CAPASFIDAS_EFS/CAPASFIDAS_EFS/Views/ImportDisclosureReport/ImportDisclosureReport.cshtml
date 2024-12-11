@@ -1,0 +1,981 @@
+﻿
+@{
+    ViewBag.Title = ": Import Disclosure Report";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="ImportDisclosureReport">
+
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                Import Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                Import Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent paddingLeft6emCSS ">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <div class="floatRightNew clsShowButtonClass">
+                        <input type="button" id="btnCommonSearch_top" class="btn btn-default clsCommonSearch clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                        <input type="button" id="btnCommonClear_top" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                        <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelpFilter();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp_top" /></button>
+                    </div>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <label id="lblFilerID">* Filer Id</label>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", Enumerable.Empty<SelectListItem>(), "", new { @class = "spanMobileWidth txtFilerID", @id = "txtFilerID", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <label id="lblCommitteeName">* Candidate/Committee Name</label>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtCommitteeName", null, new { id = "txtCommitteeName", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <label id="lblElectionCycle">Report Year</label>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+
+                    <div class="floatRightNew" style="padding-bottom: 2em;">
+                        <input type="button" id="btnCommonSearch_bottom" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                        <input type="button" id="btnCommonClear_bottom" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                        <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelpFilter();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp_bottom" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="floatRight paddingRight3em paddingTop0pt6em">
+            <p><button type="button" class="btn btn-sm buttonTransparent"  onclick="CallHelpSchedE();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button></p>
+        </div>*@
+
+    <div id="divBreadCrumb" class="breadCrumbDivCSS" style="width: 46em;">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>
+                <li class="active">Import Disclosure Report</li>
+            </ol>
+        </nav>
+        @*<div id="divHeader" class="paddingtoppt5" style="width: 170%;">
+                <h1>
+                    <span id="lblHeader" >File a Disclosure Report</span> -
+                    <span id="lblHEleYear" >File a Disclosure Report</span> -
+                    <span id="lblHDisclPer" >File a Disclosure Report</span>
+                </h1>
+            </div>*@
+        <div id="divHeader" class="paddingtoppt5 PageHeaderWidth">
+            <h1 id="lblHeader">Import Disclosure Report</h1>
+        </div>
+    </div>
+    <div id="divGrid" class="divGridCSSTransferin">
+        @Html.Partial("UserControls/_UC_Loding")
+        @Html.Partial("UserControls/_UC_Import_Disclosure_Reports_Grid")
+
+    </div>
+</form>
+
+<div id="dialog-form_ImportDisclosureRpts" title="Import Disclosure Reports">
+    <form id="DialogBoxImportDisclosureRpts">
+        <div class="divWidthSchedABC">
+            <div style="width: 100%;">
+
+                <div class="paddingTop1em paddingLeft1pt5em">
+                    <p>Acceptable file types: The file type must be in <strong>CSV</strong> format.</p>
+                </div>
+                <div class="paddingTop1em paddingLeft1pt5em">
+                    <p>If your vendor's name is not listed in the dropdown, call <strong>NYSBOE</strong> to have the name added.</p>
+                </div>
+                <div class="paddingTop1em paddingBottom2em paddingLeft1pt5em">
+                    <p>Note: Only one file may be imported at a time. If you have any unsubmitted filings, they must be submitted before importing a new file.</p>
+                </div>
+                <div class="requiredTextDialogs">Required fields are marked with an *</div>
+                <div id="tdVendorName">
+                    <div id="lstVendorName_validate" class="verticalCSSDestopForErrorCampMater"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <label id="lblVendorName">* Vendor Name</label>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.DropDownList("lstVendorName", ViewData["lstVendorName"] as SelectList, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblVendorName" })
+                    </div>
+                </div>
+
+                <div id="tdTreasurerName">
+                    <div id="txtFileUpload_validate" class="verticalCSSDestopForErrorCampMater"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <label id="lblFileUpload">* File to Upload</label>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtFileUpload", null, new { id = "txtFileUpload", type = "file", @class = "txtWidthForDialogSched_A required zIndexCSS", aria_labelledby = "lblFileUpload" })
+                    </div>
+                </div>
+
+                <div id="AUSchedA24HNoticeId" class="AddLeftCSSImportDiscRpts">
+                    <input type="button" id="btnUploadImportFile" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Upload" title="Upload" style="font-size:12px;" />
+                    <input type="button" id="btnClearDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all cancel" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                    <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                </div>
+            </div>
+        </div>
+        <div id="divgridErrorMessage">
+            <div>
+                <p style="float:right;padding-bottom:0.2em;padding-right:.7em;" class="clearBothPaddingTop1em">
+                    <span style="float: right; padding-bottom: 0.3em;">
+                        <button id="btnCSVDownloadData" formnovalidate="formnovalidate" class="btn btn-default clsCommonSearchSDR" name="Command" value="btnCSVAsEntered" title="Validation Errors CSV">
+                            <img src="@Url.Content("~/Content/Images/images.png")" class="ButtonImageCSS" alt="CSV Icon" />
+                            Validation Errors CSV
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <table id="gridErrorMessage" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                <thead id="thdGrid2" class="header">
+                    <tr>
+                        <th>Expand</th>
+                        <th>Row Number</th>
+                        <th>Column Name</th>
+                        <th>Error Message</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#ImportDisclosureReport').css('opacity', 0);
+    $('#DialogBoxImportDisclosureRpts').css('opacity', 0);
+    $('#divWelcomeBanner').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#ImportDisclosureReport').css('opacity', 1);
+        $('#DialogBoxImportDisclosureRpts').css('opacity', 1);
+        $('#divWelcomeBanner').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        // HIDE GRID BY DEFAULT.
+        $("#divGridImportDisclosureRpts").hide();
+
+        // TOOLTIP FOR COMMITTEE NAME.
+        $("#txtCommitteeName").attr('title', '@ViewBag.txtCommitteeNameVI');
+        $("#txtFilerType").attr('title', '@ViewBag.txtFilerType');
+        $("#txtFilerType").prop("disabled", true);
+
+        $("#txtFilerID")[0].selectedIndex = 0;
+        //$("#txtCommitteeName")[0].selectedIndex = 0;
+        $("#txtCommitteeName").val("@ViewBag.txtCommitteeNameVI");
+        $("#txtCommitteeName").prop("disabled", true);
+
+        // FOCUS ON FIRST DROPDOWN.
+        $("#txtFilerID").focus();
+
+        LoadFilerId();
+        function LoadFilerId() {
+            var optionHtml = "";
+            var selected = "";
+                var options = {};
+                options.url = "@Url.Content("~/ContributionsMonetary/GetFilerIdData/")";
+                options.type = "POST";
+                options.data = null;
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    $("#txtFilerID").empty();
+                    for (var i = 0; i < results.length; i++) {
+                        if (@Session["FilerID"].ToString() == results[i].Text) {
+                            selected = " selected";
+                        }
+                        else
+                        {
+                            selected = '';
+                        }
+                        optionHtml += '<option value="' + results[i].Value + '"' + selected + '>' + results[i].Text + '</option>';
+                    }
+                    $("#txtFilerID").html(optionHtml);
+                };
+                options.error = function () {
+                };
+            $.ajax(options);
+        }
+
+         // txtFilerID Change
+        $("#txtFilerID").change(function () {
+
+            sessionStorage.setItem("Cnty_PageName", "ImportDisclosureReport");
+            var url = '@Url.Action("RoleMap", "RoleMap", new { Cnty_FilerID = "__FilerID__" })';
+            window.location.href = url.replace('__FilerID__', $("#txtFilerID option:selected").text());
+        });
+
+        // Common Function in EFS-Validation.js file - Start
+        validatePage("DialogBoxImportDisclosureRpts"); // UNCOMMENT ONCE SERVER SIDE VALIDATION DONE.
+        ImportLeftFilterValues();
+
+        // ======================================================================================================================================
+        /// Dialog Box Code /////////////////////////////////////////////////////////////////////
+        var dialog_ImportDisclosureRpts;
+
+        dialog_ImportDisclosureRpts = $m("#dialog-form_ImportDisclosureRpts").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 600, //456,
+            top: 104,
+            position: {
+                my: "center top",
+                at: "center top+250"
+            },
+            //draggable: false, // TESTING PURPOSE ONLY.
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialog_ImportDisclosureRpts = $m("#dialog-form_ImportDisclosureRpts").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialog_ImportDisclosureRpts = $m("#dialog-form_ImportDisclosureRpts").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 600, //456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialog_ImportDisclosureRpts = $m("#dialog-form_ImportDisclosureRpts").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 600, //456,
+                    top: 104,
+                    modal: true,
+                    dialogClass: 'clsDialogTopPositionVIR',
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+        // ======================================================================================================================================
+        /// Dialog Box Code /////////////////////////////////////////////////////////////////////
+
+
+        // ======================================================================================================================================
+        // BUTTON ADD CAMPAIGN MATERIAL NON-ITEMIZED TRANSACTIONS.
+        $m("#btnImport").button().on("click", function () {
+
+            //window.location.reload(true)
+            dialog_ImportDisclosureRpts.dialog("open");
+
+            // Clear Dialogbox Form.
+            var validator = $m("#DialogBoxImportDisclosureRpts").validate();
+            validator.resetForm();  // clear out the validation errors
+            $m("#DialogBoxImportDisclosureRpts")[0].reset();   // clear out the form data
+
+            $("#lstVendorName")[0].selectedIndex = 0;
+
+            // CLEAR THE ERROR MESSAGES.
+            $m("label[for=lstVendorName]").text('');
+            $m("#lstVendorName").removeClass("error");
+            // CLEAR THE ERROR MESSAGES.
+            $m("label[for=txtFileUpload]").text('');
+            $m("#txtFileUpload").removeClass("error");
+            $("#divgridErrorMessage").hide();
+
+        });
+        // BUTTON ADD CAMPAIGN MATERIAL NON-ITEMIZED TRANSACTIONS.
+        // ======================================================================================================================================
+
+        // File Upload Change Validation
+        // ======================================================================================================================================
+        $('#txtFileUpload').change(function () {
+            if (this.value != '') {
+                var ext = this.value.match(/\.(.+)$/)[1];
+                //var maxFileSize = 5242880; // MB to Bytes Convertion (Bytes in binary)
+                switch (ext.toUpperCase()) {
+                    case 'csv':
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'CSV':
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    default:
+                        ShowDialogBox('Import Disclosure Reports', 'Allowable file type is CSV. File Name should only contain one (. dot), followed by file extension.', 'Ok', '');
+                        $("#txtFileUpload").val('');
+                        break;
+                }
+            }
+        });
+        // File Upload Change Validation
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON CLOSE DIALOG.
+        $m("#btnCloseDialog").button().on("click", function () {
+
+            // Close the DialogBox
+            dialog_ImportDisclosureRpts.dialog("close");
+
+            var tableImportDisclosureRpts = "";
+
+            LoadImportDisclosureRptsData();
+
+        });
+        // BUTTON CLOSE DIALOG.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON CLEAR DIALOGBOX.
+        $("#btnClearDialog").click(function () {
+
+            // Set default value dropdowns.
+            $("#txtFileUpload").val("");
+
+            $("#lstVendorName")[0].selectedIndex = 0;
+
+            // CLEAR THE ERROR MESSAGES.
+            $m("label[for=lstVendorName]").text('');
+            $m("#lstVendorName").removeClass("error");
+            // CLEAR THE ERROR MESSAGES.
+            $m("label[for=txtFileUpload]").text('');
+            $m("#txtFileUpload").removeClass("error");
+            $("#divgridErrorMessage").hide();
+
+        });
+        // BUTTON CLEAR DIALOGBOX.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON SAVE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        var tableErrorMsg = "undefined";
+        $m("#btnUploadImportFile").click(function () {            
+            // Validation Succuss then Insert Record.
+            $m("#DialogBoxImportDisclosureRpts").valid();
+            if ($m("#DialogBoxImportDisclosureRpts").valid()) { // JQuery Validation
+
+                $("#divLoading").show();
+                $("#divgridErrorMessage").hide();
+                var data = new FormData();
+                var files = $("#txtFileUpload").get(0).files;
+                // Add the uploaded image content to the form data collection
+                if (files.length > 0) {
+                    data.append("UploadedImage", files[0]);
+                }
+                // Make a call to upload file into Cabinet and get Document ID, File Type, and File Size.
+                // Make Ajax request with the contentType = false, and procesDate = false
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UploadImportDisclosureRptsData", "ImportDisclosureReport")',
+                    contentType: false,
+                    processData: false,
+                    data: data
+                });
+                ajaxRequest.done(function (xhr, textStatus) {
+                    // SUCCESS // VALIDATION // INSERT.
+                    // BEFORE IMPORT DATA CHECK THAT FILING EXISTS OR NOT
+                    // IF EXISTS THEN CHECK THE FILER IF ANY FILINGS EXISTS IN TEMP
+                    // IF FILING NOT EXISTS THEN CREATE THE FILING.
+                    // IF SOME FILING EXISTS IN TEMP DATABASE IN THAT FILER THEN SHOW THE MESSAGE.
+                    // SUBMIT THE UNSUBMITTED FILING THEN IMPORT THE FILE.
+                    $m.post("@Url.Content("~/ImportDisclosureReport/CheckFilingExistsAndInTempDatabase/")", {
+                        //fileName: files[0].name,
+                        txtFilerId: $("#txtFilerID").val(),
+                        strReportYear: $("#lstElectionCycle option:selected").val(),
+                    }, function (resultsExists) {                            
+                             $m.post("@Url.Content("~/ImportDisclosureReport/CheckValidaion/")", null,
+                                function (resultsExistsValidation) {
+                                    if (resultsExistsValidation == "YES") {
+                                        // Clear Form Values
+                                        $("#lstVendorName")[0].selectedIndex = 0;
+                                        $("#txtFileUpload").val("");
+                                        // CLEAR THE ERROR MESSAGES.
+                                        $m("label[for=lstVendorName]").text('');
+                                        $m("#lstVendorName").removeClass("error");
+                                        // CLEAR THE ERROR MESSAGES.
+                                        $m("label[for=txtFileUpload]").text('');
+                                        $m("#txtFileUpload").removeClass("error");
+                                        $m("label[for=txtPayeeName]").text('');
+                                        $m("#txtPayeeName").removeClass("error");
+
+                                        $("#divLoading").hide();
+                                        //ShowDialogBox('EFS', 'Error has occurred while importing the ' + item.ImportFileName.toString() + ' Row# ' + item.CSVRowNumber.toString() + ', ' + item.ValidationFailed + '. Modify and import the file again.', 'Ok', '');
+
+                                        $("#divgridErrorMessage").show();
+                                        var validator = $m("#DialogBoxImportDisclosureRpts").validate();
+                                        validator.resetForm();  // clear out the validation errors
+                                        $m("#DialogBoxImportDisclosureRpts")[0].reset();// clear out the form data
+                                        sessionStorage.setItem("GetCloseButtonValidation", "Yes");
+                                        if (tableErrorMsg == 'undefined') {
+                                            tableErrorMsg = $m('#gridErrorMessage').DataTable({
+                                                "bAutoWidth": false,
+                                                "bProcessing": true,
+                                                "responsive": true,
+                                                "deferRender": true,
+                                                "initComplete": function (settings, json) {
+                                                    //Accessibility: Applies various Accessibility features to this dataTable.
+                                                    makeDataTableAccessible($m('#gridErrorMessage').DataTable());
+                                                },
+                                                "fnDrawCallback": function () {
+                                                    var oSettings = this.fnSettings();
+                                                    var iTotalRecords = oSettings.fnRecordsTotal();
+                                                },
+                                                "fnServerData": function (url, data, callback) {
+                                                    $.ajax({
+                                                        "url": "@Url.Content("~/ImportDisclosureReport/BindErrorGrid/")",
+                                                        "data": null,
+                                                        "success": callback,
+                                                        "dataType": "json",
+                                                        "type": "POST",
+                                                        "error": function () {
+                                                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '', 'GoToAssetList', null);
+                                                        }
+                                                    }).always(function (data, textStatus, ErrorThrown) {
+                                                        $("#divLoading").hide();
+                                                    });
+                                                }
+                                            });
+                                        }
+                                        else {
+                                            $.ajax({
+                                                "url": "@Url.Content("~/ImportDisclosureReport/BindErrorGrid/")",
+                                                "data": null,
+                                                "success": tableErrorMsg,
+                                                "dataType": "json",
+                                                "type": "POST",
+                                                "error": function () {
+                                                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '', 'GoToAssetList', null);
+                                                }
+                                            }).always(function () {
+                                                $("#divLoading").hide();
+                                            });
+                                        }
+
+                                        tableErrorMsg.columns.adjust().draw(false);
+                                        $m('#gridErrorMessage').DataTable().ajax.reload();
+                                        tableErrorMsg.search('').columns().search('').draw();
+                                    }
+                                    else {
+                                        $m.post("@Url.Content("~/ImportDisclosureReport/CheckLoanLiabilityOriginalExists/")", {
+                                        //fileName: files[0].name,
+                                        txtFilerId: $("#txtFilerID").val(),
+                                    }, function (resultsExists) {
+                                        if (resultsExists == "TRUE") {
+
+                                            $.post("@Url.Content("~/ImportDisclosureReport/SaveImportDisclosureRptsData/")", {
+                                                //fileName: files[0].name,
+                                                txtFilerId: $("#txtFilerID").val(),
+                                                strReportYear: $("#lstElectionCycle option:selected").val(),
+                                                lstVendorName: $("#lstVendorName option:selected").val(),
+                                            }, function (results) {
+                                                if (results) {
+
+                                                    window.status = "Transaction(s) uploaded successfully";
+                                                    ShowDialogBox('EFS', 'Transaction(s) uploaded successfully. Please Review your Disclosure Report for accuracy and Submit.', 'Ok', '');
+
+                                                    // Clear Form Values
+                                                    $("#lstVendorName")[0].selectedIndex = 0;
+                                                    $("#txtFileUpload").val("");
+                                                    // CLEAR THE ERROR MESSAGES.
+                                                    $m("label[for=lstVendorName]").text('');
+                                                    $m("#lstVendorName").removeClass("error");
+                                                    // CLEAR THE ERROR MESSAGES.
+                                                    $m("label[for=txtFileUpload]").text('');
+                                                    $m("#txtFileUpload").removeClass("error");
+
+                                                    $m("label[for=txtPayeeName]").text('');
+                                                    $m("#txtPayeeName").removeClass("error");
+
+                                                    @*// Refresh the Data on Grid...
+                                                    $m.ajax({
+                                                        "url": "@Url.Content("~/ImportDisclosureReport/GetImportDisclosureRptsData/")",
+                                                        "data": {
+                                                            txtFilerID: $("#txtFilerID").val(),
+                                                            strReportYear: $("#lstElectionCycle option:selected").val(),
+                                                        },
+                                                        "success": tableImportDisclosureRpts,
+                                                        "dataType": "json",
+                                                        "type": "POST",
+                                                        "error": function () {
+                                                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                                        }
+                                                    });
+                                                    $m('#gridImportDisclosureReports').DataTable().ajax.reload();
+                                                    tableImportDisclosureRpts.responsive.recalc();*@
+
+                                                    $("#divLoading").hide();
+                                                }
+                                                else {
+                                                    $("#divLoading").hide();
+                                                    ShowDialogBox('EFS', 'Transaction(s) uploaded failed. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                                }
+
+                                            }).fail(function (response) {
+                                                $("#divLoading").hide();
+                                                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                            });
+                                        }
+                                        else {
+                                            $("#divLoading").hide();
+                                            ShowDialogBox('EFS', 'Original Loan/Liability ID does not match Loan/Liability Payment/Forgiven ID on file. ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                        }
+
+                                    }).fail(function (response) {
+                                        $("#divLoading").hide();
+                                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                    });
+                                    }
+                                 }).fail(function (response) {
+                                     $("#divLoading").hide();
+                                     ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                 });
+
+
+
+
+                            @*$.each(resultsExistsValidation, function (i, item) {
+                            if (item.FilingExists.toString() == "FALSE") { // NOT EXISTS IN TEMP DATABASE. IF ITS 'TRUE' EXISTS IN TEMP.
+                                if (item.ValidationFailed.toString() == "FALSE") { // VALIDATION SUCCESS. IF ITS 'TRUE' VALIDATION FAILED.
+                                    // // VALIDATION ON BELOW PAYMENTS.
+                                    // 1. LOAN PAYMENT - SCHEDULE J (10).
+                                    // 2. LOAN FORGIVEN - SCHEDULE K (11).
+                                    // 3. LIABILITY PAYMENT - SCHEDULE F (6).
+                                    // 4. LIABILITY FORGIVEN - SCHEDULE K (11).
+                                    // IF EXISTS THEN VALIDATE LOAN/LIABILITY ORIGINAL EXISTS OR NOT.
+                                    // IF NOT EXISTS THEN THROW THE ERROR MESSAGE.
+                                    // IF EXISTS THEN CONTINUE....
+                                    $m.post("@Url.Content("~/ImportDisclosureReport/CheckLoanLiabilityOriginalExists/")", {
+                                        //fileName: files[0].name,
+                                        txtFilerId: $("#txtFilerID").val(),
+                                    }, function (resultsExists) {
+                                        if (resultsExists == "TRUE") {
+
+                                            $.post("@Url.Content("~/ImportDisclosureReport/SaveImportDisclosureRptsData/")", {
+                                                //fileName: files[0].name,
+                                                txtFilerId: $("#txtFilerID").val(),
+                                                strReportYear: $("#lstElectionCycle option:selected").val(),
+                                                lstVendorName: $("#lstVendorName option:selected").val(),
+                                            }, function (results) {
+                                                if (results) {
+
+                                                    window.status = "Transaction(s) uploaded successfully";
+                                                    ShowDialogBox('EFS', 'Transaction(s) uploaded successfully. Please Review your Disclosure Report for accuracy and Submit.', 'Ok', '');
+
+                                                    // Clear Form Values
+                                                    $("#lstVendorName")[0].selectedIndex = 0;
+                                                    $("#txtFileUpload").val("");
+                                                    // CLEAR THE ERROR MESSAGES.
+                                                    $m("label[for=lstVendorName]").text('');
+                                                    $m("#lstVendorName").removeClass("error");
+                                                    // CLEAR THE ERROR MESSAGES.
+                                                    $m("label[for=txtFileUpload]").text('');
+                                                    $m("#txtFileUpload").removeClass("error");
+
+                                                    $m("label[for=txtPayeeName]").text('');
+                                                    $m("#txtPayeeName").removeClass("error");
+
+                                                   
+                                                    $("#divLoading").hide();
+                                                }
+                                                else {
+                                                    $("#divLoading").hide();
+                                                    ShowDialogBox('EFS', 'Transaction(s) uploaded failed. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                                }
+
+                                            }).fail(function (response) {
+                                                $("#divLoading").hide();
+                                                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                            });
+                                        }
+                                        else {
+                                            $("#divLoading").hide();
+                                            ShowDialogBox('EFS', 'Original Loan/Liability ID does not match Loan/Liability Payment/Forgiven ID on file. ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                        }
+
+                                    }).fail(function (response) {
+                                        $("#divLoading").hide();
+                                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                    });
+                                }
+                                else {
+                                    // Clear Form Values
+                                    $("#lstVendorName")[0].selectedIndex = 0;
+                                    $("#txtFileUpload").val("");
+                                    // CLEAR THE ERROR MESSAGES.
+                                    $m("label[for=lstVendorName]").text('');
+                                    $m("#lstVendorName").removeClass("error");
+                                    // CLEAR THE ERROR MESSAGES.
+                                    $m("label[for=txtFileUpload]").text('');
+                                    $m("#txtFileUpload").removeClass("error");
+                                    $m("label[for=txtPayeeName]").text('');
+                                    $m("#txtPayeeName").removeClass("error");
+
+                                    $("#divLoading").hide();
+                                    //ShowDialogBox('EFS', 'Error has occurred while importing the ' + item.ImportFileName.toString() + ' Row# ' + item.CSVRowNumber.toString() + ', ' + item.ValidationFailed + '. Modify and import the file again.', 'Ok', '');
+
+                                    $("#divgridErrorMessage").show();
+                                    var validator = $m("#DialogBoxImportDisclosureRpts").validate();
+                                        validator.resetForm();  // clear out the validation errors
+                                        $m("#DialogBoxImportDisclosureRpts")[0].reset();// clear out the form data
+                                        sessionStorage.setItem("GetCloseButtonValidation", "Yes");
+                                        if (tableErrorMsg == 'undefined') {
+                                            tableErrorMsg = $m('#gridErrorMessage').DataTable({
+                                                "bAutoWidth": false,
+                                                "bProcessing": true,
+                                                "responsive": true,
+                                                "deferRender": true,
+                                                "initComplete": function (settings, json) {
+                                                    //Accessibility: Applies various Accessibility features to this dataTable.
+                                                    makeDataTableAccessible($m('#gridErrorMessage').DataTable());
+                                                },
+                                                "fnDrawCallback": function () {
+                                                    var oSettings = this.fnSettings();
+                                                    var iTotalRecords = oSettings.fnRecordsTotal();
+                                                },
+                                                "fnServerData": function (url, data, callback) {
+                                                    $.ajax({
+                                                        "url": "@Url.Content("~/ImportDisclosureReport/BindErrorGrid/")",
+                                                        "data": null,
+                                                        "success": callback,
+                                                        "dataType": "json",
+                                                        "type": "POST",
+                                                        "error": function () {
+                                                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '', 'GoToAssetList', null);
+                                                        }
+                                                    }).always(function (data, textStatus, ErrorThrown) {
+                                                        $("#divLoading").hide();
+                                                    });
+                                                }
+                                            });
+                                        }
+                                        else {
+                                            $.ajax({
+                                                "url": "@Url.Content("~/ImportDisclosureReport/BindErrorGrid/")",
+                                                "data": null,
+                                                "success": tableErrorMsg,
+                                                "dataType": "json",
+                                                "type": "POST",
+                                                "error": function () {
+                                                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '', 'GoToAssetList', null);
+                                                }
+                                            }).always(function () {
+                                                $("#divLoading").hide();
+                                            });
+                                        }
+                                        
+                                        tableErrorMsg.columns.adjust().draw(false);
+                                        $m('#gridErrorMessage').DataTable().ajax.reload();
+                                        tableErrorMsg.search('').columns().search('').draw();
+                                }
+                            }
+                            else {
+                                // Clear Form Values
+                                $("#lstVendorName")[0].selectedIndex = 0;
+                                $("#txtFileUpload").val("");
+                                // CLEAR THE ERROR MESSAGES.
+                                $m("label[for=lstVendorName]").text('');
+                                $m("#lstVendorName").removeClass("error");
+                                // CLEAR THE ERROR MESSAGES.
+                                $m("label[for=txtFileUpload]").text('');
+                                $m("#txtFileUpload").removeClass("error");
+                                $m("label[for=txtPayeeName]").text('');
+                                $m("#txtPayeeName").removeClass("error");
+
+                                if (item.ReportYearExists == "TRUE") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'Unsubmitted disclosure report exists, disclosure report cannot be imported', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "FALSE") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'The Filer ID does not match with the value selected in Filter. ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "NO_DATA") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'Data is missing in ' + item.ImportFileName.toString() + ', file could not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "NO_FILINGS") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'Either FILING_PERIOD_ID and/or ELECT_ID do not exist in database ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "TRUE1") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'The Report Year does not match with the value selected in Filter. ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "FILING_DATE") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'The Filing Date does not exists or incorrect in Row# 1 R_FILING_DATE ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "FILING_PERIOD_ELECT_ID") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'Either FILING_PERIOD_ID and/or ELECT_ID do not exist in database ' + item.ImportFileName.toString() + ' can not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "NO_FIELD_COUNT_MATCH") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'The Data in Row# ' + item.CSVRowNumber.toString() + ' is not placed correctly. The ' + item.ImportFileName.toString() + ' file could not be imported.', 'Ok', '');
+                                }
+                                else if (item.FilerIdExists == "NO_HEADERS_INFO") {
+                                    $("#divLoading").hide();
+                                    ShowDialogBox('EFS', 'The Data in Row# ' + item.CSVRowNumber.toString() + ' is about column header. Which is not required in the import file. The ' + item.ImportFileName.toString() + ' file could not be imported.', 'Ok', '');
+                                }
+                                else {
+                                    $("#divLoading").hide();
+                                    // CHECK IF ELECTION YEAR NOT MATCHING ELECT_YEAR_ID IN FILING PERIOD AND ELECTION...
+                                    // IF NOT MATCHING WE ARE NOT IMPORTING IT WILL ALERT VALIDATION MESSAGE....
+                                    // FIXED ON 03.12.2020
+                                    ShowDialogBox('EFS', 'The Election Year (ELECT_YEAR_ID) does not match the value in Filing Period (ELECT_YEAR_ID) and Election (ELECT_YEAR_ID) OR Filing Period (FILING_TYPE_ID) and Election (ELECT_TYPE_ID) in #ROW 1. ' + item.ImportFileName.toString() + ' cannot be imported.', 'Ok', '');
+                                }
+                            }
+
+                            }); // $.each loop.*@
+
+
+
+
+
+                    }).fail(function (response) {
+                        $("#divLoading").hide();
+                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                    });
+
+                })
+                ajaxRequest.fail(function (xhr, err) {
+                    $("#divLoading").hide();
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                });
+            }
+        });
+        // BUTTON SAVE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        // ======================================================================================================================================
+
+        // VIEW DETAILS LINK - "VIEW ALL DISCLOSURE" PAGE.
+        $m('#gridImportDisclosureReports tbody').on('click', 'a.editor_ViewDetails', function (e) {
+            e.preventDefault();
+
+            // GET ROW DATA.
+            var data = tableImportDisclosureRpts.row($(this).parents('tr')).data();
+            
+            // ASSIGN SESSION VARIABLE REQUIRED FIELDS.
+            sessionStorage.setItem("IDR_FILER_ID", $("#txtFilerID").val());
+            sessionStorage.setItem("IDR_REPORT_YEAR", data[7].toString());
+            sessionStorage.setItem("IDR_FILER_TYPE", data[8].toString());
+            sessionStorage.setItem("IDR_REPORT_TYPE", data[9].toString());
+            sessionStorage.setItem("IDR_ELECTION_DATE", data[10].toString());
+            sessionStorage.setItem("IDR_DISCLOSURE_TYPE", data[6].toString());
+            if (data[11] != null)
+                sessionStorage.setItem("IDR_DISCLOSURE_PERIOD", data[11].toString());
+            else
+                sessionStorage.setItem("IDR_DISCLOSURE_PERIOD", "");
+            sessionStorage.setItem("IDR_ELECTION_YEAR_ID", data[17].toString());
+            sessionStorage.setItem("IDR_OFFICE_TYPE_ID", data[18].toString());
+            sessionStorage.setItem("IDR_ELECT_TYPE_ID", data[19].toString());
+            sessionStorage.setItem("IDR_ELECTION_DATE_ID", data[20].toString());
+            sessionStorage.setItem("IDR_FILING_TYPE_ID", data[21].toString());
+            sessionStorage.setItem("IDR_FILING_CAT_ID", data[22].toString());
+
+            @*// RELOAD PAGE TO AVOID ERROR. BEFOR GOING TO VIEW ALL DISCLOSURE PAGE.
+            window.location.href = "@Url.Content("~/ImportDisclosureReport/ImportDisclosureReport / ")";*@
+
+            var urlViewAllDisclosure = "@Url.Content("~/ViewAllDisclosures/ViewAllDisclosures/")";
+            window.location.href = urlViewAllDisclosure;
+        });
+
+        $m(".clsCommonClear").bind('click', function () {
+            // DEFAULT THE REPORT YEAR.
+            $("#lstElectionCycle")[0].selectedIndex = 0;
+            // HIDE GRID BY DEFAULT.
+            $("#divGridImportDisclosureRpts").hide();
+        });
+
+        // REPORT YEAR CHANGES.
+        $("#lstElectionCycle").change(function () {
+            // HIDE GRID BY DEFAULT.
+            $("#divGridImportDisclosureRpts").hide();
+        });
+
+        // ======================================================================================================================================
+        // BUTTON APPLY
+        $m(".clsCommonSearch").bind('click', function () {
+            // CALL TO LOAD GRID.
+            LoadImportDisclosureRptsData();
+        });
+        // BUTTON APPLY
+        // ======================================================================================================================================
+
+        var tableImportDisclosureRpts = "";
+
+        function LoadImportDisclosureRptsData() {
+
+            // ======================================================================================================================================
+            // Grid Code CAMPAIGN MATERIAL ///////////////////////////////////////////////////
+            // ======================================================================================================================================
+            $("#divLoading").show();
+            // SHOW GRID BY DEFAULT.
+            $("#divGridImportDisclosureRpts").show();
+            tableImportDisclosureRpts = $m('#gridImportDisclosureReports').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2, 16, 17, 18, 19, 20, 21, 22],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [4],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#gridImportDisclosureReports').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    $m('td:eq(1)', nRow).html('<a class="editor_ViewDetails lnkGird" href="">View</a>');
+                },
+                "fnDrawCallback": function (oSettings) {
+                    $("#divLoading").hide();
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": "@Url.Content("~/ImportDisclosureReport/GetImportDisclosureRptsData/")",
+                        "data": {
+                            txtFilerID: $("#txtFilerID").val(),
+                            strReportYear: $("#lstElectionCycle option:selected").val(),
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function (results) {
+                            $("#divLoading").hide();
+                            if (results = 'True') {
+                                //alert('Alert For your User!123');
+                                //if (alert('Alert For your User!')) { window.location.reload(); }
+                                
+                                ShowDialogBox('EFS', 'Transaction(s) uploaded successfully. Please Review your Disclosure Report for accuracy and Submit.', 'Ok', '');                               
+
+                                // Clear Form Values
+                                $("#lstVendorName")[0].selectedIndex = 0;
+                                $("#txtFileUpload").val("");
+                                // CLEAR THE ERROR MESSAGES.
+                                $m("label[for=lstVendorName]").text('');
+                                $m("#lstVendorName").removeClass("error");
+                                // CLEAR THE ERROR MESSAGES.
+                                $m("label[for=txtFileUpload]").text('');
+                                $m("#txtFileUpload").removeClass("error");
+
+                                $m("label[for=txtPayeeName]").text('');
+                                $m("#txtPayeeName").removeClass("error");           
+
+                                setTimeout(
+                                    function () {
+                                        window.location.reload(true);
+                                    }, 2000);           
+
+                                @*// RELOAD PAGE TO AVOID ERROR.
+                                window.location.href= "@Url.Content("~/ImportDisclosureReport/ImportDisclosureReport/")";*@
+                            }
+                            else {
+                                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                            }
+                        }
+                    });
+                }
+            });
+            $m('#gridImportDisclosureReports').DataTable().ajax.reload();
+            tableImportDisclosureRpts.search('').columns().search('').draw();
+            tableImportDisclosureRpts.order([15, 'desc']).draw();
+            tableImportDisclosureRpts.responsive.recalc();
+            $("#divLoading").show();
+
+            // ======================================================================================================================================
+            // Grid Code CAMPAIGN MATERIAL ///////////////////////////////////////////////////
+            // ======================================================================================================================================
+        }
+
+    });
+
+    function CallHelpFilter() {
+
+        var myWidth = 500;
+        var myHeight = 600;
+
+        var left = (screen.width - myWidth) / 2;
+        var top = (screen.height - myHeight) / 4;
+
+        window.open("@Url.Content("~/ImportDisclosureReport/ImportDisclosureReportSearchHelp/")", "Help", 'width = 450, height = 600, scrollbars = 1, width = ' + myWidth + ', height = ' + myHeight + ', top = ' + top + ', left = ' + left);
+    }
+
+</script>
+
+

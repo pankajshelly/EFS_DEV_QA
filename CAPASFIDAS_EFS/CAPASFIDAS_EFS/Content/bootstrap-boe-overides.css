@@ -1,0 +1,523 @@
+﻿/*
+    bootstrap-boe-overides.css
+    These overides work when the body tag is assinged the id of #boe-css-overrides.
+    Used instead of !important the id adds 100 points weight to any selector contained within.
+    In CSS  every selector has its own numerical 'weight':
+       > 1000 points for element inline styling
+       > 100 points for IDs
+       > 10 points for classes and pseudo-classes
+       > 1 point for tag selectors and pseudo-elements
+    Version key major.minor.patch
+    Version 0.3.2 - Last formal update 04/26/2023
+    NOTE: This was updated to support bootstrap 4.5.0 and some class definitions created for bootstrap
+*/
+#boe-css-overrides .alert {
+    padding: 10px; /*Decreased padding.*/
+}
+
+#boe-css-overrides .alert-info {
+    color: #214C61; /*WCAG contrast ratio 7.023 compliant against default bg of #bce8f1*/
+    margin-bottom: 0.5em; /*Decreased margin.*/
+}
+
+#boe-css-overrides select,
+/*#boe-css-overrides input[type=button],/*Use Bootstrap instead.*/
+#boe-css-overrides input[type=date],
+#boe-css-overrides input[type=color],
+#boe-css-overrides input[type=datetime-local],
+#boe-css-overrides input[type=email],
+#boe-css-overrides input[type=file],
+#boe-css-overrides input[type=month],
+#boe-css-overrides input[type=number],
+#boe-css-overrides input[type=password],
+/*#boe-css-overrides input[type=radio],/*Use Bootstrap instead.*/
+#boe-css-overrides input[type=range],
+#boe-css-overrides input[type=reset],
+#boe-css-overrides input[type=search],
+#boe-css-overrides input[type=submit],
+#boe-css-overrides input[type=tel],
+#boe-css-overrides input[type=text],
+#boe-css-overrides input[type=time],
+#boe-css-overrides input[type=url],
+#boe-css-overrides input[type=week] {
+    padding: .18rem initial;
+    border-color: #767676;
+    border-style: solid;
+    font-size: 0.8rem;
+    height: calc(1.5em + .75rem + 2px);
+    color: #000000;
+}
+
+
+    #boe-css-overrides select:disabled,
+    #boe-css-overrides input:disabled,
+    #boe-css-overrides button:disabled { /* DAVE ADDED button:disabled 4/25/2023 FOR COMMITTEE MANAGEMENT PER ERIC */
+        background-color: #cccccc;
+    }
+
+#boe-css-overrides button:disabled { /* DAVE ADDED 4/25/2023 FOR COMMITTEE MANAGEMENT PER ERIC */
+    opacity: .65;
+}
+
+#boe-css-overrides .btn {
+    font-size: 12px;
+}
+
+#boe-css-overrides .btn-default {
+    background: none;
+    background-color: #CFCFCF;
+    border-color: #000000;
+    color: #000000;
+}
+
+    #boe-css-overrides .btn-default:hover,
+    #boe-css-overrides .btn-default:focus {
+        color: #ffffff;
+        background-color: #737373; /*WCAGAA Contrast ratio 4.741 against foreground*/
+        border-color: #ffffff;
+    }
+
+#boe-css-overrides .navbar {
+    padding: 0;
+}
+
+#boe-css-overrides .navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #boe-css-overrides .navbar,
+    #boe-css-overrides .navbar-inverse,
+    #boe-css-overrides .navbar-nav .dropdown-menu {
+        font-family: Proxima Nova, Arial, sans-serif;
+        background-color: #007681;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 0px;
+        min-height: 45px;
+        border: none;
+        border-bottom: 4px solid #FFFFFF;
+        border-radius: 0px;
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-menu {
+        background-color: #007681;
+        margin-top: 4px; /*Keeps menyu from covering the white border bottom of the navbar.*/
+        border-bottom: none;
+        padding: 0px;
+    }
+
+#boe-css-overrides .dropdown-menu > li > a:hover,
+#boe-css-overrides .dropdown-menu > li > a:focus,
+#boe-css-overrides .dropdown-menu > a:hover,
+#boe-css-overrides .dropdown-menu > a:focus {
+    background-color: #007681;
+    font-weight: bold;
+}
+
+/*Acessibility allows focus to be distinguishable in contrast and size.*/
+#boe-css-overrides .dropdown-menu > li > a:focus,
+#boe-css-overrides .dropdown-menu > a:focus {
+    outline-width: 6px;
+    outline-color: #B6CFD0;
+    outline-style: solid;
+}
+
+/*Change background if less than the medium bootstrap column*/
+@media (max-width: 576px) {
+    #boe-css-overrides .dropdown-menu {
+        background-color: #7FA9AE; /*Easier to tell if the menu is collapse or not*/
+        border-top: 4px solid #FFFFFF;
+    }
+}
+
+#boe-css-overrides .navbar-toggle {
+    border: none;
+}
+
+#boe-css-overrides .navbar-inverse .navbar-collapse,
+#boe-css-overrides .navbar-inverse .navbar-form {
+    border-color: #FFFFFF;
+}
+
+#boe-css-overrides .navbar-inverse .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    width: 1em;
+    height: 1em;
+    margin: 0 0 0 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+#boe-css-overrides button.navbar-toggler {
+    margin: 0.2em;
+    padding: 0.2em;
+    border: 3px solid #fff;
+}
+
+#boe-css-overrides .navbar-inverse .navbar-brand,
+#boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+#boe-css-overrides .navbar-inverse .navbar-nav > a {
+    color: #ffffff;
+    padding: 15px 30px;
+    font-weight: bold;
+    line-height: 45px;
+    min-height: 45px;
+}
+
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a:focus,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a:focus,
+    #boe-css-overrides .navbar-inverse .navbar-brand:focus,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a:focus,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a:focus,
+    #boe-css-overrides .custom-file-input:focus ~ .custom-file-label:focus {
+        background-color: initial;
+        outline-width: 6px;
+        outline-color: #B6CFD0;
+        outline-style: solid;
+        outline-offset: -6px;
+    }
+
+/*Acessibility allows focus to be distinguishable in contrast and size.*/
+#boe-css-overrides select:focus,
+#boe-css-overrides input:focus,
+#boe-css-overrides button:focus,
+#boe-css-overrides a:focus,
+#boe-css-overrides .custom-file-input:focus ~ .custom-file-label {
+    outline-width: 4px;
+    outline-offset: 1px;
+    outline-color: #09464C;
+    outline-style: solid;
+}
+
+#boe-css-overrides .custom-file-label::after {
+    background-color: #fff;
+}
+
+#boe-css-overrides .navbar-nav .dropdown-menu > li a,
+#boe-css-overrides .navbar-nav .dropdown-menu a {
+    background-color: #007681;
+    color: #ffffff;
+    padding: 30px 20px;
+    font-weight: bold;
+    line-height: 20px;
+    min-height: 20px;
+}
+
+#boe-css-overrides .navbar-inverse a:hover,
+#boe-css-overrides .navbar-nav .dropdown-menu > li > a:hover,
+#boe-css-overrides .dropdown-menu > li > a:hover,
+#boe-css-overrides .navbar-nav .dropdown-menu > a:hover,
+#boe-css-overrides .dropdown-menu > a:hover {
+    background: rgba(0, 0, 0, 0.5); /*Sets the color to black at half opacity*/
+    text-decoration: underline;
+}
+
+
+#boe-css-overrides nav.navbar.navbar-inverse div.container-fluid {
+    padding-right: 0px; /*Helps reduce the spacing that triggers navbar stacking.*/
+}
+
+#boe-css-overrides .navbar-collapse {
+    padding-right: 0px; /*Helps reduce the spacing that triggers navbar stacking.*/
+}
+
+#boe-css-overrides .navbar-inverse .navbar-brand {
+    padding-left: 60px;
+    font-family: D Sari Bold, Arial, sans-serif;
+    font-size: 22px;
+    height: inherit;
+}
+
+/**If we place the navbar-header inside the navbar-collapse it only gets displayed when the navbar is not collapsed which we can determine via the "show" class.*/
+#boe-css-overrides .navbar-collapse.show .boe-overide-hide-when-navbar-collapse-show {
+    display: none
+}
+
+
+#boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+    font-family: D Sari Bold, Arial, sans-serif;
+    font-size: 22px;
+    height: inherit;
+}
+
+/*Collapsible Accordion Bootstrap 4.5+*/
+#boe-css-overrides .card .card-header,
+#boe-css-overrides .accordion .card .card-header {
+    font-family: "Proxima Nova", Arial, sans-serif;
+    background-image: none;
+    background-color: #007681; /*Accessible Color Contrast*/
+    border-color: #007681; /*Accessible Color Contrast*/
+    color: #ffffff !important; /*Accessible Color Contrast*/
+    border-radius: 2.5px;
+    width: 100%;
+    padding: .25rem .5rem;
+}
+
+    #boe-css-overrides .card .card-header h2,
+    #boe-css-overrides .accordion .card .card-header h1 button,
+    #boe-css-overrides .accordion .card .card-header h2 button,
+    #boe-css-overrides .accordion .card .card-header h3 button,
+    #boe-css-overrides .accordion .card .card-header h4 button,
+    #boe-css-overrides .accordion .card .card-header h5 button,
+    #boe-css-overrides .accordion .card .card-header h6 button {
+        font-size: 16px;
+    }
+
+    #boe-css-overrides .card .card-header h2,
+    #boe-css-overrides .accordion .card .card-header button {
+        color: #ffffff !important; /*Accessible Color Contrast*/
+        font-weight: 600;
+    }
+
+/*Nested accordion headings reduce padding.*/
+#boe-css-overrides .accordion .card .card-body .accordion .card .card-header {
+    background-color: #7FA9AE;
+    border-color: #7FA9AE;
+}
+
+    #boe-css-overrides .accordion .card .card-body .accordion .card .card-header button {
+        color: #000000 !important; /*Accessible Color Contrast*/
+    }
+
+#boe-css-overrides .accordion .card .card-header button[aria-expanded="false"] span.cssSelectorUp::after {
+    content: ' \02C4';
+}
+
+#boe-css-overrides .accordion .card .card-header button[aria-expanded="true"] span.cssSelectorDown::after {
+    content: ' \02C5';
+}
+
+#boe-css-overrides .accordion .card .card-header button[aria-expanded="true"] .cssSelectorUp,
+#boe-css-overrides .accordion .card .card-header button[aria-expanded="false"] .cssSelectorDown {
+    display: none;
+}
+
+#boe-css-overrides span.cssSelectorDown,
+#boe-css-overrides span.cssSelectorUp {
+    font-size: large;
+    padding: 0.1em 0.5em 0 0;
+}
+
+#boe-css-overrides .accordion .card .card-body h4 {
+    font-size: 14px;
+}
+
+/*Removes spaceing and background color*/
+#boe-css-overrides ol.breadcrumb {
+    margin-bottom: 0px;
+    padding-left: 0px;
+    background-color: initial;
+}
+
+
+#boe-css-overrides .breadcrumb > li + li:before {
+    color: #808080; /*50% grey*/
+    content: "\00BB"; /*Right angle quote in hex*/
+    padding: 0 5px;
+}
+
+/*Makes the active breadcrumb easier to read against background-color and thicker than when compared with non-active.*/
+#boe-css-overrides .breadcrumb > .active {
+    color: #485747; /*Contrast ratio of 7.056 on top of #F5F5F5 background-color*/
+    font-weight: 800;
+}
+
+/*Medium Desktop*/
+@media (min-width: 1300px) and (max-width: 1600px) {
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand {
+        padding-left: 40px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 15px; /*Allows for long navbars to stay in one line.*/
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a {
+        padding-left: 15px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 15px; /*Allows for long navbars to stay in one line.*/
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a {
+        padding-left: 20px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 20px; /*Allows for long navbars to stay in one line.*/
+    }
+}
+
+/*Small Desktop*/
+@media (min-width: 1100px) and (max-width: 1300px) {
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand {
+        padding-left: 40px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 15px; /*Allows for long navbars to stay in one line.*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a {
+        padding-left: 15px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 15px; /*Allows for long navbars to stay in one line.*/
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1100px) {
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+        font-size: 16px;
+        line-height: 26px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+        padding-left: 40px; /*Allows for long navbars to stay in one line.*/
+        padding-right: 15px; /*Allows for long navbars to stay in one line.*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+/*Responsive Tablet*/
+@media (min-width: 500px) and (max-width: 900px) {
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a,
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand {
+        font-size: 14px;
+        line-height: 26px;
+        padding-top: 8.5px;
+        padding-bottom: 8.5px;
+        padding-left: 30px;
+        padding-right: 20px;
+        max-height: 42px;
+        height: 42px;
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a {
+        max-height: 50px;
+        height: 50px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+        line-height: 26px;
+        font-size: 20px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-collapse {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: -15px;
+    }
+
+    #boe-css-overrides li > ul.navbar-nav.navbar-right {
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 751px) {
+    /*Will hide the navbar brand unless it is collapsed*/
+    #boe-css-overrides .navbar-header .navbar-brand-hide-until-mobile,
+    #boe-css-overrides .navbar-brand-hide-until-mobile {
+        display: none;
+    }
+
+    /*Will display the navbar brand unless it is collapsed*/
+    #boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+        display: block;
+    }
+}
+
+@media (max-width: 750px) {
+    /*Will display the navbar brand unless it is not collapse*/
+    #boe-css-overrides .navbar-header .navbar-brand-hide-until-mobile,
+    #boe-css-overrides .navbar-brand-hide-until-mobile {
+        display: block;
+    }
+
+    /*Will hide the navbar brand unless it is not collapse*/
+    #boe-css-overrides .navbar-inverse .navbar-nav li a.navbar-brand-alternate {
+        display: none;
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-menu > li a,
+    #boe-css-overrides .navbar-nav .dropdown-menu a {
+        white-space: normal;
+        background: rgba(0, 0, 0, 0.50); /*Sets the color to black at half opacity*/
+    }
+
+    #boe-css-overrides .navbar-inverse a:hover,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a:hover,
+    #boe-css-overrides .dropdown-menu > li > a:hover,
+    #boe-css-overrides .navbar-nav .dropdown-menu > a:hover,
+    #boe-css-overrides .dropdown-menu > a:hover {
+        background: rgba(0, 0, 0, 0.75); /*Sets the color to black at 3/4 opacity*/
+    }
+}
+/*Responsive Mobile*/
+@media (max-width: 500px) {
+    #boe-css-overrides .navbar-inverse .navbar-nav > li > a,
+    #boe-css-overrides .navbar-inverse .navbar-nav > a,
+    #boe-css-overrides .navbar-nav .dropdown-menu > li > a
+    #boe-css-overrides .navbar-nav .dropdown-menu > a {
+        font-size: 14px;
+        line-height: 26px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 20px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-header .navbar-brand,
+    #boe-css-overrides .navbar-inverse .navbar-brand {
+        line-height: 20px;
+        padding-left: 1em;
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    #boe-css-overrides .navbar-inverse .navbar-collapse {
+        border-top: solid white 4px;
+        margin-top: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+    }
+
+    #boe-css-overrides .navbar-header button.navbar-toggle,
+    #boe-css-overrides button.navbar-toggle {
+        float: left;
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+
+    #boe-css-overrides li > ul.navbar-nav.navbar-right {
+        margin-left: 0px;
+    }
+
+    #boe-css-overrides div.navbar-collapse.collapse > ul.nav.navbar-nav,
+    #boe-css-overrides div.navbar-collapse.collapsing > ul.nav.navbar-nav {
+        margin-left: 0px;
+    }
+
+    #boe-css-overrides nav.navbar.navbar-inverse div.container-fluid {
+        padding-left: 0px;
+    }
+}
+/* --- END bootstrap overrides ---- */
+/*Start new custom bootstrap classes*/
+#boe-css-overrides .remove-col-padding-x {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+/*End new custom bootstrap classes*/

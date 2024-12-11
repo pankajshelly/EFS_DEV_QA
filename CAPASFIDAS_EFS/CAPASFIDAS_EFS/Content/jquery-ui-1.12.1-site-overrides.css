@@ -1,0 +1,193 @@
+﻿/*
+    This file contains css changes that had been applied directly to the 3rd party library.
+    It is not clear these alterations can be applied accross applications. 
+    Any such that we can identify should be moved into jquery-ui-1.12.1-boe-overrides.css
+    Version 1.0.0.0 - Last formal update 10/23/2020
+*/
+/* --- START jquery.ui.1.12.1 site overrides ---- */
+#boe-css-overrides .ui-helper-reset {
+    padding: 0em 2em 0em 2em;
+}
+
+#boe-css-overrides .ui-accordion .ui-accordion-header {
+    background: #09464C;
+    color: white;
+    font-weight: bold;
+}
+
+#boe-css-overrides .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+    color: white;
+    font-weight: bold;
+}
+
+#boe-css-overrides .ui-accordion .ui-accordion-content {
+    padding: 0.3em 0em 0.3em 0em;
+}
+
+#boe-css-overrides .ui-button-icon-only .ui-icon {
+    color: white;
+    font-weight: bold;
+}
+
+
+#boe-css-overrides .ui-dialog .ui-dialog-buttonpane button {
+    margin: .5em 10em .5em 10em;
+}
+
+#boe-css-overrides .ui-draggable .ui-dialog-titlebar {
+    background: #007681 !important;
+}
+
+#boe-css-overrides .ui-widget {
+    font-family: Proxima Nova,Arial,Oswald;
+    font-size: 13px;
+}
+
+#boe-css-overrides .ui-widget input,
+#boe-css-overrides .ui-widget select,
+#boe-css-overrides .ui-widget textarea,
+#boe-css-overrides .ui-widget button {
+    font-family: Verdana,Arial,sans-serif;
+}
+
+#boe-css-overrides .ui-widget-content {
+    border: 1px solid #aaaaaa;
+    background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+    color: #222222;
+}
+
+#boe-css-overrides .ui-widget-content a {
+    color: #222222;
+}
+
+#boe-css-overrides .ui-widget-header {
+    border: 1px solid #aaaaaa !important;
+    background-color: #007681 !important;
+    background: #007681 !important;
+    color: #222222 !important;
+    font-weight: bold !important;
+}
+
+#boe-css-overrides .ui-widget-header a {
+    color: #222222;
+}
+
+#boe-css-overrides .ui-state-default,
+#boe-css-overrides .ui-widget-content .ui-state-default,
+#boe-css-overrides .ui-widget-header .ui-state-default {
+    border: 1px solid #d3d3d3;
+    background: none;
+    font-weight: initial;
+    color: black;
+}
+
+#boe-css-overrides .ui-state-default a,
+#boe-css-overrides .ui-state-default a:link,
+#boe-css-overrides .ui-state-default a:visited {
+    color: white;
+}
+
+#boe-css-overrides .ui-state-hover,
+#boe-css-overrides .ui-widget-content .ui-state-hover,
+#boe-css-overrides .ui-widget-header .ui-state-hover,
+#boe-css-overrides .ui-state-focus,
+#boe-css-overrides .ui-widget-content .ui-state-focus,
+#boe-css-overrides .ui-widget-header .ui-state-focus {
+    border: 1px solid #999999;
+    background: #dadada url("images/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x;
+    font-weight: normal;
+    color: #212121;
+}
+
+#boe-css-overrides .ui-state-hover a,
+#boe-css-overrides .ui-state-hover a:hover,
+#boe-css-overrides .ui-state-hover a:link,
+#boe-css-overrides .ui-state-hover a:visited,
+#boe-css-overrides .ui-state-focus a,
+#boe-css-overrides .ui-state-focus a:hover,
+#boe-css-overrides .ui-state-focus a:link,
+#boe-css-overrides .ui-state-focus a:visited {
+    color: #212121;
+}
+
+#boe-css-overrides .ui-state-active,
+#boe-css-overrides .ui-widget-content .ui-state-active,
+#boe-css-overrides .ui-widget-header .ui-state-active {
+    border: 1px solid #aaaaaa;
+    background: white url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+    font-weight: normal;
+    color: black;
+}
+
+#boe-css-overrides .ui-state-active a,
+#boe-css-overrides .ui-state-active a:link,
+#boe-css-overrides .ui-state-active a:visited {
+    color: black;
+}
+
+#boe-css-overrides .ui-state-highlight,
+#boe-css-overrides .ui-widget-content .ui-state-highlight,
+#boe-css-overrides .ui-widget-header .ui-state-highlight {
+    border: 1px solid #fcefa1;
+    background: #fbf9ee url("images/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
+}
+
+#boe-css-overrides .ui-state-error,
+#boe-css-overrides .ui-widget-content .ui-state-error,
+#boe-css-overrides .ui-widget-header .ui-state-error {
+    background: #fef1ec url("images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
+    color: #cd0a0a;
+}
+
+#boe-css-overrides .ui-state-error a,
+#boe-css-overrides .ui-widget-content .ui-state-error a,
+#boe-css-overrides .ui-widget-header .ui-state-error a {
+    color: #cd0a0a;
+}
+
+#boe-css-overrides .ui-state-error-text,
+#boe-css-overrides .ui-widget-content .ui-state-error-text,
+#boe-css-overrides .ui-widget-header .ui-state-error-text {
+    color: #cd0a0a;
+}
+
+#boe-css-overrides .ui-icon,
+#boe-css-overrides .ui-widget-content .ui-icon,
+#boe-css-overrides .ui-widget-header .ui-icon {
+    background-image: url("images/ui-icons_222222_256x240.png");
+}
+
+.ui-state-default .ui-icon {
+    background-image: url("images/ui-icons_888888_256x240.png");
+}
+
+#boe-css-overrides .ui-state-hover .ui-icon,
+#boe-css-overrides .ui-state-focus .ui-icon,
+#boe-css-overrides .ui-state-active .ui-icon {
+    background-image: url("images/ui-icons_454545_256x240.png");
+}
+
+#boe-css-overrides .ui-state-highlight .ui-icon {
+    background-image: url("images/ui-icons_2e83ff_256x240.png");
+}
+
+#boe-css-overrides .ui-state-error .ui-icon,
+#boe-css-overrides .ui-state-error-text .ui-icon {
+    background-image: url("images/ui-icons_cd0a0a_256x240.png");
+}
+
+#boe-css-overrides .ui-widget-overlay {
+    background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+    opacity: .3;
+    filter: Alpha(Opacity=30); /* support: IE8 */
+}
+
+#boe-css-overrides .ui-widget-shadow {
+    margin: -8px 0 0 -8px;
+    padding: 8px;
+    background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+    opacity: .3;
+    filter: Alpha(Opacity=30); /* support: IE8 */
+    border-radius: 8px;
+}
+/* --- END jquery.ui.1.12.1 site overrides ---- */

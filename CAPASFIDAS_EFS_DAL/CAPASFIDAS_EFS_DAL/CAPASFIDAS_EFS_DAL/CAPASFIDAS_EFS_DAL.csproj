@@ -1,0 +1,2308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1DD8D97-3927-4DC4-ABAE-E29B0AD952DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPASFIDAS_EFS_DAL</RootNamespace>
+    <AssemblyName>CAPASFIDAS_EFS_DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADDRESS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADDRESS_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPLICATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APPLICATION_USER_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUDIT_TRAIL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUTHORIZATION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AUTHORIZED_SIGNATORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BALLOT_CORRESPONDENCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BALLOT_ORDER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BALLOT_PROPOSALS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BALLOT_PROPOSAL_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_ACCOUNT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BEST_CONTACT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BUDGET_YEAR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAMPAIGN_MATERIAL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_AUTH_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_COMMITTEE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_COMMITTEE_AUTH.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_CONTACT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANDIDATE_OBJECTOR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAPAS_DEFICIENCY_REGULATIONS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAPAS_PET_DEF_REG.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CITY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMITTEE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMITTEE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMITTEE_PURPOSE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMITTEE_TREASURER_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMITTEE_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMUNICATION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_EMPLOYER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_OPERATIONAL_INDIVIDUAL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_PAC_INDIVIDUAL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_PAC_SALARIED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_POINT_OF_CONTACT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMM_PURPOSE_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPLIANCE_REVIEW.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPLIANCE_REVIEW_DETAILS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPLIANCE_REVIEW_ITEMS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPLIANCE_REVIEW_MAP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPLIANCE_REVIEW_TYPES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_TREAS_SUBTREAS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTION_LIMIT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTION_LIMIT_DISTRICT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTION_LIMIT_FORMULA.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTION_LIMIT_STATE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTRIBUTOR_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CORRESPONDENCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CORRESPONDENCE_DOCUMENTS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CORRESPONDENCE_RETURN_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CORRESPONDENCE_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUNTY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUNTY_CONTACT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUNTY_OFFICIALS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COURT_HEARING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COURT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETAILS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DISTRICT_COUNTY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DISTRICT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSAuthentication.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSAuthentication.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSAuthentication.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSAuthentication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSAuthentication.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFSRLSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSRLSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSRLSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSRLSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFSRLSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFSRLSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFS_VENDOR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFS_VENDOR_IMPORT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFS_VENDOR_PERSON_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTED_OFFICIALS_ADDRS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CANDIDATE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CANDIDATE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_ADDR_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_CONTACT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_DOCUMENTATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_MATCH.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_NAME_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_CAND_SIGNATURE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_DATA_DEFAULT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_OFFICE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELECTION_YEAR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE_ROLE_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENFORCEMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENFORCEMENT_PAYMENT_DETAIL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENFORCEMENT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_ADDRESS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_ADDRESS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_COMMENTS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_COMMENTS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_CONTACT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_CONTACT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_CORRESPONDENCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_PERSON_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_PERSON_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_REDUCED_PAYOFF_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_REDUCED_PAYOFF_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_SATISFIED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_SETTLEMENT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_SETTLEMENT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENF_TITLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENROLLMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENROLLMENT_COUNTY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENROLLMENT_DISTRICT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENROLLMENT_ED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ENROLLMENT_TOTALS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\EFSEntities.cs" />
+    <Compile Include="EOU_FVS_FORVOTE_TABLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERROR_LOG.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERROR_LOG_7122021.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERROR_LOG_7142021.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="error_log_backup.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESCROW.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESCROW_AUTHORIZED_USER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESCROW_PRODUCT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESCROW_TRANSACTIONS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXECUTIVE_REVIEWER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_COMMENTS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_CONVERSION_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_ELECTION_CAND_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_HOLD_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_HOLD_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_PURPOSE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_SCAN_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_SECURITY.cs">
+      <DependentUpon>EFSRLSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILER_STATEMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILINGS_ENCRYPTED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_CATEGORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_CATEGORY_COMM_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_DOCUMENTS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_ENTITY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_ENTITY_ENCRYPTED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_ERROR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_EXEMPTION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_EXEMPTION_DETAILS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_EXEMPTION_REVIEW.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_METHOD.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_PERIOD.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_PERIOD_backup.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_PERIOD_CTY_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_PROCESSING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_SCHEDULES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_SCHEDULE_COMM_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TRANSACTIONS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TRANSACTIONS_ENCRYPTED.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TRANSACTIONS_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TRANSACTIONS_MAPPING_OLD.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FI_STATUS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fn_filer_edit_Result.cs">
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fn_filer_security_Result.cs">
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fn_filer_view_Result.cs">
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORM.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HEARING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IE_COMMITTEES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IE_COMMUNICATION_FILE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IE_COMM_SUPPORT_OPPOSE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IE_POLITICAL_COMMUNICATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IE_REGISTRATION_INFO.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JUDGMENT_STATUS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JUDICIAL_DISTRICT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LANGUAGE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAN_OTHER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN_MENU_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MANUAL_PROD_UPDATES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MASTER_LOOKUP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MASTER_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MENU.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MESSAGE_CENTER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MUNICIPALITY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MUNICIPALITY_OFFICES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NONITEM_TRANS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NON_PARTICIPATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBJECTION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFICE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFICE_DISTRICT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFICE_TERM_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFICE_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAGE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTY_CALL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTY_CALL_backup.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTY_ELECTION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTY_ELECTION_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAYMENT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAYOFF_QUOTE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON_ADDR_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON_CONTACT_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PERSON_NAME_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_FORM_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_FORM_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_RELATED_FORMS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_REVIEW.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_RTD_FORMS_DUE_DATES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_VACANCY_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PETITION_VOLUME.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PET_COMMENTS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PET_ELECTION_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PET_FORM_COMMENTS_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMF_DOCUMENT_NUMBER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMF_PAYMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_DATES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_DATE_HIST.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_FORMULA.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_FORM_MAP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_HEADING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_LABEL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_LABEL_MAP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POLITICAL_CALENDAR_SUBHEADING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PR_CONTRIBUTION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PURPOSE_CODE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PURPOSE_CODE_SCHEDULE_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECEIPT_CODE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECEIPT_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\EFSRepository.cs" />
+    <Compile Include="REQUIRED_FILER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RESIGNATION_TERMINATION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEWER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEWER_FILER_ASSIGNMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_ASSIGN.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_ASSIGN_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_COMPLIANCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_COMPLIANCE_COMMENT_MAP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_COMPLIANCE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE_REISSUE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE_REISSUE_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE_RETURN.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_CORRESPONDENCE_RETURN_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_DATE_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_DATE_TYPE_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_DETAILS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_ENFORCEMENT_REFERRAL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_FILINGS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_REPORTS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_STATUS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REVIEW_TYPES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ROLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SBOE_RECOMMENDATIONS_DECISION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SBOE_UNIT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCAN_DOCUMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPECIFICATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SplitWithPairs_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPS_S_Acceptance_Authorization_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_D_DeleteDisclosure_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_AmountAllocationScheR.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_LoanForgiven.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_LoanReceived.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_LoanRepayment.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_TransferIn.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTransaction_TransferOut.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTrans_Public_Fund_Payment.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FilingTrans_Public_Fund_Rec.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransContributionsRefundedSchedM.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransContrInKindData.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransContrMonetaryData.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransExpenditureRefundsSchedL.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransNonCompHKReceipts.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransOtherReceiptsReceivedSchedE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_FlngTransOutstandingLiabilitySchedN.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_TRANSFER_OUTSTANDING_BALANCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_TRANSFER_OUT_LIAB_BALANCE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_I_WeeklyClaimSubSchedA.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AddKeyDateTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AddressTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AddReviewerList_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AllCounties_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteCandidateCommittee_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteCandidate_PopUp_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteCandidate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteCommittee_PopUp_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteCommittee_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteEntityNameAndAddr_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteEntityNameLiability_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteFilerForMyReview_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteFirstNameAndAddr_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteLastNameAndAddr_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompletePayeeRecipient_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_AutoCompleteSchedR_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BankAccountType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_CheckDuplicateParty_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetAddressContactCount_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetBallotTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetBestContactTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandAddress_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandContact_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandidateBallotAccessInfo_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandidateDtls_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandidateElectionInfo_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandidateInfo_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetCandidates_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetDistricts_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetElectionDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetEmployees_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetMunicipality_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetPartyList_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetPolCalElectionTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetPolCalElectionYears_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_GetPolCalOfficeTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_Get_CBOE_OfficeTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BA_SeachCandidate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_BestContactTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_CandidateCommittee_PopUp_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_CommitteeTypeByFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContactTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContrbutorOrginalName_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributionsABCExistsSchedM_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributionType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorCodeIEWeeklyContrSchedC_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorCodeIEWeeklyContrSchedD_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorName_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorOrginalAmount_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorOrginalContributionDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorTypesInKind_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorTypesPartnerSubContractor_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorTypesSchedC_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContributorTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContrInKindPartnersData_Report_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContrInKindPartnersData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ContrRefundAmtForSchedABC_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Correspondence_Reissue_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Correspondence_Return_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_CountyAll_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_CountyForCountyBoardRoster_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_CountyReviewFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_County_Filings.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_County_Filings_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_County_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DateInccuredLiabilityForForgiven_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DateInccuredLiabilityUpdate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DateInccuredLiability_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DeficiencyLetterCandidateRpt_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosurePeriodForNoActivity_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosurePeriodsForFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosurePeriodsForYearAndFilerIDAndElectionType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosurePeriodsForYearAndFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosurePeriod_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureReport_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureTypeByCommType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureTypesForFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureTypesForYearAndFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureTypes_CON_MON_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DisclosureTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Disclosure_Period_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DistrictReviewFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_District_ELE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_District_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_DoesTransNumberExistInTemp.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EditFilingTransactionData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFSDropdownValExistsForValidation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFSDropdownValExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFSElectionExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFSElectionType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFS_QualifiedExpendituresSchedT_Exist_L.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFS_QualifiedExpendituresSchedT_LiabilityT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFS_QualifiedExpendituresSchedT_Rem_Credit_Data_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFS_QualifiedExpendituresSchedT_Rem_Credit_DetailAmt.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EFS_SCHED_R_CHILD_Data_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionDateByYOEType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionDateFileDisclosure_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionTypeData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionTypesForFilerIDForSubmit_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionTypesForFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionType_Pida_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionYearFor_Pol_Party_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionYear_EFS_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ElectionYear_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EnforReferredReviewsDetailsRpt_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EnforReferredReviews_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EnforRefRptCorrComments_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_EnforRefRptCorrDetails_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPayLiabilityForgivenSchedK_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentExistsSchedL_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentLiabilitySchedF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentOrginalAmount_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentOrginalExpenseDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentOrginalName_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPaymentsTransIdPopUpSchedF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpPayOutstandingLiabilitySchedN_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ExpRefundAmtForSchedF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingAndCutOffDate_PCF_WCS_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingAndCutOffDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingDatesIEWeekly_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingDatesOffCycleNoActivity_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingDatesOffCycle_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingMethods_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingTransactions_Test_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingTransactions_Test_Result1.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingTrans_SubOutstanding.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FilingYear_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Filing_Data_OnFilingsID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Filing_Transactions_Data_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Filing_Transactions_Data_Summary_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Filing_Transactions_Data_TEST_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FT_Summery_TEST_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_FutureElectionYear_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GenerateDeficiencyLetterRpt_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GenerateReissuedletterDT_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GenerateTrainingLetterRpt_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAddressBasedOnFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAddressData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAllAmountAllocation.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAllDistrictData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAllMunicipalities_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAmend_Status_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetAuthorizedFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCampaignMaterialsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCandAuthCommitteesData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCandidateInformationBasedOnFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCandidatePofileDetailsData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCommunicationTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetContactData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetCounties_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetDepositoryBankInfoData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetDisclosuresGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetDistrictGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetDocumentTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionOfficeInfo_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionYearsForFilerIDSubmit_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionYearsForFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionYearsForFilerID_VSD_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionYearsForSummeryPage_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectionYears_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetElectOfficeDistrictData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetEntityNameLiabilityExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetExpenditurePaymentsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetExpPaymentsLiabilityData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetExpPaymentsReimbursementData_Report_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetExpPaymentsReimbursementData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetExpPayOrgiginalLiability_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilerCommittee_FilerMapping_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilerCommittee_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilerDetailsLevelTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilerINFO_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFiler_Disclosure_Report_Totals_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingDateCorrectorNot_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingDatesElectionYear_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingEntityId_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingsExistsInTempDB_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingsIdforUploadData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingsResgTermType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilingsSubmittedOrNot_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetFilings_By_FilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetImage_Test_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetImportDisclosureRptsData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetIsEditFlagNonItemized_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetIsEditFlag_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetIsEdit_PCFB_DueDate.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetIsEdit_PCFB_DueDate_Import.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLiabilitiesLoansForgivenGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanPaymentsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanReceived_LoanForgiven_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanReceived_LoanRepayment_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanReceived_OutStandingLiabilities_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanRepayment_LoanReceived_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoanRepayment_OutStandingLiabilities_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetLoansReceivedGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetMinReconciledOwedAmount_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetMunicipalitiesForCounty_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetNCHKExpensesReimbursementData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOfficeGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOffices_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOfficeTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOutstandingForLoanForgiven_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOutstandingLiabilitiesGridDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOutStandingLiabilities_LoanReceived_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOutstandingLiability_LoanRepayment_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetOutstanding_SchedI_SchedJ.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetPIDAGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetReportSourceForSchedS_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetSupportingDocumentsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetTransactionDetailsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetTransactionsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetTransactions_By_FilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetUncreconciledLoansAndLiabilities.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GetVendorNames_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Get_Closing_Balance.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_GET_EMP_ROLE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Get_Opening_Balance.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Get_Summery_Balances.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Get_Summery_Balances_Sched_N.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Get_User_FilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_IE_GETCOMMITTEE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_IE_REGISTRATION_INFO_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ItemizedIETransactionsData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ItemizedNonItemIETransactions_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ItemizedWeeklyClaimSubTrans.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LetterToBeMailed_Deficiency_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LetterToBeMailed_DT_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LetterToBeMailed_Training_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LiabilityOrgAutoCreatedPrevFlngsExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LiabilityOriginalSchedN_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ListOfFilers_Search_All_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LoanerCode_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LoanLiabilityExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_LoanReceived_PartnersData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Received_UpdateAmount_Validation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_Amount_Validation.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_GetDataFromScheI_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_SearchByAmount.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_SearchByDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_SearchByName_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Loan_Repayment_UpdateAmount_Validation.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_MuncipalityByOfficeType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Muncipality_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_MyReview_DetailsInfo_Comments_Search_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_MyReview_DetailsInfo_Correspondence_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_MyReview_DetailsInfo_KeyDates_Search_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_MyReview_DetailsInfo_Search_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItem24HourNoticeTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItem24HourNoticeTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemCampaignMaterial_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIE24HContributionTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIE24HContributionTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIE24HContributionTrans_Result1.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIE24HourExpenditureTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIE24HourPIDAExpenditureTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEDateIncrdLiabUpdate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyCntrbTreasurerData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyContributionTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyContributionTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyExpenditureTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyExpenditureTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyLiabIncrTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyLiabIncrTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemIEWeeklyPIDAExpenditureTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemInLieuOfStatement_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemized24HNoticeCommEditTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemizedChildTransExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemizedIECommEditTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemizedIECommEditTrans_WCS_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemizedParentTransExists_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemizedSubmittedItemizedOrNot_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemNoActivityReport_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemNoticeOfNonParticipation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NonItemPersonName_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_NYSBOEEmployee_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeByFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeForSchedR_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeReviewFiler_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeTypeAll_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeTypesEFS_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeTypesForFilerID_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeType_For_Filers_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OfficeType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OriginalAmtRefundedSchedL_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OriginalAmtRefundedSchedM_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OutstandingAmountLiability_FORGIVEN_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OutstandingAmountLiability_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_OutstandingLiabilityExistsSchedN_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Party_ForReports_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PaymentMethod_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PaymentMethod_SCHED_A_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PE_COMMUNICATION_TYPE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PE_FILES_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PE_FOR_IE_COMMITTEE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PoliticalPartyList_AutoComplete_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PoliticalPartyList_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetAlreadyCreatedOT_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetDates_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetElectionTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetElectionYear_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetLabels_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetOfficeTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Pol_Cal_GetSpecialElectionDate_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PrevYrPoliticalParty_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeCreditCardItem_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeNonItemIESchedFSubContr_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeNonItemIESchedF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeNonItemIESchedN_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeReimburDetails_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCodeSubcontractorSchedF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_PurposeCode_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ReceiptCode_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ReceiptType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ResignationTerminationType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ReviewerCaseLoadSearch_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ReviewerList_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Review_Status_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Role_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ScheduleR_AlreadyExists.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_SCHEDULE_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ShowAllAssignedData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ShowUser_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TrainingLetterCandidateRpt_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionHasDetails_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypeIEWeeklyExpenditure_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypeIEWeeklyLiabIncr_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypes24HContribution_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypes24HourNotice_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypesForWeeklyClaim_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransactionTypes_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TransferType_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TreasurerHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TreasurerHistory_Result1.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_TreasurerProfile_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Treas_AssistantTrensInformation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Treas_CommitteeInformation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Trea_AdditionalCommitteeContact_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Trea_AuthorizedToSignCheck_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Trea_BallotIssues_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Trea_Candidate_Suppot_Oppose_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Trea_DepositoryBankInformation_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_VALIDATE_LOAN_RECD_DELETE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Validate_Submit_Filings_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ViewableColumn_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_ViewSupportingDocumentsGrid_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_WeeklyClaimSubmissionTransHistory_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_WeeklyClaimSubmissionTrans_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_XMLPAGECONTENT_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_S_Year_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_U_UpdateRequiredFilerForReconcile.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQLAccess.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATE_COMMITTEE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATE_COMMITTEE_DISTRICT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATE_COMMITTEE_PARTY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUBDIVISION_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_TREASURER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_TREASURER_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUPPORTED_CANDIDATE_MAPPING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUPPORTING_DOCUMENTS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPTABLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_SP_S_GetTransactionsGridData_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TERMINATION_DETAILS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TERMINATION_REVIEW.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test1.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TITLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSFER_TYPE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TREASURER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TREASURER_HISTORY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UNIT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Viewable_Field.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOTER_REG_FORM_REQUEST.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOTER_REG_REQUEST.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BANKINFORMATION.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_ENFORCEMENT_JOB.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PCFB_CHANGES.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PCFB_CHANGES_HEADER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PCFB_JOB.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PCFB_JOB_HEADER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PMF_WEEKLY_CLAIM_SUBMISSIONS_JOB.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BCP_PMF_WEEKLY_SUBMISIONS_JOB_HEADER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_ALL_HEADER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_ALL_HEADER_COURT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_ALL_HEADER_ENFORCEMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_FILER_DATA.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_FILER_DATA_04012021.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_FILER_DATA_COURT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_FILER_DATA_HEADER.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CandidateCommittee.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CandidateList.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CONTRIBUTIONS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CONTRIBUTIONS_FILING_TRANS.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CountyBoards.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Filers_Candidate.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Filers_Committee.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Filings.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Filings_Aggregated.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_FILINGS_AGGREGATED_Candidate.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_FILINGS_AGGREGATED_COMMITTEE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Filings_AutoComplete.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Notifications.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_PartyOrder.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_PetitionRelatedForms.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Reviewer.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_ReviewStatusRpt.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_TEMP.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_TempDB_FT_QUERY.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_WhoFiled.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportExecutionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="XML.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZIPCODE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EFSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="EFSAuthentication.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFSAuthentication.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EFSAuthentication.edmx.diagram">
+      <DependentUpon>EFSAuthentication.edmx</DependentUpon>
+    </None>
+    <None Include="EFSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSModel.edmx</DependentUpon>
+      <LastGenOutput>EFSModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EFSModel.edmx.diagram">
+      <DependentUpon>EFSModel.edmx</DependentUpon>
+    </None>
+    <None Include="EFSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSModel.edmx</DependentUpon>
+      <LastGenOutput>EFSModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="EFSRLSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFSRLSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EFSRLSModel.edmx.diagram">
+      <DependentUpon>EFSRLSModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportExecutionService\DocumentMapNode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\ExecutionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\ExecutionInfo2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\ExecutionInfo3.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportExecutionService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportExecutionService\ReportExecution2005.wsdl" />
+    <None Include="Web References\ReportExecutionService\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EFSAuthentication.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSAuthentication.edmx</DependentUpon>
+      <LastGenOutput>EFSAuthentication.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EFSAuthentication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSAuthentication.edmx</DependentUpon>
+      <LastGenOutput>EFSAuthentication.cs</LastGenOutput>
+    </Content>
+    <Content Include="EFSRLSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSRLSModel.edmx</DependentUpon>
+      <LastGenOutput>EFSRLSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EFSRLSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFSRLSModel.edmx</DependentUpon>
+      <LastGenOutput>EFSRLSModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://dcfdb1s2/ReportServer/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportExecutionService\</RelPath>
+      <UpdateFromURL>http://dcfdb1s2/ReportServer/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CAPASFIDAS_EFS_DAL_ReportExecutionService_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+﻿/*
+    These overides work when the body tag is assinged the id of #boe-css-overrides.
+    Used instead of !important the id adds 100 points weight to any selector contained within.
+    In CSS  every selector has its own numerical 'weight':
+       > 1000 points for element inline styling
+       > 100 points for IDs
+       > 10 points for classes and pseudo-classes
+       > 1 point for tag selectors and pseudo-elements
+* Version 0.0.0.2 - Last formal update 06/16/2020
+*/
+/*--- START multiple-select-1.5.2 overrides ---- */
+#boe-css-overrides .ms-choice {
+    border-radius: 0px;
+}
+
+#boe-css-overrides .ms-drop ul > li label span {
+    margin-left: 0.5em;
+}
+/* --- END multiple-select-1.5.2 overrides ---- */

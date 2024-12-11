@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = ": Supporting Documents";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+
+@using (Html.BeginForm("SupportingDocuments", "SupportingDocuments", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter" /></button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter" /></button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter" /></button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter" /></button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorSuppDocs">
+                <div class="divWidth">
+                    <div class="floatRightNew clsShowButtonClass">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                            <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch" name="Command" value="Continue" title="Continue" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>
+                        </fieldset>
+                    </div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtFilerID", @class = "txtWidth", aria_labelledby = "lblFilerID" })
+                            @*@Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth" })*@
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtCommitteeName", @class = "txtWidth", aria_labelledby = "lblCommitteeName" })
+                            @*@Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth" })*@
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">Election Cycle</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    <div class="floatRightNew">
+                        <fieldset style="clear:both;">
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch" name="Command" value="Continue" title="Continue" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divBreadCrumb" class="breadCrumbDivCSS" style="width: 46em;">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Upload Supporting Document</li>
+            </ol>
+        </nav>
+        <div id="divHeader" class="pt-3 clsHeaderWidth">
+            <h1>
+                <span id="lblHeader">Upload Supporting Document</span>
+            </h1>
+        </div>
+        <div id="divHeader2" class="pt-3">
+            <h2 style="font-weight: bold; ">Acceptable file types: PDF, DOC.</h2>
+            <hr />
+            <div>
+                <div style="float:left;">
+                    <!--<input type="file" id="upld" />-->
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="upld">
+                        <label class="custom-file-label" for="upld">Choose file...</label>
+                    </div>
+                </div>
+                <input type="button" id="btnUpload" class="btn btn-default ml-2" name="Upload" value="Upload" title="Upload" style="float:left;" />
+                <button id="btnCommonSaveComments" class="btn btn-default ml-2" name="Add" value="CSV" style="float:left; padding:0">
+                    <img src="~/Content/Images/icon-boe-add30px.png" alt="Pluss/Add Icon" class="ButtonImageCSS" style="height:2.5em;width:2.5em;"/>
+                </button>
+                <button id="btnCommonClear3" class="btn btn-default ml-2" name="Reload" value="CSV" style="float:left; padding:0">
+                    <img src="~/Content/Images/icon-boe-reload30px.png" alt="Reoload/Clear Icon" class="ButtonImageCSS" style="height:2.5em;width:2.5em;"/>
+                </button>
+
+            </div>
+        </div>
+        <div id="divHeaderInfo" class="pt-4" style="clear:left;">
+            <h2 style="font-weight: bold; ">Documents are limited to 10 pages and 100mb.</h2>
+            <hr />
+            <div>
+                <div style="padding-left: 2em;">
+                    <span id="lblDocumentType">Document Type</span>
+                </div>
+                <span style="padding-left: 1em;">
+                    @Html.DropDownList("lstDocumentType", ViewData["lstDocumentType"] as SelectList, new { @class = "", aria_labelledby = "lblDocumentType" })
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="dvTotalsByWeekDetailsLbl" class="divGridCSS" style="padding-top: 2em; padding-left: 2em; float: left;">
+        <h2 style="font-weight: bold; ">Supporting Documents</h2>
+    </div>
+    <div id="divGrid" class="divGridCSS" style="padding-top:0.5em;">
+        <table id="tblSuppDocumentsGrid" class="webGrid">
+            <thead id="thdGrid" class="header">
+                <tr>
+                    <th>Received</th>
+                    <th>Document Type</th>
+                    <th>Statusy</th>
+                    <th>Status Date</th>
+                    <th>Pages</th>
+                    <th>Delivery Type</th>
+                    <th>Date Filed</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+
+
+}
+    <script>
+        $m = jQuery.noConflict();
+
+        $(document).ready(function () {
+
+            sessionStorage.setDataTable = null;
+
+            //Show Hide Lookups
+            $("#divshow").hide();
+            $("#divshowForMobile").hide();
+
+            $m(".clsbtnCommonHideShow").bind('click', function (e) {
+                if (sessionStorage.getItem('setDataTable') != "null") {
+                    $m('#ContributionsMonetaryGrid').DataTable().ajax.reload();
+                    $m('#PartnersGrid').DataTable().ajax.reload();
+                }
+
+                $("#selectorSuppDocs").toggle("slow");
+                $("#divhide").show("slow");
+                $("#divshow").hide("slow");
+
+                $("#divhideForMobile").show("slow");
+                $("#divshowForMobile").hide("slow");
+
+                //$("#divGrid").css("width", "80%");
+                $("#divGrid").addClass("Per80hideShowButtonCSS");
+                $("#divGrid").removeClass("Per100hideShowButtonCSS");
+            });
+
+            $("#btnShowHide").click(function () {
+                if ($("#divShowHide").is(":hidden")) {
+                    $("#divMainNew").removeClass("mainDivNew");
+                    $("#divMainNew").addClass("mainDiv");
+
+                } else {
+                    $("#divMainNew").removeClass("mainDiv");
+                    $("#divMainNew").addClass("mainDivNew");
+                }
+            });
+
+            $m(".clsbtnCommonShowHide").bind('click', function (e) {
+                if (sessionStorage.getItem('setDataTable') != "null") {
+                    $m('#ContributionsMonetaryGrid').DataTable().ajax.reload();
+                    $m('#PartnersGrid').DataTable().ajax.reload();
+                }
+                $("#selectorSuppDocs").toggle("slow");
+                $("#divhide").hide("slow");
+                $("#divshow").show("slow");
+
+                $("#divhideForMobile").hide("slow");
+                $("#divshowForMobile").show("slow");
+
+                $("#divGrid").addClass("Per100hideShowButtonCSS");
+                $("#divGrid").removeClass("Per80hideShowButtonCSS");
+
+                $("#ContributionsMonetaryGrid").addClass("Per100hideShowButtonCSS");
+                $("#ContributionsMonetaryGrid").removeClass("Per80hideShowButtonCSS");
+
+                $("#PartnersGrid").addClass("Per100hideShowButtonCSS");
+                $("#PartnersGrid").removeClass("Per80hideShowButtonCSS");
+
+                $("#thdGrid").addClass("Per100hideShowButtonCSS");
+                $("#thdGrid").removeClass("Per80hideShowButtonCSS");
+            });
+
+
+            var tableSuppDocumentsGrid = $m('#tblSuppDocumentsGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "mData": null,
+                //"scrollX": "100%",
+                //"scrollY": "400px",
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../SupportingDocuments/GetSupportingDocumentsData",
+                "bAutoWidth": false,
+                "columns": [
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    null
+                ],
+                "columnDefs": [
+                    { width: "8%", targets: -1, data: null, defaultContent: '<a  href="../Content/SupportingDocuments/EnforcementReferralListReport.pdf" target="_blank" class="editor_view lnkGird">View</a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#tblSuppDocumentsGrid').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        }
+                    });
+                }
+            });
+            //$m('#tblSuppDocumentsGrid').DataTable().ajax.reload();
+
+            $("#btnUpload").click(function () {
+                // Show message file successfully
+                alert("File has been uploaded successfully");
+            });
+
+            $(".custom-file-input").on("change", function () {
+                //Get the file name.
+                var fileName = $(this).val().split("\\").pop();
+                //Update the bootstrap file input label.
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+
+            //$m('#tblSuppDocumentsGrid tbody').on('click', 'a.editor_view', function (e) {
+            //    //e.preventDefault();
+            //    // Bind County
+            //    var options = {};
+            //    options.url = "../SupportingDocuments/OpenPDFDocFileFromPath";
+            //    options.type = "POST";
+            //    options.data = null;
+            //    options.dataType = "json";
+            //    options.contentType = "application/json";
+            //    options.success = function (county) {
+
+            //    };
+            //    options.error = function () {
+            //    };
+            //    $.ajax(options);
+            //    //window.location.href("../SupportingDocuments/OpenPDFDocFileFromPath");
+            //});
+
+
+        }); // END >>> Document >>>> END>>>
+
+    </script>

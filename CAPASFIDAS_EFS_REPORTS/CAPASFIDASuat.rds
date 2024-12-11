@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CAPASFIDASuat">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=UCFDB1S2\UCFDB;Initial Catalog=CAPASFIDAS</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>22fc971e-5dc2-4956-83ad-f9b91df67bf9</DataSourceID>
+</RptDataSource>

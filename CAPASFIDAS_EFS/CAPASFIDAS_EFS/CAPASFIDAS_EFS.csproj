@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7207AA74-D77E-49EE-8BE6-18CC960DA8F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAPASFIDAS_EFS</RootNamespace>
+    <AssemblyName>CAPASFIDAS_EFS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CAPASFIDAS_EH, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CAPASFIDAS_EH.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.2\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\SAML_Interface.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CommonErrors\CommonErrorsServerSide.cs" />
+    <Compile Include="Common\CommonMethods.cs" />
+    <Compile Include="Common\CommonValidation.cs" />
+    <Compile Include="Controllers\AddAsstTreasurerInfoController.cs" />
+    <Compile Include="Controllers\AddAuthSignChecksDetailsController.cs" />
+    <Compile Include="Controllers\AddBankDetailsController.cs" />
+    <Compile Include="Controllers\AddContactController.cs" />
+    <Compile Include="Controllers\AddEditAddressController.cs" />
+    <Compile Include="Controllers\AddTransDepositoryBankInfoController.cs" />
+    <Compile Include="Controllers\AmendDisclosureReportController.cs" />
+    <Compile Include="Controllers\CandidateProfileController.cs" />
+    <Compile Include="Controllers\ContributionInKindController.cs" />
+    <Compile Include="Controllers\ContributionLimitsController.cs" />
+    <Compile Include="Controllers\ContributionRefundedSchedMController.cs" />
+    <Compile Include="Controllers\ContributionsCandIndFamilyController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\FileDisclosureSummeryController.cs" />
+    <Compile Include="Controllers\HelpMenuController.cs" />
+    <Compile Include="Controllers\ImportDisclosureReportController.cs" />
+    <Compile Include="Controllers\LoanAndLiabilityReconciliationController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutPageController.cs" />
+    <Compile Include="Controllers\NonItemIE24HourPIDAExpenditureSchedFController.cs" />
+    <Compile Include="Controllers\PublicFundExpensesSchedTController.cs" />
+    <Compile Include="Controllers\PublicFundReceiptsSchedSController.cs" />
+    <Compile Include="Controllers\PublicFundRepaymentSchedUController.cs" />
+    <Compile Include="Controllers\ReleaseNoteController.cs" />
+    <Compile Include="Controllers\TestCentrifyController.cs" />
+    <Compile Include="Controllers\UnAuthorizedAccessController.cs" />
+    <Compile Include="Controllers\UnderMaintanceController.cs" />
+    <Compile Include="Controllers\ViewAllApplicationController.cs" />
+    <Compile Include="Controllers\ViewSupportingDocumentsController.cs" />
+    <Compile Include="Controllers\ViewAllDisclosuresController.cs" />
+    <Compile Include="Controllers\DisclosureReportSummaryController.cs" />
+    <Compile Include="Controllers\divUC_24HourNoticeController.cs" />
+    <Compile Include="Controllers\divUC_IndependentExpenditureController.cs" />
+    <Compile Include="Controllers\divUC_InLieuOfStatementController.cs" />
+    <Compile Include="Controllers\DRSummery_AsEnteredController.cs" />
+    <Compile Include="Controllers\DRSummery_AsTRTypeController.cs" />
+    <Compile Include="Controllers\DRSummery_ByScheduleController.cs" />
+    <Compile Include="Controllers\EditAddressController.cs" />
+    <Compile Include="Controllers\EditAsstTreasurerInfoController.cs" />
+    <Compile Include="Controllers\EditAuthSignChecksController.cs" />
+    <Compile Include="Controllers\EditBankDetailsController.cs" />
+    <Compile Include="Controllers\EditContactController.cs" />
+    <Compile Include="Controllers\ContributionsMonetaryController.cs" />
+    <Compile Include="Controllers\EditTransDepositoryBankInfoController.cs" />
+    <Compile Include="Controllers\ExpenditurePaymentsSchedFController.cs" />
+    <Compile Include="Controllers\ExpenditureRefundsSchedLController.cs" />
+    <Compile Include="Controllers\ExpensesAllocationScheRController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InLieuOfStatementController.cs" />
+    <Compile Include="Controllers\LiabilitiesLoansForgivenSchedKController.cs" />
+    <Compile Include="Controllers\LoanReceivedSchedIController.cs" />
+    <Compile Include="Controllers\LoanRepaymentsSchedJController.cs" />
+    <Compile Include="Controllers\NoActivityReportController.cs" />
+    <Compile Include="Controllers\NonCampaignHousekeepingExpensesSchedQController.cs" />
+    <Compile Include="Controllers\NonCampaignHousekeepingReceiptsSchedPController.cs" />
+    <Compile Include="Controllers\NonItemCampaignMaterialController.cs" />
+    <Compile Include="Controllers\NonItemIE24HContributionSchedAController.cs" />
+    <Compile Include="Controllers\NonItemIE24HContributionSchedBController.cs" />
+    <Compile Include="Controllers\NonItemIE24HContributionSchedCController.cs" />
+    <Compile Include="Controllers\NonItemIE24HContributionSchedDController.cs" />
+    <Compile Include="Controllers\NonItemIE24HContributionSchedIController.cs" />
+    <Compile Include="Controllers\NonItemIE24HourExpenditureSchedFController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyContributionSchedAController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyContributionSchedBController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyContributionSchedCController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyContributionSchedDController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyContributionSchedIController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyExpenditureSchedFController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyLiabilityIncurredSchedNController.cs" />
+    <Compile Include="Controllers\NonItemIEWeeklyPIDAExpenditureSchedFController.cs" />
+    <Compile Include="Controllers\NonItemizedTransactionSchedAController.cs" />
+    <Compile Include="Controllers\NonItemizedTransactionSchedBController.cs" />
+    <Compile Include="Controllers\NonItemizedTransactionSchedCController.cs" />
+    <Compile Include="Controllers\NonItemizedTransactionSchedDController.cs" />
+    <Compile Include="Controllers\NonItemizedTransactionSchedIController.cs" />
+    <Compile Include="Controllers\NoticeOfNonParticipationController.cs" />
+    <Compile Include="Controllers\OtherReceiptsReceivedSchedEController.cs" />
+    <Compile Include="Controllers\OutStandingLiabilityLoansSchedNController.cs" />
+    <Compile Include="Controllers\RoleMapController.cs" />
+    <Compile Include="Controllers\SupportingDocumentsController.cs" />
+    <Compile Include="Controllers\TestGridController.cs" />
+    <Compile Include="Controllers\TransferInScheGController.cs" />
+    <Compile Include="Controllers\TransferOutSchedHController.cs" />
+    <Compile Include="Controllers\TreasurerProfileController.cs" />
+    <Compile Include="Controllers\UC_NoActivityReportController.cs" />
+    <Compile Include="Controllers\UC_NoticeofNonParticipationController.cs" />
+    <Compile Include="Controllers\WeeklyClaimSubmission.cs" />
+    <Compile Include="Controllers\_MasterLayoutController.cs" />
+    <Compile Include="Controllers\_UC_Address_TreasurerController.cs" />
+    <Compile Include="Controllers\_UC_DR_Summary_Opt2Controller.cs" />
+    <Compile Include="Controllers\_UC_DR_Summary_Opt3Controller.cs" />
+    <Compile Include="Controllers\_UC_D_ContributionInKindController.cs" />
+    <Compile Include="Controllers\_UC_ABCO_Cand_Unitemized_PartnershipController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedAController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedBController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedCController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedDController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedEController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedFController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedGController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedHController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedIController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedJController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedKController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedLController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedMController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedNController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedOController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedPController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedQController.cs" />
+    <Compile Include="Controllers\_UC_DR_SchedRController.cs" />
+    <Compile Include="Controllers\_UC_DR_SummaryController.cs" />
+    <Compile Include="Controllers\_UC_E_OtherReceiptsController.cs" />
+    <Compile Include="Controllers\_UC_FileUploadController.cs" />
+    <Compile Include="Controllers\_UC_F_ExpenditurePaymentsController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonControlController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonNIIE24HContributionController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonNIIEWeeklyContributionController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonNIIEWeeklyExpenditureController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonNIIEWeeklyLiabilityIncurredController.cs" />
+    <Compile Include="Controllers\_UC_GridCommonNonItem24HourNoticeController.cs" />
+    <Compile Include="Controllers\_UC_H_TransferOutController.cs" />
+    <Compile Include="Controllers\_UC_I_LoanReceivedController.cs" />
+    <Compile Include="Controllers\_UC_G_TransferInController.cs" />
+    <Compile Include="Controllers\_UC_JQueryGridController.cs" />
+    <Compile Include="Controllers\_UC_J_LoanRepaymentsController.cs" />
+    <Compile Include="Controllers\_UC_K_LoanLiabilitiesForgivenController.cs" />
+    <Compile Include="Controllers\_UC_L_ExpenditureRefundsController.cs" />
+    <Compile Include="Controllers\_UC_M_ContributionRefundedController.cs" />
+    <Compile Include="Controllers\_UC_N_OutstandingLiabilitiesController.cs" />
+    <Compile Include="Controllers\_UC_P_HousekeepingReceiptsController.cs" />
+    <Compile Include="Controllers\_UC_Q_NonHousekeepingExpensesController.cs" />
+    <Compile Include="Controllers\_UC_R_AmountAllocatedController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-3.boe-extensions.css" />
+    <Content Include="Content\bootstrap-boe-overides.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.datatables.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\Images\ajax-loader-100px.gif" />
+    <Content Include="Content\Images\ajax-loader-100px.svg" />
+    <Content Include="Content\Images\icon-boe-add30px.png" />
+    <Content Include="Content\Images\icon-boe-reload30px.png" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.20\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\css\jquery.dataTables-boe-overides.css" />
+    <Content Include="Content\DataTables-1.10.20\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\AutoFill\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\AutoFill\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\AutoFill\images\filler.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\ColReorder\images\insert.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\colVis\css\dataTables.colVis.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\colVis\css\dataTables.colVis.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedColumns\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\FixedHeader\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\KeyTable\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\KeyTable\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\dataTables.responsive.nightly.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Responsive\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Scroller\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Scroller\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\background.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\collection.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\copy.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\csv.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\pdf.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\print.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\xls.png" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Content\DataTables-1.10.20\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.20\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.20\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.20\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.20\images\sort_desc_disabled.png" />
+    <Content Include="Content\Images\add.png" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\BLACKDOWN.png" />
+    <Content Include="Content\Images\BLACKRIGHT.png" />
+    <Content Include="Content\Images\Calendar.png" />
+    <Content Include="Content\Images\clear.png" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\deletestar.jpg" />
+    <Content Include="Content\Images\down20.png" />
+    <Content Include="Content\Images\downthin.png" />
+    <Content Include="Content\Images\edit.png" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\footergradient.png" />
+    <Content Include="Content\Images\help.png" />
+    <Content Include="Content\Images\images.png" />
+    <Content Include="Content\Images\Menu.png" />
+    <Content Include="Content\Images\PDF.gif" />
+    <Content Include="Content\Images\right20.png" />
+    <Content Include="Content\Images\Save.png" />
+    <Content Include="Content\Images\star.png" />
+    <Content Include="Content\Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Images\up20.png" />
+    <Content Include="Content\Images\white_down.png" />
+    <Content Include="Content\Images\white_right.png" />
+    <Content Include="Content\jquery-ui-1.12.1-boe-overides.css" />
+    <Content Include="Content\jquery-ui-1.12.1-site-overrides.css" />
+    <Content Include="Content\jquery-ui-1.13.2.css" />
+    <Content Include="Content\jquery-ui-1.13.2.min.css" />
+    <Content Include="Content\jquery-ui-1.13.2.structure.css" />
+    <Content Include="Content\jquery-ui-1.13.2.structure.min.css" />
+    <Content Include="Content\jquery-ui-1.13.2.theme.css" />
+    <Content Include="Content\jquery-ui-1.13.2.theme.min.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Content\jquery.timepicker.css" />
+    <Content Include="Content\jquery.timepicker.min.css" />
+    <Content Include="Content\jquery.validate.unobstrusive-boe-overides.css" />
+    <Content Include="Content\multiple-select\multiple-select-1.5.2-boe-overides.css" />
+    <Content Include="Content\multiple-select\multiple-select-1.5.2.css" />
+    <Content Include="Content\multiple-select\multiple-select-1.5.2.min.css" />
+    <Content Include="Content\multiple-select\multiple-select.png" />
+    <Content Include="Content\responsive.bootstrap.min.css" />
+    <Content Include="Content\ResponsiveMobile.css" />
+    <Content Include="Content\ResponsiveTablet.css" />
+    <Content Include="Content\site-temp-overrides-and-workaround.css" />
+    <Content Include="Content\site-boe-common.css" />
+    <Content Include="Content\spin.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AlertMessageBox.js" />
+    <Content Include="Scripts\ApplicationCommonCode_EFS.js" />
+    <Content Include="Scripts\boe.accessibility-helper.common.js" />
+    <Content Include="Scripts\boe.app-utilities.common.js" />
+    <Content Include="Scripts\bootstrap-3.boe-extensions.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.datatables.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\SupportingDocuments\EnforcementReferralListReport.pdf" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Certificates\SignCertFromCentrify.cer" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Content\DataTables-1.10.20\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\EFS.pubxml" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\datetime-moment.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\KeyTable\js\keyTable.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\KeyTable\js\keyTable.dataTables.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\KeyTable\Readme.txt" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\Scroller\js\scroller.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\Scroller\js\scroller.dataTables.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\Scroller\Readme.txt" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\TableTools\Readme.txt" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Scripts\DataTables-1.10.20\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.10.20\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\dataTables.boe-accessibility-helper.js" />
+    <Content Include="Scripts\datatables.extensions\Responsive\Readme.md" />
+    <None Include="Properties\PublishProfiles\EFSCode.pubxml" />
+    <Content Include="Scripts\datatables.extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Scripts\datatables.extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\datatables.extensions\AutoFill\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\datatables.extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\datatables.extensions\ColReorder\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Scripts\datatables.extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Scripts\datatables.extensions\ColVis\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\datatables.extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\datatables.extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\datatables.extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\datatables.extensions\FixedHeader\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Scripts\datatables.extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\datatables.extensions\KeyTable\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Scripts\datatables.extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\datatables.extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Scripts\datatables.extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\datatables.extensions\Scroller\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Scripts\datatables.extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Scripts\datatables.extensions\TableTools\Readme.txt" />
+    <Content Include="Scripts\datatables.extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Scripts\datatables.extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Scripts\jquery-ui-datePicker-accessibility-helper.js" />
+    <Content Include="Scripts\jquery-ui-global-accessibility-helper.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1-with-locales.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1-with-locales.min.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1.js" />
+    <Content Include="Scripts\DatePicker.js" />
+    <Content Include="Scripts\EFS-Validations.js" />
+    <Content Include="Scripts\FixedColumns.js" />
+    <Content Include="Scripts\HelpMessageBox.js" />
+    <Content Include="Scripts\JavaScript_1_12_3.js" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1.min.js.map" />
+    <Content Include="Scripts\DataTables-1.10.20\plugins\moment-2.29.1-with-locales.min.js.map" />
+    <Content Include="Scripts\jquery-migrate-1.4.1.js" />
+    <Content Include="Scripts\jquery-migrate-3.1.0.js" />
+    <Content Include="Scripts\jquery-migrate-3.1.0.min.js" />
+    <Content Include="Scripts\jquery.freezeheader.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\knockout-2.3.0.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\multiple-select-1.5.2.js" />
+    <Content Include="Scripts\multiple-select-1.5.2.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\PageTab2.js" />
+    <Content Include="Scripts\PageTab3.js" />
+    <Content Include="Scripts\PageTabs.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_HelpMaster.cshtml" />
+    <Content Include="Views\Shared\_MasterLayout.cshtml" />
+    <Content Include="Views\ContributionLimits\ContributionLimits.cshtml" />
+    <Content Include="Views\CandidateProfile\CandidateProfile.cshtml" />
+    <Content Include="Views\AddAuthSignChecksDetails\AddAuthSignChecksDetails.cshtml" />
+    <Content Include="Views\AddBankDetails\AddBankDetails.cshtml" />
+    <Content Include="Views\AddContact\AddContact.cshtml" />
+    <Content Include="Views\AddEditAddress\AddEditAddress.cshtml" />
+    <Content Include="Views\AmendDisclosureReport\AmendDisclosureReport.cshtml" />
+    <Content Include="Views\ContributionsMonetary\ContributionsMonetary.cshtml" />
+    <Content Include="Views\EditAddress\EditAddress.cshtml" />
+    <Content Include="Views\EditBankDetails\EditBankDetails.cshtml" />
+    <Content Include="Views\EditContact\EditContact.cshtml" />
+    <Content Include="Views\EditAuthSignChecks\EditAuthSignChecks.cshtml" />
+    <Content Include="Views\TreasurerProfile\TreasurerProfile.cshtml" />
+    <Content Include="Views\AddAsstTreasurerInfo\AddAsstTreasurerInfo.cshtml" />
+    <Content Include="Views\EditAsstTreasurerInfo\EditAsstTreasurerInfo.cshtml" />
+    <Content Include="Views\Shared\_UC_ABCO_Cand_Unitemized_Partnership\_UC_ABCO_Cand_Unitemized_Partnership.cshtml" />
+    <Content Include="Views\Shared\_UC_D_ContributionInKind\_UC_D_ContributionInKind.cshtml" />
+    <Content Include="Views\Shared\_UC_G_TransferIn\_UC_G_TransferIn.cshtml" />
+    <Content Include="Views\DisclosureReportSummary\DisclosureReportSummary.cshtml" />
+    <Content Include="Views\Shared\_UC_I_LoanReceived\_UC_I_LoanReceived.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_Summary\_UC_DR_Summary.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedA\_UC_DR_SchedA.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedB\_UC_DR_SchedB.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedC\_UC_DR_SchedC.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedD\_UC_DR_SchedD.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedE\_UC_DR_SchedE.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedF\_UC_DR_SchedF.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedG\_UC_DR_SchedG.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedH\_UC_DR_SchedH.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedI\_UC_DR_SchedI.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedJ\_UC_DR_SchedJ.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedK\_UC_DR_SchedK.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedL\_UC_DR_SchedL.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedM\_UC_DR_SchedM.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedN\_UC_DR_SchedN.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedO\_UC_DR_SchedO.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedP\_UC_DR_SchedP.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedQ\_UC_DR_SchedQ.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_SchedR\_UC_DR_SchedR.cshtml" />
+    <Content Include="Views\Shared\_UC_L_ExpenditureRefunds\_UC_L_ExpenditureRefunds.cshtml" />
+    <Content Include="Views\Shared\_UC_P_HousekeepingReceipts\_UC_P_HousekeepingReceipts.cshtml" />
+    <Content Include="Views\Shared\_UC_E_OtherReceipts\_UC_E_OtherReceipts.cshtml" />
+    <Content Include="Views\Shared\_UC_F_ExpenditurePayments\_UC_F_ExpenditurePayments.cshtml" />
+    <Content Include="Views\Shared\_UC_H_TransferOut\_UC_H_TransferOut.cshtml" />
+    <Content Include="Views\Shared\_UC_J_LoanRepayments\_UC_J_LoanRepayments.cshtml" />
+    <Content Include="Views\Shared\_UC_M_ContributionRefunded\_UC_M_ContributionRefunded.cshtml" />
+    <Content Include="Views\Shared\_UC_Q_NonHousekeepingExpenses\_UC_Q_NonHousekeepingExpenses.cshtml" />
+    <Content Include="Views\Shared\_UC_K_LoanLiabilitiesForgiven\_UC_K_LoanLiabilitiesForgiven.cshtml" />
+    <Content Include="Views\Shared\_UC_N_OutstandingLiabilities\_UC_N_OutstandingLiabilities.cshtml" />
+    <Content Include="Views\Shared\_UC_R_AmountAllocated\_UC_R_AmountAllocated.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\SupportingDocuments\SupportingDocuments.cshtml" />
+    <Content Include="Views\Shared\divUC_InLieuOfStatement\divUC_InLieuOfStatement.cshtml" />
+    <Content Include="Views\Shared\UC_NoActivityReport\UC_NoActivityReport.cshtml" />
+    <Content Include="Views\Shared\UC_NoticeofNonParticipation\UC_NoticeofNonParticipation.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_Summary_Opt2\_UC_DR_Summary_Opt2.cshtml" />
+    <Content Include="Views\Shared\_UC_DR_Summary_Opt3\_UC_DR_Summary_Opt3.cshtml" />
+    <Content Include="Views\Shared\divUC_24HourNotice\divUC_24HourNotice.cshtml" />
+    <Content Include="Views\Shared\divUC_IndependentExpenditure\divUC_IndependentExpenditure.cshtml" />
+    <Content Include="Views\ContributionsCandIndFamily\ContributionsCandIndFamily.cshtml" />
+    <Content Include="Views\ContributionInKind\ContributionInKind.cshtml" />
+    <Content Include="Views\ExpenditurePaymentsSchedF\ExpenditurePaymentsSchedF.cshtml" />
+    <Content Include="Views\TransferOutSchedH\TransferOutSchedH.cshtml" />
+    <Content Include="Views\EditTransDepositoryBankInfo\EditTransDepositoryBankInfo.cshtml" />
+    <Content Include="Views\AddTransDepositoryBankInfo\AddTransDepositoryBankInfo.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CurrentDate.cshtml" />
+    <Content Include="Views\TransferInScheG\TransferInScheG.cshtml" />
+    <Content Include="Views\LoanReceivedSchedI\LoanReceivedSchedI.cshtml" />
+    <Content Include="Views\LoanRepaymentsSchedJ\LoanRepaymentsSchedJ.cshtml" />
+    <Content Include="Views\ExpenditureRefundsSchedL\ExpenditureRefundsSchedL.cshtml" />
+    <Content Include="Views\ContributionRefundedSchedM\ContributionRefundedSchedM.cshtml" />
+    <Content Include="Views\NonCampaignHousekeepingExpensesSchedQ\NonCampaignHousekeepingExpensesSchedQ.cshtml" />
+    <Content Include="Views\NonCampaignHousekeepingReceiptsSchedP\NonCampaignHousekeepingReceiptsSchedP.cshtml" />
+    <Content Include="Views\OtherReceiptsReceivedSchedE\OtherReceiptsReceivedSchedE.cshtml" />
+    <Content Include="Views\OutStandingLiabilityLoansSchedN\OutStandingLiabilityLoansSchedN.cshtml" />
+    <Content Include="Views\ExpensesAllocationScheR\ExpensesAllocationScheR.cshtml" />
+    <Content Include="Views\LiabilitiesLoansForgivenSchedK\LiabilitiesLoansForgivenSchedK.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Loding.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_ZipCode.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonControl.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Address.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_FileUpload.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanReceived_Add_Update.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Filters.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanRepayment_Add_Update.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Outstanding_Liability_Loans_AddUpdate.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanReceived_Sche_N_Add_Update.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_JQueryGrid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_OutstandingLoans_LoanReceived_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_OutstandingLoans_LoanRepayment_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanReceived_OutstandingLoans_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanReceived_LoanRepayment_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanRepayment_OutstandingLoans_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanRepayment_LoanReceived_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CurrentDateSchedF.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanForgiven_OtustandingLoans_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanForgiven_LoanReceived_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Address_Treasurer.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CommonProfile_Address.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CommonProfile_Contact.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_LoanReceived_LoanForgiven_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Alert_Message.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CurrentDateReimDetSchedF.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_CureentDate_Sched_N.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Address_Sched_N.cshtml" />
+    <Content Include="Views\RoleMap\RoleMap.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Delete_Message.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Expenditure_Payments_ExpPayments_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Expenditure_Payments_OrgLiab_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Expenditure_Payments_OutLiab_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Expenditure_Payments_LiabilityForgiven_Grid.cshtml" />
+    <Content Include="Views\InLieuOfStatement\InLieuOfStatement.cshtml" />
+    <Content Include="Views\NoActivityReport\NoActivityReport.cshtml" />
+    <Content Include="Views\NoticeOfNonParticipation\NoticeOfNonParticipation.cshtml" />
+    <Content Include="Views\NonItemizedTransactionSchedA\NonItemizedTransactionSchedA.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonNonItem24HourNotice.cshtml" />
+    <Content Include="Views\NonItemizedTransactionSchedB\NonItemizedTransactionSchedB.cshtml" />
+    <Content Include="Views\NonItemizedTransactionSchedC\NonItemizedTransactionSchedC.cshtml" />
+    <Content Include="Views\NonItemizedTransactionSchedD\NonItemizedTransactionSchedD.cshtml" />
+    <Content Include="Views\NonItemizedTransactionSchedI\NonItemizedTransactionSchedI.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItem24HNotice_History_Grid.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyContributionSchedA\NonItemIEWeeklyContributionSchedA.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonNIIEWeeklyContribution.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItemIETransactions_History_Grid.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Itemized_IE_Transactions_Grid.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyContributionSchedB\NonItemIEWeeklyContributionSchedB.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyContributionSchedC\NonItemIEWeeklyContributionSchedC.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyContributionSchedD\NonItemIEWeeklyContributionSchedD.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyContributionSchedI\NonItemIEWeeklyContributionSchedI.cshtml" />
+    <Content Include="Views\NonItemIE24HContributionSchedA\NonItemIE24HContributionSchedA.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonNIIE24HContribution.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItemIE24HContribution_History_Grid.cshtml" />
+    <Content Include="Views\NonItemIE24HContributionSchedB\NonItemIE24HContributionSchedB.cshtml" />
+    <Content Include="Views\NonItemIE24HContributionSchedC\NonItemIE24HContributionSchedC.cshtml" />
+    <Content Include="Views\NonItemIE24HContributionSchedD\NonItemIE24HContributionSchedD.cshtml" />
+    <Content Include="Views\NonItemIE24HContributionSchedI\NonItemIE24HContributionSchedI.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyExpenditureSchedF\NonItemIEWeeklyExpenditureSchedF.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonNIIEWeeklyExpenditure.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItemIEWeeklyExpenditure_History_Grid.cshtml" />
+    <Content Include="Views\NonItemIE24HourExpenditureSchedF\NonItemIE24HourExpenditureSchedF.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyPIDAExpenditureSchedF\NonItemIEWeeklyPIDAExpenditureSchedF.cshtml" />
+    <Content Include="Views\NonItemIEWeeklyLiabilityIncurredSchedN\NonItemIEWeeklyLiabilityIncurredSchedN.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_GridCommonNIIEWeeklyLiabilityIncurred.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItemIEWeeklyLiabIncr_History_Grid.cshtml" />
+    <Content Include="Views\NonItemCampaignMaterial\NonItemCampaignMaterial.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_NonItemCapaignMaterial_Grid.cshtml" />
+    <Content Include="Views\ViewAllDisclosures\ViewAllDisclosures.cshtml" />
+    <Content Include="Views\ViewSupportingDocuments\ViewSupportingDocuments.cshtml" />
+    <Content Include="Views\FileDisclosureSummery\FileDisclosureSummery.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\ViewAllApplication\ViewAllApplication.cshtml" />
+    <Content Include="Views\Shared\ApplicationMaster.cshtml" />
+    <Content Include="Views\LoanAndLiabilityReconciliation\LoanAndLiabilityReconciliation.cshtml" />
+    <Content Include="Views\Shared\UserControls\_SpinnerPV.cshtml" />
+    <Content Include="Views\ContributionsCandIndFamily\GetScheduleAHelpPopUp.cshtml" />
+    <Content Include="Views\ContributionsCandIndFamily\GetScheduleBHelpPopUp.cshtml" />
+    <Content Include="Views\ContributionsCandIndFamily\GetScheduleCHelpPopUp.cshtml" />
+    <Content Include="Views\ContributionInKind\GetScheduleDHelpPopUp.cshtml" />
+    <Content Include="Views\OtherReceiptsReceivedSchedE\GetScheduleEHelpPopUp.cshtml" />
+    <Content Include="Views\ExpenditurePaymentsSchedF\GetScheduleFHelpPopUp.cshtml" />
+    <Content Include="Views\TransferInScheG\GetScheduleGHelpPopUp.cshtml" />
+    <Content Include="Views\TransferOutSchedH\GetScheduleHHelpPopUp.cshtml" />
+    <Content Include="Views\LoanReceivedSchedI\GetScheduleIHelpPopUp.cshtml" />
+    <Content Include="Views\LoanRepaymentsSchedJ\GetScheduleJHelpPopUp.cshtml" />
+    <Content Include="Views\LiabilitiesLoansForgivenSchedK\GetScheduleKHelpPopUp.cshtml" />
+    <Content Include="Views\ExpenditureRefundsSchedL\GetScheduleLHelpPopUp.cshtml" />
+    <Content Include="Views\ContributionRefundedSchedM\GetScheduleMHelpPopUp.cshtml" />
+    <Content Include="Views\OutStandingLiabilityLoansSchedN\GetScheduleNHelpPopUp.cshtml" />
+    <Content Include="Views\NonCampaignHousekeepingReceiptsSchedP\GetSchedulePHelpPopUp.cshtml" />
+    <Content Include="Views\NonCampaignHousekeepingExpensesSchedQ\GetScheduleQHelpPopUp.cshtml" />
+    <Content Include="Views\ExpensesAllocationScheR\GetScheduleRHelpPopUp.cshtml" />
+    <Content Include="Views\HelpMenu\HelpDisclosureRpt.cshtml" />
+    <Content Include="Views\HelpMenu\HelpViewDisclosureRpt.cshtml" />
+    <Content Include="Views\HelpMenu\HelpEditDeleteTrans.cshtml" />
+    <Content Include="Views\HelpMenu\HelpDeleteDisclosureRpt.cshtml" />
+    <Content Include="Views\HelpMenu\HelpSubmitDisclosureRpt.cshtml" />
+    <Content Include="Views\HelpMenu\HelpUploadSupportingDocs.cshtml" />
+    <Content Include="Views\HelpMenu\HelpRptCampaignMatrls.cshtml" />
+    <Content Include="Views\TestCentrify\TestCentrify.cshtml" />
+    <Content Include="Views\UnAuthorizedAccess\UnAuthorizedAccess.cshtml" />
+    <Content Include="Views\ErrorPage\ErrorPage.cshtml" />
+    <Content Include="Views\LogoutPage\LogoutPage.cshtml" />
+    <Content Include="Views\ImportDisclosureReport\ImportDisclosureReport.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Import_Disclosure_Reports_Grid.cshtml" />
+    <Content Include="Views\NonItemIE24HourPIDAExpenditureSchedF\NonItemIE24HourPIDAExpenditureSchedF.cshtml" />
+    <Content Include="Views\ContributionsMonetary\ContributionsMonetarySearchHelp.cshtml" />
+    <Content Include="Views\ViewAllDisclosures\ViewAllDisclosuresSearchHelp.cshtml" />
+    <Content Include="Views\DisclosureReportSummary\DisclosureReportSummarySearchHelp.cshtml" />
+    <Content Include="Views\ViewSupportingDocuments\ViewSupportingDocumentsSearchHelp.cshtml" />
+    <Content Include="Views\HelpMenu\HelpReconcileLoans.cshtml" />
+    <Content Include="Views\HelpMenu\HelpImportDisclosureReports.cshtml" />
+    <Content Include="Views\ImportDisclosureReport\ImportDisclosureReportSearchHelp.cshtml" />
+    <Content Include="Views\LoanAndLiabilityReconciliation\LoanAndLiabilityReconciliationSearchHelp.cshtml" />
+    <Content Include="Views\UnderMaintance\UnderMaintance.cshtml" />
+    <Content Include="Views\ContributionsCandIndFamily\GetScheduleAHelpPopUp_Import.cshtml" />
+    <Content Include="Views\ReleaseNote\ReleaseNote.cshtml" />
+    <Content Include="Views\WeeklyClaimSubmission\WeeklyClaimSubmission.cshtml" />
+    <Content Include="Views\PublicFundReceiptsSchedS\PublicFundReceiptsSchedS.cshtml" />
+    <Content Include="Views\PublicFundReceiptsSchedS\GetScheduleSHelpPopUp.cshtml" />
+    <Content Include="Views\PublicFundExpensesSchedT\GetScheduleTHelpPopUp.cshtml" />
+    <Content Include="Views\PublicFundExpensesSchedT\PublicFundExpensesSchedT.cshtml" />
+    <Content Include="Views\Shared\UserControls\_UC_Expenditure_Payments_SchtT_Grid.cshtml" />
+    <Content Include="Views\PublicFundRepaymentSchedU\GetScheduleUHelpPopUp.cshtml" />
+    <Content Include="Views\PublicFundRepaymentSchedU\PublicFundRepaymentSchedU.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\moment.min.js.map" />
+    <Content Include="Scripts\moment-with-locales.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\_MasterLayout\" />
+    <Folder Include="Views\_UC_Address_Treasurer\" />
+    <Folder Include="Views\_UC_FileUpload\" />
+    <Folder Include="Views\_UC_GridCommonControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BOE.CAPASFIDAS_EFS.Domain\BOE.CAPASFIDAS_EFS.Domain.csproj">
+      <Project>{77ba0916-0c1a-4339-a02b-b3fa43b5f168}</Project>
+      <Name>BOE.CAPASFIDAS_EFS.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56695</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56695/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

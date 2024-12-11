@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "ContributionsMonetarySearchHelp";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone" class="clspaddingleft1em paddingTop1em">
+    <div data-role="header">
+        <h1>File a Disclosure Report Filter</h1>        
+        <br />
+    </div>
+    <div class="helpFilterHeaderTxt">
+        <p>This Search returns saved Filing Transaction(s) according to the search parameters selected.</p>
+        <p>This Search also facilitates to initiate the steps for adding a specific Transaction Type with respective to the parameters selected in the search section.</p>
+        <p>* indicates a required field</p>
+        <br />
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Filer ID</h3>
+                <div>
+                    <p>System populates Filer ID dropdown field with all the Filer IDs mapped with the User ID of the logged in User. Click on Filer ID dropdown field and select a value from the list.</p>
+                    <p>If only one Filer ID is mapped with the User ID, then system displays that Filer ID as default value in Filer ID dropdown field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Filer Type</h3>
+                <div>
+                    <p>When Filer ID is selected to search the details, filer type details (State/Local or Village) is displayed in this display-only field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Candidate/Committee Name</h3>
+                <div>
+                    <p>System displays the name of the candidate or committee in Candidate/Committee Name display-only field based on the Filer ID.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Report Year</h3>
+                <div>
+                    <p>System populates Report Year dropdown field with the value from Political Calendar. Click on Report Year dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Election Type</h3>
+                <div>
+                    <p>Election Type dropdown field is enabled after a Report Year is selected in Report Year dropdown field. System populates Election Type dropdown field from Political Calendar based on the value selected in Report Year dropdown field. Click on Election Type dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Report Type</h3>
+                <div>
+                    <p>Report Type dropdown field is enabled after an Election Type is selected in Election Type dropdown field. System populates Report Type dropdown field from Political Calendar based on the value selected in Report Year and Election Type dropdown fields. Click on Report Type dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Election Date</h3>
+                <div>
+                    <p>Election Date dropdown field is enabled after a Report Type is selected in Report Type dropdown field. System populates Election Date dropdown field from Political Calendar based on the value selected in Report Year, Election Type and Report Type dropdown fields.</p>
+                    <p>Other than Report Type as Special and in case of some Village Elections, system populates the election date as the default and only value in this field.</p>
+                    <p>For Report Type as Special and in case of some Village Elections, click on Election Date dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Disclosure Type</h3>
+                <div>
+                    <p>Disclosure Type dropdown field is enabled after an Election Date is displayed/selected in Election Date dropdown field. System populates Disclosure Type dropdown field based on the value selected in Filer ID field. Click on Disclosure Type dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Disclosure Period</h3>
+                <div>
+                    <p>Disclosure Period dropdown field is enabled after a Disclosure Type is selected in Disclosure Type dropdown field. System populates Disclosure Period dropdown field based on the value selected in Report Type and Disclosure Type dropdown fields. Click on Disclosure Period dropdown field and select a value from the list.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Cut Off Date and Filing Date</h3>
+                <div>
+                    <p>System displays the disabled Cut Off Date and Filing Date with value populated from Political Calendar based on the value selected in Report Year, Election Type, Report Type (except Off-Cycle), Election Date and Disclosure Type (as Itemized, In-Lieu-Of Statement, No-Activity Report).</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>From Date and To Date</h3>
+                <div>
+                    <p>System displays the disabled From Date and To Date with value populated from Political Calendar based on the value selected in Report Year, Election Type, Report Type (except Off-Cycle), Election Date and Disclosure Type (as 24-Hour Notice, IE-24 Hour Contribution).</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* Filing Date</h3>
+                <div>
+                    <p>System displays the enabled Filing Date dropdown field with the value New Filing Date only when Report Type is Off-Cycle or for any other Report Type when Disclosure Type is IE-Weekly Contribution, IE-Weekly Expenditure, IE-Weekly PIDA Expenditure, IE-Weekly Liabilities Incurred. System list all the exiting filing date(s) (if available) along with a value New Filing Date. Click on Filing Date dropdown field and select the value from the list.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>* New Filing Date</h3>
+                <div>
+                    <p>When Filing Date dropdown field appears and the value New Filing Date is selected in Filing Date dropdown field, New Filing Date field (mandatory date field) appears. Enter/select the new filing date. This date should be within the selected Report Year.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Resignation/Termination</h3>
+                <div>
+                    <p>For Report Type (as Primary / General / Special / Periodic) and Disclosure Type (as Itemized / No-Activity Report), system displays Resignation/Termination dropdown field as optional dropdown field. Click the Resignation/Termination dropdown field and select the value from the list.</p>
+                    <p>For Report Type (as Off-Cycle) and Disclosure Type (as Itemized / No-Activity Report), system displays Resignation/Termination dropdown field as mandatory dropdown field. Click the Resignation/Termination dropdown field and select the value from the list.</p>
+                    <p>For Report Type (as Primary / General / Special) and Disclosure Type (as In-Lieu-Of Statement / 24-Hour Notices / Notice of Non-Participation / IE-Weekly Contribution / IE-24 Hour Contribution / IE-Weekly Expenditure / IE-Weekly PIDA Expenditure / IE-Weekly Liabilities Incurred), system does not display Resignation/Termination dropdown field.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Apply Button</h3>
+                <div>
+                    <p>Click on the Apply button to execute the search once the relevant filter criteria are selected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Clear Button</h3>
+                <div>
+                    <p>Click on the Clear Button to reset the screen and start a new search.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

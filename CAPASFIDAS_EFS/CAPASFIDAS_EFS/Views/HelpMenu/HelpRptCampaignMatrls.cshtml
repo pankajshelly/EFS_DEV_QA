@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = ": Help Report Campaign Materials";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>How to Report Campaign Material:</h1>
+    </div>
+    <br />
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                @*<h1>How to Report Campaign Material:</h1>*@
+                <ol type="1">
+                    <li>Select <strong>File a Disclosure Report</strong> from the menu at the top of the screen.</li>
+                    <li>Verify <strong>Filer ID</strong> and <strong>Candidate/Committee Name</strong> are correct.</li>
+                    <li>
+                        Select the <strong>Report Year</strong>, <strong>Filer Type</strong>, <strong>Report Type</strong>, <strong>Election Date</strong>, <strong>Disclosure Type</strong> as <strong>Campaign Material</strong> from the Filter.  <strong>Disclosure Period</strong> will be defaulted to 27-Day Post-General.  Click <strong>Apply</strong>.
+                        <ul>
+                            <li>For <strong>Primary</strong>, <strong>General</strong>, and <strong>Special</strong> report types, the <strong>Election Date</strong> will be pre-populated in the dropdown based on the Political Calendar.   If more than one <strong>Election Date</strong>, then select the <strong>Election Date</strong>.</li>
+                            <li>For <strong>Off-Cycle</strong> report type, select an existing <strong>Filing Date</strong> or add a new <strong>Filing Date</strong>.</li>
+                            <li><strong>Periodic</strong> report type is not associated with an <strong>Election Date</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>Click on <strong>Report Campaign Material</strong> button in the upper right of the screen.</li>
+                    <li>If there is <strong>No Campaign Material to Report</strong> click the box to the right of No Campaign Material to Report.</li>
+                    <li>If there is Campaign Material to Report, type a brief description of the Campaign Material and browse to the location of the document.  Select document and click <strong>Open</strong>.</li>
+
+                    <li style="list-style-type: none;"><strong>Note:</strong>  Acceptable file types are PDF, JPEG, JPG, PNG and max size allowed is 5MB.</li>
+
+                    <li><strong>Submit</strong> the Campaign Material.  A transactions submitted successfully message will display.  Click <strong>Ok</strong> and click <strong>Close</strong> to close the <strong>Add Campaign Material</strong> dialog box.</li>
+                    <li>Click on the <strong>Campaign Material link</strong> under the <strong>Action</strong> column to view the document.</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

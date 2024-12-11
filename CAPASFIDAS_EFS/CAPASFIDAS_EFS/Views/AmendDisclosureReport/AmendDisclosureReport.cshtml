@@ -1,0 +1,378 @@
+﻿
+@{
+    ViewBag.Title = ": Amend Disclosure Report";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+@using (Html.BeginForm("AmendDisclosureReport", "AmendDisclosureReport", FormMethod.Get, new { id = "submitForm" }))
+{
+    @*Left Side Search Filter starts*@
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                View All Disclosure Reports
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                View All Disclosure Reports
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selector">
+                <div class="divWidth">
+                    <div class="floatRightNew clsShowButtonClass">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                            <input type="button" id="btnCommonSearch1" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear1" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp1" /></button>
+                        </fieldset>
+                    </div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtFilerID", @class = "txtWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtCommitteeName", @class = "txtWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    @*<div id="divReportPeriodDates">
+                            <div class="verticalCSSDestop lblCSS">
+                                <span id="lblReportPeriodDatesFrom">From</span>
+                            </div>
+                            <div class="verticalCSSDestop DDLCSS">
+                                @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth" , aria_labelledby = "lblReportPeriodDatesFrom" })
+                            </div>
+                        </div>
+                        <div id="divReportPeriodDatesTo">
+                            <div class="verticalCSSDestop lblCSS">
+                                <span id="lblReportPeriodDatesTo">To</span>
+                            </div>
+                            <div class="verticalCSSDestop DDLCSS">
+                                @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth" , aria_labelledby = "lblReportPeriodDatesTo" })
+                            </div>
+                        </div>
+                        <div id="divTransactionType">
+                            <div class="verticalCSSDestop lblCSS">
+                                <span id="lblTransactionType">Transaction Type</span>
+                            </div>
+                            <div class="verticalCSSDestop DDLCSS">
+                                @Html.DropDownList("lstTransactionType", ViewData["lstTransactionType"] as SelectList, new { @class = "spanMobileWidth" , aria_labelledby = "lblTransactionType" })
+                            </div>
+                        </div>*@
+                    <div class="floatRightNew">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Left Side Search Filter ends*@
+    @*Center Main Top section starts*@
+    <div id="divMainCenterTop" class="divMainCenterWidth85">
+        <div id="divBreadCrumb" class="breadCrumbDivCSS">
+            <nav aria-label="Breadcrumbs">
+                <ol class="breadcrumb">
+                    @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                    <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                    <li id="breadCrumbSchedA" class="active">View All Disclosure Reports</li>
+                </ol>
+            </nav>
+            <div id="divHeader">
+                <h1 id="lblHeader">View All Disclosure Reports</h1>
+            </div>
+        </div>
+    </div>
+    @*Center Main Top section ends*@
+    <!-- main grid starts-->
+
+    <div id="divMainRightBottom" class="divMainRightWidth85">
+        <div id="divShowHideHelp" class="clsShowHideHelpSec">
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 1
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Office Type of County if searching for a county filer, select State if searching for a state filer.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 2
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Status Active if searching for only active filers, &nbsp; <br /> select Terminated if searching for filers that have terminated or select All for a list of both.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 3
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Filer Type Candidate to search for candidates, &nbsp; <br /> select Committee to search for Committees or select All for a list of both.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 4
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Click on the Search button to display a list of data matching your criteria &nbsp; <br /> or continue to filter by selecting from the additional filter options.
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+        <div id="divGrid" style="float:none;">
+            <div style="float: right; padding: 1em;">
+                <span id="divexlPDF">
+                    <button type="button" id="btnCSVDownloadData" class="btn btn-default" name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon" />
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent" onclick="CallHelp();">
+                        <img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp3" />
+                    </button>
+                </span>
+            </div>
+            <table id="AmendDisclosureReportGrid" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Report Year</th>
+                        <th>Disclosure Type</th>
+                        <th>Reporting Cycle</th>
+                        <th>Report Period</th>
+                        <th>Status</th>
+                        <th>Date Submitted</th>
+                        <th>Last Updated</th>
+                        <th>Opening Balance</th>
+                        <th>Closing Balance</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    function CallHelp() {
+        window.open("#", "Help", "width=550, height=600,scrollbars=1");
+    }
+
+    $(document).ready(function () {
+
+        $("#txtFilerID").prop("disabled", true);
+        try {
+            $("#txtFilerID").val(Session["FilerID"].ToString());
+        } catch (e) {
+            console.warn("Warning:Session FillerID is not found.")
+            console.error(e);
+        }
+
+        $("#txtCommitteeName").prop("disabled", true);
+        $("#txtCommitteeName").val("FRIENDS OF CUOMO");
+
+        $("#main").addClass("SetHeightListOfFilers");
+        $("#main").removeClass("SetHeight");
+
+        sessionStorage.setDataTable = null;
+
+        //Show Hide Lookups
+        $("#divshow").hide();
+        $("#divshowForMobile").hide();
+
+        //$("#btnCommonHideShow").click(function () {
+        $m(".clsbtnCommonHideShow").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+
+            $("#selector").toggle("slow");
+            $("#divhide").show("slow");
+            $("#divshow").hide("slow");
+
+            $("#divhideForMobile").show("slow");
+            $("#divshowForMobile").hide("slow");
+
+            //$("#divGrid").css("width", "80%");
+            $("#divMainRightBottom").addClass("divMainRightWidth85").removeClass("divMainRightWidth100");
+        });
+
+        $("#btnShowHide").click(function () {
+            if ($("#divShowHide").is(":hidden")) {
+                $("#divMainNew").removeClass("mainDivNew");
+                $("#divMainNew").addClass("mainDiv");
+
+            } else {
+                $("#divMainNew").removeClass("mainDiv");
+                $("#divMainNew").addClass("mainDivNew");
+            }
+        });
+
+        $m(".clsbtnCommonShowHide").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+            $("#selector").toggle("slow");
+            $("#divhide").hide("slow");
+            $("#divshow").show("slow");
+
+            $("#divhideForMobile").hide("slow");
+            $("#divshowForMobile").show("slow");
+
+            $("#divMainRightBottom").addClass("divMainRightWidth100").removeClass("divMainRightWidth85");
+        });
+
+        $("#divGrid").hide();
+
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGrid").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            var tableAddress = $m('#AmendDisclosureReportGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../AmendDisclosureReport/GetAmendDisclosureReportSearchData",
+                "bAutoWidth": false,
+                "columns": [
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    null,
+                    null
+                ],
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit" title="Edit Row Data"><img src="../Content/Images/edit.png" /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove" title="Delete Row Data"><img src="../Content/Images/delete.png" /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#AmendDisclosureReportGrid').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+        });
+    });
+</script>
+
+

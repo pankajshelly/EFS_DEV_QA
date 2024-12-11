@@ -1,0 +1,115 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>NYSBOE: Electronic Filing System (EFS) @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+    <link href="~/Content/ResponsiveMobile.css" media="screen and (max-width: 500px)" rel="stylesheet" />
+    <link href="~/Content/ResponsiveTablet.css" media="screen and (min-width: 500px) and (max-width: 900px)" rel="stylesheet" />
+    <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+        Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+    <!--Minified script bundles-->
+    @Scripts.Render("~/Scripts/bundle-jquery")
+    @Scripts.Render("~/Scripts/DataTables-1.10.20/bundle-jquery-dataTables")
+    @Scripts.Render("~/Scripts/bundle-jquery-ui")
+    @Scripts.Render("~/Scripts/bundle-bootstrap")
+    @Scripts.Render("~/Scripts/bundle-other")
+    @Scripts.Render("~/Scripts/bundle-multiple-select")
+
+    <!--Style bundles-->
+    @Styles.Render("~/Content/bundle-base")
+    @Styles.Render("~/Content/bundle-jquery")
+    @Styles.Render("~/Content/bundle-jquery-ui")
+    @Styles.Render("~/Content/multiple-select/bundle-multiple-select")
+    @Styles.Render("~/Content/bundle-bootstrap")
+    @Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+    @Styles.Render("~/Content/DataTables-1.10.20/extensions/Responsive/css/bundle-jquery-dataTables-responsive")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS0TN90TJK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-SS0TN90TJK');
+    </script>
+</head>
+<body id="boe-css-overrides">
+    <div style="font-size: 70%; padding-left: .5em;"><a href="#main">SKIP TO MAIN CONTENT</a></div>
+    <!-- Start NEW BANNER-->
+    <iframe id="nygov-universal-navigation-frame" class="nygov-universal-container" lang="en" title="New York State Universal Banner" src="//static-assets.ny.gov/load_global_menu/ajax?iframe=true&amp;target=blank"></iframe>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0]; var j = d.createElement(s); var dl = l != 'dataLayer' ? '&l=' + l : ''; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; j.async = true; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T4FP6H');</script>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4FP6H" height="0" width="0" title="Hidden NYS Banner" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager -->
+    <!-- END NEW BANNER-->
+    <nav id="menuNav" class="navbar navbar-expand-xl navbar-inverse">
+        <div style="
+    width: 100%;">
+            <div class="navbar-header">
+                <!--Navbar mobile view collapse is managed using the native jquery/bootstrap functionality.-->
+                <a class="navbar-brand navbar-toggler " href="https://www.elections.ny.gov/">Board of Elections</a>
+                <button class="navbar-toggler navbar-toggler-right align-self-center mt-3 " style="float:right;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarNav">
+                <ul class="navbar-nav flex-xl-wrap align-items-start ">
+                    <li class="nav-item boe-overide-hide-when-navbar-collapse-show">
+                        <a class="navbar-brand mr-0" href="https://www.elections.ny.gov/">Board of Elections</a>
+                    </li>
+                    <li id="liHome" class="nav-item">
+                        @Html.ActionLink("Home", null, null, null, new { @class = "nav-link text-nowrap" })
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-nowrap dropdown-toggle" id="navbarApplicationName" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Name</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarApplicationName">
+                            <li id="liContributionsMonetary" class="nav-item">
+                                @Html.ActionLink("EFS Home", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "dropdown-item" })
+                            </li>
+                            <li id="liContributionsMonetary" class="nav-item">@Html.ActionLink("Candidate Management", "http://dnysboeapp/CandidateManagement", "Candidate Management Home", null, new { @class = "dropdown-item" })</li>
+                        </ul>
+                    </li>
+                    <li id="liContactUs" class="nav-item">
+                        @Html.ActionLink("Contact us", "https://www.elections.ny.gov/Contact.html", null, null, new { @class = "nav-link text-nowrap" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="divWelcomeBanner" class="container-fluid bg-color-nys-busines-secondary">
+        <div class="dropdown help-dropdown">
+            @*<a href="#" id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>*@
+        </div>
+        <div>
+            Welcome, @Session["UserNameDisplay"] &nbsp;
+            <input type="button" class="btn btn-default" onclick="closeWindow();" title="Logout" value="Logout" />
+        </div>
+    </div>
+    <!--Don't add random classes here to fix height individual pages. Fix it on the page itself.-->
+    <div id="main">
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    <iframe id="nygov-universal-footer-frame" class="nygov-universal-container" lang="en" title="New York State Universal Footer" src="//static-assets.ny.gov/load_global_footer/ajax?iframe=true&amp;target=blank"></iframe>
+    <script>
+        $(document).ready(function () {
+            boeA11yHelperImplementCommonAccessibilityFeatures();
+        });
+
+        function closeWindow() {
+            // REMOVE MAIN SESSION FOR FILE A DISCLOSURE REPORT SCHEDULES DATA.
+            sessionStorage.removeItem("TransactionTypeId");
+            sessionStorage.removeItem("EditFlag");
+            var urlContributionMonetary = "@Url.Content("~/LogoutPage/LogoutPage/")";
+            window.location.href = urlContributionMonetary;
+        }
+    </script>
+</body>
+</html>

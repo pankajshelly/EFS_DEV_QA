@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+@*<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />*@
+@using (Html.BeginForm("UC_NoticeofNonParticipation", "UC_NoticeofNonParticipation", FormMethod.Get, new { id = "submitForm" }))
+{
+     <div id="divGridLoanReceived" class="divGridCSS " style="padding-right: 26em;">
+        <div style="padding-left: 2em;">
+            <span>
+                I swear or affirm that the information contained herein is in all respects true and complete to the best of my knowledge information and belief.
+            </span>
+        </div>
+         <br />
+        <div style="padding-bottom: 2em; padding-left: 2em;">
+            <span>
+                 Knowingly including false information in this Notice constitutes a Class A Misdemeanor, punishable by a fine and/or imprisonment.  See Penal Law 210.25.
+            </span>
+        </div>
+        <br />
+        <div class="floatRightNew">
+            <input type="button" id="btnNoticeNonPart" class="btn btn-default clsCommonSearch" name="Command" value="Submit" title="Submit" style="font-size:12px;" />
+        </div>
+         <div style="padding-left: 2em;">
+             <hr />
+         </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+    $m(document).ready(function () {
+        $("#btnNoticeNonPart").bind('click', function () {
+            alert("Notice of Non-Participation has been successfully submitted.");
+        })
+    });
+
+</script>
+
+

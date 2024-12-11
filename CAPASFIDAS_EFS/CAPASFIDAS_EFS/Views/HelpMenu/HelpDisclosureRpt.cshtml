@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = ": Help Disclosure Report";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>How to Create a Disclosure Report:</h1>
+    </div>
+    <br />
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                @*<h1>How to Create a Disclosure Report:</h1>*@
+                <ol type='1'>
+                    <li>
+                        Create the Reporting Cycle:
+                        <ol type='a'>
+                            <li>Select <strong>File a Disclosure Report</strong> from the menu at the top of the screen.</li>
+                            <li>Verify <strong>Filer ID</strong> and <strong>Candidate/Committee Name</strong> are correct.</li>
+                            <li>
+                                Select the <strong>Report Year</strong>, <strong>Filer Type</strong>, <strong>Report Type</strong>, <strong>Election Date</strong>, <strong>Disclosure Type</strong> and <strong>Disclosure Period</strong> if applicable from the Filter.  <strong>Cut-off-date</strong> and <strong>Filing Date</strong> will be displayed based on your selections.  Click <strong>Apply</strong>.
+                                <ol type='i'>
+                                    <li>For <strong>Primary</strong>, <strong>General</strong>, and <strong>Special</strong> report types, the <strong>Election Date</strong> will be pre-populated in the dropdown based on the Political Calendar.   If more than one <strong>Election Date</strong>, then select the <strong>Election Date</strong>.</li>
+                                    <li>For <strong>Off-Cycle</strong> report type, select an existing <strong>Filing Date</strong> or add a new <strong>Filing Date</strong>. </li>
+                                    <li><strong>Periodic</strong> report type is not associated with an <strong>Election Date</strong>.  </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Add Transactions:
+                        <ol type='a'>
+                            <li>Select a Transaction Type from the dropdown.</li>
+                            <li>Click the Add New Transaction button.</li>
+                            <li>Enter transaction information entering all required fields as indicated by an asterisk (*) and click Save.</li>
+                            <li>Continue to add transactions and click Close when finished.</li>
+                            <li>Click on Clear to clear the fields without saving if needed.</li>
+                        </ol>
+                        <p><strong>Note:</strong>To add transactions for a different Transaction Type in the same disclosure report, repeat steps a through e.  To add transactions for a different Disclosure Report, clear to filter and repeat steps 1 and 2.</p>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</div>
+

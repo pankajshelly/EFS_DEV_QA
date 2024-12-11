@@ -1,0 +1,112 @@
+﻿<div id="divTopSection">
+    <div id="selectorItsRpt">
+        <div class="divWidth">
+            <div class="floatRightNew clsShowButtonClass">
+                <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                <button type="button" class="btn btn-sm buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>  
+            </div>
+            <div id="divFilerID">
+                <div class="verticalCSSDestop lblCSS">
+                    <span id="lblFilerID">* Filer ID</span>
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblFilerID" })
+                </div>
+            </div>
+            <div id="divCommitteeName">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Committee Name", new { @id = "lblCommitteeName" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divElectionCycle">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Report Year", new { @id = "lblElectionCycle" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divOfficeType">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Office Type", new { @id = "lblOfficeType" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstUCOfficeType", null, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divCounty">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* County", new { @id = "lblCounty" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstUCCounty", null, "- Select -", new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divMunicipality">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Muncipality", new { @id = "lblMunicipality" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstUCMuncipality", null, "- Select -", new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divElectionType">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Election Type", new { @id = "lblElectionType" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divElectionDate">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Election Date", new { @id = "lblElectionDate" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divDisclosureType">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Disclosure Type", new { @id = "lblDisclosureType" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divDisclosurePeriod">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Disclosure Period", new { @id = "lblDisclosurePeriod" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth" })
+                </div>
+            </div>
+            <div id="divReportPeriodDates">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Cut off Date", new { @id = "lblReportPeriodDatesFrom" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth" })
+                </div>
+            </div>
+            <div id="divReportPeriodDatesTo">
+                <div class="verticalCSSDestop lblCSS">
+                    @Html.Label("* Filing Date", new { @id = "lblReportPeriodDatesTo" })
+                </div>
+                <div class="verticalCSSDestop DDLCSS">
+                    @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth" })
+                </div>
+            </div>
+            <div class="floatRightNew" style="padding-bottom:2em;">
+                <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                <button type="button" class="btn btn-sm buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>  
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+ProjectToken:NWZjYjE1YjgtMjZmMy00ZGJmLThlNzUtNGM3MjdmMWViODRlOmNkOWU1MGU2LWQzYzEtNDJiNS04NjY1LTgwMzk2YzEwZjIxNA==
+UserGroups:NYSBOE_App_Scanner_Editor,NYSBOE_App_Viewer
+Distribution:SAAS

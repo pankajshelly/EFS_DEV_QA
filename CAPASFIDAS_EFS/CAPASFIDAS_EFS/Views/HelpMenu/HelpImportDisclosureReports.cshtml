@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "HelpImportDisclosureReports";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+<br />    
+    <div data-role="page" id="pageone">
+        <div data-role="header">
+            <h1 style="padding-left:0.5em;">How to Import Disclosure Data:</h1>
+        </div>
+        <div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="collapsibleset">
+                <div data-role="collapsible" data-collapsed="false">
+                    <p style="padding-left:1em;">
+                        Import allows registered Filers to upload data in the required CSV format.
+                        Each Import option must meet the specifications listed in the perspective File Format Reference file.
+                    </p>
+                    <p style="padding-left:1em;">There are two options:</p>
+                    <ol>
+                        <li>Import Monetary Contributions</li>
+                    </ol>
+                    <p style="padding-left:3em;">
+                        This option is for Filers to import and add itemized Monetary Contributions Received from Individuals and Partnerships only to a selected Disclosure Report. All other data must be reported using the applicable transaction types. Multiple imports are additive. Be sure to review the Disclosure Report to ensure accurate reporting.
+                    </p>
+                    @*<p style="padding-left:3em;">
+                        <a href="#" name="Command" value="btnDownloadHelpDocumentPDF">Import Monetary Contributions - File Format Reference</a>                        
+                    </p>*@
+                    <ol style="padding-left:4em;">
+                        <p>a. Select <strong>File a Disclosure Report</strong> from the menu at the top of the screen.</p>
+                        <p>b. Select the <strong>Report Year, Filer Type, Election Type, Election Date, Disclosure Type</strong> (Itemized) and <strong>Disclosure Period</strong> from the Filter. Click <strong>Apply</strong>.</p>
+                        <p>c. Select Transaction Type <strong>Monetary Contributions Received from Individuals and Partnerships</strong>. Click <strong>Apply</strong>.</p>
+                        <p>d. Click <strong>Import</strong>.</p>
+                        <p>e. System displays an <strong>Import Monetary Contributions</strong> dialog box with functionality to upload a CSV import file.</p>
+                        <p>f. Select the mandatory fields and click <strong>Upload</strong>.</p>
+                        <p style="text-align:left;">
+                            g. System validates if all required fields exist in the CSV file and the format of those fields meet the import specifications listed in the <strong>File Format Reference</strong>. If any validations fail, a grid will display in the <strong>Import Monetary Contributions</strong> dialog box listing the row #, field name and validation error.  All validation errors must be corrected to successfully load transactions.
+                        <p style="padding-left:1em;"><strong>Note:</strong> System validation errors can be viewed in excel by clicking the <strong>Validation Errors CSV</strong> button.</p>
+                        </p>
+                        <p>
+                            h. Imported Monetary Contribution transactions will display in the <strong>All Transactions</strong> grid on the <strong>File Disclosure Reports</strong> screen.
+                        <p style="padding-left:1em;"><strong>Note:</strong> Partnership details are required for any imported monetary contribution partnership transactions over $2500 before submitting a Disclosure Report.</p>
+                        </p>
+                    </ol>
+                    <br />
+                    <p style="padding-left:2em;">2. Import Disclosure Report</p>
+                    <p style="padding-left:3em;">
+                        This option is for Filers using vendors registered with the New York State Board of Elections. Once registered, vendors are given the file format and reference files needed to create the disclosure report csv in the required format. To register as a qualified vendor, email <a>support@elections.ny.gov</a>.
+                    </p>                    
+                    <ol style="padding-left:4em;">
+                        <p>a. Select <strong>Import Disclosure Reports</strong> from the menu at the top of the screen.</p>
+                        <p>b. Verify <strong>Filer ID</strong> and <strong>Candidate/Committee Name</strong> are correct. <strong>Report Year</strong> can be selected to filter down the search result.</p>
+                        <p>c. Click <strong>Apply</strong>.</p>
+                        <p>d. System displays the Disclosure Reports in the <strong>Imported Disclosure Reports</strong> grid.  If there are no Disclosure Reports for the Filer then system displays message, <strong>No data available in table</strong> in the grid.</p>
+                        <p>e. Click <strong>Import</strong>.</p>
+                        <p>f. System displays an <strong>Import</strong> dialog box with functionality to upload a CSV import file.</p>
+                        <p>g. Select the mandatory fields and click <strong>Upload</strong>.</p>
+                        <p>h. System validates if all required fields exist in the CSV file and the format of those fields meet the import specifications listed in the <strong>File Format Reference</strong>. If any validations fail, error will display listing the row #, field name and validation error. All validation errors must be corrected to successfully load transactions.</p>
+                        <p>i. Click on the <strong>View</strong> link to go to <strong>View All Disclosures Report</strong> page. Select the <strong>Report Year</strong> from Filter section and click on <strong>Search</strong> to view the imported disclosure report. Select the disclosure report to view the transactions in a grid below. Verify the disclosure report and transactions are imported correctly.</p>
+                        <p>j. Click on the <strong>Submit</strong> link from the disclosure report row.  System will direct user to the <strong>View/Submit Disclosure Report</strong> page. Click <strong>Submit Disclosure Report</strong>.</p>
+                    </ol>
+                </div>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $m = jQuery.noConflict();
+        $m(document).ready(function () {
+
+        });
+    </script>

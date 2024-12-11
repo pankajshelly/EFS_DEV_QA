@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllDisclosuresSearchHelp";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone" class="clspaddingleft1em paddingTop1em">
+    <div data-role="header">
+        <h1>View All Disclosure Reports Filter</h1>
+        <br />
+    </div>
+    <div class="helpFilterHeaderTxt">
+        <p>This Search returns Disclosure Report Filings and associated details saved by the Filer, according to the search parameters selected.</p>        
+        <br />
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Filer ID</h3>
+                <div>
+                    <p>Select Filer ID from Filer ID dropdown field. If only one Filer ID is associated with the User ID, then system displays the Filed ID as default value in Filer ID dropdown field. Subsequent enabled fields can be used to filter down the search. Click on Search button to get the search result.</p>                    
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Filer Type</h3>
+                <div>
+                    <p>When Filer ID is selected to search the details, filer type details (State/Local or Village) is displayed in this display-only field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Candidate/Committee Name</h3>
+                <div>
+                    <p>When Filer ID is selected to search the details, name of the filer is displayed in this display-only field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Report Year</h3>
+                <div>
+                    <p>System populates Report Year dropdown field with the year(s) for which Disclosure Report is available for the selected Filer ID. The default value is “Select”. This is an optional field. Click on Report Year dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Report Year or select a value in subsequent dropdown field to narrow down the search.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Election Type</h3>
+                <div>
+                    <p>Election Type dropdown field is enabled and populated after a Report Year is selected in Report Year dropdown field. The default value is “Select”. This is an optional field. System populates Election Type dropdown field based on the value selected in Report Year dropdown field. Click on Election Type dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Election Type or select a value in subsequent dropdown field to narrow down the search.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Report Type</h3>
+                <div>
+                    <p>Report Type dropdown field is enabled after an Election Type is selected in Election Type dropdown field. The default value is “Select”. This is an optional field. System populates Report Type dropdown field based on the value selected in Report Year and Election Type dropdown fields. Click on Report Type dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Report Type or select a value in subsequent dropdown field to narrow down the search.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Election Date</h3>
+                <div>
+                    <p>Election Date dropdown field is enabled after a Report Type is selected in Report Type dropdown field. This is an optional field. System populates Election Date dropdown field based on the values selected in Report Year, Election Type and Report Type dropdown fields.</p>
+                    <p>Other than Report Type as Special and in case of some Village Elections, system populates the election date as the default and only value in this field.</p>
+                    <p>For Report Type as Special and in case of some Village Elections, click on Election Date dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Election Date or select a value in subsequent dropdown field to narrow down the search.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Disclosure Type</h3>
+                <div>
+                    <p>Disclosure Type dropdown field is enabled after an Election Date is selected in Election Date dropdown field. The default value is “Select”. This is an optional field. System populates Disclosure Type dropdown field with the values based on the values selected in Report Year, Election Type, Report Type, Election Date dropdown fields for the Filer ID. Click on Disclosure Type dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Disclosure Type or select a value in subsequent dropdown field to narrow down the search.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Disclosure Period</h3>
+                <div>
+                    <p>Disclosure Period dropdown field is enabled after a Disclosure Type is selected in Disclosure Type dropdown field. The default value is “Select”. This is an optional field. System populates Disclosure Period dropdown field with the values based on the values selected in Report Year, Election Type, Report Type, Election Date, Disclosure Type dropdown fields for the Filer ID. Click on Disclosure Period dropdown field and select a value from the list and click on Search button to search for Disclosure Report Filings and associated details saved by the Filer for that specific Disclosure Period.</p>
+                </div>
+            </div>
+        </div>                
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Search Button</h3>
+                <div>
+                    <p>Click on the Search button to execute the search once the relevant filter criteria are selected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Clear Button</h3>
+                <div>
+                    <p>Click on the Clear Button to reset the screen and start a new search.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

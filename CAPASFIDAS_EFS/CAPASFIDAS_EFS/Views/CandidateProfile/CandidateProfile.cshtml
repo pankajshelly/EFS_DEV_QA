@@ -1,0 +1,1568 @@
+﻿@model IList<Models.CandidateProfileModel>
+@{
+    ViewBag.Title = ": Candidate Profile";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<script src="~/Scripts/PageTab3.js"></script>
+<script src="~/Scripts/PageTabs.js"></script>
+<script src="~/Scripts/PageTab2.js"></script>
+
+@using (Html.BeginForm("CandidateProfile", "CandidateProfile", FormMethod.Get, new { id = "submitForm" }))
+{
+    @*Left Side Search Filter ends*@
+    @*Right side Main section starts*@
+    <div id="divMainRightTop" class="divMainRightWidth85">
+        <div id="divBreadCrumb" class="breadCrumbDivCSS">
+            <nav aria-label="Breadcrumbs">
+                <ol class="breadcrumb">
+                    @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                    <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                    <li class="active">Candidate Profile</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- main grid starts-->
+    <div id="divMainRightBottom" class="divMainRightWidth85">
+        <div class="paddingLeft2em floatLeft">
+            <div class="paddingtoppt5">
+                <h1 id="lblHeader">Candidate Profile</h1>
+            </div>
+        </div>
+        <div id="selectorCandidateProfHeader" class="divWidth divClearBoth" style="padding-top: 1em;">
+            <div id="divCandidateProfile">
+                <span  style="padding-left: 4em;">
+                    <span id="lblFilerType">Filer Type</span>
+                </span>
+                <span >
+                    @Html.TextBox("searchTerm", (string)ViewBag.FilerType, null, new { id = "txtFilerType", @class = "txtWidthFilterType", aria_labelledby = "lblFilerType" })
+                </span>
+                <span  style="padding-left: 0.8em;">
+                    <span id="lblOffice">Office</span>
+                </span>
+                <span >
+                    @Html.TextBox("searchTerm", (string)ViewBag.Office, null, new { id = "txtOffice", @class = "txtWidthOffice", aria_labelledby = "lblOffice" })
+                </span>
+                <span  style="padding-left: 0.8em;">
+                    <span id="lblDistrict">District</span>
+                </span>
+                <span >
+                    @Html.TextBox("searchTerm", (string)ViewBag.District, null, new { id = "txtDistrict", @class = "txtWidthDistrict", aria_labelledby = "lblDistrict" })
+                </span>
+                <span  style="padding-left: 0.8em;">
+                    <span id="lblMunicipality">Municipality</span>
+                </span>
+                <span >
+                    @Html.TextBox("searchTerm", (string)ViewBag.Municipality, null, new { id = "txtMunicipality", @class = "txtWidthFilterType", aria_labelledby = "lblMunicipality" })
+                </span>
+                <span  style="padding-left: 0.8em;">
+                    <span id="lblElectionYear">Election Year</span>
+                </span>
+                <span >
+                    @Html.TextBox("searchTerm", (string)ViewBag.ElectionYear, null, new { id = "txtElectionYear", @class = "txtWidthFilterType", aria_labelledby = "lblElectionYear" })
+                </span>
+            </div>
+        </div>
+        <div id="accordion" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;" class="ui-accordion ui-widget ui-helper-reset divClearBoth">
+            <h2 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+                Candidate Information
+            </h2>
+            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+                <div id="selectorCandidateInfo" >
+                    <div class="divClearBoth" style="padding-left: 5.5em; padding-top: 1em;">
+                        <span id="lblFilerID">
+                            <span>Candidate Id</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.CandidateId, null, new { id = "txtCandidateId", @class = "txtWidthFilterID", aria_labelledby = "lblFilerID" })
+                        </span>
+                        <span  style="padding-left: 5.5em;">
+                            <span id="lblSocialSecurityNumber">SSN</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.SSN, null, new { onkeydown = "return ValidateNumber(event);", id = "txtSocialSecurityNumber", @maxlength = "9", @class = "txtWidthSSN", aria_labelledby = "lblSocialSecurityNumber" })
+                        </span>
+                        <span  style="padding-left: 0.8em;">
+                            <span id="lblPoliticalParty">Political Party (Multiple Selection)</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.PoliticalParty, null, new { id = "txtPoliticalParty", @class = "txtWidthFilterType", aria_labelledby = "lblPoliticalParty" })
+                        </span>
+                    </div>
+                    <div class="divClearBoth">
+                        <span  style="padding-left: 3.45em;">
+                            <span id="lblRegistrationDate" >Registration Date</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.RegistrationDate, null, new { id = "txtRegistrationDate", @class = "txtWidthRegistrationDate", aria_labelledby = "lblRegistrationDate" })
+                        </span>
+                        <span  style="padding-left: 2.7em;">
+                            <span id="lblStatus">Status</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.Status, null, new { id = "txtStatus", @class = "txtWidthStatus", aria_labelledby = "lblStatus" })
+                        </span>
+                        <span  style="padding-left: 7.9em;">
+                            <span id="lblTermDate">Term Date</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.TerminationDate, null, new { id = "txtTermDate", @class = "txtWidthTermDate", aria_labelledby = "lblTermDate" })
+                        </span>
+                    </div>
+                    <div class="divClearBoth floatLeft" style="padding-top: 0em;">
+                        <span  style="padding-left: 8.6em;">
+                            <span id="lblPrefix">Prefix</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.Prefix, null, new { id = "txtPrefix", @class = "txtWidthPrefix", aria_labelledby = "lblPrefix" })
+                        </span>
+                        <span  style="padding-left: 4.7em;">
+                            <span id="lblLastName">Last Name</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.LastName, null, new { id = "txtLastName", @class = "txtWidthLastName", aria_labelledby = "lblLastName" })
+                        </span>
+                        <span  style="padding-left: 5.8em;">
+                            <span id="lblFirstName">First Name</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.FirstName, null, new { id = "txtFirstName", @class = "txtWidthFirstName", aria_labelledby = "lblFirstName" })
+                        </span>
+                        <span  style="padding-left: 0.8em;">
+                            <span id="lblMI">MI</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.MiddleName, null, new { id = "txtMI", @class = "txtWidthMI", aria_labelledby = "lblMI" })
+                        </span>
+                        <span  style="padding-left: 0.8em;">
+                            <span id="lblSuffix">Suffix</span>
+                        </span>
+                        <span >
+                            @Html.TextBox("searchTerm", (string)ViewBag.Suffix, null, new { id = "txtSuffix", @class = "txtWidthSuffix", aria_labelledby = "lblSuffix" })
+                        </span>
+                    </div>
+                </div>
+                <div class="divClearBoth" style="padding-top: 2em; padding-bottom: 2em; padding-left: 2em; padding-right: 2em;">
+                    <h3 style="font-weight: bold; float: left;">Address</h3>
+                    <span id="btnSaveAddressSpan" class="DDLCSS" style="float:right;width:12%">
+                        <input type="button" id="btnSaveAddress" class="btn btn-default" name="Command" value="Add New Address" title="Add New Addresss" style="font-size:12px; text-decoration:none;" />
+                    </span>
+                </div>
+                <div>
+                    <table id="gridAddress" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                        <thead id="thdGridData1" class="header">
+                            <tr>
+                                <th>Address ID</th>
+                                <th>Action</th>
+                                <th>Best Contact</th>
+                                <th>Address Type</th>
+                                <th>Street Name</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Zip</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="dialog_Address_TransInfo" title="Add/Edit Transaction">
+                    @Html.Partial("UserControls/_UC_CommonProfile_Address")
+                    <div class="AddLeftCSSForScheI">
+                        <input type="button" id="btnAddressSave_TreaInfo" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnAddressUpdate_TreaInfo" class="btn btn-default clsSetPreserences" name="Command" value="Update" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnCommonClear" class="btn btn-default clsSetPreserences" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                        <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                    </div>
+                </div>
+                <div style="padding-top: 2em; padding-bottom: 2em; padding-left: 2em; padding-right: 2em;">
+                    <h3 style=" font-weight: bold; float: left;">Contact Information</h3>
+                    <span id="btnSaveContactSpan" class="DDLCSS" style="float:right;width:12%">
+                        <input type="button" id="btnSaveContact" class="btn btn-default" name="Command" value="Add New Contact" title="Add New Contact" style="font-size:12px; text-decoration:none;" />
+                    </span>
+                </div>
+                <div>
+                    <table id="gridContact" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                        <thead id="thdGridData2" class="header">
+                            <tr>
+                                <th>Contract ID</th>
+                                <th>Contact Type Id</th>
+                                <th>Best Contact Id</th>
+                                <th>Action</th>
+                                <th>Best Contact</th>
+                                <th>Phone</th>
+                                <th>E-mail Address</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="dialog_Contact_TransInfo" title="Add/Edit Transaction">
+                    @Html.Partial("UserControls/_UC_CommonProfile_Contact")
+                    <div class="AddLeftCSSForScheI">
+                        <input type="button" id="btnContactSave_TreaInfo" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnContactUpdate_TreaInfo" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnClearContact" class="btn btn-default clsSetPreserences" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                        <input type="button" id="btnCloseDialogForContact" class="btn btn-default clsSetPreserences" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                    </div>
+                </div>
+            </div>
+            <h2 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+                Depository/Bank Information
+            </h2>
+            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+                <div style="padding-bottom: 2em; padding-left: 2em; width: 95%; padding-right: 2em;">
+                    @*<span class="spanButtonUser" style="float: right; width: 0%;">
+                        <input type="button" id="btnCommonSaveDepositoryBank" class="btn btn-default" name="Command" value="Add New Depository/Bank Information" title="Add New Depository/Bank Information" style="font-size:12px; text-decoration:none;" />
+                    </span>*@
+                    <span id="spanButtonUser" class="DDLCSS" style="float:right;width:17.1%">
+                        <input type="button" id="btnCommonSaveDepositoryBank" class="btn btn-default" name="Command" value="Add New Depository/Bank Information" title="Add New Depository/Bank Information" style="font-size:12px; text-decoration:none;" />
+                    </span>
+                </div>
+                <div>
+                    <table id="gridDepositoryBankInfo" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                        <thead id="thdGridData3" class="header">
+                            <tr>
+                                <th>Bank ID</th>
+                                <th>Action</th>
+                                <th>Depository/Bank Name</th>
+                                <th>Street Name</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Zip</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="dialog_DepositoryBankInfo" title="Add/Edit Depository Bank Info">
+                    <div class="headerDBLiability">
+                        <span>Add Asst Depository Bank Info</span>
+                    </div>
+                    <div id="spnAddressType">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblDepositoryBankName">Depository/Bank Name</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.TextBox("searchTerm", null, new { id = "txtDepositortyBankName", @class = "txtWidthForDialog", @maxlength = "50", aria_labelledby = "lblDepositoryBankName" })
+                        </div>
+                    </div>
+                    <div id="spnBestContact">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblAccountType">Account Type</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.DropDownList("lstAccountType", null, "- Select -", new { @class = "txtWidthForDialog", aria_labelledby = "lblAccountType" })
+                        </div>
+                    </div>
+                    <div id="divStreetAddress">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblStreetName">Street Address</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.TextBox("searchTerm", null, new { id = "txtStreetNameDepositoryBankInfo", @class = "txtWidthForDialog", @maxlength = "60", aria_labelledby = "lblStreetName" })
+                        </div>
+                    </div>
+                    <div id="divErrorStreetName">
+                        <div class="verticalCSSDestopForError">
+                            @Html.Label(" ", new { @id = "lblErrorStreetNameDepositoryBankInfo", @class = "lblColor", @for= "txtStreetNameDepositoryBankInfo" })
+                        </div>
+                    </div>
+                    <div id="divCity">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblCity">City</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.TextBox("searchTerm", null, new { id = "txtCityDepositoryBankInfo", @class = "txtWidthForDialog", @maxlength = "30", aria_labelledby = "lblCity" })
+                        </div>
+                    </div>
+                    <div id="divErrorCity">
+                        <div class="verticalCSSDestopForError">
+                            @Html.Label(" ", new { @id = "lblErrorCityDepositoryBankInfo", @class = "lblColor", @for= "txtCityDepositoryBankInfo" })
+                        </div>
+                    </div>
+                    <div id="divState">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblState">State</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.TextBox("searchTerm", null, new { id = "txtStateDepositoryBankInfo", @class = "txtWidthForDialog", @maxlength = "2", aria_labelledby = "lblState" })
+                        </div>
+                    </div>
+                    <div id="divErrorState">
+                        <div class="verticalCSSDestopForError">
+                            @Html.Label(" ", new { @id = "lblErrorStateDepositoryBankInfo", @class = "lblColor", @for = "txtStateDepositoryBankInfo" })
+                        </div>
+                    </div>
+                    <div id="divZip_DeptBankInfo">
+                        <div class="verticalCSSDestopForLable lblCSSAdd">
+                            <span id="lblZip5">Zip Code</span>
+                        </div>
+                        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                            @Html.TextBox("searchTerm", null, new { id = "txtZipCodeDepositoryBankInfo", @class = "txtWidthForDialog", @maxlength = "10", aria_labelledby="lblZip5" })
+                        </div>
+                    </div>
+                    <div id="divErrorZip5">
+                        <div class="verticalCSSDestopForError">
+                            @Html.Label(" ", new { @id = "lblErrorZip5DepositoryBankInfo", @class = "lblColor", @for= "txtZipCodeDepositoryBankInfo" })
+                        </div>
+                    </div>
+                    <div class="AddLeftCSSForScheI">
+                        <input type="button" id="btnCommonSaveDepositoryBankInfo" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnCommonUpdateDepositoryBankInfo" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                        <input type="button" id="btnCommonClearDepositoryBankInfo" class="btn btn-default clsSetPreserences" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                        <input type="button" id="btnCloseDialogDepositoryBankInfo" class="btn btn-default clsSetPreserences" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                    </div>
+                </div>
+            </div>
+            @*<h2 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+                Authorized to Sign Checks
+            </h2>
+            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+                <div style="padding-bottom: 2em;">
+                    <span class="spanButtonUser" style="padding-right: 3em;">
+                        <button id="btnSaveAuthSignChecks" class="btn-default buttonCSS" name="Command" value="CSV">
+                            <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                        </button>
+                    </span>
+                </div>
+                <div style="padding-right: 1em;">
+                    <table id="exampleAuthSignChecks" class="webGrid" style="border-spacing: 0px;" >
+                        <thead class="header">
+                            <tr>
+                                <th>Contact Id</th>
+                                <th>Prefix</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>MI</th>
+                                <th>Suffix</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>*@
+            <h2 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+                Authorized Committees
+            </h2>
+            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+                <table id="gridAuthCommittees" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                    <thead id="thdGridData4" class="header">
+                        <tr>
+                            @*<th>Committee ID</th>*@
+                            <th>Filer ID</th>
+                            <th>Committee Name</th>
+                            <th>Status</th>
+                            <th>Registration Date</th>
+                            <th>Termination Date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+
+
+    $(document).ready(function () {
+
+        PageTabAcordion();
+
+        var dialog_DepositoryBankInfo;
+        var dialog_Address_TransInfo;
+        var dialog_Contact_TransInfo;
+
+        dialog_DepositoryBankInfo = $m("#dialog_DepositoryBankInfo").dialog({
+            autoOpen: false,
+            resizable: true,
+            height: 'auto',
+            width: 500,
+            modal: true,
+            open: function (event, ui) { hideDialogXButton(this); },
+            close: function () {
+            }
+        });
+
+        dialog_Address_TransInfo = $m("#dialog_Address_TransInfo").dialog({
+            autoOpen: false,
+            resizable: true,
+            height: 'auto',
+            width: 500,
+            modal: true,
+            open: function (event, ui) { hideDialogXButton(this); },
+            close: function () {
+            }
+        });
+
+        dialog_Contact_TransInfo = $m("#dialog_Contact_TransInfo").dialog({
+            autoOpen: false,
+            resizable: true,
+            height: 'auto',
+            width: 500,
+            modal: true,
+            open: function (event, ui) { hideDialogXButton(this); },
+            close: function () {
+            }
+        });
+
+        $("#txtFilerType").prop("disabled", true);
+        $("#txtOffice").prop("disabled", true);
+        $("#txtDistrict").prop("disabled", true);
+        $("#txtMunicipality").prop("disabled", true);
+        $("#txtElectionYear").prop("disabled", true);
+        $("#txtSocialSecurityNumber").prop("disabled", true);
+
+        $("#txtCandidateId").prop("disabled", true);
+        $("#txtPoliticalParty").prop("disabled", true);
+        $("#txtRegistrationDate").prop("disabled", true);
+        $("#txtStatus").prop("disabled", true);
+        $("#txtTermDate").prop("disabled", true);
+        $("#txtPrefix").prop("disabled", true);
+        $("#txtLastName").prop("disabled", true);
+        $("#txtFirstName").prop("disabled", true);
+        $("#txtMI").prop("disabled", true);
+        $("#txtSuffix").prop("disabled", true);
+
+
+        $("#gridAddress").show();
+        $("#gridAddress_wrapper").show();
+        $("#divSiteAddress").show();
+        $("#divAddress").show();
+
+
+        @* Need to uncomment this line while code
+            var tableAddress = $m('#gridAddress').DataTable({
+            "bProcessing": true,
+            "DeferRender": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID =  iDisplayIndex + "" +nRow.rowIndex.toString();
+                uniqueID = uniqueID.replace("'", "").replace('"', ""); //remove ' and "
+                $m('td:eq(0)', nRow).html('<a class="editor_edit_address" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../Content/Images/edit.png" title="Edit Row '+ iDisplayIndex +' Data" /></a><a class="editor_remove_adderss" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row '+ iDisplayIndex +' Data"/></a>');
+                return nRow;
+            },
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridAddress').DataTable());
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("../CandidateProfile/GetAddressData/")",
+                    "data": {
+                        personID: ""
+                    },
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                    }
+                });
+            }
+        });
+        tableAddress.column(0).visible(false);
+        tableAddress.columns.adjust().draw(false);
+        $m('#gridAddress').DataTable().ajax.reload();
+
+        var tableContact = $m('#gridContact').DataTable({
+            "bProcessing": true,
+            "DeferRender": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID =  iDisplayIndex + "" +nRow.rowIndex.toString();
+                uniqueID = uniqueID.replace("'", "").replace('"', ""); //remove ' and "
+                $m('td:eq(0)', nRow).html('<a class="editor_edit_Contact" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '" ><img src="../Content/Images/edit.png" title="Edit Row '+ iDisplayIndex +' Data"/></a><a class="editor_remove_Contact" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row '+ iDisplayIndex +' Data"/></a>');
+                return nRow;
+            },
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridContact').DataTable());
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/CandidateProfile/GetShowContact/")",
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                    }
+                });
+            }
+        });
+        tableContact.column(0).visible(false);
+        tableContact.column(1).visible(false);
+        tableContact.column(2).visible(false);
+        tableContact.columns.adjust().draw(false);
+        $m('#gridContact').DataTable().ajax.reload(); Need to uncomment this line while code*@
+
+        //var tableAddress = $m('#gridAddress').DataTable({
+        //    "bProcessing": true,
+        //    "retrieve": true,
+        //    "stateSave": true,
+        //    "mData": null,
+        //    "sDefaultContent": "Edit",
+        //    "sAjaxSource": "../CandidateProfile/GetAddressData",
+        //    "bAutoWidth": false,
+        //    "columns": [
+        //        null,
+        //        { "width": "8%" },
+        //        { "width": "8%" },
+        //        { "width": "5%" },
+        //        { "width": "6%" },
+        //        { "width": "3%" },
+        //        { "width": "3%" },
+        //        { "width": "3%" },
+        //        { "width": "3%" },
+        //        null,
+        //        null
+        //    ],
+        //    "columnDefs": [
+        //        { width: "2.5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit_address" ><img src="../Content/Images/edit.png" title="Edit Row Data"/></a>', orderable: false },
+        //        { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove_adderss" ><img src="../Content/Images/delete.png" title="Delete Row Data"/></a>', orderable: false },
+        //    ],
+        //    "initComplete": function (settings, json) {
+        //        //Accessibility: Applies various Accessibility features to this dataTable.
+        //        makeDataTableAccessible($m('#gridAddress').DataTable());
+        //     },
+        //    "fnServerData": function (url, data, callback) {
+        //        $.ajax({
+        //            "url": url,
+        //            "data": null,
+        //            "success": callback,
+        //            "dataType": "json",
+        //            "type": "POST",
+        //            "error": function () {
+        //                //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+        //                alert("Error...");
+        //            }
+        //        });
+        //    }
+        //});
+        //tableAddress.column(0).visible(false);
+        //tableAddress.columns.adjust().draw(false);
+        ////$m('#gridAddress').DataTable().ajax.reload();
+
+
+        //// Table Contact Information
+        //var tableContact = $m('#gridContact').DataTable({
+        //    "bProcessing": true,
+        //    "retrieve": true,
+        //    "stateSave": true,
+        //    "mData": null,
+        //    "sDefaultContent": "Edit",
+        //    "sAjaxSource": "../CandidateProfile/GetShowContact",
+        //    "bAutoWidth": false,
+        //    "columns": [
+        //        null,
+        //        null,
+        //        null,
+        //        { "width": "10%" },
+        //        { "width": "10%" },
+        //        { "width": "10%" },
+        //        null,
+        //        null
+        //    ],
+        //    "columnDefs": [
+        //        { width: "2%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit_Contact" ><img src="../Content/Images/edit.png" title="Edit Row Data"/></a>', orderable: false },
+        //        { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove_Contact" ><img src="../Content/Images/delete.png" title="Delete Row Data"/></a>', orderable: false },
+        //    ],
+        //    "initComplete": function (settings, json) {
+        //        //Accessibility: Applies various Accessibility features to this dataTable.
+        //        makeDataTableAccessible($m('#gridContact').DataTable());
+        //    },
+        //    "fnServerData": function (url, data, callback) {
+        //        $.ajax({
+        //            "url": url,
+        //            "data": null,
+        //            "success": callback,
+        //            "dataType": "json",
+        //            "type": "POST",
+        //            "error": function () {
+        //                //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+        //                alert("Error...");
+        //            }
+        //        });
+        //    }
+        //});
+        //tableContact.column(0).visible(false);
+        //tableContact.columns.adjust().draw(false);
+        //tableContact.column(1).visible(false);
+        //tableContact.columns.adjust().draw(false);
+        //tableContact.column(2).visible(false);
+        //tableContact.columns.adjust().draw(false);
+        ////$m('#gridContact').DataTable().ajax.reload();
+
+
+        // Depository/Bank Information
+        var tableDepositoryBankInfo = $m('#gridDepositoryBankInfo').DataTable({
+            "bProcessing": true,
+            "DeferRender": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridDepositoryBankInfo').DataTable());
+            },
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                $m('td:eq(0)', nRow).html('<a class="editor_edit_DepositoryBank" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '" ><img src="../Content/Images/edit.png" title="Edit Row '+ iDisplayIndex +' Data"/></a><a class="editor_remove_DepositoryBank" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row ' + iDisplayIndex +' Data"/></a>');
+                return nRow;
+            },
+            "fnDrawCallback": function () {
+                var oSettings = this.fnSettings();
+                var iTotalRecords = oSettings.fnRecordsTotal();
+                //if (iTotalRecords < 1) {
+                //    $("#gridDepositoryBankInfo").hide();
+                //    $("#btnCommonSaveDepositoryBank").hide();
+                //}
+                //else {
+                //    $("#gridDepositoryBankInfo").show();
+                //    $("#btnCommonSaveDepositoryBank").show();
+                //}
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/CandidateProfile/GetDepositoryBankInfo/")",
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                }
+            });
+            tableDepositoryBankInfo.column(0).visible(false);
+            tableDepositoryBankInfo.columns.adjust().draw(false);
+
+            $m('#gridDepositoryBankInfo').DataTable().ajax.reload();
+
+        //var tableDepositoryBankInfo = $m('#gridDepositoryBankInfo').DataTable({
+        //    "bProcessing": true,
+        //    "retrieve": true,
+        //    "stateSave": true,
+        //    "mData": null,
+        //    "sDefaultContent": "Edit",
+        //    "sAjaxSource": "../CandidateProfile/GetDepositoryBankInfo",
+        //    "bAutoWidth": false,
+        //    "columns": [
+        //        null,
+        //        { "width": "8%" },
+        //        { "width": "8%" },
+        //        { "width": "5%" },
+        //        { "width": "6%" },
+        //        { "width": "3%" },
+        //        { "width": "3%" },
+        //        { "width": "3%" },
+        //        null,
+        //        null
+        //    ],
+        //    "columnDefs": [
+        //        { width: "2.5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit_DepositoryBank" ><img src="../Content/Images/edit.png" title="Edit Row Data"/></a>', orderable: false },
+        //        { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove_DepositoryBank" ><img src="../Content/Images/delete.png" title="Delete Row Data"/></a>', orderable: false },
+        //    ],
+        //    "initComplete": function (settings, json) {
+        //        //Accessibility: Applies various Accessibility features to this dataTable.
+        //        makeDataTableAccessible($m('#gridDepositoryBankInfo').DataTable());
+        //    },
+        //    "fnServerData": function (url, data, callback) {
+        //        $.ajax({
+        //            "url": url,
+        //            "data": null,
+        //            "success": callback,
+        //            "dataType": "json",
+        //            "type": "POST",
+        //            "error": function () {
+        //                //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+        //                alert("Error...");
+        //            }
+        //        });
+        //    }
+        //});
+        //tableDepositoryBankInfo.column(0).visible(false);
+        //tableDepositoryBankInfo.columns.adjust().draw(false);
+
+        //$m('#gridDepositoryBankInfo').DataTable().ajax.reload();
+
+
+        //Authorized to Sign Checks
+        var tableAuthSignChecks = $m('#exampleAuthSignChecks').DataTable({
+            "bProcessing": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "sAjaxSource": "../CandidateProfile/GetAuthSignChecks",
+            "bAutoWidth": false,
+            "columns": [
+                null,
+                { "width": "10%" },
+                { "width": "10%" },
+                { "width": "10%" },
+                { "width": "10%" },
+                { "width": "10%" },
+                null
+            ],
+            "columnDefs": [
+                { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_edit_AuthSignChecks" ><img src="../Content/Images/edit.png" title="Edit Row Data"/></a>', orderable: false },
+            ],
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": url,
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        alert("Error...");
+                    }
+                });
+            }
+        });
+        tableAuthSignChecks.column(0).visible(false);
+        tableAuthSignChecks.columns.adjust().draw(false);
+
+        $m('#exampleAuthSignChecks').DataTable().ajax.reload();
+
+        //Authorized Committees
+        var tableAuthCommittees = $m('#gridAuthCommittees').DataTable({
+                "bProcessing": true,
+                "DeferRender": true,
+                "retrieve": true,
+                "stateSave": true,
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#gridAuthCommittees').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": "@Url.Content("~/CandidateProfile/GetAuthCommittees/")",
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                },
+                "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                    committeeId = aData[1];
+                }
+            });
+        tableAuthCommittees.column(0).visible(false);
+        tableAuthCommittees.columns.adjust().draw(false);
+        $m('#gridAuthCommittees').DataTable().ajax.reload();
+
+        //var tableAuthCommittees = $m('#gridAuthCommittees').DataTable({
+        //    "bProcessing": true,
+        //    "retrieve": true,
+        //    "stateSave": true,
+        //    "mData": null,
+        //    "sDefaultContent": "Edit",
+        //    "sAjaxSource": "../CandidateProfile/GetAuthCommittees",
+        //    "bAutoWidth": false,
+        //    "columns": [
+        //        { "width": "15%" },
+        //        { "width": "15%" },
+        //        { "width": "15%" },
+        //        { "width": "15%" },
+        //        { "width": "15%" }
+        //    ],
+        //    "initComplete": function (settings, json) {
+        //      //Accessibility: Applies various Accessibility features to this dataTable.
+        //      makeDataTableAccessible($m('#gridAuthCommittees').DataTable());
+        //    },
+        //    "fnServerData": function (url, data, callback) {
+        //        $.ajax({
+        //            "url": url,
+        //            "data": null,
+        //            "success": callback,
+        //            "dataType": "json",
+        //            "type": "POST",
+        //            "error": function () {
+        //                //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+        //                alert("Error...");
+        //            }
+        //        });
+        //    }
+        //});
+        ////tableAuthCommittees.column(0).visible(false);
+        ////tableAuthCommittees.columns.adjust().draw(false);
+        //$m('#gridAuthCommittees').DataTable().ajax.reload();
+
+        $m("#btnCloseDialogDepositoryBankInfo").button().on("click", function () {
+            dialog_DepositoryBankInfo.dialog("close");
+        });
+
+        // Add New Depository/Bank Information
+        $m("#btnCommonSaveDepositoryBank").click(function () {
+            event.preventDefault();
+            $("#btnCommonUpdateDepositoryBankInfo").hide();
+            $("#btnCommonSaveDepositoryBankInfo").show();
+            ClearDepositoryData();
+            dialog_DepositoryBankInfo.dialog("open");
+        });
+
+        //// Edit Address record
+        //$m('#gridAddress tbody').on('click', 'a.editor_edit_address', function (e) {
+        //    event.preventDefault();
+        //    var rowNumber = tableAddress.row($(this).parents('tr')).index();
+        //    var data = tableAddress.row($(this).parents('tr')).data();
+        //    window.open("../EditAddress/EditAddress?adderssID=" + data[0].toString() + "&&bestContactDesc=" + data[1].toString() + "", "popupWindow", "width=680, height=300");
+        //});
+
+        // Delete Address record
+        $m('#gridAddress tbody').on('click', 'a.editor_remove_adderss', function (e) {
+            if (confirm("Are you sure do you want to delete") == true) {
+                e.preventDefault();
+                var data = tableAddress.row($(this).parents('tr')).data();
+                var options = {};
+                //options.url = "../CandidateProfile/DeleteAddress";
+                options.url = "@Url.Content("~/CandidateProfile/DeleteAddress/")";
+                options.type = "GET";
+                options.data = {
+                    txtAddressID: data[0].toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Record deleted successfully";
+                    $m.ajax({
+                        "url": "../CandidateProfile/GetAddressData",
+                        "data": null,
+                        "success": results,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                    tableAddress.column(0).visible(false);
+                    tableAddress.columns.adjust().draw(false);
+                    $m('#gridAddress').DataTable().ajax.reload();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $.ajax(options);
+            }
+            else {
+                return false;
+            }
+        });
+
+        //// Edit Contact record
+        //$m('#gridContact tbody').on('click', 'a.editor_edit_Contact', function (e) {
+        //    e.preventDefault();
+        //    var rowNumber = tableContact.row($(this).parents('tr')).index();
+        //    var data = tableContact.row($(this).parents('tr')).data();
+        //    window.open("../EditContact/EditContact?contactID=" + data[0].toString() + "&&ContactTypeId=" + data[1].toString() + "&&BestContactId=" + data[2].toString() + "", "popupWindow", "width=800, height=300");
+        //});
+
+        // Delete Contact record
+        $m('#gridContact tbody').on('click', 'a.editor_remove_Contact', function (e) {
+            if (confirm("Are you sure do you want to delete") == true) {
+                e.preventDefault();
+                var data = tableContact.row($(this).parents('tr')).data();
+                var options = {};
+                //options.url = "../CandidateProfile/DeleteContact";
+                options.url = "@Url.Content("~/CandidateProfile/DeleteContact/")";
+                options.type = "GET";
+                options.data = {
+                    txtContactId: data[0].toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Record deleted successfully";
+                    $m.ajax({
+                        "url": "../CandidateProfile/GetShowContact",
+                        "data": null,
+                        "success": results,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                    tableContact.column(0).visible(false);
+                    tableContact.columns.adjust().draw(false);
+                    $m('#gridContact').DataTable().ajax.reload();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $.ajax(options);
+            }
+            else {
+                return false;
+            }
+        });
+
+        // Edit Depository/Bank Information
+        $m('#gridDepositoryBankInfo tbody').on('click', 'a.editor_edit_DepositoryBank', function (e) {
+            e.preventDefault();
+            dialog_DepositoryBankInfo.dialog("open");
+            $("#btnCommonUpdateDepositoryBankInfo").show();
+            $("#btnCommonSaveDepositoryBankInfo").hide();
+            var data = tableDepositoryBankInfo.row($(this).parents('tr')).data();
+            sessionStorage.setItem("DepoBankName", data[0],toString());
+            $("#lstAccountType")[0].selectedIndex = 1;
+            $("#txtDepositortyBankName").val(data[2].toString());
+            $("#txtStreetNameDepositoryBankInfo").val(data[3].toString());
+            $("#txtCityDepositoryBankInfo").val(data[4].toString());
+            $("#txtStateDepositoryBankInfo").val(data[5].toString());
+            $("#txtZipCodeDepositoryBankInfo").val(data[6].toString());
+        });
+
+        // Delete Depository/Bank Information
+        $m('#gridDepositoryBankInfo tbody').on('click', 'a.editor_remove_DepositoryBank', function (e) {
+            if (confirm("Are you sure do you want to delete") == true) {
+                e.preventDefault();
+                var data = tableDepositoryBankInfo.row($(this).parents('tr')).data();
+                var options = {};
+                //options.url = "../TreasurerProfile/DeleteDepositoryBankTreasurer";
+                options.url = "@Url.Content("~/CandidateProfile/DeleteDepositoryBank/")";
+                options.type = "GET";
+                options.data = {
+                    strBankId: data[0].toString(),
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    if (results) {
+                        window.status = "Record deleted successfully";
+                        alert("Record deleted successfully");
+                        $m.ajax({
+                            "url": "@Url.Content("~/CandidateProfile/GetDepositoryBankInfo/")",
+                            "data": null,
+                            "success": results,
+                            "dataType": "json",
+                            "type": "POST",
+                            "error": function () {
+                                alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                            }
+                        });
+                        tableDepositoryBankInfo.column(0).visible(false);
+                        tableDepositoryBankInfo.columns.adjust().draw(false);
+                        $m('#gridDepositoryBankInfo').DataTable().ajax.reload();
+                    }
+                    else {
+                        alert("Bank can't be deleted");
+                    }
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $.ajax(options);
+            }
+            else {
+                return false;
+            }
+        });
+
+        //Update user data
+        $m("#btnCommonUpdateDepositoryBankInfo").click(function () {
+            event.preventDefault();
+
+            if ($m("#txtDepositortyBankName").val().toString() == "") {
+                ShowDialogBox('NVRA', 'Enter Depository Bank Name', 'Ok', '');
+            }
+            else {
+                var options = {};
+                options.url = "@Url.Content("../CandidateProfile/UpdateDeposotoryBank/")";
+                options.type = "GET";
+                options.data = {
+                    strBankId: sessionStorage.getItem("DepoBankName").toString(),
+                    txtDepositortyBankName: $m("#txtDepositortyBankName").val().toString(),
+                    lstAccountType: $m("#lstAccountType option:selected").val().toString(),
+                    txtStreetName: $m("#txtStreetNameDepositoryBankInfo").val().toString(),
+                    txtCity: $m("#txtCityDepositoryBankInfo").val().toString(),
+                    txtState: $m("#txtStateDepositoryBankInfo").val().toString(),
+                    txtZip: $m("#txtZipCodeDepositoryBankInfo").val().toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    dialog_DepositoryBankInfo.dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                    window.status = "Data Saved successfully";
+                    alert("Data updated successfully");
+                    BindDepositoryBankInfo();
+
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClearDepositoryBankInfo").click(function (e) {
+            e.preventDefault();
+            $m("#btnAddressSave_TreaInfo").prop("disabled", false);
+            ClearDepositoryData();
+        });
+
+        function ClearDepositoryData()
+        {
+            $("#lstAccountType")[0].selectedIndex = 0;
+            $("#txtDepositortyBankName").val("");
+            $("#txtStreetNameDepositoryBankInfo").val("");
+            $("#txtCityDepositoryBankInfo").val("");
+            $("#txtStateDepositoryBankInfo").val("");
+            $("#txtZipCodeDepositoryBankInfo").val("");
+        }
+
+        // Edit Authorized to Sign Checks Details
+        $m('#exampleAuthSignChecks tbody').on('click', 'a.editor_edit_AuthSignChecks', function (e) {
+            e.preventDefault();
+            var rowNumber = tableAuthSignChecks.row($(this).parents('tr')).index();
+            var data = tableAuthSignChecks.row($(this).parents('tr')).data();
+            window.open("../EditAuthSignChecks/EditAuthSignChecks?contactID=" + data[0].toString() + "&&rowNumber=" + rowNumber + "", "popupWindow", "width=900");
+        });
+
+
+        // Candidate Information Save
+        $("#btnCommonUpdate").click(function (e) {
+            e.preventDefault();
+            // TO DO;
+        });
+
+        // Candidate Information Clear
+        $("#btnCommonClear").click(function (e) {
+            e.preventDefault();
+            // TO DO;
+        });
+
+        //Update user data
+        $m("#btnCommonSaveDepositoryBankInfo").click(function () {
+            event.preventDefault();
+
+            if ($m("#txtDepositortyBankName").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter First Name', 'Ok', '');
+                alert("Enter Bank Name");
+            }
+            else if ($m("#lstAccountType option:selected").text() == "- Select -") {
+                //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                alert("Select Account Type");
+            }
+            else {
+                var options = {};
+                options.url = "@Url.Content("../CandidateProfile/AddDepositoryBankInfoTreasurer/")";
+                options.type = "GET";
+                options.data = {
+                    txtDepositortyBankName: $m("#txtDepositortyBankName").val().toString(),
+                    lstAccountType: $m("#lstAccountType option:selected").val().toString(),
+                    txtStreetName: $m("#txtStreetNameDepositoryBankInfo").val().toString(),
+                    txtCity: $m("#txtCityDepositoryBankInfo").val().toString(),
+                    txtState: $m("#txtStateDepositoryBankInfo").val().toString(),
+                    txtZip: $m("#txtZipCodeDepositoryBankInfo").val().toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    dialog_DepositoryBankInfo.dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                    window.status = "Data Saved successfully";
+                    alert("Data Saved successfully");
+                    BindDepositoryBankInfo();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        function BindDepositoryBankInfo()
+        {
+            tableDepositoryBankInfo = $m('#gridDepositoryBankInfo').DataTable({
+            "bProcessing": true,
+            "DeferRender": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridDepositoryBankInfo').DataTable());
+            },
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                $m('td:eq(0)', nRow).html('<a class="editor_edit_DepositoryBank" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '" ><img src="../Content/Images/edit.png" title="Edit Row ' + iDisplayIndex + ' Data"/></a><a class="editor_remove_DepositoryBank" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row ' + iDisplayIndex +' Data"/></a>');
+                return nRow;
+            },
+            "fnDrawCallback": function () {
+                var oSettings = this.fnSettings();
+                var iTotalRecords = oSettings.fnRecordsTotal();
+                if (iTotalRecords < 1) {
+                    $("#gridDepositoryBankInfo").hide();
+                    $("#btnCommonSaveDepositoryBank").hide();
+                }
+                else {
+                    $("#gridDepositoryBankInfo").show();
+                    $("#btnCommonSaveDepositoryBank").show();
+                }
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("../CandidateProfile/GetDepositoryBankInfo/")",
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                }
+            });
+            tableDepositoryBankInfo.column(0).visible(false);
+            tableDepositoryBankInfo.columns.adjust().draw(false);
+
+            $m('#gridDepositoryBankInfo').DataTable().ajax.reload();
+        }
+
+        //Address/Contact
+
+        $m("#btnSaveAddress").click(function () {
+            event.preventDefault();
+            dialog_Address_TransInfo.dialog("open");
+            $("#btnAddressUpdate_TreaInfo").hide();
+            $("#btnAddressSave_TreaInfo").show();
+            sessionStorage.setItem("tabName", "Treasurer Information");
+        });
+
+        //Add New Contact Committee
+        $m("#btnSaveContact").click(function () {
+            event.preventDefault();
+            dialog_Contact_TransInfo.dialog("open");
+            $("#btnContactSave_TreaInfo").show();
+            $("#btnContactUpdate_TreaInfo").hide();
+            sessionStorage.setItem("tabName", "Treasurer Information");
+        });
+
+        //Clear form
+        $m("#btnClearContact").click(function () {
+            $m("#btnContactSave_TreaInfo").prop("disabled", true);
+        });
+
+        //Add New User
+        var flag = false;
+        $m("#btnAddressSave_TreaInfo").click(function (e) {
+            e.preventDefault();
+            try {
+                $m("#divLoading").hide();
+            } catch (e) {
+                console.warn("Unable to hide #divLoading.");
+            }
+            $m(this).prop("disabled", true);
+            if ($m("#lstAddressType option:selected").text() == "- Select -") {
+                //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                alert('Select Address Type');
+            }
+            else if ($m("#txtStreetName").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Address 1', 'Ok', '');
+                alert('Enter Address');
+            }
+            else if ($m("#txtCity").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter City', 'Ok', '');
+                alert('Enter City');
+            }
+            else if ($m("#txtState").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter State', 'Ok', '');
+                alert('Enter State');
+            }
+            else if ($m("#txtZipCode").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Zip', 'Ok', '');
+                alert('Enter Zip');
+            }
+            else {
+                $m.ajax({
+                    url: '../TreasurerProfile/AddAddress',
+                    data: {
+                        lstAddressType: $m("#lstAddressType option:selected").val(),
+                        lstBestContact: $m("#lstBestContactForAddress option:selected").val(),
+                        txtStreetName: $m("#txtStreetName").val().toString(),
+                        txtCity: $m("#txtCity").val().toString(),
+                        txtState: $m("#txtState").val().toString(),
+                        txtZip: $m("#txtZipCode").val().toString()
+                    },
+                    success: function (data) {
+                        dialog_Address_TransInfo.dialog("close");//Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                        window.status = "Data Saved successfully";
+                        alert("Address Saved successfully");
+                        BindAddressData();
+                    },
+                    error: function () {
+                    }
+                }).always(function () {
+                    $m(this).prop("disabled", false);
+                    try {
+                        $m("#divLoading").hide();
+                    } catch (e) {
+                        console.warn("Unable to hide #divLoading.");
+                    }
+                });
+            }
+        });
+
+         //Update user data
+        $m("#btnAddressUpdate_TreaInfo").click(function () {
+            event.preventDefault();
+            if ($m("#lstAddressType option:selected").text() == "- Select -") {
+                //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                alert("Select Address Type");
+            }
+            else if ($m("#txtStreetName").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Address 1', 'Ok', '');
+                alert("Enter Address");
+            }
+            else if ($m("#txtCity").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter City', 'Ok', '');
+                alert("Enter City'");
+            }
+            else if ($m("#txtState").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter State', 'Ok', '');
+                alert("Enter State'");
+            }
+            else if ($m("#txtZipCode").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Zip', 'Ok', '');
+                alert("Enter Zip");
+            }
+            else {
+                var options = {};
+                options.url = "@Url.Content("../TreasurerProfile/UpdateAddress")";
+                options.type = "GET";
+                options.data = {
+                    strAddressId: sessionStorage.getItem("AddressID").toString(),
+                    lstAddressType: $m("#lstAddressType option:selected").val(),
+                    lstBestContact: $m("#lstBestContactForAddress option:selected").val(),
+                    txtStreetName: $m("#txtStreetName").val().toString(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZip: $m("#txtZipCode").val().toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    dialog_Address_TransInfo.dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                    window.status = "Data Saved successfully";
+                    alert("Address Updated successfully");
+                    BindAddressData();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        $m("#btnContactSave_TreaInfo").click(function () {
+            event.preventDefault();
+            $m(this).prop("disabled", true);
+            try {
+                $m("#divLoading").show();
+            } catch (e) {
+                console.warn("Unable to show #divLoading.");
+            }
+            if ($m("#lstBestContact option:selected").text() == "- Select -") {
+                ShowDialogBox('CAPASFIDAS', 'Select Best Contact', 'Ok', '');
+            }
+            else {
+                var options = {};
+                //options.url = "../AddContact/AddContactData";
+                options.url = "@Url.Content("../TreasurerProfile/AddContactData")";
+                options.type = "GET";
+                options.data = {
+                    lstBestContact: $m("#lstBestContact option:selected").val(),
+                    txtContactPhone: $m("#txtContactPhone").val().toString(),
+                    txtContactEmail: $m("#txtContactEmail").val().toString(),
+                    tabName: sessionStorage.getItem("tabName").toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    dialog_Contact_TransInfo.dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                    window.status = "Data Saved successfully";
+                    alert("Contact Information Saved successfully");
+                    BindContactData();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options).always(function () {
+                    $m(this).prop("disabled", false);
+                    try {
+                        $m("#divLoading").hide();
+                    } catch (e) {
+                        console.warn("Unable to hide #divLoading.");
+                    }
+
+                });
+            }
+        });
+
+        $m("#btnContactUpdate_TreaInfo").click(function () {
+            event.preventDefault();
+            if ($m("#lstBestContact option:selected").text() == "- Select -") {
+                ShowDialogBox('CAPASFIDAS', 'Select Best Contact', 'Ok', '');
+            }
+            else {
+                var options = {};
+                //options.url = "../AddContact/AddContactData";
+                options.url = "@Url.Content("../TreasurerProfile/EditContactData")";
+                options.type = "GET";
+                options.data = {
+                    contactID: sessionStorage.getItem("ContactID").toString(),
+                    lstBestContact: $m("#lstBestContact option:selected").val(),
+                    txtPhone: $m("#txtContactPhone").val().toString(),
+                    txtEmail: $m("#txtContactEmail").val().toString()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    dialog_Contact_TransInfo.dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                    window.status = "Data Updated successfully";
+                    alert("Contact Information updated successfully");
+
+                    BindContactData();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Edit Address record
+        $m('#gridAddress tbody').on('click', 'a.editor_edit_address', function (e) {
+            event.preventDefault();
+            dialog_Address_TransInfo.dialog("open");
+            $("#btnAddressUpdate_TreaInfo").show();
+            $("#btnAddressSave_TreaInfo").hide();
+            var data = tableAddress.row($(this).parents('tr')).data();
+            sessionStorage.setItem("AddressID", data[0].toString());
+            $("#lstAddressType")[0].selectedIndex = 0
+            $("#lstBestContactForAddress")[0].selectedIndex = 0;
+            $("#txtStreetName").val(data[4].toString());
+            $("#txtCity").val(data[5].toString());
+            $("#txtState").val(data[6].toString());
+            $("#txtZipCode").val(data[7].toString());
+        });
+
+        // Edit Contact record
+        $m('#gridContact tbody').on('click', 'a.editor_edit_Contact', function (e) {
+            e.preventDefault();
+            var data = tableContact.row($(this).parents('tr')).data();
+            dialog_Contact_TransInfo.dialog("open");
+            $("#btnContactUpdate_TreaInfo").show();
+            $("#btnContactSave_TreaInfo").hide();
+            var data = tableContact.row($(this).parents('tr')).data();
+            sessionStorage.setItem("ContactID", data[0].toString());
+            $("#lstBestContact").selectedIndex = 0
+            $("#txtContactPhone").val(data[5].toString());
+            $("#txtContactEmail").val(data[6].toString());
+        });
+
+        function ResetAddressFiled() {
+            $("#lstAddressType").selectedIndex = 0
+            $("#lstBestContactForAddress").selectedIndex = 0;
+            $("#txtStreetName").val("");
+            $("#txtCity").val("");
+            $("#txtState").val("");
+            $("#txtZipCode").val("");
+        }
+
+        $m("#btnCloseDialog").button().on("click", function () {
+            $m("#btnAddressSave_TreaInfo").prop("disabled", false);
+            dialog_Address_TransInfo.dialog("close");
+        });
+
+        $m("#btnCloseDialogForContact").button().on("click", function () {
+            $m("#btnContactSave_TreaInfo").prop("disabled", false);
+            dialog_Contact_TransInfo.dialog("close");
+        });
+
+        function BindContactData()
+        {
+            var tableContactForTransInfo = $m('#gridContact').DataTable({
+                "bProcessing": true,
+                "DeferRender": true,
+                "retrieve": true,
+                "stateSave": true,
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(0)', nRow).html('<a class="editor_edit_Contact" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '" ><img src="../Content/Images/edit.png" title="Edit Row ' + iDisplayIndex + ' Data"/></a><a class="editor_remove_Contact" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row ' + iDisplayIndex +' Data"/></a>');
+                    return nRow;
+                },
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#gridContact').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": "@Url.Content("~/TreasurerProfile/GetShowContact/")",
+                        "data": {
+                            personID: ""
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                }
+            });
+            tableContactForTransInfo.column(0).visible(false);
+            tableContactForTransInfo.column(1).visible(false);
+            tableContactForTransInfo.column(2).visible(false);
+            tableContactForTransInfo.columns.adjust().draw(false);
+            $m('#gridContact').DataTable().ajax.reload();
+        }
+
+        function BindAddressData()
+        {
+            var tableAddressForTransInfo = $m('#gridAddress').DataTable({
+                "bProcessing": true,
+                "DeferRender": true,
+                "retrieve": true,
+                "stateSave": true,
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID =  iDisplayIndex + "" +nRow.rowIndex.toString();
+                    uniqueID = uniqueID.replace("'", "").replace('"', ""); //remove ' and "
+                    $m('td:eq(0)', nRow).html('<a class="editor_edit_address" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '" ><img src="../Content/Images/edit.png" title="Edit Row ' + iDisplayIndex + ' Data"/></a><a class="editor_remove_adderss" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '" ><img src="../Content/Images/delete.png" title="Delete Row ' + iDisplayIndex +' Data"/></a>');
+                    return nRow;
+                },
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#gridAddress').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": "@Url.Content("../TreasurerProfile/GetAddressData/")",
+                        "data": {
+                            personID: ""
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                }
+            });
+            tableAddressForTransInfo.column(0).visible(false);
+            tableAddressForTransInfo.columns.adjust().draw(false);
+            $m('#gridAddress').DataTable().ajax.reload();
+        }
+
+    }); // Document End
+
+    function ValidateNumber(e) {
+        //var evt = (e) ? e : window.event;
+        //var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        //if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //    return false;
+        //}
+        //return true;
+        //if (e.keyCode == '9' || e.keyCode == '16') {
+        //    return;
+        //}
+        //var code;
+        //if (e.keyCode) code = e.keyCode;
+        //else if (e.which) code = e.which;
+        //if (e.which == 46)
+        //    return false;
+        //if (code == 8 || code == 46)
+        //    return true;
+        //if (code < 48 || code > 57)
+        //    return false;
+
+        //if ((e.which < 48 || e.which > 57)) {
+        //    if (e.which == 8 || e.which == 46 || e.which == 0) {
+        //        return true;
+        //    }
+        //    else {
+        //        return false;
+        //    }
+        //}
+    };
+
+    var selectedAgency = "";
+
+    //Add New Address
+    //$m("#btnSaveAddress").click(function () {
+    //    event.preventDefault();
+    //    window.open("../AddEditAddress/AddEditAddress?agencyID=" + selectedAgency + "", "popupWindow", "width=680, height=300");
+    //});
+
+    //Add New Contact
+    //$m("#btnSaveContact").click(function () {
+    //    event.preventDefault();
+    //    window.open("../AddContact/AddContact?agencyID=" + selectedAgency + "", "popupWindow", "width=900, height=250");
+    //});
+
+    //// Add New Depository/Bank Information
+    //$m("#btnCommonSaveDepositoryBank").click(function () {
+    //    event.preventDefault();
+    //    window.open("../AddBankDetails/AddBankDetails?agencyID=" + selectedAgency + "", "popupWindow", "width=750, height=300");
+    //});
+
+    // Add New Authorized to Sign Checks Details
+    //$m("#btnSaveAuthSignChecks").click(function () {
+    //    event.preventDefault();
+    //    //window.open("../AddAuthSignChecksDetails/AddAuthSignChecksDetails?agencyID=" + selectedAgency + "", "popupWindow", "width=900, height=600");
+    //    window.open("../AddAuthSignChecksDetails/AddAuthSignChecksDetails", "popupWindow", "width=900");
+    //});
+
+    //// Candidate Information Save
+    //$("#btnCommonUpdate").click(function () {
+
+    //});
+
+    //// Candidate Information Clear
+    //$("#btnCommonClear").click(function () {
+
+    //});
+
+
+</script>
+

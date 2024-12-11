@@ -1,0 +1,417 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_H_TransferOut", "_UC_H_TransferOut", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridTransferOut" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdTransferOut" class="border1pxCls" style="padding-left:2em;">Date Paid</th>
+                <th id="thTransferorNameTransferOut" class="border1pxCls">Transferee Name</th>
+                <th id="thStreetTransferOut" class="border1pxCls">Street #</th>
+                <th id="thStreetNameTransferOut" class="border1pxCls">Street Name</th>
+                <th id="thCityTransferOut" class="border1pxCls">City</th>
+                <th id="thStateTransferOut" class="border1pxCls">State</th>
+                <th id="thZip5TransferOut" class="border1pxCls">Zip5</th>
+                <th id="thZip4TransferOut" class="border1pxCls">Zip4</th>
+                <th id="thTransferTypeTransferOut" class="border1pxCls">Transfer Type</th>
+                <th id="thMethodTransferOut" class="border1pxCls">Method</th>
+                <th id="thCheckTransferOut" class="border1pxCls">Check #</th>
+                <th id="thAmtTransferOut" class="border1pxCls">Amt</th>
+                <th id="thExplanationTransferOut" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdTransferOut" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdTransferorNameTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartnerShipName", @class = "txtWidth" })</td>
+                <td id="tdStreetTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5TransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4TransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdTransferTypeTransferOut" class="border1pxCls" valign="bottom">@Html.DropDownList("lstTransferType", ViewData["lstTransferType"] as SelectList, new { @class = "" })</td>
+                <td id="tdMethodTransferOut" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheckTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheck", @class = "txtWidth" })</td>
+                <td id="tAmtTransferOut" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtTransferOut", @class = "txtWidth" })</td>
+                <td id="tdExplanationTransferOut" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationTransferOut", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTTransferOut" style="padding-bottom:3em;">
+            <table id="ContributionsTransferOutGrid" class="webGrid" style="width:100%;">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Paid</th>
+                        <th>Transferee Name</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Transfer Type</th>
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amount</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+        $("#thParterShipNameTransferOut").hide("slow");
+        $("#tdPartnershipNameTransferOut").hide("slow");
+
+        $("#divDTTransferOut").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridTransferOut").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            var table = $m('#ContributionsTransferOutGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                //"scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_H_TransferOut/GetTransferOutSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#ContributionsTransferOutGrid').DataTable());
+                }
+            });
+            $m('#ContributionsTransferOutGrid').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#ContributionsTransferOutGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationTransferOut").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTTransferOut").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationTransferOut").focusout(function () {
+            alert("Data Saved Successfully");
+            $m('#PartnersGridTransferOut').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#ContributionsTransferOutGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameTransferOut option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtTransferOutTransferOut").val(data[15].toString());
+            $("#txtExplanationTransferOut").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameTransferOut").show("slow");
+                $("#thMITransferOut").show("slow");
+                $("#thLastNameTransferOut").show("slow");
+                $("#thStreetTransferOut").show("slow");
+                $("#thStreetNameTransferOut").show("slow");
+                $("#thCityTransferOut").show("slow");
+                $("#thStateTransferOut").show("slow");
+                $("#thZip5TransferOut").show("slow");
+                $("#thZip4TransferOut").show("slow");
+                $("#thContributionTypeTransferOut").show("slow");
+                $("#thMethodTransferOut").show("slow");
+                $("#thCheckTransferOut").show("slow");
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameTransferOut").show("slow");
+                $("#tdMITransferOut").show("slow");
+                $("#tdLastNameTransferOut").show("slow");
+                $("#tdStreetTransferOut").show("slow");
+                $("#tdStreetNameTransferOut").show("slow");
+                $("#tdCityTransferOut").show("slow");
+                $("#tdStateTransferOut").show("slow");
+                $("#tdZip5TransferOut").show("slow");
+                $("#tdZip4TransferOut").show("slow");
+                $("#tdContributionTypeTransferOut").show("slow");
+                $("#tdMethodTransferOut").show("slow");
+                $("#tdCheckTransferOut").show("slow");
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+
+                $("#thParterShipNameTransferOut").hide("slow");
+                $("#tdPartnershipNameTransferOut").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                $("#thFirstNameTransferOut").hide("slow");
+                $("#thMITransferOut").hide("slow");
+                $("#thLastNameTransferOut").hide("slow");
+                $("#thStreetTransferOut").hide("slow");
+                $("#thStreetNameTransferOut").hide("slow");
+                $("#thCityTransferOut").hide("slow");
+                $("#thStateTransferOut").hide("slow");
+                $("#thZip5TransferOut").hide("slow");
+                $("#thZip4TransferOut").hide("slow");
+                $("#thContributionTypeTransferOut").hide("slow");
+                $("#thMethodTransferOut").hide("slow");
+                $("#thCheckTransferOut").hide("slow");
+
+                //Show All TD
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+
+                $("#tdFirstNameTransferOut").hide("slow");
+                $("#tdMITransferOut").hide("slow");
+                $("#tdLastNameTransferOut").hide("slow");
+                $("#tdStreetTransferOut").hide("slow");
+                $("#tdStreetNameTransferOut").hide("slow");
+                $("#tdCityTransferOut").hide("slow");
+                $("#tdStateTransferOut").hide("slow");
+                $("#tdZip5TransferOut").hide("slow");
+                $("#tdZip4TransferOut").hide("slow");
+                $("#tdContributionTypeTransferOut").hide("slow");
+                $("#tdMethodTransferOut").hide("slow");
+                $("#tdCheckTransferOut").hide("slow");
+
+                $("#thParterShipNameTransferOut").hide("slow");
+                $("#tdPartnershipNameTransferOut").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameTransferOut").show("slow");
+                $("#tdPartnershipNameTransferOut").show("slow");
+
+                //Show All TR
+                $("#thFirstNameTransferOut").hide("slow");
+                $("#thMITransferOut").hide("slow");
+                $("#thLastNameTransferOut").hide("slow");
+                $("#thStreetTransferOut").show("slow");
+                $("#thStreetNameTransferOut").show("slow");
+                $("#thCityTransferOut").show("slow");
+                $("#thStateTransferOut").show("slow");
+                $("#thZip5TransferOut").show("slow");
+                $("#thZip4TransferOut").show("slow");
+                $("#thContributionTypeTransferOut").show("slow");
+                $("#thMethodTransferOut").show("slow");
+                $("#thCheckTransferOut").show("slow");
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameTransferOut").hide("slow");
+                $("#tdMITransferOut").hide("slow");
+                $("#tdLastNameTransferOut").hide("slow");
+                $("#tdStreetTransferOut").show("slow");
+                $("#tdStreetNameTransferOut").show("slow");
+                $("#tdCityTransferOut").show("slow");
+                $("#tdStateTransferOut").show("slow");
+                $("#tdZip5TransferOut").show("slow");
+                $("#tdZip4TransferOut").show("slow");
+                $("#tdContributionTypeTransferOut").show("slow");
+                $("#tdMethodTransferOut").show("slow");
+                $("#tdCheckTransferOut").show("slow");
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameTransferOut").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameTransferOut option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameTransferOut").show("slow");
+                $("#thMITransferOut").show("slow");
+                $("#thLastNameTransferOut").show("slow");
+                $("#thStreetTransferOut").show("slow");
+                $("#thStreetNameTransferOut").show("slow");
+                $("#thCityTransferOut").show("slow");
+                $("#thStateTransferOut").show("slow");
+                $("#thZip5TransferOut").show("slow");
+                $("#thZip4TransferOut").show("slow");
+                $("#thContributionTypeTransferOut").show("slow");
+                $("#thMethodTransferOut").show("slow");
+                $("#thCheckTransferOut").show("slow");
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameTransferOut").show("slow");
+                $("#tdMITransferOut").show("slow");
+                $("#tdLastNameTransferOut").show("slow");
+                $("#tdStreetTransferOut").show("slow");
+                $("#tdStreetNameTransferOut").show("slow");
+                $("#tdCityTransferOut").show("slow");
+                $("#tdStateTransferOut").show("slow");
+                $("#tdZip5TransferOut").show("slow");
+                $("#tdZip4TransferOut").show("slow");
+                $("#tdContributionTypeTransferOut").show("slow");
+                $("#tdMethodTransferOut").show("slow");
+                $("#tdCheckTransferOut").show("slow");
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+
+                $("#thParterShipNameTransferOut").hide("slow");
+                $("#tdPartnershipNameTransferOut").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                $("#thFirstNameTransferOut").hide("slow");
+                $("#thMITransferOut").hide("slow");
+                $("#thLastNameTransferOut").hide("slow");
+                $("#thStreetTransferOut").hide("slow");
+                $("#thStreetNameTransferOut").hide("slow");
+                $("#thCityTransferOut").hide("slow");
+                $("#thStateTransferOut").hide("slow");
+                $("#thZip5TransferOut").hide("slow");
+                $("#thZip4TransferOut").hide("slow");
+                $("#thContributionTypeTransferOut").hide("slow");
+                $("#thMethodTransferOut").hide("slow");
+                $("#thCheckTransferOut").hide("slow");
+
+                //Show All TD
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+
+                $("#tdFirstNameTransferOut").hide("slow");
+                $("#tdMITransferOut").hide("slow");
+                $("#tdLastNameTransferOut").hide("slow");
+                $("#tdStreetTransferOut").hide("slow");
+                $("#tdStreetNameTransferOut").hide("slow");
+                $("#tdCityTransferOut").hide("slow");
+                $("#tdStateTransferOut").hide("slow");
+                $("#tdZip5TransferOut").hide("slow");
+                $("#tdZip4TransferOut").hide("slow");
+                $("#tdContributionTypeTransferOut").hide("slow");
+                $("#tdMethodTransferOut").hide("slow");
+                $("#tdCheckTransferOut").hide("slow");
+
+                $("#thParterShipNameTransferOut").hide("slow");
+                $("#tdPartnershipNameTransferOut").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameTransferOut").show("slow");
+                $("#tdPartnershipNameTransferOut").show("slow");
+
+                //Show All TR
+                $("#thFirstNameTransferOut").hide("slow");
+                $("#thMITransferOut").hide("slow");
+                $("#thLastNameTransferOut").hide("slow");
+                $("#thStreetTransferOut").show("slow");
+                $("#thStreetNameTransferOut").show("slow");
+                $("#thCityTransferOut").show("slow");
+                $("#thStateTransferOut").show("slow");
+                $("#thZip5TransferOut").show("slow");
+                $("#thZip4TransferOut").show("slow");
+                $("#thContributionTypeTransferOut").show("slow");
+                $("#thMethodTransferOut").show("slow");
+                $("#thCheckTransferOut").show("slow");
+                $("#thAmtTransferOut").show("slow");
+                $("#thExplanationTransferOut").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameTransferOut").hide("slow");
+                $("#tdMITransferOut").hide("slow");
+                $("#tdLastNameTransferOut").hide("slow");
+                $("#tdStreetTransferOut").show("slow");
+                $("#tdStreetNameTransferOut").show("slow");
+                $("#tdCityTransferOut").show("slow");
+                $("#tdStateTransferOut").show("slow");
+                $("#tdZip5TransferOut").show("slow");
+                $("#tdZip4TransferOut").show("slow");
+                $("#tdContributionTypeTransferOut").show("slow");
+                $("#tdMethodTransferOut").show("slow");
+                $("#tdCheckTransferOut").show("slow");
+                $("#tAmtTransferOut").show("slow");
+                $("#tdExplanationTransferOut").show("slow");
+            }
+        });
+    });
+</script>

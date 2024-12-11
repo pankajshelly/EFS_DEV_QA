@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "HelpReconcileLoans";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>How to Reconcile Loans:</h1>
+    </div>
+    <br />
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                
+                <ol>
+                    <li>Select <strong>Loan Reconcile</strong> from the menu at the top of the screen.</li>
+                    <li>Verify <strong>Filer ID</strong> and <strong>Candidate/Committee Name</strong> are correct.</li>
+                    <li>Click on <strong>Apply</strong> button in the filter section.</li>
+                    <li>System displays <strong>Loans Received (Schedule I) </strong> grid with all the outstanding <strong>legacy Loans Received</strong> transactions. If there are no outstanding Loans for logged in filer then system displays <strong>No data available in table</strong> in the grid. </li>
+                    <li>Filer must have a <strong>Loan Received transaction</strong> to be reconciled, to display in the grid. </li>
+                    <li>If there is more than one original outstanding Loan transaction, then system lists all those transactions under <strong>Outstanding Liabilities/Loan (Schedule N)</strong> grid. </li>
+                    <li>Uncheck any of the transactions selected in the <strong>Outstanding Liabilities/Loan (Schedule N) </strong> grid if the original schedule N transaction does not belong to this Loans Received transaction. Click on the <strong>Reconcile</strong> button to reconcile original outstanding loans transaction with Loans Received transaction. </li>
+                    <li>After reconciling the outstanding Loan with Loans Received transaction, system displays a dialog box stating <strong>The Original Schedule N was reconciled</strong> with <strong>Ok</strong> button.</li>
+                    <li>Click on <strong>Ok</strong> button, system displays <strong>Loan Payment (Schedule J) </strong> and <strong>Liabilities/Loans Forgiven (Schedule K) </strong> with all the Loan Payment and Loan Forgiven transactions if user filer made payments and forgivens for the selected loan. If not, system displays <strong>No data available in table</strong> in the grid. </li>
+                    <li>Select the oldest to recent loan payment or loan forgiven transaction. </li>
+                    <li><strong>Example: </strong> If one payment was made for the 2015 general and another for the 2016 general and one loan forgiven for the 2016 Primary, then first select the loan payment made for the 2015 General and reconcile, then reconcile Loan Forgiven and then reconcile 2016 General Loan Payment transaction. </li>
+                    <li>Selects required <strong>Loan Payment Schedule (J) </strong> transaction. </li>
+                    <li>System list all the <strong>Outstanding Loans (Schedule N) </strong> transactions. </li>
+                    <li>Unselect any of the schedule N transactions and clicks on <strong>Reconcile</strong> button. </li>
+                    <li>System reconciles the <strong>Loan Payment (Schedule J)</strong> and <strong>Outstanding Loan (Schedule N)</strong> transactions and displays a dialog box stating, <strong>The submitted transactions were reconciled</strong> with <strong>Ok button. </li>
+                    <li>Click on <strong>Ok</strong> button. </li>
+                    <li>System closes the dialog box and removes the reconciled payment transactions from <strong>Loan Payment (schedule J)</strong> grid. </li>
+                    <li>Continue to reconcile all <strong>Loan Payment (Schedule J)</strong> or <strong>Loans Forgiven (Schedule K) </strong> transactions. </li>
+                    <li>After reconciling all the Payment and Forgiven transactions, system removes the original loans received transactions from the <strong>Loans Received (schedule I) </strong> grid. </li>
+                    <li>Continue this process to reconcile all the outstanding Loans Received transactions with Loan payment, Loan Forgiven and Outstanding Loan transactions. </li>
+                    <li>After reconciliation process, verify the reconciled Loans Received transactions with Loan payment, Loan Forgiven and Outstanding Loan transactions display in the <strong>File a Disclosure Report</strong> page for the corresponding Disclosure Period. </li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

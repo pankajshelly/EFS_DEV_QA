@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "ImportDisclosureReportSearchHelp";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone" class="clspaddingleft1em paddingTop1em">
+    <div data-role="header">
+        <h1>Import Disclosure Reports Filter</h1>
+        <br />
+    </div>
+    <div class="helpFilterHeaderTxt">
+        <p>This Search returns imported disclosure reports uploaded in the system by the Filer, according to the search parameters selected.</p>
+        <br />
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Filer ID</h3>
+                <div>
+                    <p>Select Filer ID from Filer ID dropdown field. If only one Filer ID is associated with the User ID, then system displays the Filed ID as default value in Filer ID dropdown field. Subsequent enabled field can be used to filter down the search. Click on Apply button to get the search result.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Filer Type</h3>
+                <div>
+                    <p>When Filer ID is selected to search the details, filer type details (State/Local or Village) is displayed in this display-only field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Candidate/Committee Name</h3>
+                <div>
+                    <p>When Filer ID is selected to search the details, name of the filer is displayed in this display-only field.</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Report Year</h3>
+                <div>
+                    <p>System populates Report Year dropdown field with the year(s). The default value is Select. This is an optional field. Click on Report Year dropdown field and select a value from the list and click on Apply button to search for that specific Report Year.</p>
+                </div>
+            </div>
+        </div>               
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Apply Button</h3>
+                <div>
+                    <p>Click on the Apply button to execute the search once the relevant filter criteria are selected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Clear Button</h3>
+                <div>
+                    <p>Click on the Clear Button to reset the screen and start a new search.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

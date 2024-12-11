@@ -1,0 +1,52 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = ": Error Page";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+<div class="pt-4" style="text-align: center;">
+    <div class="card" style="text-align: center; width: 95%;margin-left: auto;margin-right: auto;">
+        <div class="card-body">
+            <h1 class="card-title">Application Error</h1>
+            <p class="card-text">Please use the link to return to the home page or close your browser and try again.</p>
+            <p class="card-text">If error continues, contact the NYS Board of Elections IT Help desk at (518) 474-8200.</p>
+            <ul style="text-align: center; list-style-position: inside;">
+                <li><strong>Go to @Html.ActionLink("Application Home Page", "Home", "Home", null, new { @style = "color:black; text-decoration: underline;" })</strong></li>
+                <li><strong>Go to <a href="https://www.elections.ny.gov/" style="color:black; text-decoration: underline;">NY Board of Elections Site</a></strong></li>
+            </ul>
+        </div>
+    </div>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <div class="pb-2">
+            <hr />
+            <h1>
+                Debug: @if (ViewData["ErrorNumber"] != null)
+                {<bold>'@ViewData["ErrorNumber"]' </bold>}Error Detected
+            </h1>
+            <h2>This application is configured to redirect when an unhandled exception is detected.</h2>
+            <p>Please review your previous interaction and the controllers and services. Make sure to catch and handle the exception to avoid redirection.</p>
+            @if (ViewData["ErrorMessage"] != null)
+            {
+                <div class="card text-left" style="width: 95%;margin-left: auto;margin-right: auto;">
+                    <div class="card-body text-left">
+                        <h1>Exception Info:</h1>
+                        <div style="overflow:auto">
+                            <p class="card-text text-left">
+                                <pre class="white-space: pre-line;">
+                            <!--ViewData["ErrorMessage"]-->
+                            @foreach (string message in (List<string>)ViewData["ErrorMessage"])
+                            {
+                                @message<br />
+
+
+
+                            }
+                        </pre>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

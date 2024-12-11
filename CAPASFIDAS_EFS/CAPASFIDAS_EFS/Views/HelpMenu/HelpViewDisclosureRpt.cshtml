@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = ": Help View Disclosure Report";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>How to View Disclosure Reports:</h1>
+    </div>
+    <br />
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                @*<h1>How to View Disclosure Reports:</h1>*@
+                <p>There are two options:</p>
+                <ol type="1">
+                    <li>
+                        View All Disclosure Reports
+                        <p>This option will show all iterations, Original and Amendments, of all Disclosure Reports.</p>
+                        <ol type="a">
+                            <li>Select <strong>View All Disclosures</strong> from the menu at the top of the screen.</li>
+                            <li>Select the <strong>Report Year</strong>, <strong>Filer Type</strong>, <strong>Report Type</strong>, <strong>Election Date</strong>, <strong>Disclosure Type</strong> and <strong>Disclosure Period</strong> if applicable from the Filter.  Click <strong>Apply</strong>.</li>
+                            <li style="list-style-type: none;"><strong>Note:</strong>  Only the <strong>Report Year</strong> is required as indicated by the asterisk (*).</li>
+                            <li>All Disclosure reports, submitted and un-submitted, will be displayed in the grid.</li>
+                            <li style="list-style-type: none;"><strong>Note:</strong>  To <strong>Sort</strong>, click the column name you wish to sort by. To <strong>Filter</strong>, type a word you are looking for in the <strong>Search</strong> box.</li>
+                            <li>To <strong>view the transactions</strong> of a particular Disclosure Report, click to highlight yellow a disclosure report on the top grid and a Transactions grid will display the transactions for that disclosure report in a grid below.</li>
+                            <li style="list-style-type: none;"><strong>Note:</strong>  Click the expand (blue +) icon to display all the fields of the transaction.</li>
+                            <li>To <strong>view details (partners, subcontractors etc.) of a transaction</strong>, click on the <strong>Details link</strong> under the <strong>Action</strong> column to highlight yellow the transaction and a Transaction Details grid will display the details for the selected transaction.</li>
+                            <li>To <strong>view supporting documents</strong> of a transaction, click on the <strong>Supporting Docs link</strong> under the <strong>Action</strong> column and a Supporting Documents grid will display.  Click on the document link under the <strong>Supporting Documents</strong> column to view the document.</li>
+                            <li>To <strong>view campaign material</strong>, click to highlight yellow a campaign material transaction in the transactions grid and a Campaign Materials grid will display.  Click on the <strong>Campaign Material link</strong> under the <strong>Action</strong> column to view the document.</li>
+                        </ol>
+                    <li>
+                        View/Submit Disclosures
+                        <ol type="a">
+                            <li>Select <strong>View/Submit Disclosure Report</strong> from the menu at the top of the screen.</li>
+                            <li>Select the <strong>Report Year</strong>, <strong>Filer Type</strong>, <strong>Report Type</strong>, <strong>Election Date</strong>, <strong>Disclosure Type</strong> and <strong>Disclosure Period</strong>if applicable from the Filter.  Click <strong>Apply</strong>.</li>
+                            <li><strong>As Entered</strong> is the default view.  Select <strong>By Transaction Type</strong> or <strong>By Schedule</strong> from the dropdown to change the view.</li>
+                        </ol>
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

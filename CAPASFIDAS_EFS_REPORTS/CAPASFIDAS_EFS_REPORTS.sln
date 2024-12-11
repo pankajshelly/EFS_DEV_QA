@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "CAPASFIDAS_EFS_REPORTS", "CAPASFIDAS_EFS_REPORTS.rptproj", "{66D48848-E1A7-4116-B185-B704AE44AF6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Debug|Default.ActiveCfg = Debug
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Debug|Default.Build.0 = Debug
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Debug|Default.Deploy.0 = Debug
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.DebugLocal|Default.Build.0 = DebugLocal
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Release|Default.ActiveCfg = Release
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Release|Default.Build.0 = Release
+		{66D48848-E1A7-4116-B185-B704AE44AF6D}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EDF04E8-874D-4DA4-AEC7-36A29379EE8D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://pvstfs1s1:8080/tfs/nysboe_collection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CAPASFIDAS_EFS_REPORTS.rptproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,210 @@
+﻿@{
+    Layout = null;
+}
+<!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+    Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+<!--Minified script bundles-->
+@Scripts.Render("~/Scripts/bundle-jquery")
+@Scripts.Render("~/Scripts/bundle-jquery-ui")
+@Scripts.Render("~/Scripts/bundle-bootstrap")
+@Scripts.Render("~/Scripts/bundle-other")
+
+<!--Style bundles-->
+@Styles.Render("~/Content/bundle-base")
+@Styles.Render("~/Content/bundle-jquery")
+@Styles.Render("~/Content/bundle-jquery-ui")
+@Styles.Render("~/Content/bundle-bootstrap")
+@Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+
+<div style="text-align:center;">
+    <h1 class="h1Bold">Edit Contact</h1>
+</div>
+
+@using (Html.BeginForm("EditContact", "EditContact", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div  class="divAddressPopUp">
+        <div style="text-align:left;" class="paddingLeft1em">
+            @*<span id="spnTitle">
+            @Html.Label("Title", new { @id = "lblTitle" })
+        </span>
+        <span id="spnTitle" class="paddingLeftpoint7em">
+            @Html.DropDownList("lstTitle", "- Select -")
+        </span>
+        <br />
+        <span id="spnPrefix">
+            @Html.Label("Prefix", new { @id = "lblPrefix" })
+        </span>
+        <span id="spnPrefix">
+            @Html.TextBox("searchTerm", (string)ViewBag.PERSON_PREFIX, null, new { id = "txtPrefix", size = "5" }) &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span id="spnFirstName">
+            @Html.Label("First Name", new { @id = "lblFirstName" })
+        </span>
+        <span id="spnFirstName">
+            @Html.TextBox("searchTerm", (string)ViewBag.PERSON_FIRST_NAME, null, new { id = "txtFirstName", size = "15" }) &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span id="spnMiddleName">
+            @Html.Label("Middle Name", new { @id = "lblMiddleName" })
+        </span>
+        <span id="spnMiddleName">
+            @Html.TextBox("searchTerm", (string)ViewBag.PERSON_MIDDLE_NAME, null, new { id = "txtMiddleName", size = "15" }) &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span id="spnLastName">
+            @Html.Label("Last Name", new { @id = "lblLastName" })
+        </span>
+        <span id="spnLastName">
+            @Html.TextBox("searchTerm", (string)ViewBag.PERSON_LAST_NAME, null, new { id = "txtLastName", size = "15" }) &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span id="spn">
+            @Html.Label("Suffix", new { @id = "lblSuffix" })
+        </span>
+        <span id="spn">
+            @Html.TextBox("searchTerm", (string)ViewBag.PERSON_SUFFIX, null, new { id = "txtSuffix", size = "5" })
+        </span>
+        <br />
+        <br />
+        <br />*@
+            <span style="float: left;">
+                <span id="spnBestContactLbl">
+                    <span id="lblBestContact">Best Contact</span>
+                </span>
+                <span id="spnBestContact" class="paddingLeft1pt1em">
+                    @Html.DropDownList("lstBestContact", null, "- Select -", new { id = "lstBestContact", aria_labelledby = "lblBestContact" })
+                </span>
+            </span>
+            <span style="float: right; padding-right: 2em;">
+                <button id="btnCommonUpdate" class="btn-default buttonCSS" name="Command" value="CSV">
+                    <img src="~/Content/Images/save.png" class="imgButtonCSS" alt="Save"/>
+                </button>
+            </span>
+            <br />
+            <br />
+            <span id="spnContactTypeLbl">
+                <span id="lblContactType">Contact Type</span>
+            </span>
+            <span id="spnContactType" class="paddingLeft0pt9em">
+                <span>
+                    @Html.DropDownList("lstContactType", null, "- Select -", new { id = "lstContactType", aria_labelledby = "lblContactType" })
+                </span>
+                <span class="paddingLeft6pt9em">
+                    @Html.DropDownList("lstContactType1", null, "- Select -", new { id = "lstContactType1", aria_labelledby = "lblContactType" })
+                </span>
+                <span class="paddingLeft6pt8em">
+                    @Html.DropDownList("lstContactType2", null, "- Select -", new { id = "lstContactType2", aria_labelledby = "lblContactType" })
+                </span>
+                <span class="paddingLeft6pt8em">
+                    @Html.DropDownList("lstContactType3", null, "- Select -", new { id = "lstContactType3", aria_labelledby = "lblContactType" })
+                </span>
+            </span>
+            <br />
+            <span id="spnContactValueLbl">
+                <span id="lblContactValue">Contact Value</span>
+            </span>
+            <span id="spnContactValue" class="paddingLeft0pt5em">
+                <span>
+                    <span id="lblContactValuePHONE" class="visibleToScreenReaderOnly">Contact Type</span>
+                    @Html.TextBox("searchTerm", (string)ViewBag.PHONE, null, new { id = "txtContactValue", aria_labelledby = "lblContactValuePHONE" })
+                </span>
+                <span>
+                    <span id="lblContactValueEMAIL" class="visibleToScreenReaderOnly">Contact Type</span>
+                    @Html.TextBox("searchTerm", (string)ViewBag.EMAIL, null, new { id = "txtContactValue1", aria_labelledby = "lblContactValueEMAIL" })
+                </span>
+                <span>
+                    <span id="lblContactValueFAX" class="visibleToScreenReaderOnly">Contact Type</span>
+                    @Html.TextBox("searchTerm", (string)ViewBag.FAX, null, new { id = "txtContactValue2", aria_labelledby = "lblContactValueFAX" })
+                </span>
+                <span>
+                    <span id="lblContactValueURL" class="visibleToScreenReaderOnly">Contact Type</span>
+                    @Html.TextBox("searchTerm", (string)ViewBag.URL, null, new { id = "txtContactValue3", aria_labelledby = "lblContactValueURL" })
+                </span>
+            </span>
+        </div>
+    </div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        $("#lstContactType").prop("disabled", true);
+        $("#lstContactType1").prop("disabled", true);
+        $("#lstContactType2").prop("disabled", true);
+        $("#lstContactType3").prop("disabled", true);
+
+        $("#txtContactValue").prop("disabled", false);
+        $("#txtContactValue").prop("disabled", false);
+        $("#txtContactValue").prop("disabled", false);
+        $("#txtContactValue").prop("disabled", false);
+
+        if ("@ViewBag.PHONE" == "")
+            $("#txtContactValue").prop("disabled", true);
+        if ("@ViewBag.EMAIL" == "")
+            $("#txtContactValue1").prop("disabled", true);
+        if ("@ViewBag.FAX" == "")
+            $("#txtContactValue2").prop("disabled", true);
+        if ("@ViewBag.URL" == "")
+            $("#txtContactValue3").prop("disabled", true);
+
+        //Update user data
+        $m("#btnCommonUpdate").click(function () {
+            event.preventDefault();
+            //if ($m("#lstTitle option:selected").text() == "- Select -") {
+            //    ShowDialogBox('NVRA', 'Select Title', 'Ok', '');
+            //}
+            if ($m("#lstBestContact option:selected").text() == "- Select -") {
+                ShowDialogBox('NVRA', 'Select Best Contact', 'Ok', '');
+            }
+            //else if ($m("#txtFirstName").val().toString() == "") {
+            //    ShowDialogBox('NVRA', 'Enter First Name', 'Ok', '');
+            //}
+            //else if ($m("#txtLastName").val().toString() == "") {
+            //    ShowDialogBox('NVRA', 'Enter Last Name', 'Ok', '');
+            //}
+            //else if ($m("#lstContactType option:selected").text() == "- Select -") {
+            //    ShowDialogBox('NVRA', 'Select Contact Type', 'Ok', '');
+            //}
+            else {
+                var options = {};
+                //options.url = "../EditContact/EditContactData";
+                options.url = "@Url.Content("~/EditContact/EditContactData/")";
+                options.type = "GET";
+                options.data = {
+                    strContactId: "@ViewBag.ContactId",
+                    lstBestContact: $m("#lstBestContact option:selected").val(),
+                    lstContactType: "@ViewBag.ContactTypeId", //$m("#lstContactType option:selected").val(),
+                    txtPhone: $m("#txtContactValue").val().toString(),
+                    txtEmail: $m("#txtContactValue1").val().toString(),
+                    txtFax: $m("#txtContactValue2").val().toString(),
+                    txtURL: $m("#txtContactValue3").val().toString(),
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Data Saved successfully";
+                    window.opener.location.reload(true);
+                    window.close();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClear").click(function () {
+            //$("#lstBestContact")[0].selectedIndex = 0;
+            //$("#lstTitle")[0].selectedIndex = 0;
+            //$("#txtPrefix").val("");
+            //$("#txtFirstName").val("");
+            //$("#txtMiddleName").val("");
+            //$("#txtLastName").val("");
+            //$("#txtSuffix").val("");
+            //$("#lstContactType")[0].selectedIndex = 0;
+            //$("#txtContactValue").val("");
+            //$("#txtContactValue1").val("");
+            //$("#txtContactValue2").val("");
+            //$("#txtContactValue3").val("");
+        });
+    });
+</script>

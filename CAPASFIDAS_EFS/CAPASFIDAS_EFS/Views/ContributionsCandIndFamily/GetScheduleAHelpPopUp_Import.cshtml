@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "GetScheduleAHelpPopUpImport";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<br />
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1 style="padding-left:0.5em;">How to Import Disclosure Data:</h1>
+    </div>
+    <div>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <p style="padding-left:1em;">
+                    Import allows registered Filers to upload data in the required CSV format.
+                    Import must meet the specifications listed in the File Format Reference file.
+                </p>                
+                <ol>
+                    <h2>Import Monetary Contributions</h2>
+                </ol>
+                <p style="padding-left:3em;">
+                    This option is for Filers to import and add itemized Monetary Contributions Received from Individuals and Partnerships only to a selected Disclosure Report. All other data must be reported using the applicable transaction types. Multiple imports are additive. Be sure to review the Disclosure Report to ensure accurate reporting.
+                </p>
+                @*<p style="padding-left:3em;">
+                        <a href="#" name="Command" value="btnDownloadHelpDocumentPDF">Import Monetary Contributions - File Format Reference</a>
+                    </p>*@
+                <ol style="padding-left:4em;">
+                    <p>a. Select <strong>File a Disclosure Report</strong> from the menu at the top of the screen.</p>
+                    <p>b. Select the <strong>Report Year, Filer Type, Election Type, Election Date, Disclosure Type</strong> (Itemized) and <strong>Disclosure Period</strong> from the Filter. Click <strong>Apply</strong>.</p>
+                    <p>c. Select Transaction Type <strong>Monetary Contributions Received from Individuals and Partnerships</strong>. Click <strong>Apply</strong>.</p>
+                    <p>d. Click <strong>Import</strong>.</p>
+                    <p>e. System displays an <strong>Import Monetary Contributions</strong> dialog box with functionality to upload a CSV import file.</p>
+                    <p>f. Select the mandatory fields and click <strong>Upload</strong>.</p>
+                    <p style="text-align:left;">
+                        g. System validates if all required fields exist in the CSV file and the format of those fields meet the import specifications listed in the <strong>File Format Reference</strong>. If any validations fail, a grid will display in the <strong>Import Monetary Contributions</strong> dialog box listing the row #, field name and validation error.  All validation errors must be corrected to successfully load transactions.
+                    <p style="padding-left:1em;"><strong>Note:</strong> System validation errors can be viewed in excel by clicking the <strong>Validation Errors CSV</strong> button.</p>
+                    </p>
+                    <p>
+                        h. Imported Monetary Contribution transactions will display in the <strong>All Transactions</strong> grid on the <strong>File Disclosure Reports</strong> screen.
+                    <p style="padding-left:1em;"><strong>Note:</strong> Partnership details are required for any imported monetary contribution partnership transactions over $2500 before submitting a Disclosure Report.</p>
+                    </p>
+                </ol>
+                <br />                
+            </div>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+
+</div>

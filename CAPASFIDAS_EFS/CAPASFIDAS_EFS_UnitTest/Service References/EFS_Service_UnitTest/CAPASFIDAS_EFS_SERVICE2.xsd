@@ -1,0 +1,3696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51816/CAPASFIDAS_EFS_SERVICE.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Contracts" />
+  <xs:import schemaLocation="http://localhost:51816/CAPASFIDAS_EFS_SERVICE.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ValidateFilings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q1:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateFilingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="ValidateFilingsResult" nillable="true" type="q2:ArrayOfGetEditFlagDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyExpenditureHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyExpenditureHistoryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyExpenditureHistoryDataResult" nillable="true" type="q3:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyExpFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q4:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyExpFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIEWeeklyExpFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyExpenditureFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q5:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyExpenditureFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIEWeeklyExpenditureFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEDateIncrdLiabUpdateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEDateIncrdLiabUpdateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNonItemIEDateIncrdLiabUpdateDataResult" nillable="true" type="q6:ArrayOfDateIncurredContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEPurposeCodes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEPurposeCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNonItemIEPurposeCodesResult" nillable="true" type="q7:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEPurposeCodesSubContr">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIEPurposeCodesSubContrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNonItemIEPurposeCodesSubContrResult" nillable="true" type="q8:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HourExpenditureData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q9:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HourExpenditureDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIE24HourExpenditureDataResult" nillable="true" type="q10:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIE24HourExpFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q11:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIE24HourExpFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIE24HourExpFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyPIDAExpenditureData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q12:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyPIDAExpenditureDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyPIDAExpenditureDataResult" nillable="true" type="q13:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyPIDAExpFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q14:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyPIDAExpFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIEWeeklyPIDAExpFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyLiabInccrTransactionTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyLiabInccrTransactionTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetIEWeeklyLiabInccrTransactionTypesResult" nillable="true" type="q15:ArrayOfTransactionTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIESchedNPurposeCodes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemIESchedNPurposeCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNonItemIESchedNPurposeCodesResult" nillable="true" type="q16:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyLiabIncrData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q17:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyLiabIncrDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyLiabIncrDataResult" nillable="true" type="q18:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyLiabIncrHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyLiabIncrHistoryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyLiabIncrHistoryDataResult" nillable="true" type="q19:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyLiabIncrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q20:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyLiabIncrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIEWeeklyLiabIncrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyLiabIncrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q21:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyLiabIncrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIEWeeklyLiabIncrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingMethodData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingMethodDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingMethodDataResult" nillable="true" type="q22:ArrayOfFilingMthodContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaignMaterialData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objNonItemCampaignMaterialContract" nillable="true" type="q23:NonItemCampaignMaterialContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaignMaterialDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCampaignMaterialDataResult" nillable="true" type="q24:ArrayOfNonItemCampaignMaterialDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemCampaignMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objNonItemCampaignMaterialContract" nillable="true" type="q25:NonItemCampaignMaterialContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemCampaignMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemCampaignMaterialResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCampaignMaterial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCampMatrId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCampaignMaterialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCampaignMaterialResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTokenID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objDocumentIDContract" nillable="true" type="q26:DocumentIDContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTokenIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTokenIDResult" nillable="true" type="q27:PIDAReturnVal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTokenIDData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFileType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPageName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTokenIDDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTokenIDDataResult" nillable="true" type="q28:PIDAReturnVal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentDownload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CabinetID" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentDownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="DocumentDownloadResult" nillable="true" type="q29:PIDADownloadObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IE_Comm_Doc_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cabinetFolderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDocumentDataResult" nillable="true" type="q30:DocumentInfoData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileInNetworkDrive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objUploadFileNTDriveContract" nillable="true" type="q31:UploadFileNTDriveContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileInNetworkDriveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadFileInNetworkDriveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFileInNetworkDrive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFileFolderPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFileInNetworkDriveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadFileInNetworkDriveResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingDateOffCycleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingDateOffCycleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingDateOffCycleDataResult" nillable="true" type="q32:ArrayOfFilingDatesOffCycleContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDropdownValueExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTableName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDropdownValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDropdownValueExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDropdownValueExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeTypeEFS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectionYear" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeTypeEFSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOfficeTypeEFSResult" nillable="true" type="q33:ArrayOfOfficeTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeResigTermTypeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeResigTermTypeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GeResigTermTypeDataResult" nillable="true" type="q34:ArrayOfResigTermTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResgTermTypeExistsValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResgTermTypeExistsValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetResgTermTypeExistsValueResult" nillable="true" type="q35:ArrayOfResigTermTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResgTermTypeFilings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingsId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strResgTermTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResgTermTypeFilingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateResgTermTypeFilingsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEelectionExistsEFS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEelectionExistsEFSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEelectionExistsEFSResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalLiabilityData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalLiabilityDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalLiabilityDataResult" nillable="true" type="q36:ArrayOfLiabilityDetailsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditurePaymentLiabilityData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditurePaymentLiabilityDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetExpenditurePaymentLiabilityDataResult" nillable="true" type="q37:ArrayOfLiabilityDetailsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOutstandingLiabilityDataResult" nillable="true" type="q38:ArrayOfLiabilityDetailsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiabilityForgivenData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiabilityForgivenDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetLiabilityForgivenDataResult" nillable="true" type="q39:ArrayOfLiabilityDetailsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeTypeForFilerIDWCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeTypeForFilerIDWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOfficeTypeForFilerIDWCFResult" nillable="true" type="q40:ArrayOfOfficeTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionTypeForFilerIDWCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCountyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMunicipalityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionTypeForFilerIDWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionTypeForFilerIDWCFResult" nillable="true" type="q41:ArrayOfElectionTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionDateWCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="electionYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="electionTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officeTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionDateWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionDateWCFResult" nillable="true" type="q42:ArrayOfElectionDateContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountyWCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="officeTypeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountyWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCountyWCFResult" nillable="true" type="q43:ArrayOfCountyContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunicipalityWCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunicipalityWCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetMunicipalityWCFResult" nillable="true" type="q44:ArrayOfMunicipalityContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodsForYearAndFilerIDAndElectionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodsForYearAndFilerIDAndElectionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosurePeriodsForYearAndFilerIDAndElectionTypeResult" nillable="true" type="q45:ArrayOfDisclosurePreiodContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureTypesForYearAndFilerID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureTypesForYearAndFilerIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosureTypesForYearAndFilerIDResult" nillable="true" type="q46:ArrayOfDisclosureTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSupportingDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingMethodID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDocTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strScanDocID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFileType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFileSize" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCreatedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSupportingDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSupportingDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDisclosure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strIsSubmitted" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDisclosureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDisclosureResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSupportingDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSupportingDocumentID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSupportingDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSupportingDocumentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportingDocumentsGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportingDocumentsGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetSupportingDocumentsGridDataResult" nillable="true" type="q47:ArrayOfSupportingDocumentsGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionsGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingsID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPolCalDateID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strAmended" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strR_Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDateSubmitted" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionsGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTransactionsGridDataResult" nillable="true" type="q48:ArrayOfTransactionGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDocumentTypesResult" nillable="true" type="q49:ArrayOfDocumentTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strReportYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCountyID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMunicipalityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDiclosureTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDisclosurePeriodID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosureGridDataResult" nillable="true" type="q50:ArrayOfDisclosureGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionDetailsGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionDetailsGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTransactionDetailsGridDataResult" nillable="true" type="q51:ArrayOfTransactionDetailsGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewSupportingDocumentsGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strReportYearID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDisclosurePeriodID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewSupportingDocumentsGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetViewSupportingDocumentsGridDataResult" nillable="true" type="q52:ArrayOfViewSupportingDocumentsGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodsForYearAndFilerID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodsForYearAndFilerIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosurePeriodsForYearAndFilerIDResult" nillable="true" type="q53:ArrayOfDisclosurePreiodContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanReceivedGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanReceivedGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetLoanReceivedGridDataResult" nillable="true" type="q54:ArrayOfLoanReceivedGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanPaymentGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanPaymentGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetLoanPaymentGridDataResult" nillable="true" type="q55:ArrayOfLoanPaymentGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOutstandingLiabilityGridDataResult" nillable="true" type="q56:ArrayOfOutstandingLiabilityGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiabilityLoanFogivenGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLiabilityLoanFogivenGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetLiabilityLoanFogivenGridDataResult" nillable="true" type="q57:ArrayOfLiabilityLoanForgivenGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditurePaymentGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditurePaymentGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetExpenditurePaymentGridDataResult" nillable="true" type="q58:ArrayOfExpenditurePaymentGridContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reconcile_Loan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Schedule_I_TransFilingID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Schedule_J_TransFilingIDs" nillable="true" type="q59:ArrayOfstring" />
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Schedule_N_TransFilingIDs" nillable="true" type="q60:ArrayOfstring" />
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Schedule_K_TransFilingIDs" nillable="true" type="q61:ArrayOfstring" />
+        <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reconcile_LoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Reconcile_LoanResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountLiabData_Forgiven">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strtransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountLiabData_ForgivenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOutstandingAmountLiabData_ForgivenResult" nillable="true" type="q62:ArrayOfOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmendStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q63:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmendStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAmendStatusResult" nillable="true" type="q64:ArrayOfCheckAmendStatusContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpSubContrTotAmt_LoanDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpSubContrTotAmt_LoanDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpSubContrTotAmt_LoanDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditFlag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q65:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditFlagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetEditFlagResult" nillable="true" type="q66:ArrayOfGetEditFlagDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalName">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorOriginalNameResult" nillable="true" type="q67:ArrayOfExpPaymentOriginalNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorOriginalAmountResult" nillable="true" type="q68:ArrayOfExpPaymentOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalContributionDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorOriginalContributionDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorOriginalContributionDateResult" nillable="true" type="q69:ArrayOfExpPaymentOriginalExpenseDateContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstaningAmtContrRefunded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstaningAmtContrRefundedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutstaningAmtContrRefundedResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmtRefundedSchedM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmtRefundedSchedMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalAmtRefundedSchedMResult" nillable="true" type="q70:ArrayOfExpPaymentOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContributionsRefundedSchedM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q71:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContributionsRefundedSchedMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddContributionsRefundedSchedMResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContributionsRefundedSchedM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q72:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContributionsRefundedSchedMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateContributionsRefundedSchedMResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOutstandingLiabilitySchedN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q73:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOutstandingLiabilitySchedNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOutstandingLiabilitySchedNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOutstandingLiabilitySchedN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q74:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOutstandingLiabilitySchedNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOutstandingLiabilitySchedNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutstandingLiabilityChildExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OutstandingLiabilityChildExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OutstandingLiabilityChildExistsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOutstandingLiabilitySchedN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOutstandingLiabilitySchedNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteOutstandingLiabilitySchedNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditTransactionData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditTransactionDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetEditTransactionDataResult" nillable="true" type="q75:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountForForgiven">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountForForgivenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOutstandingAmountForForgivenResult" nillable="true" type="q76:ArrayOfOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticateFilerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticateFilerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAuthenticateFilerInfoResult" nillable="true" type="q77:ArrayOfValidateFilerInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAmountAllocationSchedN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q78:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAmountAllocationSchedNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAmountAllocationSchedNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAmountAllocationSchedN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q79:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAmountAllocationSchedNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAmountAllocationSchedNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filing_Ent_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="elect_Year" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="municipalityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="distID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAllAmountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistrictsForOffice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strOfficeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDistrictsForOfficeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDistrictsForOfficeResult" nillable="true" type="q80:ArrayOfDistrictContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOffices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strMunicipalityID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOfficesResult" nillable="true" type="q81:ArrayOfOfficeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInLieuOfStatementData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInLieuOfStatementDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetInLieuOfStatementDataResult" nillable="true" type="q82:ArrayOfInLieuOfStatementNonItemContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteSchedR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteSchedRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAutoCompleteSchedRResult" nillable="true" type="q83:ArrayOfAutoCompleteSchedRContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInLieuOfStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddInLieuOfStatementContract" nillable="true" type="q84:AddInLieuOfStatementContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInLieuOfStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddInLieuOfStatementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInLieuOfStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingsId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInLieuOfStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteInLieuOfStatementResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonNameAndTreasurerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonNameAndTreasurerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPersonNameAndTreasurerDataResult" nillable="true" type="q85:ArrayOfPersonNameAndTreasurerDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilerInforamation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="person_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilerInforamationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilerInforamationResult" nillable="true" type="q86:ArrayOfFilerInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoActivityReporttData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoActivityReporttDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNoActivityReporttDataResult" nillable="true" type="q87:ArrayOfInLieuOfStatementNonItemContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNoActivityReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddInLieuOfStatementContract" nillable="true" type="q88:AddInLieuOfStatementContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNoActivityReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNoActivityReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemizedTransSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemizedTransSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetItemizedTransSubmittedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferOutStandingBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q89:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferOutStandingBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransferOutStandingBalanceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNoticeOfNonParticipation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddInLieuOfStatementContract" nillable="true" type="q90:AddInLieuOfStatementContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNoticeOfNonParticipationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNoticeOfNonParticipationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoticeOfNonParticipationtData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNoticeOfNonParticipationtDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNoticeOfNonParticipationtDataResult" nillable="true" type="q91:ArrayOfInLieuOfStatementNonItemContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionTypes24HNoticeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionTypes24HNoticeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTransactionTypes24HNoticeDataResult" nillable="true" type="q92:ArrayOfTransactionTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTrans24HourNoticeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q93:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTrans24HourNoticeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTrans24HourNoticeDataResult" nillable="true" type="q94:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItem24HourNoticeFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q95:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItem24HourNoticeFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItem24HourNoticeFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update24HNoticeFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q96:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update24HNoticeFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Update24HNoticeFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Submit24HNoticeFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q97:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Submit24HNoticeFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Submit24HNoticeFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete24HNoticeFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete24HNoticeFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Delete24HNoticeFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemChildTransExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemChildTransExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNonItemChildTransExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemParentTransExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonItemParentTransExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNonItemParentTransExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTrans24HourNoticeHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTrans24HourNoticeHistoryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTrans24HourNoticeHistoryDataResult" nillable="true" type="q98:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitFilings_Summery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q99:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitFilings_SummeryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitFilings_SummeryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsDataSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q100:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsDataSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransactionsDataSummaryResult" nillable="true" type="q101:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_OpeningBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="election_Year_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="office_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filing_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="election_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filing_date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_OpeningBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSummery_OpeningBalanceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_ClosingBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="election_Year_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="office_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filing_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cut_Off_date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_ClosingBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSummery_ClosingBalanceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommEdit24HourNoticeTransData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommEdit24HourNoticeTransDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCommEdit24HourNoticeTransDataResult" nillable="true" type="q102:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyContributioneData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q103:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyContributioneDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyContributioneDataResult" nillable="true" type="q104:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyContrbutionTreasurerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTreasurerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyContrbutionTreasurerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetIEWeeklyContrbutionTreasurerDataResult" nillable="true" type="q105:ArrayOfNonItemIETreasurerContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q106:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIEWeeklyContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIEWeeklyContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q107:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIEWeeklyContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIEWeeklyContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitIEWeeklyContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitIEWeeklyContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitIEWeeklyContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIETransHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIETransHistoryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIETransHistoryDataResult" nillable="true" type="q108:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemizedNonItemIETransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemizedNonItemIETransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetItemizedNonItemIETransactionsResult" nillable="true" type="q109:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItemizedIETransactionsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strFilingTransId" nillable="true" type="q110:ArrayOfstring" />
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCreatedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItemizedIETransactionsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddItemizedIETransactionsDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorCodeIEWeeklyContrSchedC">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorCodeIEWeeklyContrSchedCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorCodeIEWeeklyContrSchedCResult" nillable="true" type="q111:ArrayOfContributorNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorCodeIEWeeklyContrSchedD">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorCodeIEWeeklyContrSchedDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorCodeIEWeeklyContrSchedDResult" nillable="true" type="q112:ArrayOfContributorNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HContributioneData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q113:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HContributioneDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIE24HContributioneDataResult" nillable="true" type="q114:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HContributionHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIE24HContributionHistoryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIE24HContributionHistoryDataResult" nillable="true" type="q115:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIE24HContrTransactionTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIE24HContrTransactionTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetIE24HContrTransactionTypesResult" nillable="true" type="q116:ArrayOfTransactionTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIE24HContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q117:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNonItemIE24HContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNonItemIE24HContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIE24HContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q118:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIE24HContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIE24HContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitIE24HContrFlngTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitIE24HContrFlngTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitIE24HContrFlngTransResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_AllSchedBalances">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="election_Year_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="office_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filing_Type_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filing_date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filingSchedID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummery_AllSchedBalancesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSummery_AllSchedBalancesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyExpTransactionTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIEWeeklyExpTransactionTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetIEWeeklyExpTransactionTypesResult" nillable="true" type="q119:ArrayOfTransactionTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyExpenditureData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q120:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransIEWeeklyExpenditureDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransIEWeeklyExpenditureDataResult" nillable="true" type="q121:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_TransferIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q122:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_TransferInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransaction_TransferInResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_NonCompHKReceipts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q123:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_NonCompHKReceiptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_NonCompHKReceiptsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransNonCompHKReceipts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q124:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransNonCompHKReceiptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransNonCompHKReceiptsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransContrMonetaryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q125:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransContrMonetaryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFlngTransContrMonetaryDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlngTransMonetaryContrData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q126:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlngTransMonetaryContrDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFlngTransMonetaryContrDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransExpenditureData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q127:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransExpenditureDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFlngTransExpenditureDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_TransferOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q128:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_TransferOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_TransferOutResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_TransferOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q129:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_TransferOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransaction_TransferOutResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanReceived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q130:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanReceivedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_LoanReceivedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_LoanReceived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q131:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransaction_LoanReceivedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransaction_LoanReceivedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanerCode">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanerCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetLoanerCodeResult" nillable="true" type="q132:ArrayOfLoanerCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteCreditorNameLiab">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteCreditorNameLiabResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAutoCompleteCreditorNameLiabResult" nillable="true" type="q133:ArrayOfOutstandingLiabilityContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDateIncurredLiabDataResult" nillable="true" type="q134:ArrayOfDateIncurredContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountLiabData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUpdateStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingAmountLiabDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOutstandingAmountLiabDataResult" nillable="true" type="q135:ArrayOfOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditureLiabilityExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFlngEntyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpenditureLiabilityExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpenditureLiabilityExistsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPaymentsLiabilityData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPaymentsLiabilityDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetExpPaymentsLiabilityDataResult" nillable="true" type="q136:ArrayOfExpPaymentLiabilityContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlngTransExpenditureData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q137:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFlngTransExpenditureDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFlngTransExpenditureDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubcontracorsExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubcontracorsExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSubcontracorsExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDate_SchedueledJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FILING_ENTITY_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ORG_AMT" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_MiddleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filer_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDate_SchedueledJResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDate_SchedueledJResult" nillable="true" type="q138:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmount_SchedueledJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FILING_ENTITY_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_MiddleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flng_Ent_LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filer_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAmount_SchedueledJResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAmount_SchedueledJResult" nillable="true" type="q139:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetName_SchedueledJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filer_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetName_SchedueledJResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetName_SchedueledJResult" nillable="true" type="q140:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleJ_EntityData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trans_Number" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleJ_EntityDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetScheduleJ_EntityDataResult" nillable="true" type="q141:ArrayOfFilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSchedJ_Amount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trans_Number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSchedJ_AmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="ValidateSchedJ_AmountResult" nillable="true" type="q142:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanRepayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q143:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanRepaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_LoanRepaymentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransExpReimbursmentData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q144:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransExpReimbursmentDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransExpReimbursmentDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlngTransExpReimbursementData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlngTransExpReimbursementDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFlngTransExpReimbursementDataResult" nillable="true" type="q145:ArrayOfFilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReimbursementDetailsAmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReimbursementDetailsAmtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReimbursementDetailsAmtResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateForUpdateScheJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filing_Trans_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateForUpdateScheJResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="ValidateForUpdateScheJResult" nillable="true" type="q146:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoanRepaymentData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q147:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoanRepaymentDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateLoanRepaymentDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanReceived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanReceivedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLoanReceivedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanRepayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loan_Lib_Number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modify_By" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanRepaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLoanRepaymentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsForScheduledIJN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q148:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsForScheduledIJNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransactionsForScheduledIJNResult" nillable="true" type="q149:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransExpReimbursmentData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q150:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransExpReimbursmentDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransExpReimbursmentDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFlngTransReimbursementDataSchedF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModififedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFlngTransReimbursementDataSchedFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteFlngTransReimbursementDataSchedFResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransNonCompaignHKExpensesData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q151:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransNonCompaignHKExpensesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransNonCompaignHKExpensesDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNCHKExpensesReimbursementData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNCHKExpensesReimbursementDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetNCHKExpensesReimbursementDataResult" nillable="true" type="q152:ArrayOfFilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateNonCompaignHKExpensesSchedQData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q153:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateNonCompaignHKExpensesSchedQDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateNonCompaignHKExpensesSchedQDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOutStandingLoansData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q154:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOutStandingLoansDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOutStandingLoansDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutstandingScheduled">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutstandingScheduledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="CheckOutstandingScheduledResult" nillable="true" type="q155:ArrayOfFilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSchedI_UpdateAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trans_Number" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSchedI_UpdateAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="ValidateSchedI_UpdateAmountResult" nillable="true" type="q156:ArrayOfGetSearchForScheduledIContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpLiabilityOwedAmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFlngEntityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpLiabilityOwedAmtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpLiabilityOwedAmtResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpSubContrTotAmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpSubContrTotAmtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpSubContrTotAmtResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFlngTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstandingLiabilityAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutstandingLiabilityAmountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPayTotalLiabAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPayTotalLiabAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetExpPayTotalLiabAmountResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorTypesSchedC">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorTypesSchedCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorTypesSchedCResult" nillable="true" type="q157:ArrayOfContributorNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanForgiven">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q158:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanForgivenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_LoanForgivenResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanForgiven">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loan_Lib_Number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modify_By" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoanForgivenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLoanForgivenResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAuthorizedToSignCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAuthorizedToSignCheckContract" nillable="true" type="q159:AuthorizedToSignCheckContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAuthorizedToSignCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAuthorizedToSignCheckResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeReimburDetailsData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeReimburDetailsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPurposeCodeReimburDetailsDataResult" nillable="true" type="q160:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeSubcontractorSchedF">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeSubcontractorSchedFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPurposeCodeSubcontractorSchedFResult" nillable="true" type="q161:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeCreditCardItemSchedF">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeCreditCardItemSchedFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPurposeCodeCreditCardItemSchedFResult" nillable="true" type="q162:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPayTransIdPopUpSchedF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpPayTransIdPopUpSchedFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetExpPayTransIdPopUpSchedFResult" nillable="true" type="q163:ArrayOfExpPaymentTransIdPopUpSchedFContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanForgiven_Liabiliites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q164:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_LoanForgiven_LiabiliitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_LoanForgiven_LiabiliitesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabDataForForgiven">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabDataForForgivenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDateIncurredLiabDataForForgivenResult" nillable="true" type="q165:ArrayOfDateIncurredContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabUpdateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDateIncurredLiabUpdateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDateIncurredLiabUpdateDataResult" nillable="true" type="q166:ArrayOfDateIncurredContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOtherReceivedReceiptsSchedE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsEntity" nillable="true" type="q167:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOtherReceivedReceiptsSchedEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOtherReceivedReceiptsSchedEResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOtherReceiptsReceivedSchedE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q168:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOtherReceiptsReceivedSchedEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOtherReceiptsReceivedSchedEResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalName">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalNameResult" nillable="true" type="q169:ArrayOfExpPaymentOriginalNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingEntityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalAmountResult" nillable="true" type="q170:ArrayOfExpPaymentOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalExpeseDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalExpeseDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalExpeseDateResult" nillable="true" type="q171:ArrayOfExpPaymentOriginalExpenseDateContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExpenditureRefundsSchedL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q172:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExpenditureRefundsSchedLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddExpenditureRefundsSchedLResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstaningAmtExpRefunded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutstaningAmtExpRefundedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutstaningAmtExpRefundedResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExpenditureRefundedSchedL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q173:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExpenditureRefundedSchedLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateExpenditureRefundedSchedLResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmtRefundedSchedL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOriginalAmtRefundedSchedLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOriginalAmtRefundedSchedLResult" nillable="true" type="q174:ArrayOfExpPaymentOriginalAmountContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAddressDataResult" nillable="true" type="q175:ArrayOfShowAddressContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContactDataResult" nillable="true" type="q176:ArrayOfShowContactContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepositoryBankInfoData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepositoryBankInfoDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDepositoryBankInfoDataResult" nillable="true" type="q177:ArrayOfDepositoryBankInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCandAuthCommitteesData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCandAuthCommitteesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCandAuthCommitteesDataResult" nillable="true" type="q178:ArrayOfCandAuthCommitteesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCandidateHeaderData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCandidateHeaderDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCandidateHeaderDataResult" nillable="true" type="q179:ArrayOfCandidateHeaderDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddressData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddressDataContract" nillable="true" type="q180:AddressDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAddressDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAddressDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAddressData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddressDataContract" nillable="true" type="q181:AddressDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAddressDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAddressDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAddressData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objAddressDataContract" nillable="true" type="q182:AddressDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAddressDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAddressDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressTypesData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAddressTypesDataResult" nillable="true" type="q183:ArrayOfAddressTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBestContactTypesData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBestContactTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetBestContactTypesDataResult" nillable="true" type="q184:ArrayOfBestContactTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactTypesData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContactTypesDataResult" nillable="true" type="q185:ArrayOfContactTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objShowContactContract" nillable="true" type="q186:ShowContactContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddContactDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContactData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objShowContactContract" nillable="true" type="q187:ShowContactContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContactDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateContactDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContactData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objShowContactContract" nillable="true" type="q188:ShowContactContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContactDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteContactDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDepositoryBankInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objDepositoryBankInfoContract" nillable="true" type="q189:DepositoryBankInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDepositoryBankInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddDepositoryBankInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepositoryBankInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objDepositoryBankInfoContract" nillable="true" type="q190:DepositoryBankInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepositoryBankInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDepositoryBankInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDepositoryBankInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objDepositoryBankInfoContract" nillable="true" type="q191:DepositoryBankInfoContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDepositoryBankInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDepositoryBankInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetBankAccountTypesResult" nillable="true" type="q192:ArrayOfBankAccountTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerProfileInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerProfileInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerProfileInfoResult" nillable="true" type="q193:ArrayOfTreasurerProfileContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerCommitteeInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerCommitteeInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerCommitteeInformationResult" nillable="true" type="q194:ArrayOfTreasurerCommitteeInformationContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAssistantInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAssistantInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerAssistantInformationResult" nillable="true" type="q195:ArrayOfTreasAssistantInformationContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerHistoryInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerHistoryInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerHistoryInformationResult" nillable="true" type="q196:ArrayOfTreasurerHistoryContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAdditionalCommitteeContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAdditionalCommitteeContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerAdditionalCommitteeContactResult" nillable="true" type="q197:ArrayOfTreasAdditionalCommitteeContactContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerDepositoryBankInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerDepositoryBankInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerDepositoryBankInformationResult" nillable="true" type="q198:ArrayOfTreasDepositoryBankInformationContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerCandidateSupposeOppose">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerCandidateSupposeOpposeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerCandidateSupposeOpposeResult" nillable="true" type="q199:ArrayOfTreasCandidateSupportOpposeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAuthorizedToSignCheckContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerAuthorizedToSignCheckContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerAuthorizedToSignCheckContactResult" nillable="true" type="q200:ArrayOfTreasAuthorizedToSignCheckContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerBallotIssuesContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="commID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreasurerBallotIssuesContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTreasurerBallotIssuesContactResult" nillable="true" type="q201:ArrayOfTreasBallotIssuesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDepositoryBankInfoTreasurer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objDepositoryBankInfoContract" nillable="true" type="q202:TreasDepositoryBankInformationContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDepositoryBankInfoTreasurerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddDepositoryBankInfoTreasurerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSubTreasurerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objSubTreasurerPersonContract" nillable="true" type="q203:SubTreasurerPersonContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSubTreasurerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSubTreasurerDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubTreasurerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objSubTreasurerPersonContract" nillable="true" type="q204:SubTreasurerPersonContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubTreasurerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSubTreasurerDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransDataContract" nillable="true" type="q205:FilingTransDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingTransactionsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingTransactionsDataResult" nillable="true" type="q206:ArrayOfFilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributionTypeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributionTypeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributionTypeDataResult" nillable="true" type="q207:ArrayOfContributionTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributionNameData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributionNameDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributionNameDataResult" nillable="true" type="q208:ArrayOfContributorNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosurePeriodDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosurePeriodDataResult" nillable="true" type="q209:ArrayOfDisclosurePreiodContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionDateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionDateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionDateDataResult" nillable="true" type="q210:ArrayOfElectionDateContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilerCommitteeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strPersonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilerCommitteeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilerCommitteeDataResult" nillable="true" type="q211:ArrayOfFilerCommitteeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentMethodData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentMethodDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPaymentMethodDataResult" nillable="true" type="q212:ArrayOfPaymentMethodContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurposeCodeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPurposeCodeDataResult" nillable="true" type="q213:ArrayOfPurposeCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptCodeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptCodeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetReceiptCodeDataResult" nillable="true" type="q214:ArrayOfReceiptCodeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptTypeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceiptTypeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetReceiptTypeDataResult" nillable="true" type="q215:ArrayOfReceiptTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransferTypeData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransferTypeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTransferTypeDataResult" nillable="true" type="q216:ArrayOfTransferTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionYearData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionYearDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionYearDataResult" nillable="true" type="q217:ArrayOfElectionYearContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionYearDataForFilerID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionYearDataForFilerIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionYearDataForFilerIDResult" nillable="true" type="q218:ArrayOfElectionYearContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionTypeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectionYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCountyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMunicipalityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectionTypeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetElectionTypeDataResult" nillable="true" type="q219:ArrayOfElectionTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingCutOffDateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strElectYearId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOfficeTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilingDateId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCuttOffDateId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strElectionDateId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilingCutOffDateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetFilingCutOffDateDataResult" nillable="true" type="q220:ArrayOfFilingCutOffDateContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorTypesData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContributorTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContributorTypesDataResult" nillable="true" type="q221:ArrayOfContributorTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionTypesData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCandCommId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetTransactionTypesDataResult" nillable="true" type="q222:ArrayOfTransactionTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureTypesData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCandCommId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisclosureTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetDisclosureTypesDataResult" nillable="true" type="q223:ArrayOfDisclosureTypesContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransContrInKindData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q224:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFlngTransContrInKindDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFlngTransContrInKindDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetOfficeTypeResult" nillable="true" type="q225:ArrayOfOfficeTypeContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounty">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetCountyResult" nillable="true" type="q226:ArrayOfCountyContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunicipality">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strCountyId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunicipalityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetMunicipalityResult" nillable="true" type="q227:ArrayOfMunicipalityContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteNameAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFLName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAutoCompleteNameAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetAutoCompleteNameAddressResult" nillable="true" type="q228:ArrayOfAutoCompFLNameAddressContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFilingTransactionsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFilingTransactionsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteFilingTransactionsDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFlngTransExpPaySchedFNData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strLoanLiabNumberOrg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTransNumberOrg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRLiability" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFlngTransExpPaySchedFNDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteFlngTransExpPaySchedFNDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransContrInKindData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q229="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionDataContract" nillable="true" type="q229:FilingTransactionDataContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFilingTransContrInKindDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFilingTransContrInKindDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewableColumns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUniqueID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strApplicationName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPageName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewableColumnsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q230="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetViewableColumnsResult" nillable="true" type="q230:ArrayOfViewableColumnContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateColumnValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uniqueID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uniqueValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modifyBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateColumnValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateColumnValueResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerSubContractorData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerSubContractorDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetPartnerSubContractorDataResult" nillable="true" type="q231:ArrayOfContributorNameContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContrInKindPartnersData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q232:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContrInKindPartnersDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddContrInKindPartnersDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContrInKindPartnersData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strFilingTransId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContrInKindPartnersDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q233="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="GetContrInKindPartnersDataResult" nillable="true" type="q233:ArrayOfContrInKindPartnersContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContrInKindPartnersData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strTransNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strModifiedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContrInKindPartnersDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteContrInKindPartnersDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrInKindPartnersData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q234="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q234:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrInKindPartnersDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateContrInKindPartnersDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_TransferIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/Contracts" minOccurs="0" name="objFilingTransactionsContract" nillable="true" type="q235:FilingTransactionsContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFilingTransaction_TransferInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddFilingTransaction_TransferInResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

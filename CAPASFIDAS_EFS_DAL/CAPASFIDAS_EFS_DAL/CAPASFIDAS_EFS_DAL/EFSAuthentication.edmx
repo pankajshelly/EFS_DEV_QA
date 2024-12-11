@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CAPASFIDASTEMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FILING_TRANSACTIONS">
+          <Key>
+            <PropertyRef Name="FILING_TRANS_ID" />
+          </Key>
+          <Property Name="FILING_TRANS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLNG_ENT_ID" Type="bigint" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="100" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="100" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="100" />
+          <Property Name="FILINGS_ID" Type="bigint" Nullable="false" />
+          <Property Name="FILING_SCHED_ID" Type="int" />
+          <Property Name="CNTRBR_TYPE_ID" Type="int" />
+          <Property Name="CNTRBN_TYPE_ID" Type="int" />
+          <Property Name="PAYMENT_TYPE_ID" Type="int" />
+          <Property Name="RECEIPT_TYPE_ID" Type="int" />
+          <Property Name="PURPOSE_CODE_ID" Type="int" />
+          <Property Name="TRANSFER_TYPE_ID" Type="int" />
+          <Property Name="RECEIPT_CODE_ID" Type="int" />
+          <Property Name="LOAN_OTHER_ID" Type="int" />
+          <Property Name="TRANS_CODE" Type="int" />
+          <Property Name="MUNICIPALITY_ID" Type="int" />
+          <Property Name="TREAS_ID" Type="bigint" />
+          <Property Name="ADDR_ID" Type="bigint" />
+          <Property Name="PART_FLNG_ENT_ID" Type="bigint" />
+          <Property Name="OFFICE_ID" Type="int" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="40" />
+          <Property Name="SCHED_DATE" Type="datetime2" Precision="0" />
+          <Property Name="ORG_DATE" Type="datetime2" Precision="0" />
+          <Property Name="PAY_DATE" Type="datetime2" Precision="0" />
+          <Property Name="PAY_NUMBER" Type="varchar" MaxLength="200" />
+          <Property Name="ORG_AMT" Type="float" />
+          <Property Name="OWED_AMT" Type="float" />
+          <Property Name="TRANS_DESC" Type="varchar" MaxLength="300" />
+          <Property Name="TRANS_EXPLNTN" Type="varchar" MaxLength="255" />
+          <Property Name="ELECTION_DATE" Type="datetime2" Precision="0" />
+          <Property Name="ELECTION_TYPE" Type="char" MaxLength="1" />
+          <Property Name="ELECTION_YEAR" Type="varchar" MaxLength="4" />
+          <Property Name="R_BANK_LOAN" Type="char" MaxLength="1" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="varchar" MaxLength="500" />
+          <Property Name="IE_CNTRBR_OCC" Type="nvarchar" MaxLength="500" />
+          <Property Name="IE_CNTRBR_EMP" Type="nvarchar" MaxLength="100" />
+          <Property Name="IE_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="TREAS_OCCUPATION" Type="nvarchar" MaxLength="80" />
+          <Property Name="TREAS_EMPLOYER" Type="nvarchar" MaxLength="255" />
+          <Property Name="EXISTS_LIAB_TRANS_NUMBER" Type="nvarchar" MaxLength="100" />
+          <Property Name="R_IE_SUPPORTED" Type="char" MaxLength="1" />
+          <Property Name="SUBMIT_DATE" Type="datetime2" Precision="0" />
+          <Property Name="R_SUBCONTRACTOR" Type="char" MaxLength="1" />
+          <Property Name="R_LIABILITY" Type="char" MaxLength="1" />
+          <Property Name="R_ITEMIZED" Type="char" MaxLength="1" />
+          <Property Name="R_IE_INCLUDED" Type="char" MaxLength="1" />
+          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="R_AMEND" Type="char" MaxLength="1" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
+          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+          <Property Name="R_PARENT" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLE_DESCRIPTION" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
+          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CAPASFIDAS_RLS.security.FILER_SECURITY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="FILER_SECURITY">
+          <Key>
+            <PropertyRef Name="FILER_SECURITY_ID" />
+            <PropertyRef Name="SQLSERVER_ROLE" />
+          </Key>
+          <Property Name="FILER_SECURITY_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FILER_ID" Type="bigint" />
+          <Property Name="LOGIN_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROLE_ID" Type="int" />
+          <Property Name="SQLSERVER_ROLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="R_STATUS" Type="char" MaxLength="1" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" />
+          <Property Name="CREATED_DATE" Type="datetime2" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
+          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+        </EntityType>
+        <Function Name="fn_filer_edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="security">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="rls_filer_edit" Type="int" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_filer_security" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="security">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="rls_filer_security" Type="int" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_filer_view" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="security">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="rls_filer_view" Type="int" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="CAPASFIDASTEMPModelStoreContainer">
+          <EntitySet Name="FILING_TRANSACTIONS" EntityType="Self.FILING_TRANSACTIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FILER_SECURITY" EntityType="Self.FILER_SECURITY" store:Type="Tables" store:Schema="security">
+            <DefiningQuery>SELECT 
+    [FILER_SECURITY].[FILER_SECURITY_ID] AS [FILER_SECURITY_ID], 
+    [FILER_SECURITY].[FILER_ID] AS [FILER_ID], 
+    [FILER_SECURITY].[LOGIN_NAME] AS [LOGIN_NAME], 
+    [FILER_SECURITY].[ROLE_ID] AS [ROLE_ID], 
+    [FILER_SECURITY].[SQLSERVER_ROLE] AS [SQLSERVER_ROLE], 
+    [FILER_SECURITY].[R_STATUS] AS [R_STATUS], 
+    [FILER_SECURITY].[CREATED_BY] AS [CREATED_BY], 
+    [FILER_SECURITY].[CREATED_DATE] AS [CREATED_DATE], 
+    [FILER_SECURITY].[MODIFIED_BY] AS [MODIFIED_BY], 
+    [FILER_SECURITY].[MODIFIED_DATE] AS [MODIFIED_DATE]
+    FROM [security].[FILER_SECURITY] AS [FILER_SECURITY]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CAPASFIDASTEMPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fn_filer_edit_Result">
+          <Property Name="rls_filer_edit" Type="Int32" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="fn_filer_security_Result">
+          <Property Name="rls_filer_security" Type="Int32" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="fn_filer_view_Result">
+          <Property Name="rls_filer_view" Type="Int32" Nullable="false" />
+        </ComplexType>
+        <EntityContainer Name="CAPASFIDASTEMPEntities1" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="fn_filer_edit" ReturnType="Collection(CAPASFIDASTEMPModel.fn_filer_edit_Result)" IsComposable="true">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fn_filer_security" ReturnType="Collection(CAPASFIDASTEMPModel.fn_filer_security_Result)" IsComposable="true" />
+          <FunctionImport Name="fn_filer_view" ReturnType="Collection(CAPASFIDASTEMPModel.fn_filer_view_Result)" IsComposable="true">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_S_GetAuthorizedFiler" ReturnType="Collection(CAPASFIDASTEMPModel.SP_S_GetAuthorizedFiler_Result)">
+          <Parameter Name="USER_ID" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="FILING_TRANSACTIONS" EntityType="CAPASFIDASTEMPModel.FILING_TRANSACTIONS" />
+          <EntitySet Name="ROLEs" EntityType="CAPASFIDASTEMPModel.ROLE" />
+          <EntitySet Name="FILER_SECURITY" EntityType="CAPASFIDASTEMPModel.FILER_SECURITY" />
+          </EntityContainer>
+        <ComplexType Name="SP_S_GetAuthorizedFiler_Result">
+          <Property Type="String" Name="FILER_ID" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="ROLE_ID" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="FILING_TRANSACTIONS">
+          <Key>
+            <PropertyRef Name="FILING_TRANS_ID" />
+          </Key>
+          <Property Name="FILING_TRANS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLNG_ENT_ID" Type="Int64" />
+          <Property Name="LOAN_LIB_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRANS_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRANS_MAPPING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FILINGS_ID" Type="Int64" Nullable="false" />
+          <Property Name="FILING_SCHED_ID" Type="Int32" />
+          <Property Name="CNTRBR_TYPE_ID" Type="Int32" />
+          <Property Name="CNTRBN_TYPE_ID" Type="Int32" />
+          <Property Name="PAYMENT_TYPE_ID" Type="Int32" />
+          <Property Name="RECEIPT_TYPE_ID" Type="Int32" />
+          <Property Name="PURPOSE_CODE_ID" Type="Int32" />
+          <Property Name="TRANSFER_TYPE_ID" Type="Int32" />
+          <Property Name="RECEIPT_CODE_ID" Type="Int32" />
+          <Property Name="LOAN_OTHER_ID" Type="Int32" />
+          <Property Name="TRANS_CODE" Type="Int32" />
+          <Property Name="MUNICIPALITY_ID" Type="Int32" />
+          <Property Name="TREAS_ID" Type="Int64" />
+          <Property Name="ADDR_ID" Type="Int64" />
+          <Property Name="PART_FLNG_ENT_ID" Type="Int64" />
+          <Property Name="OFFICE_ID" Type="Int32" />
+          <Property Name="DISTRICT" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SCHED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ORG_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PAY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PAY_NUMBER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_AMT" Type="Double" />
+          <Property Name="OWED_AMT" Type="Double" />
+          <Property Name="TRANS_DESC" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_EXPLNTN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ELECTION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ELECTION_TYPE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ELECTION_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="R_BANK_LOAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IE_CNTRBR_OCC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IE_CNTRBR_EMP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IE_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TREAS_OCCUPATION" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="TREAS_EMPLOYER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EXISTS_LIAB_TRANS_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="R_IE_SUPPORTED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SUBMIT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="R_SUBCONTRACTOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="R_LIABILITY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="R_ITEMIZED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="R_IE_INCLUDED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="R_AMEND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="R_PARENT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROLE_DESCRIPTION" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FILER_SECURITY">
+          <Key>
+            <PropertyRef Name="FILER_SECURITY_ID" />
+            <PropertyRef Name="SQLSERVER_ROLE" />
+          </Key>
+          <Property Name="FILER_SECURITY_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILER_ID" Type="Int64" />
+          <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE_ID" Type="Int32" />
+          <Property Name="SQLSERVER_ROLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="R_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CAPASFIDASTEMPModelStoreContainer" CdmEntityContainer="CAPASFIDASTEMPEntities1">
+          <FunctionImportMapping FunctionName="CAPASFIDASTEMPModel.Store.fn_filer_edit" FunctionImportName="fn_filer_edit">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CAPASFIDASTEMPModel.fn_filer_edit_Result">
+                <ScalarProperty Name="rls_filer_edit" ColumnName="rls_filer_edit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="CAPASFIDASTEMPModel.Store.fn_filer_security" FunctionImportName="fn_filer_security">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CAPASFIDASTEMPModel.fn_filer_security_Result">
+                <ScalarProperty Name="rls_filer_security" ColumnName="rls_filer_security" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="CAPASFIDASTEMPModel.Store.fn_filer_view" FunctionImportName="fn_filer_view">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CAPASFIDASTEMPModel.fn_filer_view_Result">
+                <ScalarProperty Name="rls_filer_view" ColumnName="rls_filer_view" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="FILING_TRANSACTIONS">
+            <EntityTypeMapping TypeName="CAPASFIDASTEMPModel.FILING_TRANSACTIONS">
+              <MappingFragment StoreEntitySet="FILING_TRANSACTIONS">
+                <ScalarProperty Name="R_PARENT" ColumnName="R_PARENT" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_AMEND" ColumnName="R_AMEND" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="R_IE_INCLUDED" ColumnName="R_IE_INCLUDED" />
+                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
+                <ScalarProperty Name="R_LIABILITY" ColumnName="R_LIABILITY" />
+                <ScalarProperty Name="R_SUBCONTRACTOR" ColumnName="R_SUBCONTRACTOR" />
+                <ScalarProperty Name="SUBMIT_DATE" ColumnName="SUBMIT_DATE" />
+                <ScalarProperty Name="R_IE_SUPPORTED" ColumnName="R_IE_SUPPORTED" />
+                <ScalarProperty Name="EXISTS_LIAB_TRANS_NUMBER" ColumnName="EXISTS_LIAB_TRANS_NUMBER" />
+                <ScalarProperty Name="TREAS_EMPLOYER" ColumnName="TREAS_EMPLOYER" />
+                <ScalarProperty Name="TREAS_OCCUPATION" ColumnName="TREAS_OCCUPATION" />
+                <ScalarProperty Name="IE_DESC" ColumnName="IE_DESC" />
+                <ScalarProperty Name="IE_CNTRBR_EMP" ColumnName="IE_CNTRBR_EMP" />
+                <ScalarProperty Name="IE_CNTRBR_OCC" ColumnName="IE_CNTRBR_OCC" />
+                <ScalarProperty Name="DIST_OFF_CAND_BAL_PROP" ColumnName="DIST_OFF_CAND_BAL_PROP" />
+                <ScalarProperty Name="R_BANK_LOAN" ColumnName="R_BANK_LOAN" />
+                <ScalarProperty Name="ELECTION_YEAR" ColumnName="ELECTION_YEAR" />
+                <ScalarProperty Name="ELECTION_TYPE" ColumnName="ELECTION_TYPE" />
+                <ScalarProperty Name="ELECTION_DATE" ColumnName="ELECTION_DATE" />
+                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
+                <ScalarProperty Name="TRANS_DESC" ColumnName="TRANS_DESC" />
+                <ScalarProperty Name="OWED_AMT" ColumnName="OWED_AMT" />
+                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
+                <ScalarProperty Name="PAY_NUMBER" ColumnName="PAY_NUMBER" />
+                <ScalarProperty Name="PAY_DATE" ColumnName="PAY_DATE" />
+                <ScalarProperty Name="ORG_DATE" ColumnName="ORG_DATE" />
+                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="OFFICE_ID" ColumnName="OFFICE_ID" />
+                <ScalarProperty Name="PART_FLNG_ENT_ID" ColumnName="PART_FLNG_ENT_ID" />
+                <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+                <ScalarProperty Name="TREAS_ID" ColumnName="TREAS_ID" />
+                <ScalarProperty Name="MUNICIPALITY_ID" ColumnName="MUNICIPALITY_ID" />
+                <ScalarProperty Name="TRANS_CODE" ColumnName="TRANS_CODE" />
+                <ScalarProperty Name="LOAN_OTHER_ID" ColumnName="LOAN_OTHER_ID" />
+                <ScalarProperty Name="RECEIPT_CODE_ID" ColumnName="RECEIPT_CODE_ID" />
+                <ScalarProperty Name="TRANSFER_TYPE_ID" ColumnName="TRANSFER_TYPE_ID" />
+                <ScalarProperty Name="PURPOSE_CODE_ID" ColumnName="PURPOSE_CODE_ID" />
+                <ScalarProperty Name="RECEIPT_TYPE_ID" ColumnName="RECEIPT_TYPE_ID" />
+                <ScalarProperty Name="PAYMENT_TYPE_ID" ColumnName="PAYMENT_TYPE_ID" />
+                <ScalarProperty Name="CNTRBN_TYPE_ID" ColumnName="CNTRBN_TYPE_ID" />
+                <ScalarProperty Name="CNTRBR_TYPE_ID" ColumnName="CNTRBR_TYPE_ID" />
+                <ScalarProperty Name="FILING_SCHED_ID" ColumnName="FILING_SCHED_ID" />
+                <ScalarProperty Name="FILINGS_ID" ColumnName="FILINGS_ID" />
+                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
+                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
+                <ScalarProperty Name="LOAN_LIB_NUMBER" ColumnName="LOAN_LIB_NUMBER" />
+                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
+                <ScalarProperty Name="FILING_TRANS_ID" ColumnName="FILING_TRANS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEs">
+            <EntityTypeMapping TypeName="CAPASFIDASTEMPModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="ROLE_DESCRIPTION" ColumnName="ROLE_DESCRIPTION" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILER_SECURITY">
+            <EntityTypeMapping TypeName="CAPASFIDASTEMPModel.FILER_SECURITY">
+              <MappingFragment StoreEntitySet="FILER_SECURITY">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="SQLSERVER_ROLE" ColumnName="SQLSERVER_ROLE" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="LOGIN_NAME" ColumnName="LOGIN_NAME" />
+                <ScalarProperty Name="FILER_ID" ColumnName="FILER_ID" />
+                <ScalarProperty Name="FILER_SECURITY_ID" ColumnName="FILER_SECURITY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

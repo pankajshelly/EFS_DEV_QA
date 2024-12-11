@@ -1,0 +1,146 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+
+@using (Html.BeginForm("_UC_E_OtherReceipts", "_UC_E_OtherReceipts", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridReceiptSourceScheE" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdReceiptSourceScheE" class="border1pxCls" style="padding-left:2em;">Date Rcvd</th>                
+                <th id="thReceiptSourceReceiptSourceScheE" class="border1pxCls">Receipt Source</th>                
+                <th id="thStreetReceiptSourceScheE" class="border1pxCls">Street #</th>
+                <th id="thStreetNameReceiptSourceScheE" class="border1pxCls">Street Name</th>
+                <th id="thCityReceiptSourceScheE" class="border1pxCls">City</th>
+                <th id="thStateReceiptSourceScheE" class="border1pxCls">State</th>
+                <th id="thZip5ReceiptSourceScheE" class="border1pxCls">Zip5</th>
+                <th id="thZip4ReceiptSourceScheE" class="border1pxCls">Zip4</th>
+                <th id="thReceiptTypeReceiptSourceScheE" class="border1pxCls">Receipt Type</th>
+                <th id="thMethodReceiptSourceScheE" class="border1pxCls">Method</th>
+                <th id="thCheck" class="border1pxCls">Check #</th>
+                <th id="thAmtRefundedReceiptSourceScheE" class="border1pxCls">Amt</th>
+                <th id="thExplanationReceiptSourceScheE" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdReceiptSourceScheE" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>                
+                <td id="tdReceiptSourceReceiptSourceScheE" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtReceiptSource", @class = "txtWidth" })</td>                
+                <td id="tdStreetReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5ReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4ReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdReceiptTypeReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.DropDownList("lstReceiptType", ViewData["lstReceiptType"] as SelectList, new { @class = "" })</td>
+                <td id="tdMethodReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheck" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheck", @class = "txtWidth" })</td>
+                <td id="tAmtReceiptSourceScheE" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtReceiptSourceScheE", @class = "txtWidth" })</td>
+                <td id="tdExplanationReceiptSourceScheE" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationReceiptSourceScheE", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTReceiptSourceScheE">
+            <table id="UC_ReceiptSourceScheEGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Rcvd</th>
+                        <th>Receipt Soruce</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Receipt Type</th>
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amount</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTReceiptSourceScheE").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridReceiptSourceScheE").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            var table = $m('#UC_ReceiptSourceScheEGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                //"scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_E_OtherReceipts/GetReceiptSourceScheESearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat; " /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat; "  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#UC_ReceiptSourceScheEGrid').DataTable());
+                }
+            });
+            $m('#UC_ReceiptSourceScheEGrid').DataTable().ajax.reload();
+        });
+
+
+        // Edit a record
+        $m('#UC_ReceiptSourceScheEGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationReceiptSourceScheE").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTReceiptSourceScheE").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationReceiptSourceScheE").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridReceiptSourceScheE').DataTable().ajax.reload();
+        });
+        
+    });
+</script>

@@ -1,0 +1,177 @@
+﻿@{
+    /**/
+    Layout = null;
+}
+<!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+    Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+<!--Minified script bundles-->
+@Scripts.Render("~/Scripts/bundle-jquery")
+@Scripts.Render("~/Scripts/bundle-jquery-ui")
+@Scripts.Render("~/Scripts/bundle-bootstrap")
+@Scripts.Render("~/Scripts/bundle-other")
+@Scripts.Render("~/Scripts/bundle-multiple-select")
+
+<!--Style bundles-->
+@Styles.Render("~/Content/bundle-base")
+@Styles.Render("~/Content/bundle-jquery")
+@Styles.Render("~/Content/bundle-jquery-ui")
+@Styles.Render("~/Content/multiple-select/bundle-multiple-select")
+@Styles.Render("~/Content/bundle-bootstrap")
+
+<div style="text-align:center;">
+    <h1 class="h1Bold">Edit Address</h1>
+</div>
+
+@using (Html.BeginForm("EditAddress", "EditAddress", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div class="divAddressPopUp">
+        <div style="text-align:left;" class="paddingLeft3em">
+            <span style="float: left;">
+                <span id="spnAddressTypeLbl">
+                    <span id="lblAddressType">Address Type</span>
+                </span>
+                <span id="spnAddressType" class="paddingLeft1pt55em">
+                    @Html.DropDownList("lstAddressType", null, "- Select -", new { @id = "lstAddressType", aria_labelledby = "lblAddressType" })
+                </span>
+            </span>
+            <span style="padding-left: 0.8em;">
+                <span id="spnBestContactLbl">
+                    <span id="lblBestContact">Best Contact</span>
+                </span>
+                <span id="spnBestContact" class="paddingLeft2em">
+                    @Html.DropDownList("lstBestContact", null, "- Select -", new { @id = "lstBestContact", aria_labelledby = "lblBestContact" })
+                </span>
+            </span>
+            <span style="float: right; padding-right: 1em;">
+                <button id="btnCommonUpdate" class="btn-default buttonCSS" name="Command" value="CSV">
+                    <img src="~/Content/Images/save.png" class="imgButtonCSS" alt="Save"/>
+                </button>
+                <button id="btnCommonClear" class="btn-default buttonCSS" name="Command" value="CSV">
+                    <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                </button>
+            </span>
+            <br />
+            <span id="spnStreetNumLbl">
+                <span id="lblStreetNum">Street Number</span>
+            </span>
+            <span id="spnStreetNum" class="paddingLeft1pt2em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtStreetNum, null, new { id = "txtStreetNum", size = "8", aria_labelledby = "lblStreetNum" })
+                @Html.TextBox("searchTerm", (string)ViewBag.txtStreetName, null, new { id = "txtStreetName", size = "35", aria_labelledby = "lblStreetNum" })
+            </span>
+            <br />
+            <span id="spnAddr1Lbl">
+                <span id="lblAddr1">Address 1</span>
+            </span>
+            <span id="spnAddr1" class="paddingLeft3pt2em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtAddr1, null, new { id = "txtAddr1", size = "50", aria_labelledby = "lblAddr1" })
+            </span>
+            <br />
+            <span id="spnAddr2Lbl">
+                <span id="lblAddr2">Address 2</span>
+            </span>
+            <span id="spnAddr2" class="paddingLeft3pt2em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtAddr2, null, new { id = "txtAddr2", size = "50", aria_labelledby = "lblAddr2" })
+            </span>
+            <br />
+            <span id="spnCityLbl">
+                <span id="lblCity">City</span>
+            </span>
+            <span id="spnCity" class="paddingLeft6em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtCity, null, new { id = "txtCity", aria_labelledby = "lblCity" })
+            </span>
+            <br />
+            <span id="spnStateLbl">
+                <span id="lblState">State</span>
+            </span>
+            <span id="spnState" class="paddingLeft5pt35em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtState, null, new { id = "txtState", aria_labelledby = "lblState" })
+            </span>
+            <br />
+            <span id="spnZipLbl">
+                <span id="lblZip">Zip</span>
+            </span>
+            <span id="spnZip" class="paddingLeft6pt3em">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtZip, null, new { id = "txtZip", size = "5", aria_labelledby = "lblZip" }) &nbsp;-&nbsp;
+                @Html.TextBox("searchTerm", (string)ViewBag.txtZip4, null, new { id = "txtZip4", size = "5", aria_labelledby = "lblZip" })
+            </span>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        //Update user data
+        $m("#btnCommonUpdate").click(function () {
+            event.preventDefault();
+            if ($m("#lstAddressType option:selected").text() == "- Select -") {
+                //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                alert("Select Address Type");
+            }
+            else if ($m("#txtAddr1").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Address 1', 'Ok', '');
+                alert("Enter Address 1");
+            }
+            else if ($m("#txtCity").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter City', 'Ok', '');
+                alert("Enter City'");
+            }
+            else if ($m("#txtState").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter State', 'Ok', '');
+                alert("Enter State'");
+            }
+            else if ($m("#txtZip").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Zip', 'Ok', '');
+                alert("Enter Zip");
+            }
+            else {
+                var options = {};
+                //options.url = "../EditAddress/UpdateAddress";
+                options.url = "@Url.Content("~/EditAddress/UpdateAddress/")";
+                options.type = "GET";
+                options.data = {
+                    txtAddressId: "@ViewBag.txtAddressId",
+                    lstAddressType: $m("#lstAddressType option:selected").val(),
+                    txtStreetNum: $m("#txtStreetNum").val().toString(),
+                    txtStreetName: $m("#txtStreetName").val().toString(),
+                    txtAddr1: $m("#txtAddr1").val().toString(),
+                    txtAddr2: $m("#txtAddr2").val().toString(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZip: $m("#txtZip").val().toString(),
+                    txtZip4: $m("#txtZip4").val().toString(),
+                    lstBestContact: $m("#lstBestContact option:selected").val()
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Data Saved successfully";
+                    window.opener.location.reload(true);
+                    window.close();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClear").click(function (e) {
+            e.preventDefault();
+
+            $("#lstAddressType")[0].selectedIndex = 0;
+            $("#txtStreetNum").val("");
+            $("#txtStreetName").val("");
+            $("#txtAddr1").val("");
+            $("#txtAddr2").val("");
+            $("#txtCity").val("");
+            $("#txtState").val("");
+            $("#txtZip").val("");
+            $("#txtZip4").val("");
+            $("#lstBestContact")[0].selectedIndex = 0;
+        });
+    });
+</script>

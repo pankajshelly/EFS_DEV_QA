@@ -1,0 +1,122 @@
+﻿<fieldset>
+    <legend class="visibleToScreenReaderOnly">Common Address:</legend>
+    <div id="tdCountryContributionChk">
+        <div class="verticalCSSDestopForLableSched_ABC lblCSSAdd">
+            <span id="uc_address_lblOtherCountry">Other Country)</span>
+        </div>
+        <div class="verticalCSSDestopForCheckBoxSched_ABC DDLCSSAdd">
+            @Html.CheckBox("chkCountry", false, new { @class = "txtWidthForDialogSched_ABC_CountryChkbox", aria_labelledby = "uc_address_lblOtherCountry" })
+        </div>
+    </div>
+    <div id="tdCountryContributionTxt">
+        <div class="verticalCSSDestopForLableSched_ABC lblCSSAdd">
+            <span id="uc_address_lblCountry">* Country</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSched_ABC DDLCSSAdd">
+            @Html.TextBox("txtCountry", null, new { id = "txtCountry", @class = "txtWidthForDialogSched_A required", @maxlength = "30", aria_labelledby = "uc_address_lblCountry" })
+        </div>
+        <div id="txtCountry_validate" class="verticalCSSDestopForError"></div>
+    </div>
+    <div id="uc_address_divStreetAddress">
+        <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+            <span id="uc_address_lblStreetName">Street Address</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+            @Html.TextBox("txtStreetName", null, new { id = "txtStreetName", @class = "txtWidthForDialogSched_A", @maxlength = "60", aria_labelledby = "uc_address_lblStreetName" })
+        </div>
+        <div id="txtStreetName_validate" class="verticalCSSDestopForError"></div>
+    </div>
+    @*<div id="divErrorStreetName">
+            <div class="verticalCSSDestopForError">
+                @Html.Label(" ", new { @id = "lblErrorStreetName", @class = "lblColor" })
+            </div>
+        </div>*@
+    <div id="uc_address_divCity">
+        <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+            <span id="uc_address_lblCity">City</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+            @Html.TextBox("txtCity", null, new { id = "txtCity", @class = "txtWidthForDialogSched_A", @maxlength = "30", aria_labelledby = "uc_address_lblCity" })
+        </div>
+        <div id="txtCity_validate" class="verticalCSSDestopForError"></div>
+    </div>
+    @*<div id="divErrorCity">
+            <div class="verticalCSSDestopForError">
+                @Html.Label(" ", new { @id = "lblErrorCity", @class = "lblColor" })
+            </div>
+        </div>*@
+    <div id="uc_address_divState">
+        <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+            <span id="uc_address_lblState">State</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+            @Html.TextBox("txtState", null, new { id = "txtState", @class = "txtWidthForDialogSched_A", @maxlength = "2", aria_labelledby = "uc_address_lblState" })
+        </div>
+        <div id="txtState_validate" class="verticalCSSDestopForError"></div>
+    </div>
+    @*<div id="divErrorState">
+            <div class="verticalCSSDestopForError">
+                @Html.Label(" ", new { @id = "lblErrorState", @class = "lblColor" })
+            </div>
+        </div>*@
+    <div id="uc_address_divZip5">
+        <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+            <span id="uc_address_lblZip5">Zip Code</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+            @Html.TextBox("txtZipCode", null, new { id = "txtZipCode", @class = "txtWidthForDialogSched_A", @maxlength = "10", aria_labelledby = "uc_address_lblZip5" })
+        </div>
+        <div id="txtZipCode_validate" class="verticalCSSDestopForError"></div>
+    </div>
+    @*<div id="divErrorZip5">
+            <div class="verticalCSSDestopForError">
+                @Html.Label(" ", new { @id = "lblErrorZip5", @class = "lblColor" })
+            </div>
+        </div>*@
+</fieldset>
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+        //var formId = sessionStorage.getItem("CurrentDateValidateFormId").toString();
+
+        ////ValidateDateControl("DialogBoxSchedDForm");
+        //ValidateDateControl(formId);
+
+        // Watermark TextBox. ////////////////////////////////////////////////////
+        // Zip Code
+        var watermarkZipCode = '00000-0000';
+        $('#txtZipCode').blur(function () {
+            if ($(this).val().length == 0)
+                $(this).val(watermarkZipCode).addClass('watermark');
+        }).focus(function () {
+            if ($(this).val() == watermarkZipCode)
+                $(this).val('').removeClass('watermark');
+        }).val(watermarkZipCode).addClass('watermark');
+
+        $('#txtZipCode').focusin(function () {
+            if ($(this).val().toString() != "00000-0000") {
+                $(this).removeClass('watermark');
+            }
+            $("#divErrorZip5").hide();
+            $("#txtZipCode").removeClass("ui-state-error");
+        });
+        // Watermark TextBox. ////////////////////////////////////////////////////
+
+        $("#txtStreetName").focusin(function () {
+            $("#divErrorStreetName").hide();
+            $("#txtStreetName").removeClass("ui-state-error");
+        });
+
+        $("#txtCity").focusin(function () {
+            $("#divErrorCity").hide();
+            $("#txtCity").removeClass("ui-state-error");
+        });
+
+        $("#txtState").focusin(function () {
+            $("#divErrorState").hide();
+            $("#txtState").removeClass("ui-state-error");
+        });
+
+    });
+</script>

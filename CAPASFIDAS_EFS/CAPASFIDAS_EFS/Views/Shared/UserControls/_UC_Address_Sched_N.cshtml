@@ -1,0 +1,97 @@
+﻿<fieldset>
+    <legend class="visibleToScreenReaderOnly">Common Address for Schedule N: </legend>
+    <div id="divStreetAddress">
+        <div class="verticalCSSDestopForLableSched_N lblCSSAdd">
+            <span id="lblStreetName">Street Address</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSched_N DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidthForDialogSched_N", @maxlength = "60", aria_labelledby = "lblStreetName" })
+        </div>
+    </div>
+    <div id="divErrorStreetName">
+        <div class="verticalCSSDestopForError">
+            @Html.Label(" ", new { @id = "lblErrorStreetName", @class = "lblColor", @for= "txtStreetName" })
+        </div>
+    </div>
+    <div id="divCity">
+        <div class="verticalCSSDestopForLableSched_N lblCSSAdd">
+            <span id="lblCity">City</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSched_N DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidthForDialogSched_N", @maxlength = "30" , aria_labelledby = "lblCity" })
+        </div>
+    </div>
+    <div id="divErrorCity">
+        <div class="verticalCSSDestopForError">
+            @Html.Label(" ", new { @id = "lblErrorCity", @class = "lblColor", @for = "txtCity" })
+        </div>
+    </div>
+    <div id="divState">
+        <div class="verticalCSSDestopForLableSched_N lblCSSAdd">
+            <span id="lblState" >State</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSched_N DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidthForDialogSched_N", @maxlength = "2", aria_labelledby = "lblState" })
+        </div>
+    </div>
+    <div id="divErrorState">
+        <div class="verticalCSSDestopForError">
+            @Html.Label(" ", new { @id = "lblErrorState", @class = "lblColor", @for = "txtState" })
+        </div>
+    </div>
+    <div id="divZip5">
+        <div class="verticalCSSDestopForLableSched_N lblCSSAdd">
+            <span id="lblZip5">Zip Code</span>
+        </div>
+        <div class="verticalCSSDestopForTextboxSched_N DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtZipCode", @class = "txtWidthForDialogSched_N", @maxlength = "10", aria_labelledby = "lblZip5" })
+        </div>
+    </div>
+    <div id="divErrorZip5">
+        <div class="verticalCSSDestopForError">
+            @Html.Label(" ", new { @id = "lblErrorZip5", @class = "lblColor", @for = "txtZipCode" })
+        </div>
+    </div>
+</fieldset>
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        // Watermark TextBox. ////////////////////////////////////////////////////
+        // Zip Code
+        var watermarkZipCode = '00000-0000';
+        $('#txtZipCode').blur(function () {
+            if ($(this).val().length == 0)
+                $(this).val(watermarkZipCode).addClass('watermark');
+        }).focus(function () {
+            if ($(this).val() == watermarkZipCode)
+                $(this).val('').removeClass('watermark');
+        }).val(watermarkZipCode).addClass('watermark');
+
+        $('#txtZipCode').focusin(function () {
+            if ($(this).val().toString() != "00000-0000") {
+                $(this).removeClass('watermark');
+            }
+            $("#divErrorZip5").hide();
+            $("#txtZipCode").removeClass("ui-state-error");
+        });
+        // Watermark TextBox. ////////////////////////////////////////////////////
+
+        $("#txtStreetName").focusin(function () {
+            $("#divErrorStreetName").hide();
+            $("#txtStreetName").removeClass("ui-state-error");
+        });
+
+        $("#txtCity").focusin(function () {
+            $("#divErrorCity").hide();
+            $("#txtCity").removeClass("ui-state-error");
+        });
+
+        $("#txtState").focusin(function () {
+            $("#divErrorState").hide();
+            $("#txtState").removeClass("ui-state-error");
+        });
+
+    });
+</script>

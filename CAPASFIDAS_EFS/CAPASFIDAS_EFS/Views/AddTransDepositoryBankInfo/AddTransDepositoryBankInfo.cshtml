@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+<!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+    Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+<!--Minified script bundles-->
+@Scripts.Render("~/Scripts/bundle-jquery")
+@Scripts.Render("~/Scripts/bundle-jquery-ui")
+@Scripts.Render("~/Scripts/bundle-bootstrap")
+@Scripts.Render("~/Scripts/bundle-other")
+<!--Style bundles-->
+@Styles.Render("~/Content/bundle-base")
+@Styles.Render("~/Content/bundle-jquery")
+@Styles.Render("~/Content/bundle-jquery-ui")
+@Styles.Render("~/Content/bundle-bootstrap")
+
+<div style="text-align:center;">
+    <h1 class="h1Bold">Add Bank Details</h1>
+</div>
+@using (Html.BeginForm("AddTransDepositoryBankInfo", "AddTransDepositoryBankInfo", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div  class="divAddressPopUp">
+        <div style="text-align:left;" class="paddingLeft1em">
+            <div>
+                <span style="float: left;">
+                    <span id="spnBankNameLabel">
+                        <span id="lblDepositoryBankName">Depository/Bank Name</span>
+                    </span>
+                    <span id="spnBankName" class="" style="padding-left: 0.8em;">
+                        @Html.TextBox("searchTerm", null, new { id = "txtDepositortyBankName", aria_labelledby = "lblDepositoryBankName" })
+                    </span>
+                </span>
+                <span style="padding-left: 0.8em;">
+                    <span id="spnAccountTypeLabel">
+                        <span id="lblAccountType">Account Type</span>
+                    </span>
+                    <span id="spnAccountType" class="" style="padding-left: 0.8em;">
+                        @Html.DropDownList("lstAccountType", null, "- Select -", new { aria_labelledby = "lblAccountType" })
+                    </span>
+                </span>
+                <span style="float: right; padding-right: 2em;">
+                    <button id="btnCommonSave" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button>
+                    <button id="btnCommonClear" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </span>
+            </div>
+            <br />
+            <div class="divClearBoth">
+                <span id="spnStreetNumLabel" style="padding-left: 7.6em;">
+                    <span id="lblStreetNum">Street</span>
+                </span>
+                <span id="spnStreetNum" class="" style="padding-left: 0.8em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txtStreetNum", size = "8", aria_labelledby = "lblStreetNum" })
+                    @Html.TextBox("searchTerm", null, new { id = "txtStreetName", size = "35", aria_labelledby = "lblStreetNum" })
+                </span>
+            </div>
+            <span id="spnCityLabel" style="padding-left: 8.55em;">
+                <span id="lblCity">City</span>
+            </span>
+            <span id="spnCity" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", null, new { id = "txtCity", aria_labelledby = "lblCity" })
+            </span>
+            <br />
+            <span id="spnStateLabel" style="padding-left: 7.95em;">
+                <span id="lblState">State</span>
+            </span>
+            <span id="spnState" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", null, new { id = "txtState", aria_labelledby = "lblState" })
+            </span>
+            <br />
+            <span id="spnZipLabel" style="padding-left: 8.9em;">
+                <span id="lblZip">Zip</span>
+            </span>
+            <span id="spnZip" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", null, new { id = "txtZip", size = "5", aria_labelledby = "lblZip" }) &nbsp;-&nbsp;
+                @Html.TextBox("searchTerm", null, new { id = "txtZip4", size = "5", aria_labelledby = "lblZip" })
+            </span>
+        </div>
+    </div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        $("#lstContactType").prop("disabled", true);
+        $("#lstContactType1").prop("disabled", true);
+        $("#lstContactType2").prop("disabled", true);
+        $("#lstContactType3").prop("disabled", true);
+
+        //Update user data
+        $m("#btnCommonSave").click(function () {
+            event.preventDefault();
+
+            if ($m("#txtDepositortyBankName").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter First Name', 'Ok', '');
+                alert("Enter Bank Name");
+            }
+            else if ($m("#lstAccountType option:selected").text() == "- Select -") {
+                //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                alert("Select Account Type");
+            }
+            else if ($m("#txtStreetNum").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Last Name', 'Ok', '');
+                alert("Enter Street");
+            }
+            else if ($m("#txtCity").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Last Name', 'Ok', '');
+                alert("Enter City");
+            }
+            else if ($m("#txtState").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Last Name', 'Ok', '');
+                alert("Enter State");
+            }
+            else if ($m("#txtZip").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Last Name', 'Ok', '');
+                alert("Enter Zip");
+            }
+            else {
+                var options = {};
+                //options.url = "../AddTransDepositoryBankInfo/AddDepositoryBankInfoTreasurer";
+                options.url = "@Url.Content("~/AddTransDepositoryBankInfo/AddDepositoryBankInfoTreasurer/")";
+                options.type = "GET";
+                options.data = {
+                    txtDepositortyBankName: $m("#txtDepositortyBankName").val().toString(),
+                    lstAccountType: $m("#lstAccountType option:selected").val().toString(),
+                    txtStreetNum: $m("#txtStreetNum").val().toString(),
+                    txtStreetName: $m("#txtStreetName").val().toString(),
+                    txtLastName: $m("#txtStreetName").val().toString(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZip: $m("#txtZip").val().toString(),
+                    txtZip4: $m("#txtZip4").val().toString(),
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Data Saved successfully";
+                    window.opener.location.reload(true);
+                    window.close();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClear").click(function () {
+            //$("#lstBestContact")[0].selectedIndex = 0;
+            //$("#lstTitle")[0].selectedIndex = 0;
+            //$("#txtPrefix").val("");
+            //$("#txtFirstName").val("");
+            //$("#txtMiddleName").val("");
+            //$("#txtLastName").val("");
+            //$("#txtSuffix").val("");
+            //$("#lstContactType")[0].selectedIndex = 0;
+            //$("#txtContactValue").val("");
+            //$("#txtContactValue1").val("");
+            //$("#txtContactValue2").val("");
+            //$("#txtContactValue3").val("");
+        });
+    });
+</script>

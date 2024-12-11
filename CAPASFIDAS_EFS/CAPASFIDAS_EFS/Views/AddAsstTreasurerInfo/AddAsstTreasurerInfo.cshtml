@@ -1,0 +1,418 @@
+﻿@{
+    Layout = null;
+}
+<!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+    Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+<!--Minified script bundles-->
+@Scripts.Render("~/Scripts/bundle-jquery")
+@Scripts.Render("~/Scripts/DataTables-1.10.20/bundle-jquery-dataTables")
+@Scripts.Render("~/Scripts/bundle-jquery-ui")
+@Scripts.Render("~/Scripts/bundle-bootstrap")
+@Scripts.Render("~/Scripts/bundle-other")
+<!--Style bundles-->
+@Styles.Render("~/Content/bundle-base")
+@Styles.Render("~/Content/bundle-jquery")
+@Styles.Render("~/Content/bundle-jquery-ui")
+@Styles.Render("~/Content/bundle-bootstrap")
+@Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+@Styles.Render("~/Content/DataTables-1.10.20/extensions/Responsive/css/bundle-jquery-dataTables-responsive")
+
+<div style="text-align:center;">
+    <h1 class="h1Bold">Add Assistant Treasurer Details</h1>
+</div>
+
+@using (Html.BeginForm("AddAsstTreasurerInfo", "AddAsstTreasurerInfo", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div class="divAsstTreaInfoPopUp">
+        <div class="paddingLeft2em">
+            <div id="spnDate" style="padding-left: 1.5em; clear: both;">
+                @Html.Partial("UserControls/_UC_CurrentDate")
+            </div>
+            <div id="spnStatus" style="padding-left: 0.86em;">
+                <div>
+                    <span id="lblStatus">Status</span>
+                </div>
+                <div>
+                    @Html.DropDownList("lstStatus", null, "- Select -", new { @id = "lstStatus", aria_labelledby = "lblStatus" })
+                </div>
+            </div>
+            <div style="padding-top: 0.2em;">
+                <div id="spnPrefix" style="clear: both; float: left; padding-left: 1.8em;">
+                    <div>
+                        <span id="lblPrefix">Prefix</span>
+                    </div>
+                    <div>
+                        @Html.TextBox("txtPrefix", null, new { id = "txtPrefix", size = "3", aria_labelledby = "lblPrefix" })
+                    </div>
+                </div>
+                <div id="spnLastName" style="padding-left: 0.8em;">
+                    <div>
+                        <span id="lblLastName">Last Name</span>
+                    </div>
+                    <div>
+                        @Html.TextBox("txtLastName", null, new { @id = "txtLastName", size = "15", aria_labelledby = "lblLastName" })
+                    </div>
+                </div>
+                <div id="spnFirstName" style="padding-left: 0.8em;">
+                    <div>
+                        <span id="lblFirstName">First Name</span>
+                    </div>
+                    <div>
+                        @Html.TextBox("txtFirstName", null, new { id = "txtFirstName", size = "15", aria_labelledby = "lblFirstName" })
+                    </div>
+                </div>
+                <div id="spnMiddleName" style="padding-left: 0.8em;">
+                    <div>
+                        <span id="lblMiddleName">Middle Initial</span>
+                    </div>
+                    <div>
+                        @Html.TextBox("txtMiddleName", null, new { id = "txtMiddleName", size = "2", aria_labelledby = "lblMiddleName" })
+                    </div>
+                </div>
+                <div id="spnSuffix" style="padding-left: 0.8em;">
+                    <div>
+                        <span id="lblSuffix">Suffix</span>
+                    </div>
+                    <div>
+                        @Html.TextBox("txtSuffix", null, new { id = "txtSuffix", size = "2", aria_labelledby = "lblSuffix" })
+                    </div>
+                </div>
+                <span style="float: right; padding-right: 2em;">
+                    <button id="btnCommonSaveAsstTrea" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button>
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div id="divHeader1" style="padding-left: 2em; padding-bottom: 2.8em;">
+        <h3 style="font-weight: bold; float: left;">Address</h3>
+        <span id="btnSaveAddress" style="float: right; padding-right: 2.5em;">
+            <button id="btnCommonSaveAddress" class="btn-default buttonCSS" name="Command" value="CSV">
+                <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+            </button>
+        </span>
+    </div>
+    <div style="padding-right: 1em;">
+        <table id="exampleAddress" class="webGrid" style="border-spacing: 0px;">
+            <thead class="header">
+                <tr>
+                    <th>Address ID</th>
+                    <th>Best Contact</th>
+                    <th>Address Type</th>
+                    <th>Street Num</th>
+                    <th>Street Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip 5</th>
+                    <th>Zip 4</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="divHeader2" style="padding-top: 1em; padding-left: 2em; padding-bottom: 2.8em;">
+        <h3 style=" font-weight: bold; float: left;">Contact Information</h3>
+        <span id="btnSaveContact" style="float: right; padding-right: 2.5em;">
+            <button id="btnCommonSaveContact" class="btn-default buttonCSS" name="Command" value="CSV">
+                <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+            </button>
+        </span>
+    </div>
+    <div style="padding-right: 1em;">
+        <table id="exampleContact" class="webGrid" style=" border-spacing: 0px;">
+            <thead class="header">
+                <tr>
+                    <th>Contract ID</th>
+                    <th>Best Contact</th>
+                    <th>Phone</th>
+                    <th>E-mail Address</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        $m("#lstStatus")[0].selectedIndex = 1;
+
+        $("#txtCurrentDate").val("@DateTime.Now.ToString("MM/dd/yyyy")");
+
+        var tableAddress = $m('#exampleAddress').DataTable({
+            "bProcessing": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "sAjaxSource": "../AddAsstTreasurerInfo/GetAddressData",
+            "bAutoWidth": false,
+            "columns": [
+                    null,
+                    { "width": "8%" },
+                    { "width": "8%" },
+                    { "width": "5%" },
+                    { "width": "6%" },
+                    { "width": "3%" },
+                    { "width": "3%" },
+                    { "width": "3%" },
+                    { "width": "3%" },
+                    null,
+                    null
+            ],
+            "columnDefs": [
+                { width: "2.5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit_address" title="Edit Row Data"><img src="../Content/Images/edit.png" /></a>', orderable: false },
+                { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove_adderss" title="Delete Row Data"><img src="../Content/Images/delete.png" /></a>', orderable: false },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#exampleAddress').DataTable());
+            },
+            "fnServerData": function (url, data, callback) {
+                $m.ajax({
+                    "url": url,
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        //ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        alert("Error...");
+                    }
+                });
+            }
+        });
+        tableAddress.column(0).visible(false);
+        tableAddress.columns.adjust().draw(false);
+
+        $m('#exampleAddress').DataTable().ajax.reload();
+
+
+        // Table Contact Information
+        var tableContact = $m('#exampleContact').DataTable({
+            "bProcessing": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "sDefaultContent": "Edit",
+            "sAjaxSource": "../AddAsstTreasurerInfo/GetShowContact",
+            "bAutoWidth": false,
+            "columns": [
+                    null,
+                    { "width": "10%" },
+                    { "width": "10%" },
+                    { "width": "10%" },
+                    null,
+                    null
+            ],
+            "columnDefs": [
+                { width: "2%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit_Contact" title="Edit Row Data"><img src="../Content/Images/edit.png" /></a>', orderable: false },
+                { width: "2.5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove_Contact" title="Delete Row Data"><img src="../Content/Images/delete.png" /></a>', orderable: false },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#exampleContact').DataTable());
+            },
+            "fnServerData": function (url, data, callback) {
+                $m.ajax({
+                    "url": url,
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        ShowDialogBox('NVRA', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        alert("Error...");
+                    }
+                });
+            }
+        });
+        tableContact.column(0).visible(false);
+        tableContact.columns.adjust().draw(false);
+
+        $m('#exampleContact').DataTable().ajax.reload();
+
+        //Add Assistant Treasurer Data
+        $m("#btnCommonSaveAsstTrea").click(function () {
+            event.preventDefault();
+
+            if ($m("#txtCurrentDate").val().toString() != "") {
+                if ($m("#lstStatus option:selected").text().toString() != "- Select -") {
+                    var options = {};
+                    //options.url = "../AddAsstTreasurerInfo/AddSubTreasurerData";
+                    options.url = "@Url.Content("~/AddAsstTreasurerInfo/AddSubTreasurerData/")";
+                    options.type = "GET";
+                    options.data = {
+                        txtStartDate: $m("#txtCurrentDate").val().toString(),
+                        lstStatus: $m("#lstStatus option:selected").val(),
+                        txtPrefix: $m("#txtPrefix").val().toString(),
+                        txtLastName: $m("#txtLastName").val().toString(),
+                        txtFirstName: $m("#txtFirstName").val().toString(),
+                        txtMiddleName: $m("#txtMiddleName").val().toString(),
+                        txtSuffix: $m("#txtSuffix").val().toString(),
+                    };
+                    options.dataType = "json";
+                    options.contentType = "application/json";
+                    options.success = function (results) {
+                        window.status = "Data Saved successfully";
+                        window.opener.location.reload(true);
+                        window.close();
+                    };
+                    options.error = function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                    };
+                    $m.ajax(options);
+                }
+                else {
+                    alert("Select Status");
+                }
+            }
+            else {
+                alert("Select Start Date");
+            }
+
+
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClear").click(function () {
+            //$("#lstBestContact")[0].selectedIndex = 0;
+            //$("#lstTitle")[0].selectedIndex = 0;
+            //$("#txtPrefix").val("");
+            //$("#txtFirstName").val("");
+            //$("#txtMiddleName").val("");
+            //$("#txtLastName").val("");
+            //$("#txtSuffix").val("");
+            //$("#lstContactType")[0].selectedIndex = 0;
+            //$("#txtContactValue").val("");
+            //$("#txtContactValue1").val("");
+            //$("#txtContactValue2").val("");
+            //$("#txtContactValue3").val("");
+        });
+
+
+        var selectedAgency = "";
+
+        //Add New Address
+        $m("#btnSaveAddress").click(function () {
+            event.preventDefault();
+            window.open("../AddEditAddress/AddEditAddress?agencyID=" + selectedAgency + "", "MyWindow", "width=600, height=300");
+        });
+
+        // Edit Address record
+        $m('#exampleAddress tbody').on('click', 'a.editor_edit_address', function (e) {
+            event.preventDefault();
+            var rowNumber = tableAddress.row($m(this).parents('tr')).index();
+            var data = tableAddress.row($m(this).parents('tr')).data();
+            window.open("../EditAddress/EditAddress?adderssID=" + data[0].toString() + "&&rowNumber=" + rowNumber + "", "MyWindow", "width=600, height=400");
+        });
+
+        // Delete Address record
+        $m('#exampleAddress tbody').on('click', 'a.editor_remove_adderss', function (e) {
+            if (confirm("Are you sure do you want to delete") == true) {
+                e.preventDefault();
+                //var data = tableAddress.row($(this).parents('tr')).data();
+                //var options = {};
+                //options.url = "../Agency/DeleteAddress";
+                //options.type = "GET";
+                //options.data = {
+                //    txtAddressID: data[0].toString()
+                //};
+                //options.dataType = "json";
+                //options.contentType = "application/json";
+                //options.success = function (results) {
+                //    window.status = "Record deleted successfully";
+                //    $m.ajax({
+                //        "url": "../Agency/GetAddress",
+                //        "data": null,
+                //        "success": results,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                //        }
+                //    });
+                //    tableAddress.column(0).visible(false);
+                //    tableAddress.columns.adjust().draw(false);
+                //    $m('#exampleAddress').DataTable().ajax.reload();
+                //};
+                //options.error = function () {
+                //    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                //};
+                //$.ajax(options);
+            }
+            else {
+                return false;
+            }
+        });
+
+        //Add New Contact
+        $m("#btnSaveContact").click(function () {
+            event.preventDefault();
+            window.open("../AddContact/AddContact?agencyID=" + selectedAgency + "", "MyWindow", "width=800, height=300");
+        });
+
+        // Edit Contact record
+        $m('#exampleContact tbody').on('click', 'a.editor_edit_Contact', function (e) {
+            e.preventDefault();
+            var rowNumber = tableContact.row($m(this).parents('tr')).index();
+            var data = tableContact.row($m(this).parents('tr')).data();
+            window.open("../EditContact/EditContact?contactID=" + data[0].toString() + "&&rowNumber=" + rowNumber + "", "MyWindow", "width=800, height=300");
+        });
+
+        // Delete Contact record
+        $m('#exampleContact tbody').on('click', 'a.editor_remove_Contact', function (e) {
+            if (confirm("Are you sure do you want to delete") == true) {
+                e.preventDefault();
+                //var data = tableContact.row($(this).parents('tr')).data();
+                //var options = {};
+                //options.url = "../Agency/DeleteContact";
+                //options.type = "GET";
+                //options.data = {
+                //    CONTACT_ID: data[0].toString()
+                //};
+                //options.dataType = "json";
+                //options.contentType = "application/json";
+                //options.success = function (results) {
+                //    window.status = "Record deleted successfully";
+                //    $m.ajax({
+                //        "url": "../Agency/GetContact",
+                //        "data": null,
+                //        "success": results,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                //        }
+                //    });
+                //    tableContact.column(0).visible(false);
+                //    tableContact.columns.adjust().draw(false);
+                //    $m('#exampleContact').DataTable().ajax.reload();
+                //};
+                //options.error = function () {
+                //    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                //};
+                //$.ajax(options);
+            }
+            else {
+                return false;
+            }
+        });
+
+
+    }); // Document End
+
+</script>

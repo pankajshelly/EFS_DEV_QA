@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+
+@*<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />*@
+
+@using (Html.BeginForm("divUC_24HourNotice", "divUC_24HourNotice", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridLoanReceived" class="divGridCSS " style="padding-right: 26em;">
+        <div style="padding-bottom: 2em; padding-left: 2em;">
+            <span>
+                A 24 Hour Notice is required for any contribution or loan received which exceeds $1,000 whose transaction date falls between the cut off of the 11 Day Pre Election Report and the Election. NOTE: This requirement applies to all Primary, General and Special Elections. You still must include these transactions on the post-election filings.
+            </span>
+        </div>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thLoanRcvdLoanReceived" class="border1pxCls" style="padding-left:2em;">Date Rcvd</th>
+                <th id="thLoanerCodeLoanReceived" class="border1pxCls">@Html.Label("Contributor Type", new { @id = "lblLoanerCode" })</th>
+                <th id="thFirstNameLoanReceived" class="border1pxCls">First Name</th>
+                <th id="thMILoanReceived" class="border1pxCls">MI</th>
+                <th id="thLastNameLoanReceived" class="border1pxCls">Last Name</th>
+                <th id="thStreetLoanReceived" class="border1pxCls">Street #</th>
+                <th id="thStreetNameLoanReceived" class="border1pxCls">Street Name</th>
+                <th id="thCityLoanReceived" class="border1pxCls">City</th>
+                <th id="thStateLoanReceived" class="border1pxCls">State</th>
+                <th id="thZip5LoanReceived" class="border1pxCls">Zip5</th>
+                <th id="thZip4LoanReceived" class="border1pxCls">Zip4</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdLoanReceived" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdLoanerCodeLoanReceived" class="border1pxCls" valign="bottom">@Html.DropDownList("lstContributionNameInKind", ViewData["lstContributionName"] as SelectList, new { @class = "HeightDropDownLst" })</td>
+                <td id="tdFirstNameLoanReceived" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtFirstName", @class = "txtWidth" })</td>
+                <td id="tdMILoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtMI", @class = "txtWidth" })</td>
+                <td id="tdLastNameLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLastName", @class = "txtWidth" })</td>
+                <td id="tdStreetLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateLoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5LoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4LoanReceived" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br /><br /><br />
+        <div class="floatRightNew clsShowButtonClass">
+            <input type="button" id="btn24Notice" class="btn btn-default clsCommonSearch" value="Submit" title="Submit" style="font-size:12px;" />&nbsp;
+        </div>
+        <br />
+        <div style="padding-left: 2em;">
+            <hr />
+        </div>
+        <br /><br /><br />
+        <div class="clsShowButtonClass paddingLeft2em">
+            @*<span >
+                24-Hour Notice has been successfully submitted.
+            </span>*@
+            <span style="float: right;">
+                <input type="button" id="btn24NoticeRpt" class="btn btn-default clsCommonSearch" value="Add Contribution to the Post-Election Report" title="Add Contribution to the Post-Election Report" style="font-size:12px;" />&nbsp;
+            </span>
+        </div>
+    </div>
+
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+    $m(document).ready(function () {
+        $("#btn24Notice").bind('click', function () {
+            alert("24-Hour Notice has been successfully submitted.");
+        })
+    });
+
+</script>

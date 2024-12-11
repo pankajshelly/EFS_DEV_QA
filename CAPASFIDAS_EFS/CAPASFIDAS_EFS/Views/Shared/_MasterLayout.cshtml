@@ -1,0 +1,397 @@
+﻿@model  Models.FilerInfoModel
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>NYSBOE: Electronic Filing System (EFS) @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" >
+    <link href="~/Content/ResponsiveMobile.css" media="screen and (max-width: 500px)" rel="stylesheet" >
+    <link href="~/Content/ResponsiveTablet.css" media="screen and (min-width: 500px) and (max-width: 900px)" rel="stylesheet" >
+    <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" >
+
+    <!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+        Never use web config file to <compilation debug=”true”> in order to avoid accidental deployments without minifcation! -->
+    <!--Minified script bundles-->
+    @Scripts.Render("~/Scripts/bundle-jquery")
+    @Scripts.Render("~/Scripts/DataTables-1.10.20/bundle-jquery-dataTables")
+    @Scripts.Render("~/Scripts/bundle-jquery-ui")
+    @Scripts.Render("~/Scripts/bundle-bootstrap")
+    @Scripts.Render("~/Scripts/bundle-other")
+    @Scripts.Render("~/Scripts/bundle-multiple-select")
+
+    <!--Style bundles-->
+    @Styles.Render("~/Content/bundle-base")
+    @Styles.Render("~/Content/bundle-jquery")
+    @Styles.Render("~/Content/bundle-jquery-ui")
+    @Styles.Render("~/Content/multiple-select/bundle-multiple-select")
+    @Styles.Render("~/Content/bundle-bootstrap")
+    @Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+    @Styles.Render("~/Content/DataTables-1.10.20/extensions/Responsive/css/bundle-jquery-dataTables-responsive")
+    @*This is no longer valid. Must be set in the server side. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options*@
+    @*<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN">*@
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX56BVPMCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WX56BVPMCD');
+    </script>
+</head>
+<body id="boe-css-overrides">
+    <div id="cover"></div>
+    <div style="font-size: 70%; padding-left: .5em;"><a href="#main">SKIP TO MAIN CONTENT</a></div>
+    <!-- Start NEW BANNER-->
+    <iframe id="nygov-universal-navigation-frame" class="nygov-universal-container" lang="en" title="New York State Universal Banner" src="//static-assets.ny.gov/load_global_menu/ajax?iframe=true&amp;target=blank"></iframe>
+    <!-- END NEW BANNER-->
+    @if (@System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "Development(DEV)" || @System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "Quality Assurance(QA)" ||
+    @System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "User Acceptance Testing(UAT)")
+    {
+        <div class="alert alert-warning mb-0" role="alert">
+            <strong>Warning</strong> this is a <strong>@System.Configuration.ConfigurationManager.AppSettings["appEnvironment"]</strong> deployment of the Candidate Management Applications page. <strong>Always</strong> check the URL you are moving to before performing any actions.
+        </div>
+    }
+    <nav id="menuNav" class="navbar navbar-expand-xl navbar-inverse">
+        <div style="
+    width: 100%;">
+            <div class="navbar-nav align-items-start flex-column  w-100">
+                <div class="navbar-header">
+                    <!--Navbar mobile view collapse is managed using the native jquery/bootstrap functionality.-->
+                    <a class="navbar-brand navbar-toggler " href="https://www.elections.ny.gov/">Board of Elections</a>
+                    <button class="navbar-toggler navbar-toggler-right align-self-center mt-3 " style="float:right;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse w-100" id="navbarNav">
+                    <ul class="navbar-nav flex-xl-wrap align-items-start ">
+                        <li class="nav-item boe-overide-hide-when-navbar-collapse-show">
+                            <a class="navbar-brand mr-0" href="https://www.elections.ny.gov/">Board of Elections</a>
+                        </li>
+
+                        @{
+                            <!--Declare variables to determine menu items.-->
+                            var sessionHasFilerInfo = (Session["FILER_INFO"] != null);
+                            var itemNameIsTreasurer = false;
+                            var itemNameIsSubTreasurer = false;
+                            var itemNameCandHasNoCommittee = false;
+                            var itemNameCandHasCommittee = false;
+
+                            if (sessionHasFilerInfo)
+                            {
+                                <!--Gather information-->
+                                foreach (var item in Session["FILER_INFO"] as IEnumerable<Models.FilerInfoModel>)
+                                {
+                                    switch (item.Name)
+                                    {
+                                        case "TREASURER":
+                                            itemNameIsTreasurer = true;
+                                            break;
+                                        case "SUBTREASURER":
+                                            itemNameIsSubTreasurer = true;
+                                            break;
+                                        case "CANDIDATE DO NOT HAVE COMMITTEE":
+                                            itemNameCandHasNoCommittee = true;
+                                            break;
+                                        case "CANDIDATE HAS COMMITTEE":
+                                            itemNameCandHasCommittee = true;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                            }
+                            <!--Okay now build the menu one item at a time.-->
+                            <!--Menu #1, #2 and #3 Don't belong when Candidate has committee-->
+                            if (itemNameCandHasCommittee == false
+                                | itemNameIsTreasurer == true
+                                | itemNameIsSubTreasurer == true
+                                | itemNameCandHasNoCommittee == true)
+                            {
+                                <!--Menu #1-->
+                                <li id="liContributionsMonetary" class="nav-item">
+                                    @Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                                <!--Menu #2-->
+                                <li id="liViewAllDisclosures" class="nav-item">
+                                    @Html.ActionLink("View All Disclosure Reports", "ViewAllDisclosures", "ViewAllDisclosures", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                                <!--Menu #3-->
+                                <li id="liDisclosureReportSummary" class="nav-item">
+                                    @Html.ActionLink("View/Submit Disclosure", "DisclosureReportSummary", "DisclosureReportSummary", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                            }
+                            <!--Menu #4 and #5 are always present-->
+                            if (true)
+                            {
+                                <!--Menu #4-->
+                                <li id="liViewSupportingDocuments" class="nav-item">
+                                    @Html.ActionLink("View Supporting Documents", "ViewSupportingDocuments", "ViewSupportingDocuments", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                                <!--Menu #5-->
+                                <li id="liImportDisclosureReport" class="nav-item">
+                                    @Html.ActionLink("Import Disclosure Reports", "ImportDisclosureReport", "ImportDisclosureReport", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                            }
+                            <!--Menu #6-->
+                            if (sessionHasFilerInfo == false
+                                | itemNameIsTreasurer == true
+                                | itemNameCandHasNoCommittee == true
+                                )
+                            {
+                                if (Session["COMM_TYPE_ID"].ToString() != "23")
+                                {
+                                    <li id="liLoanAndLiabilityReconciliation" class="nav-item">
+                                        @Html.ActionLink("Loan Reconcile", "LoanAndLiabilityReconciliation", "LoanAndLiabilityReconciliation", null, new { @class = "nav-link text-nowrap" })
+                                    </li>
+                                }
+
+                            }
+                            <!--Menu #7, 8, 9, 10-->
+                            if (sessionHasFilerInfo == false)
+                            {
+                                <!--Menu #7-->
+                                <li id="liPublicReporting" class="nav-item">
+                                    <a href="https://publicreporting.elections.ny.gov/">Public Reporting</a>
+                                </li>
+                                <!--Menu #8-->
+                                <li id="liCandidateProfile" class="nav-item">
+                                    @Html.ActionLink("Candidate Profile", "CandidateProfile", "CandidateProfile", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                                <!--Menu #9-->
+                                <li id="liTreasurerProfile" class="nav-item">
+                                    @Html.ActionLink("Treasurer Profile", "TreasurerProfile", "TreasurerProfile", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                                <!--Menu #10-->
+                                <li id="liContributionLimits" class="nav-item">
+                                    @Html.ActionLink("Contribution Limits", "ContributionLimits", "ContributionLimits", null, new { @class = "nav-link text-nowrap" })
+                                </li>
+                            }
+                            <li class="nav-item" id="liReleaseNote">
+                                @Html.ActionLink("Release Notes", "ReleaseNote", "ReleaseNote", null, new { @class = "nav-link text-nowrap" })
+                            </li>
+                            <!--Help Dropdown-->
+                            if (sessionHasFilerInfo == true)
+                            {
+                                <!--Keeps the dropdown from cropping on the left when it collapses down 1 row.-->
+                                <li class="nav-item dropdown">
+                                    <!--Width is being set specifically to the help menu to assist in wrapping because the menu text "help" is much shorter than the content text of the submenu.-->
+                                    <a class="nav-link text-nowrap dropdown-toggle" id="navbarDropdownHelp" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width:320px">Help</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownHelp">
+                                        <!--TODO: This method of displaying help is not at all accessible. It should be navigagtion, dialog or at least new tab.-->
+                                        <li id="liCallHelpDisclosureRpt">
+                                            <a href="#" onclick="CallHelpDisclosureRpt();" class="dropdown-item" target="_self">How to Create a Disclosure Report</a>
+                                        </li>
+                                        <li id="liCallHelpViewDisclosureRpt">
+                                            <a href="#" onclick="CallHelpViewDisclosureRpt();" class="dropdown-item" target="_self">How to View Disclosure Reports</a>
+                                        </li>
+                                        <li id="liCallHelpEditDeleteTrans">
+                                            <a href="#" onclick="CallHelpEditDeleteTrans();" class="dropdown-item" target="_self">How to Edit/Delete Transactions</a>
+                                        </li>
+                                        <li id="liCallHelpDeleteDisclosureRpt">
+                                            <a href="#" onclick="CallHelpDeleteDisclosureRpt();" class="dropdown-item" target="_self">How to Delete Disclosure Reports</a>
+                                        </li>
+                                        <li id="liCallHelpSubmitDisclosureRpt">
+                                            <a href="#" onclick="CallHelpSubmitDisclosureRpt();" class="dropdown-item" target="_self">How to Submit Disclosure Reports</a>
+                                        </li>
+                                        <li id="liCallHelpUploadSupportingDocs">
+                                            <a href="#" onclick="CallHelpUploadSupportingDocs();" class="dropdown-item" target="_self">How to Upload Supporting Documents</a>
+                                        </li>
+                                        <li id="liCallHelpRptCampaignMatrls">
+                                            <a href="#" onclick="CallHelpRptCampaignMatrls();" class="dropdown-item" target="_self">How to Report Campaign Material</a>
+                                        </li>
+                                        <li id="liCallHelpReconcileLoans">
+                                            <a href="#" onclick="CallHelpReconcileLoans();" class="dropdown-item" target="_self">How to Reconcile Loans</a>
+                                        </li>
+                                        <li id="liCallHelpImpDisclosureRpt">
+                                            <a href="#" onclick="CallHelpImpDisclosureRpt();" class="dropdown-item" target="_self">How to Import Disclosure Data</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="divWelcomeBanner" class="container-fluid bg-color-nys-busines-secondary">
+        <div class="dropdown help-dropdown">
+            @*<a href="#" id="dropdownMenu1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>*@
+        </div>
+        <div>
+            Welcome, @Session["UserNameDisplay"] &nbsp;
+            <input type="button" class="btn btn-default" onclick="closeWindow();" title="Logout" value="Logout" >
+        </div>
+    </div>
+    <!--Don't add random classes here to fix height individual pages. Fix it on the page itself.-->
+    <div id="main">
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    <iframe id="nygov-universal-footer-frame" class="nygov-universal-container" lang="en" title="New York State Universal Footer" src="//static-assets.ny.gov/load_global_footer/ajax?iframe=true&amp;target=blank"></iframe>
+    <script>
+
+        $(window).on('load', function () {
+            $("#cover").hide();
+        });
+
+
+        function closeWindow() {
+            // REMOVE MAIN SESSION FOR FILE A DISCLOSURE REPORT SCHEDULES DATA.
+            sessionStorage.removeItem("TransactionTypeId");
+            sessionStorage.removeItem("EditFlag");
+            var urlContributionMonetary = "@Url.Content("~/LogoutPage/LogoutPage/")";
+            window.location.href = urlContributionMonetary;
+        }
+
+        $m(document).ready(function () {
+            boeA11yHelperImplementCommonAccessibilityFeatures();
+            /*
+             * Configure the DataTable library to handle these specific date time formats when sorting.
+             * NOTE the document ready function on this page (outer) will fire after whatever document ready (inner) function of the page in RenderBody().
+             * This means that tables that are initialized inside "inner" don't gain the sorting functionality until redrawn or reloaded after this code executes.
+            */
+            //Format for 01/02/2011 11:01:01 AM
+            $m.fn.dataTable.moment('MM/DD/YYYY h:mm:ss A');
+            //Format for 01/02/2011
+            $m.fn.dataTable.moment('MM/DD/YYYY');
+            //Format for Jan 2, 2011
+            $m.fn.dataTable.moment('MMM D, YYYY');
+            //Format for August 2021
+            $m.fn.dataTable.moment('MMMM YYYY');
+
+            //Start -Session Code
+            //Redirects any page using the master layout to the home page.
+            //Compares the window location pathname and if it doesn't match the URL action it will trigger a redirect to URL action location specified in the block.
+            var targetRedirectLocation = '@Url.Action("RoleMap", "RoleMap")';
+            if (window.location.pathname.localeCompare(targetRedirectLocation) != 0) {
+                //Recomende use the web.config @Session.Timeout value but can be manualy set with a string number of minutes ('1' = one minute).
+                enableSessionExpiredTimeout(@Session.Timeout, targetRedirectLocation, null, 'Electronic Filing System');
+            } else {
+                console.log("Current Window location path name '"+window.location.pathname+"' matches target redirect location '"+ targetRedirectLocation +"'. Application redirect code timeout will not be set.");
+            }
+
+            $m(window).on('beforeunload', function () {
+                $m(window).scrollTop(0);
+            });
+            //End -Session Code
+
+            /*
+             * Configure the DataTable library to handle these specific date time formats when sorting.
+             * NOTE the document ready function on this page (outer) will fire after whatever document ready (inner) function of the page in RenderBody().
+             * This means that tables that ari initialized inside "inner" don't gain the sorting functionality until redrawn or reloaded after this code executes.
+            */
+            //Format for 01/02/2011 11:01:01 AM
+            $m.fn.dataTable.moment('MM/DD/YYYY h:mm:ss A');
+            //Format for 01/02/2011
+            $m.fn.dataTable.moment('MM/DD/YYYY');
+            //Format for Jan 2, 2011
+            $m.fn.dataTable.moment('MMM D, YYYY');
+            //Format for August 2021
+            $m.fn.dataTable.moment('MMMM YYYY');
+
+            //Sets delayed focus handlers on common filter buttons show hide toggle buttons found accross application.
+            $m("button.clsbtnCommonShowHide").on('click', function () {
+                boeA11yHelperSetDelayedFocus($m(this).parent().parent().find("button.clsbtnCommonHideShow")[0], 0.8);
+            });
+            $m("button.clsbtnCommonHideShow").on('click', function () {
+                boeA11yHelperSetDelayedFocus($m(this).parent().parent().find("button.clsbtnCommonShowHide")[0], 0.8);
+            });
+        });
+
+
+        function CallHelpDisclosureRpt() {
+            CallHelpMenu("HelpDisclosureRpt");
+        }
+
+        function CallHelpViewDisclosureRpt() {
+            CallHelpMenu("HelpViewDisclosureRpt");
+        }
+
+        function CallHelpEditDeleteTrans() {
+            CallHelpMenu("HelpEditDeleteTrans");
+        }
+
+        function CallHelpDeleteDisclosureRpt() {
+            CallHelpMenu("HelpDeleteDisclosureRpt");
+        }
+
+        function CallHelpSubmitDisclosureRpt() {
+            CallHelpMenu("HelpSubmitDisclosureRpt");
+        }
+
+        function CallHelpUploadSupportingDocs() {
+            CallHelpMenu("HelpUploadSupportingDocs");
+        }
+
+        function CallHelpRptCampaignMatrls() {
+            CallHelpMenu("HelpRptCampaignMatrls");
+        }
+
+        function CallHelpReconcileLoans() {
+            CallHelpMenu("HelpReconcileLoans");
+        }
+
+        function CallHelpImpDisclosureRpt() {
+            CallHelpMenu("HelpImportDisclosureReports");
+        }
+
+                /**
+         * Function to call a modal.
+         * @@param {sting} modalType
+         */
+        function CallHelpMenu(type) {
+            var url;
+            switch (type) {
+                case "HelpDisclosureRpt":
+                    url = "@Url.Content("~/HelpMenu/HelpDisclosureRpt/")";
+                    break;
+                case "HelpViewDisclosureRpt":
+                    url = "@Url.Content("~/HelpMenu/HelpViewDisclosureRpt/")";
+                    break;
+                case "HelpEditDeleteTrans":
+                    url = "@Url.Content("~/HelpMenu/HelpEditDeleteTrans/")";
+                    break;
+                case "HelpDeleteDisclosureRpt":
+                    url = "@Url.Content("~/HelpMenu/HelpDeleteDisclosureRpt/")";
+                    break;
+                case "HelpSubmitDisclosureRpt":
+                    url = "@Url.Content("~/HelpMenu/HelpSubmitDisclosureRpt/")";
+                    break;
+                case "HelpUploadSupportingDocs":
+                    url = "@Url.Content("~/HelpMenu/HelpUploadSupportingDocs/")";
+                    break;
+                case "HelpRptCampaignMatrls":
+                    url = "@Url.Content("~/HelpMenu/HelpRptCampaignMatrls/")";
+                    break;
+                case "HelpReconcileLoans":
+                    url = "@Url.Content("~/HelpMenu/HelpReconcileLoans/")";
+                    break;
+                case "HelpImportDisclosureReports":
+                    url = "@Url.Content("~/HelpMenu/HelpImportDisclosureReports/")";
+                    break;
+                default:
+                    url = null;
+                    console.error("Unable to display help menu.");
+                    break;
+            }
+            if (url != null) {
+                var myWidth = 1050;
+                var myHeight = 550;
+
+                var left = (screen.width - myWidth) / 2;
+                var top = (screen.height - myHeight) / 4;
+
+                window.open(window.location.origin + url, "Help", 'width=550, height=600,scrollbars=1, width=' + myWidth + ', height=' + myHeight + ', top=' + top + ', left=' + left);
+            }
+        }
+
+    </script>
+</body>
+</html>
+

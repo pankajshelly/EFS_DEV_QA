@@ -1,0 +1,1890 @@
+﻿
+@{
+    ViewBag.Title = ": Non Itemized Transactions Schedule C";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="NonItemizedTransactionSchedCForm">
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter"  /></button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter"   /></button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter"  /></button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter"   /></button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>
+                        </div>
+                    </fieldset>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">* Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">* Candidate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">* Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divOfficeType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblOfficeType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCOfficeType", null, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth", aria_labelledby = "lblOfficeType" })
+                        </div>
+                    </div>
+                    <div id="divCounty">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCounty">* County</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCCounty", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblCounty" })
+                        </div>
+                    </div>
+                    <div id="divMunicipality">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblMunicipality">* Municipality</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCMuncipality", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblMunicipality" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">* Report Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">* Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">* Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">* Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", null, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDates">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesFrom">* From Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDatesTo">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesTo">* To Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesTo" })
+                        </div>
+                    </div>
+                    <fieldset style="clear:both;">
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                        <div class="floatRightNew" style="padding-bottom: 2em;">
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS" style="width: 46em;">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Contributions - All Other</li>
+            </ol>
+        </nav>
+        <div id="divHeader" class="paddingtoppt5 clsHeaderWidth">
+            <h1>
+                <span id="lblHeader">File a Disclosure Report</span> -
+                <span id="lblHEleYear">File a Disclosure Report</span>
+                <span id="lblHDisclPer">File a Disclosure Report</span>
+            </h1>
+        </div>
+        <div id="divHeader2" class="paddingtoppt5">
+            <div class="paddingTop0em2em DisplayInlineBlock">
+                <h2><span id="lblHeader2">Contributions - All Other</span></h2>
+            </div>
+        </div>
+    </div>
+    <div id="divGrid" class="divGridCSSTransferin">
+        @Html.Partial("UserControls/_UC_Loding")
+        @Html.Partial("UserControls/_UC_GridCommonNonItem24HourNotice")
+    </div>
+    <div id="divUC24HNoticeHistory" class="divGridCSSTransferin paddingTop1em">
+        @Html.Partial("UserControls/_UC_NonItem24HNotice_History_Grid")
+    </div>
+
+</form>
+
+<div id="dialog-form_Sched_C_24HNotice" title="Add/Edit Transaction">
+    <form id="DialogBoxSchedC24HourNoticeForm">
+        <div class="divWidthSchedABC">
+            <div style="width: 100%;">
+                <div class="requiredTextDialogs">Required fields are marked with an *</div>
+                <div id="dvUnitemized">
+                    <div class="verticalCSSDestopForLblLSC lblCSSAdd">
+                        <span id="lblDatePaid">Is Transaction Itemized?</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxLSC DDLCSSAdd">
+                        @Html.DropDownList("lstItemized", ViewData["lstItemized"] as SelectList, new { @class = "txtWidthForDialogSched_A", aria_labelledby = "lblDatePaid" })
+                    </div>
+                </div>
+                <div id="tdDateRcvd">
+                    <div id="txtCurrentDate24HNotice_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblDateReceived">* Date Received</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        <input type="text" id="txtCurrentDate24HNotice" name="txtCurrentDate24HNotice" class="datepicker txtWidthForDateSched_ABC txtCurrentDateCls" maxlength="10" aria-labelledby = "lblDateReceived"/>
+                    </div>
+                </div>
+
+                <div id="tdContributionName">
+                    <div id="lstContributionName_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblContributionName">* Contributor Type</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.DropDownList("lstContributionName", ViewData["lstContributionName"] as SelectList, new { @class = "txtWidthForDialogSched_A", aria_labelledby = "lblContributionName" })
+                    </div>
+                </div>
+
+                <div id="tdPartnershipName">
+                    <div id="txtPartnerShipName_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblPartnershipName">* Contributor Name</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtPartnerShipName", null, new { id = "txtPartnerShipName", @class = "txtWidthForDialogSched_A required zIndexCSS", @maxlength = "40", aria_labelledby = "lblPartnershipName" })
+                    </div>
+                </div>
+
+                <div id="tdCountryContributionChk">
+                    <div class="verticalCSSDestopForLableSched_ABC lblCSSAdd">
+                        <span id="lblOtherCountry">Other Country</span>
+                    </div>
+                    <div class="verticalCSSDestopForCheckBoxSched_ABC DDLCSSAdd">
+                        @Html.CheckBox("chkCountry", false, new { @class = "txtWidthForDialogSched_ABC_CountryChkbox", aria_labelledby = "lblOtherCountry" })
+                    </div>
+                </div>
+                <div id="tdCountryContributionTxt" class="divClearBoth">
+                    <div id="txtCountry_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSched_ABC lblCSSAdd">
+                        <span id="lblCountry">* Country</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSched_ABC DDLCSSAdd">
+                        @Html.TextBox("txtCountry", null, new { id = "txtCountry", @class = "txtWidthForDialogSched_A required", @maxlength = "30", aria_labelledby = "lblCountry" })
+                    </div>
+                </div>
+
+                <div id="divStreetAddress">
+                    <div id="txtStreetName_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblStreetName">* Street Address</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtStreetName", null, new { id = "txtStreetName", @class = "txtWidthForDialogSched_A required", @maxlength = "60", aria_labelledby = "lblStreetName", required = "required" })
+                    </div>
+                </div>
+
+                <div id="divCity">
+                    <div id="txtCity_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblCity">* City</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtCity", null, new { id = "txtCity", @class = "txtWidthForDialogSched_A required", @maxlength = "30", aria_labelledby = "lblCity", required = "required" })
+                    </div>
+                </div>
+
+                <div id="divState">
+                    <div id="txtState_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblState">* State</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtState", null, new { id = "txtState", @class = "txtWidthForDialogSched_A required", @maxlength = "2", aria_labelledby = "lblState", required = "required" })
+                    </div>
+                </div>
+
+                <div id="divZip5">
+                    <div id="txtZipCode_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblZip5">* Zip Code</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtZipCode", null, new { id = "txtZipCode", @class = "txtWidthForDialogSched_A required", @maxlength = "10", aria_labelledby = "lblZip5", required = "required" })
+                    </div>
+                </div>
+
+                <div id="tdMethod">
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblMethod">* Method</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "txtWidthForDialogSched_A", aria_labelledby = "lblMethod" })
+                    </div>
+                </div>
+                <div id="tdCheck">
+                    <div id="txtCheck_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblCheck">* Check #</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtCheck", null, new { id = "txtCheck", @class = "txtWidthForDialogSched_A required", @maxlength = "30", aria_labelledby = "lblCheck" })
+                    </div>
+                </div>
+
+                <div id="tAmt" class="divClearBoth">
+                    <div id="txtAmt24HNotice_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblAmount">* Amount $</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtAmt24HNotice", null, new { id = "txtAmt24HNotice", @class = "txtWidthForDialogSched_A required", @maxlength = "12", aria_required = "true", aria_labelledby = "lblAmount" })
+                    </div>
+                </div>
+
+                <div id="tdExplanation">
+                    <div id="txtExplanation_validate" class="verticalCSSDestopForError" role="alert"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblExplanation">Explanation</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtExplanation", null, new { id = "txtExplanation", @class = "txtWidthForDialogSched_A", @maxlength = "250", aria_labelledby = "lblExplanation" })
+                    </div>
+                </div>
+
+                <div id="AUSchedA24HNoticeId" class="AddLeftCSSSchedABC">
+                    <input type="button" id="btnSaveSchedC24HNotice" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                    <input type="button" id="btnUpdateSchedC24HNotice" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Save" title="Save" style="font-size:12px;" />
+                    <input type="button" id="btnClearDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all cancel" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                    <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#NonItemizedTransactionSchedCForm').css('opacity', 0);
+    $('#DialogBoxSchedC24HourNoticeForm').css('opacity', 0);
+    $('#divWelcomeBanner').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#NonItemizedTransactionSchedCForm').css('opacity', 1);
+        $('#DialogBoxSchedC24HourNoticeForm').css('opacity', 1);
+        $('#divWelcomeBanner').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        // ROLE IF AUTHORIZED USER = 11 THEN DISABLE THE ADD BUTTON.
+        if (@Session["RoleID_FILER"] == "11") {
+            $(".submitTransBtnCls").hide();
+        }
+        else {
+            $(".submitTransBtnCls").show();
+        }
+
+        $("#lblAllTransText").text("A 24 Hour Notice is required for any contribution or loan received which exceeds $1,000 whose transaction date falls between the cut off of the 11 Day Pre Election Report and the Election. NOTE: This requirement applies to all Primary, General and Special Elections. When 24 Hour Notice transactions are posted to the website, those transactions will automatically be posted to the draft version of the committee’s post-election campaign finance filing report.");
+
+        // Hide the Cut Off Date and Filing Date based on Disclosure Type.
+        $("#divDisclosurePeriod").hide();
+
+        // DEFAULT VALUES
+        $("#lblHDisclPer").text("");
+
+        // Common for Non-Itemized Transactions.
+        sessionStorage.removeItem("TransactionTypeId");
+
+        // Edit selection gird.
+        sessionStorage.setItem("EditYesNo", "No");
+
+        // COMMON CODE - FOR VALIDATION AND FILL THE LEFT SIDE DATA.
+        validatePage("DialogBoxSchedC24HourNoticeForm");
+        NonItemizedLeftFilterValues();
+
+        // SUBMIT BUTTON TRANSACTIONS SELECTED OR NOT SESSION.
+        sessionStorage.removeItem("SubmitTransId");
+
+        // SUBMIT BUTTON BY DEFAULT IT WILL BE DISABLED
+        $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+        // Hide the History Grid by Default.
+        $("#divUC24HNoticeHistory").hide();
+
+        // ======================================================================================================================================
+        /// Dialog Box Code /////////////////////////////////////////////////////////////////////
+        var dialog_Sched_C_24HNotice;
+
+        dialog_Sched_C_24HNotice = $m("#dialog-form_Sched_C_24HNotice").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 456,
+            position: {
+                my: "center top",
+                at: "center top+200"
+            },
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialog_Sched_C_24HNotice = $m("#dialog-form_Sched_C_24HNotice").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialog_Sched_C_24HNotice = $m("#dialog-form_Sched_C_24HNotice").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialog_Sched_C_24HNotice = $m("#dialog-form_Sched_C_24HNotice").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    dialogClass: 'DialogCustomStyle',
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+        // ======================================================================================================================================
+        /// Dialog Box Code /////////////////////////////////////////////////////////////////////
+
+        // ======================================================================================================================================
+        // DATE FORMATE....///////////////////////////////////////////////
+        // DATE PICKER CONTROL
+        $m("#txtCurrentDate24HNotice").datepicker({
+            showOn: "button",
+            buttonImage: "../../Content/Images/Calendar.png",
+            buttonImageOnly: false,
+            buttonText: "Select From Date",
+            changeMonth: true,
+            changeYear: true,
+            numberOfMonths: 1,
+            minDate: sessionStorage.getItem("CutOffDate").toString(),
+            maxDate: sessionStorage.getItem("FilingDate").toString(),
+            dateFormat: 'mm/dd/yy',
+            onChange: function () {
+                $m("#txtCurrentDate24HNotice").valid();
+            },
+        }).datepicker();
+
+        $m('.datepicker').attr("placeholder", "MM/DD/YYYY").datepicker();
+        $("#txtCurrentDate24HNotice").addClass("watermarkHTMLTextBox");
+        $("#txtCurrentDate24HNotice").focusin(function () {
+            $("#txtCurrentDate24HNotice").removeClass("watermarkHTMLTextBox");
+        });
+
+        // Watermark TextBox. ////////////////////////////////////////////////////
+
+        // DATE FORMATE....///////////////////////////////////////////////
+        $("#txtCurrentDate24HNotice").focusout(function () {
+            if ($("#txtCurrentDate24HNotice").val().toString() != "") {
+                if ($("#txtCurrentDate24HNotice").val().toString() != "MM/DD/YYYY") {
+                    var results = GetValidDate24HNotice();
+
+                    if (results == "") {
+                        var MyDate = new Date($("#txtCurrentDate24HNotice").val().toString());
+                        var MyDateString;
+                        MyDateString = ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/'
+                            + ('0' + MyDate.getDate()).slice(-2) + '/'
+                            + MyDate.getFullYear();
+                        $("#txtCurrentDate24HNotice").val("");
+                        $("#txtCurrentDate24HNotice").val(MyDateString);
+                    }
+                }
+            }
+            else {
+                $("#txtCurrentDate24HNotice").addClass("watermarkHTMLTextBox");
+            }
+        });
+        // DATE FORMATE....///////////////////////////////////////////////
+        // ======================================================================================================================================
+
+        /// AUTO COMPLETE SEARCH CODE //////////////////////////////////////////////////////////////////////////////////////
+        //----------------------------------------------------------------------------------------------------------------------------------------
+        // Partnership Name Auto Complete.
+        $m("#txtPartnerShipName").autocomplete({
+            source: function (request, response) {
+                $.post("@Url.Content("~/NonItemizedTransactionSchedC/AutoCompleteEntityName/")", request, response);
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                event.preventDefault();
+
+                var selectedValue = ui.item.label;
+                $.ajax({
+                    url: "@Url.Content("~/NonItemizedTransactionSchedC/GetAutoCompleteNameData/")",
+                    dataType: "json",
+                    data: {
+                        strValue: selectedValue.toString()
+                    },
+                    success: function (results) {
+                        $.each(results, function (i, item) {
+                            $("#txtPartnerShipName").val(item.FilingEntityName.toString());
+                            $("#txtStreetName").val(item.FilingEntityStreetName.toString());
+                            $("#txtCity").val(item.FilingEntityCity.toString());
+                            $("#txtState").val(item.FilingEntityState.toString());
+                            $("#txtZipCode").val(item.FilingEntityZip.toString());
+                            $("#txtCountry").val(item.FilingEntityCountry.toString());
+                            if ($("#txtCountry").val().toString() == "United States") {
+                                $("#chkCountry").prop('checked', false);
+                                $("#txtCountry").prop("disabled", true);
+                                $("#txtState").prop('maxLength', '2');
+                                if (item.FilingEntityZip.toString() != "") {
+                                    $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                                }
+                                else {
+                                    $("#txtZipCode").addClass("watermarkHTMLTextBox");
+                                    $("#txtZipCode").blur();
+                                }
+                            } else {
+                                $("#chkCountry").prop('checked', true);
+                                $("#txtCountry").prop("disabled", false);
+                                $("#txtState").prop('maxLength', '30');
+
+                                $m('#txtZipCode').attr("placeholder", "");
+                                $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                            }
+                            $m("#txtPartnerShipName").valid();
+                            // Address validation
+                            $m("#txtCountry").valid();
+                            $m("#txtStreetName").valid();
+                            $m("#txtCity").valid();
+                            $m("#txtState").valid();
+                            $m("#txtZipCode").valid();
+                        });
+                    }
+                });
+                $("#lstMethod").focus();
+            }
+        });
+        /// AUTO COMPLETE SEARCH CODE //////////////////////////////////////////////////////////////////////////////////////
+        //----------------------------------------------------------------------------------------------------------------------------------------
+
+        // ======================================================================================================================================
+        // BUTTON ADD NEW TRANSACTIONS - 24 HOUR NOTICE OF NON-ITEMIZED.
+        $m("#btnAddNewTransaction").button().on("click", function () {
+
+            dialog_Sched_C_24HNotice.dialog("open");
+
+            $("#btnUpdateSchedC24HNotice").hide();
+            $("#btnSaveSchedC24HNotice").show();
+
+            sessionStorage.setItem("UpdateFlagSchedA24HNotice", "No");
+
+            // DON'T SELECT THE ROW WHEN EDIT THE TRANSACTIONS.
+            $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+            $("#divUC24HNoticeHistory").hide();
+
+            var validator = $m("#DialogBoxSchedC24HourNoticeForm").validate();
+            validator.resetForm();  // clear out the validation errors
+            $m("#DialogBoxSchedC24HourNoticeForm")[0].reset();   // clear out the form data
+
+            $("#lblExplanation").text("Explanation");
+
+            $("#txtCurrentDate24HNotice").blur();
+            $("#txtZipCode").blur();
+            $("#txtAmt24HNotice").blur();
+
+            $("#txtCurrentDate24HNotice").focus();
+
+            $("#txtCountry").val("United States");
+            $("#txtCountry").prop("disabled", true);
+            $("#chkCountry").prop('checked', false);
+            $("#txtState").prop('maxLength', '2');
+
+            $("#lstContributionName").prop("disabled", false);
+
+            $("#tdCheck").hide();
+
+            // Bind Contributor Type
+            var options = {};
+            options.url = "@Url.Content("~/NonItemizedTransactionSchedC/GetContributorCodeSchedA/")";
+            options.type = "POST";
+            options.data = null;
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                $("#lstContributionName").empty();
+                for (var i = 0; i < results.length; i++) {
+                    $("#lstContributionName").append("<option value='" + results[i].Value + "'>" + results[i].Text + "</option>");
+                }
+            };
+            options.error = function () {
+                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+            };
+            $.ajax(options);
+
+            //HIDE/SHOW THE FIELDS.
+            $("#tdPartnershipName").show();
+
+            $("#lstContributionName")[0].selectedIndex = 0;
+            $("#lstMethod")[0].selectedIndex = 0;
+
+            $("#lstItemized").prop("disabled", true);
+            $("#lstItemized")[0].selectedIndex = 0;
+
+            $m("#lstItemized").focus();
+
+            // Clear the JQuery Error Message
+            $m("label[for=txtCheck]").text('');
+            $m("#txtCheck").removeClass("error");
+
+            $m("label[for=txtCurrentDate24HNotice]").text('');
+            $m("#txtCurrentDate24HNotice").removeClass("error");
+
+            // Get Form Data.
+            form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+        });
+        // BUTTON ADD NEW TRANSACTIONS - 24 HOUR NOTICE OF NON-ITEMIZED.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON CLOSE DIALOG.
+        $m("#btnCloseDialog").on("click", function () {
+            if ($("#DialogBoxSchedC24HourNoticeForm").serialize() != form_original_data) {
+                var resultsCloseSchedA = "All unsaved data will be lost if you navigate away from this page. Are you sure you want to continue?";
+
+                $m('#modal_dialog').text(resultsCloseSchedA);
+                $m("#modal_dialog").dialog({
+                    resizable: false,
+                    modal: true,
+                    width: '400px',
+                    height: 'auto',
+                    bgiframe: false,
+                    closeOnEscape: false,
+                    open: function (event, ui) { hideDialogXButton(this); },
+                    buttons: {
+                        "OK": function () {
+                            //Close Confirm Box.
+                            $m(this).dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                            // Close the DialogBox
+                            dialog_Sched_C_24HNotice.dialog("close");
+
+                            // DISABLE THE SUBMIT TRANSACTION BUTTON.
+                            sessionStorage.setItem("EditYesNo", "No");
+                        }, // confirm close
+                        "Cancel": function () {
+                            $m(this).dialog("close");
+                        }
+                    }
+                });
+            } else {
+                // Close the DialogBox
+                dialog_Sched_C_24HNotice.dialog("close");
+
+                // DISABLE THE SUBMIT TRANSACTION BUTTON.
+                sessionStorage.setItem("EditYesNo", "No");
+            }
+        });
+        // BUTTON CLOSE DIALOG.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // Method Change
+        $("#lstMethod").change(function () {
+
+            $("#txtCheck").val("");
+
+            if ($("#lstMethod option:selected").val().toString() == "1") { // CHECK
+                $("#tdCheck").show();
+                if ($("#lstContributionName option:selected").val().toString() == "14") {
+                    $("#lblExplanation").text("* Explanation");
+                }
+                else {
+                    $("#lblExplanation").text("Explanation");
+
+                    $m("label[for=txtExplanation]").text('');
+                    $m("#txtExplanation").removeClass("error");
+                }
+            }
+            else if ($("#lstMethod option:selected").val().toString() == "7") { // OTHER
+                // EXPLANATION MANADATORY
+                $("#lblExplanation").text("* Explanation");
+                $("#tdCheck").hide();
+            }
+            else {
+                $("#lblExplanation").text("Explanation");
+                $("#tdCheck").hide();
+
+                $m("label[for=txtExplanation]").text('');
+                $m("#txtExplanation").removeClass("error");
+            }
+
+            if ($("#lstContributionName option:selected").val().toString() == "14") {
+                $("#lblExplanation").text("* Explanation");
+            }
+
+            $m("label[for=txtCheck]").text('');
+            $m("#txtCheck").removeClass("error");
+        });
+        // Method Change
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // CONTRIBUTOR TYPE CODE CHANGE
+        $("#lstContributionName").change(function () {
+
+            $("#dvErrorlstContrCode").hide();
+            $("#lstContributionName").removeClass("ui-state-error");
+
+            var selectedlstContributionName = $("#lstContributionName option:selected").val().toString();
+
+            if ($("#lstMethod option:selected").val().toString() == "7") {
+                $("#lblExplanation").text("* Explanation");
+            }
+            else {
+                if ($("#lstMethod option:selected").val().toString() == "1") {
+                    $("#lblExplanation").text("Explanation");
+
+                    $m("label[for=txtExplanation]").text('');
+                    $m("#txtExplanation").removeClass("error");
+                }
+                else {
+                    $("#lblExplanation").text("Explanation");
+
+                    $m("label[for=txtExplanation]").text('');
+                    $m("#txtExplanation").removeClass("error");
+                }
+            }
+            if (selectedlstContributionName != "0") {
+                if (selectedlstContributionName == "5") {
+
+                    //SHOW/HIDE FIELDS
+                    $("#tdPartnershipName").show("slow");
+                    //SHOW/HIDE FIELDS
+
+                    // Clear Values
+                    $("#txtPartnerShipName").val("");
+
+                    $m("label[for=txtPartnerShipName]").text('');
+                    $m("#txtPartnerShipName").removeClass("error");
+
+                }
+                else { // Other than Partnership, including LLps
+
+                    //SHOW/HIDE FIELDS
+                    $("#tdPartnershipName").show("slow");
+                    //SHOW/HIDE FIELDS
+
+                    // Clear Values
+                    $("#txtPartnerShipName").val("");
+
+                    $m("label[for=txtPartnerShipName]").text('');
+                    $m("#txtPartnerShipName").removeClass("error");
+                }
+
+                if (selectedlstContributionName == "14") {
+                    $("#lblExplanation").text("* Explanation");
+                }
+            }
+            else {
+                //SHOW/HIDE FIELDS
+                $("#tdPartnershipName").show("slow");
+                //SHOW/HIDE FIELDS
+
+                // Clear Values
+                $("#txtPartnerShipName").val("");
+
+                $m("label[for=txtPartnerShipName]").text('');
+                $m("#txtPartnerShipName").removeClass("error");
+            }
+        });
+        // CONTRIBUTOR TYPE CODE CHANGE
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON CLEAR DIALOGBOX.
+        $("#btnClearDialog").click(function () {
+
+            sessionStorage.setItem("CountryVal", $("#txtCountry").val().toString());
+            sessionStorage.setItem("ItemizedYorN", $("#lstItemized option:selected").val().toString());
+
+            var validator = $m("#DialogBoxSchedC24HourNoticeForm").validate();
+            validator.resetForm();  // clear out the validation errors
+            $m("#DialogBoxSchedC24HourNoticeForm")[0].reset();   // clear out the form data
+
+            if (sessionStorage.getItem("UpdateFlagSchedA24HNotice").toString() != "Yes") { // Add New transactions
+
+                //SHOW/HIDE FILEDS
+                $("#tdPartnershipName").show("slow");
+                //SHOW/HIDE FILEDS
+
+                $("#tdCheck").hide();
+                //SHOW/HIDE FILEDS
+
+                $("#lstItemized")[0].selectedIndex = 0;
+                $("#lstContributionName")[0].selectedIndex = 0;
+                $("#lstMethod")[0].selectedIndex = 0;
+
+                $("#lstItemized").prop("disabled", true);
+
+                $("#lblExplanation").text("Explanation");
+
+                $("#txtCountry").val("United States");
+                $("#txtCountry").prop("disabled", true);
+                $("#chkCountry").prop('checked', false);
+                $("#txtState").prop('maxLength', '2');
+
+                $("#txtCurrentDate24HNotice").blur();
+                $("#txtZipCode").blur();
+                $("#txtAmt24HNotice").blur();
+            }
+            else { // Edit Transactions
+
+                // ITEMIZED TRANSACTION EDIT
+                $("#txtCurrentDate24HNotice").blur();
+                $("#txtAmt24HNotice").blur();
+
+                $("#lstItemized").prop("disabled", true);
+
+                $("#lstMethod")[0].selectedIndex = 0;
+                $("#tdCheck").hide();
+
+                $("#lblExplanation").text("Explanation");
+
+                $("#txtCountry").val("United States");
+                $("#txtCountry").prop("disabled", true);
+                $("#chkCountry").prop('checked', false);
+                $("#txtState").prop('maxLength', '2');
+                $("#txtZipCode").blur();
+            }
+        });
+        // BUTTON CLEAR DIALOGBOX.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON SAVE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        $m("#btnSaveSchedC24HNotice").click(function () {
+            // Validation Succuss then Insert Record.
+            $m("#DialogBoxSchedC24HourNoticeForm").valid();
+            if ($m("#DialogBoxSchedC24HourNoticeForm").valid()) { // JQuery Validation
+                $("#divLoading").show();
+                $m("#btnSaveSchedC24HNotice").prop('disabled', true);
+                // Insert
+                $.post("@Url.Content("~/NonItemizedTransactionSchedC/SaveNonItem24HourNoticeSchedAData/")", {
+                    txtFilerId: $("#txtFilerID").val(),
+                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                    lstElectionCycleId: $("#lstElectionCycle option:selected").val(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                    lstTransactionTypeNonItem: $("#lstTransactionTypeNonItem option:selected").val(),
+                    txtCurrentDate24HNotice: $m("#txtCurrentDate24HNotice").val(),
+                    lstContributionName: $m("#lstContributionName option:selected").val(),
+                    txtPartnerShipName: $m("#txtPartnerShipName").val(),
+                    txtCountry: $m("#txtCountry").val(),
+                    txtStreetName: $m("#txtStreetName").val(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZipCode: $m("#txtZipCode").val().toString(),
+                    lstMethod: $m("#lstMethod option:selected").val(),
+                    txtCheck: $m("#txtCheck").val(),
+                    txtAmt24HNotice: $m("#txtAmt24HNotice").val(),
+                    txtExplanation: $m("#txtExplanation").val(),
+                    lstItemized: $m("#lstItemized option:selected").val(),
+                    lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                    txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+                    txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString(),
+                    chkCountry: $('#chkCountry').is(':checked').toString(),
+                }, function (results) {
+
+                    if (results.Errors == null) {
+                        $("#txtCurrentDate24HNotice").focus();
+                        $m("#btnSaveSchedC24HNotice").prop('disabled', false);
+                        // GET THE AMOUNT VALUE.
+                        sessionStorage.setItem("LLCAmount", $m("#txtAmt24HNotice").val().toString());
+
+                        window.status = "Transaction saved successfully";
+
+                        if ($("#lstContributionName option:selected").val().toString() == "11") { // OVER $5000 ATTRIBUTION SCHEDULE 'C'.
+                            // CHECK THE COMMITTEE TYPE IF HOUSEKEEPING THEN YOU SHOULD NOT SHOW THE MESSAGE OVER $5000
+                            // IF OTHER THAN HOSUE KEEPING YOU CAN SHOW THE MESSAGE OVER $5000.
+                            // CALL THE CONTROLLER METHOD TO GET THE COMMITTEE TYPE ID.
+                            $.post("@Url.Content("~/NonItemizedTransactionSchedC/GetCommitteeTypeId/")", {
+                            }, function (commTypeId) {
+                                // FOR COMMITTEE
+                                if (["4", "6", "8", "10", "13", "14", "15", "16"].includes(commTypeId.toString())) {
+                                    ShowDialogBox('EFS', 'Transaction saved successfully', 'Ok', '');
+                                } else { // FOR CANDIDATE.
+                                    var varAmount = parseFloat(sessionStorage.getItem("LLCAmount").toString()).toFixed(2);
+                                    var valAmount = parseFloat("5000").toFixed(2);
+                                    if (varAmount > valAmount) {
+                                        ShowDialogBox('EFS', 'Transaction saved successfully. Note that LLCs/PLLCs are limited to an aggregate $5,000 annual contribution limit. Any amount received over $5,000 must be refunded.', 'Ok', '');
+                                    } else {
+                                        ShowDialogBox('EFS', 'Transaction saved successfully', 'Ok', '');
+                                    }
+                                }
+                            });
+                        } else {
+                            $("#divLoading").hide();
+                            ShowDialogBox('EFS', 'Transaction saved successfully', 'Ok', '');
+                        }
+                        //Because of the way we did initialization we the Data on Grid hide the loading too!
+                        tableFilingTransactions.ajax.reload();
+                        // Clear Form Values
+                        ClearDialogBoxValSchedANonItem();
+
+                        $m("label[for=txtPartnerShipName]").text('');
+                        $m("#txtPartnerShipName").removeClass("error");
+                    }
+                    else if (results.Errors.length >= 0) {
+                        $("#divLoading").hide();
+                        $m("#btnSaveSchedC24HNotice").prop('disabled', false);
+                        ClearServerSideErrors(); // Server Side Validation Clear
+                        AppendCustomErrorLabels(results.Errors);
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    $m("#divLoading").hide();
+                    $m("#btnSaveSchedC24HNotice").prop('disabled', false);
+                });
+            }
+        });
+        // BUTTON SAVE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        // ======================================================================================================================================
+
+        var form_original_data;
+        // ======================================================================================================================================
+        // BUTTON UPDATE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        $m("#btnUpdateSchedC24HNotice").click(function () {
+
+            // Validation Succuss then Insert Record.
+            $m("#DialogBoxSchedC24HourNoticeForm").valid()
+            if ($m("#DialogBoxSchedC24HourNoticeForm").valid()) { // JQuery Validation
+
+                // UPDATE TRANSACTION IF NOT SUBMITTED
+                // CREATE NEW TRANSACTION IF SUBMITTED TRANSACTION UPDATED.
+                $.post("@Url.Content("~/NonItemizedTransactionSchedC/UpdateNonItem24HourNoticeSchedAData/")", {
+                    strTransNumber: sessionStorage.getItem("TransNumber").toString(),
+                    strFilingEntId: sessionStorage.getItem("FilingEntityId").toString(),
+                    lstContributorName: $m("#lstContributionName option:selected").val(),
+                    strSubmissionDate: sessionStorage.getItem("SubmittsionDate").toString(),
+                    lstTransactionTypeNonItem: $("#lstTransactionTypeNonItem option:selected").val(),
+                    txtCurrentDate24HNotice: $m("#txtCurrentDate24HNotice").val(),
+                    txtCheck: $m("#txtCheck").val(),
+                    lstMethod: $m("#lstMethod option:selected").val(),
+                    txtAmt24HNotice: $m("#txtAmt24HNotice").val(),
+                    txtExplanation: $m("#txtExplanation").val(),
+                    txtPartnerShipName: $m("#txtPartnerShipName").val(),
+                    txtCountry: $m("#txtCountry").val(),
+                    txtStreetName: $m("#txtStreetName").val(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZipCode: $m("#txtZipCode").val().toString(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                    txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+                    txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString(),
+                    chkCountry: $('#chkCountry').is(':checked').toString(),
+                }, function (results) {
+
+                    if (results.Errors == null) {
+                        // Close the DialogBox
+                        dialog_Sched_C_24HNotice.dialog("close");
+                        window.status = "Transaction saved successfully";
+                        ShowDialogBox('EFS', 'Transaction saved successfully', 'Ok', '');
+
+                        // FOR SELECT ROW SELECTED OR NOT.
+                        sessionStorage.setItem("EditYesNo", "No");
+
+                        //Because of the way we did initialization we the Data on Grid hide the loading too!
+                        tableFilingTransactions.ajax.reload();
+                    }
+                    else if (results.Errors.length >= 0) {
+
+                        ClearServerSideErrors(); // Server Side Validation Clear
+                        AppendCustomErrorLabels(results.Errors);
+                    }
+
+                });
+            }
+        });
+        // BUTTON UPDATE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON SUBMIT CLICK - SUBMIT THE SELECTED 24-HOUR NOTICE TRANSACTION.
+        $m("#btnSubmitSchedA24HNotice").click(function () {
+            $("#divLoading").show();
+            // GET THE SELECTED ROW DATA FROM TABLE.
+            var selectedRowId = sessionStorage.getItem("SelectedRowId");
+            var data = tableFilingTransactions.row(selectedRowId).data();
+
+            // Check the Transaction selected or not in Grid.
+            if (sessionStorage.getItem("SubmitTransId") != null) {
+                // SUBMIT
+                $.post("@Url.Content("~/NonItemizedTransactionSchedC/SubmitNonItem24HourNoticeSchedAData/")", {
+                    txtFilerId: $("#txtFilerID").val(),
+                    strTransNumber: sessionStorage.getItem("SubmitTransId").toString(),
+                    strFilingEntId: sessionStorage.getItem("SubmitEntityId").toString(),
+                    lstTransactionTypeNonItem: $("#lstTransactionTypeNonItem option:selected").val(),
+                    lstContributorName: data[3].toString(),
+                    txtCurrentDate24HNotice: data[17].toString(),
+                    txtCheck: data[28].toString(),
+                    lstMethod: data[4].toString(),
+                    txtAmt24HNotice: data[14].toString(),
+                    txtExplanation: data[29].toString(),
+                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                    lstElectionCycleId: $("#lstElectionCycle option:selected").val(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                    lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                    txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+                    txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString(),
+                }, function (results) {
+
+                    if (results.Errors == null) {
+
+                        $.each(results, function (i, item) {
+                            if (item.ReturnValue) {
+
+                                window.status = "Transaction submitted successfully";
+
+                                if (item.ChildExists == "True") {
+                                    ShowDialogBox('EFS', 'Amended transaction submitted successfully; this transaction must also be amended in the committee’s post-election campaign finance filing report and the report submitted as an amended report, if previously submitted.', 'Ok', '');
+                                }
+                                else if (item.ChildExists == "False") {
+                                    ShowDialogBox('EFS', 'Transaction submitted successfully; this 24-Hour Notice transaction has also been posted to the unsubmitted version of the committee’s itemized post-election disclosure report.', 'Ok', '');
+                                }
+
+                                //Because of the way we did initialization we the Data on Grid hide the loading too!
+                                tableFilingTransactions.ajax.reload();
+
+                                // SUBMIT BUTTON DISABLED.
+                                $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+                            }
+                            else {
+                                // TO DO;
+                            }
+                        });
+                        $("#divLoading").hide();
+                    }
+                    else if (results.Errors.length >= 0) {
+                        $("#divLoading").hide();
+
+                        ClearServerSideErrors(); // Server Side Validation Clear
+                        AppendCustomErrorLabels(results.Errors);
+                    }
+                });
+            }
+        });
+        // BUTTON SUBMIT CLICK - SUBMIT THE SELECTED 24-HOUR NOTICE TRANSACTION.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // 24-HOUR NOTICE SCHEDULE 'A' TRANSACTION SELECTION.
+        $m('#gridFilingTrans24HourNotice tbody').on('click', 'tr', function (e) {
+            e.preventDefault();
+
+            var flngTransId = tableFilingTransactions.cell(this, 33).data();  // Filing Transactions Id
+            var flngEntityId = tableFilingTransactions.cell(this, 2).data();  // Filing Entity Id
+            var submissionDate = tableFilingTransactions.cell(this, 9).data();  // Submission Date
+
+            var selectedRowId = tableFilingTransactions.row(this).index();
+
+            if (sessionStorage.getItem("HideShowHistoryGrid") != null) {
+                if (sessionStorage.getItem("HideShowHistoryGrid").toString() != "Yes") {
+                    $("#divUC24HNoticeHistory").hide();
+                    sessionStorage.removeItem("HideShowHistoryGrid");
+                }
+                else {
+                    sessionStorage.removeItem("HideShowHistoryGrid");
+                }
+            }
+            else {
+                $("#divUC24HNoticeHistory").hide();
+            }
+
+            if (selectedRowId != undefined) {
+                sessionStorage.setItem("SelectedRowId", selectedRowId);
+
+                if (sessionStorage.getItem("EditYesNo").toString() == "No") {
+                    if (submissionDate != null && submissionDate.toString() != "") {
+                        $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+                    } else {
+                        $("#btnSubmitSchedA24HNotice").prop("disabled", false);
+                    }
+
+                    sessionStorage.setItem("SubmitTransId", flngTransId.toString());
+                    if (submissionDate != null) {
+                        sessionStorage.setItem("SubmissionDate", submissionDate.toString());
+                    }
+                    sessionStorage.setItem("SubmitEntityId", flngEntityId.toString());
+
+                    if ($(this).hasClass('selected') != true) {
+                        tableFilingTransactions.$('tr.selected').removeClass('selected');
+                        $(this).addClass('selected');
+                        // Bind Data
+                    }
+                }
+            }
+        });
+        // 24-HOUR NOTICE SCHEDULE 'A' TRANSACTION SELECTION.
+        // ======================================================================================================================================
+
+        var form_original_data = '';
+        // ======================================================================================================================================
+        // EDIT 24-HOUR NOTICE TRANSACTIONS.
+        $m('#gridFilingTrans24HourNotice tbody').on('click', 'a.editor_edit_Sched_C_24HNotice', function (e) {
+            e.preventDefault();
+
+            var data = tableFilingTransactions.row($(this).parents('tr')).data();
+
+            sessionStorage.setItem("EditYesNo", "Yes");
+
+            $("#divUC24HNoticeHistory").hide();
+
+            $("#btnUpdateSchedC24HNotice").show();
+            $("#btnSaveSchedC24HNotice").hide();
+
+            sessionStorage.setItem("UpdateFlagSchedA24HNotice", "Yes");
+
+            $("#txtCurrentDate24HNotice").focus();
+
+            // DON'T SELECT THE ROW WHEN EDIT THE TRANSACTIONS.
+            $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+            tableFilingTransactions.$('tr.selected').removeClass('selected');
+            $("#divLoading").show();
+            if (data[1].toString() == "3") { // SCHEDULE 'C' 24-HOUR NOTICE TRANSACTION.
+
+                dialog_Sched_C_24HNotice.dialog("open");
+
+                var validator = $m("#DialogBoxSchedC24HourNoticeForm").validate();
+                validator.resetForm(); // clear out the validation errors
+                $m("#DialogBoxSchedC24HourNoticeForm")[0].reset(); // clear out the form data
+
+                // Bind Method Data
+                var options = {};
+                options.url = "@Url.Content("~/NonItemizedTransactionSchedC/GetPaymentMethodData/")";
+                options.type = "POST";
+                options.data = null;
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (resultsMethod) {
+                    $("#lstMethod").empty();
+                    for (var i = 0; i < resultsMethod.length; i++) {
+                        $("#lstMethod").append("<option value='" + resultsMethod[i].Value + "'>" + resultsMethod[i].Text + "</option>");
+                    }
+                    // Set Method
+                    if (data[4].toString() != null || data[4].toString() != "") {
+                        $m("#lstMethod option")
+                            .filter(function () { return $m(this).val() == data[4].toString(); })
+                            .attr("selected", "selected");
+                    }
+                    // Get Form Data.
+                    form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+                };
+                options.error = function () {
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                };
+                $.ajax(options).always(function () {
+                    $("#divLoading").hide();
+                });
+
+                // Bind Contributor Type Code
+                var options = {};
+                options.url = "@Url.Content("~/NonItemizedTransactionSchedC/GetContributorCodeSchedA/")";
+                options.type = "POST";
+                options.data = null;
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    $("#lstContributionName").empty();
+                    for (var i = 0; i < results.length; i++) {
+                        $("#lstContributionName").append("<option value='" + results[i].Value + "'>" + results[i].Text + "</option>");
+                    }
+                    //Set Contribution Type Code
+                    if (data[3].toString() != null || data[3].toString() != "") {
+                        $m("#lstContributionName option")
+                            .filter(function () { return $m(this).val() == data[3].toString(); })
+                            .attr('selected', 'selected');
+                    }
+                    // Get Form Data.
+                    form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+
+                };
+                options.error = function () {
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                };
+                $.ajax(options);
+
+
+                $("#lstContributionName").prop("disabled", true);
+
+                sessionStorage.setItem("TransNumber", data[33].toString());
+                sessionStorage.setItem("FilingEntityId", data[2].toString());
+                if (data[9] != null)
+                    sessionStorage.setItem("SubmittsionDate", data[9].toString());
+                else
+                    sessionStorage.setItem("SubmittsionDate", "");
+
+                $("#txtCurrentDate24HNotice").val(data[17].toString());
+                $("#txtCurrentDate24HNotice").removeClass("watermarkHTMLTextBox");
+                if (data[17].toString() != "" || data[17].toString() != null) {
+                    var MyDate = new Date($("#txtCurrentDate24HNotice").val().toString());
+                    var MyDateString;
+                    MyDateString = ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/'
+                        + ('0' + MyDate.getDate()).slice(-2) + '/'
+                        + MyDate.getFullYear();
+                    $("#txtCurrentDate24HNotice").val("");
+                    $("#txtCurrentDate24HNotice").val(MyDateString);
+                    $("#txtCurrentDate24HNotice").removeClass("watermarkHTMLTextBox");
+                }
+                $("#txtPartnershipName").val(data[10].toString());
+                $("#txtStreetName").val(data[23].toString());
+                $("#txtCity").val(data[24].toString());
+                $("#txtState").val(data[25].toString());
+                $("#txtZipCode").val(data[26].toString());
+                $("#txtCountry").val(data[22].toString());
+                if (data[22].toString() == "United States") {
+                    $("#chkCountry").prop('checked', false);
+                    $("#txtCountry").prop("disabled", true);
+                    $("#txtState").prop('maxLength', '2');
+                }
+                else { // Other Country
+                    $("#chkCountry").prop('checked', true);
+                    $("#txtCountry").prop("disabled", false);
+                    $("#txtState").prop('maxLength', '30');
+                    $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                    $m('#txtZipCode').attr("placeholder", "");
+                }
+                if (data[26].toString() != "") {
+                    $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                }
+                else {
+                    $("#txtZipCode").addClass("watermarkHTMLTextBox");
+                    if (data[22].toString() == "United States") {
+                        $("#txtZipCode").blur();
+                    }
+                }
+                if (data[4].toString() == "1") {
+                    $("#tdCheck").show();
+                    $("#txtCheck").val(data[28].toString());
+                }
+                else {
+                    $("#tdCheck").hide();
+                }
+                var originalAmount = data[14].toString();
+                $("#txtAmt24HNotice").val(originalAmount);
+                if ($("#txtAmt24HNotice").val().toString() != "" || $("#txtAmt24HNotice").val().toString() != "999999999.99") {
+                    $("#txtAmt24HNotice").removeClass("watermarkHTMLTextBox");
+                }
+                $("#txtExplanation").val(data[29].toString());
+
+                if (data[4].toString() == "7") {
+                    $("#lblExplanation").text("* Explanation");
+                }
+                else {
+                    $("#lblExplanation").text("Explanation");
+                }
+                if (data[3].toString() == "14") {
+                    $("#lblExplanation").text("* Explanation");
+                }
+                else {
+                    $("#lblExplanation").text("Explanation");
+                }
+
+                $("#lstItemized")[0].selectedIndex = 0;
+                $("#lstItemized").prop("disabled", true);
+
+                $("#lstItemized")[0].selectedIndex = 0;
+                $("#lstItemized").prop("disabled", true);
+
+                $("#txtPartnerShipName").val(data[10].toString()); 4
+
+                // Get Form Data.
+                form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+
+            } // Other Schedules
+            else if (["1", "2", "3", "4", "9"].includes(data[1].toString())) {
+                //Common code to determine redirect url and set session varialbes. Also hides $("#divLoading") on fail.
+                //Uses window.location.href
+                appCommonEFS_DetermineNonItemizedTransactionSchedRedirect(data[1].toString(), data[33].toString());
+            } else { $("#divLoading").hide(); }
+
+        });
+        // EDIT 24-HOUR NOTICE TRANSACTIONS.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // DELETE 24-HOUR NOTICE TRANSACTIONS.
+        $m('#gridFilingTrans24HourNotice tbody').on('click', 'a.editor_remove_Sched_C_24HNotice', function (e) {
+
+            var dataTrans = tableFilingTransactions.row($(this).parents('tr')).data();
+
+            // DON'T SELECT THE ROW WHEN EDIT THE TRANSACTIONS.
+            $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+            var resultsDelete = false;
+
+            sessionStorage.setItem("EditYesNo", "Yes");
+
+            $("#divUC24HNoticeHistory").hide();
+            $("#divLoading").show();
+            if (dataTrans[9] != null && dataTrans[9].toString() != "") {
+                resultsDelete = "This action will delete all the previously submitted iterations (if available) as well. Are you sure you want to delete this transaction?";
+            } else {
+                resultsDelete = "Are you sure you want to delete this transaction?";
+            }
+            // DELETE.
+            $m('#modal_dialog').text(resultsDelete);
+            $m("#modal_dialog").dialog({
+                resizable: false,
+                width: '400px',
+                height: 'auto',
+                bgiframe: false,
+                modal: true,
+                closeOnEscape: false,
+                open: function (event, ui) { hideDialogXButton(this); $("#divLoading").hide();},
+                buttons: {
+                    "OK": function () {
+                        //Close Confirm Box.
+                        $m(this).dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                        sessionStorage.setItem("EditYesNo", "No");
+
+                        // DELETE TRANSACTION.
+
+                        $.post("@Url.Content("~/NonItemizedTransactionSchedC/DeleteNonItem24HourNoticeSchedA/")", {
+                            strTransNumber: dataTrans[33].toString()
+                        }, function (results) {
+
+                            if (dataTrans[9] != null && dataTrans[9].toString() != "") {
+                                ShowDialogBox('EFS', 'Transaction deleted successfully; Deletion of the related post-election filing transaction will need to be done separately', 'Ok', '');
+                            } else {
+                                ShowDialogBox('EFS', 'Transaction deleted successfully', 'Ok', '');
+                            }
+
+                            window.status = "Transaction deleted successfully";
+                            //Because of the way we did initialization we the Data on Grid hide the loading too!
+                            tableFilingTransactions.ajax.reload();
+                        });
+                    },
+                    "Cancel": function () {
+                        sessionStorage.setItem("EditYesNo", "No");
+                        $m(this).dialog("close");
+                    }
+                }
+            });
+        });
+        // DELETE 24-HOUR NOTICE TRANSACTIONS.
+        // ======================================================================================================================================
+
+        var table24HNoticeTransHistory = '';
+
+        // ======================================================================================================================================
+        // HISTORY LINK BRING THE AMENDED TRANSACTIONS FOR SELECTED TRANSACTION.
+        $m('#gridFilingTrans24HourNotice tbody').on('click', 'a.editor_24HNotice_History', function (e) {
+            e.preventDefault();
+
+            // Show the Grid and bind the Grid.
+            $("#divUC24HNoticeHistory").show();
+
+            // DON'T HIGHLIGHT THE ROW WHEN CLICK ON HISTORY LINK.
+
+            var dataTrans = tableFilingTransactions.row($(this).parents('tr')).data();
+
+            sessionStorage.setItem("TransNumberHistory", dataTrans[33].toString());
+
+            // SESSION FOR HIDE/SHOW HISTORY GIRD.
+            sessionStorage.setItem("HideShowHistoryGrid", "Yes");
+
+            $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+            table24HNoticeTransHistory = $m('#grid24HNoticeHistory').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2, 3, 4, 29, 30, 31, 32],
+                        "visible": false,
+                        "searchable": false
+                    }
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#grid24HNoticeHistory').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": "@Url.Content("~/NonItemizedTransactionSchedC/Get24HourNoticeTransactionsHistory/")",
+                        "data": {
+                            strTransNumber: sessionStorage.getItem("TransNumberHistory").toString()
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        }
+                    });
+                }
+            });
+            $m('#grid24HNoticeHistory').DataTable().ajax.reload();
+            table24HNoticeTransHistory.search('').columns().search('').draw();
+            table24HNoticeTransHistory.order([32, 'desc']).draw();
+            table24HNoticeTransHistory.responsive.recalc();
+
+            // TAKE THE PAGE TO DOWN GRID.
+            $('html, body').animate({ scrollTop: $("#divUC24HNoticeHistory").offset().top }, 500);
+
+        });
+        // HISTORY LINK BRING THE AMENDED TRANSACTIONS FOR SELECTED TRANSACTION.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // EDIT COMMON
+        // Edit from Other Schedule functionality
+        if (sessionStorage.getItem("EditFlag") != null) {
+            if (sessionStorage.getItem("EditFlag").toString() == "True") {
+
+                $("#divLoading").show();
+
+                $("#lstTransactionTypeNonItem option").each(function () {
+                    if ($(this).val() == sessionStorage.getItem("ScheduleId").toString()) {
+                        $(this).prop("selected", true);
+                    }
+                });
+
+                sessionStorage.setItem("EditYesNo", "Yes");
+
+                $("#divUC24HNoticeHistory").hide();
+
+                $("#btnUpdateSchedC24HNotice").show();
+                $("#btnSaveSchedC24HNotice").hide();
+
+                sessionStorage.setItem("UpdateFlagSchedA24HNotice", "Yes");
+
+                $("#txtCurrentDate24HNotice").focus();
+
+                // DON'T SELECT THE ROW WHEN EDIT THE TRANSACTIONS.
+                $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+                dialog_Sched_C_24HNotice.dialog("open");
+
+                var validator = $m("#DialogBoxSchedC24HourNoticeForm").validate();
+                validator.resetForm(); // clear out the validation errors
+                $m("#DialogBoxSchedC24HourNoticeForm")[0].reset(); // clear out the form data
+
+                $.post("@Url.Content("~/_UC_GridCommonNonItem24HourNotice/GetEditTransactionData/")", {
+                    strTransNumber: sessionStorage.getItem("TransNumberEdit").toString()
+                }, function (resultsEditData) {
+                    $.each(resultsEditData, function (i, item) {
+                        // Bind Method Data
+                        var options = {};
+                        options.url = "@Url.Content("~/NonItemizedTransactionSchedC/GetPaymentMethodData/")";
+                        options.type = "POST";
+                        options.data = null;
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (resultsMethod) {
+                            $("#lstMethod").empty();
+                            for (var i = 0; i < resultsMethod.length; i++) {
+                                $("#lstMethod").append("<option value='" + resultsMethod[i].Value + "'>" + resultsMethod[i].Text + "</option>");
+                            }
+                            // Set Method
+                            if (item.PaymentTypeId.toString() != null || item.PaymentTypeId.toString() != "") {
+                                $m("#lstMethod option")
+                                    .filter(function () { return $m(this).val() == item.PaymentTypeId.toString(); })
+                                    .attr("selected", "selected");
+                            }
+                            // Get Form Data.
+                            form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+                        };
+                        options.error = function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        };
+                        $.ajax(options);
+
+                        // Bind Contributor Type Code
+                        var options = {};
+                        options.url = "@Url.Content("~/NonItemizedTransactionSchedC/GetContributorCodeSchedA/")";
+                        options.type = "POST";
+                        options.data = null;
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (results) {
+                            $("#lstContributionName").empty();
+                            for (var i = 0; i < results.length; i++) {
+                                $("#lstContributionName").append("<option value='" + results[i].Value + "'>" + results[i].Text + "</option>");
+                            }
+                            //Set Contribution Type Code
+                            if (item.ContributorTypeId.toString() != null || item.ContributorTypeId.toString() != "") {
+                                $m("#lstContributionName option")
+                                    .filter(function () { return $m(this).val() == item.ContributorTypeId.toString(); })
+                                    .attr('selected', 'selected');
+                            }
+                            // Get Form Data.
+                            form_original_data = $("#DialogBoxSchedC24HourNoticeForm").serialize();
+                        };
+                        options.error = function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        };
+                        $.ajax(options);
+
+                        $("#lstContributionName").prop("disabled", true);
+
+                        sessionStorage.setItem("TransNumber", item.TransNumber.toString());
+                        sessionStorage.setItem("FilingEntityId", item.FilingEntityId.toString());
+                        sessionStorage.setItem("SubmittsionDate", item.SubmissionDate.toString());
+
+                        // Clear the JQuery Error Message
+                        $m("label[for=txtCurrentDate24HNotice]").text('');
+                        $m("#txtCurrentDate24HNotice").removeClass("error");
+
+                        $("#txtCurrentDate24HNotice").val(item.SchedDate.toString());
+                        $("#txtCurrentDate24HNotice").removeClass("watermarkHTMLTextBox");
+                        if (item.SchedDate.toString() != "" || item.SchedDate.toString() != null) {
+                            var MyDate = new Date($("#txtCurrentDate24HNotice").val().toString());
+                            var MyDateString;
+                            MyDateString = ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/'
+                                + ('0' + MyDate.getDate()).slice(-2) + '/'
+                                + MyDate.getFullYear();
+                            $("#txtCurrentDate24HNotice").val("");
+                            $("#txtCurrentDate24HNotice").val(MyDateString);
+                            $("#txtCurrentDate24HNotice").removeClass("watermarkHTMLTextBox");
+                            $("#txtCurrentDate24HNotice").focus();
+                        }
+                        $("#txtPartnershipName").val(item.FilingEntityName.toString());
+                        $("#txtStreetName").val(item.FilingStreetName.toString());
+                        $("#txtCity").val(item.FilingCity.toString());
+                        $("#txtState").val(item.FilingState.toString());
+                        $("#txtZipCode").val(item.FilingZip.toString());
+                        $("#txtCountry").val(item.FilingCountry.toString());
+                        if (item.FilingCountry.toString() == "United States") {
+                            $("#chkCountry").prop('checked', false);
+                            $("#txtCountry").prop("disabled", true);
+                            $("#txtState").prop('maxLength', '2');
+                        }
+                        else { // Other Country
+                            $("#chkCountry").prop('checked', true);
+                            $("#txtCountry").prop("disabled", false);
+                            $("#txtState").prop('maxLength', '30');
+                            $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                            $m('#txtZipCode').attr("placeholder", "");
+                        }
+                        if (item.FilingZip.toString() != "") {
+                            $("#txtZipCode").removeClass("watermarkHTMLTextBox");
+                        }
+                        else {
+                            $("#txtZipCode").addClass("watermarkHTMLTextBox");
+                            if (item.FilingCountry.toString() == "United States") {
+                                $("#txtZipCode").blur();
+                            }
+                        }
+                        if (item.PaymentTypeId.toString() == "1") {
+                            $("#tdCheck").show();
+                            $("#txtCheck").val(item.PayNumber.toString());
+                        }
+                        else {
+                            $("#tdCheck").hide();
+                        }
+                        var originalAmount = item.OriginalAmount.toString();
+
+                        $("#txtAmt24HNotice").val(originalAmount);
+                        if ($("#txtAmt24HNotice").val().toString() != "" || $("#txtAmt24HNotice").val().toString() != "999999999.99") {
+                            $("#txtAmt24HNotice").removeClass("watermarkHTMLTextBox");
+                        }
+                        $("#txtExplanation").val(item.TransExplanation.toString());
+
+                        if (item.PaymentTypeId.toString() == "7") {
+                            $("#lblExplanation").text("* Explanation");
+                        }
+                        else {
+                            $("#lblExplanation").text("Explanation");
+                        }
+
+                        $("#lstItemized")[0].selectedIndex = 0;
+                        $("#lstItemized").prop("disabled", true);
+
+                        $("#lstItemized")[0].selectedIndex = 0;
+                        $("#lstItemized").prop("disabled", true);
+
+                        $("#txtPartnerShipName").val(item.FilingEntityName.toString());
+                    });
+                    // SET EDIT FLAG FALSE.
+                    sessionStorage.setItem("EditFlag", "False");
+                });
+            }
+        }
+        // EDIT COMMON
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        //Bind Clear Click - CLEAR BUTTON COMMON CODE.
+        $(".clsCommonClear").bind('click', function () {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            if ($("#lstElectionType option:selected").val() == "6") {
+                sessionStorage.setItem("FilingDate", $("#txtNewFilingDate").val());
+            }
+            else {
+                sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            }
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("lstResigTermType", $("#lstResigTermType option:selected").val());
+            sessionStorage.setItem("lstFilingDate", $("#lstFilingDate option:selected").val());
+
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+
+            window.location.href = urlContrHome;
+        });
+        //Bind Clear Click - CLEAR BUTTON COMMON CODE.
+        // ======================================================================================================================================
+        
+        // ======================================================================================================================================
+        // Grid Common Code ///////////////////////////////////////////////////
+        // ======================================================================================================================================
+        // CALL LOAD DATA FUNCTION
+        LoadData();
+        // FUNCTION LOAD DATA
+        function LoadData() {
+            $("#divLoading").show();
+            tableFilingTransactions = $m('#gridFilingTrans24HourNotice').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2, 3, 4, 5, 6, 32, 33, 34, 35],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [8],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#gridFilingTrans24HourNotice').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    var EditAnchorButtonString = '<a class="editor_edit_Sched_C_24HNotice" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../../Content/Images/Edit.png" title="Edit Row '+ iDisplayIndex +' Data" style="background-repeat: no-repeat; "  /></a>';
+                    var DeleteAnchorButtonString = '<a class="editor_remove_Sched_C_24HNotice" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '"><img src="../../Content/Images/Delete.png" title="Delete Row '+ iDisplayIndex +' Data" style="background-repeat: no-repeat; "  /></a>';
+                    var HistoryButtonString = '<a class="editor_24HNotice_History lnkGird"  href="#divUCLoanRecLoanRepay"> History </a>';
+                    if (aaData[15] == "In-Active") { // AFTER SUBMIT AND AMEND THERE IS NO EDIT AND DELETE.
+                        // NO EDIT AND DELTE BUTTONS.
+                        return nRow;
+                    }
+                    else if (aaData[15] == "Active" && aaData[9] != "") {
+                        // Get that is there any child record created that means
+                        // created but not submitted. if submitted meanse it will be Status - 'In-Active'
+                        $.post("@Url.Content("~/NonItemizedTransactionSchedA/GetChildTransExists/")", {
+                            strTransNumber: aaData[33].toString()
+                        }, function (result) {
+                            if (result) {
+                                // NO EDIT AND DELETE BUTTONS.
+                                if (aaData[9] != "" && aaData[16] == "Yes") {
+                                    $m('td:eq(1)', nRow).html(HistoryButtonString);
+                                }
+                                return nRow;
+                            }
+                            else {
+                                if (aaData[15] == "Active" && aaData[16] != "No") {
+                                    if (aaData[9] != "") {
+                                        $m('td:eq(1)', nRow).html(EditAnchorButtonString + HistoryButtonString);
+                                        return nRow;
+                                    }
+                                    else {
+                                        $m('td:eq(1)', nRow).html(EditAnchorButtonString + DeleteAnchorButtonString + HistoryButtonString);
+                                        return nRow;
+                                    }
+                                }
+                                else {
+                                    if (aaData[9] != "") {
+                                        $m('td:eq(1)', nRow).html(EditAnchorButtonString);
+                                        return nRow;
+                                    }
+                                    else {
+                                        $m('td:eq(1)', nRow).html(EditAnchorButtonString + DeleteAnchorButtonString);
+                                        return nRow;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        if (aaData[9] != "") {
+                            $m('td:eq(1)', nRow).html(EditAnchorButtonString);
+                            return nRow;
+                        }
+                        else {
+                            $m('td:eq(1)', nRow).html(EditAnchorButtonString + DeleteAnchorButtonString);
+                            return nRow;
+                        }
+                    }
+                },
+                "fnDrawCallback": function (oSettings) {
+                    var oSettings = this.fnSettings();
+                    var iTotalRecords = oSettings.fnRecordsTotal();
+                    if (iTotalRecords < 1) {
+                        $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+                    }
+                },
+                "fnServerData": function (url, data, callback) {
+                    //Refresh the Data on Grid... Hides the loading too!
+                    Get24HourNoticeTransactions(callback, false, false);
+                }
+            });
+            $m('#gridFilingTrans24HourNotice').DataTable().ajax.reload();
+            tableFilingTransactions.search('').columns().search('').draw();
+            tableFilingTransactions.order([35, 'desc']).draw();
+            tableFilingTransactions.responsive.recalc();
+
+        } // END LOAD DATA FUNCTION END END >>>
+
+        //Common Code for Set Preferences - Start
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        $('#btnSetPreferences').click(function (e) {
+            $("#divLoading").show();
+            $.ajax({
+                url: "@Url.Content("~/_UC_GridCommonNonItem24HourNotice/UpdateColumnValue/")",
+                data: {
+                    uniqueValue: $m("#ddlViewableColumn").multipleSelect("getSelects").toString()
+                },
+                success: function (results) {
+                    window.status = "Transaction saved successfully";
+                    //Because of the way we did initialization we the Data on Grid hide the loading too!
+                    tableFilingTransactions.ajax.reload();
+                    //GridCommonNonItem24HourNotice_HideColumn is implemented inside _UC_GridCommonNonItem24HourNotic.cshtml.
+                    GridCommonNonItem24HourNotice_HideColumn($m("#ddlViewableColumn").multipleSelect("getSelects", "text").toString().split(","), tableFilingTransactions);
+                },
+                cache: false
+            });
+        });
+
+        $.post("@Url.Content("~/_UC_GridCommonControl/GetSortName/")", {
+        }, function (results) {
+            //GridCommonNonItem24HourNotice_HideColumn is implemented inside _UC_GridCommonNonItem24HourNotic.cshtml.
+            GridCommonNonItem24HourNotice_HideColumn(results.toString().split(","), tableFilingTransactions);
+            tableFilingTransactions.columns.adjust().draw(false);
+            tableFilingTransactions.responsive.rebuild();
+            tableFilingTransactions.columns.adjust().responsive.recalc();
+        });
+
+        /**
+        * Appends label text to _validate elementys based on a list of custom errors returned from the server.
+        * It won't do anyting to handle "AmmountError" keys but it will return true if it sees one in the list.
+        * param {reuslt.Errors} errorList
+        * Replaces this type of code basically:
+        for (var i = 0; i < results.Errors.length; i++) {
+                if (results.Errors[i].Key == "txtPartAmt") {
+                    $("#txtPartAmtSchedD_validate").append('<label for="txtPartAmtSchedD" class="error">' + results.Errors[i].Value + '</label>');
+                }
+                if (results.Errors[i].Key == "txtPartExplanationInKind") {
+                    $("#txtPartExplanationInKind_validate").append('<label for="txtPartExplanationInKind" class="error">' + results.Errors[i].Value + '</label>');
+                }
+                if (results.Errors[i].Key == "AmountError") {
+                    ShowDialogBox('EFS', 'Partnership Amount cannot be more than Outstanding Amount $' + parseFloat(expPartAmount).toFixed(2).toString(), 'Ok', '');
+                }
+            }
+        }
+        */
+        function AppendCustomErrorLabels(errorList) {
+            //Define special error conditions
+            var errorLabelDiscrepancies = false;//There are no discrepancies found in this schedule.
+            return appCommonEFS_AppendCustomErrorLabelsForAmmountError(errorList, errorLabelDiscrepancies);
+        }
+
+        //Commonly used values in this particular page.
+        function GridCommonNonItem24HourNoticeAjaxOptionsData() {
+            return {
+                txtFilerID: $("#txtFilerID").val(),
+                lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                lstElectionType: $("#lstElectionType option:selected").val(),
+                txtReportPeriodDatesTo: $("#txtReportPeriodDatesTo").val(),
+                lstElectionDateId: $("#lstElectionDate option:selected").val()
+            }
+        }
+
+        /**Common code for invoking Get24HourNoticeTransactions from controller.
+         * This was created for ALM Defect 707 where users were intertacting with the table while the "Processing..." text was still visible.
+         * dataTableInstanceToReload { function } The referecne to the datatable we will reload in the success callback..
+         * dataOverides { ajax data params } pass to overwrite data values when making ajax call.
+         * doneFunction { function } A function to be called if the ajax call is completed.
+         */
+        function Get24HourNoticeTransactions(dataTableInstanceToReload, dataOverides, doneFunction) {
+            var callback = dataTableInstanceToReload ? dataTableInstanceToReload : tableFilingTransactions;
+            //Determine what data to use.
+            var optionsData = bUtilIsObject(dataOverides) ? dataOverides : GridCommonNonItem24HourNoticeAjaxOptionsData();
+            appCommonEFS_GridCommonNonItem24HourNoticeCommon(callback, optionsData, doneFunction);
+        }
+        // ======================================================================================================================================
+        // Grid Common Code ///////////////////////////////////////////////////
+        // ======================================================================================================================================
+
+        function ClearDialogBoxValSchedANonItem() {
+
+            // Clear Form Validation. Schedule 'D'
+            var validator = $m("#DialogBoxSchedC24HourNoticeForm").validate();
+            validator.resetForm();  // clear out the validation errors
+            $m("#DialogBoxSchedC24HourNoticeForm")[0].reset();   // clear out the form data
+
+            // Set the default values for form.
+            $("#txtCountry").val("United States");
+            $("#txtCountry").prop("disabled", true);
+            $("#chkCountry").prop('checked', false);
+            $("#txtState").prop('maxLength', '2');
+            $m("#txtCountry").valid();
+
+            // Set the default values for form.
+            $("#lblExplanation").text("Explanation");
+
+            // Set the default values for form.
+            $("#lstItemized").prop("disabled", true);
+            $("#lstContributionName").prop("disabled", false);
+
+            // DISABLE SUBMIT BUTTON.
+            $("#btnSubmitSchedA24HNotice").prop("disabled", true);
+
+            // Set the default values for form.
+            $("#lstItemized")[0].selectedIndex = 0;
+            $("#lstContributionName")[0].selectedIndex = 0;
+            $("#lstMethod")[0].selectedIndex = 0;
+
+            // Set the default values for form.
+            $("#txtCurrentDate24HNotice").blur();
+            $("#txtZipCode").blur();
+            $("#txtAmt24HNotice").blur();
+
+            // HIDE/SHOW FILEDS
+            $("#tdPartnershipName").show();
+            // HIDE/SHOW FILEDS
+
+            $("#tdCheck").hide();
+            // HIDE/SHOW FILEDS
+
+            // On focus
+            $("#lstItemized").select();
+        }
+
+    }); // DOCUMENT END END END>>>>>> >>>>>>>>>>>>>>>>>>
+
+</script>

@@ -1,0 +1,30 @@
+﻿<fieldset>
+    <legend class="visibleToScreenReaderOnly">Common Profile Contact: </legend>
+    <div class="headerDBLiability">
+        <span>Add Contact</span>
+    </div>
+    <div id="spnBestContactForContact">
+        <div class="verticalCSSDestopForLable lblCSSAdd">
+            <span id="UC_CommonProfile_Conatact_lblBestContact">Best Contact</span>
+        </div>
+        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+            @Html.DropDownList("lstBestContact", ViewData["lstBestContact"] as SelectList, new { @class = "txtWidthForDialog", aria_labelledby = "UC_CommonProfile_Conatact_lblBestContact" })
+        </div>
+    </div>
+    <div id="spnContactTypePhoneForContact">
+        <div class="verticalCSSDestopForLable lblCSSAdd">
+            <span id="UC_CommonProfile_Conatact_lblContactType_Phone">Contact Type - Phone</span>
+        </div>
+        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtContactPhone", @class = "txtWidthForDialog", aria_labelledby = "UC_CommonProfile_Conatact_lblContactType_Phone" })
+        </div>
+    </div>
+    <div id="spnContactTypeEmailForContact">
+        <div class="verticalCSSDestopForLable lblCSSAdd">
+            <span id="UC_CommonProfile_Conatact_lblContactType_Email">Contact Type - Email</span>
+        </div>
+        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+            @Html.TextBox("searchTerm", null, new { id = "txtContactEmail", @class = "txtWidthForDialog", aria_labelledby = "UC_CommonProfile_Conatact_lblContactType_Email" })
+        </div>
+    </div>
+</fieldset>

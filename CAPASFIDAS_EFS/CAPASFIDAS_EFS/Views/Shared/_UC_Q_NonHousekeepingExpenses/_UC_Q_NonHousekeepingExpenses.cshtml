@@ -1,0 +1,492 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_Q_NonHousekeepingExpenses", "_UC_Q_NonHousekeepingExpenses", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridNonCampHouseExpenses" class="divGridCSS">
+        <table style="width:100%">
+            <tr>
+                <td style="padding-right:2em;float:right">                    
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdNonCampHouseExpenses" class="border1pxCls" style="padding-left:2em;">Date Paid</th>
+                <th id="thPayeeNameNonCampHouseExpenses" class="border1pxCls">Payee Name</th>
+                <th id="thStreetNonCampHouseExpenses" class="border1pxCls">Street #</th>
+                <th id="thStreetNameNonCampHouseExpenses" class="border1pxCls">Street Name</th>
+                <th id="thCityNonCampHouseExpenses" class="border1pxCls">City</th>
+                <th id="thStateNonCampHouseExpenses" class="border1pxCls">State</th>
+                <th id="thZip5NonCampHouseExpenses" class="border1pxCls">Zip5</th>
+                <th id="thZip4NonCampHouseExpenses" class="border1pxCls">Zip4</th>
+                <th id="thPurposeCodeNonCampHouseExpenses" class="border1pxCls">Purpose Code</th>                
+                <th id="thMethodNonCampHouseExpenses" class="border1pxCls">Method</th>
+                <th id="thCheckNonCampHouseExpenses" class="border1pxCls">Check#</th>
+                <th id="thAmtRefundedNonCampHouseExpenses" class="border1pxCls">Amt</th>
+                <th id="thExplanationNonCampHouseExpenses" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdNonCampHouseExpenses" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdPayorNameNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPayorName", @class = "txtWidth" })</td>
+                <td id="tdStreetNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5NonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4NonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdPurposeCodeNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.DropDownList("lstPurposeCode", ViewData["lstPurposeCode"] as SelectList, new { @class = "" })</td>                                
+                <td id="tdMethodNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheckNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheckNonCampHouseExpenses", @class = "txtWidth" })</td>
+                <td id="tAmtNonCampHouseExpenses" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtNonCampHouseExpenses", @class = "txtWidth" })</td>
+                <td id="tdExplanationNonCampHouseExpenses" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationNonCampHouseExpenses", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTNonCampHouseExpenses">
+            <table id="UC_NonCampHouseExpensesGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Paid</th>
+                        <th>Payee Name</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Purpose Code</th>                        
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amt</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTNonCampHouseExpenses").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridNonCampHouseExpenses").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#UC_NonCampHouseExpensesGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                //"scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_Q_NonHousekeepingExpenses/GetNonCampHouseExpensesSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                            { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#UC_NonCampHouseExpensesGrid').DataTable());
+                }
+            });
+            $m('#UC_NonCampHouseExpensesGrid').DataTable().ajax.reload();
+        });
+
+        //// Edit a record
+        //$m('#UC_NonCampHouseExpensesGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataNonCampHouseExpenses").show();
+        //    table = $m('#PartnersGridNonCampHouseExpenses').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //            //Accessibility: Applies various Accessibility features to this dataTable.
+        //            makeDataTableAccessible($m('#PartnersGridNonCampHouseExpenses').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridNonCampHouseExpenses').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#UC_NonCampHouseExpensesGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Edit a record
+        $m('#UC_NonCampHouseExpensesGrid tbody').on('click', 'a.editor_AttributionNonCampHouseExpenses', function (e) {
+            e.preventDefault();
+            $("#divShowPartnerAdddataNonCampHouseExpenses").show();
+            table = $m('#PartnersGridNonCampHouseExpenses').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                            { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#PartnersGridNonCampHouseExpenses').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#PartnersGridNonCampHouseExpenses').DataTable().ajax.reload();
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationNonCampHouseExpenses").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTNonCampHouseExpenses").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationNonCampHouseExpenses").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridNonCampHouseExpenses').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#UC_NonCampHouseExpensesGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameNonCampHouseExpenses option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtNonCampHouseExpensesNonCampHouseExpenses").val(data[15].toString());
+            $("#txtExplanationNonCampHouseExpenses").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameNonCampHouseExpenses").show("slow");
+                $("#thMINonCampHouseExpenses").show("slow");
+                $("#thLastNameNonCampHouseExpenses").show("slow");
+                $("#thStreetNonCampHouseExpenses").show("slow");
+                $("#thStreetNameNonCampHouseExpenses").show("slow");
+                $("#thCityNonCampHouseExpenses").show("slow");
+                $("#thStateNonCampHouseExpenses").show("slow");
+                $("#thZip5NonCampHouseExpenses").show("slow");
+                $("#thZip4NonCampHouseExpenses").show("slow");
+                $("#thContributionTypeNonCampHouseExpenses").show("slow");
+                $("#thMethodNonCampHouseExpenses").show("slow");
+                $("#thCheckNonCampHouseExpenses").show("slow");
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameNonCampHouseExpenses").show("slow");
+                $("#tdMINonCampHouseExpenses").show("slow");
+                $("#tdLastNameNonCampHouseExpenses").show("slow");
+                $("#tdStreetNonCampHouseExpenses").show("slow");
+                $("#tdStreetNameNonCampHouseExpenses").show("slow");
+                $("#tdCityNonCampHouseExpenses").show("slow");
+                $("#tdStateNonCampHouseExpenses").show("slow");
+                $("#tdZip5NonCampHouseExpenses").show("slow");
+                $("#tdZip4NonCampHouseExpenses").show("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").show("slow");
+                $("#tdMethodNonCampHouseExpenses").show("slow");
+                $("#tdCheckNonCampHouseExpenses").show("slow");
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+
+                $("#thParterShipNameNonCampHouseExpenses").hide("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                $("#thFirstNameNonCampHouseExpenses").hide("slow");
+                $("#thMINonCampHouseExpenses").hide("slow");
+                $("#thLastNameNonCampHouseExpenses").hide("slow");
+                $("#thStreetNonCampHouseExpenses").hide("slow");
+                $("#thStreetNameNonCampHouseExpenses").hide("slow");
+                $("#thCityNonCampHouseExpenses").hide("slow");
+                $("#thStateNonCampHouseExpenses").hide("slow");
+                $("#thZip5NonCampHouseExpenses").hide("slow");
+                $("#thZip4NonCampHouseExpenses").hide("slow");
+                $("#thContributionTypeNonCampHouseExpenses").hide("slow");
+                $("#thMethodNonCampHouseExpenses").hide("slow");
+                $("#thCheckNonCampHouseExpenses").hide("slow");
+
+                //Show All TD
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+
+                $("#tdFirstNameNonCampHouseExpenses").hide("slow");
+                $("#tdMINonCampHouseExpenses").hide("slow");
+                $("#tdLastNameNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNameNonCampHouseExpenses").hide("slow");
+                $("#tdCityNonCampHouseExpenses").hide("slow");
+                $("#tdStateNonCampHouseExpenses").hide("slow");
+                $("#tdZip5NonCampHouseExpenses").hide("slow");
+                $("#tdZip4NonCampHouseExpenses").hide("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").hide("slow");
+                $("#tdMethodNonCampHouseExpenses").hide("slow");
+                $("#tdCheckNonCampHouseExpenses").hide("slow");
+
+                $("#thParterShipNameNonCampHouseExpenses").hide("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameNonCampHouseExpenses").show("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").show("slow");
+
+                //Show All TR
+                $("#thFirstNameNonCampHouseExpenses").hide("slow");
+                $("#thMINonCampHouseExpenses").hide("slow");
+                $("#thLastNameNonCampHouseExpenses").hide("slow");
+                $("#thStreetNonCampHouseExpenses").show("slow");
+                $("#thStreetNameNonCampHouseExpenses").show("slow");
+                $("#thCityNonCampHouseExpenses").show("slow");
+                $("#thStateNonCampHouseExpenses").show("slow");
+                $("#thZip5NonCampHouseExpenses").show("slow");
+                $("#thZip4NonCampHouseExpenses").show("slow");
+                $("#thContributionTypeNonCampHouseExpenses").show("slow");
+                $("#thMethodNonCampHouseExpenses").show("slow");
+                $("#thCheckNonCampHouseExpenses").show("slow");
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameNonCampHouseExpenses").hide("slow");
+                $("#tdMINonCampHouseExpenses").hide("slow");
+                $("#tdLastNameNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNonCampHouseExpenses").show("slow");
+                $("#tdStreetNameNonCampHouseExpenses").show("slow");
+                $("#tdCityNonCampHouseExpenses").show("slow");
+                $("#tdStateNonCampHouseExpenses").show("slow");
+                $("#tdZip5NonCampHouseExpenses").show("slow");
+                $("#tdZip4NonCampHouseExpenses").show("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").show("slow");
+                $("#tdMethodNonCampHouseExpenses").show("slow");
+                $("#tdCheckNonCampHouseExpenses").show("slow");
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameNonCampHouseExpenses").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameNonCampHouseExpenses option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameNonCampHouseExpenses").show("slow");
+                $("#thMINonCampHouseExpenses").show("slow");
+                $("#thLastNameNonCampHouseExpenses").show("slow");
+                $("#thStreetNonCampHouseExpenses").show("slow");
+                $("#thStreetNameNonCampHouseExpenses").show("slow");
+                $("#thCityNonCampHouseExpenses").show("slow");
+                $("#thStateNonCampHouseExpenses").show("slow");
+                $("#thZip5NonCampHouseExpenses").show("slow");
+                $("#thZip4NonCampHouseExpenses").show("slow");
+                $("#thContributionTypeNonCampHouseExpenses").show("slow");
+                $("#thMethodNonCampHouseExpenses").show("slow");
+                $("#thCheckNonCampHouseExpenses").show("slow");
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameNonCampHouseExpenses").show("slow");
+                $("#tdMINonCampHouseExpenses").show("slow");
+                $("#tdLastNameNonCampHouseExpenses").show("slow");
+                $("#tdStreetNonCampHouseExpenses").show("slow");
+                $("#tdStreetNameNonCampHouseExpenses").show("slow");
+                $("#tdCityNonCampHouseExpenses").show("slow");
+                $("#tdStateNonCampHouseExpenses").show("slow");
+                $("#tdZip5NonCampHouseExpenses").show("slow");
+                $("#tdZip4NonCampHouseExpenses").show("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").show("slow");
+                $("#tdMethodNonCampHouseExpenses").show("slow");
+                $("#tdCheckNonCampHouseExpenses").show("slow");
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+
+                $("#thParterShipNameNonCampHouseExpenses").hide("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                $("#thFirstNameNonCampHouseExpenses").hide("slow");
+                $("#thMINonCampHouseExpenses").hide("slow");
+                $("#thLastNameNonCampHouseExpenses").hide("slow");
+                $("#thStreetNonCampHouseExpenses").hide("slow");
+                $("#thStreetNameNonCampHouseExpenses").hide("slow");
+                $("#thCityNonCampHouseExpenses").hide("slow");
+                $("#thStateNonCampHouseExpenses").hide("slow");
+                $("#thZip5NonCampHouseExpenses").hide("slow");
+                $("#thZip4NonCampHouseExpenses").hide("slow");
+                $("#thContributionTypeNonCampHouseExpenses").hide("slow");
+                $("#thMethodNonCampHouseExpenses").hide("slow");
+                $("#thCheckNonCampHouseExpenses").hide("slow");
+
+                //Show All TD
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+
+                $("#tdFirstNameNonCampHouseExpenses").hide("slow");
+                $("#tdMINonCampHouseExpenses").hide("slow");
+                $("#tdLastNameNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNameNonCampHouseExpenses").hide("slow");
+                $("#tdCityNonCampHouseExpenses").hide("slow");
+                $("#tdStateNonCampHouseExpenses").hide("slow");
+                $("#tdZip5NonCampHouseExpenses").hide("slow");
+                $("#tdZip4NonCampHouseExpenses").hide("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").hide("slow");
+                $("#tdMethodNonCampHouseExpenses").hide("slow");
+                $("#tdCheckNonCampHouseExpenses").hide("slow");
+
+                $("#thParterShipNameNonCampHouseExpenses").hide("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameNonCampHouseExpenses").show("slow");
+                $("#tdPartnershipNameNonCampHouseExpenses").show("slow");
+
+                //Show All TR
+                $("#thFirstNameNonCampHouseExpenses").hide("slow");
+                $("#thMINonCampHouseExpenses").hide("slow");
+                $("#thLastNameNonCampHouseExpenses").hide("slow");
+                $("#thStreetNonCampHouseExpenses").show("slow");
+                $("#thStreetNameNonCampHouseExpenses").show("slow");
+                $("#thCityNonCampHouseExpenses").show("slow");
+                $("#thStateNonCampHouseExpenses").show("slow");
+                $("#thZip5NonCampHouseExpenses").show("slow");
+                $("#thZip4NonCampHouseExpenses").show("slow");
+                $("#thContributionTypeNonCampHouseExpenses").show("slow");
+                $("#thMethodNonCampHouseExpenses").show("slow");
+                $("#thCheckNonCampHouseExpenses").show("slow");
+                $("#thAmtNonCampHouseExpenses").show("slow");
+                $("#thExplanationNonCampHouseExpenses").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameNonCampHouseExpenses").hide("slow");
+                $("#tdMINonCampHouseExpenses").hide("slow");
+                $("#tdLastNameNonCampHouseExpenses").hide("slow");
+                $("#tdStreetNonCampHouseExpenses").show("slow");
+                $("#tdStreetNameNonCampHouseExpenses").show("slow");
+                $("#tdCityNonCampHouseExpenses").show("slow");
+                $("#tdStateNonCampHouseExpenses").show("slow");
+                $("#tdZip5NonCampHouseExpenses").show("slow");
+                $("#tdZip4NonCampHouseExpenses").show("slow");
+                $("#tdContributionTypeNonCampHouseExpenses").show("slow");
+                $("#tdMethodNonCampHouseExpenses").show("slow");
+                $("#tdCheckNonCampHouseExpenses").show("slow");
+                $("#tAmtNonCampHouseExpenses").show("slow");
+                $("#tdExplanationNonCampHouseExpenses").show("slow");
+            }
+        });
+    });
+</script>

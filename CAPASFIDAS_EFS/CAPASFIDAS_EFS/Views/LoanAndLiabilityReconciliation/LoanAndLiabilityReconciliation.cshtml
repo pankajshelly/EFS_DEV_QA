@@ -1,0 +1,1770 @@
+﻿@*
+    CREIGHTON NEWSOM
+    LOAN AND LIABILITY RECONCILIATION PAGE
+*@
+
+
+@{
+    ViewBag.Title = ": Loan and Liability Reconciliation";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("LoanAndLiabilityReconciliation", "LoanAndLiabilityReconciliation", FormMethod.Get, new { id = "LoanAndLiabilityReconciliationForm" }))
+{
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    @Html.Partial("UserControls/_UC_Loding")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                Loan Reconciliation
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                Loan Reconciliation
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="divHideShow">
+                <div class="divWidth">
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @*@Html.DropDownList("lstFilerID", ViewData["lstFilerID"] as SelectList, new { @class = "spanMobileWidth" })*@
+                            @Html.DropDownList("txtFilerID", Enumerable.Empty<SelectListItem>(), "", new { @class = "spanMobileWidth txtFilerID", @id = "txtFilerID", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType", required = "required" })
+                        </div>
+                    </div>
+
+
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">Candidate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @*@Html.DropDownList("lstCommitteeName", ViewData["lstCommitteeName"] as SelectList, new { @class = "spanMobileWidth" })*@
+                            @Html.TextBox("txtCommitteeName", null, new { id = "txtCommitteeName", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divReportYear">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblLoanLiability">* Loan</span>
+                        </div>
+                        <div id="lstLoanLiability_validate" class="validateErrorReconcile"></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstLoanLiability", ViewData["lstLoanLiability"] as SelectList, "- Select - ", new { @class = "spanMobileWidth", aria_labelledby= "lblLoanLiability", required = "required" })
+                        </div>
+                    </div>
+
+                    <div class="floatRightReconcile" style="padding-bottom: 2em;">
+                        <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                        <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                        <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelpFilter();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Loan Reconcile</li>
+            </ol>
+        </nav>
+    </div>
+    <br /><br /><br /><br />
+
+    <!--Reconcile Label and Button-->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="reconcileLabelAndButton">
+        <h1 class="lblReconcile">Reconcile Loans</h1>
+        <input type="button" id="btnReconcile" class="btnReconcile" name="Command" value="Reconcile" title="Reconcile" />
+    </div>
+
+
+    ////////////////////////LOAN PAGE/////////////////////////////
+    <!--LOAN RECEIVED (Schedule I) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="loanReceivedGridHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Loans Received (Schedule I)</h2>
+    </div>
+
+    <!-- LOAN RECEIVED (Schedule I) GRID -->
+    <div id="divLoanReceivedGrid" class="divGridCSS divGridLoanReceivedJQueryClassSelector">
+        <table id="loanReceivedGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th>@*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'loanReceivedGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Amount $</th>@*7*@
+                    <th>Report Year</th>@*8*@
+                    <th>Election Type</th>@*9*@
+                    <th>Report Type</th>@*10*@
+                    <th><a href="javascript:SortTable(8,'D','mdy', 'loanReceivedGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*12*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////LOAN PAGE/////////////////////////////
+    <!--LOAN PAYMENT (Schedule J) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="loanPaymentGridHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Loan Payments (Schedule J)</h2>
+    </div>
+
+    <!--LOAN PAYMENT (Schedule J) GRID-->
+    <div id="divLoanPaymentGrid" class="divGridCSS">
+        <table id="loanPaymentGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th>@*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'loanPaymentGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Amount $</th>@*7*@
+                    <th>Original Loan Date</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'loanPaymentGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////BOTH PAGES/////////////////////////////
+    <!--OUTSTANDING LIABILITIES (Schedule N) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="outstandingLiabilityHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Outstanding Loan (Schedule N)</h2>
+    </div>
+
+    <!--OUTSTANDING LIABILITIES (Schedule N) GRID-->
+    <div id="divOutstandingLiabilityGrid" class="divGridCSS">
+        <table id="outstandingLiabilityGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th> @*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'outstandingLiabilityGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Original Amount $</th>@*7*@
+                    <th>Outstanding Amount $</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'outstandingLiabilityGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////LIABILITY PAGE PAGE/////////////////////////////
+    <!--ORIGINAL LIABILITIES (Schedule N - Where ORG_AMT = OWED_AMT) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="originalLiabilityHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Original Liabilities (Schedule N)</h2>
+    </div>
+
+    <!--ORIGINAL LIABILITY (Schedule N - Where ORG_AMT = OWED_AMT) GRID-->
+    <div id="divOriginalLiabilityGrid" class="divGridCSS">
+        <table id="originalLiabilityGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th>@*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'originalLiabilityGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Original Amount $</th>@*7*@
+                    <th>Outstanding Amount $</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'originalLiabilityGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////LIABILITY PAGE/////////////////////////////
+    <!--EXPENDITURE PAYMENT (Schedule F) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="expenditurePaymentHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Expenditures/Payments (Schedule F)</h2>
+    </div>
+
+    <!--EXPENDITURE PAYMENT (Schedule F) GRID-->
+    <div id="divExpenditurePaymentGrid" class="divGridCSS">
+        <table id="expenditurePaymentGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th>@*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'expenditurePaymentGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Amount $</th>@*7*@
+                    <th>Explanation</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'expenditurePaymentGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////LIABILITY PAGE/////////////////////////////
+    <!--OUTSTANDING LIABILITIES (Schedule N - Where ORG_AMT <> OWED_AMT) FOR LIABILITY GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="outstandingLiabilityForLiabilityHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Outstanding Liabilities/Loan (Schedule N)</h2>
+    </div>
+
+    <!--OUTSTANDING LIABILITIES (Schedule N - Where ORG_AMT <> OWED_AMT) FOR LIABILITY GRID-->
+    <div id="divOutstandingLiabilityForLiabilityGrid" class="divGridCSS">
+        <table id="outstandingLiabilityForLiabilityGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th> @*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'outstandingLiabilityForLiabilityGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Original Amount $</th>@*7*@
+                    <th>Outstanding Amount $</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'outstandingLiabilityForLiabilityGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+    ////////////////////////BOTH PAGES/////////////////////////////
+    <!--LIABILITIES AND LOANS FORGIVEN (Schedule K) GRID HEADER -->
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="liabilityLoanForgivenHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">Liabilities/Loans Forgiven (Schedule K)</h2>
+    </div>
+
+    <!--LIABILITIES AND LOANS FORGIVEN (Schedule K) GRID-->
+    <div id="divLiabilityLoanForgivenGrid" class="divGridCSS">
+        <table id="liabilityLoanForgivenGrid" class="table table-striped table-bordered dt-responsive nowrap webGrid" style="width:100%; border-spacing: 0px;">
+            <thead  class="header">
+                <tr>
+                    <th class="never">FilingTransID</th>@*0*@
+                    <th class="never">TransNumber</th>@*1*@
+                    <th class="never">TransMapping</th>@*2*@
+                    <th>Expand</th>@*3*@
+                    <th>Action</th>@*4*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'liabilityLoanForgivenGrid');">Transaction Date</a></th>
+                    <th>Entity Name</th>@*6*@
+                    <th>Amount $</th>@*7*@
+                    <th>Original Date</th>@*8*@
+                    <th>Report Year</th>@*9*@
+                    <th>Election Type</th>@*10*@
+                    <th>Report Type</th>@*11*@
+                    <th><a href="javascript:SortTable(9,'D','mdy', 'liabilityLoanForgivenGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*13*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    function CallHelp() {
+        window.open("#", "Help", "width=550, height=600,scrollbars=1");
+    }
+
+    $m(document).ready(function () {
+
+        $("#lstLoanLiability").hide();
+        $("#lblLoanLiability").hide();
+
+        $("#txtFilerType").attr('title', '@ViewBag.txtFilerType'); 
+        $("#txtFilerType").val("@ViewBag.txtFilerType");
+        $("#txtFilerType").prop("disabled", true);
+
+
+        // ON PAGE LOAD WE DETERMINE IF THIS FILER HAS UNRECONCILED TRANSACTIONS
+        // EXECUTE THE CALL TO GetUnreconciledLoansAndLiabilities
+        @*$.post("@Url.Content("../LoanAndLiabilityReconciliation/GetUncreconciledLoansAndLiabilities")", {*@
+            @*$.post('@Url.Action("GetUncreconciledLoansAndLiabilities", "LoanAndLiabilityReconciliation")' , {
+            }, function (results) {
+                if (results) {
+                    // IF THERE ARE NO UNRECONCILED LOANS OR LIABILITIES (RESULT = 0),
+                    //THEN UPDATE THE REQUIRED FILER TABLE AND REDIRECT THEM
+                    if (results == "0") {
+                        //$.post("@Url.Content("../LoanAndLiabilityReconciliation/UpdateRequiredFilerForReconcile")", {
+                        $.post('@Url.Action("UpdateRequiredFilerForReconcile", "LoanAndLiabilityReconciliation")' , {                            
+                            }, function (results) {
+                                // IF THE UPDATE REQUIRED FILER SP RETURNS TRUE, REDIRECT THEM
+                                if (results) {
+                                    if (results == "TRUE") {
+                                        var urlHomePage = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+                                        window.location.href = urlHomePage;
+                                    }
+                                }
+                                else {
+                                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                    return;
+                                }
+                            });
+                    }
+                }
+                else {
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                    return;
+                }
+            });*@
+
+        // HIDE MENUS
+        $m("#ulMain").hide();
+
+        // INITIALIZATION CODE, SET FILERID AND COMMITTEENAME TO 0
+        $("#txtFilerID")[0].selectedIndex = 0;
+        $("#txtCommitteeName")[0].selectedIndex = 0;
+
+        // VARIABLES USED TO STORE THE VARIOUS TRANS FILINGIDS TO PASS TO THE
+        // RECONCILE STORED PROCS
+        var Schedule_I_TransFilingID = "";
+        var Schedule_N_OriginalLiability_TransFilingID = "";
+        var Schedule_J_TransFilingIDs = [];
+        var Schedule_N_TransFilingIDs = [];
+        var Schedule_K_TransFilingIDs = [];
+        var Schedule_F_TransFilingIDs = [];
+        // VARIABLE STORES EITHER "LIABILITY" OR "LOAN" AND THE CODE
+        // BEHAVES DIFFERENTLY DEPENDING
+        var ReconcileMode = "LOAN";
+
+        // DECLARE AND ASSIGN GLOBAL VARIABLES
+        //var GlobalFilerID = $("#lstFilerID").val();
+        //var GlobalCommitteeName = $("#txtCommitteeName").val();
+        var loanReceivedDataTable = 'undefined';
+        var loanPaymentDataTable = 'undefined';
+        var outstandingLiabilityDataTable = 'undefined';
+        var expenditurePaymentDataTable = 'undefined';
+        var liabilityLoanForgivenDataTable = 'undefined';
+        var originalLiabilityDataTable = 'undefined';
+        var outstandingLiabilityForLiabilityDataTable = 'undefined';
+
+        var GlobalCorrespondingScheduleNTransID = '';
+        var GlobalEntityName = '';
+        var GlobalOrgAmount = '';
+        var GlobalReportYear = ''
+        var GlobalDiscPeriod = '';
+        var GlobalLoan_OR_Payment_OR_Forgiven = '';
+        var GlobalOriginalLoanDate = '';
+
+        // HIDE LOOKUPS
+        $("#divshow").hide();
+        $("#divshowForMobile").hide();
+
+        // HIDE GRIDS AND DISABLE THE RECONCILE BUTTON
+        HideAllGrids();
+        $("#btnReconcile").attr("disabled", true);
+
+        ///////////////////// INITIALIZE VALIDATION FOR LOAN/LIABILITY /////////////////////
+        var validator = $m("#LoanAndLiabilityReconciliationForm").validate({ // initialize the plugin
+            onfocusout: function (element) { $m(element).valid(); },
+            rules: {
+                //lstLoanLiability: {
+                //    required: true
+                //}
+            },
+            messages: {
+                //lstLoanLiability: {
+                //    required: "Loan or Liability is required"
+                //}
+            },
+            invalidHandler: function (form, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    validator.errorList[0].element.focus();
+                }
+            },
+            errorPlacement: function (error, element) {
+                var name = $m(element).attr("name");
+                error.appendTo($m("#" + name + "_validate"));
+            },
+        });
+        ////////////////////// END VALIDATION ////////////////////////////
+
+
+
+        ////////////////////// MAIN CODE //////////////////////////
+
+        ////////////////////// HIDE / SHOW FUNCTIONALITY ///////////////////////////////////////
+
+        // SHOW/HIDE
+        $m(".clsbtnCommonShowHide").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                //$m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+            $("#divHideShow").toggle("slow");
+            $("#divhide").hide("slow");
+            $("#divshow").show("slow");
+
+            $("#divhideForMobile").hide("slow");
+            $("#divshowForMobile").show("slow");
+
+            $m(".divGridCSS").css("width", "100%");
+            $m(".dataTables_wrapper").css("width", "96.5%");
+        });
+
+        // HIDE/SHOW
+        $m(".clsbtnCommonHideShow").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                //$m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+            $("#divHideShow").toggle("slow");
+            $("#divhide").show("slow");
+            $("#divshow").hide("slow");
+
+            $("#divhideForMobile").show("slow");
+            $("#divshowForMobile").hide("slow");
+
+            $m(".divGridCSS").css("width", "85%");
+            $m(".dataTables_wrapper").css("width", "96%");
+        });
+
+        $("#btnShowHide").click(function () {
+            if ($("#divShowHide").is(":hidden")) {
+                $("#divMainNew").removeClass("mainDivNew");
+                $("#divMainNew").addClass("mainDiv");
+
+            } else {
+                $("#divMainNew").removeClass("mainDiv");
+                $("#divMainNew").addClass("mainDivNew");
+            }
+        });
+
+        //////////////////// MAIN FORM COMMON 'APPLY/SEARCH' BUTTON CLICK ////////////
+        $m(".clsCommonSearch").bind('click', function (e) {
+            GlobalLoan_OR_Payment_OR_Forgiven = '';
+            // VALIDATE THE FORM
+            if ($m("#LoanAndLiabilityReconciliationForm").valid())
+                if (ReconcileMode == "LOAN") {//LOAN CASE
+                    // CALL THE FUNCTIONS TO LOAD THE GRIDS
+                    GlobalOriginalLoanDate = '';
+                    DisplayLoanReceivedGrid();
+                    DisplayLoanPaymentGrid();
+                    DisplayOutstandingLiabilityGrid();
+                    $m('#divOutstandingLiabilityGrid').hide();
+                    $m('#outstandingLiabilityHeader').hide();
+                    DisplayLoanLiabilityForgivenGrid();
+
+                    // REDRAW ALL THE GRIDS SO THEY DON'T SCROLL OFF THE SCREEN
+                    loanReceivedDataTable.search('').columns().search('').draw();
+                    loanReceivedDataTable.responsive.recalc();
+
+                    loanPaymentDataTable.search('').columns().search('').draw();
+                    loanPaymentDataTable.responsive.recalc();
+
+                    outstandingLiabilityDataTable.search('').columns().search('').draw();
+                    outstandingLiabilityDataTable.responsive.recalc();
+
+                    liabilityLoanForgivenDataTable.search('').columns().search('').draw();
+                    liabilityLoanForgivenDataTable.responsive.recalc();
+                }
+                else if (ReconcileMode == "LIABILITY") {//LIABILITY CASE
+                    // CALL THE FUNCTIONS TO LOAD THE GRIDS
+                    DisplayOriginalLiabilityGrid();
+                    DisplayExpenditurePaymentGrid();
+                    DisplayOutstandingLiabilityForLiabilityGrid();
+                    DisplayLoanLiabilityForgivenGrid();
+
+                    // REDRAW ALL THE GRIDS SO THEY DON'T SCROLL OFF THE SCREEN
+
+                    originalLiabilityDataTable.search('').columns().search('').draw();
+                    originalLiabilityDataTable.responsive.recalc();
+
+                    expenditurePaymentDataTable.search('').columns().search('').draw();
+                    expenditurePaymentDataTable.responsive.recalc();
+
+                    outstandingLiabilityForLiabilityDataTable.search('').columns().search('').draw();
+                    outstandingLiabilityForLiabilityDataTable.responsive.recalc();
+
+                    liabilityLoanForgivenDataTable.search('').columns().search('').draw();
+                    liabilityLoanForgivenDataTable.responsive.recalc();
+                }
+        });
+
+        ///////////////////// MAIN FORM COMMON 'CLEAR' CLICK EVENT ////////////////////
+        $m(".clsCommonClear").bind('click', function (e) {
+            // CLEAR THE VALIDATION ERRORS, FILTERS, ARRAYS, AND HIDE GRIDS
+            ClearValErrorAndForm("LoanAndLiabilityReconciliationForm");
+            ClearFilters();
+            ClearArrays();
+            HideAllGrids();
+        });
+
+        LoadFilerId();
+        function LoadFilerId() {
+            var optionHtml = "";
+            var selected = "";
+            var options = {};
+            //options.url = "@Url.Content("~/LoanAndLiabilityReconciliation/GetFilerIdData/")";
+            options.url = '@Url.Action("GetFilerIdData", "LoanAndLiabilityReconciliation")';
+            options.type = "POST";
+            options.data = null;
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                $("#txtFilerID").empty();
+                for (var i = 0; i < results.length; i++) {
+                    if (@Session["FilerID"].ToString() == results[i].Text) {
+                        selected = " selected";
+                    }
+                    else {
+                        selected = '';
+                    }
+                    optionHtml += '<option value="' + results[i].Value + '"' + selected + '>' + results[i].Text + '</option>';
+                }
+                $("#txtFilerID").html(optionHtml);
+                sessionStorage.setItem("GlobalFilerID", $("#txtFilerID").val());
+            };
+            options.error = function () {
+                alert('error in load filer');
+            };
+            //Debug alert('about to call it');
+            $.ajax(options);
+        }
+
+        // txtFilerID Change
+        $("#txtFilerID").change(function () {
+            sessionStorage.setItem("Cnty_PageName", "LoanAndLiabilityReconciliation");
+            var url = '@Url.Action("RoleMap", "RoleMap", new { Cnty_FilerID = "__FilerID__" })';
+            window.location.href = url.replace('__FilerID__', $("#txtFilerID option:selected").text());
+        });
+
+
+        //////////////////// MAIN FORM RECONCILE BUTTON CLICK ////////////
+        $m(".btnReconcile").bind('click', function (e) {
+
+            // DEPENDING ON WHAT ReconcileMode WE HAVE, WE CALL ONE
+            // STORED PROCEDURE OR ANOTHER, WITH THE APPROPRIATE VARIABLES
+            // THERE IS ALSO MUCH ADDITIONAL LOGIC IN EACH OF THESE SECTIONS
+            if (ReconcileMode == "LOAN") {
+
+
+                //// FOR LOANS, A SCHEDULE N MUST BE SELECTED
+                if (!($("#divOutstandingLiabilityGrid").is(":visible"))) {                  
+                    ShowDialogBox('EFS', "A schedule N must be selected.", 'Ok', '');
+                    return;
+                }
+
+                // FOR LOANS, A SCHEDULE J AND K CANNOT BE BOTH SUBMITTED
+                if (Schedule_J_TransFilingIDs.length == 1 && Schedule_K_TransFilingIDs.length == 1) {
+                    ShowDialogBox('EFS', "Both Schedule J and K cannot be selected.", 'Ok', '');
+                    return;
+                }
+
+                // SHOW THE SPINNER
+                $("#divLoading").show();
+                // SET UP THE CALL TO THE RECONCILE_LOAN SP
+                var updateOptions = {};
+                //updateOptions.url = "../LoanAndLiabilityReconciliation/Reconcile_Loan";
+                updateOptions.url = '@Url.Action("Reconcile_Loan", "LoanAndLiabilityReconciliation")';
+               
+                updateOptions.type = "POST";
+                updateOptions.data = JSON.stringify({
+                    // PASS THE SCHEDULE I AND THE ARRAYS OF J, N, K
+                    strSchedule_I_TransFilingID: Schedule_I_TransFilingID,
+                    strSchedule_J_TransFilingIDs: Schedule_J_TransFilingIDs,
+                    strSchedule_N_TransFilingIDs: Schedule_N_TransFilingIDs,
+                    strSchedule_K_TransFilingIDs: Schedule_K_TransFilingIDs
+                });
+                updateOptions.dataType = "json";
+                updateOptions.contentType = "application/json";
+
+                // IF THE RECONCILE PROCESS IS SUCCESSFUL WE DO ADDITIONAL PROCESSING
+                updateOptions.success = function (updateResults) {
+                    // FOR THE SUCCESS CASES WE WANT TO REFRESH THE GRIDS AND CLEAR THE ARRAYS
+                    if (updateResults == 'A' || updateResults == 'B' || updateResults == 'D') {
+                        //$m('#loanReceivedGrid').DataTable().ajax.reload();
+                        //$m('#loanPaymentGrid').DataTable().ajax.reload();
+                        //$m('#outstandingLiabilityGrid').DataTable().ajax.reload();
+                        //$m('#liabilityLoanForgivenGrid').DataTable().ajax.reload();
+                        ClearArrays();
+
+                        if (GlobalLoan_OR_Payment_OR_Forgiven == 'LOAN') {
+                            $m('#divOutstandingLiabilityGrid').hide();
+                            $m('#outstandingLiabilityHeader').hide();
+
+                            var temp_GlobalCorrespondingScheduleNTransID = GlobalCorrespondingScheduleNTransID;
+
+                            GlobalLoan_OR_Payment_OR_Forgiven = "";
+                            GlobalCorrespondingScheduleNTransID = "";
+
+                            DisplayOutstandingLiabilityGrid();
+
+                            GlobalCorrespondingScheduleNTransID = temp_GlobalCorrespondingScheduleNTransID;
+                            $m('#divLoanPaymentGrid').show();
+                            $m('#loanPaymentGridHeader').show();
+                            $m('#divLiabilityLoanForgivenGrid').show();
+                            $m('#liabilityLoanForgivenHeader').show();
+                            loanPaymentDataTable.search(GlobalEntityName).columns().search('').draw();
+                            liabilityLoanForgivenDataTable.search(GlobalEntityName).columns().search('').draw();
+                        }
+                        else if (GlobalLoan_OR_Payment_OR_Forgiven == 'PAYMENT') {
+                            $m('#divOutstandingLiabilityGrid').hide();
+                            $m('#outstandingLiabilityHeader').hide();
+                            DisplayLoanPaymentGrid();
+                            loanPaymentDataTable.search(GlobalEntityName).columns().search('').draw();
+                            liabilityLoanForgivenDataTable.search(GlobalEntityName).columns().search('').draw();
+                        }
+                        else if (GlobalLoan_OR_Payment_OR_Forgiven == 'FORGIVEN') {
+                            $m('#divOutstandingLiabilityGrid').hide();
+                            $m('#outstandingLiabilityHeader').hide();
+                            DisplayLoanLiabilityForgivenGrid();
+                            loanPaymentDataTable.search(GlobalEntityName).columns().search('').draw();
+                            liabilityLoanForgivenDataTable.search(GlobalEntityName).columns().search('').draw();
+                        }
+
+                        // AND UPDATE THE INTERFACE
+                        $("#checkbox").prop("checked", false);
+                        //$("#btnReconcile").attr("disabled", true);
+
+                            // SET UP THE CALL TO THE CONTROLLER FUNCTION THAT DETERMINES IF
+                            // ALL THE TRANSACTIONS HAVE BEEN RECONCILED
+                            var options = {};
+                            //options.url = "../LoanAndLiabilityReconciliation/AreAllTransactionsReconciled";
+                            options.url = '@Url.Action("AreAllTransactionsReconciled", "LoanAndLiabilityReconciliation")';
+                            options.type = "POST";
+                            options.data = JSON.stringify(
+                                {
+                                });
+                            options.dataType = "json";
+                            options.contentType = "application/json";
+
+                            // IF AreAllTransactionsReconciled IS SUCCESSFUL WE LOOK AT THE RESULT
+                            options.success = function (results) {
+
+                                // IF THE RESULT IS "TRUE" THEN ALL THE TRANSACTIONS HAVE BEEN RECONCILE
+                                // SO UPDATE THE REQUIRED FILER TABLE
+                                if (results == "TRUE") {
+
+                                    // EXECUTE THE CALL TO UPDATE THE REQUIRED FILER TABLE
+                                    $.post('@Url.Action("UpdateRequiredFilerForReconcile", "LoanAndLiabilityReconciliation")' , { 
+                                    }, function (results) {
+                                        // HIDE THE SPINNER
+                                        $("#divLoading").hide();
+
+                                        // IF THIS RETURNS TRUE, DISPLAY CONFIRMATION AND SEND THEM
+                                        // TO THE OTHER PAGE
+                                        if (results == "TRUE") {
+
+                                            // DISPLAY CONFIRMATION MESSAGE
+                                            $m('#modal_dialog').text("All transactions have been reconciled.");
+                                            $m("#modal_dialog").dialog({
+                                                resizable: false,
+                                                width: '400px',
+                                                height: 'auto',
+                                                bgiframe: false,
+                                                modal: true,
+                                                open: function (event, ui) { hideDialogXButton(this); },
+                                                resizable: false,
+                                                position: {
+                                                    my: "center top",
+                                                    at: "center top+300"
+                                                },
+                                                hide: { effect: 'scale', duration: 400 },
+                                                buttons: {
+                                                    "Ok": function () {
+                                                        var urlHomePage = '@Url.Action("ContributionsMonetary", "ContributionsMonetary")'; 
+                                                        window.location.href = urlHomePage;
+                                                    }
+                                                }
+                                            });
+                                            $m("#modal_dialog").dialog("open");
+                                        }
+                                        else
+                                            ShowDialogBox('EFS', "All transactions have been reconciled, but could not update the required filer.", 'Ok', '');
+                                    });
+                                }
+                                // IF NOT ALL TRANSACTIONS HAVE BEEN RECONCILE, DISPLAY A MESSAGE INDICATING
+                                // THE STATUS
+                                else {
+                                    // HIDE THE SPINNER
+                                    $("#divLoading").hide();
+                                    switch (updateResults) {
+                                        case 'A': // SUCCESS CASE
+                                            ShowDialogBox('EFS', "The submitted transactions were reconciled.", 'Ok', '');
+                                            break;
+                                        case 'B': // UPDATES OCCURRED BUT THERE WERE NO PAYMENTS OR FORGIVENS
+                                            ShowDialogBox('EFS', "The Original Schedule N was reconciled.", 'Ok', '');
+                                            DisplayLoanPaymentGrid();
+                                            break;
+                                        case 'D':// UPDATES OCCURRED BUT THERE WERE MISSING CORRESPONDING SCHEDULE Ns
+                                            ShowDialogBox('EFS', "Submitted transactions were reconciled, but there were no submitted Outstanding Loan transactions for one or more submitted Loan Repayment or Loan Forgiven transactions.", 'Ok', '');
+                                            break;
+                                    }
+                                }
+                            };
+                            // IF THE AreAllTransactionsReconciled CONTROLLER FUNCTION HAS AN ERROR
+                        options.error = function () {
+                                // HIDE THE SPINNER
+                            $("#divLoading").hide();
+                                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                            };
+                            $.ajax(options);
+                    }
+                    // DISPLAY MESSAGES FOR THE CASES WHERE THE RECONCILE PROCESS WAS UNABLE TO RECONCILE
+                    else {
+                        // HIDE THE SPINNER
+                        $("#divLoading").hide();
+                        switch (updateResults) {
+                            case 'F':// NO UPDATES OCCURRED BECAUSE THERE WERE MISSING CORRESPONDING SCHEDULES
+                                ShowDialogBox('EFS', "Submitted transactions were NOT reconciled because there were no corresponding Outstanding Loan transactions submitted for any of the submitted Loan Repayment or Loan Forgiven transactions.", 'Ok', '');
+                                break;
+                            case 'H':// NO UPDATES OCCURRED BECAUSE THERE WERE NO PAYMENTS OR FORGIVENS SELECTED
+                                ShowDialogBox('EFS', "Submitted transactions were NOT reconciled because there were no Loan Repayment or Loan Forgiven transactions submitted.", 'Ok', '');
+                                break;
+                            default:
+                                ShowDialogBox('EFS', "Unknown error in reconcile process.", 'Ok', '');
+                                break;
+                        }
+                    }
+                }
+                // IF THE RECONCILE SP THROWS AN ERROR
+                updateOptions.error = function () {
+                    // HIDE THE SPINNER
+                    $("#divLoading").hide();
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                }
+                // EXECUTE THE RECONCILE SP
+                $.ajax(updateOptions);
+            }
+            else if (ReconcileMode == "LIABILITY") {
+
+                // FOR LIABILITIES, A SCHEDULE N MUST BE SELECTED
+                if (Schedule_N_TransFilingIDs.length != 1) {
+                    ShowDialogBox('EFS', "A schedule N must be selected.", 'Ok', '');
+                    return;
+                }
+
+                // FOR LIABILITIES, A SCHEDULE J AND K CANNOT BE BOTH SUBMITTED
+                if (Schedule_F_TransFilingIDs.length == 1 && Schedule_K_TransFilingIDs.length == 1) {
+                    ShowDialogBox('EFS', "Both Schedule F and K cannot be selected.", 'Ok', '');
+                    return;
+                }
+
+                // FOR LIABILITIES, A SCHEDULE J OR K MUST BE SUBMITTED
+                if (Schedule_F_TransFilingIDs.length == 0 && Schedule_K_TransFilingIDs.length == 0) {
+                    ShowDialogBox('EFS', "Either a Schedule F or K must be selected.", 'Ok', '');
+                    return;
+                }
+
+                // SHOW THE SPINNER
+                $("#divLoading").show();
+
+                // SET UP THE CALL TO THE RECONCILE_LOAN SP
+                var updateOptions = {};
+                //updateOptions.url = "../LoanAndLiabilityReconciliation/Reconcile_Liability";
+                updateOptions.url = '@Url.Action("Reconcile_Liability", "LoanAndLiabilityReconciliation")';
+                updateOptions.type = "POST";
+                updateOptions.data = JSON.stringify({
+                    // PASS THE ORIGINAL LIABILITY AND THE ARRAYS OF F, N, K
+                    Schedule_N_OriginalLiability_TransFilingID: Schedule_N_OriginalLiability_TransFilingID,
+                    strSchedule_F_TransFilingIDs: Schedule_F_TransFilingIDs,
+                    strSchedule_N_TransFilingIDs: Schedule_N_TransFilingIDs,
+                    strSchedule_K_TransFilingIDs: Schedule_K_TransFilingIDs
+                });
+                updateOptions.dataType = "json";
+                updateOptions.contentType = "application/json";
+
+                // IF THE RECONCILE PROCESS IS SUCCESSFUL WE DO ADDITIONAL PROCESSING
+                updateOptions.success = function (updateResults) {
+
+                    // FOR THE SUCCESS CASES WE WANT TO REFRESH THE GRIDS AND CLEAR THE ARRAYS
+                    if (updateResults == 'A' || updateResults == 'B' || updateResults == 'D') {
+                        $m('#originalLiabilityGrid').DataTable().ajax.reload();
+                        $m('#expenditurePaymentGrid').DataTable().ajax.reload();
+                        $m('#outstandingLiabilityForLiabilityGrid').DataTable().ajax.reload();
+                        $m('#liabilityLoanForgivenGrid').DataTable().ajax.reload();
+                        ClearArrays();
+
+                        // AND UPDATE THE INTERFACE
+                        $("#checkbox").prop("checked", false);
+                        $("#btnReconcile").attr("disabled", true);
+
+		                // SET UP THE CALL TO THE CONTROLLER FUNCTION THAT DETERMINES IF
+		                // ALL THE TRANSACTIONS HAVE BEEN RECONCILED
+                        var options = {};
+                        //options.url = "../LoanAndLiabilityReconciliation/AreAllTransactionsReconciled";
+                        options.url = '@Url.Action("AreAllTransactionsReconciled", "LoanAndLiabilityReconciliation")';
+                        options.type = "POST";
+                        options.data = JSON.stringify(
+                            {
+                            });
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        // IF AreAllTransactionsReconciled IS SUCCESSFUL WE LOOK AT THE RESULT
+                        options.success = function (results) {
+
+                            // IF THE RESULT IS "TRUE" THEN ALL THE TRANSACTIONS HAVE BEEN RECONCILE
+			                // SO UPDATE THE REQUIRED FILER TABLE
+                            if (results == "TRUE") {
+
+				                   // EXECUTE THE CALL TO UPDATE THE REQUIRED FILER TABLE
+                                   @*$.post("@Url.Content("../LoanAndLiabilityReconciliation/UpdateRequiredFilerForReconcile")", {*@
+                                   $.post('@Url.Action("UpdateRequiredFilerForReconcile", "LoanAndLiabilityReconciliation")' , { 
+                                   }, function (results) {
+                                       // HIDE THE SPINNER
+                                       $("#divLoading").hide();
+
+                                       // IF THIS RETURNS TRUE, DISPLAY CONFIRMATION AND SEND THEM
+					                   // TO THE OTHER PAGE
+                                       if (results == "TRUE") {
+
+                                        // DISPLAY CONFIRMATION MESSAGE
+                                        $m('#modal_dialog').text("All transactions have been reconciled.");
+                                        $m("#modal_dialog").dialog({
+                                            resizable: false,
+                                            width: '400px',
+                                            height: 'auto',
+                                            bgiframe: false,
+                                            modal: true,
+                                            open: function (event, ui) { hideDialogXButton(this); },
+                                            resizable: false,
+                                            position: {
+                                                my: "center top",
+                                                at: "center top+300"
+                                            },
+                                            hide: { effect: 'scale', duration: 400 },
+                                            buttons: {
+                                                "Ok": function () {
+                                                    $m("#ulMain").show();
+                                                    @*var urlHomePage = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";*@
+                                                    var urlHomePage = '@Url.Action("ContributionsMonetary", "ContributionsMonetary")'; 
+                                                    window.location.href = urlHomePage;
+                                                }
+                                            }
+                                        });
+                                        $m("#modal_dialog").dialog("open");
+                                       }
+                                       else
+                                           ShowDialogBox('EFS', "All transactions have been reconciled, but could not update the required filer.", 'Ok', '');
+                                    });
+                            }
+                            // IF NOT ALL TRANSACTIONS HAVE BEEN RECONCILE, DISPLAY A MESSAGE INDICATING
+                            // THE STATUS
+                            else {
+                                // HIDE THE SPINNER
+                                $("#divLoading").hide();
+                                switch (updateResults) {
+                                    case 'A': // SUCCESS CASE
+                                        ShowDialogBox('EFS', "The submitted transactions were reconciled.", 'Ok', '');
+                                        break;
+                                    case 'B': // UPDATES OCCURRED BUT THERE WERE NO PAYMENTS OR FORGIVENS
+                                        ShowDialogBox('EFS', "Submitted transactions were reconciled, but there were no Expenditures or Loan Forgiven transactions submitted.", 'Ok', '');
+                                        break;
+                                    case 'D':// UPDATES OCCURRED BUT THERE WERE MISSING CORRESPONDING SCHEDULE Ns
+                                        ShowDialogBox('EFS', "Submitted transactions were reconciled, but there were no submitted Outstanding Loan transactions for one or more submitted Expenditures or Loan Forgiven transactions.", 'Ok', '');
+                                        break;
+                                }
+                            }
+                        };
+                        // IF THE AreAllTransactionsReconciled CONTROLLER FUNCTION HAS AN ERROR
+                        options.error = function () {
+                            // HIDE THE SPINNER
+                            $("#divLoading").hide();
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        };
+                        $.ajax(options);
+                    }
+                    // DISPLAY MESSAGES FOR THE CASES WHERE THE RECONCILE PROCESS WAS UNABLE TO RECONCILE
+                    else {
+                        // HIDE THE SPINNER
+                        $("#divLoading").hide();
+                        switch (updateResults) {
+                            case 'F':// NO UPDATES OCCURRED BECAUSE THERE WERE MISSING CORRESPONDING SCHEDULES
+                                ShowDialogBox('EFS', "Submitted transactions were NOT reconciled because there were no corresponding Outstanding Loan transactions submitted for any of the submitted Expenditures or Loan Forgiven transactions.", 'Ok', '');
+                                break;
+                            case 'H':// NO UPDATES OCCURRED BECAUSE THERE WERE NO PAYMENTS OR FORGIVENS SELECTED
+                                ShowDialogBox('EFS', "Submitted transactions were NOT reconciled because there were no Expenditures or Loan Forgiven transactions submitted.", 'Ok', '');
+                                break;
+                            default:
+                                ShowDialogBox('EFS', "Unknown error in reconcile process.", 'Ok', '');
+                                break;
+                        }
+                    }
+                }
+                updateOptions.error = function () {
+                    // HIDE THE SPINNER
+                    $("#divLoading").hide();
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                }
+                $.ajax(updateOptions);
+            }
+        });
+
+
+        //////////////////// MAIN FORM LOAN RECEIVED (SCHEDULE I) RADIO CLICK ////////////
+        $('#loanReceivedGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID AND ASSIGN IT TO SCHEDULE_I_TRANSFILINGID
+            var $row = $(this).closest('tr');
+            var data = loanReceivedDataTable.row($row).data();
+            Schedule_I_TransFilingID = data[0];
+
+            // UPDATE INTERFACE
+            loanReceivedDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+            $("#btnReconcile").attr("disabled", false);
+
+            GlobalOriginalLoanDate = data[5];
+            GlobalEntityName = data[6];
+            GlobalOrgAmount = data[7];
+            GlobalReportYear = data[8];
+            GlobalDiscPeriod = data[12];
+            var options = {};
+            options.url = '@Url.Action("GetOriginalScheduleNTransNumber", "LoanAndLiabilityReconciliation")';
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    strEntityName: GlobalEntityName,
+                    strOrgAmount: GlobalOrgAmount,
+                    strElectionYear: GlobalReportYear,
+                    strDisclosurePeriod: GlobalDiscPeriod,
+                    strTransactionDate: GlobalOriginalLoanDate
+	        });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                if (results.length > 0 && results != 'X') {
+                    GlobalCorrespondingScheduleNTransID = results;
+                    GlobalLoan_OR_Payment_OR_Forgiven = 'LOAN';
+                    DisplayOutstandingLiabilityGrid();
+                    $m('#divOutstandingLiabilityGrid').show();
+                    $m('#outstandingLiabilityHeader').show();
+                    $m('#divLoanPaymentGrid').hide();
+                    $m('#loanPaymentGridHeader').hide();
+                    $m('#divLiabilityLoanForgivenGrid').hide();
+                    $m('#liabilityLoanForgivenHeader').hide();
+                }
+                else if (results != 'X') {
+                    DisplayLoanPaymentGrid();
+                    $m('#divOutstandingLiabilityGrid').hide();
+                    $m('#outstandingLiabilityHeader').hide();
+                    $m('#divLoanPaymentGrid').show();
+                    $m('#loanPaymentGridHeader').show();
+                    $m('#divLiabilityLoanForgivenGrid').show();
+                    $m('#liabilityLoanForgivenHeader').show();
+                    loanPaymentDataTable.search(GlobalEntityName).columns().search('').draw();
+                    liabilityLoanForgivenDataTable.search(GlobalEntityName).columns().search('').draw();
+                }
+                else {
+                    $m('#divOutstandingLiabilityGrid').hide();
+                    $m('#outstandingLiabilityHeader').hide();
+                    $m('#divLoanPaymentGrid').hide();
+                    $m('#loanPaymentGridHeader').hide();
+                    $m('#divLiabilityLoanForgivenGrid').hide();
+                    $m('#liabilityLoanForgivenHeader').hide();
+                    ShowDialogBox('EFS', 'There was no Original Schedule N filed.', 'Ok', '');
+                }
+            };            
+            options.error = function () {
+                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+            };
+            $.ajax(options);
+
+        });
+
+        //////////////////// MAIN FORM LOAN PAYMENTS CHECKBOX CLICK ////////////
+        $('#loanPaymentGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID
+            var $row = $(this).closest('tr');
+            var data = loanPaymentDataTable.row($row).data();
+            var filingTransID = data[0];
+            var transactionDate = data[5];// added 4/30/2021
+            var PaymentAmount = data[7];
+            GlobalReportYear = data[9];
+            GlobalDiscPeriod = data[13];
+
+            ////////////////////////////////////////////////////////
+            var options = {};
+            options.url = '@Url.Action("GetCorrespondingScheduleNTransNumber", "LoanAndLiabilityReconciliation")';
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    strEntityName: GlobalEntityName,
+                    strPaymentAmount: PaymentAmount,
+                    strElectionYear: GlobalReportYear,
+                    strDisclosurePeriod: GlobalDiscPeriod,
+                    strOrgAmount: GlobalOrgAmount,
+                    strTransactionDate: transactionDate
+
+	        });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                if (results != '') {
+                    GlobalCorrespondingScheduleNTransID = results;
+                    GlobalLoan_OR_Payment_OR_Forgiven = 'PAYMENT';
+                    DisplayOutstandingLiabilityGrid();
+                    $m('#divOutstandingLiabilityGrid').show();
+                    $m('#outstandingLiabilityHeader').show();
+                    //$m('#divLoanPaymentGrid').hide();
+                    //$m('#loanPaymentGridHeader').hide();
+                    //$m('#divLiabilityLoanForgivenGrid').hide();
+                    //$m('#liabilityLoanForgivenHeader').hide();
+                }
+                else {
+                    $m('#divOutstandingLiabilityGrid').hide();
+                    $m('#outstandingLiabilityHeader').hide();
+                    //$m('#divLoanPaymentGrid').show();
+                    //$m('#loanPaymentGridHeader').show();
+                    //$m('#divLiabilityLoanForgivenGrid').show();
+                    //$m('#liabilityLoanForgivenHeader').show();
+                    //loanPaymentDataTable.search(EntityName).columns().search('').draw();
+                    //liabilityLoanForgivenDataTable.search(EntityName).columns().search('').draw();
+                }
+            };            
+            options.error = function () {
+                ShowDialogBox('Candidate Management', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+            };
+            $.ajax(options);
+            ////////////////////////////////////////////////////////
+
+
+            // CLEAR THE SCHEDULE K
+            Schedule_K_TransFilingIDs = [];            
+            // MAINTAIN THE ARRAY THAT CONTAINS THE SCHEDULE Js
+            TrackFilingIDs(filingTransID, Schedule_J_TransFilingIDs, false); 
+
+            // UPDATE INTERFACE
+            liabilityLoanForgivenDataTable.$('tr.selected').removeClass('selected');
+            loanPaymentDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+
+        });
+
+        //////////////////// MAIN FORM OUTSTANDING LIABILITY RADIO CLICK (Schedule N) ////////////        
+        //$('#outstandingLiabilityGrid tbody').on('click', 'input[type="radio"]', function (e) {
+        $('#outstandingLiabilityGrid tbody').on('click', 'input[type="checkbox"]', function (e) {
+            // GET THE DATA AND TRANSID
+            var $row = $(this).closest('tr');
+            var data = outstandingLiabilityDataTable.row($row).data();
+            var filingTransID = data[0];
+            // MAINTAIN THE ARRAY THAT CONTAINS THE SCHEDULE Ns
+            TrackFilingIDsForSchedN(filingTransID, Schedule_N_TransFilingIDs, this.checked);
+            // UPDATE INTERFACE
+            outstandingLiabilityDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+        });
+
+        //////////////////// MAIN FORM ORIGINAL LIABILITY RADIO CLICK ////////////
+        $('#originalLiabilityGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID AND ASSIGN IT TO Schedule_N_OriginalLiability_TransFilingID
+            var $row = $(this).closest('tr');
+            var data = originalLiabilityDataTable.row($row).data();
+            Schedule_N_OriginalLiability_TransFilingID = data[0];
+
+            // UPDATE THE INTERFACE
+            originalLiabilityDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+            $("#btnReconcile").attr("disabled", false);
+        });
+
+        //////////////////// MAIN FORM EXPENDITURE PAYMENT CHECKBOX CLICK ////////////
+        $('#expenditurePaymentGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID
+            var $row = $(this).closest('tr');
+            var data = expenditurePaymentDataTable.row($row).data();
+            var filingTransID = data[0];
+
+            // CLEAR THE SCHEDULE K
+            Schedule_K_TransFilingIDs = []; 
+            // MAINTAIN THE ARRAY THAT CONTAINS THE SCHEDULE Ns
+            TrackFilingIDs(filingTransID, Schedule_F_TransFilingIDs);
+
+            // UPDATE INTERFACE
+            liabilityLoanForgivenDataTable.$('tr.selected').removeClass('selected');
+            expenditurePaymentDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+        });
+
+        //////////////////// MAIN FORM OUTSTANDING LIABILITY FOR LIABILITY CHECKBOX CLICK ////////////       
+        $('#outstandingLiabilityForLiabilityGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID
+            var $row = $(this).closest('tr');
+            var data = outstandingLiabilityForLiabilityDataTable.row($row).data();
+            var filingTransID = data[0];
+
+            // MAINTAIN THE ARRAY THAT CONTAINS THE SCHEDULE Ns
+            TrackFilingIDs(filingTransID, Schedule_N_TransFilingIDs);
+
+            // UPDATE INTERFACE
+            outstandingLiabilityForLiabilityDataTable.$('tr.selected').removeClass('selected');
+            $row.addClass('selected');
+        });
+
+        //////////////////// MAIN FORM LIABILITY LOAN FORGIVEN CHECKBOX CLICK ////////////
+        $('#liabilityLoanForgivenGrid tbody').on('click', 'input[type="radio"]', function (e) {
+            // GET THE DATA AND TRANSID
+            var $row = $(this).closest('tr');
+            var data = liabilityLoanForgivenDataTable.row($row).data();
+            var filingTransID = data[0];
+            var transactionDate = data[5];
+
+
+            var PaymentAmount = data[7];
+            GlobalReportYear = data[9];
+            GlobalDiscPeriod = data[13];
+
+            var options = {};
+            options.url = '@Url.Action("GetCorrespondingScheduleNTransNumber", "LoanAndLiabilityReconciliation")';
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    strEntityName: GlobalEntityName,
+                    strPaymentAmount: PaymentAmount,
+                    strElectionYear: GlobalReportYear,
+                    strDisclosurePeriod: GlobalDiscPeriod,
+                    strOrgAmount: GlobalOrgAmount,
+                    strTransactionDate: transactionDate
+	        });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                if (results != '') {
+                    GlobalCorrespondingScheduleNTransID = results;
+                    GlobalLoan_OR_Payment_OR_Forgiven = 'FORGIVEN';
+                    DisplayOutstandingLiabilityGrid();
+                    $m('#divOutstandingLiabilityGrid').show();
+                    $m('#outstandingLiabilityHeader').show();
+                    //$m('#divLoanPaymentGrid').hide();
+                    //$m('#loanPaymentGridHeader').hide();
+                    //$m('#divLiabilityLoanForgivenGrid').hide();
+                    //$m('#liabilityLoanForgivenHeader').hide();
+                }
+                else {
+                    $m('#divOutstandingLiabilityGrid').hide();
+                    $m('#outstandingLiabilityHeader').hide();
+                    //$m('#divLoanPaymentGrid').show();
+                    //$m('#loanPaymentGridHeader').show();
+                    //$m('#divLiabilityLoanForgivenGrid').show();
+                    //$m('#liabilityLoanForgivenHeader').show();
+                    //loanPaymentDataTable.search(EntityName).columns().search('').draw();
+                    //liabilityLoanForgivenDataTable.search(EntityName).columns().search('').draw();
+                }
+            };            
+            options.error = function () {
+                ShowDialogBox('Candidate Management', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+            };
+            $.ajax(options);
+            ////////////////////////////////////////////////////////
+
+
+            // CLEAR THE SCHEDULE J AND F
+            Schedule_J_TransFilingIDs = [];
+            strSchedule_F_TransFilingIDs = [];
+            // MAINTAIN THE ARRAY THAT CONTAINS THE SCHEDULE Ks
+            TrackFilingIDs(filingTransID, Schedule_K_TransFilingIDs);
+            
+            // UPDATE INTERFACE
+            if (loanPaymentDataTable != 'undefined')
+                loanPaymentDataTable.$('tr.selected').removeClass('selected');
+
+            if (expenditurePaymentDataTable != 'undefined')
+                expenditurePaymentDataTable.$('tr.selected').removeClass('selected');
+
+            if (liabilityLoanForgivenDataTable != 'undefined')
+                liabilityLoanForgivenDataTable.$('tr.selected').removeClass('selected');
+
+            $row.addClass('selected');
+        });
+
+        ///////////////////// MAIN FORM LOAN/LIABILITY DROPDOWN CHANGE EVENT //////////////
+        //$("#lstLoanLiability").change(function () {
+        //    // ALWAYS HIDE THE GRIDS AND CLEAR THE ARRAYS
+        //    HideAllGrids();
+        //    ClearArrays();
+
+        //    // ASSIGN THE TEXT TO GLOBAL VARIABLE RECONCILE MODE
+        //    ReconcileMode = $("#lstLoanLiability option:selected").text().toUpperCase();
+        //});
+
+        ///////////////////////// UTILITY FUNCTIONS //////////////////////////////
+
+        // THIS IS THE SCHEDULE I ON THE LOAN PAGE
+        function DisplayLoanReceivedGrid() {
+            loanReceivedDataTable = $m('#loanReceivedGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#loanReceivedGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" tabindex="0" id="btnradioSchedI_' + uniqueID + '" class="btnRadioClassSchedI" name="CommandSchedI" value="" aria-label="Load loans related for Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5]  +'"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetLoanReceivedGridData/")",*@
+                        "url": '@Url.Action("GetLoanReceivedGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[8, "asc"]]
+            });
+            $m('#loanReceivedGrid').DataTable().ajax.reload();
+            loanReceivedDataTable.search('').columns().search('').draw();
+            loanReceivedDataTable.responsive.recalc();
+
+            $m('.divGridLoanReceivedJQueryClassSelector').show();
+            $m('#loanReceivedGridHeader').show();
+        }
+
+        // THIS IS THE SCHEDULE J ON THE LOAN PAGE
+        function DisplayLoanPaymentGrid() {            
+            // MAKE THE AJAX CALL
+            loanPaymentDataTable = $m('#loanPaymentGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true, "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#loanPaymentGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" id="btnradioSchedJ_' + uniqueID + '" class="btnRadioClassSchedJ" name="Command" value="" aria-label="Load loans related for Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5] + '"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetLoanPaymentGridData/")",*@
+                        "url": '@Url.Action("GetLoanPaymentGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                            strCorrespondingSchedN: GlobalCorrespondingScheduleNTransID,
+                            strOrgLoanDate: GlobalOriginalLoanDate
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[9, "asc"]]
+            });
+            $m('#loanPaymentGrid').DataTable().ajax.reload();
+            loanPaymentDataTable.search('').columns().search('').draw();
+            loanPaymentDataTable.responsive.recalc();
+
+            //$m('#divLoanPaymentGrid').show();
+            //$m('#loanPaymentGridHeader').show();
+        }
+
+        // THIS IS THE SCHEDULE N ON THE LOAN PAGE
+        // WE CALL CONTROLLER METHOD GetOutstandingLiabilities WITH PARAMETER OF 0
+        // SO WE GET ALL THE RECORDS BACK
+        function DisplayOutstandingLiabilityGrid() {
+            // MAKE THE AJAX CALL  
+            outstandingLiabilityDataTable = $m('#outstandingLiabilityGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true, "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#outstandingLiabilityGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="checkbox" id="btnCheckSchedN_' + uniqueID + '" aria-label="Select Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5] + ' for Reconciliation" checked />');
+                      return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetOutstandingLiabilityGridData/")",*@
+                      
+                        "url": '@Url.Action("GetOutstandingLiabilityGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                            dataToReturn: 0, // CALL WITH 0 TO GET ALL RECORDS BACK
+                            strOriginalScheduleNTransID: GlobalCorrespondingScheduleNTransID,
+                            strLoan_OR_Payment: GlobalLoan_OR_Payment_OR_Forgiven
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[9, "asc"]]
+            });
+            $m('#outstandingLiabilityGrid').DataTable().ajax.reload();
+            outstandingLiabilityDataTable.search('').columns().search('').draw();
+            outstandingLiabilityDataTable.responsive.recalc();
+
+            //$m('#divOutstandingLiabilityGrid').show();
+            //$m('#outstandingLiabilityHeader').show();
+        }
+
+        // THIS IS SCHEDULE F ON THE LIABILITY PAGE
+        function DisplayExpenditurePaymentGrid() {
+            // MAKE THE AJAX CALL
+            expenditurePaymentDataTable = $m('#expenditurePaymentGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#expenditurePaymentGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" id="btnradioSchedF_' + uniqueID + '" class="btnRadioClassSchedF" name="Command" value="" aria-label="Load loans related for Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5] + '"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetExpenditurePaymentGridData/")",*@
+                        "url": '@Url.Action("GetExpenditurePaymentGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[6, "desc"]]
+            });
+            $m('#expenditurePaymentGrid').DataTable().ajax.reload();
+            expenditurePaymentDataTable.search('').columns().search('').draw();
+            expenditurePaymentDataTable.responsive.recalc();
+
+            //$m('#divExpenditurePaymentGrid').show();
+            //$m('#expenditurePaymentHeader').show();
+        }
+
+        function DisplayLoanLiabilityForgivenGrid() {
+            // MAKE THE AJAX CALL
+            liabilityLoanForgivenDataTable = $m('#liabilityLoanForgivenGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#liabilityLoanForgivenGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" id="btnradioSchedK_' + uniqueID + '" class="btnRadioClassSchedK" name="Command" value="" title="Load loans related for Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5] + '"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetLiabilityLoanForgivenGridData/")",*@
+                        "url": '@Url.Action("GetLiabilityLoanForgivenGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {                           
+                            strReconcileMode: ReconcileMode
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[9, "asc"]]
+            });
+            $m('#liabilityLoanForgivenGrid').DataTable().ajax.reload();
+            liabilityLoanForgivenDataTable.search('').columns().search('').draw();
+            liabilityLoanForgivenDataTable.responsive.recalc();
+
+            //$m('#divLiabilityLoanForgivenGrid').show();
+            //$m('#liabilityLoanForgivenHeader').show();
+        }
+
+       
+        // THIS IS THE ORIGINAL_LIABILITY (SCHEDULE N) ON THE LIABILITY PAGE
+        // WE CALL CONTROLLER METHOD GetOutstandingLiabilities WITH PARAMETER OF 1
+        // SO WE ONLY GET THE RECORDS BACK WHERE ORG_AMT = OWED_AMT
+        function DisplayOriginalLiabilityGrid() {
+            // MAKE THE AJAX CALL
+            originalLiabilityDataTable = $m('#originalLiabilityGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#originalLiabilityGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" id="btnradio_' + uniqueID + '" class="btnRadioClass" name="CommandSchedNOrig" value="" title="Load loans related for Row ' + iDisplayIndex + ' entity ' + aaData[6] + ' date ' + aaData[5] + '"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetOutstandingLiabilityGridData/")",*@
+                        "url": '@Url.Action("GetOutstandingLiabilityGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                            dataToReturn: 1 // PASS 1 TO GET BACK ONLY WHERE ORG_AMT = OWED_AMT
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[6, "desc"]]
+            });
+            $m('#originalLiabilityGrid').DataTable().ajax.reload();
+            originalLiabilityDataTable.search('').columns().search('').draw();
+            originalLiabilityDataTable.responsive.recalc();
+
+            //$m('#divOriginalLiabilityGrid').show();
+            //$m('#originalLiabilityHeader').show();
+        }
+
+        // THIS IS OUTSTANDING_LIABILITIES (SCHEDULE N) ON THE LIABILITY PAGE
+        // WE CALL CONTROLLER METHOD GetOutstandingLiabilities WITH PARAMETER OF 2
+        // SO WE ONLY GET THE RECORDS BACK WHERE ORG_AMT <> OWED_AMT
+        function DisplayOutstandingLiabilityForLiabilityGrid() {
+            // MAKE THE AJAX CALL
+            outstandingLiabilityForLiabilityDataTable = $m('#outstandingLiabilityForLiabilityGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#outstandingLiabilityForLiabilityGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    $m('td:eq(1)', nRow).html('<input type="radio" id="btnradio_' + uniqueID + '" class="btnRadioClass" name="CommandSchedNLiab" value="" title="Load loans related for Row ' + ' entity ' + aaData[6] + ' date ' + aaData[5] + '"/>');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        @*"url": "@Url.Content("~/LoanAndLiabilityReconciliation/GetOutstandingLiabilityGridData/")",*@
+                        "url": '@Url.Action("GetOutstandingLiabilityGridData", "LoanAndLiabilityReconciliation")',
+                        "data": {
+                            dataToReturn: 2 // PASS 2 TO GET BACK ONLY WHERE ORG_AMT <> OWED_AMT
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                "order": [[6, "desc"]]
+            });
+            $m('#outstandingLiabilityForLiabilityGrid').DataTable().ajax.reload();
+            outstandingLiabilityForLiabilityDataTable.search('').columns().search('').draw();
+            outstandingLiabilityForLiabilityDataTable.responsive.recalc();
+
+            //$m('#divOutstandingLiabilityForLiabilityGrid').show();
+            //$m('#outstandingLiabilityForLiabilityHeader').show();
+        }
+
+        function CallHelp() {
+            var winX = (document.all) ? window.screenLeft : window.screenX;
+            var winY = (document.all) ? window.screenTop : window.screenY;
+            var newWindowWidth = 800;
+            var newWindowHeight = 500;
+            var currentWindowWidth = $(window).width();
+            var currentWindowHeight = $(window).height();
+            var newWindowX = (winX + (currentWindowWidth / 2)) - (newWindowWidth / 2);
+            var newWindowY = (winY + (currentWindowHeight / 2)) - (newWindowHeight / 2);
+            window.open("", "Help", "width=" + newWindowWidth + ",height=" + newWindowHeight + ",top=" + newWindowY + ",left=" + newWindowX);
+        }
+
+        // FUNCTIONS CLEARS THE ERRORS FROM THE FORM
+        function ClearValErrorAndForm(formId) {
+            var validator = $m('#' + formId).validate();
+            validator.resetForm();  // clear out the validation errors
+            $m('#' + formId)[0].reset();   // clear out the form data
+        }
+
+        function GetTodayDate() {
+            var tdate = new Date();
+            var dd = tdate.getDate(); //yields day
+            var MM = tdate.getMonth(); //yields month
+            var yyyy = tdate.getFullYear(); //yields year
+            var result = (MM + 1) + "-" + dd + "-" + yyyy;
+            return result;
+        }
+
+        // FUNCTION CLEARS FILTERS AND SETS FOCUS BACK ON REPORTYEAR
+        function ClearFilters() {
+            $('#lstLoanLiability').prop('selectedIndex', 0);
+        }
+
+        // FUNCTION HIDS THE GRIDS AND DISABLES RECONCILE BUTTON
+        function HideAllGrids() {
+            $("#loanReceivedGridHeader").hide();
+            $(".divGridLoanReceivedJQueryClassSelector").hide();
+
+            $("#loanPaymentGridHeader").hide();
+            $("#divLoanPaymentGrid").hide();
+
+            $("#outstandingLiabilityHeader").hide();
+            $("#divOutstandingLiabilityGrid").hide();
+
+            $("#expenditurePaymentHeader").hide();
+            $("#divExpenditurePaymentGrid").hide();
+
+            $("#liabilityLoanForgivenHeader").hide();
+            $("#divLiabilityLoanForgivenGrid").hide();
+
+            $m('#divOriginalLiabilityGrid').hide();
+            $m('#originalLiabilityHeader').hide();
+
+            $m('#divOutstandingLiabilityForLiabilityGrid').hide();
+            $m('#outstandingLiabilityForLiabilityHeader').hide();
+
+            // ALWAYS DISABLE THE RECONCILE BUTTON AND SET MODE TO ""
+            $("#btnReconcile").attr("disabled", true);
+        }
+
+        // FUNCTION RECEIVES 3 PARAMETERS
+        // ISCHECKED IS BOOLEAN AND INDICATES IF THE ITEM IS CHECKED OR UNCHECKED
+        // FILINGTRANSID IS THE TRANSID THAT WILL EITHER BE ADDED TO OR REMOVED FROM THE ARRAY
+        // THEARRAY CONTAINS THE TRANSIDS FOR A PARTICULAR GRID
+        function TrackFilingIDs(filingTransID, theArray) {
+            // BELOW 3 LINES ADDED on 10/7 TO ALLOW ONLY ONE ITEM IN theArray
+            theArray.splice(0, theArray.length)
+            theArray.push(filingTransID);
+            return;
+        }
+
+        function TrackFilingIDsForSchedN(filingTransID, theArray, isChecked) {
+            // DETERMINE WHETHER FILINGTRANSID IS IN THE LIST
+            var index = theArray.indexOf(filingTransID);
+
+            // IF CHECKBOX IS CHECKED AND FILINGTRANSID IS NOT IN THE ARRAY, ADD IT
+            if (isChecked && index < 0) {
+                theArray.push(filingTransID);
+            }
+            // OTHERWISE, IF CHECKBOX IS NOT CHECKED AND FILINGTRANSID IS IN THE ARRAY, REMOVE IT
+            else if (!isChecked && index !== -1) {
+                theArray.splice(index, 1);
+            }
+        }
+
+        // FUNCTION CLEARS ALL ARRAYS AND SCHEDULE VARIABLES
+        function ClearArrays() {
+            Schedule_J_TransFilingIDs = [];
+            Schedule_N_TransFilingIDs = [];
+            Schedule_K_TransFilingIDs = [];
+            Schedule_F_TransFilingIDs = [];
+
+            //Schedule_I_TransFilingID = "";
+            Schedule_N_OriginalLiability_TransFilingID = "";
+        }
+
+    });
+
+    function CallHelpFilter() {
+
+        var myWidth = 500;
+        var myHeight = 600;
+
+        var left = (screen.width - myWidth) / 2;
+        var top = (screen.height - myHeight) / 4;
+
+        window.open("@Url.Content("~/LoanAndLiabilityReconciliation/LoanAndLiabilityReconciliationSearchHelp/")", "Help", 'width = 450, height = 600, scrollbars = 1, width = ' + myWidth + ', height = ' + myHeight + ', top = ' + top + ', left = ' + left);
+    }
+
+</script>

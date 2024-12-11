@@ -1,0 +1,648 @@
+﻿/*
+    The file site-boe-commons.css defines style elements common to board of elections.
+    Please note any WCAG 2AA compliancy style decisions so they can be preserved.
+    site-boe-common.css
+    Version key major.minor.patch
+    Version 1.1.3 - Last formal update 03/27/2023
+*/
+/*HTML element selectors*/
+
+#boe-css-overrides {
+    font-family: Proxima Nova,Arial,Oswald, sans-serif;
+    background-color: white;
+    font-size: 13px;
+}
+
+    #boe-css-overrides .filterColor {
+        background-color: #7FA9AE;
+    }
+
+    #boe-css-overrides .boePaddingTopBottom05 {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    #boe-css-overrides h1 {
+        font-family: Proxima Nova,Arial, sans-serif;
+        Font-Weight: Bold;
+        Font-Size: 200%;
+    }
+
+    #boe-css-overrides h2,
+    #boe-css-overrides h4,
+    #boe-css-overrides h5,
+    #boe-css-overrides h6,
+    #boe-css-overrides p {
+        font-family: Proxima Nova,Arial, sans-serif;
+    }
+
+    #boe-css-overrides h3,
+    #boe-css-overrides .boeH3Style {
+        font-family: Proxima Nova,Arial, sans-serif;
+        Font-Weight: Bold;
+        Font-Size: 14px;
+    }
+
+    #boe-css-overrides .requiredTextFilter {
+        width: 100%;
+        text-align: left;
+        padding-top: 0.1em;
+        padding-left: 1.0em;
+        line-height: 2.75em;
+    }
+
+    #boe-css-overrides .requiredTextDialogs {
+        width: 100%;
+        text-align: left;
+        padding-top: 0.1em;
+        padding-bottom: 0.3em;
+    }
+
+a:visited {
+    color: #2C2D49; /*WCAG 2AA compliant against grids #7FA9AE*/
+    text-decoration: none;
+}
+
+a:link {
+    color: #03005F; /*WCAG 2AA compliant against grids #7FA9AE*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: #03005F; /*WCAG 2AA compliant against grids #7FA9AE*/
+    text-decoration: underline;
+}
+
+/*ID Selectors*/
+/*TODO: Provide better solution for footer and size adjustment*/
+#main {
+    height: 100%; /*Ensures the work area is 100% view height.*/
+    min-height: 120vh; /*Ensures footer doesn't too far up when we don't have content.*/
+    overflow-x: hidden; /*Ensures resizing the grid does not trigger scroll bars.*/
+    overflow-y: hidden; /*Ensures floated elements inside the main body are including when defining the height.*/
+    background-color: #eee;
+}
+
+div#workAreaContainer.row {
+    margin-right: 0px;
+}
+
+div#workAreaLeft {
+    padding-right: 0px;
+}
+
+div.workAreaLeftParentDivForFloatInputs {
+    padding-top: 1px
+}
+
+div#workAreaCentered {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+div#divBreadCrumb {
+    display: block; /*Implemented for Defect 1754 to prevent responsive from any responsive the definitions from using ms-inline-grid which is not valid in IE. */
+    margin-top: 0.5em;
+}
+
+div#divWelcomeBanner {
+    padding: 0.5em 3em;
+    font-weight: bold;
+    text-align: right;
+}
+
+    div#divWelcomeBanner div.help-dropdown {
+        float: left;
+    }
+
+/*Table-bordered is a bootstrap class*/
+#boe-css-overrides .table-bordered th {
+    border-color: rgb(222, 226, 230); /*Ensure headings are light colored.*/
+}
+
+/*Global Settings for ITS Banner*/
+iframe.nygov-universal-container {
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    z-index: 10 !important; /*Prevent the NYGOV banner from overlapping our dialog boxes*/
+}
+/*Hide the static UI Nav when printing*/
+@media print {
+    .nygov-universal-container {
+        display: none;
+    }
+}
+
+iframe#nygov-universal-navigation-frame {
+    height: 90px;
+}
+
+iframe#nygov-universal-footer-frame {
+    height: 200px;
+}
+/*Class selectors*/
+/*NYS Required buisness colors as described in Agency_Global_Navigation.pdf */
+.bg-color-nys-busines-primary {
+    background-color: #007681;
+}
+
+.bg-color-nys-busines-secondary {
+    background-color: #7FA9AE;
+}
+
+.bg-color-nys-busines-tertiary {
+    background-color: #B6CFD0;
+}
+
+.bg-color-nys-busines-web-primary {
+    background-color: #09464C;
+}
+
+.bg-color-nys-busines-web-secondary {
+    background-color: #09464C;
+}
+
+.icon30px {
+    margin: 1px;
+    height: 30px;
+    padding-left: 30px;
+}
+
+    .icon30px:hover {
+        height: 34px;
+        border: 2px solid #007681;
+        border-radius: 5px;
+    }
+
+.iconEditSmall {
+    background: url('/Content/Images/icon-boe-edit30px.png') no-repeat;
+}
+
+.iconDeleteSmall {
+    background: url('/Content/Images/icon-boe-delete30px.png') no-repeat;
+}
+
+/* Set padding to keep content from hitting the edges */
+div.body-content {
+    font-family: Proxima Nova,Arial,Oswald, sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*Style spans with error classes to look similar to labels*/
+span.error {
+    margin-bottom: .5rem;
+    display: block;
+    clear: both;
+}
+
+span.error,
+label.error {
+    color: #790000; /*WCAG 2AA compliant on top of #7FA9AE for contrast ratio 4.516. Any darker a background may fail contrast compliance.*/
+    white-space: normal; /*Accessibility: Allows long text to break into new line.*/
+    word-break: break-word; /*Accessibility: Allows long text to break into new line.*/
+}
+
+/*Responsive Tablet*/
+@media (min-width: 900px) {
+    selector {
+        display: block;
+    }
+}
+
+/*Responsive  Tablet (900px) and also Mobile*/
+@media (max-width: 900px) {
+    span.error,
+    label.error {
+        width: 100%;
+        padding-left: 0.1px;
+        margin-top: 2px;
+        padding-bottom: 0.2em;
+    }
+
+    selector {
+        display: block;
+    }
+}
+
+select,
+/*input[type=button],/*Use Bootstrap instead.*/
+input[type=date],
+input[type=color],
+input[type=datetime-local],
+input[type=email],
+input[type=file],
+input[type=month],
+input[type=number],
+input[type=password],
+/*input[type=radio],/*Use Bootstrap instead.*/
+input[type=range],
+input[type=reset],
+input[type=search],
+input[type=submit],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+    padding: .18rem .1rem;
+    border-radius: 4px;
+    border: 1px;
+    border-color: #767676;
+    border-style: solid;
+    height: calc(1.5em + .75rem + 2px);
+}
+
+/*Allows us to represent buttons as images by placing img inside buttontag */
+.buttonTransparent {
+    background-color: transparent;
+    margin: 0em 0.25em; /*margin accounts for outlines on button fucuss.*/
+}
+    /*Accessibility slightly darker hover and generates an outline*/
+    .buttonTransparent:hover {
+        background-color: #ccc;
+        border-color: grey;
+    }
+
+/*TODO: Firgure why we don't just use bootstrap.*/
+.buttonCSS {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 0px rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+    height: 1.8em;
+    width: 1.8em;
+    padding-left: 1px;
+}
+
+/*TODO: Firgure why we don't just use bootstrap.*/
+.button {
+    display: block;
+    height: 30px;
+    margin: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 30px;
+    width: 150px;
+    color: #FFF;
+    border: solid #427AA8 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    /* Gradient */
+    background: #427AA8;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzU5YTNlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MjdhYTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #59A3E0 1%, #427AA8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#59A3E0), color-stop(100%,#427AA8));
+    background: -webkit-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -o-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -ms-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: linear-gradient(to bottom, #59A3E0 1%,#427AA8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59A3E0', endColorstr='#427AA8',GradientType=0 );
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+}
+
+    /*TODO: Firgure why we don't just use bootstrap.*/
+    .button:hover {
+        background: #59A3E0;
+        text-decoration: none;
+        filter: none;
+    }
+
+/*
+  Forced an Element To Self-Clear its Children from other elements left or right.
+  In the future we will just need display:flow-root
+*/
+fieldset.clear-fix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.boe-clear-both {
+    clear: both;
+}
+
+#boe-css-overrides .hidecss {
+    display: none;
+}
+
+/*Accessiblity classes*/
+/*
+    Hides content from assistive technologies, such as screen readers.
+    HTML elements are explicitely specified to prevent missuse. 
+    Do not use on elements that require focus such as buttons, anchors, inputs, etc.
+*/
+label.visually-hidden,
+span.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+/* Filter Organizers */
+/*
+    Allow for standarization of how the width is controlled across the application.
+*/
+#boe-css-overrides #filterTitle {
+    width: 100%;
+    font-family: Proxima Nova,Oswald,Arial;
+    font-size: 22px;
+    border-bottom: 2px solid #eee;
+    display: inline-table;
+    padding: 0.25em 0em 0.25em 0.5em;
+}
+
+#boe-css-overrides #divMainCenterTop {
+    margin: auto;
+}
+
+#boe-css-overrides #divMainCenterBottom {
+    float: left;
+}
+
+#boe-css-overrides #divMainRightTop,
+#boe-css-overrides #divMainRightBottom {
+    float: right;
+}
+
+#boe-css-overrides #divMainRightTopAbsolute,
+#boe-css-overrides #divMainRightBottomAbsolute {
+    margin-left: 5px;
+}
+
+#boe-css-overrides .positionAbsolute {
+    position: absolute !important;
+}
+
+#boe-css-overrides .positionBottom0 {
+    bottom: 0;
+}
+
+#boe-css-overrides .positionRight0 {
+    right: 0;
+}
+
+#boe-css-overrides .divMainCenterWidth50,
+#boe-css-overrides .divMainRightWidth50 {
+    width: 50%;
+}
+
+#boe-css-overrides .divMainCenterWidth70,
+#boe-css-overrides .divMainRightWidth70 {
+    width: 70%;
+}
+
+#boe-css-overrides .divMainCenterWidth75,
+#boe-css-overrides .divMainRightWidth75 {
+    width: 75%;
+}
+
+#boe-css-overrides .divMainCenterWidth80,
+#boe-css-overrides .divMainRightWidth80 {
+    width: 80%;
+}
+
+#boe-css-overrides .divMainCenterWidth85,
+#boe-css-overrides .divMainRightWidth85 {
+    width: 85%;
+}
+
+#boe-css-overrides .divMainCenterWidth90,
+#boe-css-overrides .divMainRightWidth90 {
+    width: 90%;
+}
+
+#boe-css-overrides .divMainCenterWidth100,
+#boe-css-overrides .divMainRightWidth100 {
+    width: 100%;
+}
+
+#boe-css-overrides .visibleTablet,
+#boe-css-overrides .visibleMobile {
+    display: none;
+}
+
+#boe-css-overrides .min-height1000px {
+    min-height: 1000px;
+}
+
+#boe-css-overrides .min-height750px {
+    min-height: 750px;
+}
+
+#boe-css-overrides .min-height500px {
+    min-height: 500px;
+}
+
+#boe-css-overrides .min-height400 {
+    min-height: 400px;
+}
+
+#boe-css-overrides .min-height350 {
+    min-height: 350px;
+}
+
+#boe-css-overrides .min-height300 {
+    min-height: 300px;
+}
+
+#boe-css-overrides .min-height275 {
+    min-height: 275px;
+}
+
+#boe-css-overrides .min-height250 {
+    min-height: 250px;
+}
+
+#boe-css-overrides .min-height200 {
+    min-height: 200px;
+}
+
+#boe-css-overrides .min-height175 {
+    min-height: 175px;
+}
+
+#boe-css-overrides .min-height150 {
+    min-height: 150px;
+}
+
+#boe-css-overrides .min-height125 {
+    min-height: 125px;
+}
+
+#boe-css-overrides .min-height100 {
+    min-height: 100px;
+}
+
+#boe-css-overrides .min-height75 {
+    min-height: 75px;
+}
+
+#boe-css-overrides .min-height50 {
+    min-height: 50px;
+}
+
+#boe-css-overrides .fixedWidth30px {
+    width: 30px;
+}
+
+#boe-css-overrides .fixedWidth50px {
+    width: 50px;
+}
+
+#boe-css-overrides .fixedHeight30px {
+    height: 30px;
+}
+
+#boe-css-overrides .fixedHeight50px {
+    height: 50px;
+}
+
+/*Responsive Mobile*/
+@media (max-width: 500px) {
+
+    #boe-css-overrides .min-height1000px,
+    #boe-css-overrides .min-height750px,
+    #boe-css-overrides .min-height500px {
+        min-height: initial;
+    }
+
+    #boe-css-overrides .visibleMobile {
+        display: initial;
+    }
+
+    #boe-css-overrides .min-heightInherit {
+        min-height: unset;
+    }
+
+    #boe-css-overrides #divMainRightTopAbsolute,
+    #boe-css-overrides #divMainRightBottomAbsolute,
+    #boe-css-overrides #divMainRightTop,
+    #boe-css-overrides #divMainRightBottom {
+        margin-left: 0px;
+        position: relative;
+        clear: both;
+    }
+
+    #boe-css-overrides .divMainCenterWidth50,
+    #boe-css-overrides .divMainCenterWidth70,
+    #boe-css-overrides .divMainCenterWidth75,
+    #boe-css-overrides .divMainCenterWidth80,
+    #boe-css-overrides .divMainCenterWidth85,
+    #boe-css-overrides .divMainCenterWidth90,
+    #boe-css-overrides .divMainCenterWidth100,
+    #boe-css-overrides .divMainRightWidth50,
+    #boe-css-overrides .divMainRightWidth70,
+    #boe-css-overrides .divMainRightWidth75,
+    #boe-css-overrides .divMainRightWidth80,
+    #boe-css-overrides .divMainRightWidth85,
+    #boe-css-overrides .divMainRightWidth90,
+    #boe-css-overrides .divMainRightWidth100 {
+        width: 100%;
+    }
+}
+/*Responsive between Desk and Tablet*/
+@media (min-width: 901px) and (max-width: 995px) {
+    #boe-css-overrides .min-height1000px,
+    #boe-css-overrides .min-height750px,
+    #boe-css-overrides .min-height500px {
+        min-height: initial;
+    }
+}
+
+/*Responsive Tablet*/
+@media (min-width: 500px) and (max-width: 900px) {
+
+    #boe-css-overrides .min-height1000px,
+    #boe-css-overrides .min-height750px,
+    #boe-css-overrides .min-height500px {
+        min-height: initial;
+    }
+
+    #boe-css-overrides .visibleTablet {
+        display: initial;
+    }
+
+    #boe-css-overrides .minHeightInherit {
+        min-height: unset;
+    }
+
+    #boe-css-overrides #divMainRightTop,
+    #boe-css-overrides #divMainRightBottom,
+    #boe-css-overrides #divMainRightTopAbsolute,
+    #boe-css-overrides #divMainRightBottomAbsolute {
+        position: relative;
+        clear: both;
+    }
+
+    #boe-css-overrides .divMainCenterWidth50,
+    #boe-css-overrides .divMainCenterWidth70,
+    #boe-css-overrides .divMainCenterWidth75,
+    #boe-css-overrides .divMainCenterWidth80,
+    #boe-css-overrides .divMainCenterWidth85,
+    #boe-css-overrides .divMainCenterWidth90,
+    #boe-css-overrides .divMainCenterWidth100
+    #boe-css-overrides .divMainRightWidth50,
+    #boe-css-overrides .divMainRightWidth70,
+    #boe-css-overrides .divMainRightWidth75,
+    #boe-css-overrides .divMainRightWidth80,
+    #boe-css-overrides .divMainRightWidth85,
+    #boe-css-overrides .divMainRightWidth90,
+    #boe-css-overrides .divMainRightWidth100 {
+        width: 100%;
+    }
+}
+
+/*Headings need review*/
+#boe-css-overrides h2, .h2 {
+    font-size: 15px;
+}
+
+#boe-css-overrides .visibleToScreenReaderOnly {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#boe-css-overrides .LodingCls {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #444444;
+    z-index: 30001;
+    opacity: .9;
+    filter: alpha(opacity=70);
+    display: none;
+}
+
+#boe-css-overrides .LoadingMessage {
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    color: white;
+}
+
+#boe-css-overrides .LoadingSVC {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}

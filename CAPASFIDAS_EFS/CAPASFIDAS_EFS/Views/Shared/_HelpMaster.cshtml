@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <title>NYSBOE: Electronic Filing System (EFS) @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/ResponsiveMobile.css" media="screen and (max-width: 500px)" rel="stylesheet" />
+    <link href="~/Content/ResponsiveTablet.css" media="screen and (min-width: 500px) and (max-width: 900px)" rel="stylesheet" />
+    <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+     Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+    <!--Minified script bundles-->
+    @Scripts.Render("~/Scripts/bundle-jquery")
+    @Scripts.Render("~/Scripts/bundle-jquery-ui")
+    @Scripts.Render("~/Scripts/bundle-bootstrap")
+    @Scripts.Render("~/Scripts/bundle-other")
+
+    <!--Style bundles-->
+    @Styles.Render("~/Content/bundle-base")
+    @Styles.Render("~/Content/bundle-jquery")
+    @Styles.Render("~/Content/bundle-jquery-ui")
+    @Styles.Render("~/Content/bundle-bootstrap")
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX56BVPMCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WX56BVPMCD');
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body id="boe-css-overrides">
+    <div id="main" class="helpMasterDivCSS">
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            boeA11yHelperImplementCommonAccessibilityFeatures();
+        });
+    </script>
+</body>
+</html>

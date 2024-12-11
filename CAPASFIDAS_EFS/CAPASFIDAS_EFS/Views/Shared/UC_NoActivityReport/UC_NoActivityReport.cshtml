@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+@*<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />*@
+@using (Html.BeginForm("UC_NoActivityReport", "UC_NoActivityReport", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridLoanReceived" class="divGridCSS " style="padding-right: 26em;">
+        <div style="padding-bottom: 2em; padding-left: 2em;">
+            <span>
+                By submitting this report you are stating that there was no activity (i.e., receipts and/or expenditures) during this time period and, therefore, there are no transactions to report.
+            </span>
+        </div>
+        <br /><br /><br />
+        <div class="floatRightNew clsShowButtonClass">
+            <input type="button" id="btnNoActivityRpt" class="btn btn-default clsCommonSearch" value="Submit" title="Submit" style="font-size:12px;" />&nbsp;
+        </div>
+        <br />
+        <div style="padding-left: 2em;">
+            <hr />
+        </div>
+
+    </div>
+    
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+    $m(document).ready(function () {
+        $("#btnNoActivityRpt").bind('click', function () {
+            alert("No-Activity Report has been successfully submitted.");
+        })
+    });
+
+</script>
+

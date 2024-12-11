@@ -1,0 +1,603 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_F_ExpenditurePayments", "_UC_F_ExpenditurePayments", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridExpenditurePayments" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdExpenditurePayments" class="border1pxCls" style="padding-left:2em;">Date Paid</th>
+                <th id="thPayeeNameExpenditurePayments" class="border1pxCls">Payee Name</th>
+                <th id="thStreetExpenditurePayments" class="border1pxCls">Street #</th>
+                <th id="thStreetNameExpenditurePayments" class="border1pxCls">Street Name</th>
+                <th id="thCityExpenditurePayments" class="border1pxCls">City</th>
+                <th id="thStateExpenditurePayments" class="border1pxCls">State</th>
+                <th id="thZip5ExpenditurePayments" class="border1pxCls">Zip5</th>
+                <th id="thZip4ExpenditurePayments" class="border1pxCls">Zip4</th>
+                <th id="thPurposeCodeExpenditurePayments" class="border1pxCls">Purpose Code</th>
+                <th id="thMethodExpenditurePayments" class="border1pxCls">Method</th>
+                <th id="thCheckExpenditurePayments" class="border1pxCls">Check#</th>
+                <th id="thAmtRefundedExpenditurePayments" class="border1pxCls">Amt</th>
+                <th id="thExplanationExpenditurePayments" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdExpenditurePayments" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdPayorNameExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPayorName", @class = "txtWidth" })</td>
+                <td id="tdStreetExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5ExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4ExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdPurposeCodeExpenditurePayments" class="border1pxCls" valign="bottom">@Html.DropDownList("lstPurposeCode", ViewData["lstPurposeCode"] as SelectList, new { @class = "" })</td>
+                <td id="tdMethodExpenditurePayments" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheckExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheckExpenditurePayments", @class = "txtWidth" })</td>
+                <td id="tAmtExpenditurePayments" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtExpenditurePayments", @class = "txtWidth" })</td>
+                <td id="tdExplanationExpenditurePayments" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationExpenditurePayments", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTExpenditurePayments">
+            <table id="UC_ExpenditurePaymentsGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Paid</th>
+                        <th>Payee Name</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Purpose Code</th>
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amt</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Contractor</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>    
+    <div id="divShowControctor" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thPartner" class="border1pxCls" style="padding-left:2em;">Sub Contractor</th>
+                <th id="thPartAmtAttributed" class="border1pxCls">Amt Attributed</th>
+                <th id="thPartExpenditureCode" class="border1pxCls">Expenditure Code</th>
+                <th id="thPartFirstName" class="border1pxCls">First Name</th>
+                <th id="thPartMI" class="border1pxCls">MI</th>
+                <th id="thPartLastName" class="border1pxCls">Last Name</th>
+                <th id="thPartStreet" class="border1pxCls">Street #</th>
+                <th id="thPartStreetName" class="border1pxCls">Street Name</th>
+                <th id="thPartCity" class="border1pxCls">City</th>
+                <th id="thPartState" class="border1pxCls">State</th>
+                <th id="thPartZip5" class="border1pxCls">Zip5</th>
+                <th id="thPartZip4" class="border1pxCls">Zip4</th>                
+                <th id="thPartExplanation" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdSubContractor" class="border1pxCls" style="padding-left:2em;" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtSubContractor", @class = "txtWidth" }))</td>
+                <td id="tdAmtAttributed" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtAttributed", @class = "txtWidth" })</td>
+                @*<td id="tdPartFirstNameEP" class="border1pxCls" valign="bottom">@Html.DropDownList("lstExpenditureCodeEP", ViewData["lstExpenditureCodeEP"] as SelectList, new { @class = "" })</td>*@
+                <td id="tdPartFirstNameEP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "lstExpenditureCodeEP", @class = "txtWidth" })</td>
+                <td id="tdPartFirstName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartFirstName", @class = "txtWidth" })</td>
+                <td id="tdPartMI" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartMI", @class = "txtWidth" })</td>
+                <td id="tdPartLastName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartLastName", @class = "txtWidth" })</td>
+                <td id="tdPartStreet" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreet", @class = "txtWidth" })</td>
+                <td id="tdPartStreetName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreetName", @class = "txtWidth" })</td>
+                <td id="tdPartCity" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartCity", @class = "txtWidth" })</td>
+                <td id="tdPartState" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartState", @class = "txtWidth" })</td>
+                <td id="tdPartZip5" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip5", @class = "txtWidth" })</td>
+                <td id="tdPartZip4" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip4", @class = "txtWidth" })</td>                
+                <td id="tdPartExplanationEP" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtPartExplanationEP", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divGridContractor">
+            <table id="ContractorGridExpenditure" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Sub Contractor</th>
+                        <th>Amt Attributed</th>
+                        <th>Expenditure Code</th>
+                        <th>First Name</th>
+                        <th>MI</th>
+                        <th>Last Name</th>
+                        <th>Street #</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTExpenditurePayments").hide();
+        $("#divShowControctor").hide();
+        $("#divGridContractor").hide();
+
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridExpenditurePayments").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#UC_ExpenditurePaymentsGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                //"scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_F_ExpenditurePayments/GetExpenditurePaymentsSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -3, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#UC_ExpenditurePaymentsGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    $m('td:eq(15)', nRow).html('<a class="editor_Contractor" href="">Contractor</a>');
+                    //if (aaData[2] != "") {
+                    //    $m('td:eq(19)', nRow).html('<a class="editor_AttributionInKind" href="">Contractor</a>');
+                    //}
+                    //else {
+                    //    $m('td:eq(19)', nRow).html('<a href="" class="lnkTotalsBySchedule"></a>');
+                    //}
+                    return nRow;
+                }
+                //},
+                //"fnServerData": function (url, data, callback) {
+                //    $.ajax({
+                //        "url": url,
+                //        "data": null,
+                //        "success": callback,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error...");
+                //        }
+                //    });
+                //}
+            });
+            $m('#UC_ExpenditurePaymentsGrid').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#UC_ExpenditurePaymentsGrid tbody').on('click', 'a.editor_Contractor', function (e) {
+            e.preventDefault();
+            $("#divShowControctor").show();            
+            table = $m('#ContractorGridExpenditure').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_F_ExpenditurePayments/GetContractorSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#ContractorGridExpenditure').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#ContractorGridExpenditure').DataTable().ajax.reload();
+        });
+
+        //// Edit a record
+        //$m('#UC_ExpenditurePaymentsGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataExpenditurePayments").show();
+        //    table = $m('#PartnersGridExpenditurePayments').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //            //Accessibility: Applies various Accessibility features to this dataTable.
+        //            makeDataTableAccessible($m('#PartnersGridExpenditurePayments').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridExpenditurePayments').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#UC_ExpenditurePaymentsGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationEP").focusout(function () {            
+            alert("Data Saved Successfully");
+            $("#divShowControctor").show();
+            $("#divGridContractor").show();
+            $m('#ContractorGridExpenditure').DataTable().ajax.reload();
+        });
+        
+
+        // Explanation focus out
+        $m("#txtExplanationExpenditurePayments").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTExpenditurePayments").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationExpenditurePayments").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridExpenditurePayments').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#UC_ExpenditurePaymentsGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameExpenditurePayments option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtExpenditurePaymentsExpenditurePayments").val(data[15].toString());
+            $("#txtExplanationExpenditurePayments").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameExpenditurePayments").show("slow");
+                $("#thMIExpenditurePayments").show("slow");
+                $("#thLastNameExpenditurePayments").show("slow");
+                $("#thStreetExpenditurePayments").show("slow");
+                $("#thStreetNameExpenditurePayments").show("slow");
+                $("#thCityExpenditurePayments").show("slow");
+                $("#thStateExpenditurePayments").show("slow");
+                $("#thZip5ExpenditurePayments").show("slow");
+                $("#thZip4ExpenditurePayments").show("slow");
+                $("#thContributionTypeExpenditurePayments").show("slow");
+                $("#thMethodExpenditurePayments").show("slow");
+                $("#thCheckExpenditurePayments").show("slow");
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameExpenditurePayments").show("slow");
+                $("#tdMIExpenditurePayments").show("slow");
+                $("#tdLastNameExpenditurePayments").show("slow");
+                $("#tdStreetExpenditurePayments").show("slow");
+                $("#tdStreetNameExpenditurePayments").show("slow");
+                $("#tdCityExpenditurePayments").show("slow");
+                $("#tdStateExpenditurePayments").show("slow");
+                $("#tdZip5ExpenditurePayments").show("slow");
+                $("#tdZip4ExpenditurePayments").show("slow");
+                $("#tdContributionTypeExpenditurePayments").show("slow");
+                $("#tdMethodExpenditurePayments").show("slow");
+                $("#tdCheckExpenditurePayments").show("slow");
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+
+                $("#thParterShipNameExpenditurePayments").hide("slow");
+                $("#tdPartnershipNameExpenditurePayments").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                $("#thFirstNameExpenditurePayments").hide("slow");
+                $("#thMIExpenditurePayments").hide("slow");
+                $("#thLastNameExpenditurePayments").hide("slow");
+                $("#thStreetExpenditurePayments").hide("slow");
+                $("#thStreetNameExpenditurePayments").hide("slow");
+                $("#thCityExpenditurePayments").hide("slow");
+                $("#thStateExpenditurePayments").hide("slow");
+                $("#thZip5ExpenditurePayments").hide("slow");
+                $("#thZip4ExpenditurePayments").hide("slow");
+                $("#thContributionTypeExpenditurePayments").hide("slow");
+                $("#thMethodExpenditurePayments").hide("slow");
+                $("#thCheckExpenditurePayments").hide("slow");
+
+                //Show All TD
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+
+                $("#tdFirstNameExpenditurePayments").hide("slow");
+                $("#tdMIExpenditurePayments").hide("slow");
+                $("#tdLastNameExpenditurePayments").hide("slow");
+                $("#tdStreetExpenditurePayments").hide("slow");
+                $("#tdStreetNameExpenditurePayments").hide("slow");
+                $("#tdCityExpenditurePayments").hide("slow");
+                $("#tdStateExpenditurePayments").hide("slow");
+                $("#tdZip5ExpenditurePayments").hide("slow");
+                $("#tdZip4ExpenditurePayments").hide("slow");
+                $("#tdContributionTypeExpenditurePayments").hide("slow");
+                $("#tdMethodExpenditurePayments").hide("slow");
+                $("#tdCheckExpenditurePayments").hide("slow");
+
+                $("#thParterShipNameExpenditurePayments").hide("slow");
+                $("#tdPartnershipNameExpenditurePayments").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameExpenditurePayments").show("slow");
+                $("#tdPartnershipNameExpenditurePayments").show("slow");
+
+                //Show All TR
+                $("#thFirstNameExpenditurePayments").hide("slow");
+                $("#thMIExpenditurePayments").hide("slow");
+                $("#thLastNameExpenditurePayments").hide("slow");
+                $("#thStreetExpenditurePayments").show("slow");
+                $("#thStreetNameExpenditurePayments").show("slow");
+                $("#thCityExpenditurePayments").show("slow");
+                $("#thStateExpenditurePayments").show("slow");
+                $("#thZip5ExpenditurePayments").show("slow");
+                $("#thZip4ExpenditurePayments").show("slow");
+                $("#thContributionTypeExpenditurePayments").show("slow");
+                $("#thMethodExpenditurePayments").show("slow");
+                $("#thCheckExpenditurePayments").show("slow");
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameExpenditurePayments").hide("slow");
+                $("#tdMIExpenditurePayments").hide("slow");
+                $("#tdLastNameExpenditurePayments").hide("slow");
+                $("#tdStreetExpenditurePayments").show("slow");
+                $("#tdStreetNameExpenditurePayments").show("slow");
+                $("#tdCityExpenditurePayments").show("slow");
+                $("#tdStateExpenditurePayments").show("slow");
+                $("#tdZip5ExpenditurePayments").show("slow");
+                $("#tdZip4ExpenditurePayments").show("slow");
+                $("#tdContributionTypeExpenditurePayments").show("slow");
+                $("#tdMethodExpenditurePayments").show("slow");
+                $("#tdCheckExpenditurePayments").show("slow");
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameExpenditurePayments").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameExpenditurePayments option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameExpenditurePayments").show("slow");
+                $("#thMIExpenditurePayments").show("slow");
+                $("#thLastNameExpenditurePayments").show("slow");
+                $("#thStreetExpenditurePayments").show("slow");
+                $("#thStreetNameExpenditurePayments").show("slow");
+                $("#thCityExpenditurePayments").show("slow");
+                $("#thStateExpenditurePayments").show("slow");
+                $("#thZip5ExpenditurePayments").show("slow");
+                $("#thZip4ExpenditurePayments").show("slow");
+                $("#thContributionTypeExpenditurePayments").show("slow");
+                $("#thMethodExpenditurePayments").show("slow");
+                $("#thCheckExpenditurePayments").show("slow");
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameExpenditurePayments").show("slow");
+                $("#tdMIExpenditurePayments").show("slow");
+                $("#tdLastNameExpenditurePayments").show("slow");
+                $("#tdStreetExpenditurePayments").show("slow");
+                $("#tdStreetNameExpenditurePayments").show("slow");
+                $("#tdCityExpenditurePayments").show("slow");
+                $("#tdStateExpenditurePayments").show("slow");
+                $("#tdZip5ExpenditurePayments").show("slow");
+                $("#tdZip4ExpenditurePayments").show("slow");
+                $("#tdContributionTypeExpenditurePayments").show("slow");
+                $("#tdMethodExpenditurePayments").show("slow");
+                $("#tdCheckExpenditurePayments").show("slow");
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+
+                $("#thParterShipNameExpenditurePayments").hide("slow");
+                $("#tdPartnershipNameExpenditurePayments").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                $("#thFirstNameExpenditurePayments").hide("slow");
+                $("#thMIExpenditurePayments").hide("slow");
+                $("#thLastNameExpenditurePayments").hide("slow");
+                $("#thStreetExpenditurePayments").hide("slow");
+                $("#thStreetNameExpenditurePayments").hide("slow");
+                $("#thCityExpenditurePayments").hide("slow");
+                $("#thStateExpenditurePayments").hide("slow");
+                $("#thZip5ExpenditurePayments").hide("slow");
+                $("#thZip4ExpenditurePayments").hide("slow");
+                $("#thContributionTypeExpenditurePayments").hide("slow");
+                $("#thMethodExpenditurePayments").hide("slow");
+                $("#thCheckExpenditurePayments").hide("slow");
+
+                //Show All TD
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+
+                $("#tdFirstNameExpenditurePayments").hide("slow");
+                $("#tdMIExpenditurePayments").hide("slow");
+                $("#tdLastNameExpenditurePayments").hide("slow");
+                $("#tdStreetExpenditurePayments").hide("slow");
+                $("#tdStreetNameExpenditurePayments").hide("slow");
+                $("#tdCityExpenditurePayments").hide("slow");
+                $("#tdStateExpenditurePayments").hide("slow");
+                $("#tdZip5ExpenditurePayments").hide("slow");
+                $("#tdZip4ExpenditurePayments").hide("slow");
+                $("#tdContributionTypeExpenditurePayments").hide("slow");
+                $("#tdMethodExpenditurePayments").hide("slow");
+                $("#tdCheckExpenditurePayments").hide("slow");
+
+                $("#thParterShipNameExpenditurePayments").hide("slow");
+                $("#tdPartnershipNameExpenditurePayments").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameExpenditurePayments").show("slow");
+                $("#tdPartnershipNameExpenditurePayments").show("slow");
+
+                //Show All TR
+                $("#thFirstNameExpenditurePayments").hide("slow");
+                $("#thMIExpenditurePayments").hide("slow");
+                $("#thLastNameExpenditurePayments").hide("slow");
+                $("#thStreetExpenditurePayments").show("slow");
+                $("#thStreetNameExpenditurePayments").show("slow");
+                $("#thCityExpenditurePayments").show("slow");
+                $("#thStateExpenditurePayments").show("slow");
+                $("#thZip5ExpenditurePayments").show("slow");
+                $("#thZip4ExpenditurePayments").show("slow");
+                $("#thContributionTypeExpenditurePayments").show("slow");
+                $("#thMethodExpenditurePayments").show("slow");
+                $("#thCheckExpenditurePayments").show("slow");
+                $("#thAmtExpenditurePayments").show("slow");
+                $("#thExplanationExpenditurePayments").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameExpenditurePayments").hide("slow");
+                $("#tdMIExpenditurePayments").hide("slow");
+                $("#tdLastNameExpenditurePayments").hide("slow");
+                $("#tdStreetExpenditurePayments").show("slow");
+                $("#tdStreetNameExpenditurePayments").show("slow");
+                $("#tdCityExpenditurePayments").show("slow");
+                $("#tdStateExpenditurePayments").show("slow");
+                $("#tdZip5ExpenditurePayments").show("slow");
+                $("#tdZip4ExpenditurePayments").show("slow");
+                $("#tdContributionTypeExpenditurePayments").show("slow");
+                $("#tdMethodExpenditurePayments").show("slow");
+                $("#tdCheckExpenditurePayments").show("slow");
+                $("#tAmtExpenditurePayments").show("slow");
+                $("#tdExplanationExpenditurePayments").show("slow");
+            }
+        });
+    });
+</script>

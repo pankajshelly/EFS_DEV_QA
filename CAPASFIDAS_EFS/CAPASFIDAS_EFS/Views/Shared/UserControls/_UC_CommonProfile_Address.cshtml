@@ -1,0 +1,23 @@
+﻿<fieldset>
+    <legend class="visibleToScreenReaderOnly">Common Profile Address: </legend>
+    <div class="headerDBLiability">
+        <span>Add Address</span>
+    </div>
+    <div id="uc_commonrofile_address_spnAddressType">
+        <div class="verticalCSSDestopForLable lblCSSAdd">
+            <span id="uc_commonrofile_address_lblAddressType">Address Type</span>
+        </div>
+        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+            @Html.DropDownList("lstAddressType", ViewData["lstAddressType"] as SelectList, new { @class = "txtWidthForDialog", aria_labelledby = "uc_commonrofile_address_lblAddressType" })
+        </div>
+    </div>
+    <div>
+        <div class="verticalCSSDestopForLable lblCSSAdd">
+            <span id="uc_commonrofile_address_lblBestContact">Best Contact</span>
+        </div>
+        <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+            @Html.DropDownList("lstBestContactForAddress", ViewData["lstBestContact"] as SelectList, new { @class = "txtWidthForDialog", aria_labelledby = "uc_commonrofile_address_lblBestContact" })
+        </div>
+    </div>
+</fieldset>
+@Html.Partial("UserControls/_UC_Address")

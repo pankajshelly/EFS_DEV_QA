@@ -1,0 +1,167 @@
+﻿
+@{
+    Layout = null;
+}
+<!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+    Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+<!--Minified script bundles-->
+@Scripts.Render("~/Scripts/bundle-jquery")
+@Scripts.Render("~/Scripts/bundle-jquery-ui")
+@Scripts.Render("~/Scripts/bundle-bootstrap")
+@Scripts.Render("~/Scripts/bundle-other")
+
+<!--Style bundles-->
+@Styles.Render("~/Content/bundle-base")
+@Styles.Render("~/Content/bundle-jquery")
+@Styles.Render("~/Content/bundle-jquery-ui")
+@Styles.Render("~/Content/bundle-bootstrap")
+@Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+
+<div style="text-align:center;">
+    <h1 class="h1Bold">Edit Bank Details</h1>
+</div>
+
+@using (Html.BeginForm("EditBankDetails", "EditBankDetails", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div class="divAddressPopUp">
+        <div style="text-align:left;" class="paddingLeft1em">
+            <div>
+                <span style="float: left;">
+                    <span id="spnBestContactLbl">
+                        <span id="lblDepositoryBankName">Depository/Bank Name</span>
+                    </span>
+                    <span id="spnBestContact" class="" style="padding-left: 0.8em;">
+                        @Html.TextBox("searchTerm", (string)ViewBag.txtDepositortyBankName, null, new { id = "txtDepositortyBankName", size = "50", aria_labelledby = "lblDepositoryBankName" })
+                    </span>
+                </span>
+                <span style="float: right; padding-right: 2em;">
+                    <button id="btnCommonUpdate" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/save.png" class="imgButtonCSS" alt="Save" />
+                    </button>
+                    @*<button id="btnCommonClear" class="btn-default buttonCSS" name="Command" value="CSV">
+                            <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                        </button>*@
+                </span>
+            </div>
+            <br />
+            <div class="divClearBoth">
+                <span style="padding-left: 4.15em;">
+                    <span id="spnBestContactLbl">
+                        <span id="lblAccountType">Account Type</span>
+                    </span>
+                    <span id="spnBestContact" class="" style="padding-left: 0.8em;">
+                        @Html.DropDownList("lstAccountType", null, "- Select -", new { id = "lstAccountType", aria_labelledby = "lblAccountType" })
+                    </span>
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span id="spnStreetNumLbl" style="padding-left: 7.6em;">
+                    <span id="lblStreetNum">Street</span>
+                </span>
+                <span id="spnStreetNum" class="" style="padding-left: 0.8em;">
+                    @Html.TextBox("searchTerm", (string)ViewBag.txtStreetNum, null, new { id = "txtStreetNum", size = "8", aria_labelledby = "lblStreetNum" })
+                    @Html.TextBox("searchTerm", (string)ViewBag.txtStreetName, null, new { id = "txtStreetName", size = "35", aria_labelledby = "lblStreetNum" })
+                </span>
+            </div>
+            <span id="spnCityLbl" style="padding-left: 8.55em;">
+                <span id="lblCity">City</span>
+            </span>
+            <span id="spnCity" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtCity, null, new { id = "txtCity", aria_labelledby = "lblCity" })
+            </span>
+            <br />
+            <span id="spnStateLbl" style="padding-left: 7.95em;">
+                <span id="lblState">State</span>
+            </span>
+            <span id="spnState" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtState, null, new { id = "txtState", aria_labelledby = "lblState" })
+            </span>
+            <br />
+            <span id="spnZipLbl" style="padding-left: 8.9em;">
+                <span id="lblZip">Zip</span>
+            </span>
+            <span id="spnZip" class="" style="padding-left: 0.8em;">
+                @Html.TextBox("searchTerm", (string)ViewBag.txtZip, null, new { id = "txtZip", size = "5", aria_labelledby = "lblZip" }) &nbsp;-&nbsp;
+                @Html.TextBox("searchTerm", (string)ViewBag.txtZip4, null, new { id = "txtZip4", size = "5", aria_labelledby = "lblZip" })
+            </span>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+
+        //Update user data
+        $m("#btnCommonUpdate").click(function () {
+            event.preventDefault();
+
+            if ($m("#txtDepositortyBankName").val().toString() == "") {
+                ShowDialogBox('NVRA', 'Enter Depository Bank Name', 'Ok', '');
+            }
+            else if ($m("#txtStreetNum").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Address 1', 'Ok', '');
+                alert("Enter Street");
+            }
+            else if ($m("#txtCity").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter City', 'Ok', '');
+                alert("Enter City'");
+            }
+            else if ($m("#txtState").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter State', 'Ok', '');
+                alert("Enter State'");
+            }
+            else if ($m("#txtZip").val().toString() == "") {
+                //ShowDialogBox('NVRA', 'Enter Zip', 'Ok', '');
+                alert("Enter Zip");
+            }
+            else {
+                var options = {};
+                //options.url = "../EditBankDetails/UpdateDeposotoryBank";
+                options.url = "@Url.Content("~/EditBankDetails/UpdateDeposotoryBank/")";
+                options.type = "GET";
+                options.data = {
+                    strBankId: "@ViewBag.BankId",
+                    strAddressId: "@ViewBag.AddressId",
+                    txtDepositortyBankName: $m("#txtDepositortyBankName").val().toString(),
+                    lstAccountType: $m("#lstAccountType option:selected").val().toString(),
+                    txtStreetNum: $m("#txtStreetNum").val().toString(),
+                    txtStreetName: $m("#txtStreetName").val().toString(),
+                    txtCity: $m("#txtCity").val().toString(),
+                    txtState: $m("#txtState").val().toString(),
+                    txtZip: $m("#txtZip").val().toString(),
+                    txtZip4: $m("#txtZip4").val().toString(),
+                };
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    window.status = "Data Saved successfully";
+                    window.opener.location.reload(true);
+                    window.close();
+                };
+                options.error = function () {
+                    alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                };
+                $m.ajax(options);
+            }
+        });
+
+        // Button Clear Search.
+        $m("#btnCommonClear").click(function (e) {
+            e.preventDefault();
+
+            //$("#lstAddressType")[0].selectedIndex = 0;
+            //$("#txtStreetNum").val("");
+            //$("#txtStreetName").val("");
+            //$("#txtAddr1").val("");
+            //$("#txtAddr2").val("");
+            //$("#txtCity").val("");
+            //$("#txtState").val("");
+            //$("#txtZip").val("");
+            //$("#txtZip4").val("");
+            //$("#lstBestContact")[0].selectedIndex = 0;
+        });
+    });
+</script>

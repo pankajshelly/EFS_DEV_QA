@@ -1,0 +1,158 @@
+﻿@using (Html.BeginForm("_UC_Address_Treasurer", "_UC_Address_Treasurer", FormMethod.Get, new { id = "submitForm" }))
+{
+<fieldset>
+    <legend class="visibleToScreenReaderOnly">Common Address Treasurer: </legend>
+    <div id="dialog_Address" title="Add/Edit Transaction">
+        <div id="hAddScheI" class="headerDBLiability">
+            <span>Add Address</span>
+        </div>
+        <div id="_UC_Address_Treasurer_spnAddressType">
+            <div class="verticalCSSDestopForLable lblCSSAdd">
+                <span id="uc_address_treasurer_lblAddressType">Address Type</span>
+            </div>
+            <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                @Html.DropDownList("lstAddressType", ViewData["lstAddressType"] as SelectList, new { @class = "txtWidthForDialog", aria_labelledby = "uc_address_treasurer_lblAddressType" })
+            </div>
+        </div>
+        <div id="spnBestContact">
+            <div class="verticalCSSDestopForLable lblCSSAdd">
+                <span id="uc_address_treasurer_lblBestContact" >Best Contact</span>
+            </div>
+            <div class="verticalCSSDestopForTextbox DDLCSSAdd">
+                @Html.DropDownList("lstBestContact", ViewData["lstBestContact"] as SelectList, new { @class = "txtWidthForDialog", aria_labelledby = "uc_address_treasurer_lblBestContact" })
+            </div>
+        </div>
+        @Html.Partial("UserControls/_UC_Address")
+        <div class="AddLeftCSSForScheI">
+            <input type="button" id="uc_address_treasurer_btnCommonSave" class="btn btn-default clsSetPreserences" name="Command" value="Save" title="Save" style="font-size:12px;" />
+            <input type="button" id="uc_address_treasurer_btnCommonClear" class="btn btn-default clsSetPreserences" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+            <input type="button" id="uc_address_treasurer_btnCloseDialog" class="btn btn-default clsSetPreserences" name="Command" value="Close" title="Close" style="font-size:12px;" />
+        </div>
+    </div>
+</fieldset>
+}
+
+
+    <script>
+        $m = jQuery.noConflict();
+
+        $m(document).ready(function () {
+
+
+            dialog_Address = $m("#dialog_Address").dialog({
+                autoOpen: false,
+                resizable: true,
+                height: 'auto',
+                width: 500,
+                modal: true,
+                open: function (event, ui) { hideDialogXButton(this); }
+            });
+
+            $(window).resize(function () {
+                //// get the screen height and width
+                if ($(window).width() < 500) {
+                    dialog_Address = $m("#dialog_Address").dialog({
+                        autoOpen: false,
+                        resizable: true,
+                        height: 'auto',
+                        width: 300,
+                        modal: true,
+                        open: function (event, ui) { hideDialogXButton(this); }
+                    });
+                }
+                else if ($(window).width() > 500 && $(window).width() <= 900) {
+                    dialog_Address = $m("#dialog_Address").dialog({
+                        autoOpen: false,
+                        resizable: true,
+                        height: 'auto',
+                        width: 500,
+                        modal: true,
+                        open: function (event, ui) { hideDialogXButton(this); }
+                    });
+                }
+                else if ($(window).width() > 900) {
+                    dialog_Address = $m("#dialog_Address").dialog({
+                        autoOpen: false,
+                        resizable: true,
+                        height: 'auto',
+                        width: 500,
+                        modal: true,
+                        open: function (event, ui) { hideDialogXButton(this); }
+                    });
+                }
+            }).resize();
+
+            $m("#uc_address_treasurer_btnCloseDialog").button().on("click", function () {
+                dialog_Address.dialog("close");
+            });
+
+            //Add New User
+            var flag = false;
+            $m("#uc_address_treasurer_btnCommonSave").click(function (e) {
+                e.preventDefault();
+                if ($m("#lstAddressType option:selected").text() == "- Select -") {
+                    //ShowDialogBox('NVRA', 'Select Address Type', 'Ok', '');
+                    alert('Select Address Type');
+                }
+                else if ($m("#txtAddr1").val().toString() == "") {
+                    //ShowDialogBox('NVRA', 'Enter Address 1', 'Ok', '');
+                    alert('Enter Address 1');
+                }
+                else if ($m("#txtCity").val().toString() == "") {
+                    //ShowDialogBox('NVRA', 'Enter City', 'Ok', '');
+                    alert('Enter City');
+                }
+                else if ($m("#txtState").val().toString() == "") {
+                    //ShowDialogBox('NVRA', 'Enter State', 'Ok', '');
+                    alert('Enter State');
+                }
+                else if ($m("#txtZip").val().toString() == "") {
+                    //ShowDialogBox('NVRA', 'Enter Zip', 'Ok', '');
+                    alert('Enter Zip');
+                }
+                else {
+                    try { $m("#divLoading").show(); } catch (e) { console.log("Failed to show divLoading."); }
+                    $m.ajax({
+                        url: '../AddEditAddress/AddAddress',
+                        data: {
+                            lstAddressType: $m("#lstAddressType option:selected").val(),
+                            txtStreetNum: $m("#txtStreetNum").val().toString(),
+                            txtStreetName: $m("#txtStreetName").val().toString(),
+                            txtAddr1: $m("#txtAddr1").val().toString(),
+                            txtAddr2: $m("#txtAddr2").val().toString(),
+                            txtCity: $m("#txtCity").val().toString(),
+                            txtState: $m("#txtState").val().toString(),
+                            txtZip: $m("#txtZip").val().toString(),
+                            txtZip4: $m("#txtZip4").val().toString(),
+                            lstBestContact: $m("#lstBestContact option:selected").val()
+                        },
+                        success: function (data) {
+                            window.status = "Data Saved successfully";
+                            window.opener.location.reload(true);
+                            window.close();
+                        },
+                        error: function () {
+                        }
+                    }).always(function () {
+                        try { $m("#divLoading").hide(); } catch (e) { console.log("Failed to hide divLoading."); }
+                    });
+                }
+            });
+
+            // Button Clear Search.
+            $m("#uc_address_treasurer_btnCommonClear").click(function (e) {
+                e.preventDefault();
+
+                $("#lstAddressType")[0].selectedIndex = 0;
+                $("#txtStreetNum").val("");
+                $("#txtStreetName").val("");
+                $("#txtAddr1").val("");
+                $("#txtAddr2").val("");
+                $("#txtCity").val("");
+                $("#txtState").val("");
+                $("#txtZip").val("");
+                $("#txtZip4").val("");
+                $("#lstBestContact")[0].selectedIndex = 0;
+            });
+        });
+    </script>

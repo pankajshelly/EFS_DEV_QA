@@ -1,0 +1,569 @@
+﻿
+@using (Html.BeginForm("_UC_DR_Summary_Opt2", "_UC_DR_Summary_Opt2", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="accordion2" class="ui-accordion ui-widget ui-helper-reset accodionLeftClassCss">
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Opening Balance:
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt1OpeningBalance2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Total Contributions:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt2eTotalContributions2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">            
+            <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+                <span id="divexlPDF_1_accordion2">
+                    <button id="btnCSVDownloadData_1_accordion2" class="btn btn-default" name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF_1_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp_1_accordion2" /></button>
+                </span>
+            </div>
+            <div class="col-xs-13 jqueryClassSelectorDivGrid">
+                <table id="SchedAGridOpt2" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                    <thead class="header jqueryClassSelectorThdGrid">
+                        <tr>
+                            <th class="never">FilingTransId</th> @* 0 *@
+                            <th class="never">FilingSchedId</th> @* 1 *@
+                            <th class="never">FilingEntityId</th> @* 2 *@
+                            <th class="never">ContributorTypeId</th> @* 3 *@
+                            <th class="never">ContributionTypeId</th> @* 4 *@
+                            <th class="never">PaymentTypeId</th> @* 5 *@
+                            <th class="never">R_Liability</th> @* 6 *@
+                            <th class="never">R_Subcontractor</th> @* 7 *@
+                            <th>Expand</th> @* 8 *@
+                            <th>Action</th> @* 9 *@
+                            <th>Transaction Date</th> @* 10 *@
+                            <th>Increased</th> @* 10 *@
+                            <th>Decreased</th> @* 10 *@
+                            <th>Balance</th> @* 10 *@
+                            <th>Transaction Type</th> @* 11 *@
+                            <th>Contributor Code</th> @* 12 *@
+                            <th>Entity Name</th> @* 13 *@
+                            <th>First Name</th> @* 14 *@
+                            <th>Middle Name</th> @* 15 *@
+                            <th>Last Name</th> @* 16 *@
+                            <th>Country</th> @* 17 *@
+                            <th>Street Address</th> @* 18 *@
+                            <th>City</th> @* 19 *@
+                            <th>State</th> @* 20 *@
+                            <th>Zip Code</th> @* 21 *@
+                            <th>Method</th> @* 22 *@
+                            <th>Check #</th> @* 23 *@
+                            <th>Amount $</th> @* 24 *@
+                            <th>Outstanding Amount $</th> @* 25 *@
+                            <th>Receipt Type</th> @* 26 *@
+                            <th>Transfer Type</th> @* 27 *@
+                            <th>Contribution Type</th> @* 28 *@
+                            <th>Purpose Code</th> @* 29 *@
+                            <th>Reciept Code</th> @* 30 *@
+                            <th>Original Date</th> @* 31 *@
+                            <th>Lender Code</th> @* 32 *@
+                            <th>Election Year</th> @* 33 *@
+                            <th>Office</th> @* 34 *@
+                            <th>District</th> @* 35 *@
+                            <th>Explanation</th> @* 36 *@
+                            <th>Itemized</th> @* 37 *@
+                            <th>County</th> @* 38 *@
+                            <th>Municipality</th> @* 39 *@
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Total Miscellanceous Receipts:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt3fTotalMiscellaneousReceipts2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>        
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+            <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+                <span id="divexlPDF_2_accordion2">
+                    <a class="btn btn-default PDFImage" id="btnEdit_2_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/Edit.png" class="ButtonImageCSS" alt="Edit Icon (Opens in New Window)"/>
+                    </a>
+                    <button type="button" id="btnCSVDownloadData_2_accordion2" class="btn btn-default" name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF_2_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp_2_accordion2" /></button>
+                </span>
+            </div>
+            <div class="jqueryClassSelectorDivGrid">
+                <table id="SchedMiscellGridOpt2" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                    <thead class="header jqueryClassSelectorThdGrid">
+                        <tr>
+                            <th class="never">FilingTransId</th> @* 0 *@
+                            <th class="never">FilingSchedId</th> @* 1 *@
+                            <th class="never">FilingEntityId</th> @* 2 *@
+                            <th class="never">ContributorTypeId</th> @* 3 *@
+                            <th class="never">ContributionTypeId</th> @* 4 *@
+                            <th class="never">PaymentTypeId</th> @* 5 *@
+                            <th class="never">R_Liability</th> @* 6 *@
+                            <th class="never">R_Subcontractor</th> @* 7 *@
+                            <th>Expand</th> @* 8 *@
+                            <th>Action</th> @* 9 *@
+                            <th>Transaction Date</th> @* 10 *@
+                            <th>Increased</th> @* 10 *@
+                            <th>Decreased</th> @* 10 *@
+                            <th>Balance</th> @* 10 *@
+                            <th>Transaction Type</th> @* 11 *@
+                            <th>Contributor Code</th> @* 12 *@
+                            <th>Entity Name</th> @* 13 *@
+                            <th>First Name</th> @* 14 *@
+                            <th>Middle Name</th> @* 15 *@
+                            <th>Last Name</th> @* 16 *@
+                            <th>Country</th> @* 17 *@
+                            <th>Street Address</th> @* 18 *@
+                            <th>City</th> @* 19 *@
+                            <th>State</th> @* 20 *@
+                            <th>Zip Code</th> @* 21 *@
+                            <th>Method</th> @* 22 *@
+                            <th>Check #</th> @* 23 *@
+                            <th>Amount $</th> @* 24 *@
+                            <th>Outstanding Amount $</th> @* 25 *@
+                            <th>Receipt Type</th> @* 26 *@
+                            <th>Transfer Type</th> @* 27 *@
+                            <th>Contribution Type</th> @* 28 *@
+                            <th>Purpose Code</th> @* 29 *@
+                            <th>Reciept Code</th> @* 30 *@
+                            <th>Original Date</th> @* 31 *@
+                            <th>Lender Code</th> @* 32 *@
+                            <th>Election Year</th> @* 33 *@
+                            <th>Office</th> @* 34 *@
+                            <th>District</th> @* 35 *@
+                            <th>Explanation</th> @* 36 *@
+                            <th>Itemized</th> @* 37 *@
+                            <th>County</th> @* 38 *@
+                            <th>Municipality</th> @* 39 *@
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Total Receipts This Period (Line 2 + Line 3):
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt4TotalReceipts2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Total (Line 1 + Line 4):
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt5Total2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Total Expenses:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt6gTotalMiscellaneousReceipts2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>        
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+                <span id="divexlPDF_3_accordion2">
+                    <a class="btn btn-default PDFImage" id="btnEdit_3_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/Edit.png" class="ButtonImageCSS" alt="Edit Icon (Opens in New Window)"/>
+                    </a>
+                    <button type="button" id="btnCSVDownloadData_3_accordion2" class="btn btn-default" name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF_3_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp_3_accordion2" /></button>
+                </span>
+            </div>
+            <div class="jqueryClassSelectorDivGrid">
+                <table id="SchedExpensesGridOpt2" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                    <thead class="header jqueryClassSelectorThdGrid">
+                        <tr>
+                            <th class="never">FilingTransId</th> @* 0 *@
+                            <th class="never">FilingSchedId</th> @* 1 *@
+                            <th class="never">FilingEntityId</th> @* 2 *@
+                            <th class="never">ContributorTypeId</th> @* 3 *@
+                            <th class="never">ContributionTypeId</th> @* 4 *@
+                            <th class="never">PaymentTypeId</th> @* 5 *@
+                            <th class="never">R_Liability</th> @* 6 *@
+                            <th class="never">R_Subcontractor</th> @* 7 *@
+                            <th>Expand</th> @* 8 *@
+                            <th>Action</th> @* 9 *@
+                            <th>Transaction Date</th> @* 10 *@
+                            <th>Increased</th> @* 10 *@
+                            <th>Decreased</th> @* 10 *@
+                            <th>Balance</th> @* 10 *@
+                            <th>Transaction Type</th> @* 11 *@
+                            <th>Contributor Code</th> @* 12 *@
+                            <th>Entity Name</th> @* 13 *@
+                            <th>First Name</th> @* 14 *@
+                            <th>Middle Name</th> @* 15 *@
+                            <th>Last Name</th> @* 16 *@
+                            <th>Country</th> @* 17 *@
+                            <th>Street Address</th> @* 18 *@
+                            <th>City</th> @* 19 *@
+                            <th>State</th> @* 20 *@
+                            <th>Zip Code</th> @* 21 *@
+                            <th>Method</th> @* 22 *@
+                            <th>Check #</th> @* 23 *@
+                            <th>Amount $</th> @* 24 *@
+                            <th>Outstanding Amount $</th> @* 25 *@
+                            <th>Receipt Type</th> @* 26 *@
+                            <th>Transfer Type</th> @* 27 *@
+                            <th>Contribution Type</th> @* 28 *@
+                            <th>Purpose Code</th> @* 29 *@
+                            <th>Reciept Code</th> @* 30 *@
+                            <th>Original Date</th> @* 31 *@
+                            <th>Lender Code</th> @* 32 *@
+                            <th>Election Year</th> @* 33 *@
+                            <th>Office</th> @* 34 *@
+                            <th>District</th> @* 35 *@
+                            <th>Explanation</th> @* 36 *@
+                            <th>Itemized</th> @* 37 *@
+                            <th>County</th> @* 38 *@
+                            <th>Municipality</th> @* 39 *@
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Balance At End Of Period: (Subtract Line 6 from Line 5)
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt7BalanceAtPeriod2", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            Informational Schedules - Do not affect balance:
+        </h3>        
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+                <span id="divexlPDF_4_accordion2">
+                    <a class="btn btn-default PDFImage" id="btnEdit_4_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/Edit.png" class="ButtonImageCSS"  alt="Edit Icon (Opens in New Window)"/>
+                    </a>
+                    <button  type="button" id="btnCSVDownloadData_4_accordion2" class="btn btn-default" name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF_4_accordion2" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp_4_accordion2" /></button>
+                </span>
+            </div>
+            <div class="col-sm-12 jqueryClassSelectorDivGrid">
+                <table id="SchedNotEffBalGridOpt2" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                    <thead class="header jqueryClassSelectorThdGrid">
+                        <tr>
+                            <th class="never">FilingTransId</th> @* 0 *@
+                            <th class="never">FilingSchedId</th> @* 1 *@
+                            <th class="never">FilingEntityId</th> @* 2 *@
+                            <th class="never">ContributorTypeId</th> @* 3 *@
+                            <th class="never">ContributionTypeId</th> @* 4 *@
+                            <th class="never">PaymentTypeId</th> @* 5 *@
+                            <th class="never">R_Liability</th> @* 6 *@
+                            <th class="never">R_Subcontractor</th> @* 7 *@
+                            <th>Expand</th> @* 8 *@
+                            <th>Action</th> @* 9 *@
+                            <th>Transaction Date</th> @* 10 *@
+                            <th>Increased</th> @* 10 *@
+                            <th>Decreased</th> @* 10 *@
+                            <th>Balance</th> @* 10 *@
+                            <th>Transaction Type</th> @* 11 *@
+                            <th>Contributor Code</th> @* 12 *@
+                            <th>Entity Name</th> @* 13 *@
+                            <th>First Name</th> @* 14 *@
+                            <th>Middle Name</th> @* 15 *@
+                            <th>Last Name</th> @* 16 *@
+                            <th>Country</th> @* 17 *@
+                            <th>Street Address</th> @* 18 *@
+                            <th>City</th> @* 19 *@
+                            <th>State</th> @* 20 *@
+                            <th>Zip Code</th> @* 21 *@
+                            <th>Method</th> @* 22 *@
+                            <th>Check #</th> @* 23 *@
+                            <th>Amount $</th> @* 24 *@
+                            <th>Outstanding Amount $</th> @* 25 *@
+                            <th>Receipt Type</th> @* 26 *@
+                            <th>Transfer Type</th> @* 27 *@
+                            <th>Contribution Type</th> @* 28 *@
+                            <th>Purpose Code</th> @* 29 *@
+                            <th>Reciept Code</th> @* 30 *@
+                            <th>Original Date</th> @* 31 *@
+                            <th>Lender Code</th> @* 32 *@
+                            <th>Election Year</th> @* 33 *@
+                            <th>Office</th> @* 34 *@
+                            <th>District</th> @* 35 *@
+                            <th>Explanation</th> @* 36 *@
+                            <th>Itemized</th> @* 37 *@
+                            <th>County</th> @* 38 *@
+                            <th>Municipality</th> @* 39 *@
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+    //$(document).ready(function () {
+
+        PageTabAcordion2();
+
+        //$('#accordion2 .ui-accordion-content').show();
+
+        $("#lblSubmitDate2").hide();
+        $("#txt1OpeningBalance2").val("$0.00");
+        $("#txt1OpeningBalance2").prop("disabled", true);
+
+        $("#txt2aIndividualsTotal2").val("$10,750.00");
+        $("#txt2aIndividualsTotal2").prop("disabled", true);
+
+        $("#txt2bCorporationTotal2").val("$0.00");
+        $("#txt2bCorporationTotal2").prop("disabled", true);
+
+        $("#txt2cOtherTotal2").val("$0.00");
+        $("#txt2cOtherTotal2").prop("disabled", true);
+
+        $("#txt2dInKindTotal2").val("$0.00");
+        $("#txt2dInKindTotal2").prop("disabled", true);
+
+        $("#txt2eTotalContributions2").val("$10,750.00");
+        $("#txt2eTotalContributions2").prop("disabled", true);
+
+        $("#txt3aOtherReceipts2").val("$0.00");
+        $("#txt3aOtherReceipts2").prop("disabled", true);
+
+        $("#txt3bTransferInTotal2").val("$0.00");
+        $("#txt3bTransferInTotal2").prop("disabled", true);
+
+        $("#txt3cLoansReceivedTotal2").val("$0.00");
+        $("#txt3cLoansReceivedTotal2").prop("disabled", true);
+
+        $("#txt3dExpenditureRefundsTotal2").val("$0.00");
+        $("#txt3dExpenditureRefundsTotal2").prop("disabled", true);
+
+        $("#txt3eHousekeepingReceiptsTotal2").val("$0.00");
+        $("#txt3eHousekeepingReceiptsTotal2").prop("disabled", true);
+
+        $("#txt3fTotalMiscellaneousReceipts2").val("$0.00");
+        $("#txt3fTotalMiscellaneousReceipts2").prop("disabled", true);
+
+        $("#txt4TotalReceipts2").val("$10,750.00");
+        $("#txt4TotalReceipts2").prop("disabled", true);
+
+        $("#txt5Total2").val("$10,750.00");
+        $("#txt5Total2").prop("disabled", true);
+
+        $("#txt6aDisbursementsTotals2").val("$5115.54");
+        $("#txt6aDisbursementsTotals2").prop("disabled", true);
+
+        $("#txt6bTotal2").val("$0.00");
+        $("#txt6bTotal2").prop("disabled", true);
+
+        $("#txt6cTransferOutTotal2").val("$0.00");
+        $("#txt6cTransferOutTotal2").prop("disabled", true);
+
+        $("#txt6dLoansRepaidTotal2").val("$0.00");
+        $("#txt6dLoansRepaidTotal2").prop("disabled", true);
+
+        $("#txt6eContributiosnRefunded2").val("$0.00");
+        $("#txt6eContributiosnRefunded2").prop("disabled", true);
+
+        $("#txt6fHousekeepingExpensesTotal2").val("$0.00");
+        $("#txt6fHousekeepingExpensesTotal2").prop("disabled", true);
+
+        $("#txt6gTotalMiscellaneousReceipts2").val("$5,115.54");
+        $("#txt6gTotalMiscellaneousReceipts2").prop("disabled", true);
+
+        $("#txt7BalanceAtPeriod2").val("$5,634.46");
+        $("#txt7BalanceAtPeriod2").prop("disabled", true);
+
+        $("#txt8aLiabilities2").val("$0.00");
+        $("#txt8aLiabilities2").prop("disabled", true);
+
+        $("#txt8bOutstanding2").val("$0.00");
+        $("#txt8bOutstanding2").prop("disabled", true);
+
+        $("#txt8cPartners2").val("$0.00");
+        $("#txt8cPartners2").prop("disabled", true);
+
+        $("#txt8dAmountAllocated2").val("$0.00");
+        $("#txt8dAmountAllocated2").prop("disabled", true);        
+
+        //linkASche - A
+        $("#linkASche").click(function () {
+            HideAllUC();
+            $("#tabsSchedA").show();
+        });
+
+        //linkBSche - B
+        $("#linkBSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedB").show();
+        });
+
+        //linkCSche - C
+        $("#linkCSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedC").show();
+        });
+
+        //linkDSche - D
+        $("#linkDSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedD").show();
+        });
+
+        //linkDSche - D
+        $("#linkDScheExpenses").click(function () {
+            HideAllUC();
+            $("#tabsSchedD").show();
+        });
+
+        //linkESche - E
+        $("#linkESche").click(function () {
+            HideAllUC();
+            $("#tabsSchedE").show();
+        });
+
+        //linkFSche - F
+        $("#linkFSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedF").show();
+        });
+
+        //linkGSche - G
+        $("#linkGSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedG").show();
+        });
+
+        //linkHSche - H
+        $("#linkHSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedH").show();
+        });
+
+        //linkISche - I
+        $("#linkISche").click(function () {
+            HideAllUC();
+            $("#tabsSchedI").show();
+        });
+
+        //linkJSche - J
+        $("#linkJSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedJ").show();
+        });
+
+        //linkKSche - K
+        $("#linkKSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedK").show();
+        });
+
+        //linkLSche - L
+        $("#linkLSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedL").show();
+        });
+
+        //linkMSche - M
+        $("#linkMSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedM").show();
+        });
+
+        //linkNSche - N
+        $("#linkNSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedN").show();
+        });
+
+        //linkOSche - O
+        $("#linkOSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedO").show();
+        });
+
+        //linkPSche - P
+        $("#linkPSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedP").show();
+        });
+
+        //linkQSche - Q
+        $("#linkQSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedQ").show();
+        });
+
+        //linkRSche - R
+        $("#linkRSche").click(function () {
+            HideAllUC();
+            $("#tabsSchedR").show();
+        });
+
+        ////linkASche - A
+        //$("#linkASche").click(function () {
+        //    HideAllUC();
+        //    $("#tabsSchedA").show();
+        //});
+
+        // Button click event
+
+
+        function HideAllUC() {
+            $("#tabsSummary").hide();
+            $("#tabsSchedA").hide();
+            $("#tabsSchedB").hide();
+            $("#tabsSchedC").hide();
+            $("#tabsSchedD").hide();
+            $("#tabsSchedE").hide();
+            $("#tabsSchedF").hide();
+            $("#tabsSchedG").hide();
+            $("#tabsSchedH").hide();
+            $("#tabsSchedI").hide();
+            $("#tabsSchedJ").hide();
+            $("#tabsSchedK").hide();
+            $("#tabsSchedL").hide();
+            $("#tabsSchedM").hide();
+            $("#tabsSchedN").hide();
+            $("#tabsSchedO").hide();
+            $("#tabsSchedP").hide();
+            $("#tabsSchedQ").hide();
+            $("#tabsSchedR").hide();
+        }
+    //});
+</script>

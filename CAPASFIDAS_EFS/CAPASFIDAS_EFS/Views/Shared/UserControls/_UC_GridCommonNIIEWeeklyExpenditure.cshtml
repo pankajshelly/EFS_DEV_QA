@@ -1,0 +1,360 @@
+﻿
+<div class="divWidth">
+    <div id="divTransactionType">
+        <div class="verticalCSSDestopTISForLables lblCSS">
+            <span id="lblTransactionType">Transaction Type</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstTransTypeNonItemWeeklyExp", ViewData["lstTransTypeNonItemWeeklyExp"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblTransactionType" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            <input type="button" id="btnAddNewTransaction" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Add New Transaction" title="Add New Transaction" style="font-size:12px; text-decoration:none;" />
+        </div>
+    </div>
+    <div id="divSortColumns" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            <span id="lblColumnName">Sort</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstSortColumnName", ViewData["lstSortColumnName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstSortColumnNameOrder", ViewData["lstSortColumnNameOrder"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+    </div>
+    <div id="divViewableColumn" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS">
+            <span id="lblColumns">Select columns to view</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("ddlViewableColumn", ViewData["lstSortColumnName"] as SelectList, new { @class = "spanMobileWidth", multiple = "multiple", aria_labelledby = "lblColumns" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS" style="padding-bottom:2em;">
+            <input type="button" id="btnSetPreferences" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Set Preferences" title="Set Preferences" style="font-size:12px;" />
+        </div>
+    </div>
+</div>
+<div class="submitTransBtnCls">
+    <input type="button" id="btnSubmitSchedAIEWeeklyContr" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Submit Transaction" title="Submit Transaction" style="font-size:12px;" />
+    <b>Select un-submitted transaction in grid to enable "Submit Transaction" button</b>
+</div>
+<div id="dvMonetaryAllocAmt" class="floatLeft paddingIEWeeklyContrTxt">
+     <h3 id="lblAllTransTextIEWeeklyContr" style="font-weight:bolder">All Transactions</h3>
+</div>
+<div id="divGrid2">
+    <table id="gridFilingTransIEWeeklyExpenditure" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+        <thead id="thdGrid" class="header">
+            <tr>
+                <th class="never">FilingTransId</th> @* 0 *@
+                <th class="never">FilingSchedId</th> @* 1 *@
+                <th class="never">FilingEntityId</th> @* 2 *@
+                <th class="never">PurposeCodeId</th> @* 3 *@
+                <th class="never">PaymentTypeId</th> @* 4 *@
+                <th class="never">AddrId</th> @* 5 *@
+                <th class="never">TreasId</th> @* 6 *@
+                <th class="never">RLibability</th> @* 7 *@
+                <th class="never">RSubcontractor</th> @* 8 *@
+                <th>Expand</th> @* 9 *@
+                <th>Action</th> @* 10 *@
+                <th>Submission Date</th> @* 11 *@
+                <th>Entity Name</th> @* 12 *@
+                <th>Amount $</th> @* 13 *@
+                <th>Status</th> @* 14 *@
+                <th>Amended</th> @* 15 *@
+                <th>Transaction Date</th> @* 16 *@
+                <th>Transaction Type</th> @* 17 *@
+                <th>Purpose Code</th> @* 18 *@
+                <th>Country</th> @* 19 *@
+                <th>Street Address</th> @* 20 *@
+                <th>City</th> @* 21 *@
+                <th>State</th> @* 22 *@
+                <th>Zip Code</th> @* 23 *@
+                <th>Method</th> @* 24 *@
+                <th>Check #</th> @* 25 *@
+                <th>Explanation</th> @* 26*@
+                <th>Itemized</th> @* 27 *@
+                <th>Treasurer First Name</th> @* 28 *@
+                <th>Treasurer Last Name</th> @* 29 *@
+                <th>Treasurer Middle Name</th> @* 30 *@
+                <th>Treasurer Occupation</th> @* 31 *@
+                <th>Treasurer Employer</th> @* 32 *@
+                <th>Treasurer Street Address</th> @* 33 *@
+                <th>Treasurer City</th> @* 34 *@
+                <th>Treasurer State</th> @* 35 *@
+                <th>Treasurer Zip Code</th> @* 36 *@
+                <th>Independent Expenditure Description</th> @* 37 *@
+                <th>Candidate's Name/Ballot Proposal Reference</th> @* 38 *@
+                <th>Supported</th> @* 39 *@
+                <th>Created Date</th> @* 40 *@
+                <th class="never">OwedAmount</th> @* 41 *@
+                <th class="never">DateIncurredOrgAmtId</th> @* 42 *@
+                <th class="never">LoanLiabilityNumber</th> @* 43 *@
+                <th class="never">TransNumber</th> @* 44 *@
+                <th class="never">TransMapping</th> @* 45 *@
+                <th class="never">CreatedDate24H</th> @* 46 *@
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+
+    /**
+     * A common function that can be used anywhere this table is implemented.
+     * Needs to exist outside the $m(document).ready function in order to be accessed but other files.
+     * @@param results - A list of column table headers to unhide. 
+     * @@param { DataTables.Api DataTable } tableReferece - These can be provided via $m('#' + gridName).DataTable() which returns a DataTables API instance and should not to be confused with $m('#' + gridName).dataTable() which returns a jQuery Object.
+     */
+        function GridCommonNIIEWeeklyExpenditure_HideColumn(results, tableReferece) {
+            var rules = {
+                "indexesToStartHidden": [0, 1, 2, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46],
+                "indexesToAlwaysKeepUnhidden": [9, 10], //Will always unhide.
+                "columnNamesToUnhide": results,//String to match.
+                "columnNamesIndexMappings": appCommonEFS_GetGridColumnSettings("UC_GridCommonNIIEWeeklyExpenditure") //String in header, index to unhide
+            }
+            appCommonEFS_HideTableColumn(tableReferece, rules);
+        }
+
+    $m(document).ready(function () {
+
+        $('#lstTransactionTypeNonItem').val(sessionStorage.getItem("lstTransactionTypeNonItem").toString());
+        $('#lstTransactionTypeNonItem').focus();
+        $("#lstSortColumnName")[0].selectedIndex = 10; // Created Date by Default Value in Sort Dropdown.
+        $("#lstSortColumnNameOrder")[0].selectedIndex = 1;
+
+        $m('#ddlViewableColumn').multipleSelect({
+            styler: function (value) {
+                return 'padding-left: 0.2em;';
+            },
+            width: '100%',
+            placeholder: "Select columns to view",
+            filter: true
+        });
+
+        var options = {};
+        options.url = "@Url.Content("~/_UC_GridCommonNIIEWeeklyExpenditure/GetColumns/")";
+        options.type = "POST";
+        options.data = JSON.stringify(
+            {
+                uniqudId: '',
+                applicationName: '',
+                pageName: ''
+            });
+        options.dataType = "json";
+        options.contentType = "application/json";
+        options.success = function (data) {
+            var val = '';
+            for (var i = 0; i < data.length; i++) {
+                if (i == (data.length - 1)) {
+
+                    val += parseFloat(data[i].Value);
+                    break;
+                }
+                else {
+                    val += parseFloat(data[i].Value) + ',';
+                }
+            }
+
+            var resultArray = val.split(',').map(function (val) { return Number(val); });
+            $m("#ddlViewableColumn").multipleSelect("setSelects", resultArray);
+            
+            $m('#ddlViewableColumn option:contains("Submission Date")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Entity Name")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Date")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Type")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Amount")').each(function () {
+                if ($(this).text() == 'Amount') {
+                    $(this).attr('disabled', 'disabled');
+                    return false;
+                }
+                return true;
+            });
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            $m("#ddlViewableColumn").multipleSelect("refresh");
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            var selectedValuesArray =  [];
+
+            // CALL VIEWABLE COLUMN METHOD AND SET THE SELECTED CHECK BOX BASED ON FROM DATABASE VALUE 'Y' OR 'N'
+            // SO THAT BY DEFAULT IT WON'T SELECT ALL CHECK BOXES IN MULTISELECT CONTROL.
+            $.post("@Url.Content("~/_UC_GridCommonNIIEWeeklyExpenditure/GetColumnUpdatedValueIEExpenditure/")", {
+                uniqudId: ""
+            }, function (results) {
+                $.each(results, function (i, item) {
+                    if (item.Viewable.toString() == "Y") {
+                        selectedValuesArray[i] = parseInt(item.ViewableFieldID.toString());
+                    }
+                });
+                $m('#ddlViewableColumn').multipleSelect('setSelects', selectedValuesArray);
+            });
+
+        };
+        options.error = function () {
+            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+        };
+        $.ajax(options);
+
+        //This a variable that all pages using this partial will reference when looking up the table.
+        var tableFilingTransactions = '';
+
+        /**
+         * Finds the appropriate index to sort by based on optionSelectedText,
+         * @@param optionSelectedText - A list of column table headers to unhide.
+         */
+        function getSortIndex(optionSelectedText) {
+            var sortIndex = '';
+            switch (optionSelectedText) {
+                case "Submission Date":
+                    sortIndex = 11;
+                    break;
+                case "Entity Name":
+                    sortIndex = 12;
+                    break;
+                case "Amount":
+                    sortIndex = 13;
+                    break;
+                case "Status":
+                    sortIndex = 14;
+                    break;
+                case "Amend":
+                    sortIndex = 15;
+                    break;
+                case "Transaction Date":
+                    sortIndex = 16;
+                    break;
+                case "Transaction Type":
+                    sortIndex = 17;
+                    break;
+                case "Purpose Code":
+                    sortIndex = 18;
+                    break;
+                case "Country":
+                    sortIndex = 19;
+                    break;
+                case "Street Address":
+                    sortIndex = 20;
+                    break;
+                case "City":
+                    sortIndex = 21;
+                    break;
+                case "State":
+                    sortIndex = 22;
+                    break;
+                case "Zip Code":
+                    sortIndex = 23;
+                    break;
+                case "Method":
+                    sortIndex = 24;
+                    break;
+                case "Check":
+                    sortIndex = 25;
+                    break;
+                case "Explanation":
+                    sortIndex = 26;
+                    break;
+                case "Itemized":
+                    sortIndex = 27;
+                    break;
+                case "Treasurer First Name":
+                    sortIndex = 28;
+                    break;
+                case "Treasurer Last Name":
+                    sortIndex = 29;
+                    break;
+                case "Treasurer Middle Name":
+                    sortIndex = 30;
+                    break;
+                case "Treasurer Occupation":
+                    sortIndex = 31;
+                    break;
+                case "Treasurer Employer":
+                    sortIndex = 32;
+                    break;
+                case "Treasurer Street Address":
+                    sortIndex = 33;
+                    break;
+                case "Treasurer City":
+                    sortIndex = 34;
+                    break;
+                case "Treasurer State":
+                    sortIndex = 35;
+                    break;
+                case "Treasurer Zip Code":
+                    sortIndex = 36;
+                    break;
+                case "Independent Expenditure Description":
+                    sortIndex = 37;
+                    break;
+                case "Candidate's Name/Ballot Proposal Reference":
+                    sortIndex = 38;
+                    break;
+                case "Supported":
+                    sortIndex = 39;
+                    break;
+                case "Created Date":
+                    sortIndex = 40;
+                    break;
+                default:
+                    break;
+            }
+            return sortIndex;
+        }
+
+        $("#lstSortColumnName").change(function (e) {
+            var data_table = $m('#gridFilingTransIEWeeklyExpenditure').DataTable();
+            var sortCount = getSortIndex($("#lstSortColumnName option:selected").text());
+            data_table.order([sortCount, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        });
+
+        $("#lstSortColumnNameOrder").change(function (e) {
+            var data_table = $m('#gridFilingTransIEWeeklyExpenditure').DataTable();
+            var sortCount = getSortIndex($("#lstSortColumnName option:selected").text());
+            data_table.order([sortCount, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        });
+
+        //Bind Clear Click
+        $(".clsCommonClear").bind('click', function () {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            if ($("#lstElectionType option:selected").val() == "6") {
+                sessionStorage.setItem("FilingDate", $("#txtNewFilingDate").val());
+            }
+            else {
+                sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            }
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("lstResigTermType", $("#lstResigTermType option:selected").val());
+            sessionStorage.setItem("lstFilingDate", $("#lstFilingDate option:selected").val());
+
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+
+            window.location.href = urlContrHome;
+        });
+    });
+</script>
+

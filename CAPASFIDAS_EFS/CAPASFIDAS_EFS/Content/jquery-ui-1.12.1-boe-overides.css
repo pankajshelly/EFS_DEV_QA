@@ -1,0 +1,259 @@
+﻿/*
+    jquery-ui-1.12.1-boe-overides.css
+    These overides work when the body tag is assinged the id of #boe-css-overrides.
+    Used instead of !important the id adds 100 points weight to any selector contained within.
+    In CSS  every selector has its own numerical 'weight':
+       > 1000 points for element inline styling
+       > 100 points for IDs
+       > 10 points for classes and pseudo-classes
+       > 1 point for tag selectors and pseudo-elements
+    Version 0.5.4 - Last formal update 01/13/2023
+*/
+/* --- START jquery.ui.1.12.1 theme overrides ---- */
+#boe-css-overrides .ui-state-default,
+#boe-css-overrides .ui-widget-content .ui-state-default,
+#boe-css-overrides .ui-widget-header .ui-state-default {
+    border-color: #ccc;
+}
+
+    #boe-css-overrides .ui-button:hover,
+    #boe-css-overrides .ui-state-hover,
+    #boe-css-overrides .ui-state-default .ui-state-hover,
+    #boe-css-overrides .ui-widget-content .ui-state-hover,
+    #boe-css-overrides .ui-widget-header .ui-state-hover,
+    #boe-css-overrides .ui-state-focus,
+    #boe-css-overrides .ui-widget-content .ui-state-focus,
+    #boe-css-overrides .ui-widget-header .ui-state-focus {
+        color: #ffffff !important;
+        background-color: #007681; /*Accessible Color Contrast*/
+        border-color: #ffffff; /*Accessible Color Contrast*/
+    }
+
+#boe-css-overrides .ui-widget-header,
+#boe-css-overrides .ui-widget-default.ui-state-active,
+#boe-css-overrides .ui-widget-header .ui-state-active,
+#boe-css-overrides .ui-widget-content .ui-state-active,
+#boe-css-overrides .ui-accordion-header {
+    font-family: "Proxima Nova", Arial, sans-serif;
+    background-image: none;
+    background-color: #007681; /*Accessible Color Contrast*/
+    border-color: #007681; /*Accessible Color Contrast*/
+    color: #ffffff !important; /*Accessible Color Contrast*/
+    border-radius: 2.5px;
+    width: 100%;
+}
+
+    #boe-css-overrides .ui-accordion-header:focus {
+        border-width: 4px;
+        border-color: #007681;
+        border-style: solid;
+        background-color: #09464C;
+        outline-style: none;
+    }
+
+    #boe-css-overrides .ui-accordion-header:hover {
+        outline-width: 4px;
+        outline-color: #09464C;
+        outline-style: solid;
+    }
+
+#boe-css-overrides .ui-state-active {
+    border-width: 6px;
+    border-color: #7fa9ae;
+}
+
+#boe-css-overrides .ui-accordion-header span {
+    color: white;
+}
+
+/*Use white icons to create contrast with dark headers*/
+#boe-css-overrides .ui-accordion-header .ui-icon {
+    display: inline-block;
+}
+
+#boe-css-overrides .ui-accordion-header button {
+    font-weight: initial;
+}
+
+#boe-css-overrides div.ui-accordion-content {
+    background: #ffffff;
+    padding: 0.75em;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#boe-css-overrides .ui-datepicker {
+    z-index: 4000 !important; /*Allows our datepicker div to draw on top of bootsrap pre-pended or appended buttons.*/
+}
+
+
+#boe-css-overrides .ui-widget-header .ui-dialog-titlebar-close.ui-widget .ui-icon.ui-icon-closethick {
+    background-image: url(Images/ui-icons_444444_256x240.png);
+}
+
+#boe-css-overrides .ui-icon,
+#boe-css-overrides .ui-widget-content .ui-icon,
+#boe-css-overrides .ui-widget-header .ui-icon,
+#boe-css-overrides .ui-widget-header .ui-dialog-titlebar-close.ui-widget:hover .ui-icon.ui-icon-closethick,
+#boe-css-overrides .ui-datepicker-prev.ui-datepicker-prev-hover .ui-icon-circle-triangle-w,
+#boe-css-overrides .ui-datepicker-next.ui-datepicker-next-hover .ui-icon-circle-triangle-e,
+#boe-css-overrides .ui-accordion-header .ui-icon,
+#boe-css-overrides .ui-datepicker-prev .ui-icon-circle-triangle-w,
+#boe-css-overrides .ui-datepicker-next .ui-icon-circle-triangle-e {
+    background-image: url(images/ui-icons_ffffff_256x240.png);
+}
+
+
+#boe-css-overrides .ui-widget-header > span {
+    font-size: 16px;
+    margin: 1px;
+}
+
+#boe-css-overrides .ui-dialog .ui-dialog-title {
+    font-weight: bold;
+    color: white;
+}
+
+#boe-css-overrides .ui-dialog.DialogCustomStyle {
+    /*margin-top: 100px;*/
+    left: 470px;
+    /*top: 100px;*/
+}
+
+#boe-css-overrides .ui-dialog.EditDialogCustomStyle {
+    top: 135px;
+}
+
+#boe-css-overrides .ui-dialog.AddrContDlgCustomStyle {
+    margin-top: 100px;
+    left: 520px;
+    top: 400px;
+}
+
+#boe-css-overrides .ui-dialog-buttonset button {
+    margin: 3px; /*Adds room for any accessibility outline on the focus state of buttons.*/
+}
+
+/*Tells jqueryui to use bootstrap styles by default when creating element. 
+    Ideally these styles would be set when dialog is created.*/
+#boe-css-overrides .ui-widget button,
+#boe-css-overrides .ui-widget input[type=button] {
+    font-size: 12px;
+    background: none;
+    background-color: #CFCFCF;
+    border-color: #000000;
+    color: #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 6px 12px;
+    margin-left: 0.5em;
+}
+
+/*Ensure local css styles don't affect this header icon*/
+#boe-css-overrides .ui-widget .ui-accordion-header-icon {
+    margin: 0 0.2em;
+    position: static;
+}
+
+/*Allows font in caldendars to be readable in pickers and highlighted items*/
+#boe-css-overrides .ui-datepicker select.ui-datepicker-month,
+#boe-css-overrides .ui-datepicker select.ui-datepicker-year {
+    color: black;
+}
+
+/*Current calendar day*/
+#boe-css-overrides .ui-datepicker-today .ui-state-hover {
+    color: black;
+    border-color: darkgray;
+}
+
+/*Floats the datepicker input left so it aligns properly with a left floated icon no matter what the width set.*/
+/*Uses CSS3 to remove the 24 icon pixels from the 100% space provided for datepicker. ALM Defect 2400*/
+#boe-css-overrides input.hasDatepicker {
+    float: left;
+    /* Firefox */
+    width: -moz-calc(100% - 24px);
+    /* WebKit */
+    width: -webkit-calc(100% - 24px);
+    /* Opera */
+    width: -o-calc(100% - 24px);
+    /* Standard */
+    width: calc(100% - 24px);
+}
+
+#boe-css-overrides input.datepicker {
+    height: 36px; /*Match height of input in boe-commons*/
+}
+
+/*Adds margin and floats the datepicker trigger button to the left so that it alings at a consistent location to the right of a datepicker of any width.*/
+#boe-css-overrides button.ui-datepicker-trigger {
+    margin: 0.5em 0 0 0.1em; /*Add 0.5 to match height of input*/
+    padding: 0;
+    float: left;
+    border: none;
+    background-color: transparent;
+}
+
+    #boe-css-overrides button.ui-datepicker-trigger:hover,
+    #boe-css-overrides button.ui-datepicker-trigger:focus {
+        outline-color: #09464c;
+        outline-width: 0.25em;
+        width: 21px; /*Requires image to be 22px*/
+        height: 21px; /*Requires image to be 22px*/
+    }
+
+    #boe-css-overrides button.ui-datepicker-trigger:focus {
+        outline-style: solid;
+    }
+
+    #boe-css-overrides button.ui-datepicker-trigger:hover {
+        outline-style: double;
+    }
+
+#boe-css-overrides .ui-datepicker,
+#boe-css-overrides .ui-datepicker select.ui-datepicker-month,
+#boe-css-overrides .ui-datepicker select.ui-datepicker-year {
+    width: auto;
+}
+
+/*Tells jqueryui to use bootstrap styles by default when creating element. 
+    Ideally these styles would be set when dialog is created.*/
+#boe-css-overrides .ui-widget input[type=button]:hover,
+#boe-css-overrides .ui-widget input[type=button]:focus,
+#boe-css-overrides .ui-widget button:hover,
+#boe-css-overrides .ui-widget button:focus {
+    color: #ffffff;
+    background-color: #737373; /*WCAGAA Contrast ratio 4.741 against foreground*/
+    border-color: #ffffff;
+}
+
+#boe-css-overrides .ui-widget-content {
+    background-image: none;
+}
+
+
+    #boe-css-overrides .ui-state-focus,
+    #boe-css-overrides .ui-widget-content .ui-state-focus,
+    #boe-css-overrides .ui-widget-header .ui-state-focus,
+    #boe-css-overrides .ui-state-default,
+    #boe-css-overrides .ui-widget-content .ui-state-default,
+    #boe-css-overrides .ui-widget-header .ui-state-default,
+    #boe-css-overrides .ui-state-active,
+    #boe-css-overrides .ui-widget-content .ui-state-active,
+    #boe-css-overrides .ui-widget-header .ui-state-active,
+    #boe-css-overrides .ui-state-highlight,
+    #boe-css-overrides .ui-widget-content .ui-state-highlight,
+    #boe-css-overrides .ui-widget-header .ui-state-highlight,
+    #boe-css-overrides .ui-state-error,
+    #boe-css-overrides .ui-widget-content .ui-state-error,
+    #boe-css-overrides .ui-widget-header .ui-state-error {
+        background-image: none;
+        color: black; /*Accessible contrast*/
+    }
+
+#boe-css-overrides .ui-datepicker-unselectable.ui-state-disabled span.ui-state-default {
+    border: none; /*Remove border from disabled dates*/
+}

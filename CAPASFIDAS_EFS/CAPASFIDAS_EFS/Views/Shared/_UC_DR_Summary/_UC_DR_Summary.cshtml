@@ -1,0 +1,505 @@
+﻿
+@using (Html.BeginForm("_UC_DR_Summary", "_UC_DR_Summary", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="accordion" style="padding-left: 2em; padding-right: 2em; padding-top: 0.2em;" class="ui-accordion ui-widget ui-helper-reset divClearBoth">
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all"  style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            1. Opening Balance:
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt1OpeningBalance", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;" >
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            2. Total Contributions:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt2eTotalContributions", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <span style="padding:0.2em 1em 0.2em 2em;">
+                <a id="linkASche" class="linkSummary">2a) Individuals/Partnership - (Sched A): </a>
+            </span>
+            <span class="DDLCSS" style="float: right;padding-right:2.3em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt2aIndividualsTotal", @class = "textAlignRight colorBlck textboxWidth" })
+            </span>  
+            <div id="tabsSchedA">
+                @*temp @Html.Partial("_UC_DR_SchedA/_UC_DR_SchedA")*@
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkBSche" class="linkSummary">2b) Corporate - (Sched B): </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt2bCorporationTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkCSche" class="linkSummary">
+                        2c) Other - (Sched C):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt2cOtherTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkDSche" class="linkSummary">
+                        2d) In Kind - (Sched D):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt2dInKindTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;" >
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            3. Total Miscellanceous Receipts:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt3fTotalMiscellaneousReceipts", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <span style="padding:0.2em 1em 0.2em 2em;">
+                <a id="linkESche" class="linkSummary">
+                    3a) Other Receipts - (Sched E):
+                </a>
+            </span>
+            <span class="DDLCSS" style="float: right;padding-right:2.3em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt3aOtherReceipts", @class = "textAlignRight colorBlck textboxWidth" })
+            </span>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkGSche" class="linkSummary">
+                        3b) Transfer In - (Sched G):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt3bTransferInTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkISche" class="linkSummary">
+                        3c) Loans Received - (Sched I):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt3cLoansReceivedTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkLSche" class="linkSummary">
+                        3d) Expenditure Refunds - (Sched L):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt3dExpenditureRefundsTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkPSche" class="linkSummary">
+                        3e) Housekeeping Receipts - (Sched P):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt3eHousekeepingReceiptsTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all"  style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            4. Total Receipts This Period (Line 2 + Line 3):
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt4TotalReceipts", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;" >
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            5. Total (Line 1 + Line 4):
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt5Total", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all"  style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            6. Total Expenses:
+            <span class="DDLCSS" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt6gTotalMiscellaneousReceipts", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <span style="padding:0.2em 1em 0.2em 2em;">
+                <a id="linkFSche" class="linkSummary">
+                    6a) Expenditure Payments - (Sched F):
+                </a>
+            </span>
+            <span class="DDLCSS" style="float: right;padding-right:2.3em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt6aDisbursementsTotals", @class = "textAlignRight colorBlck textboxWidth" })
+            </span>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkDScheExpenses" class="linkSummary">
+                        6b) In Kind - (Sched D):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt6bTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkHSche" class="linkSummary">
+                        6c) Transfer Out - (Sched H):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt6cTransferOutTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkJSche" class="linkSummary">
+                        6d) Loans Paid - (Sched J):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt6dLoansRepaidTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkMSche" class="linkSummary">
+                        6e) Contributions Refunds - (Sched M):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt6eContributiosnRefunded", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkQSche" class="linkSummary">
+                        6f) Housekeeping Expenses - (Sched Q):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt6fHousekeepingExpensesTotal", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+        </div>
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all"  style="font-weight:bold;">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            7. Balance At End Of Period: (Subtract Line 6 from Line 5)
+            <span class="" style="float: right;padding-right:0.5em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt7BalanceAtPeriod", @class = "textAlignRight colorBlck" })
+            </span>
+        </h3>
+
+
+        <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;" >
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            8. Informational Schedules - Do not affect balance:
+        </h3>
+        <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+            <span style="padding:0.2em 1em 0.2em 2em;">
+                <a id="linkKSche" class="linkSummary">
+                    8a) Liabilities/Loans Forgiven - (Sched K):
+                </a>
+            </span>
+            <span class="DDLCSS" style="float: right;padding-right:2.3em;">
+                @Html.TextBox("searchTerm", null, new { id = "txt8aLiabilities", @class = "textAlignRight colorBlck textboxWidth" })
+            </span>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkNSche" class="linkSummary">
+                        8b) Outstanding Liabilities - (Sched N):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt8bOutstanding", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkOSche" class="linkSummary">
+                        8c) Partners/Subcontractors - (Sched O):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt8cPartners", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+            <div class="divClearBoth">
+                <span style="padding:0.2em 1em 0.2em 2em;">
+                    <a id="linkRSche" class="linkSummary">
+                        8d) Amount Allocated - (Sched R):
+                    </a>
+                </span>
+                <span class="DDLCSS" style="float: right;padding-right:2.3em;padding-top:0.2em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt8dAmountAllocated", @class = "textAlignRight colorBlck textboxWidth" })
+                </span>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+    //$(document).ready(function () {
+        PageTabAcordion();
+
+        $("#lblSubmitDate").hide();
+        $("#btnCommonSearchReport").prop('value', 'Submit Disclosure Report');
+
+        //$('#accordion .ui-accordion-content').show();
+
+        $("#lblSubmitDate").hide();
+        $("#txt1OpeningBalance").val("$0.00");
+        $("#txt1OpeningBalance").prop("disabled", true);
+
+        $("#txt2aIndividualsTotal").val("$10,750.00");
+        $("#txt2aIndividualsTotal").prop("disabled", true);
+
+        $("#txt2bCorporationTotal").val("$0.00");
+        $("#txt2bCorporationTotal").prop("disabled", true);
+
+        $("#txt2cOtherTotal").val("$0.00");
+        $("#txt2cOtherTotal").prop("disabled", true);
+
+        $("#txt2dInKindTotal").val("$0.00");
+        $("#txt2dInKindTotal").prop("disabled", true);
+
+        $("#txt2eTotalContributions").val("$10,750.00");
+        $("#txt2eTotalContributions").prop("disabled", true);
+
+        $("#txt3aOtherReceipts").val("$0.00");
+        $("#txt3aOtherReceipts").prop("disabled", true);
+
+        $("#txt3bTransferInTotal").val("$0.00");
+        $("#txt3bTransferInTotal").prop("disabled", true);
+
+        $("#txt3cLoansReceivedTotal").val("$0.00");
+        $("#txt3cLoansReceivedTotal").prop("disabled", true);
+
+        $("#txt3dExpenditureRefundsTotal").val("$0.00");
+        $("#txt3dExpenditureRefundsTotal").prop("disabled", true);
+
+        $("#txt3eHousekeepingReceiptsTotal").val("$0.00");
+        $("#txt3eHousekeepingReceiptsTotal").prop("disabled", true);
+
+        $("#txt3fTotalMiscellaneousReceipts").val("$0.00");
+        $("#txt3fTotalMiscellaneousReceipts").prop("disabled", true);
+
+        $("#txt4TotalReceipts").val("$10,750.00");
+        $("#txt4TotalReceipts").prop("disabled", true);
+
+        $("#txt5Total").val("$10,750.00");
+        $("#txt5Total").prop("disabled", true);
+
+        $("#txt6aDisbursementsTotals").val("$5,115.54");
+        $("#txt6aDisbursementsTotals").prop("disabled", true);
+
+        $("#txt6bTotal").val("$0.00");
+        $("#txt6bTotal").prop("disabled", true);
+
+        $("#txt6cTransferOutTotal").val("$0.00");
+        $("#txt6cTransferOutTotal").prop("disabled", true);
+
+        $("#txt6dLoansRepaidTotal").val("$0.00");
+        $("#txt6dLoansRepaidTotal").prop("disabled", true);
+
+        $("#txt6eContributiosnRefunded").val("$0.00");
+        $("#txt6eContributiosnRefunded").prop("disabled", true);
+
+        $("#txt6fHousekeepingExpensesTotal").val("$0.00");
+        $("#txt6fHousekeepingExpensesTotal").prop("disabled", true);
+
+        $("#txt6gTotalMiscellaneousReceipts").val("$5,115.54");
+        $("#txt6gTotalMiscellaneousReceipts").prop("disabled", true);
+
+        $("#txt7BalanceAtPeriod").val("$5,634.46");
+        $("#txt7BalanceAtPeriod").prop("disabled", true);
+
+        $("#txt8aLiabilities").val("$0.00");
+        $("#txt8aLiabilities").prop("disabled", true);
+
+        $("#txt8bOutstanding").val("$0.00");
+        $("#txt8bOutstanding").prop("disabled", true);
+
+        $("#txt8cPartners").val("$0.00");
+        $("#txt8cPartners").prop("disabled", true);
+
+        $("#txt8dAmountAllocated").val("$0.00");
+        $("#txt8dAmountAllocated").prop("disabled", true);
+
+        //$(".clsCommonSearch").click(function () {
+        //    $("#lblSubmitDate").show();
+        //    $("#btnCommonSearchReport").prop('value', 'Amend Disclosure Report');
+        //});
+
+        ////linkASche - A
+        //$("#linkASche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedA").show();
+        //});
+
+        ////linkBSche - B
+        //$("#linkBSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedB").show();
+        //});
+
+        ////linkCSche - C
+        //$("#linkCSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedC").show();
+        //});
+
+        ////linkDSche - D
+        //$("#linkDSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedD").show();
+        //});
+
+        ////linkDSche - D
+        //$("#linkDScheExpenses").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedD").show();
+        //});
+
+        ////linkESche - E
+        //$("#linkESche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedE").show();
+        //});
+
+        ////linkFSche - F
+        //$("#linkFSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedF").show();
+        //});
+
+        ////linkGSche - G
+        //$("#linkGSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedG").show();
+        //});
+
+        ////linkHSche - H
+        //$("#linkHSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedH").show();
+        //});
+
+        ////linkISche - I
+        //$("#linkISche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedI").show();
+        //});
+
+        ////linkJSche - J
+        //$("#linkJSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedJ").show();
+        //});
+
+        ////linkKSche - K
+        //$("#linkKSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedK").show();
+        //});
+
+        ////linkLSche - L
+        //$("#linkLSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedL").show();
+        //});
+
+        ////linkMSche - M
+        //$("#linkMSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedM").show();
+        //});
+
+        ////linkNSche - N
+        //$("#linkNSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedN").show();
+        //});
+
+        ////linkOSche - O
+        //$("#linkOSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedO").show();
+        //});
+
+        ////linkPSche - P
+        //$("#linkPSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedP").show();
+        //});
+
+        ////linkQSche - Q
+        //$("#linkQSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedQ").show();
+        //});
+
+        ////linkRSche - R
+        //$("#linkRSche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedR").show();
+        //});
+
+        ////linkASche - A
+        //$("#linkASche").click(function () {
+        //    HideAllUCOpt3();
+        //    $("#tabsSchedA").show();
+        //});
+
+        // Button click event
+
+
+        //function HideAllUCOpt3() {
+        //    $m("#tabsSummary").hide();
+        //    $m("#tabsSchedA").hide();
+        //    $m("#tabsSchedB").hide();
+        //    $m("#tabsSchedC").hide();
+        //    $m("#tabsSchedD").hide();
+        //    $m("#tabsSchedE").hide();
+        //    $m("#tabsSchedF").hide();
+        //    $m("#tabsSchedG").hide();
+        //    $m("#tabsSchedH").hide();
+        //    $m("#tabsSchedI").hide();
+        //    $m("#tabsSchedJ").hide();
+        //    $m("#tabsSchedK").hide();
+        //    $m("#tabsSchedL").hide();
+        //    $m("#tabsSchedM").hide();
+        //    $m("#tabsSchedN").hide();
+        //    $m("#tabsSchedO").hide();
+        //    $m("#tabsSchedP").hide();
+        //    $m("#tabsSchedQ").hide();
+        //    $m("#tabsSchedR").hide();
+        //    //$("#accordion").hide();
+        //}
+    //});
+</script>
+
+
+
+
+
+

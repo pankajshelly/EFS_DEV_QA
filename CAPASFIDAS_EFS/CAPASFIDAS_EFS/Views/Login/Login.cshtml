@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "RoleMap";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+@using (Html.BeginForm("RoleMap", "RoleMap", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div style="padding:8em 0 0 33em;">
+    <div id="divUserName">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            @Html.Label("User Name", new { @id = "lblLoginID", @class = "boldCSS" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.TextBox("searchTerm", null, new { id = "txtLoginID", @class = "txtWidthForDialog" })
+        </div>
+    </div>
+    <div id="divPassword">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            @Html.Label("Enter Password", new { @id = "lblPassword", @class = "boldCSS" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.TextBox("searchTerm", null, new { id = "txtPassword", @class = "txtWidthForDialog" })
+        </div>
+    </div>
+    <div id="divAuthenticatedMethod">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            @Html.Label("Authentication Method", new { @id = "lblAuthenticationMethod", @class = "boldCSS" })
+        </div>
+        <div class="DDLCSSAdd" style="padding: 1.3em 0em 0.3em 3em;">
+            @Html.DropDownList("lstAuthenticationMethod", ViewData["lstAuthenticationMethod"] as SelectList, new { @class = "txtWidthForAuthMth" })
+        </div>
+    </div>
+    <div id="divLinkValue">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            @Html.Label("test", new { @id = "lblLinkValue", @class = "boldCSS" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.TextBox("searchTerm", null, new { id = "txtLinkValue", @class = "txtWidthForDialog" })
+        </div>
+    </div>
+    <div id="divbtnNext" style="clear:both;padding: 1em 0 0 30em;float:left;">
+        <input type="button" id="btnLogin" class="btn btn-default clsSetPreserences" name="Command" value="Next" title="Next" style="font-size:12px;" />
+    </div>
+    <div id="divbtnNextAuth" style="clear:both;padding: 1em 0 0 30em;float:left;">
+        <input type="button" id="btnLoginAuth" class="btn btn-default clsSetPreserences" name="Command" value="Next" title="Next" style="font-size:12px;" />
+    </div>
+    <div id="divbtnNextFinalPage" style="clear:both;padding: 1em 0 0 30em;float:left;">
+        <input type="button" id="btnLoginAuthFinalPage" class="btn btn-default clsSetPreserences" name="Command" value="Next" title="Next" style="font-size:12px;" />
+    </div>
+</div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divAuthenticatedMethod").hide();
+        $("#divLinkValue").hide();
+        $("#divbtnNextAuth").hide();
+        $("#divbtnNextFinalPage").hide();
+        
+        $m("#btnLogin").button().on("click", function () {
+            $("#txtLoginID").prop("disabled", true);
+            $("#divPassword").hide();
+            $("#divAuthenticatedMethod").show();
+            $("#divbtnNext").hide();
+            $("#divbtnNextAuth").show();
+        });
+
+        $m("#btnLoginAuth").button().on("click", function () {            
+            $("#txtLoginID").prop("disabled", true);
+            $("#divPassword").hide();
+            $("#divAuthenticatedMethod").hide();
+            $("#divbtnNext").hide();            
+            $("#divLinkValue").show();
+            $("#lblLinkValue").text("Click the link in the email sent to xxxx@elections.ny.gov");
+            $("#divbtnNextAuth").hide();
+            $("#divbtnNextFinalPage").show();
+        });
+
+        $m("#btnLoginAuthFinalPage").button().on("click", function () {            
+            var urlContributionMonetary = "@Url.Content("~/ViewAllApplication/ViewAllApplication/")";
+            window.location.href = urlContributionMonetary;
+        });
+    });
+</script>
+

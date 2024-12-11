@@ -1,0 +1,310 @@
+﻿@{
+    ViewBag.Title = "Contribution Limits";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+@using (Html.BeginForm("ActiveDeactiveFiler", "ActiveDeactiveFiler", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                Contribution Limits
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                Contribution Limits
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selector">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch1" class="btn btn-default clsCommonSearch" name="Command" value="Search" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear1" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();">
+                                <img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp1" />
+                            </button>
+                        </div>
+                    </fieldset>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">"Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtFilerID", @class = "txtWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtCommitteeName", @class = "txtWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divParty">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblParty">Party</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstParty", ViewData["lstParty"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblParty" })
+                        </div>
+                    </div>
+                    <div class="floatRightNew">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch" name="Command" value="Search" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-default buttonTransparent" onclick="CallHelp();">
+                                <img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" />
+                            </button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Center Main Top section starts*@
+    <div id="divMainCenterTop" class="divMainCenterWidth85">
+        <div id="divBreadCrumb" class="breadCrumbDivCSS">
+            <nav aria-label="Breadcrumbs">
+                <ol class="breadcrumb">
+                    @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                    <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                    <li class="active">Contribution Limits</li>
+                </ol>
+            </nav>
+            <div id="divHeader">
+                <h1>Contribution Limits</h1>
+            </div>
+        </div>
+    </div>
+    @*Center Main Top section ends*@
+    <div id="divMainCenterBottom" class="divMainCenterWidth85">
+        <div id="divShowHideHelp" class="clsShowHideHelpSec">
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 1
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Office Type of County if searching for a county filer, select State if searching for a state filer.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 2
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Status Active if searching for only active filers, &nbsp; <br /> select Terminated if searching for filers that have terminated or select All for a list of both.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 3
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Select Filer Type Candidate to search for candidates, &nbsp; <br /> select Committee to search for Committees or select All for a list of both.
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="clsHelp" role="presentation">
+                <tr>
+                    <td class="clsHelpSpan">
+                        Step 4
+                    </td>
+                    <td class="paddingLeft0pt5em">
+                        Click on the Search button to display a list of data matching your criteria &nbsp; <br /> or continue to filter by selecting from the additional filter options.
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+        <div id="divGrid" style="float:none;">
+            <div style="float: right; padding: 1em;">
+                <span id="divexlPDF">
+                    <button type="button" id="btnCSVDownloadData" class="btn btn-default " name="Command" value="CSV">
+                        <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon" />
+                    </button>
+                    <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                        <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                    </a>
+                    <button type="button" class="btn btn-default buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp" /></button>
+                </span>
+            </div>
+            <table id="ContributionLimitsGrid" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Report Year</th>
+                        <th>Office Type</th>
+                        <th>Election Type</th>
+                        <th>Party</th>
+                        <th>Non-Family Limit</th>
+                        <th>Family Limit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    function CallHelp() {
+        window.open("#", "Help", "width=550, height=600,scrollbars=1");
+    }
+    $(document).ready(function () {
+        $("#main").addClass("SetHeightListOfFilers");
+        $("#main").removeClass("SetHeight");
+
+        sessionStorage.setDataTable = null;
+
+        //Show Hide Lookups
+        $("#divshow").hide();
+        $("#divshowForMobile").hide();
+
+        //$("#btnCommonHideShow").click(function () {
+        $m(".clsbtnCommonHideShow").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#ContributionLimitsGrid').DataTable().ajax.reload();
+            }
+
+            $("#selector").toggle("slow");
+            $("#divhide").show("slow");
+            $("#divshow").hide("slow");
+
+            $("#divhideForMobile").show("slow");
+            $("#divshowForMobile").hide("slow");
+
+            $("#divMainCenterBottom").addClass("divMainRightWidth85").removeClass("divMainRightWidth100");
+        });
+
+        $("#btnShowHide").click(function () {
+            if ($("#divShowHide").is(":hidden")) {
+                $("#divMainNew").removeClass("mainDivNew");
+                $("#divMainNew").addClass("mainDiv");
+            } else {
+                $("#divMainNew").removeClass("mainDiv");
+                $("#divMainNew").addClass("mainDivNew");
+            }
+        });
+
+        $m(".clsbtnCommonShowHide").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#ContributionLimitsGrid').DataTable().ajax.reload();
+            }
+            $("#selector").toggle("slow");
+            $("#divhide").hide("slow");
+            $("#divshow").show("slow");
+
+            $("#divhideForMobile").hide("slow");
+            $("#divshowForMobile").show("slow");
+
+            $("#divMainCenterBottom").addClass("divMainRightWidth100").removeClass("divMainRightWidth85");
+        });
+
+        $("#divGrid").hide();
+
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGrid").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+            var table = $m('#ContributionLimitsGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "fixedHeader": true,
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "fnDrawCallback": function () {
+                    var oSettings = this.fnSettings();
+                    var iTotalRecords = oSettings.fnRecordsTotal();
+                    if (iTotalRecords < 1) {
+                        $("#tblPdfCSVPrint").hide();
+                        $m("#btnCSVPDF").prop("hidden", true);
+                        $m("#btnCSVDownloadData").prop("hidden", true);
+                    }
+                    else {
+                        $("#tblPdfCSVPrint").show();
+                        $m("#btnCSVPDF").prop("hidden", false);
+                        $m("#btnCSVDownloadData").prop("hidden", false);
+                    }
+
+
+                },
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#ContributionLimitsGrid').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $m.ajax({
+                        "url": "../ContributionLimits/GetContributionSearchData",
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                        }
+                    });
+                }
+            });
+            $m('#ContributionLimitsGrid').DataTable().ajax.reload();
+        });
+    });
+</script>

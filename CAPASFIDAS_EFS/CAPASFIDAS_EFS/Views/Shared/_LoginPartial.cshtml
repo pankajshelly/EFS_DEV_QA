@@ -1,0 +1,95 @@
+﻿@model  Models.FilerInfoModel
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>NYSBOE: Electronic Filing System (EFS) @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="~/Content/ResponsiveMobile.css" media="screen and (max-width: 500px)" rel="stylesheet" />
+    <link href="~/Content/ResponsiveTablet.css" media="screen and (min-width: 500px) and (max-width: 900px)" rel="stylesheet" />
+    <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--Following MS standard app minification is managed in BundleConfig.cs BundleTable.EnableOptimizations.
+        Never use web config file to <compilation debug=”true”/> in order to avoid accidental deployments without minifcation! -->
+    <!--Minified script bundles-->
+    @Scripts.Render("~/Scripts/bundle-jquery")
+    @Scripts.Render("~/Scripts/DataTables-1.10.20/bundle-jquery-dataTables")
+    @Scripts.Render("~/Scripts/bundle-jquery-ui")
+    @Scripts.Render("~/Scripts/bundle-bootstrap")
+    @Scripts.Render("~/Scripts/bundle-other")
+    @Scripts.Render("~/Scripts/bundle-multiple-select")
+
+    <!--Style bundles-->
+    @Styles.Render("~/Content/bundle-base")
+    @Styles.Render("~/Content/bundle-jquery")
+    @Styles.Render("~/Content/bundle-jquery-ui")
+    @Styles.Render("~/Content/multiple-select/bundle-multiple-select")
+    @Styles.Render("~/Content/bundle-bootstrap")
+    @Styles.Render("~/Content/DataTables-1.10.20/css/bundle-jquery-dataTables")
+    @Styles.Render("~/Content/DataTables-1.10.20/extensions/Responsive/css/bundle-jquery-dataTables-responsive")
+
+    @*This is no longer valid. Must be set in the server side. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options*@
+    @*<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN">*@
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX56BVPMCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WX56BVPMCD');
+    </script>
+    <!--Razor/C# .CSHTML-->
+    <style>
+        /*Hide the static UI Nav when printing*/
+
+        @@media print {
+            .nygov-universal-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="boe-css-overrides">
+    <div style="font-size: 70%; padding-left: .5em;"><a href="#main">SKIP TO MAIN CONTENT</a></div>
+    <!-- Start NEW BANNER-->
+    <iframe id="nygov-universal-navigation-frame" class="nygov-universal-container" lang="en" title="New York State Universal Banner" height="86" src="//static-assets.ny.gov/load_global_menu/ajax?iframe=true&amp;target=blank" style="border:none; overflow:hidden; width:100%; height:90px;"></iframe>
+    <!-- END NEW BANNER-->
+    @if (@System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "Development(DEV)" || @System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "Quality Assurance(QA)" ||
+    @System.Configuration.ConfigurationManager.AppSettings["appEnvironment"] == "User Acceptance Testing(UAT)")
+    {
+        <div class="alert alert-warning mb-0" role="alert">
+            <strong>Warning</strong> this is a <strong>@System.Configuration.ConfigurationManager.AppSettings["appEnvironment"]</strong> deployment of the Candidate Management Applications page. <strong>Always</strong> check the URL you are moving to before performing any actions.
+        </div>
+    }
+    <nav id="menuNav" class="navbar navbar-expand-lg navbar-inverse">
+        <!--Navbar mobile view collapse is managed using the native jquery/bootstrap functionality.-->
+        <a class="navbar-brand" href="https://www.elections.ny.gov/">Board of Elections</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        </div>
+    </nav>
+    <div id="divWelcomeBanner" class="container-fluid bg-color-nys-busines-secondary">
+        <div class="col-lg-12">
+            <span id="loggedInUser">@*Welcome, User.Name@host.domain*@</span>
+            &nbsp;
+            <a>@*Logout*@</a>
+        </div>
+    </div>
+    <div id="main" class="SetHeight">
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    <iframe id="nygov-universal-footer-frame" class="nygov-universal-container" lang="en" title="New York State Universal Footer" height="120" src="//static-assets.ny.gov/load_global_footer/ajax?iframe=true&amp;target=blank" style="border:none; overflow:hidden; width:100%; height:200px;"></iframe>
+    <script>
+        $(document).ready(function () {
+            boeA11yHelperImplementCommonAccessibilityFeatures();
+        });
+    </script>
+</body>
+</html>
+
+

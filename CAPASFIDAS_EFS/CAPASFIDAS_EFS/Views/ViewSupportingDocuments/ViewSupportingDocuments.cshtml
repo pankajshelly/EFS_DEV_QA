@@ -1,0 +1,429 @@
+﻿@*
+    CREIGHTON NEWSOM
+    VIEWSUPPORTINGDOCUMENTS PAGE 11/2018
+*@
+
+@{
+    ViewBag.Title = "ViewSupportingDocuments";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<script src="~/Scripts/PageTab3.js"></script>
+    <script src="~/Scripts/PageTabs.js"></script>
+    <script src="~/Scripts/PageTab2.js"></script>
+
+@using (Html.BeginForm("ViewSupportingDocuments", "ViewSupportingDocuments", FormMethod.Get, new { id = "submitForm" }))
+{
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    @Html.Partial("UserControls/_UC_Loding")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow"  />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow"   />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                View All Disclosures
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow"  />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                View All Disclosures
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow"   />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="divHideShow">
+                <div class="divWidth">
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @*@Html.DropDownList("lstFilerID", ViewData["lstFilerID"] as SelectList, new { @class = "spanMobileWidth" })*@
+                            @Html.DropDownList("txtFilerID", Enumerable.Empty<SelectListItem>(), "", new { @class = "spanMobileWidth txtFilerID", @id = "txtFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            @Html.Label("Candidate/Committee Name", new { @id = "lblCommitteeName" })
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @*@Html.DropDownList("lstCommitteeName", ViewData["lstCommitteeName"] as SelectList, new { @class = "spanMobileWidth" })*@
+                            @Html.TextBox("txtCommitteeName", null, new { id = "txtCommitteeName", @class = "txtWidth txtReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divReportYear">
+                        <div class="verticalCSSDestop lblCSS">
+                            @Html.Label("Report Year", new { @id = "lblReportYear" })
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstReportYear", ViewData["lstReportYear"] as SelectList, "- Select -", new { @class = "spanMobileWidth" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            @Html.Label("Disclosure Period", new { @id = "lblDisclosurePeriod" })
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth" })
+                        </div>
+                    </div>
+                    <div class="floatRightNew" style="padding-bottom: 2em;">
+                        <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                        <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                        <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelpFilter();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>
+        <li>@Html.ActionLink("Summary", "ViewSupportingDocuments", "ViewSupportingDocuments", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">View Supporting Documents</li>
+            </ol>
+        </nav>
+        <div id="divHeader" class="paddingtoppt5" style="width: 170%;">
+            <h1>@Html.Label("View Supporting Documents", new { @id = "lblHeader" })</h1>
+        </div>
+    </div>
+    <br /><br /><br /><br />
+
+
+    <div class="divGridCSS paddingTop1em paddingLeft1em" id="divSupportingDocumentsGridHeader">
+        <h2 style="float:left; margin-left:1.1em; margin-bottom:.5em;">
+            Supporting Documents
+        </h2>
+    </div>
+
+    <!--SUPPORTING DOCUMENTS GRID-->
+    <div id="divSupportingDocumentsGrid" class="divGridCSS">
+        <table id="supportingDocumentsGrid" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+            <thead id="thdGrid" class="header">
+                <tr>
+                    <th class="never">SupportingDocID</th>@*0*@
+                    <th class="never">ScanDocID</th>@*1*@
+                    <th class="never">OfficeTypeID</th>@*2*@
+                    <th class="never">ElectTypeID</th>@*3*@
+                    <th class="never">PolCalDateID</th>@*4*@
+                    <th>Expand</th>@*5*@
+                    <th>Action</th>@*6*@
+                    <th><a href="javascript:SortTable(2,'D','mdy', 'supportingDocumentsGrid');">Date Filed</a></th>
+                    <th>Document Type</th>@*8*@
+                    <th>Amended</th>@*9*@
+                    <th>Report Year</th>@*10*@
+                    <th>Election Type</th>@*11*@
+                    <th>Report Type</th>@*12*@
+                    <th><a href="javascript:SortTable(8,'D','mdy', 'supportingDocumentsGrid');">Election Date</a></th>
+                    <th>Disclosure Period</th>@*14*@
+                    <th>Status</th>@*15*@
+                    <th>File Type</th>@*16*@
+                    <th>Size</th>@*17*@
+                    <th>Filing Method</th>@*18*@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+    </div>
+}
+
+
+<script>
+    $m = jQuery.noConflict();
+
+
+////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////
+
+
+
+    function CallHelp() {
+        window.open("#", "Help", "width=550, height=600,scrollbars=1");
+    }
+
+    $m(document).ready(function () {
+
+        $("#txtFilerType").attr('title', '@ViewBag.txtFilerType'); 
+        $("#txtFilerType").val("@ViewBag.txtFilerType");
+        $("#txtFilerType").prop("disabled", true);
+
+
+        // INITIALIZATION CODE, SET FILERID AND COMMITTEENAME TO 0
+        //$("#lstFilerID")[0].selectedIndex = 0;
+        //$("#lstCommitteeName")[0].selectedIndex = 0;
+        $("#txtFilerID")[0].selectedIndex = 0;
+        $("#txtCommitteeName").attr("disabled", true);
+
+        // CLEAR THE FILTERS AND HIDE THE GRIDS
+        ClearFilters();
+        HideAllGrids();
+
+        // DECLARE AND ASSIGN GLOBAL VARIABLES
+        var GlobalFilerID = $("#lstFilerID").val();
+        var GlobalCommitteeName = $("#lstCommitteeName").val();
+        var supportingDocumentsGridDataTable = "undefined";
+
+        //Show Hide Lookups
+        $("#divshow").hide();
+        $("#divshowForMobile").hide();
+
+        LoadFilerId();
+        function LoadFilerId() {
+            var optionHtml = "";
+            var selected = "";
+            var options = {};
+            //options.url = "@Url.Content("~/ViewSupportingDocuments/GetFilerIdData/")";
+            options.url = '@Url.Action("GetFilerIdData", "ViewSupportingDocuments")';
+            options.type = "POST";
+            options.data = null;
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                $("#txtFilerID").empty();
+                for (var i = 0; i < results.length; i++) {
+                    if (@Session["FilerID"].ToString() == results[i].Text) {
+                        selected = " selected";
+                    }
+                    else {
+                        selected = '';
+                    }
+                    optionHtml += '<option value="' + results[i].Value + '"' + selected + '>' + results[i].Text + '</option>';
+                }
+                $("#txtFilerID").html(optionHtml);
+                sessionStorage.setItem("GlobalFilerID", $("#txtFilerID").val());
+            };
+            options.error = function () {
+            };
+            $.ajax(options);
+        }
+
+        ///////////////////// HIDE / SHOW FUNCTIONALITY ///////////////////////////////////////
+
+        $m(".clsbtnCommonShowHide").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                //$m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+            $("#divHideShow").toggle("slow");
+            $("#divhide").hide("slow");
+            $("#divshow").show("slow");
+
+            $("#divhideForMobile").hide("slow");
+            $("#divshowForMobile").show("slow");
+
+            $m(".divGridCSS").css("width", "100%");
+            $m(".dataTables_wrapper").css("width", "96.5%");
+        });
+
+        $m(".clsbtnCommonHideShow").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                //$m('#AmendDisclosureReportGrid').DataTable().ajax.reload();
+            }
+            $("#divHideShow").toggle("slow");
+            $("#divhide").show("slow");
+            $("#divshow").hide("slow");
+
+            $("#divhideForMobile").show("slow");
+            $("#divshowForMobile").hide("slow");
+
+            $m(".divGridCSS").css("width", "85%");
+            $m(".dataTables_wrapper").css("width", "96%");
+        });
+
+        $("#btnShowHide").click(function () {
+            alert("Here");
+            if ($("#divShowHide").is(":hidden")) {
+                $("#divMainNew").removeClass("mainDivNew");
+                $("#divMainNew").addClass("mainDiv");
+
+            } else {
+                $("#divMainNew").removeClass("mainDiv");
+                $("#divMainNew").addClass("mainDivNew");
+            }
+        });
+
+        //////////////////// MAIN FORM COMMON 'APPLY/SEARCH' BUTTON CLICK ////////////
+        $m(".clsCommonSearch").bind('click', function (e) {
+                // SINCE THERE ARE NO REQUIRED FIELDS, SIMPLY DO THE SEARCH
+                DisplaySupportingDocumentsGrid();
+        });
+
+
+        function DisplaySupportingDocumentsGrid() {
+            // SET UP CONTROLS, VARIABLES, AND GRID
+            $("#divSupportingDocumentsGridHeader").show();
+            $("#divSupportingDocumentsGrid").show();
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+            var IDToHightlight = 0;
+            sessionStorage.setDataTable = "true";
+
+            // INITIALIZE GRID PROPERTIES, MAKE AJAX CALL AND ASSIGN DATA TO DATATABLE
+            supportingDocumentsGridDataTable = $m('#supportingDocumentsGrid').DataTable({
+                "bProcessing": true,
+                "responsive": true,
+                "deferRender": true,
+                "retrieve": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 1, 2, 3, 4],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [6],
+                        "fnCreatedCell": function (cell) {
+                            cell.setAttribute('aria-label', "Row Actions");
+                        }
+                    }
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#supportingDocumentsGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    // ASSIGN THE ACTION AND CONSTRUCT THE URL FOR THE "VIEW" LINK
+                    var url = '@Url.Action("DownloadSupportingDocument", "ViewSupportingDocuments", new { strDocumentID = "__documentID__" })';
+                    url = url.replace("__documentID__", aaData[0]);
+                    // INSERT THE LINK
+                    $m('td:eq(1)', nRow).html('<a class="editor_remove_CampMatr" style="color:blue; cursor:pointer;" id="lnkColumnData'+uniqueID+'"></a><a class="editor_IEWeeklyExp_History lnkGird"  href=' + url + ' target="_blank">' + "View" + '</a > ');
+                    return nRow;
+                },
+                "fnServerData": function (url, data, callback) {
+                    $m.ajax({
+                        //"url": "@Url.Content("~/ViewSupportingDocuments/ViewSupportingDocumentsGridData")",
+                        "url": '@Url.Action("ViewSupportingDocumentsGridData", "ViewSupportingDocuments")',
+                        "data": {
+                            strFilerID: $("#txtFilerID").val().toString(),
+                            strReportYearID: $("#lstReportYear").val().toString(),
+                            strDisclosurePeriodID: $("#lstDisclosurePeriod").val().toString()
+                        },
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        }
+                    });
+                },
+                // SORT BY REPORTYEAR AND RECEIVED DATE
+                "order": [[10, "desc"], [7, "desc"]]
+            });
+            // REFRESH GRID
+            $m("#supportingDocumentsGrid").DataTable().ajax.reload();
+            supportingDocumentsGridDataTable.columns.adjust().draw(true);
+            supportingDocumentsGridDataTable.responsive.recalc();
+        }
+
+        /////////////////// MAIN FORM REPORT(ELECTION) YEAR DROPDOWN CHANGE EVENT ////////////
+        $("#lstReportYear").change(function () {
+            // SET UP THE AJAX CALL PARAMETERS
+            var options = {};
+            //options.url = "../ViewSupportingDocuments/GetDisclosurePeriodsForYearAndFilerID";
+            options.url = '@Url.Action("GetDisclosurePeriodsForYearAndFilerID", "ViewSupportingDocuments")';
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    strFilerID: sessionStorage.getItem('GlobalFilerID'),
+                    strElectionYearID: $("#lstReportYear").val().toString()
+                });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                SetToSelect("#lstDisclosurePeriod");
+                for (var i = 0; i < results.length; i++) {
+                    $("#lstDisclosurePeriod").append("<option value='" + results[i].Value + "'>" + results[i].Text + "</option>");
+                    $("#lstDisclosurePeriod").attr("disabled", false);
+                }
+            };
+            options.error = function () {
+                ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+            };
+            $.ajax(options);
+        });
+
+        ///////////////////// MAIN FORM COMMON 'CLEAR' CLICK EVENT ////////////////////
+        $m(".clsCommonClear").bind('click', function (e) {
+            // CLEAR THE FILTERS AND HIDE GRIDS
+            ClearFilters();
+            HideAllGrids();
+        });
+
+        // txtFilerID Change
+        $("#txtFilerID").change(function () {
+            sessionStorage.setItem("Cnty_PageName", "ViewSupportingDocuments");
+            var url = '@Url.Action("RoleMap", "RoleMap", new { Cnty_FilerID = "__FilerID__" })';
+            window.location.href = url.replace('__FilerID__', $("#txtFilerID option:selected").text());
+        });
+
+        //////////////////////////// UTILITY FUNCTIONS ////////////////////////////////
+
+        function SetToSelect(divID) {
+            $(divID).empty();
+            $(divID).append("<option value=''>- Select -</option>");
+        }
+
+        // FUNCTION CLEARS FILTERS AND SETS FOCUS BACK ON REPORTYEAR
+        function ClearFilters() {
+            // CLEAR THE DISCLOSUREPERIOD LISTBOX
+            SetToSelect("#lstDisclosurePeriod");
+            $("lstDisclosurePeriod").attr("disabled", true);
+
+            // SET FOCUS TO ELECTIONYEAR CONTROL AND RESET TO ITEM 0
+            $("#lstReportYear").focus();
+            $("#lstReportYear")[0].selectedIndex = 0;
+        }
+
+        // FUNCTION HIDS THE GRIDS
+        function HideAllGrids() {
+            $("#divSupportingDocumentsGridHeader").hide();
+            $("#divSupportingDocumentsGrid").hide();
+        }
+
+    });
+
+    function CallHelpFilter() {
+
+        var myWidth = 500;
+        var myHeight = 600;
+
+        var left = (screen.width - myWidth) / 2;
+        var top = (screen.height - myHeight) / 4;
+
+        window.open("@Url.Content("~/ViewSupportingDocuments/ViewSupportingDocumentsSearchHelp/")", "Help", 'width = 450, height = 600, scrollbars = 1, width = ' + myWidth + ', height = ' + myHeight + ', top = ' + top + ', left = ' + left);
+    }
+
+</script>

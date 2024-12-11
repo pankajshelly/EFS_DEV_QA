@@ -1,0 +1,60 @@
+/*
+    This file is designed to implement extensions to Bootstrap v3.3.1
+    It requires a companion script file: bootstrap-3.boe-extensions.js
+    Some of these are features that may become available in future versions of boostrap.
+    Version 0.0.0.4 - Last formal update 2/08/2021
+*/
+#boe-css-overrides .dropdown-submenu {
+    position: relative;
+}
+
+    #boe-css-overrides .dropdown-submenu ul.dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
+
+#boe-css-overrides .navbar-nav .dropdown-submenu a.dropdown-toggle {
+    background-color: transparent;
+}
+
+    #boe-css-overrides .navbar-nav .dropdown-submenu a.dropdown-toggle:focus {
+        outline-width: 6px;
+        outline-offset: 1px;
+        outline-color: #B6CFD0;
+        outline-style: solid;
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-submenu a.dropdown-toggle:hover {
+        background: rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+#boe-css-overrides .dropdown-submenu ul.dropdown-menu a.dropdown-item {
+    background-color: #005C64;
+}
+
+    #boe-css-overrides .dropdown-submenu ul.dropdown-menu a.dropdown-item:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+@media (max-width: 750px) {
+    #boe-css-overrides .navbar-nav .dropdown-submenu a.dropdown-toggle {
+        white-space: normal;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-submenu ul.dropdown-menu {
+        white-space: normal;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    #boe-css-overrides .dropdown-submenu ul.dropdown-menu a.dropdown-item {
+        background-color: transparent;
+    }
+
+    #boe-css-overrides .navbar-nav .dropdown-submenu ul.dropdown-menu > a:hover {
+        background: rgba(0, 0, 0, 1); /*Sets the color to black at full opacity*/
+    }
+}

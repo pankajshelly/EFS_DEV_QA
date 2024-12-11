@@ -1,0 +1,747 @@
+﻿
+@{
+    ViewBag.Title = ": In Lieu Of Statement";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="InLieuOfStatementForm">
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp1" /></button>
+                        </div>
+                    </fieldset>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">* Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerType">* Filer Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">* Canddiate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">* Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divOfficeType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblOfficeType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCOfficeType", null, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth", aria_labelledby = "lblOfficeType" })
+                        </div>
+                    </div>
+                    <div id="divCounty">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCounty">* County</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCCounty", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblCounty" })
+                        </div>
+                    </div>
+                    <div id="divMunicipality">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblMunicipality">* Municipality</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCMuncipality", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblMunicipality" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">* Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">* Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">* Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+
+                    <div id="divFilingDateDropDown">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDate">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstFilingDate", ViewData["lstFilingDate"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstFilingDate", aria_labelledby = "lblFilingDate" })
+                        </div>
+                    </div>
+
+                    <div id="divReportPeriodDates">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesFrom">* Cut off Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDatesTo">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesTo">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesTo" })
+                        </div>
+                    </div>
+
+                    @* OFFICE CYCLE FILING DATE *@
+                    <div id="divFilingDateOffCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDateOffCycle">* New Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            <input type="text" id="txtNewFilingDate" name="txtNewFilingDate" class="txtWidth txtCurrentDateCls" maxlength="10" aria-labelledby="lblFilingDateOffCycle" />
+                        </div>
+                    </div>
+                    @* OFFICE CYCLE FILING DATE *@
+
+                    <div id="divFilingReason">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReasonforFiling">Resignation/Termination</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstResigTermType", ViewData["lstResigTermType"] as SelectList, "- Not Applicable -", new { @class = "spanMobileWidth lstResigTermType", aria_labelledby = "lblReasonforFiling" })
+                        </div>
+                    </div>
+
+                    <div class="floatRightNew">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS breadCrumbDivWidth">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">In-Lieu-Of Statement</li>
+            </ol>
+        </nav>
+        <div class="paddingtoppt5" style="width: 170%;">
+            <h1>
+                <span id="lblHeader1">File a Disclosure Report</span> -
+                <span id="lblHEleYear">File a Disclosure Report</span> -
+                <span id="lblHDisclPer">File a Disclosure Report</span>
+            </h1>
+        </div>
+        <div class="paddingtoppt5" style="width: 170%;">
+            <div class="paddingTop0em2em DisplayInlineBlock">
+                <h3><span id="lblHeader2">In-Lieu-Of Statement</span></h3>
+            </div>
+        </div>
+    </div>
+    <div id="divShowInLieuOfStatement" class="divGridCSS">
+        @Html.Partial("UserControls/_UC_Loding")
+        <div class="paddingLeft1em paddingBottom2em paddingtop2emInLieuOf">
+            <table>
+                <tr>
+                    <td style="padding-left: 0.8em;">
+                        <input type="button" id="btnAddNewInLieuOfStatement" class="btn btn-default" name="Command" value="Add In-Lieu-Of Statement" title="Add In-Lieu-Of Statement" style="font-size:12px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="divInLieuOfStatement">
+            <table id="gridInLieuOfStatement" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th class="never">Filings Id</th>
+                        <th>Expand</th>
+                        @*<th>Action</th>*@
+                        <th>Report Year</th>
+                        <th>Election Type</th>
+                        <th>Report Type</th>
+                        <th>Election Date</th>
+                        <th>Disclosure Period</th>
+                        <th>Date Submitted</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</form>
+
+<div id="dialog-form_InLieuOf" title="Add In-Lieu-Of Statement">
+    <form id="DialogBoxInLieuOfStatForm">
+        <div class="divWidthSchedABC">
+            <div id="dvUnitemized">
+                <br />
+                <div id="dvInLieuOf" class="verticalCSSDestopForLblInLieuOf ">
+                    @* Add Paragraph..... *@
+                    <p class="textAlignJustifyInLieuOf">
+                        I, <span id="spSubmitterName">SUBMITTERS NAME</span>, <span id="spnCandCommTreaName">TREASURER OF COMMITTEE NAME</span> HEREBY STATE THAT I AM A CANDIDATE AND/OR AN AUTHORIZED
+                        COMMITTEE SOLELY SUPPORTING ONE CANDIDATE AND AT THE CLOSE OF THIS REPORTING PERIOD NEITHER THE TOTAL
+                        RECEIPTS NOR THE TOTAL EXPENDITURES OF THE CAMPAIGN HAVE EXCEEDED $1000 AND THAT I HAVE NOT PREVIOUSLY
+                        FILED AN ITEMIZED STATEMENT AND THAT THIS STATEMENT IS IN ALL RESPECTS TRUE AND COMPLETE TO THE BEST
+                        OF MY KNOWLEDGE, INFORMATION AND BELIEF.
+                    </p>
+                    <br />
+                    <br />
+                    <p class="textAlignJustifyInLieuOf">
+                        KNOWINGLY FILING FALSE INFORMATION THROUGH THIS IN-LIEU OF STATEMENT CONSTITUTES A CLASS A MISDEMEANOR,
+                        PUNISHABLE BY A FINE AND/OR IMPRISONMENT. SEE PENAL LAW § 210.45
+                    </p>
+                    <br />
+                    <br />
+                    <p class="textAlignJustifyInLieuOf">
+                        NOTE: BY CHECKING 'I AGREE' AND CLICKING ON ‘SUBMIT’ BUTTON, YOU ARE AGREEING WITH THE ABOVE STATEMENTS.
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div id="tdIAgreeInLiueOfChk" class="divClearBoth">
+                <div class="verticalCSSDestopForLableInLieuOf lblCSSAddInLieuOf">
+                    @Html.CheckBox("chkIAgreeInLieuOf", false, new { @class = "", aria_labelledby = "lblOtherCountryPartnership" })
+                </div>
+                <div class="verticalCSSDestopForCheckBoxInLieuOf DDLCSSAddInLieuOf">
+                    <span id="lblOtherCountryPartnership">I agree</span>
+                </div>
+            </div>
+
+            <div id="AddInLieuOfStatement" class="AddLeftCSSSchedABC">
+                <input type="button" id="btnSubmit" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Submit" title="Submit" style="font-size:12px;" />
+                <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#InLieuOfStatementForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#InLieuOfStatementForm').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        // ROLE IF AUTHORIZED USER = 11 THEN DISABLE THE ADD BUTTON.
+        if (@Session["RoleID_FILER"] == "11") {
+            $("#btnAddNewInLieuOfStatement").hide();
+        }
+        else {
+            $("#btnAddNewInLieuOfStatement").show();
+        }
+
+        // Hide the Cut Off Date and Filing Date based on Disclosure Type.
+        $("#divReportPeriodDates").hide();
+        $("#divReportPeriodDatesTo").hide();
+
+        // Common for Non-Itemized Transactions.
+        sessionStorage.removeItem("TransactionTypeId");
+
+        // COMMON CODE
+        NonItemizedLeftFilterValues();
+
+        var dialogInLieuOf;
+
+        dialogInLieuOf = $m("#dialog-form_InLieuOf").dialog({
+            autoOpen: false,
+            resizable: true,
+            draggable: false,
+            height: 'auto',
+            width: 450,
+            position: {
+                my: "center top",
+                at: "center top+200"
+            },
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialogInLieuOf = $m("#dialog-form_InLieuOf").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialogInLieuOf = $m("#dialog-form_InLieuOf").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialogInLieuOf = $m("#dialog-form_InLieuOf").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+
+        // Load In-Lieu-Of Statement Grid.
+        var tableInLieuOfStatement = "";
+
+        tableInLieuOfStatement = $m('#gridInLieuOfStatement').DataTable({
+            "bProcessing": true,
+            "responsive": true,
+            "deferRender": true,
+            "retrieve": true,
+            "columnDefs": [
+                {
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridInLieuOfStatement').DataTable());
+            },
+            "fnDrawCallback": function (oSettings) {
+                $("#divLoading").hide();
+                var oSettings = this.fnSettings();
+                var iTotalRecords = oSettings.fnRecordsTotal();
+                if (iTotalRecords < 1) {
+                    $("#btnAddNewInLieuOfStatement").prop("disabled", false);
+                }
+                else {
+                    $("#btnAddNewInLieuOfStatement").prop("disabled", true);
+                }
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/InLieuOfStatement/GetInLieuOfStatement/")",
+                    "data": {
+                        txtFilerID: $("#txtFilerID option:selected").text(),
+                        lstElectionDate: $("#lstElectionDate option:selected").text(),
+                        lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                        strElectionYear: $("#lstElectionCycle option:selected").text(),
+                        lstElectionType: $("#lstElectionType option:selected").val(),
+                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                        lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                        txtFilingDate: sessionStorage.getItem("FilingDate").toString(),
+                    },
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                    }
+                });
+            },
+            "order": [[0, "desc"]]
+        });
+        $m('#gridInLieuOfStatement').DataTable().ajax.reload();
+        tableInLieuOfStatement.search('').columns().search('').draw();
+        tableInLieuOfStatement.responsive.recalc();
+
+        // Add New Trasaction - IN-LIEU-OF STATEMENT
+        $m("#btnAddNewInLieuOfStatement").button().on("click", function () {
+
+              // Check the Validation - IF ITEMIZED TRANSACTION(S) SUBMITTED THEN
+            //  FILER CAN NOT SUBMIT IN-LIUE-OF STATEMENT IF NOT SUBMITTED.
+
+            $.post("@Url.Content("~/InLieuOfStatement/GetItemizedSubmitted/")", {
+                strFilerId: $("#txtFilerID option:selected").text(),
+                strElectionYearId: $("#lstElectionCycle option:selected").val(),
+                strOfficeTypeId: $("#lstUCOfficeType option:selected").val(),
+                strFilingTypeId: $("#lstDisclosurePeriod option:selected").val(),
+                strFilingCatId: $("#lstDisclosureType option:selected").val(),
+                strElectTypeID: $("#lstElectionType option:selected").val()
+            }, function (results) {
+                if (results) {
+                    // Show message.
+                    var varFilerId = $("#txtFilerID option:selected").text(); 
+                    ShowDialogBox('EFS', 'Submitted Itemized Disclosure Report is available for Filer ID - ' + varFilerId + '. In-Lieu-Of Statement cannot be filed.', 'Ok', '');
+
+                    //var reportYear = $("#lstElectionCycle option:selected").text();
+                    //var officeType = $("#lstUCOfficeType option:selected").text();
+                    //var elecionType = $("#lstElectionType option:selected").text();
+                    //var electionDate = $("#lstElectionDate option:selected").text();
+                    //var disclosurePeriod = $("#lstDisclosurePeriod option:selected").text();
+
+                    //ShowDialogBox('EFS', 'Itemized report is submitted for the same "' + reportYear + '-' + officeType + '-' + elecionType + '-' + electionDate + '-' + disclosurePeriod + '", In-Lieu-Of Statement cannot be filed', 'Ok', '');                 
+                }
+                else {
+                    // Open Dialogbox.
+                    dialogInLieuOf.dialog("open");
+
+                    // By Default disabled Submit Button.
+                    $("#btnSubmit").prop("disabled", true);
+                    $("#chkIAgreeInLieuOf").prop('checked', false);
+
+                    //----------------------------------------------------------------------------------------------------
+                    // CALL CONTROLLER TO GET THE LOGIN PERSON NAME AND GET EITHER FILER CANDIDATE/COMMITTEE OR TREASURER
+                    // AND FILER HAS ANY COMMITTEE OR NOT.
+                    //----------------------------------------------------------------------------------------------------
+
+                    // Check the login Perosn either Candidate or Committee or Treasure based on that add text.
+                    var committeeName = $("#txtCommitteeName option:selected").text().toString();
+
+                    // Add Submitters Name, Candidate/Treasurer based on login.
+                    $.post("@Url.Content("~/InLieuOfStatement/GetPersonNameTreasureYN/")", {
+                    }, function (results) {
+                        $.each(results, function (i, item) {
+                            if (item.PersonName.toString() != null) {
+                                if (item.PersonName.toString() != "")
+                                    $("#spSubmitterName").text(item.PersonName.toString());
+                                else
+                                    $("#spSubmitterName").text("");
+                            }
+                            else {
+                                $("#spSubmitterName").text("");
+                            }                                                        
+                        });
+                    });
+
+                    $("#spnCandCommTreaName").text("TREASURER OF " + committeeName.toString());
+                }
+            });
+        });
+
+        // Close Button.
+        $m("#btnCloseDialog").button().on("click", function () {
+            // Close Dialogbox.
+            dialogInLieuOf.dialog("close");
+        });
+
+        // Add IN-LIEU-OF STATEMENT
+        $m("#btnSubmit").click(function (e) {
+            $("#divLoading").show();
+            /// SUBMIT IN-LIEU-OF STATEMENT FOR SELECTING PERIOD.
+            if ($('#chkIAgreeInLieuOf').is(':checked')) { // I Agreee checked then only you can Submit.
+
+                var url = '@Url.Action("AddInLieuOfStatementData", "InLieuOfStatement")';
+                $.post(url, {
+                    txtFilerId: $("#txtFilerID option:selected").text(),
+                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                    lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                    strElectionYear: $("#lstElectionCycle option:selected").val(),
+                    lstUCCounty: $("#lstUCCounty option:selected").val(),
+                    lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                    lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                    txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                },
+                    function (data) {
+                        if (data) {
+                            // Close Dialogbox.
+                            dialogInLieuOf.dialog("close");//Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                            window.status = "In-Lieu-Of Statement submitted successfully";
+                            ShowDialogBox('EFS', 'In-Lieu-Of Statement submitted successfully', 'Ok', '');
+
+                            $m.ajax({
+                                "url": "@Url.Content("~/InLieuOfStatement/GetInLieuOfStatement/")",
+                                "data": {
+                                    txtFilerId: $("#txtFilerID").val(),
+                                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                                    lstElectionType: $("#lstElectionType option:selected").val(),
+                                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                                    lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                                    strElectionYear: $("#lstElectionCycle option:selected").val(),
+                                    lstUCCounty: $("#lstUCCounty option:selected").val(),
+                                    lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                                },
+                                "fnDrawCallback": function (oSettings) {
+                                    $("#divLoading").hide();
+                                    var oSettings = this.fnSettings();
+                                    var iTotalRecords = oSettings.fnRecordsTotal();
+                                    if (iTotalRecords < 1) {
+                                        $("#btnAddNewInLieuOfStatement").prop("disabled", false);
+                                    }
+                                    else {
+                                        $("#btnAddNewInLieuOfStatement").prop("disabled", true);
+                                    }
+                                },
+                                "success": data,
+                                "dataType": "json",
+                                "type": "POST",
+                                "error": function () {
+                                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                }
+                            });
+                            $m('#gridInLieuOfStatement').DataTable().ajax.reload();
+
+                            $("#divLoading").hide();
+                        }
+                    });
+            }
+            else {
+                $("#divLoading").hide();
+            }
+        });
+
+        // Checkbox for I Agree
+        $("#chkIAgreeInLieuOf").click(function () {
+            if ($('#chkIAgreeInLieuOf').is(':checked')) { // I Agree
+                $("#btnSubmit").prop("disabled", false);
+            }
+            else {
+                $("#btnSubmit").prop("disabled", true);
+            }
+        });
+
+        // Delete In-Lieu-Of Statement
+        $m('#gridInLieuOfStatement tbody').on('click', 'a.editor_remove_InLieuOf', function (e) {
+            e.preventDefault();
+
+            var dataInLieuOf = tableInLieuOfStatement.row($(this).parents('tr')).data();
+
+            var delFilingsId = dataInLieuOf[0].toString();
+            // Close Confirm Box.
+            $m(this).dialog("close");//Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+            var resultsInLieuOfDel = "Are you sure you want to delete this transaction?";
+
+            $m('#modal_dialog').text(resultsInLieuOfDel);
+            $m("#modal_dialog").dialog({
+                resizable: false,
+                draggable: false,
+                width: 'auto',
+                height: 'auto',
+                bgiframe: false,
+                modal: true,
+                open: function (event, ui) { hideDialogXButton(this); },
+                position: {
+                    my: "center top",
+                    at: "center top+370"
+                },
+                hide: { effect: 'scale', duration: 400 },
+                buttons: {
+                    "OK": function () {
+                        // Delete Transaction
+                        var options = {};
+                        options.url = "@Url.Content("~/InLieuOfStatement/DeleteInLieuOfStatementData/")";
+                        options.type = "GET";
+                        options.data = {
+                            strFilingsId: delFilingsId.toString()
+                        };
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (resultsDel) {
+                            if (resultsDel) {
+                                window.status = "Record deleted successfully";
+
+                                $m.ajax({
+                                    "url": "@Url.Content("~/InLieuOfStatement/GetInLieuOfStatement/")",
+                                    "data": {
+                                        txtFilerId: $("#txtFilerID").val(),
+                                        lstElectionDate: $("#lstElectionDate option:selected").text(),
+                                        lstElectionType: $("#lstElectionType option:selected").val(),
+                                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                                        lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                                        lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                                        strElectionYear: $("#lstElectionCycle option:selected").val(),
+                                        lstUCCounty: $("#lstUCCounty option:selected").val(),
+                                        lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                                    },
+                                    "fnDrawCallback": function (oSettings) {
+                                        $("#divLoading").hide();
+                                        var oSettings = this.fnSettings();
+                                        var iTotalRecords = oSettings.fnRecordsTotal();
+                                        if (iTotalRecords < 1) {
+                                            $("#btnAddNewInLieuOfStatement").prop("disabled", false);
+                                        }
+                                        else {
+                                            $("#btnAddNewInLieuOfStatement").prop("disabled", true);
+                                        }
+                                    },
+                                    "success": resultsDel,
+                                    "dataType": "json",
+                                    "type": "POST",
+                                    "error": function () {
+                                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                    }
+                                });
+                                $m('#gridInLieuOfStatement').DataTable().ajax.reload();
+                            }
+                        };
+                        options.error = function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        };
+                        $.ajax(options);
+                    },
+                    "Cancel": function () {
+                        $m(this).dialog("close");
+                    }
+                }
+            });
+        });
+
+        //==============================================================================================================================================
+        // COMMON CODE FOR BUTTON CLEAR AND IT WILL GO TO MAIN PAGE CONTRIBUTION MONETARY.
+        //Bind Clear Click
+        $(".clsCommonClear").bind('click', function () {
+
+            //$("#divReportPeriodDates").hide();
+            //$("#divReportPeriodDatesTo").hide();
+
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            //sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            //sessionStorage.setItem("TransactionTypeId", "true");
+
+            //var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            var urlContrHome = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+
+            window.location.href = urlContrHome;
+        });
+
+        //$("#divDTInKind").hide();
+        $("#divShowPartnerAdddataInKind").hide();
+        $("#divPartnerNCR").hide();
+        $("#PartnersGridNCR").addClass("Per100hideShowButtonCSS");
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function () {
+            $("#divGridInKind").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+
+        // COMMON CODE FOR BUTTON CLEAR AND IT WILL GO TO MAIN PAGE CONTRIBUTION MONETARY.
+        //==============================================================================================================================================
+
+
+    }); // DOCUMENT END>>>>>>>>>>>>>>>>>>>>>>
+    //=======================================
+
+</script>

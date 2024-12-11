@@ -1,0 +1,165 @@
+﻿
+@using (Html.BeginForm("_UC_DR_SchedG", "_UC_DR_SchedG", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divHeader" class="paddingtoppt5">
+        <h1>Transfer In</h1>
+        <p style="float:right;padding-right:1.5em;">
+            <input type="button" id="btnBackToSummaryScheG" class="btn btn-default clsCommonSearch" name="Command" value="Back To Summary" title="Back To Summary" style="font-size:12px;" />
+        </p>
+    </div>
+    <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+        <span id="divexlPDF">
+            <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                <img src="~/Content/Images/Edit.png" class="ButtonImageCSS" alt="Edit Icon (Opens in New Window)"/>
+            </a>
+            <button type="button" id="btnCSVDownloadData" class="btn btn-default " name="Command" value="CSV">
+                <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+            </button>
+            <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+            </a>
+            <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp" /></button>
+        </span>
+    </div>
+    <div id="divGrid">
+        <table id="SchedGGrid" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+            <thead id="thdGrid" class="header">
+                <tr>
+                    <th class="never">FilingTransId</th> @* 0 *@
+                    <th class="never">FilingSchedId</th> @* 1 *@
+                    <th class="never">FilingEntityId</th> @* 2 *@
+                    <th class="never">ContributorTypeId</th> @* 3 *@
+                    <th class="never">ContributionTypeId</th> @* 4 *@
+                    <th class="never">PaymentTypeId</th> @* 5 *@
+                    <th class="never">R_Liability</th> @* 6 *@
+                    <th class="never">R_Subcontractor</th> @* 7 *@
+                    <th>Expand</th> @* 8 *@
+                    <th>Action</th> @* 9 *@
+                    <th>Transaction Date</th> @* 10 *@
+                    <th>Increased</th> @* 10 *@
+                    <th>Decreased</th> @* 10 *@
+                    <th>Balance</th> @* 10 *@
+                    <th>Transaction Type</th> @* 11 *@
+                    <th>Contributor Code</th> @* 12 *@
+                    <th>Entity Name</th> @* 13 *@
+                    <th>First Name</th> @* 14 *@
+                    <th>Middle Name</th> @* 15 *@
+                    <th>Last Name</th> @* 16 *@
+                    <th>Country</th> @* 17 *@
+                    <th>Street Address</th> @* 18 *@
+                    <th>City</th> @* 19 *@
+                    <th>State</th> @* 20 *@
+                    <th>Zip Code</th> @* 21 *@
+                    <th>Method</th> @* 22 *@
+                    <th>Check #</th> @* 23 *@
+                    <th>Amount $</th> @* 24 *@
+                    <th>Outstanding Amount $</th> @* 25 *@
+                    <th>Receipt Type</th> @* 26 *@
+                    <th>Transfer Type</th> @* 27 *@
+                    <th>Contribution Type</th> @* 28 *@
+                    <th>Purpose Code</th> @* 29 *@
+                    <th>Reciept Code</th> @* 30 *@
+                    <th>Original Date</th> @* 31 *@
+                    <th>Lender Code</th> @* 32 *@
+                    <th>Election Year</th> @* 33 *@
+                    <th>Office</th> @* 34 *@
+                    <th>District</th> @* 35 *@
+                    <th>Explanation</th> @* 36 *@
+                    <th>Itemized</th> @* 37 *@
+                    <th>County</th> @* 38 *@
+                    <th>Municipality</th> @* 39 *@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+                    //$(document).ready(function () {
+                    var table = '';
+        @*table = $m('#SchedGGrid').DataTable({
+            //"bProcessing": true,
+            "scrollX": "100%",
+            "scrollY": "250px",
+            "sAjaxSource": "@Url.Action("GetSchedGSearchData", "_UC_DR_SchedG")",
+            "columnDefs": null,
+            "fnInitComplete": function (oSettings) {
+            }
+    });*@
+    //table.columns.adjust().draw(true);
+       table = $m('#SchedGGrid').DataTable({
+            "bProcessing": true,
+            "DeferRender": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+           "sDefaultContent": "Edit",
+            "columnDefs": [
+                {
+                    "targets": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [9],
+                    "fnCreatedCell": function (cell) {
+                        cell.setAttribute('aria-label', "Row Actions");
+                    }
+                }
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#SchedGGrid').DataTable());
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                      "url": "@Url.Content("~/_UC_DR_SchedG/GetSchedGSearchData/")",
+                    "data": null,
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+                    }
+                });
+            }
+        });
+        table.columns.adjust().draw(true);
+        $m('#SchedGGrid').DataTable().ajax.reload();
+
+        $("#btnBackToSummaryScheG").click(function () {
+            HideAllUC();
+            $("#tabsSummary").show();
+        });
+
+        function HideAllUC() {
+            $("#tabsSummary").hide();
+            $("#tabsSchedA").hide();
+            $("#tabsSchedB").hide();
+            $("#tabsSchedC").hide();
+            $("#tabsSchedD").hide();
+            $("#tabsSchedE").hide();
+            $("#tabsSchedF").hide();
+            $("#tabsSchedG").hide();
+            $("#tabsSchedH").hide();
+            $("#tabsSchedI").hide();
+            $("#tabsSchedJ").hide();
+            $("#tabsSchedK").hide();
+            $("#tabsSchedL").hide();
+            $("#tabsSchedM").hide();
+            $("#tabsSchedN").hide();
+            $("#tabsSchedO").hide();
+            $("#tabsSchedP").hide();
+            $("#tabsSchedQ").hide();
+            $("#tabsSchedR").hide();
+        }
+    //});
+</script>

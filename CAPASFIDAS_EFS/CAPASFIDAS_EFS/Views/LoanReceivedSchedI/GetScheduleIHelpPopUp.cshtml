@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = ": Get Schedule I Help Pop Up";
+    Layout = "~/Views/Shared/_HelpMaster.cshtml";
+}
+
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1 style="padding-left:1em; padding-right:1em;">Loans Received Help:</h1>
+    </div>
+    <br />
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsibleset">
+            <div data-role="collapsible" data-collapsed="false">
+                <p class="helpscreen-text-required">
+                    <br />
+                    Loans Received (Schedule I) is used to report loans received during the reporting period.
+                    <br />
+                    <br />
+                    Evidence of indebtedness (a signed copy of a promissory note or a letter outlining loan details) for each loan must be submitted in conjunction with the applicable report to the county and/or state boards of elections. Such evidence must include the name and address of the lender, the amount of loan, any interest to be charged and the repayment schedule. If the loan was received from a lending institution (or any other loan where applicable), the evidence of indebtedness must include the name and address of any co-signor, obligor, or any other person providing security for or otherwise guaranteeing the loan.
+                    <br />
+                    <br />
+                    NOTE: A loan made to a candidate or political committee, other than a constituted committee, by any person, firm, association or corporation other than in the regular course of the lender's business (i.e., banks) shall be deemed, to the extent not repaid by the date of the primary, general, or special election, as the case may be, a contribution by such person, firm, association, or corporation.
+                    <br />
+                    <br />
+                    A loan made to a candidate or political committee, other than a constituted committee, by any person, firm, association, or corporation in the regular course of the lender's business (i.e., banks) shall be deemed, to the extent not repaid by the date of the primary, general or special election, as the case may be, a contribution by the obligor on the loan and by any other person endorsing, cosigning, guaranteeing, collateralizing, or otherwise providing security for the loan.
+                    <br />
+                    <br />
+                    The loan received date, loaner code, check number (if method of payment is check) and amount must be included along with the name to save the transaction. However if the address details are not provided, it might result in Deficiency letter.
+                    <br />
+                    <br />
+                    Detailed records must be captured for contributions with loaner code as “Partnership (including LLPs)” for amount over $2500. The partner name, amount attributed must be included to save the detailed transaction.
+                    <br />
+                    <br />
+                    When a partnership's total aggregate contributions exceed $2,500 (calendar year for constituted/party committees/PACs; election cycle for candidates/candidate's committees) partnership details must also be reported.
+                    <br />
+                    <br />
+                    For every Loan Received, system creates an Outstanding Loans (Schedule N) transaction.
+                    <br />
+                    <br />
+                    All the ‘Loan Received’ transactions which have outstanding loan amount, must be carried forward to the next disclosure period, until the payment is completely done. This is an automated process where the outstanding loan is auto created as Outstanding Loans (Schedule N).
+                    <br />
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+

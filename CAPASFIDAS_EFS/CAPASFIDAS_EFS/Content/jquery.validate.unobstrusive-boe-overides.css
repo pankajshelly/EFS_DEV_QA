@@ -1,0 +1,37 @@
+﻿/*
+    These overides work when the body tag is assinged the id of #boe-css-overrides.
+    Used instead of !important the id adds 100 points weight to any selector contained within.
+    In CSS  every selector has its own numerical 'weight':
+       > 1000 points for element inline styling
+       > 100 points for IDs
+       > 10 points for classes and pseudo-classes
+       > 1 point for tag selectors and pseudo-elements
+    Version 0.0.0.1 - Last formal update 02/03/2020
+*/
+/*--- START jquery.validate.unobstrusive-boe-overrides ---- */
+#boe-css-overrides .field-validation-error {
+    color: #B30000;
+    background-color: white;
+}
+
+#boe-css-overrides .field-validation-valid {
+    display: none;
+}
+
+#boe-css-overrides input.input-validation-error {
+    outline: 2px solid #790000; /*WCAG 2AA compliant on top of #7FA9AE for contrast ratio 4.516. Any darker a background may fail contrast compliance.*/
+}
+
+#boe-css-overrides input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+#boe-css-overrides .validation-summary-errors {
+    color: #B30000;
+    background-color: white;
+}
+
+#boe-css-overrides .validation-summary-valid {
+    display: none;
+}
+/* --- END jquery.validate.unobstrusive-boe-overrides ---- */

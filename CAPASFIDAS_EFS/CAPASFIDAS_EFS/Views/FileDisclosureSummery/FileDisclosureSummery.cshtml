@@ -1,0 +1,1401 @@
+﻿
+@{
+    ViewBag.Title = ": File Disclosure Summery";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="DisclosureReportSummary">
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow"/>
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch1" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear1" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp1" /></button>
+                        </div>
+                    </fieldset>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        @*<div id="txtFilerID_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">* Filer Id</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth txtFilerID", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        @*<div id="txtCommitteeName_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">* Candidate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth txtCommitteeName", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        @*<div id="lstElectionCycle_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">* Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstElectionCycle", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divOfficeType">
+                        @*<div id="lstUCOfficeType_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblOfficeType">* Filer Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCOfficeType", ViewData["lstUCOfficeType"] as SelectList, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth lstUCOfficeType", aria_labelledby = "lblOfficeType" })
+                        </div>
+                    </div>
+                    <div id="divCounty">
+                        @*<div id="lstUCCounty_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCounty">* County</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCCounty", ViewData["lstUCCounty"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstUCCounty", aria_labelledby = "lblCounty" })
+                        </div>
+                    </div>
+                    <div id="divMunicipality">
+                        @*<div id="lstUCMuncipality_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblMunicipality">* Muncipality</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCMuncipality", ViewData["lstUCMuncipality"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstUCMuncipality", aria_labelledby = "lblMunicipality" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        @*<div id="lstElectionType_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstElectionType", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        @*<div id="lstElectionDate_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">* Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstElectionDate", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        @*<div id="lstDisclosureType_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">* Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth lstDisclosureType", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        @*<div id="lstDisclosurePeriod_validate" class="verticalCSSDestopForError"></div>*@
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">* Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstDisclosurePeriod", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    @* MOVED RESIGNATION/TERMINATION TYPE HERE TO LAST.... *@
+                    <div id="divReportPeriodDates">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesFrom">* Cut off Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divFilingDateDropDown">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDate">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstFilingDate", ViewData["lstFilingDate"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstFilingDate", aria_labelledby = "lblFilingDate" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDatesTo">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesTo">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtReportPeriodDatesTo", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth txtReportPeriodDatesTo required", @maxlength = "10", aria_labelledby = "lblReportPeriodDatesTo" })
+                        </div>
+                    </div>
+
+                    @* OFFICE CYCLE FILING DATE *@
+                    <div id="divFilingDateOffCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDateOffCycle">* New Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            <input type="text" id="txtNewFilingDate" name="txtNewFilingDate" class="datepicker txtWidthForNewFilingDate txtCurrentDateCls watermarkHTMLTextBox" maxlength="10" aria-labelledby="lblFilingDateOffCycle" />
+                        </div>
+                    </div>
+                    @* OFFICE CYCLE FILING DATE *@
+
+                    <div id="divFilingReason">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReasonforFiling">Resignation / Termination </span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstResigTermType", ViewData["lstResigTermType"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstResigTermType", aria_labelledby = "lblReasonforFiling" })
+                        </div>
+                    </div>
+                    <div class="floatRightNew" style="padding-bottom: 2em;">
+                        <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                        <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                        <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Disclosure Report</li>
+            </ol>
+        </nav>
+        <div id="divHeader" class="paddingtop3pt5">
+            <h1>
+                <span id="lblHeader">Disclosure Report Summary</span>
+            </h1>
+        </div>
+        <br />
+        <div id="divTabOptions" class="paddingTop0emTransactionType" style="display:-ms-flexbox;">
+            <div class="verticalCSSDestop lblCSS">
+                <span id="lblTransactionTypeNonItem">Select Summary View</span>
+            </div>
+            <div class="verticalCSSDestop DDLCSS">
+                @Html.DropDownList("lstSummaryOptions", ViewData["lstSummaryOptions"] as SelectList, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblTransactionTypeNonItem" })
+            </div>
+            <div id="divHeaderForSubmitButton" class="paddingtoppt5 paddingLeft2em floatRight paddingRight2em">
+                <p style="float:right;padding-bottom:0.2em;padding-right:2em;">
+                    <b>@Html.Label("Last Submitted : 10/20/2016", new { @id = "lblSubmitDate" })</b> &nbsp;&nbsp;
+                    <input type="button" id="btnCommonSearchReport" class="btn btn-default clsCommonSearchSDR" name="Command" value="Submit Disclosure Report" title="Search" style="font-size:12px;" aria-labelledby = "lblSubmitDate" />&nbsp;
+                </p>
+            </div>
+        </div>
+    </div>    
+    <div id="divAllScheduled">
+        <div id="divOption1AsEntered" class="ui-accordion ui-widget ui-helper-reset accodionLeftClassCss">
+            <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+                @*<span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e lblWhiteColor"></span>*@
+                <span id="lblOpeningBalance" class = "lblWhiteColor">Opening Balance:</span>
+
+                <span class="" style="text-align: right;padding-right:0.5em;">
+                    @Html.TextBox("searchTerm", null, new { id = "txt1OpeningBalance3", @class = "textAlignRight colorBlck txtWidthForTextBox", aria_labelledby = "lblOpeningBalance" })
+                </span>
+            </h3>
+            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ">
+                <div style="text-align: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;background-color:white">
+                    <span id="divexlPDF_1_divOption1AsEntered">
+                        <button id="btnCSVDownloadData_divAllScheduled" class="btn btn-default" name="Command" value="CSV">
+                            <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon" />
+                        </button>
+                        <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                            <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+                        </a>
+                        <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp3" /></button>
+                    </span>
+                </div>
+                <div id="divGrid1" class="col-xs-13" style="background-color:white">
+                    <table id="gridFilingTransactionsAsEntered" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                        <thead id="thdGrid1" class="header">
+                            <tr>
+                                <th class="never">FilingTransId</th> @* 0 *@
+                                <th class="never">FilingSchedId</th> @* 1 *@
+                                <th class="never">FilingEntityId</th> @* 2 *@
+                                <th class="never">ContributorTypeId</th> @* 3 *@
+                                <th class="never">ContributionTypeId</th> @* 4 *@
+                                <th class="never">PaymentTypeId</th> @* 5 *@
+                                <th class="never">R_Liability</th> @* 6 *@
+                                <th class="never">R_Subcontractor</th> @* 7 *@
+                                <th>Expand</th> @* 8 *@
+                                <th>Action</th> @* 9 *@
+                                <th>Transaction Date</th> @* 10 *@
+                                <th>Increased</th> @* 10 *@
+                                <th>Decreased</th> @* 10 *@
+                                <th>Balance</th> @* 10 *@
+                                <th>Transaction Type</th> @* 11 *@
+                                <th>Contributor Code</th> @* 12 *@
+                                <th>Entity Name</th> @* 13 *@
+                                <th>First Name</th> @* 14 *@
+                                <th>Middle Name</th> @* 15 *@
+                                <th>Last Name</th> @* 16 *@
+                                <th>Country</th> @* 17 *@
+                                <th>Street Address</th> @* 18 *@
+                                <th>City</th> @* 19 *@
+                                <th>State</th> @* 20 *@
+                                <th>Zip Code</th> @* 21 *@
+                                <th>Method</th> @* 22 *@
+                                <th>Check #</th> @* 23 *@
+                                <th>Amount $</th> @* 24 *@
+                                <th>Outstanding Amount $</th> @* 25 *@
+                                <th>Receipt Type</th> @* 26 *@
+                                <th>Transfer Type</th> @* 27 *@
+                                <th>Contribution Type</th> @* 28 *@
+                                <th>Purpose Code</th> @* 29 *@
+                                <th>Reciept Code</th> @* 30 *@
+                                <th>Original Date</th> @* 31 *@
+                                <th>Lender Code</th> @* 32 *@
+                                <th>Election Year</th> @* 33 *@
+                                <th>Office</th> @* 34 *@
+                                <th>District</th> @* 35 *@
+                                <th>Explanation</th> @* 36 *@
+                                <th>Itemized</th> @* 37 *@
+                                <th>County</th> @* 38 *@
+                                <th>Municipality</th> @* 39 *@
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-accordion-icons ui-corner-all">
+                    <span id="lblBalanceOfPeriod" class = "lblWhiteColor">Balance At End Of Period:</span>
+                    @*<span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e lblWhiteColor"> Balance At End Of Period:</span>*@
+                    <span class="" style="padding-right:0.5em;">
+                        @Html.TextBox("searchTerm", null, new { id = "txtOpt3ClosingBalance", @class = "textAlignRight colorBlck txtWidthForTextBox", aria_labelledby = "lblBalanceOfPeriod" })
+                    </span>
+                </h3>
+            </div>
+        </div>
+        <div id="divOption2ByTransType">
+            @Html.Partial("_UC_DR_Summary_Opt2/_UC_DR_Summary_Opt2")
+        </div>
+        <div id="divOption3BySched">
+            @Html.Partial("_UC_DR_Summary/_UC_DR_Summary")
+        </div>
+    </div>
+    
+</form>
+<div id="dialog-form_BySchedule" title="Add/Edit Transaction">
+    <form id="DialogBoxBySchedule">
+        <div id="AddUpdateBtnIdSchedA" class="AddLeftCSSSchedABC">
+            <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+        </div>
+        <div class="divWidthSchedABC">
+            <div style="width: 100%;">
+                <div id="divGrid2">
+                    <table id="SchedAGridOptBySchedule" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                        <thead id="thdGrid1" class="header">
+                            <tr>
+                                <th class="never">FilingTransId</th> @* 0 *@
+                                <th class="never">FilingSchedId</th> @* 1 *@
+                                <th class="never">FilingEntityId</th> @* 2 *@
+                                <th class="never">ContributorTypeId</th> @* 3 *@
+                                <th class="never">ContributionTypeId</th> @* 4 *@
+                                <th class="never">PaymentTypeId</th> @* 5 *@
+                                <th class="never">R_Liability</th> @* 6 *@
+                                <th class="never">R_Subcontractor</th> @* 7 *@
+                                <th>Expand</th> @* 8 *@
+                                <th>Action</th> @* 9 *@
+                                <th>Transaction Date</th> @* 10 *@
+                                <th>Increased</th> @* 10 *@
+                                <th>Decreased</th> @* 10 *@
+                                <th>Balance</th> @* 10 *@
+                                <th>Transaction Type</th> @* 11 *@
+                                <th>Contributor Code</th> @* 12 *@
+                                <th>Entity Name</th> @* 13 *@
+                                <th>First Name</th> @* 14 *@
+                                <th>Middle Name</th> @* 15 *@
+                                <th>Last Name</th> @* 16 *@
+                                <th>Country</th> @* 17 *@
+                                <th>Street Address</th> @* 18 *@
+                                <th>City</th> @* 19 *@
+                                <th>State</th> @* 20 *@
+                                <th>Zip Code</th> @* 21 *@
+                                <th>Method</th> @* 22 *@
+                                <th>Check #</th> @* 23 *@
+                                <th>Amount $</th> @* 24 *@
+                                <th>Outstanding Amount $</th> @* 25 *@
+                                <th>Receipt Type</th> @* 26 *@
+                                <th>Transfer Type</th> @* 27 *@
+                                <th>Contribution Type</th> @* 28 *@
+                                <th>Purpose Code</th> @* 29 *@
+                                <th>Reciept Code</th> @* 30 *@
+                                <th>Original Date</th> @* 31 *@
+                                <th>Lender Code</th> @* 32 *@
+                                <th>Election Year</th> @* 33 *@
+                                <th>Office</th> @* 34 *@
+                                <th>District</th> @* 35 *@
+                                <th>Explanation</th> @* 36 *@
+                                <th>Itemized</th> @* 37 *@
+                                <th>County</th> @* 38 *@
+                                <th>Municipality</th> @* 39 *@
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        var tableFilingTransactions = '';
+        var tableTab2ContributionGrid = '';
+        var tableTab2MiscellGrid = '';
+        var tableTab2ExpensesGrid = '';
+        var tableTab2NoEffectBalGrid = '';
+        var tableTab3SchedA = '';
+        var tableTab3SchedB = '';
+        var tableTab3SchedC = '';
+        var tableTab3SchedD = '';
+        var tableTab3SchedE = '';
+        var tableTab3SchedF = '';
+        var tableTab3SchedG = '';
+        var tableTab3SchedH = '';
+        var tableTab3SchedI = '';
+        var tableTab3SchedJ = '';
+        var tableTab3SchedK = '';
+        var tableTab3SchedL = '';
+        var tableTab3SchedM = '';
+        var tableTab3SchedN = '';
+        var tableTab3SchedO = '';
+        var tableTab3SchedP = '';
+        var tableTab3SchedQ = '';
+        var tableTab3SchedR = '';
+
+        $("#divTabOptions").hide();
+        $("#divAllScheduled").hide();        
+        $("#txtOpt3ClosingBalance").prop("disabled", true);
+
+        var dialog;
+        dialog = $m("#dialog-form_BySchedule").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 1000,
+            position: {
+                my: "center top",
+                at: "center top+200"
+            },
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialog = $m("#dialog-form_byschedule").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialog = $m("#dialog-form_byschedule").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialog = $m("#dialog-form_byschedule").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+
+        $("#divHeaderForSubmitButton").hide();        
+
+        $("#main").addClass("SetHeightDisclosureReport");
+        $("#main").removeClass("SetHeight");
+
+        sessionStorage.setDataTable = null;
+
+        //Show Hide Lookups
+        $("#divshow").hide();
+        $("#divshowForMobile").hide();
+
+        $("#txtFilerID")[0].selectedIndex = 0;
+        $("#txtCommitteeName")[0].selectedIndex = 0;
+
+        $m("#lblSubmitDate").hide();
+        $m("#btnCommonSearchReport").prop('value', 'Submit Disclosure Report');
+
+        $m(".clsCommonSearchSDR").click(function () {
+            $("#lblSubmitDate").show();
+            $("#btnCommonSearchReport").prop('value', 'Amend Disclosure Report');
+        });
+
+        if ('@Session["FILER_NAME"]' != null)
+        {
+            if ('@Session["FILER_NAME"]' == "SUBTREASURER")
+            {
+                $("#divHeaderForSubmitButton").hide();
+            }
+            else
+            {
+                $("#divHeaderForSubmitButton").show();
+            }
+        }
+        else
+        {
+            $("#divHeaderForSubmitButton").show();
+        }
+
+        $("#lstElectionCycle").prop('selectedIndex', 1);
+        $("#lstElectionType").prop('selectedIndex', 1);
+        $("#lstElectionDate").prop('selectedIndex', 1);
+        $("#lstDisclosurePeriod").prop('selectedIndex', 1);
+
+        $("#txtFilerID").prop("disabled", true);
+        if ('@Session["FilerId"]' != null)
+        {
+            $("#txtFilerID").val('@Session["FilerId"]');
+        }
+        else
+        {
+            $("#txtFilerID").val(Session["FilerID"].ToString());
+        }
+
+        $("#txtCommitteeName").prop("disabled", true);
+        if ('@Session["Cand_Comm_Name"]' != null)
+        {
+            $("#txtCommitteeName").val('@Session["Cand_Comm_Name"]');
+        }
+        else
+        {
+            $("#txtCommitteeName").val("Friends of John Smith");
+        }
+
+        $m(".clsbtnCommonHideShow").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#gridFilingTransactionsAsEntered').DataTable().ajax.reload();
+            }
+            $(".selectorItsRpt").toggle("slow");
+            $("#divhide").show("slow");
+            $("#divshow").hide("slow");
+
+            $("#divhideForMobile").show("slow");
+            $("#divshowForMobile").hide("slow");
+
+            $("#divGrid,#divGrid1,#divGrid2, .jqueryClassSelectorDivGrid").addClass("Per80hideShowButtonCSS");
+            $("#divGrid,#divGrid1,#divGrid2, .jqueryClassSelectorDivGrid").removeClass("Per100hideShowButtonCSS");
+
+        });
+
+        $("#btnShowHide").click(function () {
+            if ($("#divShowHide").is(":hidden")) {
+                $("#divMainNew").removeClass("mainDivNew");
+                $("#divMainNew").addClass("mainDiv");
+
+            } else {
+                $("#divMainNew").removeClass("mainDiv");
+                $("#divMainNew").addClass("mainDivNew");
+            }
+        });
+
+        $m(".clsbtnCommonShowHide").bind('click', function (e) {
+            if (sessionStorage.getItem('setDataTable') != "null") {
+                $m('#gridFilingTransactionsAsEntered').DataTable().ajax.reload();
+            }
+            $(".selectorItsRpt").toggle("slow");
+            $("#divhide").hide("slow");
+            $("#divshow").show("slow");
+
+            $("#divhideForMobile").hide("slow");
+            $("#divshowForMobile").show("slow");
+
+            $("#divGrid,#divGrid1,#divGrid2, .jqueryClassSelectorDivGrid").addClass("Per100hideShowButtonCSS");
+            $("#divGrid,#divGrid1,#divGrid2, .jqueryClassSelectorDivGrid").removeClass("Per80hideShowButtonCSS");
+
+            $("#gridFilingTransactionsAsEntered").addClass("Per100hideShowButtonCSS");
+            $("#gridFilingTransactionsAsEntered").removeClass("Per80hideShowButtonCSS");
+
+            $("#thdGrid,#thdGrid1,#thdGrid2, .jqueryClassSelectorThdGrid").addClass("Per100hideShowButtonCSS");
+            $("#thdGrid,#thdGrid1,#thdGrid2, .jqueryClassSelectorThdGrid").removeClass("Per80hideShowButtonCSS");
+        });
+
+        $(".clsCommonApply").bind('click', function () {
+            $("#lblSubmitDate").hide();
+            $("#btnCommonSearchReport").prop('value', 'Submit Disclosure Report');
+        });
+
+        $m(".clsCommonSearch").bind('click', function () {
+            $("#divTabOptions").show();
+        });
+
+        $("#lstElectionType").change(function () {
+
+            //$("#lstElectionDate")[0].selectedIndex = 0;
+            $("#lstDisclosureType")[0].selectedIndex = 0;
+            $("#lstDisclosurePeriod")[0].selectedIndex = 0;
+            $("#txtReportPeriodDatesFrom").val("");
+            $("#txtReportPeriodDatesTo").val("");
+
+            var selectedElecYear = $("#lstElectionCycle option:selected").val();
+            var options = {};
+            //options.url = "../ContributionsMonetary/GetDisclosurePeriod";
+            options.url = "@Url.Content("~/ContributionsMonetary/GetDisclosurePeriod/")";
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    lstElectionType: $("#lstElectionType").val().toString(),
+                    lstElectionDate : ""
+                });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                $("#lstDisclosurePeriod").empty();
+                $("#lstDisclosurePeriod").append("<option>" + "- Select -" + "</option>");
+                for (var i = 0; i < results.length; i++) {
+                    $("#lstDisclosurePeriod").append("<option value='" + results[i].Value + "'>" + results[i].Text + "</option>");
+                    //$("#lstDisclosurePeriod").append("<option value='" + results[i].Value + "'>" + dateFormat + "</option>");
+                }
+            };
+            options.error = function () {
+            };
+            $.ajax(options);
+
+            //Bind Election Date
+            var options = {};
+            //options.url = "../ContributionsMonetary/GetElectionDate";
+            options.url = "@Url.Content("~/ContributionsMonetary/GetElectionDate/")";
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    lstElectionCycle: $("#lstElectionCycle").val().toString(),
+                    lstElectionType: $("#lstElectionType").val().toString(),
+                    lstOfficeType: $("#lstUCOfficeType").val().toString()
+                });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (electionDate) {
+                $("#lstElectionDate").empty();
+                $("#lstElectionDate").append("<option>" + "- Select -" + "</option>");
+                for (var i = 0; i < electionDate.length; i++) {
+                     //// Date Format
+                    var eleDate = electionDate[i].Text.toString();
+                    var MyDate = new Date(eleDate);
+                    var MyDateString;
+                    MyDateString = ('0' + (MyDate.getMonth() + 1)).slice(-2) + '/'
+                        + ('0' + MyDate.getDate()).slice(-2) + '/'
+                        + MyDate.getFullYear();
+                    var dateFormat = MyDateString.toString();
+                    //// Date Format
+                    $("#lstElectionDate").append("<option value='" + electionDate[i].Value + "'>" + dateFormat.toString() + "</option>");
+                    //$("#lstElectionDate").append("<option value='" + electionDate[i].Value + "'>" + electionDate[i].Text + "</option>");
+                }
+                if (sessionStorage.getItem("TransactionTypeId") != null) {
+                    $('#lstElectionDate').val(sessionStorage.getItem("ElectionDate").toString());
+                }
+            };
+            options.error = function () {
+
+            };
+            $.ajax(options);
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstDisclosurePeriod").change(function () {
+            $("#txtReportPeriodDatesFrom").prop("disabled", true);
+            $("#txtReportPeriodDatesTo").prop("disabled", true);
+
+            var options = {};
+            //options.url = "../ContributionsMonetary/GetFilingCutOffDate";
+            options.url = "@Url.Content("~/ContributionsMonetary/GetFilingCutOffDate/")";
+            options.type = "POST";
+            options.data = JSON.stringify(
+                {
+                    lstElectionCycle: $("#lstElectionCycle option:selected").val().toString(),
+                    lstElectionType: $("#lstElectionType").val().toString(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val().toString(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val().toString()
+                });
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                for (var i = 0; i < results.length; i++) {
+                    if (results[i].CutOffDate != null)
+                        $("#txtReportPeriodDatesFrom").val(results[i].CutOffDate.toString());
+                    if (results[i].FilingDueDate != null)
+                        $("#txtReportPeriodDatesTo").val(results[i].FilingDueDate.toString());
+                }
+            };
+            options.error = function () {
+            };
+            $.ajax(options);
+
+            if ($("#lstDisclosureType option:selected").text() != "- Select -") {
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+
+                if ($("#lstDisclosurePeriod option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstDisclosurePeriod option:selected").text());
+                }
+            }
+
+        });
+
+        //Disclosur Type
+        $("#lstDisclosureType").change(function () {
+
+            $("#lstDisclosurePeriod")[0].selectedIndex = 0;
+            $("#txtReportPeriodDatesFrom").val("");
+            $("#txtReportPeriodDatesTo").val("");
+
+            $("#lblReportPeriodDatesFrom").text("* Cut off Date");
+            $("#lblReportPeriodDatesTo").text("* Filing Date");
+
+            $("#divTransactionType").hide();
+            //HideUserControl();
+            //$("#divHeader").hide();
+            $("#divShowHideHelp").hide();
+            var selectedlstDisclosureType = $("#lstDisclosureType option:selected").val().toString();
+
+            if (selectedlstDisclosureType == "1") { // Itemized
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Itemized");
+                //$("#divUC_D_ContributionInKind").show();
+
+                $("#divUC_InLieuOfStatements").hide();
+                $("#divUC_24HourNotice").hide();
+                $("#divUC_IndependentExpenditure").hide();
+                $("#divUC_NoActivityReport").hide();
+                $("#divUC_NoticeofNonParticipation").hide();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstDisclosurePeriod option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstDisclosurePeriod option:selected").text());
+                }
+
+                $("#divDisclosurePeriod").show();
+                $("#divReportPeriodDates").show();
+                $("#divReportPeriodDatesTo").show();
+
+            }
+            else if (selectedlstDisclosureType == "3") { //In-Lieu-Of Statement
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("In-Lieu-Of Statement");
+                //$("#divUC_InLieuOfStatements").show();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstDisclosurePeriod option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstDisclosurePeriod option:selected").text());
+                }
+
+                //$("#divDisclosurePeriod").hide();
+                $("#divDisclosurePeriod").show();
+                $("#divReportPeriodDates").hide();
+                $("#divReportPeriodDatesTo").hide();
+            }
+            else if (selectedlstDisclosureType == "2") { //No Activity
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("No Activity");
+                //$("#divUC_NoActivityReport").show();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstDisclosurePeriod option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstDisclosurePeriod option:selected").text());
+                }
+
+                // Hide/Show Controls.
+                 //$("#divDisclosurePeriod").hide();
+                $("#divDisclosurePeriod").show();
+                $("#divReportPeriodDates").hide();
+                $("#divReportPeriodDatesTo").hide();
+            }
+            else if (selectedlstDisclosureType == "4") { //24-Hour Notice
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("24-Hour Notice");
+                //$("#divUC_24HourNotice").show();
+
+                $("#txtReportPeriodDatesFrom").prop("disabled", true);
+                $("#txtReportPeriodDatesTo").prop("disabled", true);
+
+                $("#lblReportPeriodDatesFrom").text("* From Date");
+                $("#lblReportPeriodDatesTo").text("* To Date");
+
+                var options = {};
+                //options.url = "../ContributionsMonetary/GetFilingCutOffDate";
+                options.url = "@Url.Content("~/ContributionsMonetary/GetFilingCutOffDateNonItemizedTrans/")";
+                options.type = "POST";
+                options.data = JSON.stringify(
+                    {
+                        lstElectionCycle: $("#lstElectionCycle option:selected").val().toString(),
+                        lstElectionType: $("#lstElectionType").val().toString(),
+                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val().toString(),
+                        lstDisclosureType: $("#lstDisclosureType option:selected").val().toString(),
+                    });
+                options.dataType = "json";
+                options.contentType = "application/json";
+                options.success = function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        if (results[i].CutOffDate != null)
+                            $("#txtReportPeriodDatesTo").val(results[i].CutOffDate.toString());
+                        if (results[i].FilingDueDate != null)
+                            $("#txtReportPeriodDatesFrom").val(results[i].FilingDueDate.toString());
+                    }
+                };
+                options.error = function () {
+                };
+                $.ajax(options);
+
+                $("#divUC_InLieuOfStatements").hide();
+                $("#divUC_24HourNotice").hide();
+                $("#divUC_IndependentExpenditure").hide();
+                $("#divUC_NoActivityReport").hide();
+                $("#divUC_NoticeofNonParticipation").hide();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstDisclosurePeriod option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").hide();
+                    $("#lblHDisclPer").text($("#lstDisclosurePeriod option:selected").text());
+                }
+
+                $("#divDisclosurePeriod").hide();
+                $("#divReportPeriodDates").show();
+                $("#divReportPeriodDatesTo").show();
+            }
+            else if (selectedlstDisclosureType == "10") { //Notice of Non-Participation
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Notice of Non-Participation");
+                //$("#divUC_NoticeofNonParticipation").show();
+
+                $("#divUC_InLieuOfStatements").hide();
+                $("#divUC_24HourNotice").hide();
+                $("#divUC_IndependentExpenditure").hide();
+                $("#divUC_NoActivityReport").hide();
+                $("#divUC_NoticeofNonParticipation").hide();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstElectionType option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstElectionType option:selected").text());
+                }
+
+                //$("#divDisclosurePeriod").hide();
+                $("#divDisclosurePeriod").show();
+                $("#divReportPeriodDates").hide();
+                $("#divReportPeriodDatesTo").hide();
+            }
+            else if (selectedlstDisclosureType == "18" || selectedlstDisclosureType == "19" ||
+                selectedlstDisclosureType == "20" || selectedlstDisclosureType == "21") { //Independent Expenditure
+
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Independent Expenditure");
+                //$("#divUC_IndependentExpenditure").show();
+
+                $("#divUC_InLieuOfStatements").hide();
+                $("#divUC_24HourNotice").hide();
+                $("#divUC_IndependentExpenditure").hide();
+                $("#divUC_NoActivityReport").hide();
+                $("#divUC_NoticeofNonParticipation").hide();
+
+                if ($("#lstElectionCycle option:selected").text() == "- Select -") {
+                    $("#spnEleYear").hide();
+                }
+                else {
+                    $("#spnEleYear").show();
+                    $("#lblHEleYear").text($("#lstElectionCycle option:selected").text());
+                }
+                if ($("#lstElectionType option:selected").text() == "- Select -") {
+                    $("#spnDiclPerd").hide();
+                }
+                else {
+                    $("#spnDiclPerd").show();
+                    $("#lblHDisclPer").text($("#lstElectionType option:selected").text());
+                }
+
+                $("#divDisclosurePeriod").hide();
+                $("#divReportPeriodDates").hide();
+                $("#divReportPeriodDatesTo").hide();
+            }
+
+        });
+
+
+        $m('#gridFilingTransactionsAsEntered tbody').on('click', 'a.editor_edit', function (e) {
+            event.preventDefault();
+            var data = tableFilingTransactions.row($(this).parents('tr')).data();
+            var selectedTransactionType = data[1].toString();
+           if (data[1].toString() == "1") { // Monetary Contributions Received From Individual & Partnerships EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From Individual & Partnerships");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("IndPart", "Yes"); // Schedule '1' - A
+                sessionStorage.setItem("Corporate", "No"); // Schedule '2' - B
+                sessionStorage.setItem("Other", "No"); // Schedule '3' - C
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            else if (data[1].toString() == "2") { // Monetary Contributions Received From Corporate EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From Corporate");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("Corporate", "Yes");
+                sessionStorage.setItem("IndPart", "No");
+                sessionStorage.setItem("Other", "No");
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            else if (data[1].toString() == "3") { // Monetary Contributions Received From All Other EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From All Other");
+                var urlContributionsCandIndFamily = "@Url.Content("~/ContributionsCandIndFamily/ContributionsCandIndFamily/")";
+                sessionStorage.setItem("Other", "Yes");
+                sessionStorage.setItem("IndPart", "No");
+                sessionStorage.setItem("Corporate", "No");
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            else if (data[1].toString() == "4") { // In-Kind (Non-Monetary) Contributions Received EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - In Kind");
+                var urlContributionInKind = "@Url.Content("~/ContributionInKind/ContributionInKind/")";
+                window.location.href = urlContributionInKind;
+            }
+            else if (data[1].toString() == "5") { // Other Receipts Received EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Other Receipts");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/OtherReceiptsReceivedSchedE/OtherReceiptsReceivedSchedE/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "6") { // Expenditures/Payments EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Expenditure Payments");
+                var urlExpenditurePaymentsSchedF = "@Url.Content("~/ExpenditurePaymentsSchedF/ExpenditurePaymentsSchedF/")";
+                window.location.href = urlExpenditurePaymentsSchedF;
+            }
+            else if (data[1].toString() == "7") { // Transfers In EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Transfer In");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/TransferInScheG/TransferInScheG/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "8") { // Transfers Out EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Transfer Out");
+                var urlTransferOut = "@Url.Content("~/TransferOutSchedH/TransferOutSchedH/")";
+                window.location.href = urlTransferOut;
+            }
+            else if (data[1].toString() == "9") { // Loans Received EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Loan Received");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LoanReceivedSchedI/LoanReceivedSchedI/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "10") { // Loan Repayments EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Loan Repayments");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LoanRepaymentsSchedJ/LoanRepaymentsSchedJ/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "11") { // Liabilities/Loans Forgiven EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Liabilities/Loans Forgiven");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/LiabilitiesLoansForgivenSchedK/LiabilitiesLoansForgivenSchedK/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "12") { // Expenditure Refunds (Increases Balance) EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Expenditure Refund");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ExpenditureRefundsSchedL/ExpenditureRefundsSchedL/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "13") { // Contributions Refunded (Decreases Balance) EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions Refunded");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ContributionRefundedSchedM/ContributionRefundedSchedM/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+            else if (data[1].toString() == "16") { // Non-Campaign Housekeeping Receipts EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign HouseKeeping Receipts");
+                var urlNonCompHKReceipts = "@Url.Content("~/NonCampaignHousekeepingReceiptsSchedP/NonCampaignHousekeepingReceiptsSchedP/")";
+                window.location.href = urlNonCompHKReceipts;
+            }
+            else if (data[1].toString() == "17") { // Non-Campaign Housekeeping Expenses EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign HouseKeeping Expenses");
+                var urlNonCompHKExpenses = "@Url.Content("~/NonCampaignHousekeepingExpensesSchedQ/NonCampaignHousekeepingExpensesSchedQ/")";
+                window.location.href = urlNonCompHKExpenses;
+            }
+            else if (data[1].toString() == "18") { // Expense Allocation Amoung Candidates EDIT TRANSACTION
+                // Set the Session Variable for Edit DialogBox.
+                sessionStorage.setItem("ScheduleId", data[1].toString());
+                sessionStorage.setItem("FilingTransIdEdit", data[0].toString());
+                sessionStorage.setItem("EditFlag", "True");
+                // Changes the Header Name.
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Amount Allocated");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/ExpensesAllocationScheR/ExpensesAllocationScheR/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+        });
+
+        $m("#btnCommonSearchReport").click(function () {
+            $m('#modal_dialog').text("Are you sure do you want to submit filings?");
+            $m("#modal_dialog").dialog({
+                resizable: false,
+                width: '400px',
+                height: 'auto',
+                bgiframe: false,
+                modal: true,
+                closeOnEscape: false,
+                open: function (event, ui) { hideDialogXButton(this); },
+                buttons: {
+                    "OK": function () {
+                        var options = {};
+                        options.url = "@Url.Content("~/DisclosureReportSummary/SubmitFilings_Summery/")";
+                        options.type = "GET";
+                        options.data = {
+                            txtFilerId: $("#txtFilerID").val(),
+                            lstOfficeTypeId: $m("#lstUCOfficeType option:selected").val(),
+                            lstFilingTypeId: $("#lstDisclosurePeriod option:selected").val(),
+                            lstElectYearId: $m("#lstElectionDate option:selected").val(),
+                        };
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (results) {
+                            window.status = "Filings Added successfully";
+                            ShowDialogBox('EFS', 'Filings Added successfully', 'Ok', '');
+                        };
+                        options.error = function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                        };
+                        $.ajax(options);
+                    },
+                    "Cancel": function () {
+                        $m(this).dialog("close");
+                    }
+                }
+            });
+
+        });
+
+        function GridBindAllTab(gridName, tableFilingTrans, filingSchedID)
+        {            
+            sessionStorage.setFilingSchedID = filingSchedID;
+            tableFilingTrans = $m('#' + gridName).DataTable({
+            "bProcessing": true,
+            "stateSave": true,
+            "responsive": true,
+            "deferRender": true,
+            "retrieve": true,
+            "columnDefs": [
+                {
+                    "targets": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [9],
+                    "fnCreatedCell": function (cell) {
+                        cell.setAttribute('aria-label', "Row Actions");
+                    }
+                },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#' + gridName).DataTable());
+            },
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                if (aaData[1] == "7") {
+                    $m('td:eq(1)', nRow).html('<a class="editor_edit" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../../Content/Images/Edit.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a><a class="editor_remove" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '"><img src="../../Content/Images/Delete.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a>');
+                }
+                else {
+                    $m('td:eq(1)', nRow).html('<a class="editor_edit" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../../Content/Images/Edit.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a><a class="editor_remove" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '"><img src="../../Content/Images/Delete.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a>');
+                }
+                return nRow;
+            },
+            "fnDrawCallback": function () {
+                $("#divLoading").hide();
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/DisclosureReportSummary/GetFilingTransactionsDataSummary/")",
+                    "data": {
+                        txtFilerID: $("#txtFilerID").val(),
+                        lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                        //lstFilingSchedID: "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"
+                        lstFilingSchedID: sessionStorage.getItem("setFilingSchedID").toString()
+                    },
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                    }
+                });
+            }
+        });
+            $m('#' + gridName).DataTable().ajax.reload();
+            tableFilingTrans.responsive.recalc();
+        }
+
+        $m("#btnCloseDialog").button().on("click", function () {
+            dialog.dialog("close");
+        });
+
+        $m("#linkASche").button().on("click", function () {            
+            dialog.dialog("open");    
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedA, "1");            
+        });
+
+        $m("#linkBSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedB, "2");
+        });
+
+        $m("#linkCSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedC, "3");
+        });
+
+        $m("#linkDSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedD, "4");
+        });
+
+        $m("#linkESche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedE, "5");
+        });
+
+        $m("#linkGSche").button().on("click", function () {            
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedG, "7");
+        });
+
+        $m("#linkISche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedI, "9");
+        });
+
+        $m("#linkLSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedL, "12");
+        });
+
+        $m("#linkPSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedP, "16");
+        });
+
+        $m("#linkFSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedF, "6");
+        });
+
+        $m("#linkDScheExpenses").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedD, "4");
+        });
+
+        $m("#linkHSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedH, "8");
+        });
+
+        $m("#linkJSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedJ, "10");
+        });
+
+        $m("#linkMSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedM, "13");
+        });
+
+        $m("#linkQSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedQ, "17");
+        });
+
+        $m("#linkKSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedK, "11");
+        });
+
+        $m("#linkNSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedN, "14");
+        });
+
+        $m("#linkOSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedO, "15");
+        });
+
+        $m("#linkRSche").button().on("click", function () {
+            dialog.dialog("open");
+            GridBindAllTab("SchedAGridOptBySchedule", tableTab3SchedR, "18");
+        });
+
+        //Summery Options Changed
+        $m("#lstSummaryOptions").change(function () {
+            var selectedoptionVal = $("#lstSummaryOptions option:selected").val();
+            $("#divAllScheduled").show();
+            if (selectedoptionVal == "- Select -") {
+                $("#divOption1AsEntered").hide();
+                $("#divOption2ByTransType").hide();
+                $("#divOption3BySched").hide();
+            }
+            else if (selectedoptionVal == "1") {
+                $("#divOption1AsEntered").show();
+                $("#divOption2ByTransType").hide();
+                $("#divOption3BySched").hide();
+
+
+                //Get Opening Balance
+                $.post("@Url.Content("~/DisclosureReportSummary/GetSummery_OpeningBalance/")", {
+                    filerID: $("#txtFilerID").val(),
+                    election_Year_ID: $("#lstElectionCycle option:selected").val(),
+                    office_Type_ID: $("#lstUCOfficeType option:selected").val(),
+                    filing_Type_ID: $("#lstDisclosurePeriod option:selected").val(),
+                    election_Date: $("#lstElectionDate option:selected").text()
+                }, function (result) {
+                    $("#txt1OpeningBalance3").val("$" + result.toString());
+                    $("#txt1OpeningBalance3").prop("disabled", true);
+                    });
+
+                //Get Closing Balance
+                $.post("@Url.Content("~/DisclosureReportSummary/GetSummery_ClosingBalance/")", {
+                    filerID: $("#txtFilerID").val(),
+                    election_Year_ID: $("#lstElectionCycle option:selected").val(),
+                    office_Type_ID: $("#lstUCOfficeType option:selected").val(),
+                    filing_Type_ID: $("#lstDisclosurePeriod option:selected").val(),
+                    filing_date: $("#txtReportPeriodDatesTo").val(),
+                }, function (result) {
+                    $("#txtOpt3ClosingBalance").val("$" + result.toString());
+                    $("#txtOpt3ClosingBalance").prop("disabled", true);
+                    });
+
+                //Get Total Contribution Amount
+                $.post("@Url.Content("~/DisclosureReportSummary/GetSummery_AllSchedBalances/")", {
+                    filerID: $("#txtFilerID").val(),
+                    election_Year_ID: $("#lstElectionCycle option:selected").val(),
+                    office_Type_ID: $("#lstUCOfficeType option:selected").val(),
+                    filing_Type_ID: $("#lstDisclosurePeriod option:selected").val(),
+                    filing_date: $("#txtReportPeriodDatesTo").val(),
+                    filingSchedID: "1,2,3,4"
+                }, function (result) {
+                    //$("#txtOpt3ClosingBalance").val("$" + result.toString());
+                    //$("#txtOpt3ClosingBalance").prop("disabled", true);
+                    });
+
+                //Get Total Contribution Amount
+                $.post("@Url.Content("~/DisclosureReportSummary/GetSummery_AllSchedBalances/")", {
+                    filerID: $("#txtFilerID").val(),
+                    election_Year_ID: $("#lstElectionCycle option:selected").val(),
+                    office_Type_ID: $("#lstUCOfficeType option:selected").val(),
+                    filing_Type_ID: $("#lstDisclosurePeriod option:selected").val(),
+                    filing_date: $("#txtReportPeriodDatesTo").val(),
+                    filingSchedID: "1,2,3,4"
+                }, function (result) {
+                    //$("#txtOpt3ClosingBalance").val("$" + result.toString());
+                    //$("#txtOpt3ClosingBalance").prop("disabled", true);
+                    });
+
+                //Tab 1 Grid Bind
+                GridBindAllTab("gridFilingTransactionsAsEntered", tableFilingTransactions, "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18");
+                
+
+                $("#divHeaderForSubmitButton").show();                
+            }
+            else if (selectedoptionVal == "2") {
+                $("#divOption1AsEntered").hide();
+                $("#divOption2ByTransType").show();
+                $("#divOption3BySched").hide();
+
+                //Tab 2 Grid Bind
+                GridBindAllTab("SchedAGridOpt2", tableTab2ContributionGrid, "1,2,3,4");
+                GridBindAllTab("SchedMiscellGridOpt2", tableTab2MiscellGrid, "5,7,9,12,16");
+                GridBindAllTab("SchedExpensesGridOpt2", tableTab2ExpensesGrid, "6,4,8,10,13,17");
+                GridBindAllTab("SchedNotEffBalGridOpt2", tableTab2NoEffectBalGrid, "11,14,15,18");
+                $("#divHeaderForSubmitButton").show();       
+            }
+            else if (selectedoptionVal == "3") {
+                $("#divOption1AsEntered").hide();
+                $("#divOption2ByTransType").hide();
+                $("#divOption3BySched").show();
+                $("#divHeaderForSubmitButton").show();                  
+            }
+        });
+
+    });
+
+</script>

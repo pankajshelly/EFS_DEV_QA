@@ -1,0 +1,227 @@
+/**
+ *  jquery.dataTables-boe-overides.css
+    Version key Major-Minor-Patch
+ *  Version 1.0.2 - Last formal update 07/21/2023
+ *  Compatible with DataTables-1.12.1 and Responsive-2.3.0 or lower
+ *  Note: Contains classes used in  dataTables.boe-accessibility-helper.js is now Version 2.0.6 or higher.
+ */
+
+/*Adds a little margin for search buttons*/
+#boe-css-overrides .dataTables_filter button {
+    margin-left: 0.5em;
+}
+
+#boe-css-overrides table.dataTable thead > tr > th {
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+    /*We need to override the bootstrap table sorting headers when we use datatables plugin*/
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_desc:after,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_asc:after,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting:after {
+        content: none;
+    }
+
+    /*Sort icons are too dark with our table backgrounds. Overides to use lighter image.*/
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_desc:not( .sorting_disabled ) {
+        background-image: url(../images/sort_desc_disabled.png); /*Use disabled because it has white tint*/
+    }
+
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_asc:not( .sorting_disabled ) {
+        background-image: url(../images/sort_asc_disabled.png); /*Use disabled because it has white tint*/
+    }
+
+    /*sort_asc_disabled.png renders better than sort_asc.png in front of header color.*/
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_asc_disabled {
+        background-image: url("..images/sort_asc.png"); /*Non-disabled icon has blue tint*/
+    }
+
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_desc_disabled {
+        background-image: url("..images/sort_desc.png"); /*Non-disabled icon has blue tint*/
+    }
+
+    #boe-css-overrides table.dataTable thead > tr > th.sorting:not( .sorting_asc ):not( .sorting_desc ) {
+        background-image: url("../images/sort_both.png");
+    }
+
+/* Moves processing text to the top of the table. Makes it more noticeable when sorting or filtering.*/
+#boe-css-overrides .dataTables_processing {
+    top: 1em;
+    font-weight: bolder;
+    font-size: 20px;
+    height: 60px;
+}
+
+/*Accessibility Contrast ratio of 7.226 against background-color #ffffff*/
+#boe-css-overrides table.dataTable > tbody > .child ul li {
+    border-bottom-color: #575757;
+}
+
+#boe-css-overrides .dataTables_wrapper {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 0.5em 1em 0.3em 1em;
+    width: 98%; /*Set width to 98% (less than 100) in effort to fix 90% browser zoom crop glitch described in defect 2443.*/
+}
+
+    #boe-css-overrides .dataTables_wrapper .dataTables_length select,
+    #boe-css-overrides .dataTables_wrapper .dataTables_filter input {
+        background-color: white;
+    }
+
+#boe-css-overrides div.dataTables_wrapper div.dataTables_length label,
+#boe-css-overrides div.dataTables_wrapper div.dataTables_filter label {
+    margin-bottom: 0.5rem;
+}
+
+#boe-css-overrides .table {
+    width: 100% !important; /*Width 100% is required for tables to resize responsively. To overwrite add inline style to element using width with !important.*/
+    border-spacing: 0;
+}
+
+#boe-css-overrides table.dataTable.nowrap th,
+#boe-css-overrides table.dataTable.nowrap td {
+    white-space: normal; /*default is nowrap*/
+    word-wrap: break-word;
+}
+
+#boe-css-overrides table.dataTable.nowrap td {
+    background-color: transparent !important; /*Order/Sorting sometimes applies the default background-color to td rows. We want transparent. */
+}
+
+/*Added by Kiruba*/
+#boe-css-overrides table.dataTable tbody th,
+#boe-css-overrides table.dataTable tbody td {
+    padding: initial 0.1em; /*Was 0px 10px*/
+    color: black;
+    text-align: left; /*Align text left*/
+}
+
+    #boe-css-overrides table.dataTable tbody td.dataTables_empty {
+        text-align: center; /*Center empty table error.*/
+    }
+/*Added by contractors*/
+#boe-css-overrides .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,
+#boe-css-overrides .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing {
+    height: 148px; /*was 0*/
+}
+/*Added by contractors*/
+#boe-css-overrides .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #111; /*Was 111111*/
+}
+
+
+
+#boe-css-overrides table.dataTable tr:hover {
+    outline: 4px solid #09464C;
+}
+
+#boe-css-overrides table.dataTable tr.child:hover {
+    outline: 4px solid #09464C;
+    background-color: #ffffff !important;
+}
+
+
+#boe-css-overrides table.dataTable.display tbody td {
+    border-top: none;
+}
+
+#boe-css-overrides table.dataTable tr.odd,
+#boe-css-overrides table.dataTable.display tbody tr.odd > .sorting_1 {
+    background-color: #f9f9f9;
+    text-decoration-color: black;
+}
+
+    #boe-css-overrides table.dataTable tr.odd.selected,
+    #boe-css-overrides table.dataTable tr.odd.selected > *,
+    #boe-css-overrides table.dataTable.display tbody tr.odd.selected > .sorting_1 {
+        background-color: yellow;
+        box-shadow: none;
+    }
+
+#boe-css-overrides table.dataTable tr.even,
+#boe-css-overrides table.dataTable.display tbody tr.even > .sorting_1 {
+    background-color: #B6CFD0;
+    text-decoration-color: black;
+}
+
+    #boe-css-overrides table.dataTable tr.even.selected,
+    #boe-css-overrides table.dataTable tr.even.selected > *,
+    #boe-css-overrides table.dataTable.display tbody tr.even.selected > .sorting_1 {
+        background-color: #ffe600;
+        box-shadow: none;
+    }
+
+#boe-css-overrides table.dataTable thead {
+    background-color: #007681;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+    #boe-css-overrides table.dataTable thead a {
+        background-color: inherit;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    #boe-css-overrides table.dataTable thead tr th:hover {
+        background-color: #09464C;
+        text-decoration: underline;
+    }
+
+    #boe-css-overrides table.dataTable thead tr th:focus {
+        outline-color: #09464C;
+        outline-style: solid;
+        outline-width: 6px;
+        outline-offset: 1.5px;
+    }
+
+    #boe-css-overrides table.dataTable thead td {
+        border-bottom: 1px solid #111111;
+    }
+
+    #boe-css-overrides table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+    #boe-css-overrides table.dataTable.dtr-inline.collapsed > tr > th:first-child:before,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting:before,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_disabled:before {
+        background-color: #337ab7;
+    }
+
+    /* Custom selector which works in conjunction with dataTables.boe-accessibility-helper.js is now Version 1.0.1.4 or higher*/
+    #boe-css-overrides table.dataTable.dtr-inline.collapsed > tbody > tr > td.accessibilityTdOveride:first-child:before,
+    #boe-css-overrides table.dataTable.dtr-inline.collapsed > tr > th.accessibilityThOveride.sorting:before,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting:before,
+    #boe-css-overrides table.dataTable thead > tr > th.sorting_disabled:before {
+        content: normal;
+    }
+/* Custom selector which works in conjunction with dataTables.boe-accessibility-helper.js is now Version 1.0.1.4 or higher*/
+#boe-css-overrides button.accessibilityJQueryClassSelector {
+    top: 8px;
+    left: 4px;
+    height: 16px;
+    display: block;
+    color: white;
+    border: 2px solid white;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 14px;
+    box-shadow: 0 0 3px #444;
+    box-sizing: content-box;
+    background-color: #337ab7;
+    float: left;
+    min-width: 0.6em;
+    padding: 1px 6px; /*Explicit padding to overide button paddin from jqueri ui accordion.*/
+}
+
+/* Custom selector which works in conjunction with dataTables.boe-accessibility-helper.js is now Version 1.0.1.4 or higher */
+#boe-css-overrides span.accessibilityHiddenToScreenReader {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

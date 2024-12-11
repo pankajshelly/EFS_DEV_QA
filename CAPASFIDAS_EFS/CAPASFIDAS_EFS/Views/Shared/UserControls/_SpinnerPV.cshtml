@@ -1,0 +1,58 @@
+﻿@*Spinner and Refresh Logic
+    button name : "submitbtn" for loading spinner
+    Parameter Name: ViewBag.formtype is Parameter 
+*@ 
+
+<link href="~/Content/spin.css" rel="stylesheet" />
+        <div id="loading">  
+            <div id="loadingcontent">   
+                
+            @if (ViewBag.formtype == "EntryForm")
+            {  <p id="loadingspinner">
+                    Saving the data...
+                </p>
+            }
+            else
+            {
+                <p id="loadingspinner">
+                    Searching things...
+                </p>
+            }
+            </div>         
+        </div>
+<script>  
+
+    $(document).ready(function () {
+        $("#submitbtn").click(function () {
+            var form = $("form");
+            form.validate();
+            if (!(form.valid())) {
+                return false;
+            }
+            $("#loading").fadeIn();
+            var opts = {
+                lines: 10, // The number of lines to draw
+                length: 10, // The length of each line
+                width: 8, // The line thickness
+                scale: 1,
+                radius: 15, // The radius of the inner circle
+                corners: 1, // Corner roundness (0..1)
+                rotate: 0, // The rotation offset
+                color: '#040', // #rgb or #rrggbb
+                fadeColor: 'transparent',
+                speed: 1, // Rounds per second
+                rotate: 0,
+                trail: 60, // Afterglow percentage
+                shadow: true, // Whether to render a shadow
+                hwaccel: false, // Whether to use hardware acceleration
+                className: 'spinner', // The CSS class to assign to the spinner
+                zIndex: 2e9, // The z-index (defaults to 2000000000)
+
+            };
+            var target = document.getElementById('loading');
+            var spinner = new Spinner(opts).spin(target);
+            
+        });
+    });
+    
+</script>

@@ -1,0 +1,275 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+
+@using (Html.BeginForm("_UC_P_HousekeepingReceipts", "_UC_P_HousekeepingReceipts", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridNonHouseKeepingScheP" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">                    
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdNonHouseKeepingScheP" class="border1pxCls" style="padding-left:2em;">Date Rcvd</th>
+                <th id="thReceiptCodeNonHouseKeepingScheP" class="border1pxCls">Receipt Code</th>
+                <th id="thContributorNameScheP" class="border1pxCls">Contributor Name</th>
+                <th id="thFirstNameScheP" class="border1pxCls">First Name</th>
+                <th id="thMIScheP" class="border1pxCls">MI</th>
+                <th id="thLastNameScheP" class="border1pxCls">Last Name</th>
+                <th id="thStreetNonHouseKeepingScheP" class="border1pxCls">Street #</th>
+                <th id="thStreetNameNonHouseKeepingScheP" class="border1pxCls">Street Name</th>
+                <th id="thCityNonHouseKeepingScheP" class="border1pxCls">City</th>
+                <th id="thStateNonHouseKeepingScheP" class="border1pxCls">State</th>
+                <th id="thZip5NonHouseKeepingScheP" class="border1pxCls">Zip5</th>
+                <th id="thZip4NonHouseKeepingScheP" class="border1pxCls">Zip4</th>                
+                <th id="thMethodNonHouseKeepingScheP" class="border1pxCls">Method</th>
+                <th id="thCheck" class="border1pxCls">Check #</th>
+                <th id="thAmtRefundedNonHouseKeepingScheP" class="border1pxCls">Amt</th>
+                <th id="thExplanationNonHouseKeepingScheP" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdNonHouseKeepingScheP" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdReceiptCodeNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.DropDownList("lstReceiptCode", ViewData["lstReceiptCode"] as SelectList, new { @class = "" })</td>
+                <td id="tdContributorNameScheP" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtContributorName", @class = "txtWidth" })</td>
+                <td id="tdFirstNameScheP" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtFirstName", @class = "txtWidth" })</td>
+                <td id="tdMIScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtMI", @class = "txtWidth" })</td>
+                <td id="tdLastNameScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLastName", @class = "txtWidth" })</td>
+                <td id="tdStreetNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetNameNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCityNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdStateNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5NonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4NonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>                
+                <td id="tdMethodNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheck" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheck", @class = "txtWidth" })</td>
+                <td id="tAmtNonHouseKeepingScheP" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtNonHouseKeepingScheP", @class = "txtWidth" })</td>
+                <td id="tdExplanationNonHouseKeepingScheP" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationNonHouseKeepingScheP", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTNonHouseKeepingScheP">
+            <table id="UC_NonHouseKeepingSchePGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Rcvd</th>
+                        <th>Receipt Code</th>
+                        <th>Contributor Name</th>
+                        <th>FirstName</th>
+                        <th>MI</th>
+                        <th>LastName</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>                        
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amount</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTNonHouseKeepingScheP").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {            
+            $("#divGridNonHouseKeepingScheP").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");            
+
+           var table = $m('#UC_NonHouseKeepingSchePGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_P_HousekeepingReceipts/GetNonHouseKeepingSchePSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+               ],
+               "initComplete": function (settings, json) {
+                   //Accessibility: Applies various Accessibility features to this dataTable.
+                   makeDataTableAccessible($m('#UC_NonHouseKeepingSchePGrid').DataTable());
+               }
+            });
+            $m('#UC_NonHouseKeepingSchePGrid').DataTable().ajax.reload();
+        });
+
+       
+        // Edit a record
+        $m('#UC_NonHouseKeepingSchePGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+        
+        // Explanation focus out
+        $m("#txtExplanationNonHouseKeepingScheP").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTNonHouseKeepingScheP").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationNonHouseKeepingScheP").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridNonHouseKeepingScheP').DataTable().ajax.reload();
+        });        
+
+        //Contribution Name Selected index changed
+        $("#thContributorNameScheP").hide("slow");
+        $("#tdContributorNameScheP").hide("slow");
+
+        $("#lstReceiptCode").change(function () {            
+            var selectedlstReceiptCode = $("#lstReceiptCode option:selected").text();
+            if (selectedlstReceiptCode == "IND") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign Housekeeping Receipts - Candidate, Individual, Family");
+                //Show All TR
+                $("#thDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#thReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#thContributorNameScheP").hide("slow");
+                $("#thFirstNameScheP").show("slow");
+                $("#thMIScheP").show("slow");
+                $("#thLastNameScheP").show("slow");
+                $("#thStreetNonHouseKeepingScheP").show("slow");
+                $("#thStreetNameNonHouseKeepingScheP").show("slow");
+                $("#thCityNonHouseKeepingScheP").show("slow");
+                $("#thStateNonHouseKeepingScheP").show("slow");
+                $("#thZip5NonHouseKeepingScheP").show("slow");
+                $("#thZip4NonHouseKeepingScheP").show("slow");
+                $("#thMethodNonHouseKeepingScheP").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmtRefundedNonHouseKeepingScheP").show("slow");
+                $("#thExplanationNonHouseKeepingScheP").show("slow");
+
+                //Show All TD
+                $("#tdDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#tdReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#tdContributorNameScheP").hide("slow");
+                $("#tdFirstNameScheP").show("slow");
+                $("#tdMIScheP").show("slow");
+                $("#tdLastNameScheP").show("slow");
+                $("#tdStreetNonHouseKeepingScheP").show("slow");
+                $("#tdStreetNameNonHouseKeepingScheP").show("slow");
+                $("#tdCityNonHouseKeepingScheP").show("slow");
+                $("#tdStateNonHouseKeepingScheP").show("slow");
+                $("#tdZip5NonHouseKeepingScheP").show("slow");
+                $("#tdZip4NonHouseKeepingScheP").show("slow");
+                $("#tdMethodNonHouseKeepingScheP").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmtNonHouseKeepingScheP").show("slow");
+                $("#tdExplanationNonHouseKeepingScheP").show("slow");                
+            }
+            if (selectedlstReceiptCode == "CORP" || selectedlstReceiptCode == "PART" || selectedlstReceiptCode == "COMM" || selectedlstReceiptCode == "OTH") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign Housekeeping Receipts - Corp, Part, Comm, Other");
+                $("#thDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#thReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#thContributorNameScheP").show("slow");
+                $("#thFirstNameScheP").hide("slow");
+                $("#thMIScheP").hide("slow");
+                $("#thLastNameScheP").hide("slow");
+                $("#thStreetNonHouseKeepingScheP").show("slow");
+                $("#thStreetNameNonHouseKeepingScheP").show("slow");
+                $("#thCityNonHouseKeepingScheP").show("slow");
+                $("#thStateNonHouseKeepingScheP").show("slow");
+                $("#thZip5NonHouseKeepingScheP").show("slow");
+                $("#thZip4NonHouseKeepingScheP").show("slow");
+                $("#thMethodNonHouseKeepingScheP").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmtRefundedNonHouseKeepingScheP").show("slow");
+                $("#thExplanationNonHouseKeepingScheP").show("slow");
+
+                //Show All TD
+                $("#tdDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#tdReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#tdContributorNameScheP").show("slow");
+                $("#tdFirstNameScheP").hide("slow");
+                $("#tdMIScheP").hide("slow");
+                $("#tdLastNameScheP").hide("slow");
+                $("#tdStreetNonHouseKeepingScheP").show("slow");
+                $("#tdStreetNameNonHouseKeepingScheP").show("slow");
+                $("#tdCityNonHouseKeepingScheP").show("slow");
+                $("#tdStateNonHouseKeepingScheP").show("slow");
+                $("#tdZip5NonHouseKeepingScheP").show("slow");
+                $("#tdZip4NonHouseKeepingScheP").show("slow");
+                $("#tdMethodNonHouseKeepingScheP").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmtNonHouseKeepingScheP").show("slow");
+                $("#tdExplanationNonHouseKeepingScheP").show("slow");
+
+            }
+            if (selectedlstReceiptCode == "UNIT") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Non-Campaign Housekeeping Receipts - Unitemized");
+                $("#thDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#thReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#thContributorNameScheP").hide("slow");
+                $("#thFirstNameScheP").hide("slow");
+                $("#thMIScheP").hide("slow");
+                $("#thLastNameScheP").hide("slow");
+                $("#thStreetNonHouseKeepingScheP").hide("slow");
+                $("#thStreetNameNonHouseKeepingScheP").hide("slow");
+                $("#thCityNonHouseKeepingScheP").hide("slow");
+                $("#thStateNonHouseKeepingScheP").hide("slow");
+                $("#thZip5NonHouseKeepingScheP").hide("slow");
+                $("#thZip4NonHouseKeepingScheP").hide("slow");
+                $("#thMethodNonHouseKeepingScheP").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmtRefundedNonHouseKeepingScheP").show("slow");
+                $("#thExplanationNonHouseKeepingScheP").show("slow");
+
+                //Show All TD
+                $("#tdDateRcvdNonHouseKeepingScheP").show("slow");
+                $("#tdReceiptCodeNonHouseKeepingScheP").show("slow");
+                $("#tdContributorNameScheP").hide("slow");
+                $("#tdFirstNameScheP").hide("slow");
+                $("#tdMIScheP").hide("slow");
+                $("#tdLastNameScheP").hide("slow");
+                $("#tdStreetNonHouseKeepingScheP").hide("slow");
+                $("#tdStreetNameNonHouseKeepingScheP").hide("slow");
+                $("#tdCityNonHouseKeepingScheP").hide("slow");
+                $("#tdStateNonHouseKeepingScheP").hide("slow");
+                $("#tdZip5NonHouseKeepingScheP").hide("slow");
+                $("#tdZip4NonHouseKeepingScheP").hide("slow");
+                $("#tdMethodNonHouseKeepingScheP").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmtNonHouseKeepingScheP").show("slow");
+                $("#tdExplanationNonHouseKeepingScheP").show("slow");
+            }
+        });
+    });
+</script>

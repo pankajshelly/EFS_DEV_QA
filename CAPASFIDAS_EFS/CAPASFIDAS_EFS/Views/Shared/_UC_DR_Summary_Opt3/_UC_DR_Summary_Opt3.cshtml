@@ -1,0 +1,172 @@
+﻿
+@using (Html.BeginForm("_UC_DR_Summary_Opt3", "_UC_DR_Summary_Opt3", FormMethod.Get, new { id = "submitForm" }))
+{   
+<div id="accordion3" class="ui-accordion ui-widget ui-helper-reset accodionLeftClassCss">
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        Opening Balance:
+        <span class="" style="float: right;padding-right:0.5em;">
+            @Html.TextBox("searchTerm", null, new { id = "txt1OpeningBalance3", @class = "textAlignRight colorBlck" })
+        </span>
+    </h3>
+    <div style="float: right; padding-right: 2.5em; padding-top: 0.4em;padding-bottom:0.5em;">
+        <span id="divexlPDF">            
+            <button type="button" id="btnCSVDownloadData" class="btn btn-default" name="Command" value="CSV">
+                <img src="~/Content/Images/images.png" class="ButtonImageCSS" alt="CSV Icon"/>
+            </button>
+            <a class="btn btn-default PDFImage" id="btnCSVPDF" href="" target="_blank">
+                <img src="~/Content/Images/pdf.gif" class="ButtonImageCSS" alt="PDF File (Opens in New Window)" />
+            </a>
+            <button type="button" class="btn btn-default buttonTransparent"  onclick="CallHelp();" ><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" title="Help" class="ButtonImageCSS" id="imgHelp" /></button>
+        </span>
+    </div>
+    <div  class="col-xs-13 jqueryClassSelectorDivGrid">
+        <table id="gridFilingTransactionsOpt3" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+            <thead class="header jqueryClassSelectorThdGrid">
+                <tr>
+                    <th class="never">FilingTransId</th> @* 0 *@
+                    <th class="never">FilingSchedId</th> @* 1 *@
+                    <th class="never">FilingEntityId</th> @* 2 *@
+                    <th class="never">ContributorTypeId</th> @* 3 *@
+                    <th class="never">ContributionTypeId</th> @* 4 *@
+                    <th class="never">PaymentTypeId</th> @* 5 *@
+                    <th class="never">R_Liability</th> @* 6 *@
+                    <th class="never">R_Subcontractor</th> @* 7 *@
+                    <th>Expand</th> @* 8 *@
+                    <th>Action</th> @* 9 *@
+                    <th>Transaction Date</th> @* 10 *@
+                    <th>Increased</th> @* 11 *@
+                    <th>Decreased</th> @* 12 *@
+                    <th>Balance</th> @* 13 *@
+                    <th>Transaction Type</th> @* 14 *@
+                    <th>Contributor Code</th> @* 15 *@
+                    <th>Entity Name</th> @* 16 *@
+                    <th>First Name</th> @* 17 *@
+                    <th>Middle Name</th> @* 18 *@
+                    <th>Last Name</th> @* 19 *@
+                    <th>Country</th> @* 20 *@
+                    <th>Street Address</th> @* 21 *@
+                    <th>City</th> @* 22 *@
+                    <th>State</th> @* 23 *@
+                    <th>Zip Code</th> @* 24 *@
+                    <th>Method</th> @* 25 *@
+                    <th>Check #</th> @* 26 *@
+                    <th>Amount $</th> @* 27 *@
+                    <th>Outstanding Amount $</th> @* 28 *@
+                    <th>Receipt Type</th> @* 29 *@
+                    <th>Transfer Type</th> @* 30 *@
+                    <th>Contribution Type</th> @* 31 *@
+                    <th>Purpose Code</th> @* 32 *@
+                    <th>Reciept Code</th> @* 33 *@
+                    <th>Original Date</th> @* 34 *@
+                    <th>Lender Code</th> @* 35 *@
+                    <th>Election Year</th> @* 36 *@
+                    <th>Office</th> @* 37 *@
+                    <th>District</th> @* 38 *@
+                    <th>Explanation</th> @* 39 *@
+                    <th>Itemized</th> @* 40 *@
+                    <th>County</th> @* 41 *@
+                    <th>Municipality</th> @* 42 *@
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" style="font-weight:bold;">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        Balance At End Of Period:
+        <span class="" style="float: right;padding-right:0.5em;">
+            @Html.TextBox("searchTerm", null, new { id = "txtOpt3ClosingBalance", @class = "textAlignRight colorBlck" })
+        </span>
+    </h3>
+</div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+        PageTabAcordion3();
+
+        $('#accordion3 .ui-accordion-content').show();
+
+        //$("#txt1OpeningBalance3").val("$8700.00");
+        //$("#txt1OpeningBalance3").prop("disabled", true);
+
+        $("#txtOpt3ClosingBalance").val("$5,634.46");
+        $("#txtOpt3ClosingBalance").prop("disabled", true);
+
+        @*var tableFilingTransactions = $m('#gridFilingTransactionsOpt3').DataTable({
+            "bProcessing": true,
+            "retrieve": true,
+            "stateSave": true,
+            "mData": null,
+            "responsive": true,
+            "ajax": 'data.json',
+            "dom": '<"top"lf>t<"bottom"pi><"clear">',
+            "sDefaultContent": "Edit",
+                        "columnDefs": [
+                {
+                    "targets": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [9],
+                    "fnCreatedCell": function (cell) {
+                        cell.setAttribute('aria-label', "Row Actions");
+                    }
+                }
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridFilingTransactionsOpt3').DataTable());
+            },
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID =  iDisplayIndex + "" +nRow.rowIndex.toString();
+                uniqueID = uniqueID.replace("'", "").replace('"', ""); //remove ' and "
+                if (aaData[1] == "7") {
+                    $m('td:eq(1)', nRow).html('<a class="editor_edit" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../../Content/Images/Edit.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a><a class="editor_remove" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '"><img src="../../Content/Images/Delete.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a>');
+                }
+                else {
+                    $m('td:eq(1)', nRow).html('<a class="editor_edit" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + uniqueID + '"><img src="../../Content/Images/Edit.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a><a class="editor_remove" style="color:blue;" href="" target="_blank" id="lnkColumnData_' + 'Delete_' + uniqueID + '"><img src="../../Content/Images/Delete.png" style="background-repeat: no-repeat; height: 1.5em; width: 1.5em;"  /></a>');
+                }
+                return nRow;
+            },
+            "fnDrawCallback": function () {
+                $("#divLoading").hide();
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/DisclosureReportSummary/GetFilingTransactionsDataSummary/")",
+                    "data": {
+                        txtFilerID: $("#txtFilerID").val(),
+                        lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                        lstFilingSchedID: "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"
+                    },
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                    }
+                });
+            }
+        });
+        tableFilingTransactions.column(0).visible(false);
+        tableFilingTransactions.column(1).visible(false);
+        tableFilingTransactions.column(2).visible(false);
+        tableFilingTransactions.column(3).visible(false);
+        tableFilingTransactions.column(4).visible(false);
+        tableFilingTransactions.column(5).visible(false);
+        tableFilingTransactions.column(6).visible(false);
+        tableFilingTransactions.column(7).visible(false);
+        tableFilingTransactions.columns.adjust().draw(true);
+        $m('#gridFilingTransactions').DataTable().ajax.reload();
+        tableFilingTransactions.order([0, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        tableFilingTransactions.search('').columns().search('').draw();*@
+    });
+</script>

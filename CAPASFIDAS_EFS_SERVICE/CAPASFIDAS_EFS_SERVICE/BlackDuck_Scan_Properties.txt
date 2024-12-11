@@ -1,0 +1,3 @@
+ProjectToken:Y2Y4NTQ4MzEtNTViMS00NmIzLWFkYTUtYzZmNmMyMzQxNGQ1OmFjNThlZGI1LWQzODktNGNkNy1iZjI2LTBmYTVmMDk5ZGM3Nw==
+UserGroups:NYSBOE_App_Scanner_Editor,NYSBOE_App_Viewer
+Distribution:INTERNAL

@@ -1,0 +1,709 @@
+﻿
+@{
+    ViewBag.Title = ": Notice of Non-Participation";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="NoticeOfNonParticipationForm">
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter" /></button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter" /></button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonShowHide"><img src="~/Content/Images/up20.png" alt="Collapse/Hide Filter" /></button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS  clsbtnCommonHideShow"><img src="~/Content/Images/down20.png" alt="Expand/Show Filter" /></button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch1" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear1" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp1" /></button>
+                        </div>
+                    </fieldset>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">* Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">* Candidate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">* Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divOfficeType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblOfficeType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCOfficeType", null, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth", aria_labelledby = "lblOfficeType" })
+                        </div>
+                    </div>
+                    <div id="divCounty">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCounty">* County</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCCounty", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblCounty" })
+                        </div>
+                    </div>
+                    <div id="divMunicipality">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblMunicipality">* Municipality</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCMuncipality", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblMunicipality" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">* Report Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">* Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">* Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">* Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", ViewData["lstDisclosurePeriod"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDates">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesFrom">* Cut off Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDatesTo">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesTo">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesTo" })
+                        </div>
+                    </div>
+                    <div class="floatRightNew" style="padding-bottom:1em;">
+                        <fieldset style="clear:both;">
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBreadCrumb" class="breadCrumbDivCSS" style="width: 46em;">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                @*<li>@Html.ActionLink("Home", "Home", "Home", null, new { @class = "" })</li>*@
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Notice of Non-Participation</li>
+            </ol>
+        </nav>
+        <div id="divHeader2" class="paddingtoppt5 clsHeaderWidth">
+            <h1>
+                <span id="lblHeader">File a Disclosure Report</span> -
+                <span id="lblHEleYear">File a Disclosure Report</span>
+                <span id="lblHDisclPer">File a Disclosure Report</span>
+            </h1>
+        </div>
+        <div id="divHeader" class="paddingtoppt5">
+            <div class="paddingTop0em2em DisplayInlineBlock">
+                <h2><span id="lblHeader2">Notice of Non-Participation</span></h2>
+            </div>
+        </div>
+    </div>
+    <div id="divShowNonParticipation" class="divGridCSS">
+        @Html.Partial("UserControls/_UC_Loding")
+        <div class="paddingLeft1em paddingBottom2em paddingtop2emInLieuOf">
+            <table>
+                <tr>
+                    <td style="padding-left: 0.8em;">
+                        <input type="button" id="btnAddNewNonParticipation" class="btn btn-default" name="Command" value="Add Notice of Non-Participation" title="Add Notice of Non-Participation" style="font-size:12px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="divNonParticipation">
+            <table id="gridNonParticipation" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th class="never">Filings Id</th>
+                        <th>Expand</th>
+                        @*<th>Action</th>*@
+                        <th>Report Year</th>
+                        <th>Election Type</th>
+                        <th>Report Type</th>
+                        <th>Disclosure Period</th>
+                        <th>Election Date</th>
+                        <th>Date Submitted</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</form>
+
+<div id="dialog-form_NonParticipation" title="Add Notice of Non-Participation">
+    <form id="DialogBoxNonParticipationForm">
+        <div class="divWidthSchedABC">
+            <div style="width: 100%;">
+                <div class="requiredTextDialogs">Required fields are marked with an *</div>
+                <div id="dvUnitemized">
+                    <br />
+                    <div id="dvInLieuOf" class="verticalCSSDestopForLblInLieuOf ">
+                        @* Add Paragraph..... *@
+                        <p class="textAlignJustifyInLieuOf">
+                            I, <span id="spSubmitterName">SUBMITTERS NAME</span>, <span id="spnCandCommTreaName">TREASURER OF COMMITTEE NAME</span> HEREBY STATE THAT THIS STATEMENT
+                            IS IN ALL RESPECTS TRUE AND COMPLETE TO THE BEST OF MY KNOWLEDGE, INFORMATION AND BELIEF.
+                        </p>
+                        <br />
+                        <br />
+                        <p class="textAlignJustifyInLieuOf">
+                            KNOWINGLY INCLUDING FALSE INFORMATION IN THIS NOTICE CONSTITUTES
+                            A CLASS A MISDEMEANOR, PUNISHABLE BY A FINE AND/OR IMPRISONMENT. SEE PENAL LAW 210.25.
+                        </p>
+                        <br />
+                        <br />
+                        <p class="textAlignJustifyInLieuOf">
+                            NOTE: BY CHECKING ‘I AGREE’ AND CLICKING ON ‘SUBMIT’ BUTTON, YOU ARE AGREEING WITH THE ABOVE STATEMENTS.
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div id="tdIAgreeInLiueOfChk" class="divClearBoth">
+                    <div class="verticalCSSDestopForLableInLieuOf lblCSSAddInLieuOf">
+                        @Html.CheckBox("chkIAgreeInLieuOf", false, new { @class = "", aria_labelledby = "lblAgree" })
+                    </div>
+                    <div class="verticalCSSDestopForCheckBoxInLieuOf DDLCSSAddInLieuOf">
+                        <span id="lblAgree">I agree</span>
+                    </div>
+                </div>
+
+                <div id="AddNonParticipation" class="AddLeftCSSSchedABC">
+                    <input type="button" id="btnSubmit" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Submit" title="Submit" style="font-size:12px;" />
+                    <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#NoticeOfNonParticipationForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#NoticeOfNonParticipationForm').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        // ROLE IF AUTHORIZED USER = 11 THEN DISABLE THE ADD BUTTON.
+        if (@Session["RoleID_FILER"] == "11") {
+            $("#btnAddNewNonParticipation").hide();
+        }
+        else {
+            $("#btnAddNewNonParticipation").show();
+        }
+
+        // Hide the Cut Off Date and Filing Date based on Disclosure Type.
+        $("#divReportPeriodDates").show();
+        $("#divReportPeriodDatesTo").show();
+
+        // Common for Non-Itemized Transactions.
+        sessionStorage.removeItem("TransactionTypeId");
+
+        // COMMON CODE
+        NonItemizedLeftFilterValues();
+
+        var dialogNonParticipation;
+
+        dialogNonParticipation = $m("#dialog-form_NonParticipation").dialog({
+            autoOpen: false,
+            resizable: true,
+            draggable: false,
+            height: 'auto',
+            width: 450,
+            position: {
+                my: "center top",
+                at: "center top+200"
+            },
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialogNonParticipation = $m("#dialog-form_NonParticipation").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialogNonParticipation = $m("#dialog-form_NonParticipation").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialogNonParticipation = $m("#dialog-form_NonParticipation").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 456,
+                    modal: true,
+                    dialogClass: 'DialogCustomStyle',
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+
+        // Load Notice of Non-Particiation Grid.
+        var tableNonParticipation = "";
+
+        tableNonParticipation = $m('#gridNonParticipation').DataTable({
+            "bProcessing": true,
+            "responsive": true,
+            "deferRender": true,
+            "retrieve": true,
+            "columnDefs": [
+                {
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridNonParticipation').DataTable());
+            },
+            "fnDrawCallback": function (oSettings) {
+                $("#divLoading").hide();
+                var oSettings = this.fnSettings();
+                var iTotalRecords = oSettings.fnRecordsTotal();
+                if (iTotalRecords < 1) {
+                    $("#btnAddNewNonParticipation").prop("disabled", false);
+                }
+                else {
+                    $("#btnAddNewNonParticipation").prop("disabled", true);
+                }
+            },
+            "fnServerData": function (url, data, callback) {
+                $.ajax({
+                    "url": "@Url.Content("~/NoticeOfNonParticipation/GetNonParticipation/")",
+                    "data": {
+                        txtFilerID: $("#txtFilerID option:selected").text(),
+                        lstElectionDate: $("#lstElectionDate option:selected").text(),
+                        lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                        strElectionYear: $("#lstElectionCycle option:selected").text(),
+                        lstElectionType: $("#lstElectionType option:selected").val(),
+                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                        lstUCCounty: $("#lstUCCounty option:selected").val(),
+                        lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                    },
+                    "success": callback,
+                    "dataType": "json",
+                    "type": "POST",
+                    "error": function () {
+                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ', 'Ok', '');
+                    }
+                });
+            },
+            "order": [[0, "desc"]]
+        });
+        $m('#gridNonParticipation').DataTable().ajax.reload();
+        tableNonParticipation.search('').columns().search('').draw();
+        tableNonParticipation.responsive.recalc();
+
+
+        // Add New Trasaction - NOTICE OF NON-PARTICIPATION
+        $m("#btnAddNewNonParticipation").button().on("click", function () {
+
+              // Check the Validation - IF ITEMIZED TRANSACTION(S) SUBMITTED THEN
+            //  FILER CAN NOT SUBMIT IN-LIUE-OF STATEMENT IF NOT SUBMITTED.
+
+            $.post("@Url.Content("~/NoticeOfNonParticipation/GetItemizedSubmitted/")", {
+                strFilerId: $("#txtFilerID option:selected").text(),
+                strElectionYearId: $("#lstElectionCycle option:selected").val(),
+                strOfficeTypeId: $("#lstUCOfficeType option:selected").val(),
+                strFilingTypeId: $("#lstDisclosurePeriod option:selected").val(),
+                strElectionType: $("#lstElectionType option:selected").val(),
+                strFilingCatId: $("#lstDisclosureType option:selected").val()
+            }, function (results) {
+                if (results.toString() != "") {
+                    // Show message.
+                    var reportYear = $("#lstElectionCycle option:selected").text();
+                    var officeType = $("#lstUCOfficeType option:selected").text();
+                    var elecionType = $("#lstElectionType option:selected").text();
+                    var electionDate = $("#lstElectionDate option:selected").text();
+                    //var disclosurePeriod = $("#lstDisclosurePeriod option:selected").text();
+
+                    if ($("#lstElectionType option:selected").text().toString() == "Primary and General") {
+                        ShowDialogBox('EFS', 'Itemized report is submitted for the same "' + reportYear + '-' + officeType + '-' + results.toString() + '", Notice of Non-Participation cannot be filed', 'Ok', '');
+                    }
+                    else {
+                        ShowDialogBox('EFS', 'Itemized report is submitted for the same "' + reportYear + '-' + officeType + '-' + elecionType + '-' + electionDate + '", Notice of Non-Participation cannot be filed', 'Ok', '');
+                    }
+                }
+                else {
+                    // Open Dialogbox.
+                    dialogNonParticipation.dialog("open");
+
+                    // By Default disabled Submit Button.
+                    $("#btnSubmit").prop("disabled", true);
+                    $("#chkIAgreeInLieuOf").prop('checked', false);
+
+                    //----------------------------------------------------------------------------------------------------
+                    // CALL CONTROLLER TO GET THE LOGIN PERSON NAME AND GET EITHER FILER CANDIDATE/COMMITTEE OR TREASURER
+                    // AND FILER HAS ANY COMMITTEE OR NOT.
+                    //----------------------------------------------------------------------------------------------------
+
+                    // Check the login Perosn either Candidate or Committee or Treasure based on that add text.
+                    var committeeName = $("#txtCommitteeName option:selected").text().toString();
+
+                    // Add Submitters Name, Candidate/Treasurer based on login.
+                    $.post("@Url.Content("~/NoticeOfNonParticipation/GetPersonNameTreasureYN/")", {
+                    }, function (results) {
+                        $.each(results, function (i, item) {
+                            if (item.PersonName.toString() != null) {
+                                if (item.PersonName.toString() != "")
+                                    $("#spSubmitterName").text(item.PersonName.toString());
+                                else
+                                    $("#spSubmitterName").text("");
+                            }
+                            else {
+                                $("#spSubmitterName").text("");
+                            }    
+                            //$("#spSubmitterName").text(item.PersonName.toString());                            
+                        });
+                    });
+
+                    $("#spnCandCommTreaName").text("TREASURER OF " + committeeName.toString());
+                }
+            });
+        });
+
+        // Close Button.
+        $m("#btnCloseDialog").button().on("click", function () {
+            // Close Dialogbox.
+            dialogNonParticipation.dialog("close");
+        });
+
+        // Add IN-LIEU-OF STATEMENT
+        $m("#btnSubmit").click(function (e) {
+            $("#divLoading").show();
+            /// SUBMIT IN-LIEU-OF STATEMENT FOR SELECTING PERIOD.
+            if ($('#chkIAgreeInLieuOf').is(':checked')) { // I Agreee checked then only you can Submit.
+
+                var url = '@Url.Action("AddNonParticipationData", "NoticeOfNonParticipation")';
+                $.post(url, {
+                    txtFilerId: $("#txtFilerID option:selected").text(),
+                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                    lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                    strElectionYear: $("#lstElectionCycle option:selected").val(),
+                    lstUCCounty: $("#lstUCCounty option:selected").val(),
+                    lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                    lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                    txtReportPeriodDatesTo: $("#txtReportPeriodDatesTo").val(),
+                },
+                    function (data) {
+                        if (data) {
+                            // Close Dialogbox.
+                            dialogNonParticipation.dialog("close");
+                            window.status = "Notice of Non-Participation submitted successfully";
+                            ShowDialogBox('EFS', 'Notice of Non-Participation submitted successfully', 'Ok', '');
+
+                            $m.ajax({
+                                "url": "@Url.Content("~/NoticeOfNonParticipation/GetNonParticipation/")",
+                                "data": {
+                                    txtFilerId: $("#txtFilerID").val(),
+                                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                                    lstElectionType: $("#lstElectionType option:selected").val(),
+                                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                                    lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                                    lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                                    strElectionYear: $("#lstElectionCycle option:selected").val(),
+                                    lstUCCounty: $("#lstUCCounty option:selected").val(),
+                                    lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                                },
+                                "fnDrawCallback": function (oSettings) {
+                                    $("#divLoading").hide();
+                                    var oSettings = this.fnSettings();
+                                    var iTotalRecords = oSettings.fnRecordsTotal();
+                                    if (iTotalRecords < 1) {
+                                        $("#btnAddNewNonParticipation").prop("disabled", false);
+                                    }
+                                    else {
+                                        $("#btnAddNewNonParticipation").prop("disabled", true);
+                                    }
+                                },
+                                "success": data,
+                                "dataType": "json",
+                                "type": "POST",
+                                "error": function () {
+                                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                }
+                            });
+                            $m('#gridNonParticipation').DataTable().ajax.reload();
+                            tableNonParticipation.responsive.recalc();
+
+                            $("#divLoading").hide();
+                        }
+                    });
+            }
+            else {
+                $("#divLoading").hide();
+            }
+        });
+
+        // Checkbox for I Agree
+        $("#chkIAgreeInLieuOf").click(function () {
+            if ($('#chkIAgreeInLieuOf').is(':checked')) { // I Agree
+                $("#btnSubmit").prop("disabled", false);
+            }
+            else {
+                $("#btnSubmit").prop("disabled", true);
+            }
+        });
+
+        // Delete In-Lieu-Of Statement
+        $m('#gridNonParticipation tbody').on('click', 'a.editor_remove_NonParticipation', function (e) {
+            e.preventDefault();
+
+            var dataNonParticipation = tableNonParticipation.row($(this).parents('tr')).data();
+
+            var delFilingsId = dataNonParticipation[0].toString();
+
+            var resultsInLieuOfDel = "Are you sure you want to delete this transaction?";
+
+            $m('#modal_dialog').text(resultsInLieuOfDel);
+            $m("#modal_dialog").dialog({
+                resizable: false,
+                draggable: false,
+                width: 'auto',
+                height: 'auto',
+                modal: true,
+                position: {
+                    my: "center top",
+                    at: "center top+370"
+                },
+                open: function (event, ui) { hideDialogXButton(this); },
+                hide: { effect: 'scale', duration: 400 },
+                buttons: {
+                    "OK": function () {
+                        //Close Confirm Box.
+                        $m(this).dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+                        // Delete Transaction
+                        var options = {};
+                        options.url = "@Url.Content("~/NoticeOfNonParticipation/DeleteInLieuOfStatementData/")";
+                        options.type = "GET";
+                        options.data = {
+                            strFilingsId: delFilingsId.toString()
+                        };
+                        options.dataType = "json";
+                        options.contentType = "application/json";
+                        options.success = function (resultsDel) {
+                            if (resultsDel) {
+                                window.status = "Record deleted successfully";
+
+                                $m.ajax({
+                                    "url": "@Url.Content("~/NoticeOfNonParticipation/GetNonParticipation/")",
+                                    "data": {
+                                        txtFilerId: $("#txtFilerID").val(),
+                                        lstElectionDate: $("#lstElectionDate option:selected").text(),
+                                        lstElectionType: $("#lstElectionType option:selected").val(),
+                                        lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                                        lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                                        lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                                        lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                                        strElectionYear: $("#lstElectionCycle option:selected").val(),
+                                        lstUCCounty: $("#lstUCCounty option:selected").val(),
+                                        lstUCMuncipality: $("#lstUCMuncipality option:selected").val(),
+                                    },
+                                    "fnDrawCallback": function (oSettings) {
+                                        $("#divLoading").hide();
+                                        var oSettings = this.fnSettings();
+                                        var iTotalRecords = oSettings.fnRecordsTotal();
+                                        if (iTotalRecords < 1) {
+                                            $("#btnAddNewNonParticipation").prop("disabled", false);
+                                        }
+                                        else {
+                                            $("#btnAddNewNonParticipation").prop("disabled", true);
+                                        }
+                                    },
+                                    "success": resultsDel,
+                                    "dataType": "json",
+                                    "type": "POST",
+                                    "error": function () {
+                                        ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                                    }
+                                });
+                                $m('#gridNonParticipation').DataTable().ajax.reload();
+                                tableNonParticipation.responsive.recalc();
+                            }
+                        };
+                        options.error = function () {
+                            ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                        };
+                        $.ajax(options);
+                    },
+                    "Cancel": function () {
+                        $m(this).dialog("close");
+                    }
+                }
+            });
+        });
+
+        //==============================================================================================================================================
+        // COMMON CODE FOR BUTTON CLEAR AND IT WILL GO TO MAIN PAGE CONTRIBUTION MONETARY.
+        //Bind Clear Click
+        $(".clsCommonClear").bind('click', function () {
+
+            //$("#divReportPeriodDates").hide();
+            //$("#divReportPeriodDatesTo").hide();
+
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            //sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            //sessionStorage.setItem("TransactionTypeId", "true");
+
+            //var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            var urlContrHome = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+
+            window.location.href = urlContrHome;
+        });
+
+        //$("#divDTInKind").hide();
+        $("#divShowPartnerAdddataInKind").hide();
+        $("#divPartnerNCR").hide();
+        $("#PartnersGridNCR").addClass("Per100hideShowButtonCSS");
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function () {
+            $("#divGridInKind").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+
+        // COMMON CODE FOR BUTTON CLEAR AND IT WILL GO TO MAIN PAGE CONTRIBUTION MONETARY.
+        //==============================================================================================================================================
+
+    }); // DOCUMENT END END END>>>>>>>>>>
+</script>

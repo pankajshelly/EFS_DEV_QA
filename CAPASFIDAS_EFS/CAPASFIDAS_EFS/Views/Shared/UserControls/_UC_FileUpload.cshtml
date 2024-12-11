@@ -1,0 +1,39 @@
+﻿@*<div>
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" class="save" id="btnFileUpload" />
+    <input type="button" id="btnFileUpload" class="btn btn-default clsCommonClear" name="Command" value="FileUpload" title="FileUpload" style="font-size:12px;" />&nbsp;
+</div>*@
+<h2>UploadFile</h2>  
+@using (Html.BeginForm("_UC_FileUpload", "_UC_FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload" />
+        @ViewBag.Message
+    </div>
+}
+
+
+<script>
+    $m = jQuery.noConflict();
+
+
+    $m(document).ready(function () {
+
+        //File Upload Click event
+        //$m("#btnFileUpload").button().on("click", function () {
+        //    var options = {};
+        //    options.url = "../_UC_FileUpload/FileUpload";
+        //    options.type = "POST";
+        //    options.data = null;
+        //    options.dataType = "json";
+        //    options.contentType = "application/json";
+        //    options.success = function (data) {
+        //    };
+        //    options.error = function () {
+        //        alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+        //    };
+        //    $.ajax(options);
+        //});
+    });
+</script>

@@ -1,0 +1,553 @@
+﻿<div class="divWidth">
+    <div id="divTransactionType">
+        <div class="verticalCSSDestopTISForLables lblCSS">
+            <span id="lblTransactionType">Transaction Type</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstTransactionTypeNonItem", ViewData["lstTransactionTypeNonItem"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblTransactionType" })
+        </div>
+        <div class="verticalCSSDestopTISForCommonGrid24HIE DDLCSS">
+            <input type="button" id="btnApplyForTrans" class="btn btn-default clsApplyForTrans ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            <input type="button" id="btnAddNewTransaction" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Add New Transaction" title="Add New Transaction" style="font-size:12px; text-decoration:none;" />
+        </div>
+    </div>
+    <div id="divSortColumns" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS" style="clear:both;">
+            <span id="lblColumnName">Sort</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstSortColumnName", ViewData["lstSortColumnName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("lstSortColumnNameOrder", ViewData["lstSortColumnNameOrder"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblColumnName" })
+        </div>
+    </div>
+    <div id="divViewableColumn" style="clear:both;">
+        <div class="verticalCSSDestopTISForLables lblCSS">
+            <span id="lblColumns">Select columns to view</span>
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS">
+            @Html.DropDownList("ddlViewableColumn", ViewData["lstSortColumnName"] as SelectList, new { @class = "spanMobileWidth", multiple = "multiple", aria_labelledby = "lblColumns" })
+        </div>
+        <div class="verticalCSSDestopTIS DDLCSS" style="padding-bottom:2em;">
+            <input type="button" id="btnSetPreferences" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Set Preferences" title="Set Preferences" style="font-size:12px;" />
+        </div>
+    </div>
+</div>
+<div class="submitTransBtnCls">
+    <input type="button" id="btnSubmitSchedAIE24HContr" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Submit Transaction" title="Submit Transaction" style="font-size:12px;" />
+    <b>Click on un-submitted transaction in grid to enable "Submit Transaction" button</b>
+</div>
+<div id="dvMonetaryAllocAmt" class="floatLeft paddingIEWeeklyContrTxt">
+    <h3 id="lblAllTransTextIEWeeklyContr" style="font-weight:bolder">All Transactions</h3>
+</div>
+<div id="divGrid_gridFilingTransIE24HContribution">
+    <table id="gridFilingTransIE24HContribution" class="table-bordered display nowrap" style="width:100%; border-spacing: 0px;">
+        <thead id="thdGrid" class="header">
+            <tr>
+                <th class="never">FilingTransId</th> @* 0 *@
+                <th class="never">FilingSchedId</th> @* 1 *@
+                <th class="never">FilingEntityId</th> @* 2 *@
+                <th class="never">ContributorTypeId</th> @* 3 *@
+                <th class="never">PaymentTypeId</th> @* 4 *@
+                <th class="never">LoanerCodeId</th> @* 5 *@
+                <th class="never">ContributionTypeId</th> @* 6 *@
+                <th class="never">PurposeCodeId</th> @* 7 *@
+                <th>Expand</th> @* 8 *@
+                <th>Action</th> @* 9 *@
+                <th>Submission Date</th> @* 10 *@
+                <th>Entity Name</th> @* 11 *@
+                <th>First Name</th> @* 12 *@
+                <th>Middle Name</th> @* 13 *@
+                <th>Last Name</th> @* 14 *@
+                <th>Amount $</th> @* 15 *@
+                <th>Status</th> @* 16 *@
+                <th>Amended</th> @* 17 *@
+                <th>Transaction Date</th> @* 18 *@
+                <th>Transaction Type</th> @* 19 *@
+                <th>Contributor Type</th> @* 20 *@
+                <th>Contribution Type</th> @* 21 *@
+                <th>Lender Code</th> @* 22 *@
+                <th>Purpose Code</th> @* 23 *@
+                <th>Country</th> @* 24 *@
+                <th>Street Address</th> @* 25 *@
+                <th>City</th> @* 26 *@
+                <th>State</th> @* 27 *@
+                <th>Zip Code</th> @* 28 *@
+                <th>Method</th> @* 29 *@
+                <th>Check #</th> @* 30 *@
+                <th>Explanation</th> @* 31 *@
+                <th>Itemized</th> @* 32 *@
+                <th>Treasurer First Name</th> @* 33 *@
+                <th>Treasurer Last Name</th> @* 34 *@
+                <th>Treasurer Middle Name</th> @* 35 *@
+                <th>Treasurer Occupation</th> @* 36 *@
+                <th>Treasurer Employer</th> @* 37 *@
+                <th>Treasurer Street Address</th> @* 38 *@
+                <th>Treasurer City</th> @* 39 *@
+                <th>Treasurer State</th> @* 40 *@
+                <th>Treasurer Zip Code</th> @* 41 *@
+                <th>Contributor Occupation</th> @* 42 *@
+                <th>Contributor Employer</th> @* 43 *@
+                <th>Independent Expenditure Description</th> @* 44 *@
+                <th>Candidate's Name/Ballot Proposal Reference</th> @* 45 *@
+                <th>Supported</th> @* 46 *@
+                <th>Created Date</th> @* 47 *@
+                <th class="never">AddrId</th> @* 48 *@
+                <th class="never">TreasId</th> @* 49 *@
+                <th class="never">LoanLiabilityNumber</th> @* 50 *@
+                <th class="never">TransNumber</th> @* 51 *@
+                <th class="never">TransMapping</th> @* 52 *@
+                <th class="never">CreatedDate24H</th> @* 53 *@
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+
+    /**
+     * A common function that can be used anywhere this table is implemented.
+     * Needs to exist outside the $m(document).ready function in order to be accessed but other files.
+     * @@param results - A list of column table headers to unhide. 
+     * @@param { DataTables.Api DataTable } tableReferece - These can be provided via $m('#' + gridName).DataTable() which returns a DataTables API instance and should not to be confused with $m('#' + gridName).dataTable() which returns a jQuery Object.
+     */
+    function GridCommonNIIE24HContribution_HideColumn(results, tableReferece) {
+        var rules = {
+            "indexesToStartHidden": [0, 1, 2, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53],
+            "indexesToAlwaysKeepUnhidden": [8, 9], //Will always unhide.
+            "columnNamesToUnhide": results,//String to match.
+            "columnNamesIndexMappings": appCommonEFS_GetGridColumnSettings("UC_GridCommonNIIE24HContribution") //String in header, index to unhide
+        }
+        appCommonEFS_HideTableColumn(tableReferece, rules);
+    }
+
+    $m(document).ready(function () {
+
+        $('#lstTransactionTypeNonItem').val(sessionStorage.getItem("lstTransactionTypeNonItem").toString());
+        $('#lstTransactionTypeNonItem').focus();
+        $("#lstSortColumnName")[0].selectedIndex = 14; // Created Date by Default Value in Sort Dropdown.
+        $("#lstSortColumnNameOrder")[0].selectedIndex = 1;
+
+        $m('#ddlViewableColumn').multipleSelect({
+            styler: function (value) {
+                return 'padding-left: 0.2em;';
+            },
+            width: '100%',
+            placeholder: "Select columns to view",
+            filter: true
+        });
+
+        var options = {};
+        options.url = "@Url.Content("~/_UC_GridCommonNIIE24HContribution/GetColumns/")";
+        options.type = "POST";
+        options.data = JSON.stringify(
+            {
+                uniqudId: '',
+                applicationName: '',
+                pageName: ''
+            });
+        options.dataType = "json";
+        options.contentType = "application/json";
+        options.success = function (data) {
+            var val = '';
+            for (var i = 0; i < data.length; i++) {
+                if (i == (data.length - 1)) {
+
+                    val += parseFloat(data[i].Value);
+                    break;
+                }
+                else {
+                    val += parseFloat(data[i].Value) + ',';
+                }
+            }
+
+            var resultArray = val.split(',').map(function (val) { return Number(val); });
+            $m("#ddlViewableColumn").multipleSelect("setSelects", resultArray);
+
+            $m('#ddlViewableColumn option:contains("Submission Date")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Entity Name")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Date")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Transaction Type")').attr("disabled", "disabled");
+            $m('#ddlViewableColumn option:contains("Amount")').each(function () {
+                if ($(this).text() == 'Amount') {
+                    $(this).attr('disabled', 'disabled');
+                    return false;
+                }
+                return true;
+            });
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            $m("#ddlViewableColumn").multipleSelect("refresh");
+
+            $m('#ddlViewableColumn').multipleSelect('checkAll');
+
+            var selectedValuesArray =  [];
+
+            // CALL VIEWABLE COLUMN METHOD AND SET THE SELECTED CHECK BOX BASED ON FROM DATABASE VALUE 'Y' OR 'N'
+            // SO THAT BY DEFAULT IT WON'T SELECT ALL CHECK BOXES IN MULTISELECT CONTROL.
+            $.post("@Url.Content("~/_UC_GridCommonNIIE24HContribution/GetColumnUpdatedValueIE24HourContr/")", {
+                uniqudId: ""
+            }, function (results) {
+                $.each(results, function (i, item) {
+                    if (item.Viewable.toString() == "Y") {
+                        selectedValuesArray[i] = parseInt(item.ViewableFieldID.toString());
+                    }
+                });
+                $m('#ddlViewableColumn').multipleSelect('setSelects', selectedValuesArray);
+            });
+
+        };
+        options.error = function () {
+            alert("Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200 ");
+        };
+        $.ajax(options);
+
+
+        $("#lstSortColumnName").change(function (e) {
+            var data_table = $m('#gridFilingTransIE24HContribution').DataTable();
+            var sortCount = '';
+
+            if ($("#lstSortColumnName option:selected").text() == "Submission Date") {
+                sortCount = 10;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Entity Name") {
+                sortCount = 11;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "First Name") {
+                sortCount = 12;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Middle Name") {
+                sortCount = 13;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Last Name") {
+                sortCount = 14;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Amount") {
+                sortCount = 15;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Status") {
+                sortCount = 16;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Amend") {
+                sortCount = 17;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transaction Date") {
+                sortCount = 18;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transaction Type") {
+                sortCount = 19;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Type") {
+                sortCount = 20;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contribution Type") {
+                sortCount = 21;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Loaner Code") {
+                sortCount = 22;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Purpose Code") {
+                sortCount = 23;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Country") {
+                sortCount = 24;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Street Address") {
+                sortCount = 25;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "City") {
+                sortCount = 26;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "State") {
+                sortCount = 27;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Zip Code") {
+                sortCount = 28;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Method") {
+                sortCount = 29;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Check") {
+                sortCount = 30;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Explanation") {
+                sortCount = 31;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Itemized") {
+                sortCount = 32;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer First Name") {
+                sortCount = 33;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Last Name") {
+                sortCount = 34;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Middle Name") {
+                sortCount = 35;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Occupation") {
+                sortCount = 36;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Employer") {
+                sortCount = 37;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Street Address") {
+                sortCount = 38;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer City") {
+                sortCount = 39;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer State") {
+                sortCount = 40;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Zip Code") {
+                sortCount = 41;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Occupation") {
+                sortCount = 42;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Employer") {
+                sortCount = 43;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Independent Expenditure Description") {
+                sortCount = 44;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Candidate's Name/Ballot Proposal Reference") {
+                sortCount = 45;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Supported") {
+                sortCount = 46;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Created Date") {
+                sortCount = 47;
+            }
+            data_table.order([sortCount, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        });
+
+        $("#lstSortColumnNameOrder").change(function (e) {
+            var data_table = $m('#gridFilingTransIE24HContribution').DataTable();
+            var sortCount = '';
+
+            if ($("#lstSortColumnName option:selected").text() == "Submission Date") {
+                sortCount = 10;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Entity Name") {
+                sortCount = 11;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "First Name") {
+                sortCount = 12;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Middle Name") {
+                sortCount = 13;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Last Name") {
+                sortCount = 14;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Amount") {
+                sortCount = 15;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Status") {
+                sortCount = 16;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Amend") {
+                sortCount = 17;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transaction Date") {
+                sortCount = 18;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Transaction Type") {
+                sortCount = 19;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Code") {
+                sortCount = 20;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contribution Type") {
+                sortCount = 21;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Loaner Code") {
+                sortCount = 22;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Purpose Code") {
+                sortCount = 23;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Country") {
+                sortCount = 24;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Street Address") {
+                sortCount = 25;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "City") {
+                sortCount = 26;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "State") {
+                sortCount = 27;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Zip Code") {
+                sortCount = 28;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Method") {
+                sortCount = 29;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Check") {
+                sortCount = 30;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Explanation") {
+                sortCount = 31;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Itemized") {
+                sortCount = 32;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer First Name") {
+                sortCount = 33;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Last Name") {
+                sortCount = 34;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Middle Name") {
+                sortCount = 35;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Occupation") {
+                sortCount = 36;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Employer") {
+                sortCount = 37;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Street Address") {
+                sortCount = 38;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer City") {
+                sortCount = 39;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer State") {
+                sortCount = 40;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Treasurer Zip Code") {
+                sortCount = 41;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Occupation") {
+                sortCount = 42;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Contributor Employer") {
+                sortCount = 43;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Independent Expenditure Description") {
+                sortCount = 44;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Candidate's Name/Ballot Proposal Reference") {
+                sortCount = 45;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Supported") {
+                sortCount = 46;
+            }
+            else if ($("#lstSortColumnName option:selected").text() == "Created Date") {
+                sortCount = 47;
+            }
+            data_table.order([sortCount, $("#lstSortColumnNameOrder option:selected").val()]).draw();
+        });
+
+        // BUTTON IMPLEMENTED AFTER DISCUSSION ONCE USER SELECT DROPDOWN IT WON'T HAPPEN ANYTHING...
+        // UNTIL USER CLICK THE BUTTON 'APPLY'.... THEN ONLY IT WILL LOAD THE PAGE...
+        // DID CHANGES ON - 07/16/2020.
+        $m(".clsApplyForTrans").bind('click', function () {
+
+            $("#divLoading").show();
+
+            var selectedlstTransactionTypeNonItem = $("#lstTransactionTypeNonItem option:selected").val().toString();
+            sessionStorage.setItem("lstTransactionTypeNonItem", $("#lstTransactionTypeNonItem option:selected").val());
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("OfficeType", $("#lstUCOfficeType option:selected").val());
+            sessionStorage.setItem("County", $("#lstUCCounty option:selected").val());
+            sessionStorage.setItem("Municipality", $("#lstUCMuncipality option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("DisclosurePeriodText", $("#lstDisclosurePeriod option:selected").text());
+            sessionStorage.setItem("DisclosureTypeText", $("#lstDisclosureType option:selected").text());
+            sessionStorage.setItem("ElectionCycleText", $("#lstElectionCycle option:selected").text());
+
+            //HideUserControl();
+            $("#lstTransactionTypeNonItem").show();
+            if (selectedlstTransactionTypeNonItem == "1") { // SCHEDULE - A - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual & Family");
+                var urlContributionsCandIndFamily = "@Url.Content("~/NonItemIE24HContributionSchedA/NonItemIE24HContributionSchedA/")";
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionTypeNonItem == "2") { // SCHEDULE - B - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From Corporate");
+                var urlContributionsCandIndFamily = "@Url.Content("~/NonItemIE24HContributionSchedB/NonItemIE24HContributionSchedB/")";
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionTypeNonItem == "3") { // SCHEDULE - C - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Monetary Contributions Received From All Other");
+                var urlContributionsCandIndFamily = "@Url.Content("~/NonItemIE24HContributionSchedC/NonItemIE24HContributionSchedC/")";
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionTypeNonItem == "4") { // SCHEDULE - D - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - In Kind");
+                var urlContributionsCandIndFamily = "@Url.Content("~/NonItemIE24HContributionSchedD/NonItemIE24HContributionSchedD/")";
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionTypeNonItem == "6") { // SCHEDULE - D - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Expenditure Payments");
+                var urlContributionsCandIndFamily = "@Url.Content("~/NonItemIE24HContributionSchedF/NonItemIE24HContributionSchedF/")";
+                window.location.href = urlContributionsCandIndFamily;
+            }
+            if (selectedlstTransactionTypeNonItem == "9") { // SCHEDULE - I - 24-HOUR NOTICE NOT ITEMIZED TRANSACTIONS
+                sessionStorage.setItem("lstTransactionTypeNonItem", selectedlstTransactionTypeNonItem);
+                sessionStorage.setItem("ScheduleId", selectedlstTransactionTypeNonItem);
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Loan Received");
+                var urlOtherReceiptsReceivedSchedE = "@Url.Content("~/NonItemIE24HContributionSchedI/NonItemIE24HContributionSchedI/")";
+                window.location.href = urlOtherReceiptsReceivedSchedE;
+            }
+        });
+
+        //Bind Clear Click
+        $(".clsCommonClear").bind('click', function () {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionTypeNonItem option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+
+    });
+</script>
+

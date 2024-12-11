@@ -1,0 +1,30 @@
+/*
+    The site-temp-overrides-and-workaround.css file is meant to be used as:
+    1) a TEMPORARY override for css style definitions that are not yet fully supported by the application.
+    2) a TEMPORARY place to experiment with styles before moving into a global standard file such as site-boe-commons.
+    3) a PROJECT SPECIFIC file that is not shared accross projects.
+    3) a LAST RESORT place to override css when there is no development time available. Ideally future versions look at this file for bug fixes.
+
+    Usage:
+    * Please label what definition is being overwritten, the source file that where the definition is defined and why it is overwrtten. 
+    * Be specific if it is related to a functionality bug that needs to be resolved and how it needs to be handled by future developers.
+    
+    Example:
+    /
+    Override for: site-boe-commons.css
+    Issue: I noticed the implementation does .... and is not currently compatible.
+    /
+
+*/
+/*
+    Override for: site-boe-commons.css
+    Issue: There is code in the 'Clear' button for the search filter in ContributionsMonetary.cshtml that hides label errors but does not remove the html element.
+    This causes a problem since the html elements white background remains.
+    This overrides will mask the issue but the correct fix is to destroy/remove/the elements
+    This definition was originally used for WCAG compliancy a top dark backgrounds.
+*/
+label.error {
+    background-color: inherit !important;
+    border-radius: 0px !important;
+    padding: 0 !important;
+}

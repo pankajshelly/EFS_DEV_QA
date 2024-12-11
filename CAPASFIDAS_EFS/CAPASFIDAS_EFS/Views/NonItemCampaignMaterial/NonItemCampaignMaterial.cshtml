@@ -1,0 +1,989 @@
+﻿
+@{
+    ViewBag.Title = ": Non Itemized Campaign Material";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<form id="NonItemizedTransactionIESchedFForm">
+    @Html.Partial("UserControls/_UC_Alert_Message")
+    @Html.Partial("UserControls/_UC_Delete_Message")
+    <div id="divMainNew" class="mainDiv">
+        <div class="mainLowerDivCSSDesktop">
+            <div id="divhide" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonShowHide1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                    <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                </button>
+            </div>
+            <div id="divshow" class="hideShowButtonCSS">
+                Filter
+                <button id="btnCommonHideShow1" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSSclsbtnCommonHideShow ">
+                    <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                </button>
+            </div>
+        </div>
+        <div class="mainLowerDivCSS">
+            <div id="divhideForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonShowHide2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonShowHide">
+                        <img src="~/Content/Images/up20.png" alt="Up/Hide Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+            <div id="divshowForMobile" class="hideShowButtonCSS">
+                File a New Disclosure Report
+                <div class="paddingleft6emcss floatRight">
+                    Filter
+                    <button id="btnCommonHideShow2" type="button" class="btn btn-sm buttonTransparent  paddingLeft6emCSS clsbtnCommonHideShow">
+                        <img src="~/Content/Images/down20.png" alt="Down/Show Filter Arrow" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="divTopSection">
+            <div id="selectorItsRpt">
+                <div class="divWidth">
+                    <fieldset>
+                        <legend class="visibleToScreenReaderOnly">Filter Controls Top</legend>
+                        <div class="floatRightNew clsShowButtonClass">
+                            <input type="button" id="btnCommonSearch1" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Apply" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear1" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help1" id="imgHelp" /></button>
+                        </div>
+                    </fieldset>
+                    <div class="requiredTextFilter">* marks required fields</div>
+                    <div id="divFilerID">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilerID">* Filer ID</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtFilerID", ViewData["txtFilerID"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblFilerID" })
+                        </div>
+                    </div>
+                    <div id="divFilerType">
+                        <div class="verticalCSSDestop lblCSS"><span id="lblFilerType">* Filer Type</span></div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("txtFilerType", null, new { id = "txtFilerType", @class = "txtWidth txtReportPeriodDatesFrom", aria_labelledby = "lblFilerType" })
+                        </div>
+                    </div>
+                    <div id="divCommitteeName">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCommitteeName">* Candidate/Committee Name</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("txtCommitteeName", ViewData["txtCommitteeName"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblCommitteeName" })
+                        </div>
+                    </div>
+                    <div id="divElectionCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionCycle">* Report Year</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionCycle", ViewData["lstElectionCycle"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionCycle" })
+                        </div>
+                    </div>
+                    <div id="divOfficeType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblOfficeType">* Election Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCOfficeType", null, "- Select -", new { id = "lstUCOfficeType", @class = "spanMobileWidth", aria_labelledby = "lblOfficeType" })
+                        </div>
+                    </div>
+                    <div id="divCounty">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblCounty">* County</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCCounty", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblCounty" })
+                        </div>
+                    </div>
+                    <div id="divMunicipality">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblMunicipality">* Municipality</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstUCMuncipality", null, "- Select -", new { @class = "spanMobileWidth", aria_labelledby = "lblMunicipality" })
+                        </div>
+                    </div>
+                    <div id="divElectionType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionType">* Report Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionType", ViewData["lstElectionType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionType" })
+                        </div>
+                    </div>
+                    <div id="divElectionDate">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblElectionDate">* Election Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstElectionDate", ViewData["lstElectionDate"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblElectionDate" })
+                        </div>
+                    </div>
+                    <div id="divDisclosureType">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosureType">* Disclosure Type</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosureType", ViewData["lstDisclosureType"] as SelectList, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosureType" })
+                        </div>
+                    </div>
+                    <div id="divDisclosurePeriod">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblDisclosurePeriod">* Disclosure Period</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstDisclosurePeriod", null, new { @class = "spanMobileWidth", aria_labelledby = "lblDisclosurePeriod" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDates">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesFrom">* Cut of Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesFrom", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesFrom" })
+                        </div>
+                    </div>
+                    <div id="divFilingDateDropDown">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDate">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.DropDownList("lstFilingDate", ViewData["lstFilingDate"] as SelectList, "- Select -", new { @class = "spanMobileWidth lstFilingDate", aria_labelledby = "lblFilingDate" })
+                        </div>
+                    </div>
+                    <div id="divReportPeriodDatesTo">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblReportPeriodDatesTo">* Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            @Html.TextBox("searchTerm", null, new { id = "txtReportPeriodDatesTo", @class = "txtWidth", aria_labelledby = "lblReportPeriodDatesTo" })
+                        </div>
+                    </div>
+
+                    @* OFFICE CYCLE FILING DATE *@
+                    <div id="divFilingDateOffCycle">
+                        <div class="verticalCSSDestop lblCSS">
+                            <span id="lblFilingDateOffCycle">* New Filing Date</span>
+                        </div>
+                        <div class="verticalCSSDestop DDLCSS">
+                            <input type="text" id="txtNewFilingDate" name="txtNewFilingDate" class="txtWidth txtCurrentDateCls" maxlength="10" aria-labelledby = "lblFilingDateOffCycle"/>
+                        </div>
+                    </div>
+                    @* OFFICE CYCLE FILING DATE *@
+
+                    <div class="floatRightNew" style="padding-bottom: 2em;">
+                        <fieldset>
+                            <legend class="visibleToScreenReaderOnly">Filter Controls Bottom</legend>
+                            <input type="button" id="btnCommonSearch2" class="btn btn-default clsCommonSearch ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Apply" title="Search" style="font-size:12px;" />&nbsp;
+                            <input type="button" id="btnCommonClear2" class="btn btn-default clsCommonClear ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Clear" title="Clear" style="font-size:12px;" />&nbsp;
+                            <button type="button" class="btn btn-sm buttonTransparent" onclick="CallHelp();"><img src="~/Content/Images/help.png" alt="Question/Help Icon (Opens in new window)" class="ButtonImageCSS" title="Help" id="imgHelp2" /></button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divBreadCrumb" class="breadCrumbDivCSS breadCrumbWidth">
+        <nav aria-label="Breadcrumbs" id="pBreadCrumb" class="FontSizeCss">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("File a Disclosure Report", "ContributionsMonetary", "ContributionsMonetary", null, new { @class = "lnkLogout" })</li>
+                <li class="active">Campaign Material</li>
+            </ol>
+        </nav>
+        <div class="paddingtoppt5" style="width: 170%;">
+            <h1>
+                <span id="lblHeader1" >File a Disclosure Report</span> -
+                <span id="lblHEleYear" >File a Disclosure Report</span> 
+                <span id="lblHDisclPer" >File a Disclosure Report</span>
+            </h1>
+        </div>
+        <div class="paddingtoppt5" style="width: 170%;">
+            <div class="paddingTop0em2em DisplayInlineBlock">
+                <h3><span id="lblHeader2">Campaign Material</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="divGridCSSTransferin">
+        @Html.Partial("UserControls/_UC_Loding")
+        @Html.Partial("UserControls/_UC_NonItemCapaignMaterial_Grid")
+    </div>
+
+</form>
+
+<div id="dialog-form_NI_CampMater" title="Add Campaign Material">
+    <form id="DialogBoxNICampMaterForm">
+        <div class="divWidthSchedABC">
+            <div style="width: 100%;">
+                <div class="requiredTextDialogs">Required fields are marked with an *</div>
+                <div class="paddingTop1em paddingBottom1em paddingLeft6pt55em">
+                    <p>Acceptable file types: <b>PDF, JPEG, JPG, PNG.</b></p>
+                    <p> Max file size allowed: <b>5MB.</b></p>
+                </div>
+
+                <div id="tdCountryContributionChk">
+                    <div class="verticalCSSDestopForLableSched_ABC lblCSSAdd">
+                        <span id="lblOtherCountry">No Campaign Material to Report</span>
+                    </div>
+                    <div class="verticalCSSDestopForCheckBoxSched_ABC DDLCSSAdd">
+                        @Html.CheckBox("chkNoCampMater", false, new { @class = "txtWidthForDialogSched_ABC_CountryChkbox biggerCheckBox", aria_labelledby = "lblOtherCountry" })
+                    </div>
+                </div>
+
+                <div id="tdDescription">
+                    <div id="txtDescription_validate" class="verticalCSSDestopForErrorCampMater"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblDescription">* Description</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtDescription", null, new { id = "txtDescription", @class = "txtWidthForDialogSched_A required zIndexCSS", @maxlength = "250", aria_labelledby = "lblDescription" })
+                    </div>
+                </div>
+
+                <div id="tdTreasurerName">
+                    <div id="txtFileUpload_validate" class="verticalCSSDestopForErrorCampMater"></div>
+                    <div class="verticalCSSDestopForLableSchedABC lblCSSAdd">
+                        <span id="lblFileUpload">* File to Upload</span>
+                    </div>
+                    <div class="verticalCSSDestopForTextboxSchedABC DDLCSSAdd">
+                        @Html.TextBox("txtFileUpload", null, new { id = "txtFileUpload", type = "file", @class = "txtWidthForDialogSched_A required zIndexCSS", aria_labelledby = "lblFileUpload" })
+                    </div>
+                </div>
+
+                <div id="AUSchedA24HNoticeId" class="AddLeftCSSSchedABC">
+                    <input type="button" id="btnSubmitCampMaterial" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Submit" title="Submit" style="font-size:12px;" />
+                    <input type="button" id="btnClearDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all cancel" name="Command" value="Clear" title="Clear" style="font-size:12px;" />
+                    <input type="button" id="btnCloseDialog" class="btn btn-default clsSetPreserences ui-button ui-widget ui-state-default ui-corner-all" name="Command" value="Close" title="Close" style="font-size:12px;" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#NonItemizedTransactionIESchedFForm').css('opacity', 0);
+    $('#DialogBoxNICampMaterForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#NonItemizedTransactionIESchedFForm').css('opacity', 1);
+        $('#DialogBoxNICampMaterForm').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+
+        //$("#lblAllTransText").text("A 24 Hour Notice is required for any contribution or loan received which exceeds $1,000 whose transaction date falls between the cut off of the 11 Day Pre Election Report and the Election. NOTE: This requirement applies to all Primary, General and Special Elections. When 24 Hour Notice transactions are posted to the website, those transactions will automatically be posted to the draft version of the committee’s post-election campaign finance filing report.");
+
+        // ROLE IF AUTHORIZED USER = 11 THEN DISABLE THE ADD BUTTON.
+        if (@Session["RoleID_FILER"] == "11") {
+            $("#btnAddCampaignMaterial").hide();
+        }
+        else {
+            $("#btnAddCampaignMaterial").show();
+        }
+
+        // Hide the Cut Off Date and Filing Date based on Disclosure Type.
+        $m("#divReportPeriodDates").hide();
+        $m("#divReportPeriodDatesTo").hide();
+
+        // DEFAULT VALUES
+        $("#lblHDisclPer").text("");
+
+        // Common for Non-Itemized Transactions.
+        sessionStorage.removeItem("TransactionTypeId");
+
+        // COMMON CODE - FOR VALIDATION AND FILL THE LEFT SIDE DATA.
+        validatePage("DialogBoxNICampMaterForm");
+        NonItemizedLeftFilterValues();
+
+        // SUBMIT BUTTON TRANSACTIONS SELECTED OR NOT SESSION.
+        sessionStorage.removeItem("SubmitTransId");
+
+        // ======================================================================================================================================
+        // DATE VALIDATION FOR DATE RECEIVED FOR NON-ITEMIZED IE-WEEKLY CONTRIBUTION.
+        var date = $("#lstElectionDate option:selected").text().toString();
+        var dateDate = new Date(date);
+        var dateYear = dateDate.getFullYear();
+
+        var fromDate = '01' + '/' + '01' + '/' + dateYear;
+        var toDate = '12' + '/' + '31' + '/' + dateYear;
+
+        sessionStorage.setItem("FromDateVal", fromDate.toString());
+        sessionStorage.setItem("ToDateVal", toDate.toString());
+        // DATE VALIDATION FOR DATE RECEIVED FOR NON-ITEMIZED IE-WEEKLY CONTRIBUTION.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        /// Dialog Box Code /////////////////////////////////////////////////////////////////////
+        var dialog_NI_CampMater;
+
+        dialog_NI_CampMater = $m("#dialog-form_NI_CampMater").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 'auto',
+            width: 550, //456,
+            top: 104,
+            position: {
+                my: "center top",
+                at: "center top+250"
+            },
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            open: function (event, ui) { hideDialogXButton(this); }
+        });
+
+        $(window).resize(function () {
+            //// get the screen height and width
+            if ($(window).width() < 500) {
+                dialog_NI_CampMater = $m("#dialog-form_NI_CampMater").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 300,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 500 && $(window).width() <= 900) {
+                dialog_NI_CampMater = $m("#dialog-form_NI_CampMater").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 550,
+                    modal: true,
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+            else if ($(window).width() > 900) {
+                dialog_NI_CampMater = $m("#dialog-form_NI_CampMater").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 'auto',
+                    width: 550,
+                    top: 104,
+                    modal: true,
+                    dialogClass: 'clsDialogTopPosition',
+                    open: function (event, ui) { hideDialogXButton(this); }
+                });
+            }
+        }).resize();
+
+        // ======================================================================================================================================
+        // Checkbox for No Campaign Material to Report.
+        $("#chkNoCampMater").click(function () {
+            if ($(this).is(':checked')) {
+
+                //// Set Default Values.
+                $("#txtFileUpload").val("");
+                $("#txtDescription").val("");
+
+                $("#txtDescription").prop("disabled", true);
+                $("#txtFileUpload").prop("disabled", true);
+
+                // Clear the JQuery Error Message
+                $m("label[for=txtDescription]").text('');
+                $m("#txtDescription").removeClass("error");
+
+                $m("label[for=txtFileUpload]").text('');
+                $m("#txtFileUpload").removeClass("error");
+            }
+            else {
+                // Set default value dropdowns.
+                $("#txtFileUpload").val("");
+                $("#txtDescription").val("");
+
+                $("#txtDescription").prop("disabled", false);
+                $("#txtFileUpload").prop("disabled", false);
+                $(".ui-datepicker-trigger").prop("disabled", false);
+            }
+        });
+        /**
+         * Reusable code for retreiving Ajax options.
+         */
+        function getAjaxOptionsForGetCampaignMaterialDataCheckNoYesCM() {
+            return {
+                txtFilerID: $("#txtFilerID").val(),
+                lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                lstElectionYear: $("#lstElectionCycle option:selected").text(),
+                lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                lstElectionType: $("#lstElectionType option:selected").val(),
+                lstElectionDate: $("#lstElectionDate option:selected").text(),
+                lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                strDisclosurePeriodDesc: $("#lstDisclosurePeriod option:selected").text(),
+                lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString(),
+                lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+            };
+        }
+
+        // ======================================================================================================================================
+        // BUTTON ADD CAMPAIGN MATERIAL NON-ITEMIZED TRANSACTIONS.
+        $m("#btnAddCampaignMaterial").button().on("click", function () {
+
+            // CHECK THE IF THEY ADDED ANY RECORDS OR NOT.
+            $.post("@Url.Content("~/NonItemCampaignMaterial/GetCampaignMaterialDataCheckNoYesCM/")", getAjaxOptionsForGetCampaignMaterialDataCheckNoYesCM(), function (results) {
+                $.each(results, function (i, item) {
+                    if (item.CamapaignMaterialCount == "0") { // THEN NO RECORDS FIRST THEY CAN ADD EITHER NO CAMPAIGN MATERIAL OR WITH COMAPAIGN MATERIAL.
+
+                        $('#chkNoCampMater').prop("disabled", false);
+
+                        // CALL THE DIALOGBOX.
+                        GetAddCampaignMaterialDialogBox();
+                    }
+                    else {
+
+                        // CHECK THE WHAT THEY ADDED NO CM OR WITH CM
+                        item.RCampMatr = "Yes"; // REMOVED THE LOGIC AFTER NO CAMPAIGN MATERIAL...
+                        // USER CAN NOT UPLOAD DOCUMENTS REMOVED AND ALLOWING DOCUMENTS....
+                        // AFTER NO CAMPAIGN MATERIAL THEY FILED - DISCUSSED AND IMPLEMENTED ON 06/03/2020
+                        // NO IT WILL BE AMENDED DCOUMENTS AFTER NO CAMPAIGN MATERIAL REPORTED.
+                        // IF THEY FILE FIRST NO CAMPAIGN MATERIAL REPORT THEN ITS R_AMEND = 'N'
+                        // AFTER THAT ALL DOCUMENTS WILL BE R_AMEND = 'Y'.
+                        // IF THEY FILE DIRECTLY DOCUMENTS THEN ITS R_AMEND = 'N'.
+                        if (item.RCampMatr == "Yes") {
+
+                            // CHECK IF THEY ADDED FIRST TIME CAMPAIGN MATERIAL
+                            // WITH CAMPAIGN MATERIAL YES THEN IT WILL BE ALWAYS CHECK BOX DISABLE ...
+                            // IF THEY ENTER FIRST RECORD WITH NO CAMPAIGN MATERIAL THEN BUTTON WILL DISABLE....
+                            $('#chkNoCampMater').prop("disabled", true);
+
+                            // CALL THE DIALOGBOX.
+                            GetAddCampaignMaterialDialogBox();
+                        } else { // IF THEY ADDED RECORD WITH NO CAMPAIGN MATERIAL THEN IT WILL SHOW POPUP MESSAGE.
+
+                            ShowDialogBox('EFS', 'No Campaign Material submitted for this Disclosure Report; Delete transaction before uploading Campaign Materials.', 'Ok', '');
+                        }
+                    }
+                });
+            });
+
+
+        });
+        // BUTTON ADD NEW TRANSACTIONS - 24 HOUR NOTICE OF NON-ITEMIZED.
+        // ======================================================================================================================================
+        //======================================================================================================================================
+        // BUTTON CLOSE DIALOG.
+        $m("#btnCloseDialog").button().on("click", function () {
+            // Close the DialogBox
+            dialog_NI_CampMater.dialog("close");
+        });
+        // BUTTON CLOSE DIALOG.
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // BUTTON CLEAR DIALOGBOX.
+        $("#btnClearDialog").click(function () {
+
+
+            // Set default value dropdowns.
+            $("#txtFileUpload").val("");
+            $("#txtDescription").val("");
+
+            $('#chkNoCampMater').prop('checked', false);
+            $("#txtDescription").prop("disabled", false);
+            $("#txtFileUpload").prop("disabled", false);
+            $(".ui-datepicker-trigger").prop("disabled", false);
+
+            // Clear the JQuery Error Message
+            $m("label[for=txtDescription]").text('');
+            $m("#txtDescription").removeClass("error");
+
+            $m("label[for=txtFileUpload]").text('');
+            $m("#txtFileUpload").removeClass("error");
+
+        });
+
+        /**
+         * Reusable way to ajax call SaveNonItemCampMaterialData
+         * Calls SaveNonItemCampMaterialData then SaveNonItemCampMaterialData then hides the loader.
+         * @@param (boolean) includeFileName
+         * @@param (string) fileName 
+         */
+        function SaveNonItemCampMaterialData(includeFileName, fileName) {
+            //Data
+            var ajaxData = {
+                txtFilerId: $("#txtFilerID").val(),
+                lstElectionCycle: $("#lstElectionCycle option:selected").text(),
+                lstElectionCycleId: $("#lstElectionCycle option:selected").val(),
+                lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                lstElectionType: $("#lstElectionType option:selected").val(),
+                lstElectionDate: $("#lstElectionDate option:selected").text(),
+                lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                lstDisclosureType: $("#lstDisclosureType option:selected").val(),
+                lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                txtDescription: $m("#txtDescription").val(),
+                txtFileUpload: $m("#txtFileUpload").val(),
+                strCampMatrYN: $m("#chkNoCampMater").is(':checked').toString(),
+                lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString(),
+                txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString()
+            };
+            //Sometimes we add this property.
+            if (includeFileName && fileName) {
+                Object.defineProperty(ajaxData, 'fileName', {
+                    value: fileName
+                })
+            }
+            // Insert
+            $.post("@Url.Content("~/NonItemCampaignMaterial/SaveNonItemCampMaterialData/")", ajaxData, function (results) {
+                if (results) {
+
+                    window.status = "Transaction submitted successfully";
+                    ShowDialogBox('EFS', 'Transaction submitted successfully', 'Ok', '');
+
+                    // Clear Form Values
+                    ClearDialogBoxValNonItemCampMater();
+
+                    $m("label[for=txtPayeeName]").text('');
+                    $m("#txtPayeeName").removeClass("error");
+
+                    // CHECK THAT THEY ADDED NO CAMAPIGN MATERIAL OR WITH CAMPAIGN MATERIAL.
+                    // CHECK THE IF THEY ADDED ANY RECORDS OR NOT.
+                    $.post("@Url.Content("~/NonItemCampaignMaterial/GetCampaignMaterialDataCheckNoYesCM/")", getAjaxOptionsForGetCampaignMaterialDataCheckNoYesCM(), function (results) {
+                        $.each(results, function (i, item) {
+                            if (item.CamapaignMaterialCount == "0") {
+                                // THEN NO RECORDS FIRST THEY CAN ADD EITHER NO CAMPAIGN MATERIAL OR WITH COMAPAIGN MATERIAL.
+                                $('#chkNoCampMater').prop("disabled", false);
+                            } else {
+                                // CHECK THE WHAT THEY ADDED NO CM OR WITH CM
+                                if (item.RCampMatr == "Yes") {
+                                    // CHECK IF THEY ADDED FIRST TIME CAMPAIGN MATERIAL
+                                    // WITH CAMPAIGN MATERIAL YES THEN IT WILL BE ALWAYS CHECK BOX DISABLE ...
+                                    // IF THEY ENTER FIRST RECORD WITH NO CAMPAIGN MATERIAL THEN BUTTON WILL DISABLE....
+                                    $('#chkNoCampMater').prop("disabled", true);
+                                }
+                                else { // IF THEY ADDED RECORD WITH NO CAMPAIGN MATERIAL THEN IT WILL SHOW POPUP MESSAGE.
+                                    // Close the DialogBox
+                                    dialog_NI_CampMater.dialog("close");
+                                }
+                            }
+                            // Refresh the Data on Grid and hide the loading..
+                            makeAjaxCallToGetCampaignMaterialData(tableCampaignMaterial);
+                            $m('#gridCampaignMaterial').DataTable().ajax.reload();
+                            tableCampaignMaterial.responsive.recalc();
+                        });
+                    }).fail(function () {
+                        $("#divLoading").hide();// GetCampaignMaterialDataCheckNoYesCM failed.
+                    });
+                }
+            }).fail(function () {
+                $("#divLoading").hide();// SaveNonItemCampMaterialData failed.
+            });
+        }
+
+        // ======================================================================================================================================
+        // BUTTON SAVE 24-HOUR NOTICE SCHEDULE A TRANSACTION DATA.
+        $m("#btnSubmitCampMaterial").click(function () {
+            // Validation Succuss then Insert Record.
+            $m("#DialogBoxNICampMaterForm").valid();
+            if ($m("#DialogBoxNICampMaterForm").valid()) { // JQuery Validation
+                $("#divLoading").show();
+                if ($("#chkNoCampMater").is(':checked').toString() == "false") {
+
+                    var data = new FormData();
+                    var files = $("#txtFileUpload").get(0).files;
+                    // Add the uploaded image content to the form data collection
+                    if (files.length > 0) {
+                        data.append("UploadedImage", files[0]);
+                    }
+
+                    // Make a call to upload file into Cabinet and get Document ID, File Type, and File Size.
+                    // Make Ajax request with the contentType = false, and procesDate = false
+                    var ajaxRequest = $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("UploadCampaignMaterialData", "NonItemCampaignMaterial")',
+                        contentType: false,
+                        processData: false,
+                        data: data
+                    });
+                    ajaxRequest.done(function (xhr, textStatus) {
+                        // Sucess
+                        // Insert & hide the loader.
+                        SaveNonItemCampMaterialData(true, files[0].name);
+                    }).fail(function () {
+                        $("#divLoading").hide();// UploadCampaignMaterialData failed.
+                    });
+                }
+                else {
+                    // Insert & hide the loader.
+                    SaveNonItemCampMaterialData(false, false);
+                }
+            }
+        });
+
+        // ======================================================================================================================================
+        // 24-HOUR NOTICE SCHEDULE 'A' TRANSACTION SELECTION.
+        $m('#gridFilingTransIEWeeklyExpenditure tbody').on('click', 'tr', function (e) {
+            e.preventDefault();
+
+            var flngTransId = tableFilingTransactions.cell(this, 0).data();  // Filing Transactions Id
+            var flngEntityId = tableFilingTransactions.cell(this, 2).data();  // Filing Entity Id
+
+            var selectedRowId = tableFilingTransactions.row(this).index();
+
+            if (selectedRowId != undefined) {
+
+                sessionStorage.setItem("SelectedRowId", selectedRowId);
+
+                if (sessionStorage.getItem("EditYesNo").toString() == "No") {
+                    if (submissionDate.toString() == "") {
+                        $("#btnSubmitSchedAIEWeeklyContr").prop("disabled", false);
+                    }
+                    else {
+                        $("#btnSubmitSchedAIEWeeklyContr").prop("disabled", true);
+                    }
+
+                    sessionStorage.setItem("SubmitTransId", flngTransId.toString());
+                    sessionStorage.setItem("SubmissionDate", submissionDate.toString());
+                    sessionStorage.setItem("SubmitEntityId", flngEntityId.toString());
+
+                    if ($(this).hasClass('selected') != true) {
+                        tableFilingTransactions.$('tr.selected').removeClass('selected');
+                        $(this).addClass('selected');
+                    }
+                }
+            }
+        });
+        // 24-HOUR NOTICE SCHEDULE 'A' TRANSACTION SELECTION.
+        // ======================================================================================================================================
+
+        var form_edit_original_data = '';
+
+        // ======================================================================================================================================
+        // DELETE 24-HOUR NOTICE TRANSACTIONS.
+        $m('#gridCampaignMaterial tbody').on('click', 'a.editor_remove_CampMatr', function (e) {
+
+            var dataTrans = tableCampaignMaterial.row($(this).parents('tr')).data();
+
+            var resultsDelete = false;
+
+            sessionStorage.setItem("EditYesNo", "Yes");
+
+            resultsDelete = "Are you sure you want to delete this transaction?"; //window.confirm("Are you sure do you want to delete this transaction?");
+
+            $m('#modal_dialog').text(resultsDelete);
+            $m("#modal_dialog").dialog({
+                resizable: false,
+                width: '400px',
+                height: 'auto',
+                bgiframe: false,
+                modal: true,
+                closeOnEscape: false,
+                open: function (event, ui) { hideDialogXButton(this); },
+                buttons: {
+                    "OK": function () {
+                        // Close Confirm box
+                        $m(this).dialog("close"); //Close current dialog before closing the previous to prevent '_focusTabbable' error in jquery-ui.
+
+                        sessionStorage.setItem("EditYesNo", "No");
+
+                        // DELETE TRANSACTION.
+                        $.post("@Url.Content("~/NonItemCampaignMaterial/DeleteNonItemCampMaterialData/")", {
+                            strCampaignMaterialId: dataTrans[0].toString()
+                        }, function (results) {
+
+                            ShowDialogBox('EFS', 'Transaction deleted successfully', 'Ok', '');
+                            window.status = "Transaction deleted successfully";
+                            //Reload table
+                            makeAjaxCallToGetCampaignMaterialData(results);
+
+                            $m('#gridCampaignMaterial').DataTable().ajax.reload();
+                            tableCampaignMaterial.responsive.recalc();
+                        });
+                    },
+                    "Cancel": function () {
+                        sessionStorage.setItem("EditYesNo", "No");
+                        $m(this).dialog("close");
+                    }
+                }
+            });
+        });
+        // DELETE 24-HOUR NOTICE TRANSACTIONS.
+        // ======================================================================================================================================
+
+        // File Upload Change Validation
+        // ======================================================================================================================================
+        $('#txtFileUpload').change(function () {
+            if (this.value != '') {
+                var ext = this.value.match(/\.(.+)$/)[1];
+                var maxFileSize = 5242880; // MB to Bytes Convertion (Bytes in binary)
+                switch (ext.toUpperCase()) {
+                    case 'jpeg':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5 MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'JPEG':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'jpg':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'JPG':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'png':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'PNG':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'pdf':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    case 'PDF':
+                        if (this.files[0].size > maxFileSize) {
+                            ShowDialogBox('Campaign Material', 'File size should not exceed 5MB.', 'Ok', '');
+                            $("#txtFileUpload").val('');
+                        }
+                        $("#txtFileUpload_validate").empty();
+                        $("label[for=txtFileUpload]").text('');
+                        $("#txtFileUpload").removeClass("error");
+                        break;
+                    default:
+                        ShowDialogBox('Campaign Material', 'Allowable file types are PDF, JPEG, JPG, PNG. File Name should only contain one (. dot), followed by file extension.', 'Ok', '');
+                        $("#txtFileUpload").val('');
+                        break;
+                }
+            }
+        });
+        // File Upload Change Validation
+        // ======================================================================================================================================
+
+        // ======================================================================================================================================
+        // Bind Clear Click - CLEAR BUTTON COMMON CODE.
+        $(".clsCommonClear").bind('click', function () {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            sessionStorage.setItem("FilerId", $("#txtFilerID option:selected").val());
+            sessionStorage.setItem("CommitteeName", $("#txtCommitteeName option:selected").val());
+            sessionStorage.setItem("ElectionCycle", $("#lstElectionCycle option:selected").val());
+            sessionStorage.setItem("ElectionType", $("#lstElectionType option:selected").val());
+            sessionStorage.setItem("ElectionDate", $("#lstElectionDate option:selected").val());
+            sessionStorage.setItem("DisclosureType", $("#lstDisclosureType option:selected").val());
+            sessionStorage.setItem("DisclosurePeriod", $("#lstDisclosurePeriod option:selected").val());
+            sessionStorage.setItem("CutOffDate", $("#txtReportPeriodDatesFrom").val());
+            sessionStorage.setItem("FilingDate", $("#txtReportPeriodDatesTo").val());
+            sessionStorage.setItem("TransactionType", $("#lstTransactionType option:selected").val());
+            sessionStorage.setItem("TransactionTypeId", "true");
+
+            var urlContrHome = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")"; // "../ContributionsMonetary/ContributionsMonetary";
+            window.location.href = urlContrHome;
+        });
+        // Bind Clear Click - CLEAR BUTTON COMMON CODE.
+        // ======================================================================================================================================
+
+        var tableCampaignMaterial = "";
+
+        /**
+         * Makes a call to GetCampaignMaterialData
+         * Simplified duplicate code.
+         * @@param successCallbackFunction
+         */
+        function makeAjaxCallToGetCampaignMaterialData(successCallbackFunction) {
+            $("#divLoading").show();
+            $m.ajax({
+                "url": "@Url.Content("~/NonItemCampaignMaterial/GetCampaignMaterialData/")",
+                "data": {
+                    txtFilerID: $("#txtFilerID").val(),
+                    lstElectionCycle: $("#lstElectionCycle option:selected").val(),
+                    lstElectionYear: $("#lstElectionCycle option:selected").text(),
+                    lstUCOfficeType: $("#lstUCOfficeType option:selected").val(),
+                    lstElectionType: $("#lstElectionType option:selected").val(),
+                    lstElectionDate: $("#lstElectionDate option:selected").text(),
+                    lstDisclosurePeriod: $("#lstDisclosurePeriod option:selected").val(),
+                    strDisclosurePeriodDesc: $("#lstDisclosurePeriod option:selected").text(),
+                    lstElectionDateId: $("#lstElectionDate option:selected").val(),
+                    txtCuttOffDate: sessionStorage.getItem("CutOffDate").toString(),
+                    lstFilingDate: $m("#lstFilingDate option:selected").text(),
+                    txtReportPeriodDatesTo: sessionStorage.getItem("FilingDate").toString()
+                },
+                "success": successCallbackFunction,
+                "dataType": "json",
+                "type": "POST",
+                "error": function () {
+                    ShowDialogBox('EFS', 'Error Fetching Data. Please Contact NYS Board of Elections ◾(518) 474-8200', 'Ok', '');
+                }
+            }).always(function () {
+                $("#divLoading").hide();
+            });
+        }
+        // ======================================================================================================================================
+        // Grid Code CAMPAIGN MATERIAL ///////////////////////////////////////////////////
+        // ======================================================================================================================================
+
+        tableCampaignMaterial = $m('#gridCampaignMaterial').DataTable({
+            "bProcessing": true,
+            "responsive": true,
+            "deferRender": true,
+            "retrieve": true,
+            "columnDefs": [
+                {
+                    "targets": [0, 1, 2],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [4],
+                    "fnCreatedCell": function (cell) {
+                        cell.setAttribute('aria-label', "Row Actions");
+                    }
+                },
+            ],
+            "initComplete": function (settings, json) {
+                //Accessibility: Applies various Accessibility features to this dataTable.
+                makeDataTableAccessible($m('#gridCampaignMaterial').DataTable());
+            },
+            "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+
+                if (aaData[9] == "Yes") {
+                    // Download file from Cabinet.
+                    var url = '@Url.Action("DownloadCampaignMaterial", "NonItemCampaignMaterial", new { documentID = "__documentID__" })';
+                    url = url.replace("__documentID__", aaData[2]);
+                    //Get the description and remove single and double quotes.
+                    var description = aaData[6].toString().replace("'", "").replace('"', '');
+                    // CHANGES BASED ON DISCUSSION FOR LEGACY DATA WE DON'T HAVE MAPPED CAMPAIGN MATERIALS...
+                    // SO DISABLED LINK. ADDED - 04/27/2020.
+                    if (aaData[2].toString() != "") {
+                        $m('td:eq(1)', nRow).html('<a class="editor_IEWeeklyExp_History lnkGird" title="Download the Campaing Material file for ' + description + '" href=' + url + ' target="_blank"> Campaign Material </a>');
+                    }
+                    else {
+                        $m('td:eq(1)', nRow).html('<p class="CampMatrAsLinkNo">Campaign Material</p>');
+                    }
+
+                    return nRow;
+                }
+                else {
+                    return nRow;
+                }
+
+            },
+            "fnDrawCallback": function (oSettings) {
+                var oSettings = this.fnSettings();
+                var iTotalRecords = oSettings.fnRecordsTotal();
+                if (iTotalRecords < 1) {
+                    $("#btnSubmitSchedAIEWeeklyContr").prop("disabled", true);
+                }
+
+                $("#divLoading").hide();
+            },
+            "fnServerData": function (url, data, callback) {
+                makeAjaxCallToGetCampaignMaterialData(callback);
+            },
+            "order": [[0, "desc"]]
+        });
+        $m('#gridCampaignMaterial').DataTable().ajax.reload();
+        tableCampaignMaterial.responsive.recalc();
+
+        // ======================================================================================================================================
+        // Grid Code CAMPAIGN MATERIAL ///////////////////////////////////////////////////
+        // ======================================================================================================================================
+
+
+        function ClearDialogBoxValNonItemCampMater() {
+
+            // Clear Form Validation. Schedule 'D'
+            var validator = $m("#DialogBoxNICampMaterForm").validate();
+            validator.resetForm(); // clear out the validation errors
+            $m("#DialogBoxNICampMaterForm")[0].reset(); // clear out the form data
+
+            // Set default value dropdowns.
+            $("#txtFileUpload").val("");
+            $("#txtDescription").val("");
+
+            $("#txtDescription").prop("disabled", false);
+            $("#txtFileUpload").prop("disabled", false);
+
+            // Clear the JQuery Error Message
+            $m("label[for=txtDescription]").text('');
+            $m("#txtDescription").removeClass("error");
+
+            $m("label[for=txtFileUpload]").text('');
+            $m("#txtFileUpload").removeClass("error");
+        }
+
+        function GetAddCampaignMaterialDialogBox() {
+
+            dialog_NI_CampMater.dialog("open");
+
+            // Clear Dialogbox Form.
+            var validator = $m("#DialogBoxNICampMaterForm").validate();
+            validator.resetForm(); // clear out the validation errors
+            $m("#DialogBoxNICampMaterForm")[0].reset(); // clear out the form data
+
+            // Set default value dropdowns.
+            $("#txtFileUpload").val("");
+            $("#txtDescription").val("");
+
+            $('#chkNoCampMater').prop('checked', false);
+            $("#txtDescription").prop("disabled", false);
+            $("#txtFileUpload").prop("disabled", false);
+            $(".ui-datepicker-trigger").prop("disabled", false);
+
+            // Clear the JQuery Error Message
+            $m("label[for=txtDescription]").text('');
+            $m("#txtDescription").removeClass("error");
+
+            $m("label[for=txtFileUpload]").text('');
+            $m("#txtFileUpload").removeClass("error");
+
+            form_edit_original_data = $("#DialogBoxNICampMaterForm").serialize();
+
+        }
+    }); // DOCUMENT END END END>>>>>> >>>>>>>>>>>>>>>>>>
+
+</script>

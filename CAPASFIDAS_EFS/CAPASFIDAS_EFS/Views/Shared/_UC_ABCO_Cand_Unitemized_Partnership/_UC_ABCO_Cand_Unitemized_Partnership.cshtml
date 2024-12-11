@@ -1,0 +1,585 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_ABCO_Cand_Unitemized_Partnership", "_UC_ABCO_Cand_Unitemized_Partnership", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridMonetary" class="divGridCSS">
+        <table style="width:100%">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvd" class="border1pxCls" style="padding-left:2em;">Date Rcvd</th>
+                <th id="thContributionName" class="border1pxCls">@Html.Label("Contributor Type", new { @id = "lblContributionName" })</th>
+                <th id="thParterShipName" class="border1pxCls">Partnership Name</th>
+                <th id="thFirstName" class="border1pxCls">First Name</th>
+                <th id="thMI" class="border1pxCls">MI</th>
+                <th id="thLastName" class="border1pxCls">Last Name</th>
+                <th id="thStreet" class="border1pxCls">Street #</th>
+                <th id="thStreetName" class="border1pxCls">Street Name</th>
+                <th id="thCity" class="border1pxCls">City</th>
+                <th id="thState" class="border1pxCls">State</th>
+                <th id="thZip5" class="border1pxCls">Zip5</th>
+                <th id="thZip4" class="border1pxCls">Zip4</th>
+                <th id="thMethod" class="border1pxCls">Method</th>
+                <th id="thCheck" class="border1pxCls">Check #</th>
+                <th id="thAmt" class="border1pxCls">Amt</th>
+                <th id="thExplanation" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvd" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdContributionName" class="border1pxCls" valign="bottom">@Html.DropDownList("lstContributionName", ViewData["lstContributionName"] as SelectList, new { @class = "" })</td>
+                <td id="tdPartnershipName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartnerShipName", @class = "txtWidth" })</td>
+                <td id="tdFirstName" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtFirstName", @class = "txtWidth" })</td>
+                <td id="tdMI" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtMI", @class = "txtWidth" })</td>
+                <td id="tdLastName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLastName", @class = "txtWidth" })</td>
+                <td id="tdStreet" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreet", @class = "txtWidth" })</td>
+                <td id="tdStreetName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtStreetName", @class = "txtWidth" })</td>
+                <td id="tdCity" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCity", @class = "txtWidth" })</td>
+                <td id="tdState" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtState", @class = "txtWidth" })</td>
+                <td id="tdZip5" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip5", @class = "txtWidth" })</td>
+                <td id="tdZip4" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtZip4", @class = "txtWidth" })</td>
+                <td id="tdMethod" class="border1pxCls" valign="bottom">@Html.DropDownList("lstMethod", ViewData["lstMethod"] as SelectList, new { @class = "" })</td>
+                <td id="tdCheck" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtCheck", @class = "txtWidth" })</td>
+                <td id="tAmt" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmt", @class = "txtWidth" })</td>
+                <td id="tdExplanation" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanation", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTMonetary" style="padding-bottom:3em;">
+            <table id="ContributionsMonetaryGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Rcvd</th>
+                        <th>Contributor Type</th>
+                        <th>Partnership Name</th>
+                        <th>FirstName</th>
+                        <th>MI</th>
+                        <th>LastName</th>
+                        <th>Street#</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Method</th>
+                        <th>Check#</th>
+                        <th>Amount</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>Attribution</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="divShowPartnerAdddataMonetary" class="divGridCSS">
+        <table id="divShowPartnerAdddataMonetary" style="width:100%">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thPartner" class="border1pxCls" style="padding-left:2em;">Partners</th>
+                <th id="thPartFirstName" class="border1pxCls">First Name</th>
+                <th id="thPartMI" class="border1pxCls">MI</th>
+                <th id="thPartLastName" class="border1pxCls">Last Name</th>
+                <th id="thPartStreet" class="border1pxCls">Street #</th>
+                <th id="thPartStreetName" class="border1pxCls">Street Name</th>
+                <th id="thPartCity" class="border1pxCls">City</th>
+                <th id="thPartState" class="border1pxCls">State</th>
+                <th id="thPartZip5" class="border1pxCls">Zip5</th>
+                <th id="thPartZip4" class="border1pxCls">Zip4</th>
+                <th id="thPartAmt" class="border1pxCls">Amt Attributed</th>
+                <th id="thPartExplanation" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdPartner" class="border1pxCls" style="padding-left:2em;" valign="bottom">@Html.DropDownList("lstPartner", ViewData["lstPartner"] as SelectList, new { @class = "" })</td>
+                <td id="tdPartFirstName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartFirstName", @class = "txtWidth" })</td>
+                <td id="tdPartMI" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartMI", @class = "txtWidth" })</td>
+                <td id="tdPartLastName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartLastName", @class = "txtWidth" })</td>
+                <td id="tdPartStreet" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreet", @class = "txtWidth" })</td>
+                <td id="tdPartStreetName" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartStreetName", @class = "txtWidth" })</td>
+                <td id="tdPartCity" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartCity", @class = "txtWidth" })</td>
+                <td id="tdPartState" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartState", @class = "txtWidth" })</td>
+                <td id="tdPartZip5" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip5", @class = "txtWidth" })</td>
+                <td id="tdPartZip4" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartZip4", @class = "txtWidth" })</td>
+                <td id="tdPartAmt" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtPartAmt", @class = "txtWidth" })</td>
+                <td id="tdPartExplanation" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtPartExplanation", @class = "txtWidth" })</td>                
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divPartnerMonetary">
+            <table id="PartnersGridMonetary" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Partners</th>
+                        <th>First Name</th>
+                        <th>MI</th>
+                        <th>Last Name</th>
+                        <th>Street #</th>
+                        <th>Street Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip5</th>
+                        <th>Zip4</th>
+                        <th>Amt Attributed</th>
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+        $("#thParterShipName").hide("slow");
+        $("#tdPartnershipName").hide("slow");
+
+        $("#divDTMonetary").hide();
+        $("#divShowPartnerAdddataMonetary").hide();
+        $("#divPartnerMonetary").hide();
+        $("#PartnersGridMonetary").addClass("Per100hideShowButtonCSS");
+        
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) {
+            $("#divGridMonetary").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#ContributionsMonetaryGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_ABCO_Cand_Unitemized_Partnership/GetContributionsMonetarySearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -3, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#ContributionsMonetaryGrid').DataTable());
+                },
+                "fnRowCallback": function (nRow, aaData, iDisplayIndex) {
+                    var uniqueID = generateUniqueRowIdForFnRowCallback(iDisplayIndex, nRow);
+                    if (aaData[2] != "") {
+                        $m('td:eq(18)', nRow).html('<a class="editor_Attribution" style="color:blue;" href="" target="_blank" id="lnkColumnData'+uniqueID+'">Attribution</a>');
+                    }
+                    else {
+                        $m('td:eq(18)', nRow).html('<a href="" class="lnkTotalsBySchedule" target="_blank" id="lnkColumnData'+uniqueID+'"></a>');
+                        //$m('td:eq(18)', nRow).html('<a href="../ContributionsMonetary/GetPartnerSearchData" class="lnkTotalsBySchedule" target="_blank" id="lnkColumnData'+uniqueID+'"></a>');
+                    }
+                    return nRow;
+                }
+                //},
+                //"fnServerData": function (url, data, callback) {
+                //    $.ajax({
+                //        "url": url,
+                //        "data": null,
+                //        "success": callback,
+                //        "dataType": "json",
+                //        "type": "POST",
+                //        "error": function () {
+                //            alert("Error...");
+                //        }
+                //    });
+                //}
+            });
+            $m('#ContributionsMonetaryGrid').DataTable().ajax.reload();            
+        });
+
+        //// Edit a record
+        //$m('#ContributionsMonetaryGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataMonetary").show();
+        //    table = $m('#PartnersGridMonetary').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //            //Accessibility: Applies various Accessibility features to this dataTable.
+        //            makeDataTableAccessible($m('#PartnersGridMonetary').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridMonetary').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#ContributionsMonetaryGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Edit a record
+        $m('#ContributionsMonetaryGrid tbody').on('click', 'a.editor_Attribution', function (e) {
+            e.preventDefault();
+            $("#divShowPartnerAdddataMonetary").show();
+            table = $m('#PartnersGridMonetary').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#PartnersGridMonetary').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#PartnersGridMonetary').DataTable().ajax.reload();
+        });
+
+        // Explanation focus out
+        $m("#txtExplanation").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divDTMonetary").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanation").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerMonetary").show();
+            $m('#PartnersGridMonetary').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#ContributionsMonetaryGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionName option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[13].toString());
+            $("#txtAmt").val(data[14].toString());
+            $("#txtExplanation").val(data[15].toString());            
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family" || selectedlstContributionName == "Candidate/Spouse") {
+
+                //Show All TR
+                $("#thFirstName").show("slow");
+                $("#thMI").show("slow");
+                $("#thLastName").show("slow");
+                $("#thStreet").show("slow");
+                $("#thStreetName").show("slow");
+                $("#thCity").show("slow");
+                $("#thState").show("slow");
+                $("#thZip5").show("slow");
+                $("#thZip4").show("slow");
+                $("#thMethod").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                //Show All TD
+                $("#tdFirstName").show("slow");
+                $("#tdMI").show("slow");
+                $("#tdLastName").show("slow");
+                $("#tdStreet").show("slow");
+                $("#tdStreetName").show("slow");
+                $("#tdCity").show("slow");
+                $("#tdState").show("slow");
+                $("#tdZip5").show("slow");
+                $("#tdZip4").show("slow");
+                $("#tdMethod").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+
+                $("#thParterShipName").hide("slow");
+                $("#tdPartnershipName").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                $("#thFirstName").hide("slow");
+                $("#thMI").hide("slow");
+                $("#thLastName").hide("slow");
+                $("#thStreet").hide("slow");
+                $("#thStreetName").hide("slow");
+                $("#thCity").hide("slow");
+                $("#thState").hide("slow");
+                $("#thZip5").hide("slow");
+                $("#thZip4").hide("slow");
+                $("#thMethod").hide("slow");
+                $("#thCheck").hide("slow");
+
+                //Show All TD
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+
+                $("#tdFirstName").hide("slow");
+                $("#tdMI").hide("slow");
+                $("#tdLastName").hide("slow");
+                $("#tdStreet").hide("slow");
+                $("#tdStreetName").hide("slow");
+                $("#tdCity").hide("slow");
+                $("#tdState").hide("slow");
+                $("#tdZip5").hide("slow");
+                $("#tdZip4").hide("slow");
+                $("#tdMethod").hide("slow");
+                $("#tdCheck").hide("slow");
+
+                $("#thParterShipName").hide("slow");
+                $("#tdPartnershipName").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipName").show("slow");
+                $("#tdPartnershipName").show("slow");
+
+                //Show All TR
+                $("#thFirstName").hide("slow");
+                $("#thMI").hide("slow");
+                $("#thLastName").hide("slow");
+                $("#thStreet").show("slow");
+                $("#thStreetName").show("slow");
+                $("#thCity").show("slow");
+                $("#thState").show("slow");
+                $("#thZip5").show("slow");
+                $("#thZip4").show("slow");
+                $("#thMethod").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                //Show All TD
+                $("#tdFirstName").hide("slow");
+                $("#tdMI").hide("slow");
+                $("#tdLastName").hide("slow");
+                $("#tdStreet").show("slow");
+                $("#tdStreetName").show("slow");
+                $("#tdCity").show("slow");
+                $("#tdState").show("slow");
+                $("#tdZip5").show("slow");
+                $("#tdZip4").show("slow");
+                $("#tdMethod").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionName").change(function () {
+            var selectedlstContributionName = $("#lstContributionName option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family" || selectedlstContributionName == "Candidate/Spouse") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstName").show("slow");
+                $("#thMI").show("slow");
+                $("#thLastName").show("slow");
+                $("#thStreet").show("slow");
+                $("#thStreetName").show("slow");
+                $("#thCity").show("slow");
+                $("#thState").show("slow");
+                $("#thZip5").show("slow");
+                $("#thZip4").show("slow");
+                $("#thMethod").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                //Show All TD
+                $("#tdFirstName").show("slow");
+                $("#tdMI").show("slow");
+                $("#tdLastName").show("slow");
+                $("#tdStreet").show("slow");
+                $("#tdStreetName").show("slow");
+                $("#tdCity").show("slow");
+                $("#tdState").show("slow");
+                $("#tdZip5").show("slow");
+                $("#tdZip4").show("slow");
+                $("#tdMethod").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+
+                $("#thParterShipName").hide("slow");
+                $("#tdPartnershipName").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                $("#thFirstName").hide("slow");
+                $("#thMI").hide("slow");
+                $("#thLastName").hide("slow");
+                $("#thStreet").hide("slow");
+                $("#thStreetName").hide("slow");
+                $("#thCity").hide("slow");
+                $("#thState").hide("slow");
+                $("#thZip5").hide("slow");
+                $("#thZip4").hide("slow");
+                $("#thMethod").hide("slow");
+                $("#thCheck").hide("slow");
+
+                //Show All TD
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+
+                $("#tdFirstName").hide("slow");
+                $("#tdMI").hide("slow");
+                $("#tdLastName").hide("slow");
+                $("#tdStreet").hide("slow");
+                $("#tdStreetName").hide("slow");
+                $("#tdCity").hide("slow");
+                $("#tdState").hide("slow");
+                $("#tdZip5").hide("slow");
+                $("#tdZip4").hide("slow");
+                $("#tdMethod").hide("slow");
+                $("#tdCheck").hide("slow");
+
+                $("#thParterShipName").hide("slow");
+                $("#tdPartnershipName").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipName").show("slow");
+                $("#tdPartnershipName").show("slow");
+
+                //Show All TR
+                $("#thFirstName").hide("slow");
+                $("#thMI").hide("slow");
+                $("#thLastName").hide("slow");
+                $("#thStreet").show("slow");
+                $("#thStreetName").show("slow");
+                $("#thCity").show("slow");
+                $("#thState").show("slow");
+                $("#thZip5").show("slow");
+                $("#thZip4").show("slow");
+                $("#thMethod").show("slow");
+                $("#thCheck").show("slow");
+                $("#thAmt").show("slow");
+                $("#thExplanation").show("slow");
+
+                //Show All TD
+                $("#tdFirstName").hide("slow");
+                $("#tdMI").hide("slow");
+                $("#tdLastName").hide("slow");
+                $("#tdStreet").show("slow");
+                $("#tdStreetName").show("slow");
+                $("#tdCity").show("slow");
+                $("#tdState").show("slow");
+                $("#tdZip5").show("slow");
+                $("#tdZip4").show("slow");
+                $("#tdMethod").show("slow");
+                $("#tdCheck").show("slow");
+                $("#tAmt").show("slow");
+                $("#tdExplanation").show("slow");
+            }
+        });
+    });
+</script>

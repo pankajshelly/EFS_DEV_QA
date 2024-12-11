@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "RoleMap";
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+@using (Html.BeginForm("RoleMap", "RoleMap", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+}
+
+<script>
+        $m = jQuery.noConflict();
+
+        $(document).ready(function () {
+            @*var options = {};
+            options.url = "@Url.Content("~/RoleMap/GetFilerInformation/")";
+            options.type = "POST";
+            options.data = null;
+            options.dataType = "json";
+            options.contentType = "application/json";
+            options.success = function (results) {
+                if (results[0].Reconcile == "Y") {
+                    var urlContributionMonetary = "@Url.Content("~/LoanAndLiabilityReconciliation/LoanAndLiabilityReconciliation/")";
+                    window.location.href = urlContributionMonetary;
+                }
+
+            };
+            options.error = function () {
+            };
+            $.ajax(options);*@
+
+            if (sessionStorage.getItem("Cnty_PageName") != null) {
+                if (sessionStorage.getItem("Cnty_PageName").toString() == "ContributionsMonetary") {
+                    var urlContributionMonetary = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+                    window.location.href = urlContributionMonetary;
+                }
+                else if (sessionStorage.getItem("Cnty_PageName").toString() == "DisclosureReportSummary") {
+                    var urlContributionMonetary = "@Url.Content("~/DisclosureReportSummary/DisclosureReportSummary/")";
+                    window.location.href = urlContributionMonetary;
+                }
+                else if (sessionStorage.getItem("Cnty_PageName").toString() == "ImportDisclosureReport") {
+                    var urlContributionMonetary = "@Url.Content("~/ImportDisclosureReport/ImportDisclosureReport/")";
+                    window.location.href = urlContributionMonetary;
+                }
+                if (sessionStorage.getItem("Cnty_PageName").toString() == "ViewAllDisclosures") {
+                    var urlContributionMonetary = "@Url.Content("~/ViewAllDisclosures/ViewAllDisclosures/")";
+                    window.location.href = urlContributionMonetary;
+                }
+                if (sessionStorage.getItem("Cnty_PageName").toString() == "LoanAndLiabilityReconciliation") {
+                    var urlContributionMonetary = "@Url.Content("~/LoanAndLiabilityReconciliation/LoanAndLiabilityReconciliation/")";
+                    window.location.href = urlContributionMonetary;
+                }
+                if (sessionStorage.getItem("Cnty_PageName").toString() == "ViewSupportingDocuments") {
+                    var urlContributionMonetary = "@Url.Content("~/ViewSupportingDocuments/ViewSupportingDocuments/")";
+                    window.location.href = urlContributionMonetary;
+                }
+            }
+            else {
+                var urlContributionMonetary = "@Url.Content("~/ContributionsMonetary/ContributionsMonetary/")";
+                window.location.href = urlContributionMonetary;
+            }
+
+    });
+    </script>
+

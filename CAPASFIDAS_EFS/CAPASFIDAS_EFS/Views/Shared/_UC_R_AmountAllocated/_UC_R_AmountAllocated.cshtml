@@ -1,0 +1,491 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+@using (Html.BeginForm("_UC_R_AmountAllocated", "_UC_R_AmountAllocated", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridAmountAllocated" class="divGridCSS">
+        <table style="width:100%;">
+            <tr>
+                <td style="padding-right:2em;float:right">
+                    <input type="button" id="btnUploadCreate" class="btn btn-default clsCommonSearch" name="Command" value="Search Allocations" title="Search Allocations" style="font-size:12px;" />&nbsp;
+                    &nbsp;&nbsp;
+                    <button id="btnCommonSaveDepositoryBank" class="btn-default buttonCSS" name="Command" value="CSV">
+                        <img src="~/Content/Images/add.png" alt="Pluss/Add Icon" class="imgButtonCSS" />
+                    </button> &nbsp;&nbsp;
+                    <button id="btnCommonClear" class="btn-default buttonCSS" value="CSV">
+                        <img src="~/Content/Images/clear.png" alt="Reoload/Clear Icon" class="imgButtonCSS" />
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="border1pxCls">
+            <tr>
+                <th id="thDateRcvdAmountAllocated" class="border1pxCls" style="padding-left:2em;">Date Allocated</th>
+                <th id="thElectionYearAllocatedAmountAllocated" class="border1pxCls">Election Year Allocated</th>
+                <th id="thFirstNameAmountAllocated" class="border1pxCls">First Name</th>
+                <th id="thMIAmountAllocated" class="border1pxCls">MI</th>
+                <th id="thLastNameAmountAllocated" class="border1pxCls">Last Name</th>
+                <th id="thDistrictAmountAllocated" class="border1pxCls">District</th>
+                <th id="thOfficeAmountAllocated" class="border1pxCls">Office</th>                
+                <th id="thOriginalAllocationDateAmountAllocated" class="border1pxCls">Original Allocation Date</th>
+                <th id="thOriginalAmtAllocatedAmountAllocated" class="border1pxCls">Original Amt Allocated</th>                
+                <th id="thAmtAllcoatedThisReportAmountAllocated" class="border1pxCls">Amt Allocated this Report</th>                
+                <th id="thAmtAllocatedAllReportsAmountAllocated" class="border1pxCls">Amt Allocated All Reports</th>                
+                <th id="thExplanationAmountAllocated" class="border1pxCls" style="padding-right:2em;">Explanation</th>
+            </tr>
+            <tr>
+                <td id="tdDateRcvdAmountAllocated" class="border1pxCls" valign="bottom" style="padding-left:2em;">@Html.TextBox("searchTerm", null, new { id = "txtDateRcvd", @class = "txtWidth" })</td>
+                <td id="tdElectionYearAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtElectionYearAllocated", @class = "txtWidth" })</td>
+                <td id="tdFirstNameAllocated" class="borde r1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtFirstNameAllocated", @class = "txtWidth" })</td>
+                <td id="tdMIAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtMIAllocated", @class = "txtWidth" })</td>
+                <td id="tdLastNameAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtLastNameAllocated", @class = "txtWidth" })</td>                                
+                <td id="tdDistrictAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtDistrictAllocated", @class = "txtWidth" })</td>                                
+                <td id="tdOfficeAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtOfficeAllocated", @class = "txtWidth" })</td>                                
+                <td id="tdOriginalAllocationDateAmountAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtOriginalAllocationDateAmountAllocated", @class = "txtWidth" })</td>
+                <td id="tdOriginalAmtAllocatedAmountAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtOriginalAmtAllocatedAmountAllocated", @class = "txtWidth" })</td>                
+                <td id="tdAmtAlloThisReportAmountAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtAlloThisReportAmountAllocated", @class = "txtWidth" })</td>
+                <td id="tdAmtAlloAllReportsAmountAllocated" class="border1pxCls" valign="bottom">@Html.TextBox("searchTerm", null, new { id = "txtAmtAlloAllReportsAmountAllocated", @class = "txtWidth" })</td>
+                <td id="tdExplanationAmountAllocated" class="border1pxCls" valign="bottom" style="padding-right:2em;">@Html.TextBox("searchTerm", null, new { id = "txtExplanationAmountAllocated", @class = "txtWidth" })</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <div id="divDTAmountAllocated">
+            <table id="UC_AmountAllocatedGrid" class="webGrid">
+                <thead id="thdGrid" class="header">
+                    <tr>
+                        <th>Date Allocated</th>
+                        <th>Election Year Allocated</th>
+                        <th>FirstName</th>
+                        <th>MI</th>
+                        <th>LastName</th>
+                        <th>District</th>
+                        <th>Office</th>
+                        <th>Original Allocation Date</th>
+                        <th>Original Amt Allocated</th>
+                        <th>Amt Allocated this Report</th>
+                        <th>Amt Allocated All Reports</th>                        
+                        <th>Explanation</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $(document).ready(function () {
+
+        $("#divDTAmountAllocated").hide();
+        //Bind Search Click
+        $m(".clsCommonSearch").bind('click', function (searchCustomers) { 
+            $("#divGridAmountAllocated").show();
+            sessionStorage.setDataTable = "true";
+            $("#divShowHideHelp").removeClass("clsShowHideHelpSec");
+            $("#divShowHideHelp").addClass("clsShowHideHelpSecInMobileTablet");
+
+            table = $m('#UC_AmountAllocatedGrid').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                //"scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../_UC_R_AmountAllocated/GetAmountAllocatedSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                            { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#UC_AmountAllocatedGrid').DataTable());
+                }
+            });
+            $m('#UC_AmountAllocatedGrid').DataTable().ajax.reload();
+        });
+
+        //// Edit a record
+        //$m('#UC_AmountAllocatedGrid tbody').on('click', 'a.editor_ShowPartner', function (e) {
+        //    e.preventDefault();
+        //    $("#divShowPartnerAdddataAmountAllocated").show();
+        //    table = $m('#PartnersGridAmountAllocated').DataTable({
+        //        "bProcessing": true,
+        //        "retrieve": true,
+        //        "stateSave": true,
+        //        "scrollX": "100%",
+        //        "scrollY": "100%",
+        //        "mData": null,
+        //        "sDefaultContent": "Edit",
+        //        "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+        //        "bAutoWidth": false,
+        //        "columnDefs": [
+        //                    { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //                    { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+        //        ],
+        //        "initComplete": function (settings, json) {
+        //            //Accessibility: Applies various Accessibility features to this dataTable.
+        //            makeDataTableAccessible($m('#PartnersGridAmountAllocated').DataTable());
+        //        },
+        //        "fnServerData": function (url, data, callback) {
+        //            $.ajax({
+        //                "url": url,
+        //                "data": null,
+        //                "success": callback,
+        //                "dataType": "json",
+        //                "type": "POST",
+        //                "error": function () {
+        //                    alert("Error...");
+        //                }
+        //            });
+        //        }
+        //    });
+        //    $m('#PartnersGridAmountAllocated').DataTable().ajax.reload();
+        //});
+
+        // Edit a record
+        $m('#UC_AmountAllocatedGrid tbody').on('click', 'a.editor_remove', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure do you want to delete") == true) {
+            }
+            else
+                return false;
+        });
+
+        // Edit a record
+        $m('#UC_AmountAllocatedGrid tbody').on('click', 'a.editor_AttributionAmountAllocated', function (e) {
+            e.preventDefault();
+            $("#divShowPartnerAdddataAmountAllocated").show();
+            table = $m('#PartnersGridAmountAllocated').DataTable({
+                "bProcessing": true,
+                "retrieve": true,
+                "stateSave": true,
+                "scrollX": "100%",
+                "scrollY": "100%",
+                "mData": null,
+                "sDefaultContent": "Edit",
+                "sAjaxSource": "../ContributionsMonetary/GetPartnerSearchData",
+                "bAutoWidth": false,
+                "columnDefs": [
+                            { width: "5%", targets: -2, data: null, defaultContent: '<a  href="" class="editor_edit"><img src="../Content/Images/edit.png" title="Edit Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                            { width: "5%", targets: -1, data: null, defaultContent: '<a  href="" class="editor_remove"><img src="../Content/Images/delete.png" title="Delete Row Data" style="background-repeat: no-repeat;"  /></a>', orderable: false },
+                ],
+                "initComplete": function (settings, json) {
+                    //Accessibility: Applies various Accessibility features to this dataTable.
+                    makeDataTableAccessible($m('#PartnersGridAmountAllocated').DataTable());
+                },
+                "fnServerData": function (url, data, callback) {
+                    $.ajax({
+                        "url": url,
+                        "data": null,
+                        "success": callback,
+                        "dataType": "json",
+                        "type": "POST",
+                        "error": function () {
+                            alert("Error...");
+                        }
+                    });
+                }
+            });
+            $m('#PartnersGridAmountAllocated').DataTable().ajax.reload();
+        });
+
+        // Explanation focus out
+        $m("#txtExplanationAmountAllocated").focusout(function () {
+            alert("Data Saved Successfully ");
+            $("#divDTAmountAllocated").show();
+        });
+
+        // Explanation focus out
+        $m("#txtPartExplanationAmountAllocated").focusout(function () {
+            alert("Data Saved Successfully");
+            $("#divPartnerInKing").show();
+            $m('#PartnersGridAmountAllocated').DataTable().ajax.reload();
+        });
+
+        // Edit a record
+        $m('#UC_AmountAllocatedGrid tbody').on('click', 'a.editor_edit', function (e) {
+            e.preventDefault();
+            $("#btnCommonUpdate").show();
+            $("#btnCommonSave").hide();
+            var data = table.row($(this).parents('tr')).data();
+            var selectedlstContributionName = data[1].toString();
+
+            $("#txtDateRcvd").val(data[0].toString());
+            $("#lstContributionNameAmountAllocated option").each(function () {
+                if ($(this).text() == data[1].toString()) {
+                    $(this).attr('selected', 'selected'); 
+                }
+            });
+            $("#txtPartnerShipName").val(data[2].toString());
+            $("#txtFirstName").val(data[3].toString());
+            $("#txtMI").val(data[4].toString());
+            $("#txtLastName").val(data[5].toString());
+            $("#txtStreet").val(data[6].toString());
+            $("#txtStreetName").val(data[7].toString());
+            $("#txtCity").val(data[8].toString());
+            $("#txtState").val(data[9].toString());
+            $("#txtZip5").val(data[10].toString());
+            $("#txtZip4").val(data[11].toString());
+            $("#lstContributionType option").each(function () {
+                if ($(this).text() == data[12].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#lstMethod option").each(function () {
+                if ($(this).text() == data[13].toString()) {
+                    $(this).attr('selected', 'selected');
+                }
+            });
+            $("#txtCheck").val(data[14].toString());
+            $("#txtAmtAmountAllocatedAmountAllocated").val(data[15].toString());
+            $("#txtExplanationAmountAllocated").val(data[16].toString());
+
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+
+                //Show All TR
+                $("#thFirstNameAmountAllocated").show("slow");
+                $("#thMIAmountAllocated").show("slow");
+                $("#thLastNameAmountAllocated").show("slow");
+                $("#thStreetAmountAllocated").show("slow");
+                $("#thStreetNameAmountAllocated").show("slow");
+                $("#thCityAmountAllocated").show("slow");
+                $("#thStateAmountAllocated").show("slow");
+                $("#thZip5AmountAllocated").show("slow");
+                $("#thZip4AmountAllocated").show("slow");
+                $("#thContributionTypeAmountAllocated").show("slow");
+                $("#thMethodAmountAllocated").show("slow");
+                $("#thCheckAmountAllocated").show("slow");
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");                
+
+                //Show All TD
+                $("#tdFirstNameAmountAllocated").show("slow");
+                $("#tdMIAmountAllocated").show("slow");
+                $("#tdLastNameAmountAllocated").show("slow");
+                $("#tdStreetAmountAllocated").show("slow");
+                $("#tdStreetNameAmountAllocated").show("slow");
+                $("#tdCityAmountAllocated").show("slow");
+                $("#tdStateAmountAllocated").show("slow");
+                $("#tdZip5AmountAllocated").show("slow");
+                $("#tdZip4AmountAllocated").show("slow");
+                $("#tdContributionTypeAmountAllocated").show("slow");
+                $("#tdMethodAmountAllocated").show("slow");
+                $("#tdCheckAmountAllocated").show("slow");
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+
+                $("#thParterShipNameAmountAllocated").hide("slow");
+                $("#tdPartnershipNameAmountAllocated").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+
+                //Show All TR
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");
+
+                $("#thFirstNameAmountAllocated").hide("slow");
+                $("#thMIAmountAllocated").hide("slow");
+                $("#thLastNameAmountAllocated").hide("slow");
+                $("#thStreetAmountAllocated").hide("slow");
+                $("#thStreetNameAmountAllocated").hide("slow");
+                $("#thCityAmountAllocated").hide("slow");
+                $("#thStateAmountAllocated").hide("slow");
+                $("#thZip5AmountAllocated").hide("slow");
+                $("#thZip4AmountAllocated").hide("slow");
+                $("#thContributionTypeAmountAllocated").hide("slow");
+                $("#thMethodAmountAllocated").hide("slow");
+                $("#thCheckAmountAllocated").hide("slow");
+
+                //Show All TD
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+
+                $("#tdFirstNameAmountAllocated").hide("slow");
+                $("#tdMIAmountAllocated").hide("slow");
+                $("#tdLastNameAmountAllocated").hide("slow");
+                $("#tdStreetAmountAllocated").hide("slow");
+                $("#tdStreetNameAmountAllocated").hide("slow");
+                $("#tdCityAmountAllocated").hide("slow");
+                $("#tdStateAmountAllocated").hide("slow");
+                $("#tdZip5AmountAllocated").hide("slow");
+                $("#tdZip4AmountAllocated").hide("slow");
+                $("#tdContributionTypeAmountAllocated").hide("slow");
+                $("#tdMethodAmountAllocated").hide("slow");
+                $("#tdCheckAmountAllocated").hide("slow");
+
+                $("#thParterShipNameAmountAllocated").hide("slow");
+                $("#tdPartnershipNameAmountAllocated").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+
+                $("#thParterShipNameAmountAllocated").show("slow");
+                $("#tdPartnershipNameAmountAllocated").show("slow");
+
+                //Show All TR
+                $("#thFirstNameAmountAllocated").hide("slow");
+                $("#thMIAmountAllocated").hide("slow");
+                $("#thLastNameAmountAllocated").hide("slow");
+                $("#thStreetAmountAllocated").show("slow");
+                $("#thStreetNameAmountAllocated").show("slow");
+                $("#thCityAmountAllocated").show("slow");
+                $("#thStateAmountAllocated").show("slow");
+                $("#thZip5AmountAllocated").show("slow");
+                $("#thZip4AmountAllocated").show("slow");
+                $("#thContributionTypeAmountAllocated").show("slow");
+                $("#thMethodAmountAllocated").show("slow");
+                $("#thCheckAmountAllocated").show("slow");
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameAmountAllocated").hide("slow");
+                $("#tdMIAmountAllocated").hide("slow");
+                $("#tdLastNameAmountAllocated").hide("slow");
+                $("#tdStreetAmountAllocated").show("slow");
+                $("#tdStreetNameAmountAllocated").show("slow");
+                $("#tdCityAmountAllocated").show("slow");
+                $("#tdStateAmountAllocated").show("slow");
+                $("#tdZip5AmountAllocated").show("slow");
+                $("#tdZip4AmountAllocated").show("slow");
+                $("#tdContributionTypeAmountAllocated").show("slow");
+                $("#tdMethodAmountAllocated").show("slow");
+                $("#tdCheckAmountAllocated").show("slow");
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+            }
+        });
+
+        //Contribution Name Selected index changed
+        $("#lstContributionNameAmountAllocated").change(function () {
+            var selectedlstContributionName = $("#lstContributionNameAmountAllocated option:selected").text();
+            if (selectedlstContributionName == "Candidate" || selectedlstContributionName == "Individual" || selectedlstContributionName == "Family") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Candidate, Individual, Family");
+                //Show All TR
+                $("#thFirstNameAmountAllocated").show("slow");
+                $("#thMIAmountAllocated").show("slow");
+                $("#thLastNameAmountAllocated").show("slow");
+                $("#thStreetAmountAllocated").show("slow");
+                $("#thStreetNameAmountAllocated").show("slow");
+                $("#thCityAmountAllocated").show("slow");
+                $("#thStateAmountAllocated").show("slow");
+                $("#thZip5AmountAllocated").show("slow");
+                $("#thZip4AmountAllocated").show("slow");
+                $("#thContributionTypeAmountAllocated").show("slow");
+                $("#thMethodAmountAllocated").show("slow");
+                $("#thCheckAmountAllocated").show("slow");
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameAmountAllocated").show("slow");
+                $("#tdMIAmountAllocated").show("slow");
+                $("#tdLastNameAmountAllocated").show("slow");
+                $("#tdStreetAmountAllocated").show("slow");
+                $("#tdStreetNameAmountAllocated").show("slow");
+                $("#tdCityAmountAllocated").show("slow");
+                $("#tdStateAmountAllocated").show("slow");
+                $("#tdZip5AmountAllocated").show("slow");
+                $("#tdZip4AmountAllocated").show("slow");
+                $("#tdContributionTypeAmountAllocated").show("slow");
+                $("#tdMethodAmountAllocated").show("slow");
+                $("#tdCheckAmountAllocated").show("slow");
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+
+                $("#thParterShipNameAmountAllocated").hide("slow");
+                $("#tdPartnershipNameAmountAllocated").hide("slow");
+            }
+            if (selectedlstContributionName == "Unitemized") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Unitemized");
+                //Show All TR
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");
+
+                $("#thFirstNameAmountAllocated").hide("slow");
+                $("#thMIAmountAllocated").hide("slow");
+                $("#thLastNameAmountAllocated").hide("slow");
+                $("#thStreetAmountAllocated").hide("slow");
+                $("#thStreetNameAmountAllocated").hide("slow");
+                $("#thCityAmountAllocated").hide("slow");
+                $("#thStateAmountAllocated").hide("slow");
+                $("#thZip5AmountAllocated").hide("slow");
+                $("#thZip4AmountAllocated").hide("slow");
+                $("#thContributionTypeAmountAllocated").hide("slow");
+                $("#thMethodAmountAllocated").hide("slow");
+                $("#thCheckAmountAllocated").hide("slow");
+
+                //Show All TD
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+
+                $("#tdFirstNameAmountAllocated").hide("slow");
+                $("#tdMIAmountAllocated").hide("slow");
+                $("#tdLastNameAmountAllocated").hide("slow");
+                $("#tdStreetAmountAllocated").hide("slow");
+                $("#tdStreetNameAmountAllocated").hide("slow");
+                $("#tdCityAmountAllocated").hide("slow");
+                $("#tdStateAmountAllocated").hide("slow");
+                $("#tdZip5AmountAllocated").hide("slow");
+                $("#tdZip4AmountAllocated").hide("slow");
+                $("#tdContributionTypeAmountAllocated").hide("slow");
+                $("#tdMethodAmountAllocated").hide("slow");
+                $("#tdCheckAmountAllocated").hide("slow");
+
+                $("#thParterShipNameAmountAllocated").hide("slow");
+                $("#tdPartnershipNameAmountAllocated").hide("slow");
+
+            }
+            if (selectedlstContributionName == "Partnership") {
+                $("#lblHeader,#lblHeader1,#lblHeader2").text("Contributions - Partnership");
+                $("#thParterShipNameAmountAllocated").show("slow");
+                $("#tdPartnershipNameAmountAllocated").show("slow");
+
+                //Show All TR
+                $("#thFirstNameAmountAllocated").hide("slow");
+                $("#thMIAmountAllocated").hide("slow");
+                $("#thLastNameAmountAllocated").hide("slow");
+                $("#thStreetAmountAllocated").show("slow");
+                $("#thStreetNameAmountAllocated").show("slow");
+                $("#thCityAmountAllocated").show("slow");
+                $("#thStateAmountAllocated").show("slow");
+                $("#thZip5AmountAllocated").show("slow");
+                $("#thZip4AmountAllocated").show("slow");
+                $("#thContributionTypeAmountAllocated").show("slow");
+                $("#thMethodAmountAllocated").show("slow");
+                $("#thCheckAmountAllocated").show("slow");
+                $("#thAmtAmountAllocated").show("slow");
+                $("#thExplanationAmountAllocated").show("slow");
+
+                //Show All TD
+                $("#tdFirstNameAmountAllocated").hide("slow");
+                $("#tdMIAmountAllocated").hide("slow");
+                $("#tdLastNameAmountAllocated").hide("slow");
+                $("#tdStreetAmountAllocated").show("slow");
+                $("#tdStreetNameAmountAllocated").show("slow");
+                $("#tdCityAmountAllocated").show("slow");
+                $("#tdStateAmountAllocated").show("slow");
+                $("#tdZip5AmountAllocated").show("slow");
+                $("#tdZip4AmountAllocated").show("slow");
+                $("#tdContributionTypeAmountAllocated").show("slow");
+                $("#tdMethodAmountAllocated").show("slow");
+                $("#tdCheckAmountAllocated").show("slow");
+                $("#tAmtAmountAllocated").show("slow");
+                $("#tdExplanationAmountAllocated").show("slow");
+            }
+        });
+    });
+</script>

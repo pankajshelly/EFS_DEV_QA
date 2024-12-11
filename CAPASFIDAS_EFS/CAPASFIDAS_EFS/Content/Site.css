@@ -1,0 +1,4517 @@
+﻿{
+    font-family: Proxima Nova,Arial,Oswald;
+    background-color: white;
+    font-size: 12px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Proxima Nova,Arial,Oswald;
+    Font-Weight: Bold;
+    Font-Size: 180%;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    Font-Size: 150%;
+}
+
+h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+/* Green */
+/*a.white,
+a.white:hover { color: white !important; }*/
+/* Yellow */
+/*a.yellow,
+a.yellow:hover { color: yellow !important; }*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    font-family: Proxima Nova,Arial,Oswald;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;*/
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.a {
+    color: white;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.cpHeader {
+    color: white;
+    background-color: #719DDB;
+    font: bold 11px auto "Trebuchet MS";
+    font-size: 12px;
+    cursor: pointer;
+    width: 450px;
+    height: 18px;
+    padding: 4px;
+}
+
+.cpBody {
+    background-color: #DCE4F9;
+    font-family: Proxima Nova,Arial,Oswald;
+    /*font-family:Oswald;*/
+    font: normal 11px auto;
+    border: 1px gray;
+    width: 450px;
+    padding: 4px;
+    padding-top: 7px;
+}
+
+.cpFooter {
+    text-align: left;
+}
+
+.div {
+    background-color: #7FA9AE;
+}
+
+.divAddressPopUp {
+    background-color: #7FA9AE;
+    height: 15em;
+    padding-top: 1.5em;
+}
+
+.divContactPopUp {
+    background-color: #7FA9AE;
+    height: 12em;
+    padding-top: 1.5em;
+}
+
+.divAuthSignChecksPopUp {
+    background-color: #7FA9AE;
+    height: 10em;
+    padding-top: 1.5em;
+}
+
+.divAsstTreaInfoPopUp {
+    background-color: #7FA9AE;
+    height: 8em;
+    padding-top: 1.5em;
+    margin: 0em 1em 0em 1em;
+}
+
+.LabelFontWhite {
+    font-family: Proxima Nova,Arial,Oswald;
+    color: black;
+    font-size: 13px;
+    padding-right: 5px;
+}
+
+.LabelErrMsgColor {
+    font-family: Proxima Nova,Arial,Oswald;
+    /*font-family:Oswald;*/
+    color: red;
+    font-size: 13px;
+}
+
+.expArrow {
+    background-image: url("..//Content//Images//DownPic.jpg");
+    background-repeat: no-repeat;
+}
+
+.collArrow {
+    background-image: url("..//Content//Images//UpPic.jpg");
+    background-repeat: no-repeat;
+}
+
+.LodingCls {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #666666;
+    z-index: 30001;
+    opacity: .8;
+    filter: alpha(opacity=70);
+    display: none;
+}
+
+.LodingClsP {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    color: White;
+}
+
+.FontSize {
+    font-size: 10px;
+}
+
+.LabelSize {
+    width: 283px;
+}
+
+.divColor {
+    background-color: #458993;
+}
+
+.widthCSS {
+    width: 100%;
+}
+
+.overFlowGrid {
+    overflow: auto;
+}
+
+.boldCSS {
+    font-weight: bold;
+}
+
+.buttonFontSize {
+    font-size: 12px;
+}
+
+#selector {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 75.3em;
+}
+
+div.selectorDiscRpt {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 75.3em;
+}
+
+/*div.selectorDiscRptDef {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 51.6em;
+}*/
+
+div.selectorDiscRptOpt3 {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 159.7em;
+}
+
+
+#selectorItsRpt {
+    overflow-x: hidden;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 100%;
+}
+
+#selectorCandIndRpt {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 74em;
+}
+
+#selectorSuppDocs {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 60.3em;
+}
+
+#selectorTreasurerProfile {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    border: 0.01em solid black;
+    width: 95%;
+    height: 4em;
+    margin-left: 2em;
+}
+
+#selectorFilerIdCommName {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    border: 0.01em solid black;
+    width: 95%;
+    height: 3em;
+    margin-left: 2em;
+}
+
+#selectorTrProfHeader {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    border: 0.01em solid black;
+    width: 96%;
+    height: 5em;
+    margin-left: 2em;
+}
+
+#selectorCandidateProfHeader {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    border: 0.01em solid black;
+    width: 96%;
+    height: 4em;
+    margin-left: 2em;
+}
+
+#selectorCandidateInfo {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    border: 0.01em solid black;
+    width: 95%;
+    height: 8em;
+    margin-left: 2em;
+}
+
+
+#selectorWhoFiled {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 45.3em;
+}
+
+#selectorCandidateCommittee {
+    overflow-x: auto;
+    float: left;
+    background-color: #7FA9AE;
+    width: 100%;
+    height: 85.3em;
+}
+
+.buttonCSS {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-top: 0px solid #CCCCCC;
+    border-right: 0px solid #333333;
+    border-bottom: 0px solid #333333;
+    border-left: 0px solid #CCCCCC;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 0px rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+    height: 1.5em;
+    width: 1.5em;
+    padding-left: 1px;
+}
+
+.buttonHomeCSS {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-top: 0px solid #CCCCCC;
+    border-right: 0px solid #333333;
+    border-bottom: 0px solid #333333;
+    border-left: 0px solid #CCCCCC;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 0px rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+    height: 1.9em;
+    width: 9.5em;
+    padding-left: 0.5em;
+    font: 0.8em !important;
+}
+
+.button {
+    display: block;
+    height: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 30px;
+    width: 150px;
+    margin: 20px;
+    color: #FFF;
+    text-align: center;
+    border: solid #427AA8 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    /* Gradient */
+    background: #427AA8;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzU5YTNlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MjdhYTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #59A3E0 1%, #427AA8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#59A3E0), color-stop(100%,#427AA8));
+    background: -webkit-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -o-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: -ms-linear-gradient(top, #59A3E0 1%,#427AA8 100%);
+    background: linear-gradient(to bottom, #59A3E0 1%,#427AA8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59A3E0', endColorstr='#427AA8',GradientType=0 );
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.3), inset 0 1px 0 rgba(255,255,255, 0.3);
+}
+
+    .button:hover {
+        background: #59A3E0;
+        text-decoration: none;
+        filter: none;
+    }
+
+​ .DropdownWidth {
+    width: 150px;
+}
+
+.LabelSpaces {
+    padding-left: 20px;
+}
+
+.webGrid {
+    overflow: auto;
+    padding: 0px;
+}
+
+.webGridWidth {
+    width: 100%;
+}
+
+.webGridFixedWidth {
+    width: 100%;
+}
+
+.webGridFixed {
+    overflow: auto;
+    padding: 0px;
+}
+
+.header {
+    background-color: #007681;
+    color: white;
+    font-weight: bold;
+    /*text-align: center;
+    overflow: hidden;*/
+    font-size: 12px;
+}
+
+.headerWidth {
+    background-color: #007681;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    width: 100%;
+}
+
+.webGrid th {
+    border: 1px solid black;
+    padding: 0em 0em 0em 0em;
+    font-size: 12px;
+    text-align: left;
+}
+
+.webGrid td {
+    border: 1px solid black;
+    padding: 0em;
+    font-size: 12px;
+    height: 0.2em;
+    text-align: left;
+}
+
+.webGridFixed th {
+    border: 1px solid black;
+    padding: 0em 0em 0em 0em;
+    font-size: 12px;
+    text-align: center;
+}
+
+.webGridFixed td {
+    border: 1px solid black;
+    padding: 0em;
+    font-size: 12px;
+    height: 0.2em;
+    text-align: center;
+}
+
+
+.footer {
+    text-align: left;
+}
+
+.alt {
+    background-color: red;
+    color: #000;
+}
+
+.webGridScroll {
+    overflow: scroll;
+    height: auto;
+    position: relative;
+}
+
+.webGridFixedScroll {
+    overflow: scroll;
+    height: auto;
+    position: relative;
+}
+
+
+.tableWidth {
+    width: 97%;
+}
+
+.PDFCSS {
+    background-image: url("..//Content//Images//images.png");
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.AgencyName {
+    font-family: D Sari,Proxima Nova,Oswald;
+    margin-left: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+    Color: #FFFFFF;
+    float: left;
+    padding-top: 1em;
+}
+
+.NavigationElement {
+    font-family: Proxima Nova,Arial,Oswald;
+    Font-Weight: Bold;
+    Font-Size: 16px;
+    Letter-Spacing: 0px;
+    Color: #FFFFFF;
+    padding-top: 15px;
+}
+
+.NavigationElementActiveState ul a {
+    font-family: Proxima Nova,Arial,Oswald;
+    Font-Size: 16px;
+    Font-Weight: bolder;
+    Letter-Spacing: 0px;
+}
+
+/*.primary_nav_wrap {
+    background-color: #09464C;
+    height: 85px;
+    padding: 15px 0px 5px 0px;
+    border-bottom: 4px solid #7FA9AE;
+}
+
+    .primary_nav_wrap ul {
+        list-style: none;
+        float: left;
+        padding-left: 31px;
+        padding-right: 0px;
+    }
+
+        .primary_nav_wrap ul a {
+            font-family: "Proxima Nova";
+            Font-Weight: Bold;
+            font-size: 14px;
+            Letter-Spacing: 0px;
+            Color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .primary_nav_wrap ul ul a {
+            display: block;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 0 15px;
+            font-family: "Proxima Nova";
+            background-color: #09464C;
+        }
+
+        .primary_nav_wrap ul a:hover {
+            opacity: 0.5;
+        }
+
+        .primary_nav_wrap ul li {
+            position: relative;
+            float: left;
+            padding-left: 41px;
+            margin: 0px;
+            padding-bottom: 10px;
+            display: -ms-grid;
+        }
+
+            .primary_nav_wrap ul li.current-menu-item {
+                display: block;
+                font-size: 13px;
+                width: 300px;
+            }
+
+            .primary_nav_wrap ul li:hover {
+                z-index: 30001;
+            }
+
+        .primary_nav_wrap ul ul {            
+            display: none; 
+            position: absolute;
+            left: 0;
+            background-color: #09464C;
+            padding-left: 0px;
+            Font-Size: 14px;
+            Font-Weight: Bold;
+            margin-top: 25px;
+            width: 300px;
+        }
+
+            .primary_nav_wrap ul ul li {
+                position: relative;
+                float: left;
+                margin: 0px;
+                padding: 0;
+            }
+
+            .primary_nav_wrap ul ul a {
+                display: block;
+                line-height: 120%;
+                padding: 15px 5px 15px 10px;
+                font-size: 14px;
+            }
+
+                .primary_nav_wrap ul ul a:hover {
+                    background-color: #000000;
+                    opacity: 0.5;
+                    color: #fff;
+                    font-family: Proxima Nova,Arial,Oswald;
+                    Font-Size: 14px;
+                    Font-Weight: 900;
+                    Letter-Spacing: 0px;
+                    height: 100%;
+                }
+
+
+
+            .primary_nav_wrap ul ul ul {
+                top: -25px;
+                left: 100%;
+                position: absolute;
+                background-color: #09464C;
+                Font-Size: 14px;
+                Font-Weight: Bold;
+                Line-Height: 20px;
+                float: left;
+                width: 300px;
+            }
+
+                .primary_nav_wrap ul ul ul li {
+                    float: left;
+                    margin: 0px;
+                    padding: 0;
+                    width: 300px;
+                }
+
+
+        .primary_nav_wrap ul li:hover > ul {
+            display: block;
+            background-color: #09464C;
+            color: black;
+            font-family: Proxima Nova,Arial,Oswald;
+            Font-Size: 14px;
+            Font-Weight: 900;
+            Letter-Spacing: 0px;
+        }*/
+
+.primary_nav_wrap {
+    background-color: #09464C;
+    height: 141px;
+    padding: 15px 0px 5px 0px;
+    border-bottom: 4px solid #7FA9AE;
+}
+
+    .primary_nav_wrap ul {
+        list-style: none;
+        float: left;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+
+
+        .primary_nav_wrap ul a {
+            font-family: "Proxima Nova";
+            Font-Weight: Bold;
+            font-size: 14px;
+            Letter-Spacing: 0px;
+            Color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .primary_nav_wrap ul ul a {
+            display: block;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 0 15px;
+            font-family: "Proxima Nova";
+            background-color: #09464C;
+        }
+
+        .primary_nav_wrap ul a:hover {
+            opacity: 0.5;
+        }
+
+        .primary_nav_wrap ul li {
+            position: relative;
+            float: left;
+            padding-left: 41px;
+            margin: 0px;
+            padding-bottom: 25px;
+            display: -ms-grid;
+        }
+
+            .primary_nav_wrap ul li.current-menu-item {
+                display: block;
+                font-size: 13px;
+                width: 300px;
+            }
+
+            .primary_nav_wrap ul li:hover {
+                z-index: 30001;
+            }
+
+        .primary_nav_wrap ul ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #09464C;
+            padding-left: 0px;
+            Font-Size: 14px;
+            Font-Weight: Bold;
+            margin-top: 25px;
+            width: 300px;
+        }
+
+            .primary_nav_wrap ul ul li {
+                position: relative;
+                float: left;
+                margin: 0px;
+                padding: 0;
+            }
+
+            .primary_nav_wrap ul ul a {
+                display: block;
+                line-height: 120%;
+                padding: 15px 5px 15px 10px;
+                font-size: 14px;
+            }
+
+                .primary_nav_wrap ul ul a:hover {
+                    background-color: #000000;
+                    opacity: 0.5;
+                    color: #fff;
+                    font-family: Proxima Nova,Arial,Oswald;
+                    Font-Size: 14px;
+                    Font-Weight: 900;
+                    Letter-Spacing: 0px;
+                    height: 100%;
+                }
+
+
+
+            .primary_nav_wrap ul ul ul {
+                top: -25px;
+                left: 100%;
+                position: absolute;
+                background-color: #09464C;
+                Font-Size: 14px;
+                Font-Weight: Bold;
+                Line-Height: 20px;
+                float: left;
+                width: 300px;
+            }
+
+                .primary_nav_wrap ul ul ul li {
+                    float: left;
+                    margin: 0px;
+                    padding: 0;
+                    width: 300px;
+                }
+
+
+        .primary_nav_wrap ul li:hover > ul {
+            display: block;
+            background-color: #09464C;
+            color: black;
+            font-family: Proxima Nova,Arial,Oswald;
+            Font-Size: 14px;
+            Font-Weight: 900;
+            Letter-Spacing: 0px;
+        }
+
+
+.clsDivShowHide {
+    display: none;
+}
+
+    .clsDivShowHide img {
+        display: none;
+    }
+
+
+#linearBg1 {
+    /* fallback */
+    background-color: #B6CFD0;
+    background: -webkit-gradient(linear, left top, right top, from(#B6CFD0), to(#7FA9AE));
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(left, #B6CFD0, #7FA9AE);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(left, #B6CFD0, #7FA9AE);
+    /* IE 10 */
+    /* option 1 Green */
+    /*background: -ms-linear-gradient(left, #B6CFD0, #7FA9AE);*/
+    /* option 2 - Gray */
+    background: -ms-linear-gradient(left, #458993, #93B7BC);
+    /*background: -ms-linear-gradient(left, #eee, #eee);*/
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(left, #B6CFD0, #7FA9AE);
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+}
+
+
+/* Table Style ---------------------------------*/
+table.tbl1 {
+    width: 100%;
+}
+
+    table.tbl1 thead {
+        background: #A3C2EA url('..//Content//Images//tbl_head_bg.png') repeat-x scroll 0 0;
+        color: #333;
+        width: 100%;
+    }
+
+    table.tbl1 tbody {
+        width: 100%;
+    }
+
+    table.tbl1 tr td,
+    table.tbl1 tr th {
+        border: solid 1px #888;
+        margin: 0;
+        padding: 4px 0;
+    }
+
+    table.tbl1 tr td {
+        text-align: center;
+        background-color: #fff;
+        color: #444;
+    }
+
+    table.tbl1 tbody tr.alt td {
+        background-color: #e4ecf7;
+    }
+
+    table.tbl1 tr.over td,
+    table.tbl1 tbody tr.alt.over td {
+        background-color: #bcd4ec;
+        color: #000;
+    }
+
+    table.tbl1 a {
+        color: #2a4a73;
+        text-decoration: underline;
+    }
+
+        table.tbl1 a:hover {
+            text-decoration: none;
+        }
+
+        table.tbl1 a:visited {
+            color: #bccedc;
+        }
+
+    /* Define column widths 
+----------------------------------------------------------*/
+    table.tbl1 td.id {
+        width: 100px;
+    }
+
+    table.tbl1 td.fname {
+        width: 100px;
+    }
+
+    table.tbl1 td.lname {
+        width: 100px;
+    }
+
+    table.tbl1 td.bdate {
+        width: 100px;
+    }
+
+.mandatoryLabel {
+    float: left;
+    color: black;
+    font-weight: bold;
+    padding-left: 0em;
+}
+
+.mandatoryLabelDate {
+    color: black;
+    font-weight: bold;
+}
+
+.mandatoryLabelM {
+    float: left;
+    color: black;
+    font-weight: bold;
+    padding-left: 0em;
+}
+
+.showcss {
+    display: block;
+    /*background-color: red;
+    color: green;*/
+}
+
+.lnkTotalsBySchedule {
+    color: blue;
+    text-decoration: none;
+    float: left;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Section Inner */
+div.section-inner {
+    /* width: 1100px; */
+    max-width: 1100px;
+    padding: 0 1.56em;
+    margin: 0 auto;
+}
+
+/* Header */
+div.header {
+    background-color: #E9E9E9;
+    /*padding: 2.25em 0;*/
+}
+
+/* Navigation */
+div.nav {
+    background-color: #d4d4d4;
+}
+
+    div.nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        div.nav ul li {
+            list-style: none;
+            float: left;
+            font-size: .875em;
+        }
+
+            div.nav ul li a:link,
+            div.nav ul li a:visited {
+                display: block;
+                padding: .625em .94em;
+                text-decoration: none;
+                color: #000;
+                border-right: .625em solid #bababa;
+            }
+
+/* Body Content */
+div.body-content {
+    padding: 3.125em 0;
+    background-color: black;
+}
+
+/* Thirds */
+div.thirds {
+    padding-bottom: 50px;
+}
+
+div.one-third {
+    width: 30%;
+    float: left;
+    margin-right: 5%;
+}
+
+div.one-third-last {
+    margin: 0;
+}
+
+/* Main Column */
+div.main {
+    /* width: 650px; */
+    width: 100%;
+    float: left;
+    /* margin-right: 50px; */
+    margin-right: 5%;
+}
+
+/* Side Column */
+div.side {
+    /* width: 300px; */
+    width: 30%;
+    float: left;
+}
+
+/* Info Box */
+div.info-box-a {
+    background-color: #026AAD;
+    padding: 1.25em;
+    font-size: .8125em;
+    margin: 0 0 .94em 0;
+    color: #FFFFFF;
+}
+
+div.info-box-b {
+    background-color: #D4D4D4;
+    padding: 1.25em;
+    font-size: .8125em;
+    margin: 0 0 .94em 0;
+}
+
+/* Footer */
+div.footer {
+    background-color: #026AAD;
+    color: #FFF;
+    padding: 1.56em 0;
+    text-align: center;
+}
+
+/*div.SetHeight {    
+    height: 50em;
+    background-color: #eee;
+}*/
+
+div.SetHeight {
+    /*min-height: 100%;*/
+    height:180em;
+    background-color: #eee;
+    padding-bottom: 4em;
+}
+
+div.SetHeightCandInd {
+    min-height: 78.2em;
+    background-color: #eee;
+    padding-bottom: 4em;
+}
+
+div.SetHeightTransferIn {
+    min-height: 62em;
+    background-color: #eee;
+    padding-bottom: 4em;
+}
+
+.SetHeight {
+    min-height: 65em;
+    background-color: #eee;
+}
+
+.headerLabel h1 {
+    clear: both;
+    /*padding-top: 0em;
+    padding-bottom: 0.5em;*/
+    padding-left: 7em;
+    text-align: center;
+    font-weight: bold;
+    font-family: Proxima Nova,Arial,Oswald;
+    Font-Size: 20px;
+}
+
+.headerLabelBC h1 {
+    clear: both;
+    /*padding-top: 0em;*/
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelAgg h1 {
+    clear: both;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelAggTot h1 {
+    clear: both;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelFIDAS h1 {
+    clear: both;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelFIDASBC h1 {
+    clear: both;
+    /*padding-top: 2em;*/
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelIE h1 {
+    clear: both;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelIEBC h1 {
+    clear: both;
+    /*padding-top: 2em;*/
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelContr h1 {
+    clear: both;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelCAPAS h1 {
+    clear: both;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.headerLabelCAPASBC h1 {
+    clear: both;
+    /*padding-top: 2em;*/
+    padding-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.alignCenter {
+    text-align: center;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* Inline-CSS Changes*/
+
+.floatRight {
+    float: right;
+}
+
+.floatRightAggrContrExp {
+    float: right;
+}
+
+.floatRightNew {
+    text-align: right;
+    padding-top: 1em;
+    clear: both;
+}
+
+.AddLeftCSS {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 10.5em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSPartnerSchedA {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    /*padding-left: 16.2em;*/
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.UpdateLeftCSSPartnerSchedA {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 15.2em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSSchedABC {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-right: 0em;
+    /*padding-left: 16.6em;*/
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSLiabSaveMsg {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-right: 0em;
+    /*padding-left: 16.6em;*/
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.clsLiabSaveMessage {
+    margin-bottom: 0em;
+}
+
+
+.AddLeftCSSImportDiscRpts {
+    text-align: left;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    padding-right: 0.5em;
+    /*padding-left: 16.6em;*/
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSSchedABCSummary {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-right: 5.6em;
+    /*padding-left: 16.6em;*/
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSItemIETrans {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 3em;    
+    /*float: right;*/
+    clear: both;
+    padding-bottom: 2em;
+    padding-right: 2em;
+}
+
+.UpdateLeftCSSSchedABC {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 15.6em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSLiability {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 15.5em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSForScheI {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    /*padding-left:8.5em;*/
+    padding-left: 16.3em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSForScheLRefunds {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 8.3em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.AddLeftCSSForScheLRefundsUpdate {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-left: 14.3em;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatLeftAggrContrExp {
+    float: left;
+}
+
+.floatLeftIEContrLoans {
+    float: left;
+}
+
+.floatLeftIEExpPayments {
+    float: left;
+}
+
+.floatLeftAggrContrExp {
+    float: left;
+    padding-left: 2em;
+}
+
+.divDisplay {
+    display: none;
+}
+
+.ButtonImageCSS {
+    background-repeat: no-repeat;
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.ButtonImageCSSHome {
+    background-repeat: no-repeat;
+    height: 2.3em;
+    width: 2em;
+}
+
+/*.h1Bold {
+    font-weight: bold;
+    padding-top:1em;
+}*/
+
+.spanWidth20 {
+    width: 20%;
+}
+
+.spanWidth {
+    width: 100%;
+}
+
+.divClearBoth {
+    clear: both;
+}
+
+.imageSize {
+}
+
+.txtWidth {
+    width: 100%;
+}
+
+.txtWidthOffCycleFilingDate {
+    width: 85%;
+}
+
+.txtWidth80Per {
+    width: 80%;
+}
+
+.txtWidthMIN {
+    width: 100%;
+}
+
+.txtWidth90 {
+    width: 90%;
+}
+
+
+.txtWidthPurposeCodeF {
+    width: 8em;
+}
+
+.txtWidthForDate {
+    width: 61%;
+}
+
+.txtWidthForDateSched_ABC {
+    width: 89%;
+}
+
+.txtWidthForDateSchedDateF {
+    width: 93%;
+}
+
+.txtWidthForNewFilingDate {
+    width: 86%;
+}
+
+
+.txtWidthForDateSched_N {
+    width: 90%;
+}
+
+.txtWidthForDateLOF {
+    width: 50%;
+}
+
+.dateWidth {
+    width: 50%;
+}
+
+
+/*-------------------------*/
+.paddingLeftpoint7em {
+    padding-left: 0.7em;
+}
+
+.paddingLeftpoint5em {
+    padding-left: 0.5em;
+}
+
+/*-------------------------*/
+
+/*-------------------------*/
+.paddingLeft0pt85em {
+    padding-left: 0.85em;
+}
+
+.paddingLeft0pt25em {
+    padding-left: 0.25em;
+}
+
+.paddingLeft0pt28em {
+    padding-left: 0.28em;
+}
+
+.paddingLeft0pt1em {
+    padding-left: 0.1em;
+}
+
+.paddingLeft0pt1emOff {
+    padding-left: 4.53em;
+}
+
+.paddingLeft0pt1emOffExp {
+    padding-left: 4.53em;
+}
+
+.paddingLeft0pt3em {
+    padding-left: 0.3em;
+}
+
+.paddingLeft0em {
+    padding-left: 2em;
+}
+
+.paddingLeft00em {
+    padding-left: 0em;
+}
+
+.paddingLeft8pt1emDRang {
+    padding-left: 4.5em;
+}
+
+.paddingLeft0emExpZip {
+    padding-left: 1em;
+}
+
+/*. {
+    padding-left: 1em;
+}*/
+
+.paddingLeft0emContrZip {
+    padding-left: 1em;
+    width: 7.2em;
+}
+
+.paddingLeft0emContrZiplbl {
+    padding-left: 3.6em;
+}
+
+.paddingLeft0emContrZipTo {
+    padding-left: 1em;
+    width: 7.2em;
+}
+
+.paddingLeft0emContrZipTolbl {
+    padding-left: 8em;
+}
+
+.paddingLeft0emExpZipTo {
+    padding-left: 1em;
+}
+
+.paddingLeft0emExpZipTxt {
+    padding-left: 1em;
+}
+
+.paddingLeft0pt5em {
+    padding-left: 0.5em;
+}
+
+.paddingLeft0pt65em {
+    padding-left: 0.65em;
+}
+
+.paddingLeft0pt8em {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8em24HourYear {
+    padding-left: 1.5em;
+    /*width: 7em;*/
+}
+
+
+.paddingLeft0pt8emSDate {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emMunAggTot {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emAggTot {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emMunAgg {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emCountyAgg {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emExpAMax {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emExpAMin {
+    padding-left: 0.8em;
+    width: 7em;
+}
+
+.paddingLeft0pt8emSearchByDL {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emIEDate {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emIEOffice {
+    padding-left: 0.85em;
+}
+
+.paddingLeft0pt8emOffDL {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emOffDLContr {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emOffDLExp {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emOffTDL {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emDist {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emDistExp {
+    padding-left: 0.8em;
+}
+
+.PaddingLeftExpDate {
+    padding-left: 1em;
+}
+
+.paddingLeft0pt8emOff {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emCounty {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emCountyExp {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emCountyContr {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emMun {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emMunExp {
+    padding-left: 0.8em;
+}
+
+
+.paddingLeft0pt8emFId {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emName {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emCName {
+    padding-left: 0.8em;
+    width: 30%;
+}
+
+.paddingLeft0pt8emRName {
+    padding-left: 0.8em;
+    width: 30%;
+}
+
+.paddingLeft0pt8emEYrDL {
+    padding-left: 1.25em;
+}
+
+.paddingLeft0pt8emEYrDLExp {
+    padding-left: 1.25em;
+}
+
+/*-------------------------*/
+.paddingLeft1em {
+    padding-left: 1em;
+}
+
+.paddingLeft1emDateAgg {
+    padding-left: 4.2em;
+}
+
+.paddingLeft1emDateAggTot {
+    padding-left: 4.1em;
+}
+
+.paddingLeftBottomAggLink {
+    padding: 0em 57em 1em 0em;
+}
+
+.paddingLeft1emDate {
+    padding-left: 1em;
+}
+
+.paddingLeft1emDLDateTo {
+    padding-left: 0.95em;
+}
+
+.paddingLeft1emlblDateTo {
+    padding-left: 4.4em;
+}
+
+.paddingLeft1emDLDate {
+    padding-left: 0.94em;
+    margin-right: -4em;
+}
+
+.paddingLeft1emDLDateCur {
+    padding-left: 0.9em;
+    margin-right: -4em;
+}
+
+.paddingLeft1emlblDate {
+    padding-left: 0em;
+}
+
+.paddingLeft1emlblCDateAgg {
+    padding-left: 5.3em;
+}
+
+.paddingLeft2emlblDate {
+    padding-left: 4.6em;
+}
+
+.paddingLeft2emlblDateLOF {
+    padding-left: 5.5em;
+}
+
+.paddingLeft1emEYr {
+    padding-left: 5.5em;
+}
+
+.paddingLeft2emEYr {
+    padding-left: 5.15em;
+}
+
+.paddingLeft2emYrExp {
+    padding-left: 5.1em;
+}
+
+.paddingLeft1emDist {
+    padding-left: 1.2em;
+}
+
+.paddingLeft1emDistExp {
+    padding-left: 1.2em;
+}
+
+.paddingLeft1emExpMinLbl {
+    padding-left: 1.6em;
+}
+
+.paddingLeft1emDtTyLbl {
+    padding-left: 1em;
+}
+
+.paddingLeft1emIEEYear {
+    padding-left: 1em;
+}
+
+.paddingLeft1emExpName {
+    padding-left: 1em;
+}
+
+.paddingLeft1emAggreg {
+    padding-left: 1em;
+    padding-right: 0em;
+}
+
+.paddingLeft1emAggregTot {
+    padding-left: 1em;
+    padding-right: 0em;
+}
+
+.paddingLeft1emAggreglbl {
+    padding-left: 6.2em;
+}
+
+.paddingLeft1emAggreglblAggTot {
+    padding-left: 6.2em;
+}
+
+.paddingLeft1emExpend {
+    padding-left: 1em;
+}
+
+.paddingLeft1emExpendDate {
+    padding-left: 1.8em;
+}
+
+.paddingLeft1emExpendMax {
+    padding-left: 1em;
+    width: 7em;
+}
+
+.paddingLeft1emExpendMin {
+    padding-left: 1em;
+    width: 7em;
+}
+
+.paddingLeft1emContr {
+    padding-left: 1.8em;
+}
+
+.paddingLeft1emContrDate {
+    padding-left: 1.25em;
+}
+
+.paddingLeft1emContrDateLbl {
+    padding-left: 1.5em;
+}
+
+.paddingLeft1emContrName {
+    padding-left: 3.2em;
+}
+
+.paddingLeft1emContrNameExp {
+    padding-left: 3.2em;
+}
+
+.paddingLeft1emContrEleY {
+    padding-left: 1.25em;
+}
+
+.paddingLeft1emExpEleY {
+    padding-left: 1.25em;
+}
+
+.paddingLeft1emRight {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.paddingLeft1pt1em {
+    padding-left: 1.1em;
+}
+
+.paddingLeft1pt1emDateAgg {
+    padding-left: 1.35em;
+}
+
+.paddingLeft1pt1emDateAggTot {
+    padding-left: 1.35em;
+}
+
+.paddingLeft1pt1emDate {
+    padding-left: 1.1em;
+}
+
+.paddingLeft1pt1emDateAggTot {
+    padding-left: 1.1em;
+}
+
+.paddingLeft1pt1emDateAggDL {
+    padding-left: 1em;
+}
+
+.paddingLeft1pt2em {
+    padding-left: 1.2em;
+}
+
+.paddingLeft1pt2emSearchByLbl {
+    padding-left: 4.4em;
+}
+
+.paddingLeft1pt3em {
+    padding-left: 1.3em;
+}
+
+.paddingLeft1pt32em {
+    padding-left: 1.32em;
+}
+
+.paddingLeft1pt33em {
+    padding-left: 1.33em;
+}
+
+.paddingLeft1pt4em {
+    padding-left: 1.4em;
+}
+
+.paddingLeft1pt5em {
+    padding-left: 1.5em;
+}
+
+.paddingLeft1pt5emMun {
+    padding-left: 2.85em;
+}
+
+.paddingLeft16pt2emMun {
+    padding-left: 2.85em;
+}
+
+.paddingLeft16pt2emMunExp {
+    padding-left: 2.85em;
+}
+
+.paddingLeft1pt55em {
+    padding-left: 1.55em;
+}
+
+.paddingLeft1pt6em {
+    padding-left: 1.6em;
+}
+
+.paddingLeft1pt7em {
+    padding-left: 1.7em;
+}
+
+.paddingLeft1pt7emIEContrD {
+    padding-left: 2em;
+}
+
+.paddingLeft1pt8em {
+    padding-left: 1.8em;
+}
+/*-------------------------*/
+.paddingLeft2em {
+    padding-left: 0em;
+}
+
+.paddingLeft2emAggLink {
+    padding-left: 2em;
+}
+
+.paddingLeft2emCDateAgg {
+    padding-left: 0em;
+}
+
+.paddingLeft2emCDateAggTot {
+    padding-left: 0em;
+}
+
+.paddingLeft2emMunAgg {
+    padding-left: 4.4em;
+}
+
+.paddingLeft2emMunAggTot {
+    padding-left: 4.3em;
+}
+
+
+.paddingLeft0pt8emContrType {
+    padding-left: 0.86em;
+}
+
+.paddingLeft2emContName {
+    padding-left: 1em;
+}
+
+.paddingLeft0pt8emCommType {
+    padding-left: 0.86em;
+}
+
+.paddingLeft0pt8emCommTypeExp {
+    padding-left: 0.86em;
+}
+
+.paddingLeft2emContNameDL {
+    padding-left: 0.9em;
+    width: 34em;
+}
+
+.paddingLeft2emCommNameDL {
+    padding-left: 1em;
+    width: 33.5em;
+}
+
+.paddingLeft2emCommNameDLExp {
+    padding-left: 1em;
+    width: 33.5em;
+}
+
+.paddingLeft2emContCommName {
+    padding-left: 4.3em;
+}
+
+.paddingLeft2emContCommNameExp {
+    padding-left: 4.3em;
+}
+
+.paddingLeft2emContNamelbl {
+    padding-left: 1em;
+}
+
+.paddingLeft2emCommName {
+    padding-left: 4em;
+}
+
+
+.paddingLeft2emAggDist {
+    padding-left: 1em;
+}
+
+.paddingLeft2emAggDistTot {
+    padding-left: 1em;
+}
+
+.paddingLeft2emAggDistlbl {
+    padding-left: 2em;
+}
+
+.paddingLeft2emExpFiler {
+    padding-left: 0em;
+}
+
+.paddingLeft2emExpFilerExp {
+    padding-left: 1em;
+}
+
+.paddingLeft2emExpComType {
+    padding-left: 0em;
+}
+
+.paddingLeft2emContrFilerlbl {
+    padding-left: 6.7em;
+}
+
+.paddingLeft2emExpFilerlbl {
+    padding-left: 6.88em;
+}
+
+.paddingLeft2emContrFiler {
+    padding-left: 1em;
+}
+
+.paddingLeft2emExpFiler {
+    padding-left: 1em;
+}
+
+.paddingLeft2emContrContrType {
+    padding-left: 1.6em;
+    display: none;
+}
+
+.paddingLeft2emContrComType {
+    padding-left: 1.68em;
+}
+
+.paddingLeft2emContrComTypeExp {
+    padding-left: 1.68em;
+}
+
+.paddingLeft2emExpdivOffDistCM {
+    padding-left: 0em;
+}
+
+.paddingLeft2pt1em {
+    padding-left: 2.1em;
+}
+
+.paddingLeft2pt1emAggTot {
+    padding-left: 1.3em;
+}
+
+.paddingLeft2pt1emAggType {
+    padding-left: 1.41em;
+}
+
+.paddingLeft2pt18em {
+    padding-left: 2.18em;
+}
+
+.paddingLeft2pt1emType {
+    padding-left: 1em;
+}
+
+.paddingLeft2pt1emTypeAggTot {
+    padding-left: 1em;
+    width: 6.8em;
+}
+
+
+.paddingLeft2pt2em {
+    padding-left: 2.2em;
+}
+
+.paddingLeft2pt3em {
+    padding-left: 2.3em;
+}
+
+.paddingLeft2pt35em {
+    padding-left: 2.35em;
+}
+
+.paddingLeft2pt42em {
+    padding-left: 2em;
+}
+
+.paddingLeft2pt55em {
+    padding-left: 2.55em;
+}
+
+.paddingLeft2pt6em {
+    padding-left: 2.6em;
+}
+
+.paddingLeft2pt64em {
+    padding-left: 2.64em;
+}
+
+.paddingLeft2pt7em {
+    padding-left: 2.7em;
+}
+
+.paddingLeft2pt75em {
+    padding-left: 2.75em;
+}
+
+.paddingLeft2pt9em {
+    padding-left: 2.9em;
+}
+
+.paddingLeft2pt8em {
+    padding-left: 2.8em;
+}
+/*-------------------------*/
+.paddingLeft3em {
+    padding-left: 3em;
+}
+
+.paddingLeft3pt1em {
+    padding-left: 3.1em;
+}
+
+.paddingLeft3pt7em {
+    padding-left: 3.7em;
+}
+
+.paddingLeft3pt7emIEContrS {
+    padding-left: 4.1em;
+}
+
+.paddingLeft3pt8em {
+    padding-left: 3.8em;
+}
+
+.paddingLeft3pt2em {
+    padding-left: 3.2em;
+}
+
+.paddingLeft3pt2emCountyAgg {
+    padding-left: 3.6em;
+}
+
+.paddingLeft3pt2emCountyAggTot {
+    padding-left: 3.4em;
+}
+
+.paddingLeft3pt25em {
+    padding-left: 3.25em;
+}
+
+.paddingLeft3pt3em {
+    padding-left: 3.3em;
+}
+
+.paddingLeft3pt3emAMax {
+    padding-left: 3.1em;
+}
+
+.paddingLeft3pt5em {
+    padding-left: 3.5em;
+}
+
+.paddingLeft3pt6em {
+    padding-left: 3.6em;
+}
+
+.paddingLeft3pt7em {
+    padding-left: 3.7em;
+}
+
+.paddingLeft3pt7emCounty {
+    padding-left: 4em;
+}
+
+.paddingLeft8pt1emCounty {
+    padding-left: 4em;
+}
+
+.paddingLeft8pt1emCountyExp {
+    padding-left: 4em;
+}
+/*-------------------------*/
+.paddingLeft4em {
+    padding-left: 4em;
+}
+
+.paddingLeft4emName {
+    padding-left: 2em;
+}
+
+.paddingLeft4pt1em {
+    padding-left: 4.1em;
+}
+
+.paddingLeft4pt2em {
+    padding-left: 4.2em;
+}
+
+.paddingLeft4pt3em {
+    padding-left: 4.3em;
+}
+
+.paddingLeft4pt4em {
+    padding-left: 4.4em;
+}
+
+.paddingLeft4pt6em {
+    padding-left: 4.6em;
+}
+
+.paddingLeft4pt5em {
+    padding-left: 4.5em;
+}
+
+.paddingLeft4pt8em {
+    padding-left: 4.8em;
+}
+
+.paddingLeft4pt8emAMaxExp {
+    padding-left: 3.1em;
+}
+
+.paddingLeft4pt9em {
+    padding-left: 6.66em;
+}
+
+/*-------------------------*/
+.paddingLeft5em {
+    padding-left: 5em;
+}
+
+.paddingLeft5pt05em {
+    padding-left: 5.05em;
+}
+
+.paddingLeft5pt25em {
+    padding-left: 5.25em;
+}
+
+.paddingLeft5pt3em {
+    padding-left: 5.3em;
+}
+
+.paddingLeft5pt3emDType {
+    padding-left: 2.5em;
+}
+
+.paddingLeft5pt35em {
+    padding-left: 5.35em;
+}
+
+.paddingLeft5pt5em {
+    padding-left: 5.5em;
+}
+
+.paddingLeft5pt64em {
+    padding-left: 5.64em;
+}
+
+.paddingLeft5pt64emForLinkCandComm {
+    padding-left: 1em;
+}
+
+.paddingLeft5pt65em {
+    padding-left: 5.65em;
+}
+
+.paddingLeft5pt7em {
+    padding-left: 5.7em;
+}
+
+.paddingLeft5pt9em {
+    padding-left: 5.9em;
+}
+/*-------------------------*/
+.paddingLeft6em {
+    padding-left: 6em;
+}
+
+.paddingLeft6pt3em {
+    padding-left: 6.3em;
+}
+
+.paddingLeft6pt55em {
+    padding-left: 6.55em;
+}
+
+.paddingLeft6pt67em {
+    padding-left: 6.67em;
+}
+
+.paddingLeft6pt7em24Hours {
+    padding-left: 4.4em;
+}
+
+/*-------------------------*/
+.paddingLeft6pt9em {
+    padding-left: 6.9em;
+}
+/*-------------------------*/
+.paddingLeft6pt8em {
+    padding-left: 6.8em;
+}
+/*-------------------------*/
+.paddingLeft7em {
+    padding-left: 7em;
+}
+
+.paddingLeft7pt5em {
+    padding-left: 2em;
+}
+
+.paddingLeft7pt6em {
+    padding-left: 7.6em;
+}
+/*-------------------------*/
+.paddingLeft8em {
+    padding-left: 8em;
+}
+
+.paddingLeft8pt8em {
+    padding-left: 8.8em;
+}
+/*-------------------------*/
+.paddingLeft9pt9em {
+    padding-left: 9.9em;
+}
+
+.paddingLeft12pt2em {
+    padding-left: 12.2em;
+}
+
+.paddingLeft13em {
+    padding-left: 13em;
+}
+
+.paddingLeft15pt6em {
+    padding-left: 15.6em;
+}
+
+.paddingLeft17pt7em {
+    padding-left: 17.7em;
+}
+
+/*-------------------------*/
+.paddingRight1em {
+    padding-right: 1em;
+}
+
+.paddingRight1emNew {
+    padding-right: 2.5em;
+}
+/*-------------------------*/
+.paddingRight1pt1em {
+    padding-right: 1.1em;
+}
+
+.paddingRight1pt5em {
+    padding-right: 1.5em;
+}
+
+.paddingRight3em {
+    padding-right: 3em;
+}
+/*-------------------------*/
+.paddingRight2em {
+    padding-right: 2em;
+}
+/*-------------------------*/
+.paddingRight3pt5em {
+    padding-right: 3.5em;
+}
+/*-------------------------*/
+.paddingRight4em {
+    padding-right: 4em;
+}
+
+.paddingRight5em {
+    padding-right: 5em;
+}
+/*-------------------------*/
+.paddingTop0pt6em {
+    padding-top: 0.6em;
+}
+
+.paddingTop0em {
+    padding-top: 0em;
+}
+/*-------------------------*/
+.paddingBottom0pt8em {
+    padding-bottom: 0.8em;
+}
+
+.paddingBottom1em {
+    padding-bottom: 1em;
+}
+
+.paddingBottom2em {
+    padding-bottom: 2em;
+}
+
+
+/*-------------------------*/
+.textAlignLeft {
+    text-align: left;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.lookUpButtonCSS {
+    font-size: 12px;
+}
+
+.width25Per {
+    width: 25%;
+}
+
+.width20Per {
+    width: 20%;
+}
+
+.divHeader {
+    width: auto;
+    height: 2em;
+}
+
+.helpButtonCSS {
+    background-repeat: no-repeat;
+    height: 1.1em;
+    width: 1.1em;
+}
+
+.PDFCSVButton {
+    height: 1.8em;
+    width: 1.8em;
+    padding-left: 1px;
+}
+
+.PDFCSVImgBtn {
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.lblCSS {
+    float: left;
+    /*padding: 0 0.5em 0.3em 1em;*/
+    /*clear: both;*/
+}
+
+.lblCSSCandComm {
+    float: left;
+}
+
+.lblCSSZipFrom {
+    float: left;
+}
+
+.lblCSSZipTo {
+    float: left;
+    padding-left: 1em;
+}
+
+.DDLCSS {
+    float: left;
+    /*clear: both;*/
+}
+
+.DDLCSSZipFrom {
+    padding-left: 1em;
+    float: left;
+}
+
+.DDLCSSZipTo {
+    float: left;
+    padding-left: 1em;
+}
+
+.paddingLeft0pt65emContr {
+    padding-left: 0.65em;
+}
+
+.paddingLeft0pt65emContrName {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.paddingLeft0pt65emContrNameExp {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.floatRightCAPAS {
+    float: right;
+}
+
+.lblCSSCounty {
+    float: left;
+    padding: 0 0em 0.3em 1em;
+}
+
+.DDLCSSCounty {
+    float: left;
+    padding: 0 1em 0.3em 1em;
+}
+
+.lblCSSDistrict {
+    float: left;
+    /*display:none;*/
+    padding: 0 0em 0em 1em;
+}
+
+.DDLCSSDistrict {
+    float: left;
+    padding: 0 1em 0em 1.2em;
+}
+
+.lblCSSElection {
+    float: left;
+    padding: 0 0em 0em 2.9em;
+}
+
+.DDLCSSElection {
+    float: left;
+    padding: 0 1em 0em 1.2em;
+}
+
+.lblCSSElectionYear {
+    float: left;
+    padding: 0 0em 0em 0.8em;
+}
+
+.DDLCSSElectionYear {
+    float: left;
+    padding: 0 1em 0em 0.8em;
+}
+
+.lblCSSMunicipality {
+    float: left;
+    padding: 0 0em 0.3em 1em;
+}
+
+.DDLCSSMunicipality {
+    float: left;
+    padding: 0 1em 0.3em 1em;
+}
+
+.lblCSSOffice {
+    float: left;
+    padding: 0 0em 0em 4.8em;
+}
+
+.DDLCSSOffice {
+    float: left;
+    padding: 0 1em 0em 0.8em;
+}
+
+.lblCSSOfficeLOF {
+    float: left;
+    padding: 0 0em 0.3em 6.6em;
+}
+
+.lblCSSOfficeTypeLOF {
+    float: left;
+    padding: 0 0em 0.3em 3.4em;
+}
+
+.lblCSSOfficeType {
+    float: left;
+    padding: 0 0em 0em 3.6em;
+}
+
+.DDLCSSOfficeType {
+    float: left;
+    padding: 0 1em 0em 1em;
+}
+
+.lblCSSParty {
+    float: left;
+    padding: 0 0em 0.3em 7.25em;
+}
+
+.DDLCSSParty {
+    float: left;
+    padding: 0 1em 0.3em 1em;
+}
+
+.cssPartyPad {
+    padding-left: 5.2em;
+}
+/*-------------------------*/
+.helpMasterDivCSS {
+    min-height: 31em;
+    overflow: auto;
+    background-color: #eee;
+}
+
+.lblCSSListFilers {
+    float: left;
+    padding: 0 0em 0.3em 1em;
+}
+
+.DDLCSSListFilers {
+    float: left;
+    padding: 0 1em 0.3em 1em;
+}
+
+.PDFImageButton {
+    width: 1.8em;
+    padding-top: 1px;
+    padding-left: 1px;
+    height: 1.8em;
+}
+
+.downloadDialogStyle {
+    float: left;
+    margin: 0 7px 20px 0;
+    align-content: flex-start;
+}
+
+.lblCSSDownload {
+    padding: 0 0em 0.3em 1em;
+}
+
+.spanMobileWidth {
+    width: 100%;
+}
+
+.spanMobileWidth80Per {
+    width: 80%;
+}
+
+.spanFileUploadWidth {
+    width: 20%;
+}
+
+.spanMobileWidthForTransaction {
+    width: 15em;
+}
+
+.paddingLeft2em {
+    padding-left: 2em;
+}
+
+.paddingLeft2emDistrict {
+    padding-left: 2em;
+}
+
+.paddingLeft2emDistrict24Hours {
+    padding-left: 2.6em;
+}
+
+.paddingLeft2emDistrictLOF {
+    padding-left: 2.6em;
+}
+
+.paddingLeft2pt45em {
+    padding-left: 2.45em;
+}
+
+.paddingLeft7pt7emYear {
+    padding-left: 7.7em;
+}
+
+.paddingLeft7pt1em {
+    padding-left: 7.1em;
+}
+
+.paddingLeft7pt1emYear24Hours {
+    padding-left: 7.1em;
+}
+
+.dateWidthFor24hours {
+    width: 40%;
+}
+
+.paddingtop4em {
+    padding-top: 4em;
+}
+
+.paddingtop2em {
+    padding-top: 2em;
+}
+
+.paddingtop2emForMobile {
+    padding-top: 2em;
+}
+
+.paddingtop2emForMobileNew {
+    padding-top: 2em;
+}
+
+.paddingtop4emForHome {
+    padding-top: 4em;
+}
+
+.paddingtop2emForHome {
+    padding: 0px 550px 0px 10px;
+}
+
+.paddingLeft0pt8em24Hours {
+    padding-left: 1.45em;
+}
+
+.paddingLeft0pt8em24HoursMun {
+    padding-left: 1.6em;
+}
+
+.paddingLeft0pt8em24HoursDist {
+    padding-left: 1.7em;
+}
+
+.paddingLeft0pt8em24HoursDR {
+    padding-left: 1.54em;
+}
+
+.paddingLeft0pt8em24HoursYr {
+    padding-left: 1.3em;
+}
+
+.paddingLeft0pt8em24HoursOff {
+    padding-left: 1.45em;
+}
+
+.paddingLeft0pt8em24HoursSchedule {
+    padding-left: 1.4em;
+}
+
+.paddingLeft0pt8em24HoursOffType {
+    padding-left: 1.4em;
+}
+
+.paddingLeft0pt8em24HoursMun {
+    padding-left: 1.6em;
+}
+
+.paddingLeft0pt8em24HoursCounty {
+    padding-left: 1.42em;
+}
+
+.paddingLeft0pt8emLOF {
+    padding-left: 0.8em;
+}
+
+.paddingLeft0pt8emLOFDist {
+    padding-left: 0.9em;
+}
+
+.paddingLeft0pt8emLOFCommType {
+    padding-left: 0.9em;
+}
+
+.paddingLeft0pt8emLOFDateType {
+    padding-left: 0.7em;
+}
+
+.paddingLeft0pt8emLOFOff {
+    padding-left: 1em;
+}
+
+.paddingLeft1emTxt24Hours {
+    padding-left: 3.2em;
+}
+
+.paddingLeft0pt65em24Hours {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.paddingLeft7pt5em24Hours {
+    padding-left: 3.95em;
+}
+
+.paddingLeft7pt5em24HoursMunicipality {
+    padding-left: 3.75em;
+}
+
+.paddingLeft7pt5emLOF {
+    padding-left: 3.9em;
+}
+
+.paddingLeft7pt5emLOFCounty {
+    padding-left: 4.6em;
+}
+
+.paddingLeft7pt5emLOFMunicipality {
+    padding-left: 3.65em;
+}
+
+.paddingLeft4pt9em24Hours {
+    padding-left: 4.53em;
+}
+
+.paddingLeft4pt9emLOF {
+    padding-left: 8.3em;
+}
+
+
+.paddingLeft4pt9emLOFOffice {
+    padding-left: 5.7em;
+}
+
+
+.paddingLeft6em24Hours {
+    padding-left: 6em;
+}
+
+.paddingLeft6emLOF {
+    padding-left: 6em;
+}
+
+.paddingLeft7pt5emDate24Hours {
+    padding-left: 1.95em;
+}
+
+.paddingLeft5pt05em24Hours {
+    padding-left: 4.7em;
+}
+
+.paddingLeft3em24Hours {
+    padding-left: 2.55em;
+}
+
+.paddingLeft1emDate24Hours {
+    padding-left: 0.9em;
+}
+
+.paddingLeft1emlblDateTo24Hours {
+    padding-left: 7.8em;
+}
+
+.paddingLeft1emDLDateTo24Hours {
+    padding-left: 0.95em;
+}
+
+.widthFromDate24Hours {
+    width: 50%;
+}
+
+.paddingLeft7pt5emDateType24Hours {
+    padding-left: 2.5em;
+}
+
+.paddingLeft7pt5emDateTypeLOF {
+    padding-left: 0.4em;
+}
+
+.paddingLeft7pt5emFor24Hours {
+    padding-left: 4.8em;
+}
+
+.paddingLeft7pt5emForLOF {
+    padding-left: 4.8em;
+}
+
+.paddingLeft7pt5emForLOFFrom {
+    padding-left: 6.45em;
+}
+
+.paddingLeft7pt5emForLOFTo {
+    padding-left: 2em;
+}
+
+.paddingleftForToDate24Hours {
+    padding-left: 2.2em;
+}
+
+.paddingleftForToDateLOF {
+    padding-left: 1.4em;
+}
+
+.paddingLeft7pt5emCAPAS {
+    padding-left: 4.2em;
+}
+
+.paddingLeft7pt5emCAPASMunicipality {
+    padding-left: 5.4em;
+}
+
+.paddingLeft7pt5emCAPASMunicipalityOffice {
+    padding-left: 0.3em;
+}
+
+.paddingLeft7pt5emFIDASCANDCOMM {
+    padding-left: 2.7em;
+}
+
+.paddingLeft7pt5emCAPASParty {
+    padding-left: 5em;
+}
+
+.paddingLeft7pt5emCandComm {
+    padding-left: 3.9em;
+}
+
+.paddingLeft7pt5emLOFComType {
+    padding-left: 1.1em;
+}
+
+.paddingLeft7pt5emCandCommMunicipality {
+    padding-left: 1.95em;
+}
+
+.paddingLeft7pt5emNameCandComm {
+    padding-left: 5.1em;
+}
+
+.paddingLeft2pt95emCandComm {
+    padding-left: 3.55em;
+}
+
+.paddingLeft3pt95CandComm {
+    padding-left: 4.6em;
+}
+
+.paddingLeft2pt7emReportCandComm {
+    padding-left: 0.9em;
+}
+
+.paddingLeft7pt5emYearCandComm {
+    padding-left: 5.05em;
+}
+
+.downloadCSS {
+    float: left;
+    margin: 0 7px 20px 0;
+    align-content: flex-start;
+}
+
+.paddingLeft0pt8em24HoursTextBox {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.paddingLeft0pt8em24HoursTextBoxNCand {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.paddingLeft0pt8em24HoursTextBoxNComm {
+    padding-left: 0.7em;
+    width: 22em;
+}
+
+.paddingTop1em {
+    padding-top: 1em;    
+}
+
+/*-------------------------*/
+
+/*Help screen formatting*/
+
+.helpscreen-text {
+    margin: 0px 0px 0px 25px;
+}
+
+.helpscreen-text-required {
+    margin: 0px 0px 0px 30px;
+}
+
+.helpscreen-text-faq {
+    margin: 0px 0px 0px 35px;
+}
+
+.helpscreen-text-faq-indent {
+    margin: 0px 0px 0px 45px;
+}
+
+.helpscreen-text-list-style {
+    list-style-type: none;
+    margin: 0px 0px 0px 20px;
+}
+
+/*-------------------------*/
+
+.paddingLeft7pt5emLOF {
+    padding-left: 2.7em;
+}
+
+.textHeight {
+    height: 1em;
+}
+
+.LodingCls {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #666666;
+    z-index: 30001;
+    opacity: .8;
+    filter: alpha(opacity=70);
+    display: none;
+}
+
+.LodingClsP {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    color: White;
+}
+
+.BreadCrumbCSS {
+    padding: 0em 40em 1em 2em;
+    float: left;
+}
+
+.BreadCrumbCSSCAPAS {
+    padding: 0em 11em 1em 2em;
+    float: left;
+}
+
+.BreadCrumbCSSCAPASSiteIndex {
+    padding: 0em 20em 1em 2em;
+    float: left;
+    /*padding-left: 2em;
+    padding-top: 0em;
+    padding-bottom: 1em;*/
+    /*padding: 0em 0em 1em 2em;
+    float: left;*/
+}
+
+.BreadCrumbCSSFIDAS {
+    padding: 0em 40em 0em 2em;
+    /*float: right;*/
+}
+
+.BreadCrumbCSSIEFIDASBC {
+    padding-left: 2em;
+    padding-top: 3em;
+}
+
+.BreadCrumbCSSSITEINDEX {
+    padding-left: 2em;
+    padding-top: 3em;
+}
+
+.SelectorHideShow {
+    padding-left: 1.63em;
+}
+
+.SelectorBtnHideShow {
+    width: 6.5em;
+}
+
+.SelectorImgHideShow {
+    clear: both;
+    background-repeat: no-repeat;
+    float: left;
+    height: 0.75em;
+    margin-top: 0.23em;
+}
+
+.SelectorImgHideShowRigth {
+    clear: both;
+    background-repeat: no-repeat;
+    float: right;
+    height: 0.75em;
+    margin-top: 0.23em;
+}
+
+.paddingLeft2pt7emReportCandCommFilerData {
+    padding-left: 3.35em;
+}
+
+.labelAmendmentColor {
+    color: #09464C;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.label1AmendmentColor {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.verticalCSSDestop {
+    padding: 0.5em 0em 0em 1em;
+    width: 100%;
+}
+
+.verticalCSSDestopCSS {
+    padding: 0.5em 0em 0em 1em;
+    width: 60%;
+}
+
+.verticalCSSDestopFilter {
+    padding: 0em 0em 0em 1em;
+    width: 100%;
+}
+
+.verticalCSSDestopFilterDD {
+    padding: 1em 0em 1em 1em;
+    width: 100%;
+}
+
+.verticalCSSDestopDateTo {
+    padding: 1em 0em 0em 1em;
+    width: 100%;
+}
+
+.breadCrumbDivCSS {
+    float: left;
+    padding-left: 2em;
+    padding-top: 1em;
+}
+
+.breadCrumbDvWidthCss {
+    width: 34em;
+}
+
+.headerCSS {
+    /*padding-left:0.1em;
+    padding-top: 3em;
+    float:left;*/
+    display: block;
+    padding: 7px 0px 0px 10px;
+    font-size: 90%;
+}
+
+.divWidth {
+    width: 95%;
+}
+
+.divWidthSchedABC {
+    width: 95%;
+    clear: both;
+}
+
+.divWidthItemizedIETrans {
+    width: 100%;
+}
+
+.divWidthTreasurerProfile {
+    width: 100%;
+}
+
+
+.divWidthLiability {
+    width: 95%;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.hideShowButtonCSS {
+    width: 100%;
+    font-family: Proxima Nova,Arial,Oswald;
+    font-size: 18px; /*Reduced for accessibility: Avoid the use of implicit headings*/
+    /*font-weight: bold;*/
+    padding-left: 0.5em;
+}
+
+.divPDFCSV {
+    float: right;
+    padding-right: 2.5em;
+    padding-top: 4em;
+}
+
+.divPDFCSVAggrContrExp {
+    float: right;
+    padding-right: 2.5em;
+    padding-top: 0em;
+}
+
+.divPdfCSS {
+    height: 1.8em;
+    width: 1.8em;
+    padding-left: 1px;
+}
+
+.divGridCSS {
+    float: right;
+    width: 85%;
+}
+
+.divGridCSSOpt31 {
+    width: 100%;
+}
+
+.Per100hideShowButtonCSS {
+    width: 100% !important;
+}
+
+.Per96hideShowButtonCSS {
+    width: 96% !important;
+}
+
+.Per80hideShowButtonCSS {
+    width: 85% !important;
+}
+
+.Per80PerhideShowButtonCSS {
+    width: 80% !important;
+}
+
+.mainDiv {
+    background-color: #7FA9AE;
+    float: left;
+    width: 15%;
+}
+
+.mainDivCAPAS {
+    background-color: #7FA9AE;
+    float: left;
+    width: 20%;
+}
+
+.mainDivNew {
+    background-color: #7FA9AE;
+    float: left;
+    width: 20%;
+}
+
+.mainLowerDivCSS {
+    border-bottom: 2px solid #eee;
+    height: 60px;
+    padding-top: 1em;
+    display: none;
+}
+
+.paddingtoppt5TS {
+    padding-top: 0em;
+}
+
+.paddingtop3pt5 {
+    padding-top: 0em;
+}
+
+.paddingbottom1pt5em {
+    padding-bottom: 0em;
+}
+
+.paddingtop1pt5em {
+    padding-top: 1.5em;
+}
+
+.paddingLeft6emCSS {
+    float: right;
+    padding-right: 0.5em;
+}
+
+.FontSizeCss {
+    font-size: 12px;
+}
+
+.SetFooterHeight {
+    width: 100%;
+    /*position: fixed;*/
+    bottom: 0;
+}
+
+div.SetHeightListOfFilers {
+    min-height: 130em;
+    background-color: #eee;
+}
+
+div.SetHeightItemRpt {
+    min-height: 65em;
+    background-color: #eee;
+}
+
+div.SetHeightDisclosureReport {
+    min-height: 80em;
+    background-color: #eee;
+}
+
+div.SetHeightDisclosureReportDef {
+    min-height: 56em;
+    background-color: #eee;
+}
+
+div.SetHeightDisclosurRptOpt3 {
+    min-height: 164em;
+    background-color: #eee;
+}
+
+div.SetHeightIEExpenditure {
+    min-height: 70em;
+    background-color: #eee;
+}
+
+div.SetHeightIEContributions {
+    min-height: 70em;
+    background-color: #eee;
+}
+
+div.SetHeightContributions {
+    min-height: 70em;
+    background-color: #eee;
+}
+
+div.SetHeightAggrContrExpTotals {
+    min-height: 70em;
+    background-color: #eee;
+}
+
+div.SetHeightCandidateCommittee {
+    min-height: 90em;
+    background-color: #eee;
+}
+
+div.SetHeightWhoFiled {
+    min-height: 50em;
+    background-color: #eee;
+}
+
+.spanTextBoxWidthDate {
+    width: 89%;
+}
+
+.paddingRighButtons {
+    padding-right: 1em;
+}
+
+.clsShowButtonClass {
+}
+
+.clsShowHeader {
+    display: none;
+}
+
+.clsHelp {
+    min-width:85%;
+    border: 1px solid #000000;
+    margin: 0.2em 1em;
+}
+
+.clsHelpSpan {
+    width: 15%;
+    background-color: #7FA9AE;
+    border-right: 1px solid #000000;
+    padding: 1em 1em 1em 1em;
+    text-align: center;
+}
+
+.clsShowHideHelpSec {
+    display: block;
+}
+
+.clsShowHideHelpSecAggrContrExp {
+    display: block;
+}
+
+.clsShowHideHelpSecIEContrLoans {
+    display: block;
+}
+
+.clsShowHideHelpSecInMobileTablet {
+    display: none;
+}
+
+
+.mainLowerDivCSSDesktop {
+    border-bottom: 2px solid #eee;
+    height: 43px;
+    padding-top: 0.5em;
+    display: block;
+}
+
+.DDLCSSLink {
+    float: left;
+    padding: 1em 0em 0em 1em;
+}
+
+.amendmentLinkPadding {
+    padding: 0em;
+}
+
+.paddingRight60pt {
+    padding-right: 60em;
+}
+
+.paddingRight79pt6 {
+    padding-right: 79.6em;
+}
+
+
+.divPDFCSVAggrContrExpTop {
+    padding-right: 2.5em;
+    padding-top: 7em;
+}
+
+.SectionHeders {
+    background-color: #09464C;
+    height: 2em;
+    padding: 15px 0px 5px 0px;
+    border-bottom: 4px solid #7FA9AE;
+}
+
+.txtWidthFilterType {
+    width: 10%;
+}
+
+.txtWidthTermDate {
+    width: 8em;
+}
+
+.txtWidthStatus {
+    width: 8em;
+}
+
+.txtWidthRegistrationDate {
+    width: 8em;
+}
+
+.txtWidthDistrict {
+    width: 6%;
+}
+
+.txtWidthFilterID {
+    width: 6em;
+}
+
+.txtWidthResignationDate {
+    width: 6em;
+}
+
+.txtWidthStatus {
+    width: 10em;
+}
+
+.txtWidthRegistratrionDate {
+    width: 10em;
+}
+
+.txtWidthTreasurerId {
+    width: 8em;
+}
+
+.txtWidthLastName {
+    width: 12em;
+}
+
+.txtWidthFirstName {
+    width: 15%;
+}
+
+.txtWidthFirstNameTreasurer {
+    width: 15em;
+}
+
+
+.txtWidthPrefix {
+    width: 4em;
+}
+
+.txtWidthMI {
+    width: 4%;
+}
+
+.txtWidthMITreasurer {
+    width: 4em;
+}
+
+.txtWidthSuffix {
+    width: 4%;
+}
+
+
+.txtWidthSuffixTreasurer {
+    width: 4em;
+}
+
+.txtWidthOffice {
+    width: 20%;
+}
+
+
+.txtWidthSSN {
+    width: 7em;
+}
+
+
+.txtWidthSSNTreasurer {
+    width: 7em;
+}
+
+.spanButtonUser {
+    text-align: right;
+    float: right;
+    padding-right: 0em;
+    padding-top: 0em;
+    text-align: center;
+}
+
+.imgButtonCSS {
+    background-repeat: no-repeat;
+    height: 3em;
+    width: 3em;
+}
+
+.imgButtonCSSInKind {
+    background-repeat: no-repeat;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.paddingTop1em {
+    padding-top: 1em;
+}
+
+.verticalCSSDestopForCM {
+    padding: 1em 0em 0em 1em;
+    width: 60%;
+}
+
+.verticalCSSDestopForCMForLabel {
+    padding: 1em 0em 0em 1em;
+    width: 30%;
+}
+
+.border1pxCls {
+    border: 0px solid;
+}
+
+.txtSignatureHeight {
+    height: 4em;
+}
+
+.linkSummary {
+    color: blue !important;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.clsCommonSearch {
+    font-size: 20px;
+}
+
+.column {
+    padding-left: 5em;
+    padding-top: 2em;
+    width: 400px;
+    float: left;
+    padding-bottom: 100px;
+}
+
+.portlet {
+    margin: 0 1em 1em 0;
+    color: blue;
+    padding: 0.3em;
+}
+
+.portlet-header {
+    background: #7FA9AE;
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+
+.portlet-content {
+    padding: 0.4em;
+}
+
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+.linkBlue {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.calendraWidth {
+    width: 295px !important;
+}
+
+.colorBlck {
+    color: black !important;
+}
+
+.textboxWidth {
+    width: 111%;
+}
+
+.lnkGird {
+    color: blue;
+    text-decoration: underline;
+}
+
+.paddingLeft0pt9em {
+    padding-left: 0.9em;
+}
+
+
+
+
+div.dataTables_wrapper {
+    /*width: 800px;*/
+    margin: 0 auto;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.HeightDropDownLst {
+    height: 1.6em;
+}
+
+.WidthTranType {
+    width: 8em;
+}
+
+div#users-contain {
+    width: 350px;
+    margin: 20px 0;
+}
+
+div#users-contain table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div#users-contain table td, div#users-contain table th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+}
+
+.ui-dialog .ui-state-error {
+    padding: .3em;
+}
+
+.validateTips {
+    border: 1px solid transparent;
+    padding: 0.3em;
+}
+
+.txtWidthForDialog {
+    width: 70%;
+}
+
+.txtWidthForDialogSched_A {
+    width: 100%;
+}
+
+.txtWidthForDialogSched_Date {
+    width: 90%;
+}
+
+.txtWidthForDialogSched_APartner {
+    width: 100%;
+}
+
+.txtWidthForDialogSched_N {
+    width: 100%;
+}
+
+.txtWidthForDialogSched_N_CountryChkbox {
+    width: 6%;
+}
+
+.txtWidthForDialogSched_ABC_CountryChkbox {
+    width: 11%;
+}
+
+.txtWidthForDialogForDll {
+    width: 100%;
+}
+
+.txtRightAlign {
+    text-align: right;
+    padding-right: 0.5em;
+}
+
+.lblRightAlign {
+    text-align: right;
+    padding-right: 0.8em;
+}
+
+.lblColor {
+   color: red;
+   /*padding-left:2em;*/
+   padding-bottom: 0.2em;
+   font: bold;
+}
+
+.paddingTopBottomError {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}	
+
+.paddingBottonError {
+    padding-bottom: 0.4em;
+}
+
+.divGridCSSTransferin {
+    float: right;    
+    width: 85%;
+}
+
+.divGridCSSItemIETrans {
+    float: right;
+    width: 100%;
+}
+
+.divGridCSSTransferin100Per {
+    float: right;    
+    width: 100%;
+}
+
+.verticalCSSDestopTIS {
+    padding: 1em 0em 0em 2em;        
+    width: 28%;
+}
+
+.verticalCSSDestopTISForLables {
+    padding: 1em 0em 0em 3em;        
+    width: 15%;
+    text-align: right;
+}
+
+.lblCSSTIS {        
+}
+
+.DDLCSSTIS {    
+}
+
+.verticalCSSDestopForLable {
+    padding: 0.3em 0em 0em 1em;
+    /*width: 42%;*/
+    width: 50%;
+}
+
+
+.verticalCSSDestopForLablePartnerSchedA {
+    padding: 0.3em 0em 0em 1em;
+    width: 42%;
+    clear: both;
+}
+
+.verticalCSSDestopForLableSchedABC {
+    padding: 0.3em 0em 0em 1em;
+    width: 41%;
+    clear: both;
+}
+
+.verticalCSSDestopForLableSched_N {
+    padding: 0.3em 0em 0em 1em;
+    width: 36%;
+}
+
+.verticalCSSDestopForLableSched_ABC {
+    padding: 0.3em 0em 0em 1em;
+    width: 41%;
+}
+
+.verticalCSSDestopForLableOSAmt {
+    padding: 0.3em 0em 0em 1em;
+    width: 49%;
+}
+
+.verticalCSSDestopForLblLSC {
+    padding: 0.3em 0em 0em 1em;        
+    width: 41%;
+}
+
+.verticalCSSDestopForLblLSCPartnerSchedA {
+    padding: 0.3em 0em 0em 1em;
+    width: 48%;
+}
+
+.verticalCSSDestopForTextboxLSC {
+    padding: 0.3em 0em 0em 1em;        
+    width: 59%;
+}
+
+.verticalCSSDestopForTextboxLSCPartnerSchedA {
+    padding: 0.3em 0em 0em 1em;
+    width: 52%;
+}
+
+.verticalCSSDestopForTextbox {
+    padding: 0.3em 0em 0em 1em;
+    /*width: 58%;*/
+    width: 50%;
+}
+
+.verticalCSSDestopForTextboxPartnerSchedA {
+    padding: 0.3em 0em 0em 1em;
+    width: 58%;
+}
+
+.verticalCSSDestopForTextboxSchedABC {
+    padding: 0.3em 0em 0.3em 1em;
+    width: 59%;
+}
+
+.verticalCSSDestopForTextboxSched_N {
+    padding: 0.3em 0em 0em 1em;    
+    width: 64%;
+}
+
+.verticalCSSDestopForTextboxSched_ABC {
+    padding: 0.3em 0em 0.3em 1em;
+    width: 59%;
+}
+
+.verticalCSSDestopForCheckBoxSched_ABC {
+    padding: 0.3em 0em 0em 1em;
+    width: 33%;
+}
+
+.verticalCSSDestopForTextboxOSAmt {
+    padding: 0.3em 0em 0em 1em;
+    width: 51%;
+}
+
+.verticalCSSDestopForError {
+    padding: 0em 0em 0em 13.7em;        
+    width: 100%;
+    /*white-space:nowrap;*/
+}
+
+.verticalCSSDestopForErrorFilter {
+    padding: 0em 0em 0em 1em;
+    width: 100%;
+    /*white-space:nowrap;*/
+}
+
+.verticalCSSDestopForErrorCampMater {
+    padding: 0em 0em 0em 16.5em;
+    width: 100%;    
+}
+
+
+.verticalCSSDestopForErrorDate {
+    padding: 0em 0em 0em 13.7em;
+    width: 100%;
+}
+
+.verticalCSSDestopForErrorSchedL {
+    padding: 1.5em 0em 0em 16.4em;
+    width: 102%;
+}
+
+.verticalCSSDestopForErrorLiab {
+    padding: 2.5em 0em 0em 13.3em;
+    width: 100%;
+}
+
+.lblCSSAdd {
+    float: left;
+    text-align: right;
+}
+
+.DDLCSSAdd {
+    float: left;   
+}
+
+.verticalCSSDialogLbl {
+    width: 30%;
+    text-align: right;
+}
+
+.verticalCSSDialogTD {
+    padding: 0em 0em 0em 0.8em;        
+    width: 70%;
+}
+	
+input.watermark {
+    color: #999;
+}
+
+.headerDBLiability {
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.clsOutstandingAmt {
+    font-weight: bold;
+    /*font-size: 1.3em;*/   
+}
+
+.no-sort::after {
+    display: none !important;
+}
+
+.no-sort {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+.paddingAllTransText {
+    padding-left: 2em; 
+    font-size: 1.2em;
+    padding-top: 0em;
+    clear: both;
+}
+
+.padding24HNoticeText {
+    padding-left: 2em;
+    font-size: 1.2em;
+    padding-top: 0em;
+    padding-right: 2.5em;
+    padding-bottom: 0.5em;
+    text-align: justify;
+}
+
+.padding24HNoticeTextHead {
+    padding-left: 2em;
+    font-size: 1.2em;
+    padding-top: 0em;
+    padding-right: 2.5em;
+    padding-bottom: 0.5em;
+    text-align: justify;
+}
+
+.paddingIEWeeklyContrTxt {
+    padding-left: 2em;
+    font-size: 1.2em;
+    padding-top: 0em;
+    clear: both;
+}
+
+
+.paddingTop0emFP {
+    padding-top: 0em;
+}
+
+.paddingTop0emTransactionType {
+    padding-top: 0em;
+}
+
+.paddingTop0em2em {
+    padding-top: 0em;
+}
+
+.PageHeaderWidth {
+    width: 170%;
+}
+
+.DisplayInlineBlock {
+    display: inline-block;
+}
+
+.paddingLeftErrorMessage {
+    padding-left: 2.7em;
+}
+
+
+label.error {
+    color: red;  
+    padding: -1em 0em 0em 5em;
+    font: bold;
+    display: block;
+    clear:both;
+    /*position: absolute;*/
+}
+
+form input.error, form input.error:hover, form input.error:focus, form select.error, form textarea.error {
+    border: 2px solid #b94a48;
+    /*background: #fef1ec url("images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;*/
+    /*color: #cd0a0a;*/
+}
+
+.ui-autocomplete {
+    max-height: 10em;
+    overflow-y: scroll;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 1em;    
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+.ui-autocomplete {
+    height: 10em;
+}
+
+.watermarkHTMLTextBox {
+    color: #999;
+}
+
+.ValidateionErrorPosition {    
+    padding: 0em 0em 0em 24em;
+    width: 100%;
+} 
+
+.zIndexCSS{
+    z-index:1;
+}
+
+.displayInline {
+    display: inline;
+}
+
+.dvWidth100pt {
+    width: 100%;
+}
+
+.tableWidth100per {
+    width: 100% !important;
+}
+
+.divGridCSSForLR {
+    float: right;
+    width: 100%;
+}
+
+.verticalCSSDestopForLblInLieuOf {
+    padding: 0.3em 0em 0em 1em;
+    width: 100%;
+}
+
+
+.verticalCSSDestopForLableInLieuOf {
+    padding: 0.3em 0em 0em 1em;
+    width: 6%;
+    /*clear: both;*/
+}
+
+.lblCSSAddInLieuOf {
+    float: left;
+    /*text-align: right;*/
+}
+
+
+.verticalCSSDestopForCheckBoxInLieuOf {
+    padding: 0.6em 0em 0em 1em;
+    width: 94%;
+}
+
+.DDLCSSAddInLieuOf {
+    float: left;
+}
+
+.textAlignJustifyInLieuOf {
+    text-align: justify;
+}
+
+.pInLieuOfDisplayInline {
+    display: inline;
+}
+
+.paddingtop2emInLieuOf {
+    padding-top: 2em;
+}
+
+.breadCrumbDivWidth {
+    width: 46em;
+}
+
+.lblWhiteColor{
+    color:white;
+}
+
+.submitTransBtnCls {
+    float: left;
+    clear: both;
+    padding-left: 2.5em;
+    padding-bottom: 1em;
+}
+
+.dvItemIETransTxt {
+    padding-left: 2em;
+    padding-top: 2em;
+    clear: both;
+}
+
+.breadCrumbWidth {
+    width: 46em;
+}
+
+
+/*#first {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+    background-color: #000;
+    color: #fff;
+    z-index: 9999;
+}
+
+.load {
+    height: 600px;
+    width: 600px;
+    background-image: url('http://images2.layoutsparks.com/1/235919/walle-galaxy-sky-image.jpg');
+}*/
+
+.td-limit {
+    max-width: 70px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ui-dialog.clsDialogTopPosition {
+    margin-top: 100px;
+    top: 11px !important;
+}
+
+.ui-dialog.clsDialogTopPositionVIR {
+    margin-top: 100px;
+    top: 15em !important;
+}
+
+/* VIEW ALL DISCLOSURES*/
+.btnAddSupportingDocument {
+    float: right;
+    margin-right: 2.5em;
+    /*margin-top: .5em;*/
+    margin-bottom: .5em;
+    font-size: 14px;
+}
+
+.btnAddSupportingDocument100Percent {
+    float: right;
+    margin-right: 5.5em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-size: 14px;
+}
+
+
+.divSpacerDialog {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.validationDialog {
+    padding: 0em 0em 0em 12.5em;
+    width: 100%;
+    clear: both;
+}
+
+.lblCSSDialog {
+    padding: 0.9em 0em 0.3em 1em;
+    width: 30%;
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.DDLCSSDialog {
+    padding: 0.5em 0em 0.3em 1em;
+    width: 45%;
+    float: left;
+}
+
+.txtCSSDialog {
+    padding: 0.5em 0em 0.3em 1em;
+    width: 65%;
+    float: left;
+}
+
+.btnCSSDialog {
+    float: right;
+    padding-right: 8.2em;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    margin-top: 2em;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.EightyPercent {
+    width: 80%;
+}
+
+.OneHundredPercent {
+    width: 100%;
+}
+
+.validationFilterDisclosures {
+    margin: 1em 0 0 1em;
+    width: 100%;
+}
+
+.dpWidth {
+    width: 90%;
+}
+
+.btnCSSDialogPIDA {
+    float: right;
+    padding-right: 10em;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    margin-top: 2em;
+}
+
+.lblCSSDialogPIDA {
+    padding: 0.9em 0em 0.3em 1em;
+    width: 35%;
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.DDLCSSDialogPIDA {
+    padding: 0.5em 0em 0.3em 1em;
+    width: 50%;
+    float: left;
+}
+
+.txtCSSDialogPIDA {
+    padding: 0.5em 0em 0.3em 1em;
+    width: 50%;
+    float: left;
+}
+
+.marginLeft{
+    margin-left: 3em;
+}
+
+.divPIDAError {
+    /*padding-left: ;*/
+    margin-left: 14.2em;
+    width: 100%;
+    clear: both;
+}
+
+/* END VIEW ALL DISCLOSURES*/
+
+
+/* LOAN AND LIABILITY RECONCILIATION */
+
+.btnReconcile {
+    float: right;
+    margin-right: 2.5em;
+    margin-bottom: .5em;
+    font-size: 14px;
+}
+
+.btnReconcile100Percent {
+    float: right;
+    margin-right: 5.5em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-size: 14px;
+}
+
+.lblReconcile{
+    float:left;
+    margin-left:.5em;
+    margin-bottom: .5em;
+}
+
+.validateErrorReconcile{
+    margin-left:1em;
+}
+
+.floatRightReconcile {
+    text-align: right;
+    padding-top: 1em;
+    clear: both;
+}
+
+
+
+/* END LOAN AND LIABILITY RECONCILIATION */
+
+.paddingRight2pt4em {
+    padding-right: 2.4em;
+}
+
+.biggerCheckBox {
+    transform: scale(1.3); 
+    -webkit-transform: scale(1.5);
+}
+
+.clsHeaderWidth {
+    width: 100%;
+}
+
+#container {
+    width: 100px;
+    background-color: yellow;
+}
+
+#no_overflow th, #no_overflow td {
+    word-break: break-all; /* IE supports this */
+    word-break: break-word; /* IE doesn't support, and will ignore */    
+}
+
+.accodionLeftClassCss {
+    padding-left: 17.4%;
+    padding-right: 4em;
+    padding-top: 7.2em;
+}
+
+.accodionAsEnteredClassCss {
+    
+    padding-left: 18.4em;
+    padding-right: 4em;
+    padding-top: 7.2em;
+}
+
+.txtWidthForTextBox {
+    float:right;
+    width: 15%;
+}
+
+.txtWidthForAuthMth {
+    width: 18.2em;
+}
+
+.clsLogoutUserName {
+    padding-right: 2em;
+    color: black;
+    float: right;
+    font-weight: bold;
+    border: 5px solid #7FA9AE;
+    background-color: #7FA9AE;
+    width: 100%;
+    text-align: right
+}
+
+.paddingtop3pt4em {
+    padding-top: 0em;
+}
+
+.lnkLogout {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.DialogCustomStyle {
+    margin-top: 100px;
+    left: 300px !important;
+    top: 35px !important;
+}
+
+.DialogCustomStyleDetails {
+    margin-top: 600px;
+    left: 300px !important;
+    top: 35px !important;
+}
+
+.DialogHelpdialog {
+    margin-top: 150px;
+    left: 300px !important;
+    top: 600px !important;
+    height: 500px;
+}
+
+.DialogCustomStyleNonItemIE {
+    margin-top: 100px;
+    left: 100px !important;
+    top: 45px !important;
+}
+
+.ScheduleCPLLCsLLCs {
+    float: right;
+    padding-bottom: 1em;
+}
+
+.BOEHeaderClassSettings {
+    /*padding-top: 10px;*/
+    clear: both;
+}
+
+.txtWidthForLoginFilerID {
+    width: 50%;
+}
+
+.AddLeftPaddingFiler {
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    padding-right: 0em;
+    padding-right:40%;
+    float: right;
+    clear: both;
+    padding-bottom: 1em;
+}
+
+.verticalCSSDestopForFilerID {
+    padding: 0.3em 0em 0.3em 1em;
+    width: 50%;
+}
+
+.clearBothPaddingTop1em {
+    clear: both;
+    padding-top: 1em;
+}
+
+.paddingRight4pt4em {
+    padding-right: 4.4em;
+}
+
+.scheduleFDialogHeaderbgr {
+    background-color: #007681;
+}
+
+.loginFilerIDCSS {
+    padding: 10em 0em 0em 1em;
+    width: 40%;
+    clear: both;
+}
+
+.loginFilerIDTextBoxCss {
+    padding: 10em 0em 0.3em 1em;
+    width: 50%;
+}
+
+/*ADDED FOR CAMPAIGN MATERIALS LINK CLASS*/
+.CampMatrAsLink {
+    color: blue;
+    text-decoration: underline;
+}
+
+.clspaddingBottom0pt5 {
+    padding-bottom: 0.5em;
+}
+
+.clspaddingleft1em {
+    padding-left: 1em;
+}
+
+.clspaddingleft1emWidth {
+    padding-left: 1em;
+    width: 80%;
+}
+
+.clspaddingleft2em {
+    padding-left: 2em;
+}
+
+.spanMobileWidthForSort {
+    width: 40%;
+}
+
+.verticalCSSDestopTISForCommonGrid {
+    padding: 1em 0em 0em 3em !important;
+    width: 15% !important;
+}
+
+.verticalCSSDestopTISForCommonGrid24HIE {
+    padding: 1em 0em 0em 2em !important;
+    width: 15% !important;
+}
+
+.CampMatrAsLinkNo {
+    color: black;
+    /*text-decoration: underline;*/
+}
+
+.clsMobWidth24HNDD {
+    padding: 0.5em 0em 0em 1em;
+    width: 100%;
+}
+
+.clsMobWidth24HNBT {
+    padding: 0.5em 0em 0em 1em;
+    width: 100%;
+}
+
+.clsMobWidthIEDD {
+    padding: 0.5em 0em 0em 1em;
+    width: 100%;
+}
+
+.clsMobWidthIEBT {
+    padding: 0.5em 0em 0em 1em;
+    width: 100%;
+}
+
+.paddingtop0pt4em {
+    padding-top: 0.4em;
+}
+
+a.hiddenTab {
+    visibility: hidden;
+    display: none;
+}
+
+#cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 9999;
+}
+
+.verticalCSSDestopForLableSchedImport {
+    padding: 0.3em 0em 0em 0em;
+    width: 30%;
+    clear: both;
+}

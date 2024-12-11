@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+@*<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />*@
+@using (Html.BeginForm("divUC_InLieuOfStatement", "divUC_InLieuOfStatement", FormMethod.Get, new { id = "submitForm" }))
+{
+    <div id="divGridLoanReceived" class="divGridCSS " style="padding-right: 26em;">
+        <div style="padding-bottom: 2em; padding-left: 2em;">
+            <span>
+                By submitting this filing you are stating that you are a candidate and/or an authorized committee solely supporting one candidate and at the close of this reporting period neither the total receipts nor the total expenditures of the campaign have exceeded $1,000 and that you have not previously filed an itemized statement. (Note: Once the $1,000 threshold has been exceeded, an itemized statement is required. Therefore, you may not file an In-Lieu-Of Statement for any subsequent filing periods.)
+            </span>
+        </div>
+        <br /><br /><br />
+        <div class="floatRightNew clsShowButtonClass">
+            <input type="button" id="btnBackToSummaryScheJ" class="btn btn-default clsCommonSearch" value="Submit" title="Submit" style="font-size:12px;" />&nbsp;
+        </div>
+        <br />
+        <div style="padding-left: 2em;">
+            <hr />
+        </div>
+
+    </div>
+    
+}
+
+<script>
+    $m = jQuery.noConflict();
+
+    $('#menuNav').css('opacity', 0);
+    $('#submitForm').css('opacity', 0);
+    $(window).on('load', function () {
+        $('#menuNav').css('opacity', 1);
+        $('#submitForm').css('opacity', 1);
+    });
+
+    $m(document).ready(function () {
+        $("#btnBackToSummaryScheJ").bind('click', function () {
+            alert("In-Lieu-Of Statement has been successfully submitted.");
+        })
+    });
+
+</script>
+

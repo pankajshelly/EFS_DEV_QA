@@ -1,0 +1,35 @@
+﻿<script>
+    $m = jQuery.noConflict();
+
+    $m(document).ready(function () {
+
+        $m("#txtCurrentDate").datepicker({
+            showOn: "button",
+            buttonImage: "../../Content/Images/Calendar.png",
+            buttonImageOnly: false,
+            buttonText: "Select From Date",
+            changeMonth: true,
+            changeYear: true,
+            numberOfMonths: 1,
+            maxDate: '08/04/2014',
+            dateFormat: 'mm/dd/yy',
+        });
+
+        // Watermark TextBox. ////////////////////////////////////////////////////
+        var watermark = 'MM/DD/YYYY';
+        $('#txtCurrentDate').blur(function () {
+            if ($(this).val().length == 0)
+                $(this).val(watermark).addClass('watermark');
+        }).focus(function () {
+            if ($(this).val() == watermark)
+                $(this).val('').removeClass('watermark');
+            }).val(watermark).addClass('watermark');
+        // Watermark TextBox. ////////////////////////////////////////////////////
+    });
+</script>
+@*<span>
+        <label for="from" id="lblCurrentDate">* Date</label>
+    </span>*@
+<span>
+    @Html.TextBox("searchTerm", null, new { id = "txtCurrentDate", @class = "txtWidthForDateSched_N", @maxlength = "10" })
+</span>
