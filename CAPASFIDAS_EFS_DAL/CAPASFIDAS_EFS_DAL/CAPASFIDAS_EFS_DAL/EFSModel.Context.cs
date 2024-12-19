@@ -233,6 +233,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<POLITICAL_CALENDAR_LABEL_MAP> POLITICAL_CALENDAR_LABEL_MAP { get; set; }
         public virtual DbSet<POLITICAL_CALENDAR_SUBHEADING> POLITICAL_CALENDAR_SUBHEADING { get; set; }
         public virtual DbSet<PR_CONTRIBUTION> PR_CONTRIBUTION { get; set; }
+        public virtual DbSet<PRIVATE_CONTACT_PEOPLE> PRIVATE_CONTACT_PEOPLE { get; set; }
         public virtual DbSet<PURPOSE_CODE> PURPOSE_CODE { get; set; }
         public virtual DbSet<PURPOSE_CODE_SCHEDULE_MAPPING> PURPOSE_CODE_SCHEDULE_MAPPING { get; set; }
         public virtual DbSet<RECEIPT_CODE> RECEIPT_CODE { get; set; }
@@ -287,18 +288,9 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<XML> XMLs { get; set; }
         public virtual DbSet<ZIPCODE> ZIPCODEs { get; set; }
         public virtual DbSet<APPLICATION_USER_MAPPING> APPLICATION_USER_MAPPING { get; set; }
-        public virtual DbSet<EOU_FVS_FORVOTE_TABLE> EOU_FVS_FORVOTE_TABLE { get; set; }
-        public virtual DbSet<ERROR_LOG_7122021> ERROR_LOG_7122021 { get; set; }
-        public virtual DbSet<ERROR_LOG_7142021> ERROR_LOG_7142021 { get; set; }
-        public virtual DbSet<error_log_backup> error_log_backup { get; set; }
-        public virtual DbSet<FILING_PERIOD_backup> FILING_PERIOD_backup { get; set; }
         public virtual DbSet<MANUAL_PROD_UPDATES> MANUAL_PROD_UPDATES { get; set; }
-        public virtual DbSet<PARTY_CALL_backup> PARTY_CALL_backup { get; set; }
         public virtual DbSet<PMF_PAYMENT> PMF_PAYMENT { get; set; }
-        public virtual DbSet<SQLAccess> SQLAccesses { get; set; }
         public virtual DbSet<STATE_COMMITTEE_PARTY> STATE_COMMITTEE_PARTY { get; set; }
-        public virtual DbSet<TEMPTABLE> TEMPTABLEs { get; set; }
-        public virtual DbSet<test1> test1 { get; set; }
         public virtual DbSet<VW_BANKINFORMATION> VW_BANKINFORMATION { get; set; }
         public virtual DbSet<VW_BCP_ENFORCEMENT_JOB> VW_BCP_ENFORCEMENT_JOB { get; set; }
         public virtual DbSet<VW_BCP_PCFB_CHANGES> VW_BCP_PCFB_CHANGES { get; set; }
@@ -310,6 +302,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<VW_BUP_ALL_HEADER> VW_BUP_ALL_HEADER { get; set; }
         public virtual DbSet<VW_BUP_ALL_HEADER_COURT> VW_BUP_ALL_HEADER_COURT { get; set; }
         public virtual DbSet<VW_BUP_ALL_HEADER_ENFORCEMENT> VW_BUP_ALL_HEADER_ENFORCEMENT { get; set; }
+        public virtual DbSet<VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE> VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE { get; set; }
         public virtual DbSet<VW_BUP_FILER_DATA> VW_BUP_FILER_DATA { get; set; }
         public virtual DbSet<VW_BUP_FILER_DATA_04012021> VW_BUP_FILER_DATA_04012021 { get; set; }
         public virtual DbSet<VW_BUP_FILER_DATA_COURT> VW_BUP_FILER_DATA_COURT { get; set; }
@@ -17422,6 +17415,11 @@ namespace CAPASFIDAS_EFS_DAL
                 new ObjectParameter("FILER_ID", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_S_NonItemizedIECommEditTrans_WCS_Result>("SP_S_NonItemizedIECommEditTrans_WCS", tRANS_NUMBERParameter, fILER_IDParameter);
+        }
+    
+        public virtual ObjectResult<SP_S_PurposeCode_PCF_Result> SP_S_PurposeCode_PCF()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_S_PurposeCode_PCF_Result>("SP_S_PurposeCode_PCF");
         }
     }
 }

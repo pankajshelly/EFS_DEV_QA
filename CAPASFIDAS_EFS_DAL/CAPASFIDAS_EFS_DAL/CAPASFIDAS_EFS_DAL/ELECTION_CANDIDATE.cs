@@ -84,6 +84,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual ICollection<ELECTION_CAND_MAPPING> ELECTION_CAND_MAPPING { get; set; }
         public virtual ICollection<ELECTION_CAND_NAME_MAPPING> ELECTION_CAND_NAME_MAPPING { get; set; }
         public virtual ICollection<ELECTION_CAND_SIGNATURE> ELECTION_CAND_SIGNATURE { get; set; }
+        public virtual ELECTION_OFFICE ELECTION_OFFICE { get; set; }
         public virtual MUNICIPALITY MUNICIPALITY { get; set; }
         public virtual TREASURER TREASURER { get; set; }
         public virtual ICollection<FILER_COMMENTS_MAPPING> FILER_COMMENTS_MAPPING { get; set; }
@@ -95,6 +96,5 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual ICollection<SUPPORTED_CANDIDATE_MAPPING> SUPPORTED_CANDIDATE_MAPPING { get; set; }
         public virtual ICollection<SUPPORTED_CANDIDATE_MAPPING> SUPPORTED_CANDIDATE_MAPPING1 { get; set; }
         public virtual ICollection<SUPPORTING_DOCUMENTS> SUPPORTING_DOCUMENTS { get; set; }
-        public virtual ELECTION_OFFICE ELECTION_OFFICE { get; set; }
     }
 }

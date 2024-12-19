@@ -12,17 +12,16 @@ namespace CAPASFIDAS_EFS_DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class ERROR_LOG_7122021
+    public partial class PRIVATE_CONTACT_PEOPLE
     {
-        public int ERROR_LOG_ID { get; set; }
-        public int APPLICATION_ID { get; set; }
-        public string ERROR_MESSAGE { get; set; }
-        public string OPERATION_CLASS { get; set; }
-        public string FUNCTION_METHOD { get; set; }
-        public string REQUEST_MESSAGE { get; set; }
-        public string RESPONSE_MESSAGE { get; set; }
-        public string DISPLAY_MESSAGE { get; set; }
+        public int PCP_ID { get; set; }
+        public Nullable<long> FLNG_ENT_ID { get; set; }
+        public Nullable<long> PERSON_ID { get; set; }
+        public Nullable<long> ELECT_CAND_ID { get; set; }
+        public string R_STATUS { get; set; }
         public string CREATED_BY { get; set; }
         public System.DateTime CREATED_DATE { get; set; }
+        public string MODIFIED_BY { get; set; }
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
     }
 }

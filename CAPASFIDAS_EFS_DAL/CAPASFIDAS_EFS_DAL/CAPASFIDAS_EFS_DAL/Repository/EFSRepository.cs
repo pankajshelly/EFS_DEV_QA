@@ -17960,6 +17960,41 @@ namespace Repository
 
         }
         #endregion GetCommEditIETransData_WCS
+
+        /// <summary>
+        /// GetPurposeCodeData_PCF
+        /// </summary>
+        /// <returns></returns>
+        public IList<PurposeCodeEntity> GetPurposeCodeData_PCF()
+        {
+            try
+            {
+                using (EFSEntities entities = new EFSEntities())
+                {
+                    IList<PurposeCodeEntity> lstPurposeCodeEntity = new List<PurposeCodeEntity>();
+                    PurposeCodeEntity objPurposeCodeEntity;
+
+                    var results = entities.SP_S_PurposeCode_PCF();
+
+                    foreach (var item in results)
+                    {
+                        objPurposeCodeEntity = new PurposeCodeEntity();
+                        objPurposeCodeEntity.PurposeCodeId = Convert.ToString(item.PURPOSE_CODE_ID);
+                        objPurposeCodeEntity.PurposeCodeDesc = item.PURPOSE_CODE_DESC;
+                        objPurposeCodeEntity.PurposeCodeAbbrev = item.PURPOSE_CODE_ABBREV;
+                        lstPurposeCodeEntity.Add(objPurposeCodeEntity);
+                    }
+
+                    return lstPurposeCodeEntity;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new CommonException(string.Format(ex.Message));
+            }
+
+        }
     }
 }
 

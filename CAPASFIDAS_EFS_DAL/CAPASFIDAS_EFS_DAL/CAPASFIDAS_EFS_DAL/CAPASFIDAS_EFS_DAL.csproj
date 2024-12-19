@@ -437,19 +437,7 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\EFSEntities.cs" />
-    <Compile Include="EOU_FVS_FORVOTE_TABLE.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ERROR_LOG.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ERROR_LOG_7122021.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ERROR_LOG_7142021.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="error_log_backup.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ESCROW.cs">
@@ -533,9 +521,6 @@
     <Compile Include="FILING_PERIOD.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FILING_PERIOD_backup.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="FILING_PERIOD_CTY_MAPPING.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -556,6 +541,9 @@
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_HISTORY.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILING_TRANSACTIONS_IMPORT.cs">
+      <DependentUpon>EFSRLSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_MAPPING_OLD.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
@@ -665,9 +653,6 @@
     <Compile Include="PARTY_CALL.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PARTY_CALL_backup.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="PARTY_ELECTION.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -759,6 +744,9 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="POLITICAL_CALENDAR_SUBHEADING.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRIVATE_CONTACT_PEOPLE.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1869,6 +1857,9 @@
     <Compile Include="SP_S_PurposeCodeSubcontractorSchedF_Result.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_S_PurposeCode_PCF_Result.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_S_PurposeCode_Result.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -1989,9 +1980,6 @@
     <Compile Include="SP_U_UpdateRequiredFilerForReconcile.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SQLAccess.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="STATE.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -2022,9 +2010,6 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TEMPTABLE.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="temp_SP_S_GetTransactionsGridData_Result.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -2032,9 +2017,6 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TERMINATION_REVIEW.cs">
-      <DependentUpon>EFSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="test1.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TITLE.cs">
@@ -2092,6 +2074,9 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VW_BUP_ALL_HEADER_ENFORCEMENT.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VW_BUP_FILER_DATA.cs">

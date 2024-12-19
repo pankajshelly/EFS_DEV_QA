@@ -32,9 +32,9 @@ namespace CAPASFIDAS_EFS_DAL
         public Nullable<int> VOTE_FOR { get; set; }
         public Nullable<int> MUNICIPALITY_ID { get; set; }
     
+        public virtual ICollection<ELECTION_CANDIDATE> ELECTION_CANDIDATE { get; set; }
         public virtual MUNICIPALITY MUNICIPALITY { get; set; }
         public virtual OFFICE_DISTRICT_MAPPING OFFICE_DISTRICT_MAPPING { get; set; }
         public virtual PARTY_ELECTION PARTY_ELECTION { get; set; }
-        public virtual ICollection<ELECTION_CANDIDATE> ELECTION_CANDIDATE { get; set; }
     }
 }

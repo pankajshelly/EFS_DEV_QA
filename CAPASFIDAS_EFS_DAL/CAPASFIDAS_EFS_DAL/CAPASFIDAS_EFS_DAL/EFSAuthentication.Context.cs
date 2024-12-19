@@ -28,6 +28,7 @@ namespace CAPASFIDAS_EFS_DAL
         }
     
         public virtual DbSet<FILING_TRANSACTIONS> FILING_TRANSACTIONS { get; set; }
+        public virtual DbSet<FILING_TRANSACTIONS_IMPORT> FILING_TRANSACTIONS_IMPORT { get; set; }
         public virtual DbSet<ROLE> ROLEs { get; set; }
         public virtual DbSet<FILER_SECURITY> FILER_SECURITY { get; set; }
     

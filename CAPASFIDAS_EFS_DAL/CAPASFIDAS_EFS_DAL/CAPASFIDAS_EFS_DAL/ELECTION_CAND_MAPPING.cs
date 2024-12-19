@@ -31,6 +31,7 @@ namespace CAPASFIDAS_EFS_DAL
         public string MODIFIED_BY { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
         public string R_WINNER { get; set; }
+        public Nullable<System.DateTime> WINNER_EFFECTIVE_DATE { get; set; }
         public Nullable<System.DateTime> WINNER_CERT_DATE { get; set; }
         public string R_UNCONTESTED { get; set; }
         public string BALLOT_NAME_1 { get; set; }

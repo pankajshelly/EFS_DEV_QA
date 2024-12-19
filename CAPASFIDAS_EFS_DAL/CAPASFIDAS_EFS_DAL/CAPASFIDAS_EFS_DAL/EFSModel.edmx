@@ -1163,6 +1163,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="7" />
           <Property Name="R_WINNER" Type="char" MaxLength="1" />
+          <Property Name="WINNER_EFFECTIVE_DATE" Type="datetime2" Precision="7" />
           <Property Name="WINNER_CERT_DATE" Type="datetime2" Precision="7" />
           <Property Name="R_UNCONTESTED" Type="char" MaxLength="1" />
           <Property Name="BALLOT_NAME_1" Type="nvarchar" MaxLength="70" />
@@ -1760,97 +1761,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.EOU_FVS_FORVOTE_TABLE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="EOU_FVS_FORVOTE_TABLE">
-          <Key>
-            <PropertyRef Name="ROWID" />
-          </Key>
-          <Property Name="LANGUAGE" Type="numeric" Precision="1" Scale="0" />
-          <Property Name="ZIP" Type="varchar" MaxLength="10" />
-          <Property Name="FNAME" Type="varchar" MaxLength="15" />
-          <Property Name="MNAME" Type="varchar" MaxLength="15" />
-          <Property Name="LNAME" Type="varchar" MaxLength="20" />
-          <Property Name="ADD1" Type="varchar" MaxLength="30" />
-          <Property Name="ADD2" Type="varchar" MaxLength="30" />
-          <Property Name="CITY" Type="varchar" MaxLength="25" />
-          <Property Name="STATE" Type="char" MaxLength="2" />
-          <Property Name="CNTYCODE" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="QUANTITY" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="TRANDATE" Type="datetime2" Precision="7" />
-          <Property Name="TRANUID" Type="varchar" MaxLength="15" />
-          <Property Name="PRTDATE" Type="datetime2" Precision="7" />
-          <Property Name="PRTUID" Type="varchar" MaxLength="12" />
-          <Property Name="STATUS" Type="char" MaxLength="1" />
-          <Property Name="CREREC_UID" Type="varchar" MaxLength="25" />
-          <Property Name="CREREC_DATE" Type="datetime2" Precision="7" />
-          <Property Name="UPDREC_UID" Type="varchar" MaxLength="25" />
-          <Property Name="UPDREC_DATE" Type="datetime2" Precision="7" />
-          <Property Name="ROWID" Type="uniqueidentifier" Nullable="false" />
-        </EntityType>
         <EntityType Name="ERROR_LOG">
           <Key>
             <PropertyRef Name="ERROR_LOG_ID" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="APPLICATION_ID" Type="int" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="varchar(max)" />
-          <Property Name="OPERATION_CLASS" Type="varchar" MaxLength="100" />
-          <Property Name="FUNCTION_METHOD" Type="varchar" MaxLength="100" />
-          <Property Name="REQUEST_MESSAGE" Type="varchar(max)" />
-          <Property Name="RESPONSE_MESSAGE" Type="varchar(max)" />
-          <Property Name="DISPLAY_MESSAGE" Type="varchar(max)" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.ERROR_LOG_7122021' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ERROR_LOG_7122021">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="int" Nullable="false" />
-          <Property Name="APPLICATION_ID" Type="int" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="varchar(max)" />
-          <Property Name="OPERATION_CLASS" Type="varchar" MaxLength="100" />
-          <Property Name="FUNCTION_METHOD" Type="varchar" MaxLength="100" />
-          <Property Name="REQUEST_MESSAGE" Type="varchar(max)" />
-          <Property Name="RESPONSE_MESSAGE" Type="varchar(max)" />
-          <Property Name="DISPLAY_MESSAGE" Type="varchar(max)" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.ERROR_LOG_7142021' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ERROR_LOG_7142021">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="int" Nullable="false" />
-          <Property Name="APPLICATION_ID" Type="int" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="varchar(max)" />
-          <Property Name="OPERATION_CLASS" Type="varchar" MaxLength="100" />
-          <Property Name="FUNCTION_METHOD" Type="varchar" MaxLength="100" />
-          <Property Name="REQUEST_MESSAGE" Type="varchar(max)" />
-          <Property Name="RESPONSE_MESSAGE" Type="varchar(max)" />
-          <Property Name="DISPLAY_MESSAGE" Type="varchar(max)" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.error_log_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="error_log_backup">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
           </Key>
           <Property Name="ERROR_LOG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="APPLICATION_ID" Type="int" Nullable="false" />
@@ -2252,30 +2165,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.error_log_backup' does not have a p
           <Property Name="CREATED_BY" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CREATED_DATE" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
-          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="7" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.FILING_PERIOD_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="FILING_PERIOD_backup">
-          <Key>
-            <PropertyRef Name="FILING_PERIOD_ID" />
-            <PropertyRef Name="ELECT_YEAR_ID" />
-            <PropertyRef Name="OFFICE_TYPE_ID" />
-            <PropertyRef Name="FILING_TYPE_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="FILING_PERIOD_ID" Type="int" Nullable="false" />
-          <Property Name="ELECT_YEAR_ID" Type="int" Nullable="false" />
-          <Property Name="OFFICE_TYPE_ID" Type="int" Nullable="false" />
-          <Property Name="FILING_TYPE_ID" Type="int" Nullable="false" />
-          <Property Name="FILING_DUE_DATE" Type="datetime2" Precision="7" />
-          <Property Name="CUT_OFF_DATE" Type="datetime2" Precision="7" />
-          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="FILING_PERIOD_CTY_MAPPING">
@@ -3022,30 +2911,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have 
           <Property Name="OFF_DIST_MAP_ID" Type="int" Nullable="false" />
           <Property Name="OFF_DIST_MAP_ID2" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.PARTY_CALL_backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="PARTY_CALL_backup">
-          <Key>
-            <PropertyRef Name="PARTY_CALL_ID" />
-            <PropertyRef Name="DELEGATE_NUM" />
-            <PropertyRef Name="ALTERNATE_NUM" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-            <PropertyRef Name="OFF_DIST_MAP_ID" />
-          </Key>
-          <Property Name="PARTY_CALL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PARTY_ID" Type="int" />
-          <Property Name="ELECTION_YEAR_ID" Type="int" />
-          <Property Name="DELEGATE_NUM" Type="int" Nullable="false" />
-          <Property Name="ALTERNATE_NUM" Type="int" Nullable="false" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime" Nullable="false" />
-          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
-          <Property Name="COUNTY_ID" Type="int" />
-          <Property Name="OFF_DIST_MAP_ID" Type="int" Nullable="false" />
-          <Property Name="OFF_DIST_MAP_ID2" Type="int" />
-        </EntityType>
         <EntityType Name="PARTY_ELECTION">
           <Key>
             <PropertyRef Name="PARTY_ELECT_ID" />
@@ -3618,6 +3483,20 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.PMF_PAYMENT' does not have a primar
           <Property Name="MODIFIED_BY" Type="nvarchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime" />
         </EntityType>
+        <EntityType Name="PRIVATE_CONTACT_PEOPLE">
+          <Key>
+            <PropertyRef Name="PCP_ID" />
+          </Key>
+          <Property Name="PCP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FLNG_ENT_ID" Type="bigint" />
+          <Property Name="PERSON_ID" Type="bigint" />
+          <Property Name="ELECT_CAND_ID" Type="bigint" />
+          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
+          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+        </EntityType>
         <EntityType Name="PURPOSE_CODE">
           <Key>
             <PropertyRef Name="PURPOSE_CODE_ID" />
@@ -4065,26 +3944,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.PMF_PAYMENT' does not have a primar
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.SQLAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="SQLAccess">
-          <Key>
-            <PropertyRef Name="SQLAccess_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="SQLAccess_ID" Type="int" Nullable="false" />
-          <Property Name="SQLAccess_Environment" Type="nvarchar" MaxLength="50" />
-          <Property Name="SQLAccess_AppName" Type="nvarchar" MaxLength="50" />
-          <Property Name="SQLAccess_UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="SQLAccess_Password" Type="nvarchar" MaxLength="50" />
-          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
-          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
-        </EntityType>
         <EntityType Name="STATE">
           <Key>
             <PropertyRef Name="STATE_ID" />
@@ -4237,6 +4096,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.STATE_COMMITTEE_PARTY' does not hav
           <Property Name="SUB_TREAS_ID" Type="bigint" />
           <Property Name="DATE_CERTIFIED" Type="datetime2" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="int" />
+          <Property Name="CABINET_LOCATION" Type="nchar" MaxLength="100" />
+          <Property Name="S3_ID" Type="bigint" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -4247,40 +4108,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.STATE_COMMITTEE_PARTY' does not hav
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.TEMPTABLE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TEMPTABLE">
-          <Key>
-            <PropertyRef Name="FILINGS_ID" />
-            <PropertyRef Name="POL_CAL_DATE_ID" />
-            <PropertyRef Name="REPORT_YEAR_ID" />
-            <PropertyRef Name="OFFICE_TYPE_ID" />
-            <PropertyRef Name="ELECT_TYPE_ID" />
-            <PropertyRef Name="DISCLOSURE_TYPE_ID" />
-            <PropertyRef Name="DISCLOSURE_PERIOD_ID" />
-            <PropertyRef Name="REPORT_YEAR" />
-            <PropertyRef Name="OFFICE_TYPE_DESC" />
-            <PropertyRef Name="ELECT_TYPE_DESC" />
-            <PropertyRef Name="DISCLOSURE_TYPE" />
-            <PropertyRef Name="DISCLOSURE_PERIOD" />
-          </Key>
-          <Property Name="FILINGS_ID" Type="bigint" Nullable="false" />
-          <Property Name="POL_CAL_DATE_ID" Type="int" Nullable="false" />
-          <Property Name="REPORT_YEAR_ID" Type="int" Nullable="false" />
-          <Property Name="OFFICE_TYPE_ID" Type="int" Nullable="false" />
-          <Property Name="ELECT_TYPE_ID" Type="int" Nullable="false" />
-          <Property Name="DISCLOSURE_TYPE_ID" Type="int" Nullable="false" />
-          <Property Name="DISCLOSURE_PERIOD_ID" Type="int" Nullable="false" />
-          <Property Name="REPORT_YEAR" Type="int" Nullable="false" />
-          <Property Name="OFFICE_TYPE_DESC" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ELECT_TYPE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ELECT_DATE" Type="date" />
-          <Property Name="DISCLOSURE_TYPE" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="DISCLOSURE_PERIOD" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="AMENDED" Type="char" MaxLength="1" />
-          <Property Name="SUBMIT_DATE" Type="datetime2" Precision="0" />
-          <Property Name="R_STATUS" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="TERMINATION_DETAILS">
           <Key>
@@ -5080,6 +4907,104 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_HEADER_ENFORCEMENT' does
           <Property Name="R_LOBBYIST" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="R_CONTRIBUTIONS" Type="varchar" MaxLength="17" Nullable="false" />
           <Property Name="R_WEEKLY" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE">
+          <Key>
+            <PropertyRef Name="FILER_ID" />
+            <PropertyRef Name="FILER_PREVIOUS_ID" />
+            <PropertyRef Name="CAND_COMM_NAME" />
+            <PropertyRef Name="ELECTION_YEAR" />
+            <PropertyRef Name="ELECTION_TYPE" />
+            <PropertyRef Name="COUNTY_DESC" />
+            <PropertyRef Name="FILING_ABBREV" />
+            <PropertyRef Name="FILING_DESC" />
+            <PropertyRef Name="R_AMEND" />
+            <PropertyRef Name="FILING_CAT_DESC" />
+            <PropertyRef Name="FILING_SCHED_ABBREV" />
+            <PropertyRef Name="FILING_SCHED_DESC" />
+            <PropertyRef Name="LOAN_LIB_NUMBER" />
+            <PropertyRef Name="TRANS_NUMBER" />
+            <PropertyRef Name="TRANS_MAPPING" />
+            <PropertyRef Name="SCHED_DATE" />
+            <PropertyRef Name="ORG_DATE" />
+            <PropertyRef Name="CNTRBR_TYPE_DESC" />
+            <PropertyRef Name="CNTRBN_TYPE_DESC" />
+            <PropertyRef Name="TRANSFER_TYPE_DESC" />
+            <PropertyRef Name="RECEIPT_TYPE_DESC" />
+            <PropertyRef Name="RECEIPT_CODE_DESC" />
+            <PropertyRef Name="PURPOSE_CODE_DESC" />
+            <PropertyRef Name="R_SUBCONTRACTOR" />
+            <PropertyRef Name="FLNG_ENT_NAME" />
+            <PropertyRef Name="FLNG_ENT_FIRST_NAME" />
+            <PropertyRef Name="FLNG_ENT_MIDDLE_NAME" />
+            <PropertyRef Name="FLNG_ENT_LAST_NAME" />
+            <PropertyRef Name="FLNG_ENT_ADDR1" />
+            <PropertyRef Name="FLNG_ENT_CITY" />
+            <PropertyRef Name="FLNG_ENT_STATE" />
+            <PropertyRef Name="FLNG_ENT_ZIP" />
+            <PropertyRef Name="FLNG_ENT_COUNTRY" />
+            <PropertyRef Name="PAYMENT_TYPE_DESC" />
+            <PropertyRef Name="PAY_NUMBER" />
+            <PropertyRef Name="OWED_AMT" />
+            <PropertyRef Name="ORG_AMT" />
+            <PropertyRef Name="LOAN_OTHER_DESC" />
+            <PropertyRef Name="TRANS_EXPLNTN" />
+            <PropertyRef Name="R_ITEMIZED" />
+            <PropertyRef Name="R_LIABILITY" />
+            <PropertyRef Name="ELECTION_YEAR_R" />
+            <PropertyRef Name="OFFICE_DESC" />
+            <PropertyRef Name="DISTRICT" />
+            <PropertyRef Name="DIST_OFF_CAND_BAL_PROP" />
+            <PropertyRef Name="SUBMIT_DATE" />
+          </Key>
+          <Property Name="FILER_ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FILER_PREVIOUS_ID" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="CAND_COMM_NAME" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="ELECTION_YEAR" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ELECTION_TYPE" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="COUNTY_DESC" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="FILING_ABBREV" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="FILING_DESC" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="R_AMEND" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="FILING_CAT_DESC" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="FILING_SCHED_ABBREV" Type="varchar" MaxLength="21" Nullable="false" />
+          <Property Name="FILING_SCHED_DESC" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="LOAN_LIB_NUMBER" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="TRANS_NUMBER" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="TRANS_MAPPING" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SCHED_DATE" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="ORG_DATE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="RECEIPT_CODE_DESC" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="PURPOSE_CODE_DESC" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="R_SUBCONTRACTOR" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="FLNG_ENT_NAME" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="varchar" MaxLength="21" Nullable="false" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FLNG_ENT_ADDR1" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="FLNG_ENT_CITY" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="FLNG_ENT_STATE" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="FLNG_ENT_ZIP" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="varchar" MaxLength="19" Nullable="false" />
+          <Property Name="PAY_NUMBER" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="OWED_AMT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ORG_AMT" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="LOAN_OTHER_DESC" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="TRANS_EXPLNTN" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="R_ITEMIZED" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="R_LIABILITY" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="ELECTION_YEAR_R" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="OFFICE_DESC" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="DISTRICT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="SUBMIT_DATE" Type="varchar" MaxLength="13" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_FILER_DATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -14893,6 +14818,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Parameter Name="ELECT_YEAR_ID" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_S_PurposeCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_S_PurposeCode_PCF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_S_PurposeCodeCreditCardItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_S_PurposeCodeNonItemIESchedF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_S_PurposeCodeNonItemIESchedFSubContr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -16169,6 +16095,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="POLITICAL_CALENDAR_LABEL_MAP" EntityType="Self.POLITICAL_CALENDAR_LABEL_MAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POLITICAL_CALENDAR_SUBHEADING" EntityType="Self.POLITICAL_CALENDAR_SUBHEADING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PR_CONTRIBUTION" EntityType="Self.PR_CONTRIBUTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRIVATE_CONTACT_PEOPLE" EntityType="Self.PRIVATE_CONTACT_PEOPLE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PURPOSE_CODE" EntityType="Self.PURPOSE_CODE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PURPOSE_CODE_SCHEDULE_MAPPING" EntityType="Self.PURPOSE_CODE_SCHEDULE_MAPPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RECEIPT_CODE" EntityType="Self.RECEIPT_CODE" Schema="dbo" store:Type="Tables" />
@@ -16236,88 +16163,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
     [APPLICATION_USER_MAPPING].[MODIFIED_DATE] AS [MODIFIED_DATE]
     FROM [dbo].[APPLICATION_USER_MAPPING] AS [APPLICATION_USER_MAPPING]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="EOU_FVS_FORVOTE_TABLE" EntityType="Self.EOU_FVS_FORVOTE_TABLE" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [EOU_FVS_FORVOTE_TABLE].[LANGUAGE] AS [LANGUAGE], 
-    [EOU_FVS_FORVOTE_TABLE].[ZIP] AS [ZIP], 
-    [EOU_FVS_FORVOTE_TABLE].[FNAME] AS [FNAME], 
-    [EOU_FVS_FORVOTE_TABLE].[MNAME] AS [MNAME], 
-    [EOU_FVS_FORVOTE_TABLE].[LNAME] AS [LNAME], 
-    [EOU_FVS_FORVOTE_TABLE].[ADD1] AS [ADD1], 
-    [EOU_FVS_FORVOTE_TABLE].[ADD2] AS [ADD2], 
-    [EOU_FVS_FORVOTE_TABLE].[CITY] AS [CITY], 
-    [EOU_FVS_FORVOTE_TABLE].[STATE] AS [STATE], 
-    [EOU_FVS_FORVOTE_TABLE].[CNTYCODE] AS [CNTYCODE], 
-    [EOU_FVS_FORVOTE_TABLE].[QUANTITY] AS [QUANTITY], 
-    [EOU_FVS_FORVOTE_TABLE].[TRANDATE] AS [TRANDATE], 
-    [EOU_FVS_FORVOTE_TABLE].[TRANUID] AS [TRANUID], 
-    [EOU_FVS_FORVOTE_TABLE].[PRTDATE] AS [PRTDATE], 
-    [EOU_FVS_FORVOTE_TABLE].[PRTUID] AS [PRTUID], 
-    [EOU_FVS_FORVOTE_TABLE].[STATUS] AS [STATUS], 
-    [EOU_FVS_FORVOTE_TABLE].[CREREC_UID] AS [CREREC_UID], 
-    [EOU_FVS_FORVOTE_TABLE].[CREREC_DATE] AS [CREREC_DATE], 
-    [EOU_FVS_FORVOTE_TABLE].[UPDREC_UID] AS [UPDREC_UID], 
-    [EOU_FVS_FORVOTE_TABLE].[UPDREC_DATE] AS [UPDREC_DATE], 
-    [EOU_FVS_FORVOTE_TABLE].[ROWID] AS [ROWID]
-    FROM [dbo].[EOU_FVS_FORVOTE_TABLE] AS [EOU_FVS_FORVOTE_TABLE]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ERROR_LOG_7122021" EntityType="Self.ERROR_LOG_7122021" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ERROR_LOG_7122021].[ERROR_LOG_ID] AS [ERROR_LOG_ID], 
-    [ERROR_LOG_7122021].[APPLICATION_ID] AS [APPLICATION_ID], 
-    [ERROR_LOG_7122021].[ERROR_MESSAGE] AS [ERROR_MESSAGE], 
-    [ERROR_LOG_7122021].[OPERATION_CLASS] AS [OPERATION_CLASS], 
-    [ERROR_LOG_7122021].[FUNCTION_METHOD] AS [FUNCTION_METHOD], 
-    [ERROR_LOG_7122021].[REQUEST_MESSAGE] AS [REQUEST_MESSAGE], 
-    [ERROR_LOG_7122021].[RESPONSE_MESSAGE] AS [RESPONSE_MESSAGE], 
-    [ERROR_LOG_7122021].[DISPLAY_MESSAGE] AS [DISPLAY_MESSAGE], 
-    [ERROR_LOG_7122021].[CREATED_BY] AS [CREATED_BY], 
-    [ERROR_LOG_7122021].[CREATED_DATE] AS [CREATED_DATE]
-    FROM [dbo].[ERROR_LOG_7122021] AS [ERROR_LOG_7122021]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ERROR_LOG_7142021" EntityType="Self.ERROR_LOG_7142021" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ERROR_LOG_7142021].[ERROR_LOG_ID] AS [ERROR_LOG_ID], 
-    [ERROR_LOG_7142021].[APPLICATION_ID] AS [APPLICATION_ID], 
-    [ERROR_LOG_7142021].[ERROR_MESSAGE] AS [ERROR_MESSAGE], 
-    [ERROR_LOG_7142021].[OPERATION_CLASS] AS [OPERATION_CLASS], 
-    [ERROR_LOG_7142021].[FUNCTION_METHOD] AS [FUNCTION_METHOD], 
-    [ERROR_LOG_7142021].[REQUEST_MESSAGE] AS [REQUEST_MESSAGE], 
-    [ERROR_LOG_7142021].[RESPONSE_MESSAGE] AS [RESPONSE_MESSAGE], 
-    [ERROR_LOG_7142021].[DISPLAY_MESSAGE] AS [DISPLAY_MESSAGE], 
-    [ERROR_LOG_7142021].[CREATED_BY] AS [CREATED_BY], 
-    [ERROR_LOG_7142021].[CREATED_DATE] AS [CREATED_DATE]
-    FROM [dbo].[ERROR_LOG_7142021] AS [ERROR_LOG_7142021]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="error_log_backup" EntityType="Self.error_log_backup" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [error_log_backup].[ERROR_LOG_ID] AS [ERROR_LOG_ID], 
-    [error_log_backup].[APPLICATION_ID] AS [APPLICATION_ID], 
-    [error_log_backup].[ERROR_MESSAGE] AS [ERROR_MESSAGE], 
-    [error_log_backup].[OPERATION_CLASS] AS [OPERATION_CLASS], 
-    [error_log_backup].[FUNCTION_METHOD] AS [FUNCTION_METHOD], 
-    [error_log_backup].[REQUEST_MESSAGE] AS [REQUEST_MESSAGE], 
-    [error_log_backup].[RESPONSE_MESSAGE] AS [RESPONSE_MESSAGE], 
-    [error_log_backup].[DISPLAY_MESSAGE] AS [DISPLAY_MESSAGE], 
-    [error_log_backup].[CREATED_BY] AS [CREATED_BY], 
-    [error_log_backup].[CREATED_DATE] AS [CREATED_DATE]
-    FROM [dbo].[error_log_backup] AS [error_log_backup]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="FILING_PERIOD_backup" EntityType="Self.FILING_PERIOD_backup" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [FILING_PERIOD_backup].[FILING_PERIOD_ID] AS [FILING_PERIOD_ID], 
-    [FILING_PERIOD_backup].[ELECT_YEAR_ID] AS [ELECT_YEAR_ID], 
-    [FILING_PERIOD_backup].[OFFICE_TYPE_ID] AS [OFFICE_TYPE_ID], 
-    [FILING_PERIOD_backup].[FILING_TYPE_ID] AS [FILING_TYPE_ID], 
-    [FILING_PERIOD_backup].[FILING_DUE_DATE] AS [FILING_DUE_DATE], 
-    [FILING_PERIOD_backup].[CUT_OFF_DATE] AS [CUT_OFF_DATE], 
-    [FILING_PERIOD_backup].[R_STATUS] AS [R_STATUS], 
-    [FILING_PERIOD_backup].[CREATED_BY] AS [CREATED_BY], 
-    [FILING_PERIOD_backup].[CREATED_DATE] AS [CREATED_DATE], 
-    [FILING_PERIOD_backup].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [FILING_PERIOD_backup].[MODIFIED_DATE] AS [MODIFIED_DATE]
-    FROM [dbo].[FILING_PERIOD_backup] AS [FILING_PERIOD_backup]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="Self.MANUAL_PROD_UPDATES" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [MANUAL_PROD_UPDATES].[MAN_PROD_UPDATE_ID] AS [MAN_PROD_UPDATE_ID], 
@@ -16331,22 +16176,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
     [MANUAL_PROD_UPDATES].[CREATED_BY] AS [CREATED_BY], 
     [MANUAL_PROD_UPDATES].[CREATED_DATE] AS [CREATED_DATE]
     FROM [dbo].[MANUAL_PROD_UPDATES] AS [MANUAL_PROD_UPDATES]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="PARTY_CALL_backup" EntityType="Self.PARTY_CALL_backup" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PARTY_CALL_backup].[PARTY_CALL_ID] AS [PARTY_CALL_ID], 
-    [PARTY_CALL_backup].[PARTY_ID] AS [PARTY_ID], 
-    [PARTY_CALL_backup].[ELECTION_YEAR_ID] AS [ELECTION_YEAR_ID], 
-    [PARTY_CALL_backup].[DELEGATE_NUM] AS [DELEGATE_NUM], 
-    [PARTY_CALL_backup].[ALTERNATE_NUM] AS [ALTERNATE_NUM], 
-    [PARTY_CALL_backup].[CREATED_BY] AS [CREATED_BY], 
-    [PARTY_CALL_backup].[CREATED_DATE] AS [CREATED_DATE], 
-    [PARTY_CALL_backup].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [PARTY_CALL_backup].[MODIFIED_DATE] AS [MODIFIED_DATE], 
-    [PARTY_CALL_backup].[COUNTY_ID] AS [COUNTY_ID], 
-    [PARTY_CALL_backup].[OFF_DIST_MAP_ID] AS [OFF_DIST_MAP_ID], 
-    [PARTY_CALL_backup].[OFF_DIST_MAP_ID2] AS [OFF_DIST_MAP_ID2]
-    FROM [dbo].[PARTY_CALL_backup] AS [PARTY_CALL_backup]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PMF_PAYMENT" EntityType="Self.PMF_PAYMENT" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -16366,20 +16195,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
     [PMF_PAYMENT].[MODIFIED_DATE] AS [MODIFIED_DATE]
     FROM [dbo].[PMF_PAYMENT] AS [PMF_PAYMENT]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="SQLAccess" EntityType="Self.SQLAccess" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SQLAccess].[SQLAccess_ID] AS [SQLAccess_ID], 
-    [SQLAccess].[SQLAccess_Environment] AS [SQLAccess_Environment], 
-    [SQLAccess].[SQLAccess_AppName] AS [SQLAccess_AppName], 
-    [SQLAccess].[SQLAccess_UserName] AS [SQLAccess_UserName], 
-    [SQLAccess].[SQLAccess_Password] AS [SQLAccess_Password], 
-    [SQLAccess].[R_STATUS] AS [R_STATUS], 
-    [SQLAccess].[CREATED_BY] AS [CREATED_BY], 
-    [SQLAccess].[CREATED_DATE] AS [CREATED_DATE], 
-    [SQLAccess].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [SQLAccess].[MODIFIED_DATE] AS [MODIFIED_DATE]
-    FROM [dbo].[SQLAccess] AS [SQLAccess]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="Self.STATE_COMMITTEE_PARTY" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [STATE_COMMITTEE_PARTY].[STATE_COMM_PARTY_ID] AS [STATE_COMM_PARTY_ID], 
@@ -16391,26 +16206,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
     [STATE_COMMITTEE_PARTY].[MODIFIED_BY] AS [MODIFIED_BY], 
     [STATE_COMMITTEE_PARTY].[MODIFIED_DATE] AS [MODIFIED_DATE]
     FROM [dbo].[STATE_COMMITTEE_PARTY] AS [STATE_COMMITTEE_PARTY]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TEMPTABLE" EntityType="Self.TEMPTABLE" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TEMPTABLE].[FILINGS_ID] AS [FILINGS_ID], 
-    [TEMPTABLE].[POL_CAL_DATE_ID] AS [POL_CAL_DATE_ID], 
-    [TEMPTABLE].[REPORT_YEAR_ID] AS [REPORT_YEAR_ID], 
-    [TEMPTABLE].[OFFICE_TYPE_ID] AS [OFFICE_TYPE_ID], 
-    [TEMPTABLE].[ELECT_TYPE_ID] AS [ELECT_TYPE_ID], 
-    [TEMPTABLE].[DISCLOSURE_TYPE_ID] AS [DISCLOSURE_TYPE_ID], 
-    [TEMPTABLE].[DISCLOSURE_PERIOD_ID] AS [DISCLOSURE_PERIOD_ID], 
-    [TEMPTABLE].[REPORT_YEAR] AS [REPORT_YEAR], 
-    [TEMPTABLE].[OFFICE_TYPE_DESC] AS [OFFICE_TYPE_DESC], 
-    [TEMPTABLE].[ELECT_TYPE_DESC] AS [ELECT_TYPE_DESC], 
-    [TEMPTABLE].[ELECT_DATE] AS [ELECT_DATE], 
-    [TEMPTABLE].[DISCLOSURE_TYPE] AS [DISCLOSURE_TYPE], 
-    [TEMPTABLE].[DISCLOSURE_PERIOD] AS [DISCLOSURE_PERIOD], 
-    [TEMPTABLE].[AMENDED] AS [AMENDED], 
-    [TEMPTABLE].[SUBMIT_DATE] AS [SUBMIT_DATE], 
-    [TEMPTABLE].[R_STATUS] AS [R_STATUS]
-    FROM [dbo].[TEMPTABLE] AS [TEMPTABLE]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VW_BANKINFORMATION" EntityType="Self.VW_BANKINFORMATION" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -16753,6 +16548,56 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
     [VW_BUP_ALL_HEADER_ENFORCEMENT].[R_CONTRIBUTIONS] AS [R_CONTRIBUTIONS], 
     [VW_BUP_ALL_HEADER_ENFORCEMENT].[R_WEEKLY] AS [R_WEEKLY]
     FROM [dbo].[VW_BUP_ALL_HEADER_ENFORCEMENT] AS [VW_BUP_ALL_HEADER_ENFORCEMENT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE" EntityType="Self.VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILER_ID] AS [FILER_ID], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILER_PREVIOUS_ID] AS [FILER_PREVIOUS_ID], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[CAND_COMM_NAME] AS [CAND_COMM_NAME], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[ELECTION_YEAR] AS [ELECTION_YEAR], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[ELECTION_TYPE] AS [ELECTION_TYPE], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[COUNTY_DESC] AS [COUNTY_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILING_ABBREV] AS [FILING_ABBREV], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILING_DESC] AS [FILING_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[R_AMEND] AS [R_AMEND], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILING_CAT_DESC] AS [FILING_CAT_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILING_SCHED_ABBREV] AS [FILING_SCHED_ABBREV], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FILING_SCHED_DESC] AS [FILING_SCHED_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[LOAN_LIB_NUMBER] AS [LOAN_LIB_NUMBER], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[TRANS_NUMBER] AS [TRANS_NUMBER], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[TRANS_MAPPING] AS [TRANS_MAPPING], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[SCHED_DATE] AS [SCHED_DATE], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[ORG_DATE] AS [ORG_DATE], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[CNTRBR_TYPE_DESC] AS [CNTRBR_TYPE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[CNTRBN_TYPE_DESC] AS [CNTRBN_TYPE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[TRANSFER_TYPE_DESC] AS [TRANSFER_TYPE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[RECEIPT_TYPE_DESC] AS [RECEIPT_TYPE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[RECEIPT_CODE_DESC] AS [RECEIPT_CODE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[PURPOSE_CODE_DESC] AS [PURPOSE_CODE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[R_SUBCONTRACTOR] AS [R_SUBCONTRACTOR], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_NAME] AS [FLNG_ENT_NAME], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_FIRST_NAME] AS [FLNG_ENT_FIRST_NAME], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_MIDDLE_NAME] AS [FLNG_ENT_MIDDLE_NAME], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_LAST_NAME] AS [FLNG_ENT_LAST_NAME], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_ADDR1] AS [FLNG_ENT_ADDR1], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_CITY] AS [FLNG_ENT_CITY], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_STATE] AS [FLNG_ENT_STATE], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_ZIP] AS [FLNG_ENT_ZIP], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[FLNG_ENT_COUNTRY] AS [FLNG_ENT_COUNTRY], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[PAYMENT_TYPE_DESC] AS [PAYMENT_TYPE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[PAY_NUMBER] AS [PAY_NUMBER], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[OWED_AMT] AS [OWED_AMT], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[ORG_AMT] AS [ORG_AMT], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[LOAN_OTHER_DESC] AS [LOAN_OTHER_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[TRANS_EXPLNTN] AS [TRANS_EXPLNTN], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[R_ITEMIZED] AS [R_ITEMIZED], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[R_LIABILITY] AS [R_LIABILITY], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[ELECTION_YEAR_R] AS [ELECTION_YEAR_R], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[OFFICE_DESC] AS [OFFICE_DESC], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[DISTRICT] AS [DISTRICT], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[DIST_OFF_CAND_BAL_PROP] AS [DIST_OFF_CAND_BAL_PROP], 
+    [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE].[SUBMIT_DATE] AS [SUBMIT_DATE]
+    FROM [dbo].[VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE] AS [VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VW_BUP_FILER_DATA" EntityType="Self.VW_BUP_FILER_DATA" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -23757,6 +23602,14 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <Parameter Name="ELECT_TYPE_ID" Mode="In" Type="Int32" />
             <Parameter Name="OFFICE_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SP_S_EFS_SCHED_R_CHILD_Data" ReturnType="Collection(EFSModel.SP_S_EFS_SCHED_R_CHILD_Data_Result)">
+            <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
+            <Parameter Name="FILER_ID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_S_NonItemizedIECommEditTrans_WCS" ReturnType="Collection(EFSModel.SP_S_NonItemizedIECommEditTrans_WCS_Result)">
+            <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
+            <Parameter Name="FILER_ID" Mode="In" Type="Int64" />
+          </FunctionImport>
           <EntitySet Name="ADDRESSes" EntityType="EFSModel.ADDRESS" />
           <EntitySet Name="ADDRESS_TYPE" EntityType="EFSModel.ADDRESS_TYPE" />
           <EntitySet Name="APPLICATIONs" EntityType="EFSModel.APPLICATION" />
@@ -23963,6 +23816,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="POLITICAL_CALENDAR_LABEL_MAP" EntityType="EFSModel.POLITICAL_CALENDAR_LABEL_MAP" />
           <EntitySet Name="POLITICAL_CALENDAR_SUBHEADING" EntityType="EFSModel.POLITICAL_CALENDAR_SUBHEADING" />
           <EntitySet Name="PR_CONTRIBUTION" EntityType="EFSModel.PR_CONTRIBUTION" />
+          <EntitySet Name="PRIVATE_CONTACT_PEOPLE" EntityType="EFSModel.PRIVATE_CONTACT_PEOPLE" />
           <EntitySet Name="PURPOSE_CODE" EntityType="EFSModel.PURPOSE_CODE" />
           <EntitySet Name="PURPOSE_CODE_SCHEDULE_MAPPING" EntityType="EFSModel.PURPOSE_CODE_SCHEDULE_MAPPING" />
           <EntitySet Name="RECEIPT_CODE" EntityType="EFSModel.RECEIPT_CODE" />
@@ -24017,18 +23871,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="XMLs" EntityType="EFSModel.XML" />
           <EntitySet Name="ZIPCODEs" EntityType="EFSModel.ZIPCODE" />
           <EntitySet Name="APPLICATION_USER_MAPPING" EntityType="EFSModel.APPLICATION_USER_MAPPING" />
-          <EntitySet Name="EOU_FVS_FORVOTE_TABLE" EntityType="EFSModel.EOU_FVS_FORVOTE_TABLE" />
-          <EntitySet Name="ERROR_LOG_7122021" EntityType="EFSModel.ERROR_LOG_7122021" />
-          <EntitySet Name="ERROR_LOG_7142021" EntityType="EFSModel.ERROR_LOG_7142021" />
-          <EntitySet Name="error_log_backup" EntityType="EFSModel.error_log_backup" />
-          <EntitySet Name="FILING_PERIOD_backup" EntityType="EFSModel.FILING_PERIOD_backup" />
           <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="EFSModel.MANUAL_PROD_UPDATES" />
-          <EntitySet Name="PARTY_CALL_backup" EntityType="EFSModel.PARTY_CALL_backup" />
           <EntitySet Name="PMF_PAYMENT" EntityType="EFSModel.PMF_PAYMENT" />
-          <EntitySet Name="SQLAccesses" EntityType="EFSModel.SQLAccess" />
           <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="EFSModel.STATE_COMMITTEE_PARTY" />
-          <EntitySet Name="TEMPTABLEs" EntityType="EFSModel.TEMPTABLE" />
-          <EntitySet Name="test1" EntityType="EFSModel.test1" />
           <EntitySet Name="VW_BANKINFORMATION" EntityType="EFSModel.VW_BANKINFORMATION" />
           <EntitySet Name="VW_BCP_ENFORCEMENT_JOB" EntityType="EFSModel.VW_BCP_ENFORCEMENT_JOB" />
           <EntitySet Name="VW_BCP_PCFB_CHANGES" EntityType="EFSModel.VW_BCP_PCFB_CHANGES" />
@@ -24040,6 +23885,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="VW_BUP_ALL_HEADER" EntityType="EFSModel.VW_BUP_ALL_HEADER" />
           <EntitySet Name="VW_BUP_ALL_HEADER_COURT" EntityType="EFSModel.VW_BUP_ALL_HEADER_COURT" />
           <EntitySet Name="VW_BUP_ALL_HEADER_ENFORCEMENT" EntityType="EFSModel.VW_BUP_ALL_HEADER_ENFORCEMENT" />
+          <EntitySet Name="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE" EntityType="EFSModel.VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE" />
           <EntitySet Name="VW_BUP_FILER_DATA" EntityType="EFSModel.VW_BUP_FILER_DATA" />
           <EntitySet Name="VW_BUP_FILER_DATA_04012021" EntityType="EFSModel.VW_BUP_FILER_DATA_04012021" />
           <EntitySet Name="VW_BUP_FILER_DATA_COURT" EntityType="EFSModel.VW_BUP_FILER_DATA_COURT" />
@@ -24968,6 +24814,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <End Role="PETITION_FORM_MAPPING" EntitySet="PETITION_FORM_MAPPING" />
             <End Role="ELECTION_CAND_SIGNATURE" EntitySet="ELECTION_CAND_SIGNATURE" />
           </AssociationSet>
+          <AssociationSet Name="FK_ELECTION_CANDIDATE_ELECTION_OFFICE" Association="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE">
+            <End Role="ELECTION_OFFICE" EntitySet="ELECTION_OFFICE" />
+            <End Role="ELECTION_CANDIDATE" EntitySet="ELECTION_CANDIDATE" />
+          </AssociationSet>
           <AssociationSet Name="FK_ELECTION_CANDIDATE_MUNICIPALITY" Association="EFSModel.FK_ELECTION_CANDIDATE_MUNICIPALITY">
             <End Role="MUNICIPALITY" EntitySet="MUNICIPALITies" />
             <End Role="ELECTION_CANDIDATE" EntitySet="ELECTION_CANDIDATE" />
@@ -25624,18 +25474,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <End Role="TREASURER" EntitySet="TREASURERs" />
             <End Role="TREASURER_HISTORY" EntitySet="TREASURER_HISTORY" />
           </AssociationSet>
-          <FunctionImport Name="SP_S_EFS_SCHED_R_CHILD_Data" ReturnType="Collection(EFSModel.SP_S_EFS_SCHED_R_CHILD_Data_Result)">
-            <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
-            <Parameter Name="FILER_ID" Mode="In" Type="Int64" />
-          </FunctionImport>
-          <AssociationSet Name="FK_ELECTION_CANDIDATE_ELECTION_OFFICE" Association="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE">
-            <End Role="ELECTION_OFFICE" EntitySet="ELECTION_OFFICE" />
-            <End Role="ELECTION_CANDIDATE" EntitySet="ELECTION_CANDIDATE" />
-          </AssociationSet>
-          <FunctionImport Name="SP_S_NonItemizedIECommEditTrans_WCS" ReturnType="Collection(EFSModel.SP_S_NonItemizedIECommEditTrans_WCS_Result)">
-            <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
-            <Parameter Name="FILER_ID" Mode="In" Type="Int64" />
-          </FunctionImport>
+          <FunctionImport Name="SP_S_PurposeCode_PCF" ReturnType="Collection(EFSModel.SP_S_PurposeCode_PCF_Result)" />
           </EntityContainer>
         <ComplexType Name="SP_S_AddKeyDateTypes_Result">
           <Property Type="Int32" Name="REVIEW_DATE_TYPE_ID" Nullable="false" />
@@ -29973,6 +29812,90 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Type="String" Name="CUT_OFF_DATE" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="FILING_DATE" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="SP_S_EFS_SCHED_R_CHILD_Data_Result">
+          <Property Type="Int64" Name="FILING_TRANS_ID" Nullable="true" />
+          <Property Type="String" Name="TRANS_NUMBER" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TRANS_MAPPING" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_ID" MaxLength="20" Nullable="true" />
+          <Property Type="String" Name="R_SUPPORT_OPPOSE" MaxLength="20" Nullable="true" />
+          <Property Type="String" Name="SCHED_DATE" MaxLength="20" Nullable="true" />
+          <Property Type="String" Name="FLNG_ENT_FIRST_NAME" MaxLength="100" Nullable="true" />
+          <Property Type="String" Name="FLNG_ENT_MIDDLE_NAME" MaxLength="100" Nullable="true" />
+          <Property Type="String" Name="FLNG_ENT_LAST_NAME" MaxLength="100" Nullable="true" />
+          <Property Type="Double" Name="ORG_AMT" Nullable="true" />
+          <Property Type="String" Name="ELECTION_YEAR" MaxLength="4" Nullable="true" />
+          <Property Type="String" Name="OFFICE_DESC" MaxLength="100" Nullable="true" />
+          <Property Type="String" Name="DISTRICT" MaxLength="20" Nullable="true" />
+          <Property Type="String" Name="TRANS_EXPLNTN" MaxLength="255" Nullable="true" />
+          <Property Type="String" Name="R_ITEMIZED" MaxLength="1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_S_NonItemizedIECommEditTrans_WCS_Result">
+          <Property Type="Int64" Name="FILING_TRANS_ID" Nullable="false" />
+          <Property Type="Int32" Name="FILING_SCHED_ID" Nullable="true" />
+          <Property Type="String" Name="FLNG_ENT_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CNTRBR_TYPE_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CNTRBN_TYPE_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PAYMENT_TYPE_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ADDR_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TREAS_ID" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="LOANER_CODE_ID" Nullable="true" />
+          <Property Type="String" Name="SUBMIT_DATE" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="R_STATUS" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="FILING_SCHED_DESC" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="SCHED_DATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CNTRBR_TYPE_DESC" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CNTRBN_TYPE_DESC" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LOANER_CODE" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="FLNG_ENT_NAME" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="FLNG_ENT_FIRST_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_MIDDLE_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_LAST_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_STR_NUM" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_STR_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_CITY" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_STATE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FLNG_ENT_ZIP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="FLNG_ENT_COUNTRY" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PAYMENT_TYPE_DESC" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="PAY_NUMBER" Nullable="true" MaxLength="200" />
+          <Property Type="Double" Name="ORG_AMT" Nullable="true" />
+          <Property Type="Double" Name="OWED_AMT" Nullable="true" />
+          <Property Type="String" Name="TRANS_EXPLNTN" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="R_AMEND" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_ITEMIZED" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CREATED_DATE" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="PERSON_FIRST_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PERSON_LAST_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PERSON_MIDDLE_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TREAS_OCCUPATION" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="TREAS_EMPLOYER" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="ADDR_ADDR1" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ADDR_CITY" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ADDR_STATE" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="ADDR_ZIP" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="IE_CNTRBR_OCC" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="IE_CNTRBR_EMP" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DIST_OFF_CAND_BAL_PROP" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="IE_DESC" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="R_IE_SUPPORTED" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CNTY_DESC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MUNICIPALITY_DESC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOAN_LIB_NUMBER" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TRANS_NUMBER" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TRANS_MAPPING" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="R_LIABILITY" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_SUBCONTRACTOR" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="PURPOSE_CODE_ID" Nullable="true" />
+          <Property Type="String" Name="EXISTS_LIAB_TRANS_ID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="R_CLAIM" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_IN_DISTRICT" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_MINOR" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_VENDOR" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_LOBBYIST" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_CONTRIBUTIONS" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_WEEKLY" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="R_SUPPORT_OPPOSE" Nullable="true" MaxLength="1" />
+        </ComplexType>
         <EntityType Name="ADDRESS">
           <Key>
             <PropertyRef Name="ADDR_ID" />
@@ -31393,6 +31316,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="7" />
           <Property Name="R_WINNER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="WINNER_EFFECTIVE_DATE" Type="DateTime" Precision="7" />
           <Property Name="WINNER_CERT_DATE" Type="DateTime" Precision="7" />
           <Property Name="R_UNCONTESTED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="BALLOT_NAME_1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
@@ -31510,6 +31434,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="PARENT_OFF_DIST_MAP_ID" Type="Int32" />
+          <Property Name="ELECTION_OFFICE_ID" Type="Int32" />
           <NavigationProperty Name="BALLOT_CORRESPONDENCE" Relationship="EFSModel.FK_BALLOT_CORRESPONDENCE_BALLOT_CORRESPONDENCE" FromRole="ELECTION_CANDIDATE" ToRole="BALLOT_CORRESPONDENCE" />
           <NavigationProperty Name="BANK_MAPPING" Relationship="EFSModel.FK_BANK_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="BANK_MAPPING" />
           <NavigationProperty Name="CANDIDATE" Relationship="EFSModel.CAN_ELEC_FK" FromRole="ELECTION_CANDIDATE" ToRole="CANDIDATE" />
@@ -31525,6 +31450,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <NavigationProperty Name="ELECTION_CAND_MAPPING" Relationship="EFSModel.FK_ELECTION_CAND_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="ELECTION_CAND_MAPPING" />
           <NavigationProperty Name="ELECTION_CAND_NAME_MAPPING" Relationship="EFSModel.FK_ELECTION_CAND_NAME_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="ELECTION_CAND_NAME_MAPPING" />
           <NavigationProperty Name="ELECTION_CAND_SIGNATURE" Relationship="EFSModel.FK_ELECTION_CAND_SIGNATURE_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="ELECTION_CAND_SIGNATURE" />
+          <NavigationProperty Name="ELECTION_OFFICE" Relationship="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE" FromRole="ELECTION_CANDIDATE" ToRole="ELECTION_OFFICE" />
           <NavigationProperty Name="MUNICIPALITY" Relationship="EFSModel.FK_ELECTION_CANDIDATE_MUNICIPALITY" FromRole="ELECTION_CANDIDATE" ToRole="MUNICIPALITY" />
           <NavigationProperty Name="TREASURER" Relationship="EFSModel.FK_ELECTION_CANDIDATE_TREASURER" FromRole="ELECTION_CANDIDATE" ToRole="TREASURER" />
           <NavigationProperty Name="FILER_COMMENTS_MAPPING" Relationship="EFSModel.FK_FILER_COMMENTS_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="FILER_COMMENTS_MAPPING" />
@@ -31536,8 +31462,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <NavigationProperty Name="SUPPORTED_CANDIDATE_MAPPING" Relationship="EFSModel.FK_SUPPORTED_CANDIDATE_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="SUPPORTED_CANDIDATE_MAPPING" />
           <NavigationProperty Name="SUPPORTED_CANDIDATE_MAPPING1" Relationship="EFSModel.FK_SUPPORTED_CANDIDATE_MAPPING_ELECTION_CANDIDATE1" FromRole="ELECTION_CANDIDATE" ToRole="SUPPORTED_CANDIDATE_MAPPING" />
           <NavigationProperty Name="SUPPORTING_DOCUMENTS" Relationship="EFSModel.FK_SUPPORTING_DOCUMENTS_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="SUPPORTING_DOCUMENTS" />
-          <Property Name="ELECTION_OFFICE_ID" Type="Int32" />
-          <NavigationProperty Name="ELECTION_OFFICE" Relationship="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE" FromRole="ELECTION_CANDIDATE" ToRole="ELECTION_OFFICE" />
         </EntityType>
         <EntityType Name="ELECTION_CANDIDATE_HISTORY">
           <Key>
@@ -31609,10 +31533,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="PARTY_ELECT_ID" Type="Int32" />
           <Property Name="VOTE_FOR" Type="Int32" />
           <Property Name="MUNICIPALITY_ID" Type="Int32" />
+          <NavigationProperty Name="ELECTION_CANDIDATE" Relationship="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE" FromRole="ELECTION_OFFICE" ToRole="ELECTION_CANDIDATE" />
           <NavigationProperty Name="MUNICIPALITY" Relationship="EFSModel.FK_ELECTION_OFFICE_MUNICIPALITY" FromRole="ELECTION_OFFICE" ToRole="MUNICIPALITY" />
           <NavigationProperty Name="OFFICE_DISTRICT_MAPPING" Relationship="EFSModel.FK_ELECTION_OFFICE_OFFICE_DISTRICT_MAPPING" FromRole="ELECTION_OFFICE" ToRole="OFFICE_DISTRICT_MAPPING" />
           <NavigationProperty Name="PARTY_ELECTION" Relationship="EFSModel.FK_ELECTION_OFFICE_PARTY_ELECTION" FromRole="ELECTION_OFFICE" ToRole="PARTY_ELECTION" />
-          <NavigationProperty Name="ELECTION_CANDIDATE" Relationship="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE" FromRole="ELECTION_OFFICE" ToRole="ELECTION_CANDIDATE" />
         </EntityType>
         <EntityType Name="ELECTION_TYPE">
           <Key>
@@ -34074,6 +33998,20 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="PRIVATE_CONTACT_PEOPLE">
+          <Key>
+            <PropertyRef Name="PCP_ID" />
+          </Key>
+          <Property Name="PCP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FLNG_ENT_ID" Type="Int64" />
+          <Property Name="PERSON_ID" Type="Int64" />
+          <Property Name="ELECT_CAND_ID" Type="Int64" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="PURPOSE_CODE">
           <Key>
             <PropertyRef Name="PURPOSE_CODE_ID" />
@@ -34705,6 +34643,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="SUB_TREAS_ID" Type="Int64" />
           <Property Name="DATE_CERTIFIED" Type="DateTime" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="Int32" />
+          <Property Name="CABINET_LOCATION" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="S3_ID" Type="Int64" />
           <NavigationProperty Name="CANDIDATE_COMMITTEE_AUTH" Relationship="EFSModel.FK_CANDIDATE_COMMITTEE_AUTH_SUPPORTING_DOCUMENTS" FromRole="SUPPORTING_DOCUMENTS" ToRole="CANDIDATE_COMMITTEE_AUTH" />
           <NavigationProperty Name="COMMUNICATION_TYPE" Relationship="EFSModel.FK_SUPPORTING_DOCUMENTS_COMMUNICATION_TYPE" FromRole="SUPPORTING_DOCUMENTS" ToRole="COMMUNICATION_TYPE" />
           <NavigationProperty Name="DOCUMENT_TYPE" Relationship="EFSModel.DOCTYPE_SUPDOCS_FK" FromRole="SUPPORTING_DOCUMENTS" ToRole="DOCUMENT_TYPE" />
@@ -34970,108 +34910,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="EOU_FVS_FORVOTE_TABLE">
-          <Key>
-            <PropertyRef Name="ROWID" />
-          </Key>
-          <Property Name="LANGUAGE" Type="Decimal" Precision="1" Scale="0" />
-          <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="FNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="MNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="LNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ADD1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ADD2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="CITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="STATE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="CNTYCODE" Type="Decimal" Precision="2" Scale="0" />
-          <Property Name="QUANTITY" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="TRANDATE" Type="DateTime" Precision="7" />
-          <Property Name="TRANUID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="PRTDATE" Type="DateTime" Precision="7" />
-          <Property Name="PRTUID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CREREC_UID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="CREREC_DATE" Type="DateTime" Precision="7" />
-          <Property Name="UPDREC_UID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="UPDREC_DATE" Type="DateTime" Precision="7" />
-          <Property Name="ROWID" Type="Guid" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ERROR_LOG_7122021">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="Int32" Nullable="false" />
-          <Property Name="APPLICATION_ID" Type="Int32" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="OPERATION_CLASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FUNCTION_METHOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="REQUEST_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RESPONSE_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DISPLAY_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="ERROR_LOG_7142021">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="Int32" Nullable="false" />
-          <Property Name="APPLICATION_ID" Type="Int32" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="OPERATION_CLASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FUNCTION_METHOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="REQUEST_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RESPONSE_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DISPLAY_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="error_log_backup">
-          <Key>
-            <PropertyRef Name="ERROR_LOG_ID" />
-            <PropertyRef Name="APPLICATION_ID" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="ERROR_LOG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="APPLICATION_ID" Type="Int32" Nullable="false" />
-          <Property Name="ERROR_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="OPERATION_CLASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FUNCTION_METHOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="REQUEST_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RESPONSE_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DISPLAY_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="FILING_PERIOD_backup">
-          <Key>
-            <PropertyRef Name="FILING_PERIOD_ID" />
-            <PropertyRef Name="ELECT_YEAR_ID" />
-            <PropertyRef Name="OFFICE_TYPE_ID" />
-            <PropertyRef Name="FILING_TYPE_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="FILING_PERIOD_ID" Type="Int32" Nullable="false" />
-          <Property Name="ELECT_YEAR_ID" Type="Int32" Nullable="false" />
-          <Property Name="OFFICE_TYPE_ID" Type="Int32" Nullable="false" />
-          <Property Name="FILING_TYPE_ID" Type="Int32" Nullable="false" />
-          <Property Name="FILING_DUE_DATE" Type="DateTime" Precision="7" />
-          <Property Name="CUT_OFF_DATE" Type="DateTime" Precision="7" />
-          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="7" />
-        </EntityType>
         <EntityType Name="MANUAL_PROD_UPDATES">
           <Key>
             <PropertyRef Name="MAN_PROD_UPDATE_ID" />
@@ -35096,28 +34934,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="PARTY_CALL_backup">
-          <Key>
-            <PropertyRef Name="PARTY_CALL_ID" />
-            <PropertyRef Name="DELEGATE_NUM" />
-            <PropertyRef Name="ALTERNATE_NUM" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-            <PropertyRef Name="OFF_DIST_MAP_ID" />
-          </Key>
-          <Property Name="PARTY_CALL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PARTY_ID" Type="Int32" />
-          <Property Name="ELECTION_YEAR_ID" Type="Int32" />
-          <Property Name="DELEGATE_NUM" Type="Int32" Nullable="false" />
-          <Property Name="ALTERNATE_NUM" Type="Int32" Nullable="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="COUNTY_ID" Type="Int32" />
-          <Property Name="OFF_DIST_MAP_ID" Type="Int32" Nullable="false" />
-          <Property Name="OFF_DIST_MAP_ID2" Type="Int32" />
-        </EntityType>
         <EntityType Name="PMF_PAYMENT">
           <Key>
             <PropertyRef Name="PMF_PAYMENT_ID" />
@@ -35141,24 +34957,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="REQUIRED_FILER" Relationship="EFSModel.FK_PMF_PAYMENT_REQUIRED_FILER" FromRole="PMF_PAYMENT" ToRole="REQUIRED_FILER" />
         </EntityType>
-        <EntityType Name="SQLAccess">
-          <Key>
-            <PropertyRef Name="SQLAccess_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="SQLAccess_ID" Type="Int32" Nullable="false" />
-          <Property Name="SQLAccess_Environment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SQLAccess_AppName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SQLAccess_UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SQLAccess_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="STATE_COMMITTEE_PARTY">
           <Key>
             <PropertyRef Name="STATE_COMM_PARTY_ID" />
@@ -35176,77 +34974,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="TEMPTABLE">
-          <Key>
-            <PropertyRef Name="FILINGS_ID" />
-            <PropertyRef Name="POL_CAL_DATE_ID" />
-            <PropertyRef Name="REPORT_YEAR_ID" />
-            <PropertyRef Name="OFFICE_TYPE_ID" />
-            <PropertyRef Name="ELECT_TYPE_ID" />
-            <PropertyRef Name="DISCLOSURE_TYPE_ID" />
-            <PropertyRef Name="DISCLOSURE_PERIOD_ID" />
-            <PropertyRef Name="REPORT_YEAR" />
-            <PropertyRef Name="OFFICE_TYPE_DESC" />
-            <PropertyRef Name="ELECT_TYPE_DESC" />
-            <PropertyRef Name="DISCLOSURE_TYPE" />
-            <PropertyRef Name="DISCLOSURE_PERIOD" />
-          </Key>
-          <Property Name="FILINGS_ID" Type="Int64" Nullable="false" />
-          <Property Name="POL_CAL_DATE_ID" Type="Int32" Nullable="false" />
-          <Property Name="REPORT_YEAR_ID" Type="Int32" Nullable="false" />
-          <Property Name="OFFICE_TYPE_ID" Type="Int32" Nullable="false" />
-          <Property Name="ELECT_TYPE_ID" Type="Int32" Nullable="false" />
-          <Property Name="DISCLOSURE_TYPE_ID" Type="Int32" Nullable="false" />
-          <Property Name="DISCLOSURE_PERIOD_ID" Type="Int32" Nullable="false" />
-          <Property Name="REPORT_YEAR" Type="Int32" Nullable="false" />
-          <Property Name="OFFICE_TYPE_DESC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ELECT_TYPE_DESC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ELECT_DATE" Type="DateTime" Precision="0" />
-          <Property Name="DISCLOSURE_TYPE" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="DISCLOSURE_PERIOD" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="AMENDED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="SUBMIT_DATE" Type="DateTime" Precision="0" />
-          <Property Name="R_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-        </EntityType>
-        <EntityType Name="test1">
-          <Key>
-            <PropertyRef Name="column1" />
-            <PropertyRef Name="column2" />
-            <PropertyRef Name="column3" />
-            <PropertyRef Name="column4" />
-            <PropertyRef Name="column5" />
-          </Key>
-          <Property Name="column1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="column2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="column3" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="column4" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="column5" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column11" Type="Int32" />
-          <Property Name="column12" Type="Int16" />
-          <Property Name="column13" Type="DateTime" Precision="0" />
-          <Property Name="column14" Type="DateTime" Precision="0" />
-          <Property Name="column15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column16" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column17" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column18" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column19" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="column21" Type="Byte" />
-          <Property Name="column22" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column23" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column24" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column25" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column26" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column27" Type="DateTime" Precision="0" />
-          <Property Name="column28" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column29" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="column30" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="VW_BANKINFORMATION">
           <Key>
@@ -35823,6 +35550,102 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="R_LOBBYIST" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="R_CONTRIBUTIONS" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
           <Property Name="R_WEEKLY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE">
+          <Key>
+            <PropertyRef Name="FILER_ID" />
+            <PropertyRef Name="FILER_PREVIOUS_ID" />
+            <PropertyRef Name="CAND_COMM_NAME" />
+            <PropertyRef Name="ELECTION_YEAR" />
+            <PropertyRef Name="ELECTION_TYPE" />
+            <PropertyRef Name="COUNTY_DESC" />
+            <PropertyRef Name="FILING_ABBREV" />
+            <PropertyRef Name="FILING_DESC" />
+            <PropertyRef Name="R_AMEND" />
+            <PropertyRef Name="FILING_CAT_DESC" />
+            <PropertyRef Name="FILING_SCHED_ABBREV" />
+            <PropertyRef Name="FILING_SCHED_DESC" />
+            <PropertyRef Name="LOAN_LIB_NUMBER" />
+            <PropertyRef Name="TRANS_NUMBER" />
+            <PropertyRef Name="TRANS_MAPPING" />
+            <PropertyRef Name="SCHED_DATE" />
+            <PropertyRef Name="ORG_DATE" />
+            <PropertyRef Name="CNTRBR_TYPE_DESC" />
+            <PropertyRef Name="CNTRBN_TYPE_DESC" />
+            <PropertyRef Name="TRANSFER_TYPE_DESC" />
+            <PropertyRef Name="RECEIPT_TYPE_DESC" />
+            <PropertyRef Name="RECEIPT_CODE_DESC" />
+            <PropertyRef Name="PURPOSE_CODE_DESC" />
+            <PropertyRef Name="R_SUBCONTRACTOR" />
+            <PropertyRef Name="FLNG_ENT_NAME" />
+            <PropertyRef Name="FLNG_ENT_FIRST_NAME" />
+            <PropertyRef Name="FLNG_ENT_MIDDLE_NAME" />
+            <PropertyRef Name="FLNG_ENT_LAST_NAME" />
+            <PropertyRef Name="FLNG_ENT_ADDR1" />
+            <PropertyRef Name="FLNG_ENT_CITY" />
+            <PropertyRef Name="FLNG_ENT_STATE" />
+            <PropertyRef Name="FLNG_ENT_ZIP" />
+            <PropertyRef Name="FLNG_ENT_COUNTRY" />
+            <PropertyRef Name="PAYMENT_TYPE_DESC" />
+            <PropertyRef Name="PAY_NUMBER" />
+            <PropertyRef Name="OWED_AMT" />
+            <PropertyRef Name="ORG_AMT" />
+            <PropertyRef Name="LOAN_OTHER_DESC" />
+            <PropertyRef Name="TRANS_EXPLNTN" />
+            <PropertyRef Name="R_ITEMIZED" />
+            <PropertyRef Name="R_LIABILITY" />
+            <PropertyRef Name="ELECTION_YEAR_R" />
+            <PropertyRef Name="OFFICE_DESC" />
+            <PropertyRef Name="DISTRICT" />
+            <PropertyRef Name="DIST_OFF_CAND_BAL_PROP" />
+            <PropertyRef Name="SUBMIT_DATE" />
+          </Key>
+          <Property Name="FILER_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FILER_PREVIOUS_ID" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="CAND_COMM_NAME" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ELECTION_YEAR" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ELECTION_TYPE" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTY_DESC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="FILING_ABBREV" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FILING_DESC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="R_AMEND" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="FILING_CAT_DESC" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="FILING_SCHED_ABBREV" Type="String" Nullable="false" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="FILING_SCHED_DESC" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="LOAN_LIB_NUMBER" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_NUMBER" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_MAPPING" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SCHED_DATE" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_DATE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIPT_CODE_DESC" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="PURPOSE_CODE_DESC" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="R_SUBCONTRACTOR" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_NAME" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="String" Nullable="false" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_ADDR1" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_CITY" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_STATE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_ZIP" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="false" />
+          <Property Name="PAY_NUMBER" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="OWED_AMT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ORG_AMT" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LOAN_OTHER_DESC" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_EXPLNTN" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="R_ITEMIZED" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="R_LIABILITY" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="ELECTION_YEAR_R" Type="String" Nullable="false" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="OFFICE_DESC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="SUBMIT_DATE" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="VW_BUP_FILER_DATA">
           <Key>
@@ -39515,6 +39338,18 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ELECTION_CANDIDATE_ELECTION_OFFICE">
+          <End Type="EFSModel.ELECTION_OFFICE" Role="ELECTION_OFFICE" Multiplicity="0..1" />
+          <End Type="EFSModel.ELECTION_CANDIDATE" Role="ELECTION_CANDIDATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ELECTION_OFFICE">
+              <PropertyRef Name="ELECTION_OFFICE_ID" />
+            </Principal>
+            <Dependent Role="ELECTION_CANDIDATE">
+              <PropertyRef Name="ELECTION_OFFICE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ELECTION_CANDIDATE_MUNICIPALITY">
           <End Type="EFSModel.MUNICIPALITY" Role="MUNICIPALITY" Multiplicity="0..1" />
           <End Type="EFSModel.ELECTION_CANDIDATE" Role="ELECTION_CANDIDATE" Multiplicity="*" />
@@ -41483,101 +41318,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="SP_S_EFS_SCHED_R_CHILD_Data_Result">
-          <Property Type="Int64" Name="FILING_TRANS_ID" Nullable="true" />
-          <Property Type="String" Name="TRANS_NUMBER" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TRANS_MAPPING" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_ID" MaxLength="20" Nullable="true" />
-          <Property Type="String" Name="R_SUPPORT_OPPOSE" MaxLength="20" Nullable="true" />
-          <Property Type="String" Name="SCHED_DATE" MaxLength="20" Nullable="true" />
-          <Property Type="String" Name="FLNG_ENT_FIRST_NAME" MaxLength="100" Nullable="true" />
-          <Property Type="String" Name="FLNG_ENT_MIDDLE_NAME" MaxLength="100" Nullable="true" />
-          <Property Type="String" Name="FLNG_ENT_LAST_NAME" MaxLength="100" Nullable="true" />
-          <Property Type="Double" Name="ORG_AMT" Nullable="true" />
-          <Property Type="String" Name="ELECTION_YEAR" MaxLength="4" Nullable="true" />
-          <Property Type="String" Name="OFFICE_DESC" MaxLength="100" Nullable="true" />
-          <Property Type="String" Name="DISTRICT" MaxLength="20" Nullable="true" />
-          <Property Type="String" Name="TRANS_EXPLNTN" MaxLength="255" Nullable="true" />
-          <Property Type="String" Name="R_ITEMIZED" MaxLength="1" Nullable="true" />
-        </ComplexType>
-        <Association Name="FK_ELECTION_CANDIDATE_ELECTION_OFFICE">
-          <End Type="EFSModel.ELECTION_OFFICE" Role="ELECTION_OFFICE" Multiplicity="0..1" />
-          <End Type="EFSModel.ELECTION_CANDIDATE" Role="ELECTION_CANDIDATE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ELECTION_OFFICE">
-              <PropertyRef Name="ELECTION_OFFICE_ID" />
-            </Principal>
-            <Dependent Role="ELECTION_CANDIDATE">
-              <PropertyRef Name="ELECTION_OFFICE_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <ComplexType Name="SP_S_NonItemizedIECommEditTrans_WCS_Result">
-          <Property Type="Int64" Name="FILING_TRANS_ID" Nullable="false" />
-          <Property Type="Int32" Name="FILING_SCHED_ID" Nullable="true" />
-          <Property Type="String" Name="FLNG_ENT_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CNTRBR_TYPE_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CNTRBN_TYPE_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="PAYMENT_TYPE_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="ADDR_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TREAS_ID" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="LOANER_CODE_ID" Nullable="true" />
-          <Property Type="String" Name="SUBMIT_DATE" Nullable="true" MaxLength="32" />
-          <Property Type="String" Name="R_STATUS" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="FILING_SCHED_DESC" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="SCHED_DATE" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="CNTRBR_TYPE_DESC" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CNTRBN_TYPE_DESC" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="LOANER_CODE" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="FLNG_ENT_NAME" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="FLNG_ENT_FIRST_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_MIDDLE_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_LAST_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_STR_NUM" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_STR_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_CITY" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_STATE" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="FLNG_ENT_ZIP" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="FLNG_ENT_COUNTRY" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="PAYMENT_TYPE_DESC" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="PAY_NUMBER" Nullable="true" MaxLength="200" />
-          <Property Type="Double" Name="ORG_AMT" Nullable="true" />
-          <Property Type="Double" Name="OWED_AMT" Nullable="true" />
-          <Property Type="String" Name="TRANS_EXPLNTN" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="R_AMEND" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_ITEMIZED" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="CREATED_DATE" Nullable="true" MaxLength="32" />
-          <Property Type="String" Name="PERSON_FIRST_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="PERSON_LAST_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="PERSON_MIDDLE_NAME" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TREAS_OCCUPATION" Nullable="true" MaxLength="80" />
-          <Property Type="String" Name="TREAS_EMPLOYER" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="ADDR_ADDR1" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="ADDR_CITY" Nullable="true" MaxLength="40" />
-          <Property Type="String" Name="ADDR_STATE" Nullable="true" MaxLength="2" />
-          <Property Type="String" Name="ADDR_ZIP" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="IE_CNTRBR_OCC" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="IE_CNTRBR_EMP" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="DIST_OFF_CAND_BAL_PROP" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="IE_DESC" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="R_IE_SUPPORTED" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="CNTY_DESC" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="MUNICIPALITY_DESC" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LOAN_LIB_NUMBER" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TRANS_NUMBER" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="TRANS_MAPPING" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="R_LIABILITY" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_SUBCONTRACTOR" Nullable="true" MaxLength="1" />
-          <Property Type="Int32" Name="PURPOSE_CODE_ID" Nullable="true" />
-          <Property Type="String" Name="EXISTS_LIAB_TRANS_ID" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="R_CLAIM" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_IN_DISTRICT" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_MINOR" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_VENDOR" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_LOBBYIST" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_CONTRIBUTIONS" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_WEEKLY" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="R_SUPPORT_OPPOSE" Nullable="true" MaxLength="1" />
+        <ComplexType Name="SP_S_PurposeCode_PCF_Result">
+          <Property Type="Int32" Name="PURPOSE_CODE_ID" Nullable="false" />
+          <Property Type="String" Name="PURPOSE_CODE_DESC" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="PURPOSE_CODE_ABBREV" Nullable="false" MaxLength="15" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -46985,6 +46729,98 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_S_EFS_SCHED_R_CHILD_Data" FunctionName="EFSModel.Store.SP_S_EFS_SCHED_R_CHILD_Data">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EFSModel.SP_S_EFS_SCHED_R_CHILD_Data_Result">
+                <ScalarProperty Name="FILING_TRANS_ID" ColumnName="FILING_TRANS_ID" />
+                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
+                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
+                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
+                <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
+                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
+                <ScalarProperty Name="FLNG_ENT_FIRST_NAME" ColumnName="FLNG_ENT_FIRST_NAME" />
+                <ScalarProperty Name="FLNG_ENT_MIDDLE_NAME" ColumnName="FLNG_ENT_MIDDLE_NAME" />
+                <ScalarProperty Name="FLNG_ENT_LAST_NAME" ColumnName="FLNG_ENT_LAST_NAME" />
+                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
+                <ScalarProperty Name="ELECTION_YEAR" ColumnName="ELECTION_YEAR" />
+                <ScalarProperty Name="OFFICE_DESC" ColumnName="OFFICE_DESC" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
+                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_S_NonItemizedIECommEditTrans_WCS" FunctionName="EFSModel.Store.SP_S_NonItemizedIECommEditTrans_WCS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EFSModel.SP_S_NonItemizedIECommEditTrans_WCS_Result">
+                <ScalarProperty Name="FILING_TRANS_ID" ColumnName="FILING_TRANS_ID" />
+                <ScalarProperty Name="FILING_SCHED_ID" ColumnName="FILING_SCHED_ID" />
+                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
+                <ScalarProperty Name="CNTRBR_TYPE_ID" ColumnName="CNTRBR_TYPE_ID" />
+                <ScalarProperty Name="CNTRBN_TYPE_ID" ColumnName="CNTRBN_TYPE_ID" />
+                <ScalarProperty Name="PAYMENT_TYPE_ID" ColumnName="PAYMENT_TYPE_ID" />
+                <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+                <ScalarProperty Name="TREAS_ID" ColumnName="TREAS_ID" />
+                <ScalarProperty Name="LOANER_CODE_ID" ColumnName="LOANER_CODE_ID" />
+                <ScalarProperty Name="SUBMIT_DATE" ColumnName="SUBMIT_DATE" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="FILING_SCHED_DESC" ColumnName="FILING_SCHED_DESC" />
+                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
+                <ScalarProperty Name="CNTRBR_TYPE_DESC" ColumnName="CNTRBR_TYPE_DESC" />
+                <ScalarProperty Name="CNTRBN_TYPE_DESC" ColumnName="CNTRBN_TYPE_DESC" />
+                <ScalarProperty Name="LOANER_CODE" ColumnName="LOANER_CODE" />
+                <ScalarProperty Name="FLNG_ENT_NAME" ColumnName="FLNG_ENT_NAME" />
+                <ScalarProperty Name="FLNG_ENT_FIRST_NAME" ColumnName="FLNG_ENT_FIRST_NAME" />
+                <ScalarProperty Name="FLNG_ENT_MIDDLE_NAME" ColumnName="FLNG_ENT_MIDDLE_NAME" />
+                <ScalarProperty Name="FLNG_ENT_LAST_NAME" ColumnName="FLNG_ENT_LAST_NAME" />
+                <ScalarProperty Name="FLNG_ENT_STR_NUM" ColumnName="FLNG_ENT_STR_NUM" />
+                <ScalarProperty Name="FLNG_ENT_STR_NAME" ColumnName="FLNG_ENT_STR_NAME" />
+                <ScalarProperty Name="FLNG_ENT_CITY" ColumnName="FLNG_ENT_CITY" />
+                <ScalarProperty Name="FLNG_ENT_STATE" ColumnName="FLNG_ENT_STATE" />
+                <ScalarProperty Name="FLNG_ENT_ZIP" ColumnName="FLNG_ENT_ZIP" />
+                <ScalarProperty Name="FLNG_ENT_COUNTRY" ColumnName="FLNG_ENT_COUNTRY" />
+                <ScalarProperty Name="PAYMENT_TYPE_DESC" ColumnName="PAYMENT_TYPE_DESC" />
+                <ScalarProperty Name="PAY_NUMBER" ColumnName="PAY_NUMBER" />
+                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
+                <ScalarProperty Name="OWED_AMT" ColumnName="OWED_AMT" />
+                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
+                <ScalarProperty Name="R_AMEND" ColumnName="R_AMEND" />
+                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="PERSON_FIRST_NAME" ColumnName="PERSON_FIRST_NAME" />
+                <ScalarProperty Name="PERSON_LAST_NAME" ColumnName="PERSON_LAST_NAME" />
+                <ScalarProperty Name="PERSON_MIDDLE_NAME" ColumnName="PERSON_MIDDLE_NAME" />
+                <ScalarProperty Name="TREAS_OCCUPATION" ColumnName="TREAS_OCCUPATION" />
+                <ScalarProperty Name="TREAS_EMPLOYER" ColumnName="TREAS_EMPLOYER" />
+                <ScalarProperty Name="ADDR_ADDR1" ColumnName="ADDR_ADDR1" />
+                <ScalarProperty Name="ADDR_CITY" ColumnName="ADDR_CITY" />
+                <ScalarProperty Name="ADDR_STATE" ColumnName="ADDR_STATE" />
+                <ScalarProperty Name="ADDR_ZIP" ColumnName="ADDR_ZIP" />
+                <ScalarProperty Name="IE_CNTRBR_OCC" ColumnName="IE_CNTRBR_OCC" />
+                <ScalarProperty Name="IE_CNTRBR_EMP" ColumnName="IE_CNTRBR_EMP" />
+                <ScalarProperty Name="DIST_OFF_CAND_BAL_PROP" ColumnName="DIST_OFF_CAND_BAL_PROP" />
+                <ScalarProperty Name="IE_DESC" ColumnName="IE_DESC" />
+                <ScalarProperty Name="R_IE_SUPPORTED" ColumnName="R_IE_SUPPORTED" />
+                <ScalarProperty Name="CNTY_DESC" ColumnName="CNTY_DESC" />
+                <ScalarProperty Name="MUNICIPALITY_DESC" ColumnName="MUNICIPALITY_DESC" />
+                <ScalarProperty Name="LOAN_LIB_NUMBER" ColumnName="LOAN_LIB_NUMBER" />
+                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
+                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
+                <ScalarProperty Name="R_LIABILITY" ColumnName="R_LIABILITY" />
+                <ScalarProperty Name="R_SUBCONTRACTOR" ColumnName="R_SUBCONTRACTOR" />
+                <ScalarProperty Name="PURPOSE_CODE_ID" ColumnName="PURPOSE_CODE_ID" />
+                <ScalarProperty Name="EXISTS_LIAB_TRANS_ID" ColumnName="EXISTS_LIAB_TRANS_ID" />
+                <ScalarProperty Name="R_CLAIM" ColumnName="R_CLAIM" />
+                <ScalarProperty Name="R_IN_DISTRICT" ColumnName="R_IN_DISTRICT" />
+                <ScalarProperty Name="R_MINOR" ColumnName="R_MINOR" />
+                <ScalarProperty Name="R_VENDOR" ColumnName="R_VENDOR" />
+                <ScalarProperty Name="R_LOBBYIST" ColumnName="R_LOBBYIST" />
+                <ScalarProperty Name="R_CONTRIBUTIONS" ColumnName="R_CONTRIBUTIONS" />
+                <ScalarProperty Name="R_WEEKLY" ColumnName="R_WEEKLY" />
+                <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="ADDRESSes">
             <EntityTypeMapping TypeName="EFSModel.ADDRESS">
               <MappingFragment StoreEntitySet="ADDRESS">
@@ -48202,6 +48038,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="BALLOT_NAME_1" ColumnName="BALLOT_NAME_1" />
                 <ScalarProperty Name="R_UNCONTESTED" ColumnName="R_UNCONTESTED" />
                 <ScalarProperty Name="WINNER_CERT_DATE" ColumnName="WINNER_CERT_DATE" />
+                <ScalarProperty Name="WINNER_EFFECTIVE_DATE" ColumnName="WINNER_EFFECTIVE_DATE" />
                 <ScalarProperty Name="R_WINNER" ColumnName="R_WINNER" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
@@ -50601,6 +50438,21 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRIVATE_CONTACT_PEOPLE">
+            <EntityTypeMapping TypeName="EFSModel.PRIVATE_CONTACT_PEOPLE">
+              <MappingFragment StoreEntitySet="PRIVATE_CONTACT_PEOPLE">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="ELECT_CAND_ID" ColumnName="ELECT_CAND_ID" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
+                <ScalarProperty Name="PCP_ID" ColumnName="PCP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PURPOSE_CODE">
             <EntityTypeMapping TypeName="EFSModel.PURPOSE_CODE">
               <MappingFragment StoreEntitySet="PURPOSE_CODE">
@@ -51191,6 +51043,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="SUPPORTING_DOCUMENTS">
             <EntityTypeMapping TypeName="EFSModel.SUPPORTING_DOCUMENTS">
               <MappingFragment StoreEntitySet="SUPPORTING_DOCUMENTS">
+                <ScalarProperty Name="S3_ID" ColumnName="S3_ID" />
+                <ScalarProperty Name="CABINET_LOCATION" ColumnName="CABINET_LOCATION" />
                 <ScalarProperty Name="ELECTION_YEAR_ID" ColumnName="ELECTION_YEAR_ID" />
                 <ScalarProperty Name="DATE_CERTIFIED" ColumnName="DATE_CERTIFIED" />
                 <ScalarProperty Name="SUB_TREAS_ID" ColumnName="SUB_TREAS_ID" />
@@ -51461,98 +51315,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EOU_FVS_FORVOTE_TABLE">
-            <EntityTypeMapping TypeName="EFSModel.EOU_FVS_FORVOTE_TABLE">
-              <MappingFragment StoreEntitySet="EOU_FVS_FORVOTE_TABLE">
-                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
-                <ScalarProperty Name="UPDREC_DATE" ColumnName="UPDREC_DATE" />
-                <ScalarProperty Name="UPDREC_UID" ColumnName="UPDREC_UID" />
-                <ScalarProperty Name="CREREC_DATE" ColumnName="CREREC_DATE" />
-                <ScalarProperty Name="CREREC_UID" ColumnName="CREREC_UID" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="PRTUID" ColumnName="PRTUID" />
-                <ScalarProperty Name="PRTDATE" ColumnName="PRTDATE" />
-                <ScalarProperty Name="TRANUID" ColumnName="TRANUID" />
-                <ScalarProperty Name="TRANDATE" ColumnName="TRANDATE" />
-                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
-                <ScalarProperty Name="CNTYCODE" ColumnName="CNTYCODE" />
-                <ScalarProperty Name="STATE" ColumnName="STATE" />
-                <ScalarProperty Name="CITY" ColumnName="CITY" />
-                <ScalarProperty Name="ADD2" ColumnName="ADD2" />
-                <ScalarProperty Name="ADD1" ColumnName="ADD1" />
-                <ScalarProperty Name="LNAME" ColumnName="LNAME" />
-                <ScalarProperty Name="MNAME" ColumnName="MNAME" />
-                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
-                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
-                <ScalarProperty Name="LANGUAGE" ColumnName="LANGUAGE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ERROR_LOG_7122021">
-            <EntityTypeMapping TypeName="EFSModel.ERROR_LOG_7122021">
-              <MappingFragment StoreEntitySet="ERROR_LOG_7122021">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="DISPLAY_MESSAGE" ColumnName="DISPLAY_MESSAGE" />
-                <ScalarProperty Name="RESPONSE_MESSAGE" ColumnName="RESPONSE_MESSAGE" />
-                <ScalarProperty Name="REQUEST_MESSAGE" ColumnName="REQUEST_MESSAGE" />
-                <ScalarProperty Name="FUNCTION_METHOD" ColumnName="FUNCTION_METHOD" />
-                <ScalarProperty Name="OPERATION_CLASS" ColumnName="OPERATION_CLASS" />
-                <ScalarProperty Name="ERROR_MESSAGE" ColumnName="ERROR_MESSAGE" />
-                <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
-                <ScalarProperty Name="ERROR_LOG_ID" ColumnName="ERROR_LOG_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ERROR_LOG_7142021">
-            <EntityTypeMapping TypeName="EFSModel.ERROR_LOG_7142021">
-              <MappingFragment StoreEntitySet="ERROR_LOG_7142021">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="DISPLAY_MESSAGE" ColumnName="DISPLAY_MESSAGE" />
-                <ScalarProperty Name="RESPONSE_MESSAGE" ColumnName="RESPONSE_MESSAGE" />
-                <ScalarProperty Name="REQUEST_MESSAGE" ColumnName="REQUEST_MESSAGE" />
-                <ScalarProperty Name="FUNCTION_METHOD" ColumnName="FUNCTION_METHOD" />
-                <ScalarProperty Name="OPERATION_CLASS" ColumnName="OPERATION_CLASS" />
-                <ScalarProperty Name="ERROR_MESSAGE" ColumnName="ERROR_MESSAGE" />
-                <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
-                <ScalarProperty Name="ERROR_LOG_ID" ColumnName="ERROR_LOG_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="error_log_backup">
-            <EntityTypeMapping TypeName="EFSModel.error_log_backup">
-              <MappingFragment StoreEntitySet="error_log_backup">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="DISPLAY_MESSAGE" ColumnName="DISPLAY_MESSAGE" />
-                <ScalarProperty Name="RESPONSE_MESSAGE" ColumnName="RESPONSE_MESSAGE" />
-                <ScalarProperty Name="REQUEST_MESSAGE" ColumnName="REQUEST_MESSAGE" />
-                <ScalarProperty Name="FUNCTION_METHOD" ColumnName="FUNCTION_METHOD" />
-                <ScalarProperty Name="OPERATION_CLASS" ColumnName="OPERATION_CLASS" />
-                <ScalarProperty Name="ERROR_MESSAGE" ColumnName="ERROR_MESSAGE" />
-                <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
-                <ScalarProperty Name="ERROR_LOG_ID" ColumnName="ERROR_LOG_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FILING_PERIOD_backup">
-            <EntityTypeMapping TypeName="EFSModel.FILING_PERIOD_backup">
-              <MappingFragment StoreEntitySet="FILING_PERIOD_backup">
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="CUT_OFF_DATE" ColumnName="CUT_OFF_DATE" />
-                <ScalarProperty Name="FILING_DUE_DATE" ColumnName="FILING_DUE_DATE" />
-                <ScalarProperty Name="FILING_TYPE_ID" ColumnName="FILING_TYPE_ID" />
-                <ScalarProperty Name="OFFICE_TYPE_ID" ColumnName="OFFICE_TYPE_ID" />
-                <ScalarProperty Name="ELECT_YEAR_ID" ColumnName="ELECT_YEAR_ID" />
-                <ScalarProperty Name="FILING_PERIOD_ID" ColumnName="FILING_PERIOD_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="MANUAL_PROD_UPDATES">
             <EntityTypeMapping TypeName="EFSModel.MANUAL_PROD_UPDATES">
               <MappingFragment StoreEntitySet="MANUAL_PROD_UPDATES">
@@ -51566,24 +51328,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="REQUEST_DATE" ColumnName="REQUEST_DATE" />
                 <ScalarProperty Name="REQUESTOR" ColumnName="REQUESTOR" />
                 <ScalarProperty Name="MAN_PROD_UPDATE_ID" ColumnName="MAN_PROD_UPDATE_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PARTY_CALL_backup">
-            <EntityTypeMapping TypeName="EFSModel.PARTY_CALL_backup">
-              <MappingFragment StoreEntitySet="PARTY_CALL_backup">
-                <ScalarProperty Name="OFF_DIST_MAP_ID2" ColumnName="OFF_DIST_MAP_ID2" />
-                <ScalarProperty Name="OFF_DIST_MAP_ID" ColumnName="OFF_DIST_MAP_ID" />
-                <ScalarProperty Name="COUNTY_ID" ColumnName="COUNTY_ID" />
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="ALTERNATE_NUM" ColumnName="ALTERNATE_NUM" />
-                <ScalarProperty Name="DELEGATE_NUM" ColumnName="DELEGATE_NUM" />
-                <ScalarProperty Name="ELECTION_YEAR_ID" ColumnName="ELECTION_YEAR_ID" />
-                <ScalarProperty Name="PARTY_ID" ColumnName="PARTY_ID" />
-                <ScalarProperty Name="PARTY_CALL_ID" ColumnName="PARTY_CALL_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -51607,22 +51351,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SQLAccesses">
-            <EntityTypeMapping TypeName="EFSModel.SQLAccess">
-              <MappingFragment StoreEntitySet="SQLAccess">
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="SQLAccess_Password" ColumnName="SQLAccess_Password" />
-                <ScalarProperty Name="SQLAccess_UserName" ColumnName="SQLAccess_UserName" />
-                <ScalarProperty Name="SQLAccess_AppName" ColumnName="SQLAccess_AppName" />
-                <ScalarProperty Name="SQLAccess_Environment" ColumnName="SQLAccess_Environment" />
-                <ScalarProperty Name="SQLAccess_ID" ColumnName="SQLAccess_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="STATE_COMMITTEE_PARTY">
             <EntityTypeMapping TypeName="EFSModel.STATE_COMMITTEE_PARTY">
               <MappingFragment StoreEntitySet="STATE_COMMITTEE_PARTY">
@@ -51634,28 +51362,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="PARTY_ELECT_ID" ColumnName="PARTY_ELECT_ID" />
                 <ScalarProperty Name="OFF_DIST_MAP_ID" ColumnName="OFF_DIST_MAP_ID" />
                 <ScalarProperty Name="STATE_COMM_PARTY_ID" ColumnName="STATE_COMM_PARTY_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TEMPTABLEs">
-            <EntityTypeMapping TypeName="EFSModel.TEMPTABLE">
-              <MappingFragment StoreEntitySet="TEMPTABLE">
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="SUBMIT_DATE" ColumnName="SUBMIT_DATE" />
-                <ScalarProperty Name="AMENDED" ColumnName="AMENDED" />
-                <ScalarProperty Name="DISCLOSURE_PERIOD" ColumnName="DISCLOSURE_PERIOD" />
-                <ScalarProperty Name="DISCLOSURE_TYPE" ColumnName="DISCLOSURE_TYPE" />
-                <ScalarProperty Name="ELECT_DATE" ColumnName="ELECT_DATE" />
-                <ScalarProperty Name="ELECT_TYPE_DESC" ColumnName="ELECT_TYPE_DESC" />
-                <ScalarProperty Name="OFFICE_TYPE_DESC" ColumnName="OFFICE_TYPE_DESC" />
-                <ScalarProperty Name="REPORT_YEAR" ColumnName="REPORT_YEAR" />
-                <ScalarProperty Name="DISCLOSURE_PERIOD_ID" ColumnName="DISCLOSURE_PERIOD_ID" />
-                <ScalarProperty Name="DISCLOSURE_TYPE_ID" ColumnName="DISCLOSURE_TYPE_ID" />
-                <ScalarProperty Name="ELECT_TYPE_ID" ColumnName="ELECT_TYPE_ID" />
-                <ScalarProperty Name="OFFICE_TYPE_ID" ColumnName="OFFICE_TYPE_ID" />
-                <ScalarProperty Name="REPORT_YEAR_ID" ColumnName="REPORT_YEAR_ID" />
-                <ScalarProperty Name="POL_CAL_DATE_ID" ColumnName="POL_CAL_DATE_ID" />
-                <ScalarProperty Name="FILINGS_ID" ColumnName="FILINGS_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -51975,6 +51681,58 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="FILING_SCHED_ID" ColumnName="FILING_SCHED_ID" />
                 <ScalarProperty Name="FILINGS_ID" ColumnName="FILINGS_ID" />
                 <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
+                <ScalarProperty Name="DIST_OFF_CAND_BAL_PROP" ColumnName="DIST_OFF_CAND_BAL_PROP" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="OFFICE_DESC" ColumnName="OFFICE_DESC" />
+                <ScalarProperty Name="ELECTION_YEAR_R" ColumnName="ELECTION_YEAR_R" />
+                <ScalarProperty Name="R_LIABILITY" ColumnName="R_LIABILITY" />
+                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
+                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
+                <ScalarProperty Name="LOAN_OTHER_DESC" ColumnName="LOAN_OTHER_DESC" />
+                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
+                <ScalarProperty Name="OWED_AMT" ColumnName="OWED_AMT" />
+                <ScalarProperty Name="PAY_NUMBER" ColumnName="PAY_NUMBER" />
+                <ScalarProperty Name="PAYMENT_TYPE_DESC" ColumnName="PAYMENT_TYPE_DESC" />
+                <ScalarProperty Name="FLNG_ENT_COUNTRY" ColumnName="FLNG_ENT_COUNTRY" />
+                <ScalarProperty Name="FLNG_ENT_ZIP" ColumnName="FLNG_ENT_ZIP" />
+                <ScalarProperty Name="FLNG_ENT_STATE" ColumnName="FLNG_ENT_STATE" />
+                <ScalarProperty Name="FLNG_ENT_CITY" ColumnName="FLNG_ENT_CITY" />
+                <ScalarProperty Name="FLNG_ENT_ADDR1" ColumnName="FLNG_ENT_ADDR1" />
+                <ScalarProperty Name="FLNG_ENT_LAST_NAME" ColumnName="FLNG_ENT_LAST_NAME" />
+                <ScalarProperty Name="FLNG_ENT_MIDDLE_NAME" ColumnName="FLNG_ENT_MIDDLE_NAME" />
+                <ScalarProperty Name="FLNG_ENT_FIRST_NAME" ColumnName="FLNG_ENT_FIRST_NAME" />
+                <ScalarProperty Name="FLNG_ENT_NAME" ColumnName="FLNG_ENT_NAME" />
+                <ScalarProperty Name="R_SUBCONTRACTOR" ColumnName="R_SUBCONTRACTOR" />
+                <ScalarProperty Name="PURPOSE_CODE_DESC" ColumnName="PURPOSE_CODE_DESC" />
+                <ScalarProperty Name="RECEIPT_CODE_DESC" ColumnName="RECEIPT_CODE_DESC" />
+                <ScalarProperty Name="RECEIPT_TYPE_DESC" ColumnName="RECEIPT_TYPE_DESC" />
+                <ScalarProperty Name="TRANSFER_TYPE_DESC" ColumnName="TRANSFER_TYPE_DESC" />
+                <ScalarProperty Name="CNTRBN_TYPE_DESC" ColumnName="CNTRBN_TYPE_DESC" />
+                <ScalarProperty Name="CNTRBR_TYPE_DESC" ColumnName="CNTRBR_TYPE_DESC" />
+                <ScalarProperty Name="ORG_DATE" ColumnName="ORG_DATE" />
+                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
+                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
+                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
+                <ScalarProperty Name="LOAN_LIB_NUMBER" ColumnName="LOAN_LIB_NUMBER" />
+                <ScalarProperty Name="FILING_SCHED_DESC" ColumnName="FILING_SCHED_DESC" />
+                <ScalarProperty Name="FILING_SCHED_ABBREV" ColumnName="FILING_SCHED_ABBREV" />
+                <ScalarProperty Name="FILING_CAT_DESC" ColumnName="FILING_CAT_DESC" />
+                <ScalarProperty Name="R_AMEND" ColumnName="R_AMEND" />
+                <ScalarProperty Name="FILING_DESC" ColumnName="FILING_DESC" />
+                <ScalarProperty Name="FILING_ABBREV" ColumnName="FILING_ABBREV" />
+                <ScalarProperty Name="COUNTY_DESC" ColumnName="COUNTY_DESC" />
+                <ScalarProperty Name="ELECTION_TYPE" ColumnName="ELECTION_TYPE" />
+                <ScalarProperty Name="ELECTION_YEAR" ColumnName="ELECTION_YEAR" />
+                <ScalarProperty Name="CAND_COMM_NAME" ColumnName="CAND_COMM_NAME" />
+                <ScalarProperty Name="FILER_PREVIOUS_ID" ColumnName="FILER_PREVIOUS_ID" />
+                <ScalarProperty Name="FILER_ID" ColumnName="FILER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE">
+            <EntityTypeMapping TypeName="EFSModel.VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE">
+              <MappingFragment StoreEntitySet="VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_SUBMITDATE">
+                <ScalarProperty Name="SUBMIT_DATE" ColumnName="SUBMIT_DATE" />
                 <ScalarProperty Name="DIST_OFF_CAND_BAL_PROP" ColumnName="DIST_OFF_CAND_BAL_PROP" />
                 <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
                 <ScalarProperty Name="OFFICE_DESC" ColumnName="OFFICE_DESC" />
@@ -52846,95 +52604,12 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_S_EFS_SCHED_R_CHILD_Data" FunctionName="EFSModel.Store.SP_S_EFS_SCHED_R_CHILD_Data">
+          <FunctionImportMapping FunctionImportName="SP_S_PurposeCode_PCF" FunctionName="EFSModel.Store.SP_S_PurposeCode_PCF">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EFSModel.SP_S_EFS_SCHED_R_CHILD_Data_Result">
-                <ScalarProperty Name="FILING_TRANS_ID" ColumnName="FILING_TRANS_ID" />
-                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
-                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
-                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
-                <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
-                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
-                <ScalarProperty Name="FLNG_ENT_FIRST_NAME" ColumnName="FLNG_ENT_FIRST_NAME" />
-                <ScalarProperty Name="FLNG_ENT_MIDDLE_NAME" ColumnName="FLNG_ENT_MIDDLE_NAME" />
-                <ScalarProperty Name="FLNG_ENT_LAST_NAME" ColumnName="FLNG_ENT_LAST_NAME" />
-                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
-                <ScalarProperty Name="ELECTION_YEAR" ColumnName="ELECTION_YEAR" />
-                <ScalarProperty Name="OFFICE_DESC" ColumnName="OFFICE_DESC" />
-                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
-                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
-                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_S_NonItemizedIECommEditTrans_WCS" FunctionName="EFSModel.Store.SP_S_NonItemizedIECommEditTrans_WCS">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EFSModel.SP_S_NonItemizedIECommEditTrans_WCS_Result">
-                <ScalarProperty Name="FILING_TRANS_ID" ColumnName="FILING_TRANS_ID" />
-                <ScalarProperty Name="FILING_SCHED_ID" ColumnName="FILING_SCHED_ID" />
-                <ScalarProperty Name="FLNG_ENT_ID" ColumnName="FLNG_ENT_ID" />
-                <ScalarProperty Name="CNTRBR_TYPE_ID" ColumnName="CNTRBR_TYPE_ID" />
-                <ScalarProperty Name="CNTRBN_TYPE_ID" ColumnName="CNTRBN_TYPE_ID" />
-                <ScalarProperty Name="PAYMENT_TYPE_ID" ColumnName="PAYMENT_TYPE_ID" />
-                <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
-                <ScalarProperty Name="TREAS_ID" ColumnName="TREAS_ID" />
-                <ScalarProperty Name="LOANER_CODE_ID" ColumnName="LOANER_CODE_ID" />
-                <ScalarProperty Name="SUBMIT_DATE" ColumnName="SUBMIT_DATE" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="FILING_SCHED_DESC" ColumnName="FILING_SCHED_DESC" />
-                <ScalarProperty Name="SCHED_DATE" ColumnName="SCHED_DATE" />
-                <ScalarProperty Name="CNTRBR_TYPE_DESC" ColumnName="CNTRBR_TYPE_DESC" />
-                <ScalarProperty Name="CNTRBN_TYPE_DESC" ColumnName="CNTRBN_TYPE_DESC" />
-                <ScalarProperty Name="LOANER_CODE" ColumnName="LOANER_CODE" />
-                <ScalarProperty Name="FLNG_ENT_NAME" ColumnName="FLNG_ENT_NAME" />
-                <ScalarProperty Name="FLNG_ENT_FIRST_NAME" ColumnName="FLNG_ENT_FIRST_NAME" />
-                <ScalarProperty Name="FLNG_ENT_MIDDLE_NAME" ColumnName="FLNG_ENT_MIDDLE_NAME" />
-                <ScalarProperty Name="FLNG_ENT_LAST_NAME" ColumnName="FLNG_ENT_LAST_NAME" />
-                <ScalarProperty Name="FLNG_ENT_STR_NUM" ColumnName="FLNG_ENT_STR_NUM" />
-                <ScalarProperty Name="FLNG_ENT_STR_NAME" ColumnName="FLNG_ENT_STR_NAME" />
-                <ScalarProperty Name="FLNG_ENT_CITY" ColumnName="FLNG_ENT_CITY" />
-                <ScalarProperty Name="FLNG_ENT_STATE" ColumnName="FLNG_ENT_STATE" />
-                <ScalarProperty Name="FLNG_ENT_ZIP" ColumnName="FLNG_ENT_ZIP" />
-                <ScalarProperty Name="FLNG_ENT_COUNTRY" ColumnName="FLNG_ENT_COUNTRY" />
-                <ScalarProperty Name="PAYMENT_TYPE_DESC" ColumnName="PAYMENT_TYPE_DESC" />
-                <ScalarProperty Name="PAY_NUMBER" ColumnName="PAY_NUMBER" />
-                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
-                <ScalarProperty Name="OWED_AMT" ColumnName="OWED_AMT" />
-                <ScalarProperty Name="TRANS_EXPLNTN" ColumnName="TRANS_EXPLNTN" />
-                <ScalarProperty Name="R_AMEND" ColumnName="R_AMEND" />
-                <ScalarProperty Name="R_ITEMIZED" ColumnName="R_ITEMIZED" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="PERSON_FIRST_NAME" ColumnName="PERSON_FIRST_NAME" />
-                <ScalarProperty Name="PERSON_LAST_NAME" ColumnName="PERSON_LAST_NAME" />
-                <ScalarProperty Name="PERSON_MIDDLE_NAME" ColumnName="PERSON_MIDDLE_NAME" />
-                <ScalarProperty Name="TREAS_OCCUPATION" ColumnName="TREAS_OCCUPATION" />
-                <ScalarProperty Name="TREAS_EMPLOYER" ColumnName="TREAS_EMPLOYER" />
-                <ScalarProperty Name="ADDR_ADDR1" ColumnName="ADDR_ADDR1" />
-                <ScalarProperty Name="ADDR_CITY" ColumnName="ADDR_CITY" />
-                <ScalarProperty Name="ADDR_STATE" ColumnName="ADDR_STATE" />
-                <ScalarProperty Name="ADDR_ZIP" ColumnName="ADDR_ZIP" />
-                <ScalarProperty Name="IE_CNTRBR_OCC" ColumnName="IE_CNTRBR_OCC" />
-                <ScalarProperty Name="IE_CNTRBR_EMP" ColumnName="IE_CNTRBR_EMP" />
-                <ScalarProperty Name="DIST_OFF_CAND_BAL_PROP" ColumnName="DIST_OFF_CAND_BAL_PROP" />
-                <ScalarProperty Name="IE_DESC" ColumnName="IE_DESC" />
-                <ScalarProperty Name="R_IE_SUPPORTED" ColumnName="R_IE_SUPPORTED" />
-                <ScalarProperty Name="CNTY_DESC" ColumnName="CNTY_DESC" />
-                <ScalarProperty Name="MUNICIPALITY_DESC" ColumnName="MUNICIPALITY_DESC" />
-                <ScalarProperty Name="LOAN_LIB_NUMBER" ColumnName="LOAN_LIB_NUMBER" />
-                <ScalarProperty Name="TRANS_NUMBER" ColumnName="TRANS_NUMBER" />
-                <ScalarProperty Name="TRANS_MAPPING" ColumnName="TRANS_MAPPING" />
-                <ScalarProperty Name="R_LIABILITY" ColumnName="R_LIABILITY" />
-                <ScalarProperty Name="R_SUBCONTRACTOR" ColumnName="R_SUBCONTRACTOR" />
+              <ComplexTypeMapping TypeName="EFSModel.SP_S_PurposeCode_PCF_Result">
                 <ScalarProperty Name="PURPOSE_CODE_ID" ColumnName="PURPOSE_CODE_ID" />
-                <ScalarProperty Name="EXISTS_LIAB_TRANS_ID" ColumnName="EXISTS_LIAB_TRANS_ID" />
-                <ScalarProperty Name="R_CLAIM" ColumnName="R_CLAIM" />
-                <ScalarProperty Name="R_IN_DISTRICT" ColumnName="R_IN_DISTRICT" />
-                <ScalarProperty Name="R_MINOR" ColumnName="R_MINOR" />
-                <ScalarProperty Name="R_VENDOR" ColumnName="R_VENDOR" />
-                <ScalarProperty Name="R_LOBBYIST" ColumnName="R_LOBBYIST" />
-                <ScalarProperty Name="R_CONTRIBUTIONS" ColumnName="R_CONTRIBUTIONS" />
-                <ScalarProperty Name="R_WEEKLY" ColumnName="R_WEEKLY" />
-                <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
+                <ScalarProperty Name="PURPOSE_CODE_DESC" ColumnName="PURPOSE_CODE_DESC" />
+                <ScalarProperty Name="PURPOSE_CODE_ABBREV" ColumnName="PURPOSE_CODE_ABBREV" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
