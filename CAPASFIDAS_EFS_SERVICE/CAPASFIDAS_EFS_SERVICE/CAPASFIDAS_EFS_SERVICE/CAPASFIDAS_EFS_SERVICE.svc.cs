@@ -11269,5 +11269,28 @@ namespace CAPASFIDAS_EFS_SERVICE
             return lstFilingTransactionDataContract;
         }
         #endregion GetCommEditIETransData
+
+        /// <summary>
+        /// GetPurposeCodeData_PCF
+        /// </summary>
+        /// <returns></returns>
+        public IList<PurposeCodeContract> GetPurposeCodeData_PCF()
+        {
+            IList<PurposeCodeContract> lstPurposeCodeContract = new List<PurposeCodeContract>();
+            PurposeCodeContract objPurposeCodeContract;
+
+            var results = objEFSRepository.GetPurposeCodeData_PCF();
+
+            foreach (var item in results)
+            {
+                objPurposeCodeContract = new PurposeCodeContract();
+                objPurposeCodeContract.PurposeCodeId = item.PurposeCodeId;
+                objPurposeCodeContract.PurposeCodeDesc = item.PurposeCodeDesc;
+                objPurposeCodeContract.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                lstPurposeCodeContract.Add(objPurposeCodeContract);
+            }
+
+            return lstPurposeCodeContract;
+        }
     }
 }

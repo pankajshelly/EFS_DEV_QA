@@ -1046,5 +1046,8 @@ namespace CAPASFIDAS_EFS_SERVICE
 
         [OperationContract]
         IList<FilingTransactionDataContract> GetCommEditIETransData_WCS(String strTransNumber, String filerID);
+
+        [OperationContract]
+        IList<PurposeCodeContract> GetPurposeCodeData_PCF();
     }
 }
