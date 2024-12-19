@@ -4013,6 +4013,83 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PurposeCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class PurposeCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeAbbrevField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeAbbrev {
+            get {
+                return this.PurposeCodeAbbrevField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeAbbrevField, value) != true)) {
+                    this.PurposeCodeAbbrevField = value;
+                    this.RaisePropertyChanged("PurposeCodeAbbrev");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeDesc {
+            get {
+                return this.PurposeCodeDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeDescField, value) != true)) {
+                    this.PurposeCodeDescField = value;
+                    this.RaisePropertyChanged("PurposeCodeDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeId {
+            get {
+                return this.PurposeCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeIdField, value) != true)) {
+                    this.PurposeCodeIdField = value;
+                    this.RaisePropertyChanged("PurposeCodeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ViewSupportingDocumentsGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
     public partial class ViewSupportingDocumentsGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -8041,83 +8118,6 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
                 if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
                     this.OutstandingAmountField = value;
                     this.RaisePropertyChanged("OutstandingAmount");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PurposeCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class PurposeCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeAbbrevField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeAbbrev {
-            get {
-                return this.PurposeCodeAbbrevField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeAbbrevField, value) != true)) {
-                    this.PurposeCodeAbbrevField = value;
-                    this.RaisePropertyChanged("PurposeCodeAbbrev");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeDesc {
-            get {
-                return this.PurposeCodeDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeDescField, value) != true)) {
-                    this.PurposeCodeDescField = value;
-                    this.RaisePropertyChanged("PurposeCodeDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeId {
-            get {
-                return this.PurposeCodeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeIdField, value) != true)) {
-                    this.PurposeCodeIdField = value;
-                    this.RaisePropertyChanged("PurposeCodeId");
                 }
             }
         }
@@ -19599,6 +19599,12 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse")]
         System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridDataResp" +
             "onse")]
         BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewSupportingDocumentsGridContract[] GetViewSupportingDocumentsGridData(string strFilerID, string strReportYearID, string strDisclosurePeriodID);
@@ -21859,6 +21865,14 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         
         public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID) {
             return base.Channel.GetCommEditIETransData_WCSAsync(strTransNumber, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF() {
+            return base.Channel.GetPurposeCodeData_PCF();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync() {
+            return base.Channel.GetPurposeCodeData_PCFAsync();
         }
         
         public BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewSupportingDocumentsGridContract[] GetViewSupportingDocumentsGridData(string strFilerID, string strReportYearID, string strDisclosurePeriodID) {

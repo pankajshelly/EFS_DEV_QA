@@ -3608,5 +3608,18 @@ namespace Broker
             return lstFilingTransactionDataModel;
         }
         #endregion GetCommEditIETransDataResponse_WCS
+
+        /// <summary>
+        /// GetPurposeCodeData_PCF_Response
+        /// </summary>
+        /// <returns></returns>
+        public IList<PurposeCodeModel> GetPurposeCodeData_PCF_Response()
+        {
+            IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
+
+            lstPurposeCodeModel = objItemizedReportsBLL.mapGetPurposeCodeData_PCF_BLLResponse();
+
+            return lstPurposeCodeModel;
+        }
     }
 }

@@ -299,6 +299,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FilingTransactionDataContract" nillable="true" type="tns:FilingTransactionDataContract" />
+  <xs:complexType name="ArrayOfPurposeCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurposeCodeContract" nillable="true" type="tns:ArrayOfPurposeCodeContract" />
+  <xs:complexType name="PurposeCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PurposeCodeAbbrev" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
   <xs:complexType name="ArrayOfViewSupportingDocumentsGridContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewSupportingDocumentsGridContract" nillable="true" type="tns:ViewSupportingDocumentsGridContract" />
@@ -785,20 +799,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DateIncurredContract" nillable="true" type="tns:DateIncurredContract" />
-  <xs:complexType name="ArrayOfPurposeCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPurposeCodeContract" nillable="true" type="tns:ArrayOfPurposeCodeContract" />
-  <xs:complexType name="PurposeCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="PurposeCodeAbbrev" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
   <xs:complexType name="ArrayOfFilingMthodContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingMthodContract" nillable="true" type="tns:FilingMthodContract" />

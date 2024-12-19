@@ -3623,5 +3623,18 @@ namespace BLL
             return lstFilingTransactionDataModel;
         }
         #endregion mapGetCommEditIETransDataBLLResponse_WCS
+
+        /// <summary>
+        /// mapGetPurposeCodeData_PCF_BLLResponse
+        /// </summary>
+        /// <returns></returns>
+        internal IList<PurposeCodeModel> mapGetPurposeCodeData_PCF_BLLResponse()
+        {
+            IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
+
+            lstPurposeCodeModel = objItemizedReportsDAL.mapGetPurposeCodeData_PCF_DALResponse();
+
+            return lstPurposeCodeModel;
+        }
     }
 }

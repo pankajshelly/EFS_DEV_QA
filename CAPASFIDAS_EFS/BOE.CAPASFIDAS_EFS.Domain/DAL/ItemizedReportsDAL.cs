@@ -12786,5 +12786,41 @@ namespace DAL
         }
         #endregion mapGetCommEditIETransDataDALResponse_WCS
 
+        /// <summary>
+        /// mapGetPurposeCodeData_PCF_DALResponse
+        /// </summary>
+        /// <returns></returns>
+        internal IList<PurposeCodeModel> mapGetPurposeCodeData_PCF_DALResponse()
+        {
+            using (CAPASFIDAS_EFS_SERVICEClient client = new CAPASFIDAS_EFS_SERVICEClient())
+            {
+                try
+                {
+
+                    IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
+                    PurposeCodeModel objPurposeCodeModel;
+
+                    var results = client.GetPurposeCodeData_PCF();
+
+                    foreach (var item in results)
+                    {
+                        objPurposeCodeModel = new PurposeCodeModel();
+                        objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
+                        objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
+                        objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                        lstPurposeCodeModel.Add(objPurposeCodeModel);
+                    }
+                    client.Close();
+                    return lstPurposeCodeModel;
+                }
+                catch (Exception)
+                {
+                    client.Abort();
+                    throw;
+                }
+            }
+
+        }
+
     }
 }

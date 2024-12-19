@@ -63,6 +63,12 @@
   <wsdl:message name="ICAPASFIDAS_EFS_SERVICE_GetCommEditIETransData_WCS_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCommEditIETransData_WCSResponse" />
   </wsdl:message>
+  <wsdl:message name="ICAPASFIDAS_EFS_SERVICE_GetPurposeCodeData_PCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurposeCodeData_PCF" />
+  </wsdl:message>
+  <wsdl:message name="ICAPASFIDAS_EFS_SERVICE_GetPurposeCodeData_PCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurposeCodeData_PCFResponse" />
+  </wsdl:message>
   <wsdl:message name="ICAPASFIDAS_EFS_SERVICE_GetViewSupportingDocumentsGridData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetViewSupportingDocumentsGridData" />
   </wsdl:message>
@@ -2016,6 +2022,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS" message="tns:ICAPASFIDAS_EFS_SERVICE_GetCommEditIETransData_WCS_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse" message="tns:ICAPASFIDAS_EFS_SERVICE_GetCommEditIETransData_WCS_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPurposeCodeData_PCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF" message="tns:ICAPASFIDAS_EFS_SERVICE_GetPurposeCodeData_PCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse" message="tns:ICAPASFIDAS_EFS_SERVICE_GetPurposeCodeData_PCF_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetViewSupportingDocumentsGridData">
       <wsdl:input wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridData" message="tns:ICAPASFIDAS_EFS_SERVICE_GetViewSupportingDocumentsGridData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridDataResponse" message="tns:ICAPASFIDAS_EFS_SERVICE_GetViewSupportingDocumentsGridData_OutputMessage" />
@@ -3365,6 +3375,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetCommEditIETransData_WCS">
       <soap12:operation soapAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurposeCodeData_PCF">
+      <soap12:operation soapAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

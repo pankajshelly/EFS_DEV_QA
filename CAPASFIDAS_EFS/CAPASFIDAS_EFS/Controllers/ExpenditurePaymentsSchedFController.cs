@@ -4028,7 +4028,15 @@ namespace CAPASFIDAS_EFS.Controllers
             try
             {
                 IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
-                lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
+                {                    
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeData_PCF_Response();
+                }
+                else
+                {
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                }
+                
                 // Bind Purpose Code            
                 //ViewData["lstPurposeCode"] = new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc");
                 return Json(new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc"), JsonRequestBehavior.AllowGet);
@@ -4055,7 +4063,14 @@ namespace CAPASFIDAS_EFS.Controllers
             {
                 IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
 
-                lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
+                {                    
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeData_PCF_Response();
+                }
+                else
+                {
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                }
 
                 var itemRemoveInternetExpenses = lstPurposeCodeModel.Single(x => x.PurposeCodeId == "10");
                 lstPurposeCodeModel.Remove(itemRemoveInternetExpenses);
@@ -4087,7 +4102,14 @@ namespace CAPASFIDAS_EFS.Controllers
             {
                 IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
 
-                lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
+                {                    
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeData_PCF_Response();
+                }
+                else
+                {
+                    lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                }
 
                 // Bind Purpose Code                        
                 return Json(new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc"), JsonRequestBehavior.AllowGet);
@@ -4419,17 +4441,35 @@ namespace CAPASFIDAS_EFS.Controllers
                 objPurposeCodeModel.PurposeCodeId = "0";
                 objPurposeCodeModel.PurposeCodeDesc = "- Select -";
                 objPurposeCodeModel.PurposeCodeAbbrev = "SEL";
-                lstPurposeCodeModel.Add(objPurposeCodeModel);
-                var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeDataResponse();
-                foreach (var item in resPurposeCoeds)
+                lstPurposeCodeModel.Add(objPurposeCodeModel);                
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
                 {
-                    if (item != null)
+                    var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeData_PCF_Response();
+                    foreach (var item in resPurposeCoeds)
                     {
-                        objPurposeCodeModel = new PurposeCodeModel();
-                        objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
-                        objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
-                        objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
-                        lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        if (item != null)
+                        {
+                            objPurposeCodeModel = new PurposeCodeModel();
+                            objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
+                            objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
+                            objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                            lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        }
+                    }
+                }
+                else
+                {
+                    var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                    foreach (var item in resPurposeCoeds)
+                    {
+                        if (item != null)
+                        {
+                            objPurposeCodeModel = new PurposeCodeModel();
+                            objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
+                            objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
+                            objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                            lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        }
                     }
                 }
                 // Bind Purpose Code            
@@ -5104,18 +5144,37 @@ namespace CAPASFIDAS_EFS.Controllers
                 objPurposeCodeModel.PurposeCodeDesc = "- Select -";
                 objPurposeCodeModel.PurposeCodeAbbrev = "SEL";
                 lstPurposeCodeModel.Add(objPurposeCodeModel);
-                var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeDataResponse();
-                foreach (var item in resPurposeCoeds)
-                {
-                    if (item != null)
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
+                {                    
+                    var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeData_PCF_Response();
+                    foreach (var item in resPurposeCoeds)
                     {
-                        objPurposeCodeModel = new PurposeCodeModel();
-                        objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
-                        objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
-                        objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
-                        lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        if (item != null)
+                        {
+                            objPurposeCodeModel = new PurposeCodeModel();
+                            objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
+                            objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
+                            objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                            lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        }
                     }
                 }
+                else
+                {
+                    var resPurposeCoeds = objItemizedReportsBroker.GetPurposeCodeDataResponse();
+                    foreach (var item in resPurposeCoeds)
+                    {
+                        if (item != null)
+                        {
+                            objPurposeCodeModel = new PurposeCodeModel();
+                            objPurposeCodeModel.PurposeCodeId = item.PurposeCodeId;
+                            objPurposeCodeModel.PurposeCodeDesc = item.PurposeCodeDesc;
+                            objPurposeCodeModel.PurposeCodeAbbrev = item.PurposeCodeAbbrev;
+                            lstPurposeCodeModel.Add(objPurposeCodeModel);
+                        }
+                    }
+                }
+                
                 // Bind Purpose Code            
                 ViewData["lstPurposeCode"] = new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc");
                 ViewData["lstPurposeCodeItem"] = new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc");
