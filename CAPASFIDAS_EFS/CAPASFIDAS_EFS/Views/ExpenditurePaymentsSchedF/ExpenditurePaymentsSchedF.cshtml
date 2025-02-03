@@ -1959,7 +1959,8 @@
                 $m("label[for=txtExplanationSchedF]").text('');
                 $m("#txtExplanationSchedF").removeClass("error");
 
-                if ($("#lstPurposeCode option:selected").val().toString() == "8") { // OTHER
+                if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                    || $("#lstPurposeCode option:selected").val().toString() == "51") { // OTHER
                     // EXPLANATION MANADATORY
                     $("#lblExplanation").text("* Explanation");
 
@@ -1978,7 +1979,8 @@
                 $("#lblExplanation").text("* Explanation");
                 $("#tdCheck").hide();
             }
-            else if ($("#lstPurposeCode option:selected").val().toString() == "8") { // OTHER
+            else if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                    || $("#lstPurposeCode option:selected").val().toString() == "51") { // OTHER
                 // EXPLANATION MANADATORY
                 $("#lblExplanation").text("* Explanation");
 
@@ -5178,7 +5180,8 @@
                 // EXPLANATION MANADATORY
                 $("#lblExplanation").text("* Explanation");
             }
-            else if ($("#lstPurposeCode option:selected").val().toString() == "8") { // OTHER
+            else if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                    || $("#lstPurposeCode option:selected").val().toString() == "51") { // OTHER
                 // EXPLANATION MANADATORY
                 $("#lblExplanation").text("* Explanation");
             }
@@ -6765,7 +6768,8 @@
                             $m('#txtZipCodeReim').attr("placeholder", "");
                         }
 
-                        if (dataReimbursement[2].toString() == "8") {
+                        if (dataReimbursement[2].toString() == "8"
+                            || dataReimbursement[2].toString() == "51") {
                             $("#lblExplanationReim").text("* Explanation");
                         }
                         else {
@@ -6973,7 +6977,8 @@
                             $m('#txtZipCodeCCI').attr("placeholder", "");
                         }
 
-                        if (dataCCItemization[2].toString() == "8") {
+                        if (dataCCItemization[2].toString() == "8"
+                            || dataCCItemization[2].toString() == "51") {
                             $("#lblExplanationCCI").text("* Explanation");
                         }
                         else {
@@ -7927,7 +7932,7 @@
 
             var selectedPurposeCode = $("#lstPurposeCodeReim option:selected").val().toString();
 
-            if (selectedPurposeCode == "8") {
+            if (selectedPurposeCode == "8" || selectedPurposeCode == "51") {
                 $("#lblExplanationReim").text("* Explanation");
             }
             else {
@@ -8416,7 +8421,7 @@
 
             var selectedPurposeCode = $("#lstPurposeCodeCCI option:selected").val().toString();
 
-            if (selectedPurposeCode == "8") {
+            if (selectedPurposeCode == "8" || selectedPurposeCode == "51") {
                 $("#lblExplanationCCI").text("* Explanation");
             }
             else {
@@ -8875,6 +8880,9 @@
                                     if (item.PurposeCodeDesc.toString() == "Other: Must Provide Explanation") {
                                         $("#lblExplanation").text("* Explanation");
                                     }
+                                    else if (item.PurposeCodeDesc.toString() == "Contribution Refund: Must Provide Explanation") {
+                                        $("#lblExplanation").text("* Explanation");
+                                    }
 
                                     if (item.RLiability.toString() == "Y") {
 
@@ -9187,6 +9195,9 @@
 
                             // PURPOSE CODE.
                             if (data[29].toString() == "Other: Must Provide Explanation") {
+                                $("#lblExplanation").text("* Explanation");
+                            }
+                            else if (data[29].toString() == "Contribution Refund: Must Provide Explanation") {
                                 $("#lblExplanation").text("* Explanation");
                             }
 
