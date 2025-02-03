@@ -1444,6 +1444,9 @@ function validatePage(pageName) {
                     else if ($("#lstPurposeCode option:selected").val() != null) {
                         return $("#lstPurposeCode option:selected").val().toString() == "8";
                     }
+                    else if ($("#lstPurposeCode option:selected").val() != null) {
+                        return $("#lstPurposeCode option:selected").val().toString() == "51";
+                    }
                     else if ($("#lstLoanerCode option:selected").val() != null) {
                         return $("#lstLoanerCode option:selected").val().toString() == "13";
                     }
@@ -1538,7 +1541,8 @@ function validatePage(pageName) {
                     if ($("#lstMethod option:selected").val().toString() == "7") {
                         return true;
                     }
-                    else if ($("#lstPurposeCode option:selected").val().toString() == "8") {
+                    else if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                             || $("#lstPurposeCode option:selected").val().toString() == "51"){
                         return true;
                     }
                     else {
@@ -1552,7 +1556,8 @@ function validatePage(pageName) {
                     if ($("#lstMethod option:selected").val().toString() == "7") {
                         return true;
                     }
-                    else if ($("#lstPurposeCode option:selected").val().toString() == "8") {
+                    else if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                            || $("#lstPurposeCode option:selected").val().toString() == "51"){
                         return true;
                     }
                     else {
@@ -1566,7 +1571,8 @@ function validatePage(pageName) {
                     if ($("#lstMethodIE24HExpPayF option:selected").val().toString() == "7") {
                         return true;
                     }
-                    else if ($("#lstPurposeCode option:selected").val().toString() == "8") {
+                    else if ($("#lstPurposeCode option:selected").val().toString() == "8"
+                        || $("#lstPurposeCode option:selected").val().toString() == "51") {
                         return true;
                     }
                     else {
@@ -6894,7 +6900,8 @@ function ValidateReimburesementDetails(reimbursementVal) {
             },
             txtExplanationSchedQReim: {
                 required: function () {
-                    if ($("#lstPurposeCodeReim option:selected").val().toString() == "8") {
+                    if ($("#lstPurposeCodeReim option:selected").val().toString() == "8"
+                        || $("#lstPurposeCodeReim option:selected").val().toString() == "51") {
                         return true;
                     }
                     else {
@@ -7177,7 +7184,8 @@ function ValidateCreditCardItemization(ccItemVal) {
             },
             txtExplanationCCI: {
                 required: function () {
-                    if ($("#lstPurposeCodeCCI option:selected").val().toString() == "8") {
+                    if ($("#lstPurposeCodeCCI option:selected").val().toString() == "8"
+                        || $("#lstPurposeCodeCCI option:selected").val().toString() == "51") {
                         return true;
                     }
                     else {
