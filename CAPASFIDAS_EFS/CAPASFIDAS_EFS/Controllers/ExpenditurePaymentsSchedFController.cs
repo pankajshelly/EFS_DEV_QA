@@ -3978,8 +3978,14 @@ namespace CAPASFIDAS_EFS.Controllers
             {
                 IList<PurposeCodeModel> lstPurposeCodeModel = new List<PurposeCodeModel>();
                 lstPurposeCodeModel = objItemizedReportsBroker.GetPurposeCodeSubcontractorSchedFResponse();
-                // Bind Purpose Code            
-                //ViewData["lstPurposeCode"] = new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc");
+
+                //02/07/2025 - Start - Remove Contribution Refund: Must Provide Explanation - Purpose code except PCF Filer
+                if (Session["COMM_TYPE_ID"].ToString() != "23")
+                {                    
+                    var itemRemoveContributionRefund = lstPurposeCodeModel.Single(x => x.PurposeCodeId == "51");
+                    lstPurposeCodeModel.Remove(itemRemoveContributionRefund);
+                }
+                //02/07/2025 - End - Remove Contribution Refund: Must Provide Explanation - Purpose code except PCF Filer
                 return Json(new SelectList(lstPurposeCodeModel, "PurposeCodeId", "PurposeCodeDesc"), JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

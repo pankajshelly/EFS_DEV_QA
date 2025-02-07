@@ -1977,30 +1977,45 @@ namespace CAPASFIDAS_EFS.Controllers
                     }
                     else if (objFilingTransactionsModel.PaymentTypeId == "8")
                     {
-                        if (objFilingTransactionsModel.PayNumber == null)
+                        if (objFilingTransactionsModel.FilingScheduleId == "1")
                         {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            if (objFilingTransactionsModel.PayNumber == null)
+                            {
+                                objImportErrorMessageModel = new ImportErrorMessageModel();
+                                objImportErrorMessageModel.RowNumber = rowNumber;
+                                objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                                objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+                                lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            }
+                            else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                            {
+                                objImportErrorMessageModel = new ImportErrorMessageModel();
+                                objImportErrorMessageModel.RowNumber = rowNumber;
+                                objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                                objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+                                lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            }
+                            else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+                            {
+                                objImportErrorMessageModel = new ImportErrorMessageModel();
+                                objImportErrorMessageModel.RowNumber = rowNumber;
+                                objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                                objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+                                lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            }
                         }
-                        else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                        else
                         {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            if (objFilingTransactionsModel.PayNumber != null)
+                            {
+                                objImportErrorMessageModel = new ImportErrorMessageModel();
+                                objImportErrorMessageModel.RowNumber = rowNumber;
+                                objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                                objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                                lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                            }
                         }
-                        else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                        {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                        }
+                        
                     }
                     else if (objFilingTransactionsModel.PaymentTypeId == "7")
                     {
@@ -2026,6 +2041,26 @@ namespace CAPASFIDAS_EFS.Controllers
                             objImportErrorMessageModel.RowNumber = rowNumber;
                             objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                             objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+
+                        if (objFilingTransactionsModel.PayNumber != null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+                    }
+                    else
+                    {
+                        if (objFilingTransactionsModel.PayNumber != null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                             lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                         }
                     }
@@ -13438,30 +13473,45 @@ namespace CAPASFIDAS_EFS.Controllers
                 }
                 else if (objFilingTransactionsModel.PaymentTypeId == "8")
                 {
-                    if (objFilingTransactionsModel.PayNumber == null)
+                    if (objFilingTransactionsModel.FilingScheduleId == "1")
                     {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        if (objFilingTransactionsModel.PayNumber == null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+                        else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+                        else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
                     }
-                    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                    else
                     {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        if (objFilingTransactionsModel.PayNumber != null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
                     }
-                    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
+                    
                 }
                 else if (objFilingTransactionsModel.PaymentTypeId == "7")
                 {
@@ -13487,6 +13537,26 @@ namespace CAPASFIDAS_EFS.Controllers
                         objImportErrorMessageModel.RowNumber = rowNumber;
                         objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                         objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                }
+                else
+                {
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
@@ -14081,33 +14151,33 @@ namespace CAPASFIDAS_EFS.Controllers
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
-                else if (objFilingTransactionsModel.PaymentTypeId == "8")
-                {
-                    if (objFilingTransactionsModel.PayNumber == null)
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                }
+                //else if (objFilingTransactionsModel.PaymentTypeId == "8")
+                //{
+                //    if (objFilingTransactionsModel.PayNumber == null)
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //}
                 else if (objFilingTransactionsModel.PaymentTypeId == "7")
                 {
                     if (objFilingTransactionsModel.TransExplanation == null)
@@ -14132,6 +14202,26 @@ namespace CAPASFIDAS_EFS.Controllers
                         objImportErrorMessageModel.RowNumber = rowNumber;
                         objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                         objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                }
+                else
+                {
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
@@ -14711,33 +14801,33 @@ namespace CAPASFIDAS_EFS.Controllers
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
-                else if (objFilingTransactionsModel.PaymentTypeId == "8")
-                {
-                    if (objFilingTransactionsModel.PayNumber == null)
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                    {
-                        objImportErrorMessageModel = new ImportErrorMessageModel();
-                        objImportErrorMessageModel.RowNumber = rowNumber;
-                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                    }
-                }
+                //else if (objFilingTransactionsModel.PaymentTypeId == "8")
+                //{
+                //    if (objFilingTransactionsModel.PayNumber == null)
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+                //    {
+                //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                //        objImportErrorMessageModel.RowNumber = rowNumber;
+                //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                //        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+                //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                //    }
+                //}
                 else if (objFilingTransactionsModel.PaymentTypeId == "7")
                 {
                     if (objFilingTransactionsModel.TransExplanation == null)
@@ -14762,6 +14852,25 @@ namespace CAPASFIDAS_EFS.Controllers
                         objImportErrorMessageModel.RowNumber = rowNumber;
                         objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                         objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                }
+                else
+                {
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
@@ -15432,33 +15541,33 @@ namespace CAPASFIDAS_EFS.Controllers
                             lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                         }
                     }
-                    else if (objFilingTransactionsModel.PaymentTypeId == "8")
-                    {
-                        if (objFilingTransactionsModel.PayNumber == null)
-                        {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                        }
-                        else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
-                        {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                        }
-                        else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                        {
-                            objImportErrorMessageModel = new ImportErrorMessageModel();
-                            objImportErrorMessageModel.RowNumber = rowNumber;
-                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                            objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                        }
-                    }
+                    //else if (objFilingTransactionsModel.PaymentTypeId == "8")
+                    //{
+                    //    if (objFilingTransactionsModel.PayNumber == null)
+                    //    {
+                    //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                    //        objImportErrorMessageModel.RowNumber = rowNumber;
+                    //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                    //        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+                    //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    //    }
+                    //    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+                    //    {
+                    //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                    //        objImportErrorMessageModel.RowNumber = rowNumber;
+                    //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                    //        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+                    //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    //    }
+                    //    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+                    //    {
+                    //        objImportErrorMessageModel = new ImportErrorMessageModel();
+                    //        objImportErrorMessageModel.RowNumber = rowNumber;
+                    //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                    //        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+                    //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    //    }
+                    //}
                     else if (objFilingTransactionsModel.PaymentTypeId == "7")
                     {
                         if (objFilingTransactionsModel.TransExplanation == null)
@@ -15483,6 +15592,26 @@ namespace CAPASFIDAS_EFS.Controllers
                             objImportErrorMessageModel.RowNumber = rowNumber;
                             objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                             objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+
+                        if (objFilingTransactionsModel.PayNumber != null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+                    }
+                    else
+                    {
+                        if (objFilingTransactionsModel.PayNumber != null)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                            objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                             lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                         }
                     }
@@ -16163,33 +16292,33 @@ namespace CAPASFIDAS_EFS.Controllers
                     lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                 }
             }
-            else if (objFilingTransactionsModel.PaymentTypeId == "8")
-            {
-                if (objFilingTransactionsModel.PayNumber == null)
-                {
-                    objImportErrorMessageModel = new ImportErrorMessageModel();
-                    objImportErrorMessageModel.RowNumber = rowNumber;
-                    objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                    objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
-                    lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                }
-                else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
-                {
-                    objImportErrorMessageModel = new ImportErrorMessageModel();
-                    objImportErrorMessageModel.RowNumber = rowNumber;
-                    objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                    objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
-                    lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                }
-                else if (objFilingTransactionsModel.PayNumber.Count() > 30)
-                {
-                    objImportErrorMessageModel = new ImportErrorMessageModel();
-                    objImportErrorMessageModel.RowNumber = rowNumber;
-                    objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
-                    objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
-                    lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-                }
-            }
+            //else if (objFilingTransactionsModel.PaymentTypeId == "8")
+            //{
+            //    if (objFilingTransactionsModel.PayNumber == null)
+            //    {
+            //        objImportErrorMessageModel = new ImportErrorMessageModel();
+            //        objImportErrorMessageModel.RowNumber = rowNumber;
+            //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+            //        objImportErrorMessageModel.ErrorMessages = "Money Order # is required";
+            //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+            //    }
+            //    else if (!objCommonErrorsServerSide.AlphaNumeric(objFilingTransactionsModel.PayNumber))
+            //    {
+            //        objImportErrorMessageModel = new ImportErrorMessageModel();
+            //        objImportErrorMessageModel.RowNumber = rowNumber;
+            //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+            //        objImportErrorMessageModel.ErrorMessages = "Letters and numbers are allowed";
+            //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+            //    }
+            //    else if (objFilingTransactionsModel.PayNumber.Count() > 30)
+            //    {
+            //        objImportErrorMessageModel = new ImportErrorMessageModel();
+            //        objImportErrorMessageModel.RowNumber = rowNumber;
+            //        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+            //        objImportErrorMessageModel.ErrorMessages = "Money Order should be 30 characters";
+            //        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+            //    }
+            //}
             else if (objFilingTransactionsModel.PaymentTypeId == "7")
             {
                 if (objFilingTransactionsModel.TransExplanation == null)
@@ -16214,6 +16343,25 @@ namespace CAPASFIDAS_EFS.Controllers
                     objImportErrorMessageModel.RowNumber = rowNumber;
                     objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                     objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                    lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                }
+                if (objFilingTransactionsModel.PayNumber != null)
+                {
+                    objImportErrorMessageModel = new ImportErrorMessageModel();
+                    objImportErrorMessageModel.RowNumber = rowNumber;
+                    objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                    objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                    lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                }
+            }
+            else
+            {
+                if (objFilingTransactionsModel.PayNumber != null)
+                {
+                    objImportErrorMessageModel = new ImportErrorMessageModel();
+                    objImportErrorMessageModel.RowNumber = rowNumber;
+                    objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                    objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                     lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                 }
             }
@@ -17405,6 +17553,26 @@ namespace CAPASFIDAS_EFS.Controllers
                         objImportErrorMessageModel.RowNumber = rowNumber;
                         objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
                         objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                }
+                else
+                {
+                    if (objFilingTransactionsModel.PayNumber != null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PAY_NUMBER - Column AG";
+                        objImportErrorMessageModel.ErrorMessages = "Pay Number # Should be blank.";
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
