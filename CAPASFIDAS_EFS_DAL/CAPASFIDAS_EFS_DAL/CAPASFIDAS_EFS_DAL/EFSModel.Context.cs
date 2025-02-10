@@ -20,8 +20,15 @@ namespace CAPASFIDAS_EFS_DAL
         public EFSEntities()
             : base("name=EFSEntities")
         {
+            this.SetCommandTimeOut(900);
         }
-    
+
+        public void SetCommandTimeOut(int Timeout)
+        {
+            var objectContext = (this as IObjectContextAdapter).ObjectContext;
+            objectContext.CommandTimeout = Timeout;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
