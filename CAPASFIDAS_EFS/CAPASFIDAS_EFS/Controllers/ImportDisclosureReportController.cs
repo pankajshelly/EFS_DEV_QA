@@ -2601,9 +2601,7 @@ namespace CAPASFIDAS_EFS.Controllers
             #endregion
 
             #region PURPOSE_CODE_ID Validation
-            if (objFilingTransactionsModel.FilingSchedId == "6" ||
-                objFilingTransactionsModel.FilingSchedId == "17" ||
-                objFilingTransactionsModel.FilingSchedId == "20")
+            if (objFilingTransactionsModel.FilingSchedId == "6")
             {
                 if (objFilingTransactionsModel.RItemized == "Y")
                 { 
@@ -2613,6 +2611,41 @@ namespace CAPASFIDAS_EFS.Controllers
                         objImportErrorMessageModel.RowNumber = rowNumber;
                         objImportErrorMessageModel.ColumnName = "PURPOSE_CODE_ID - Column R";
                         objImportErrorMessageModel.ErrorMessages = "Purpose Code is required";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                    else
+                    {
+                        Boolean results = lstVendorImportValidation.Any(x => x.TableName == "PURPOSE_CODE" && x.Id == objFilingTransactionsModel.PurposeCodeId.ToString());
+                        if (!results)
+                        {
+                            objImportErrorMessageModel = new ImportErrorMessageModel();
+                            objImportErrorMessageModel.RowNumber = rowNumber;
+                            objImportErrorMessageModel.ColumnName = "PURPOSE_CODE_ID - Column R";
+                            objImportErrorMessageModel.ErrorMessages = "Invalid Purpose Code.";
+                            lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                        }
+                    }
+                }
+            }
+            else if (objFilingTransactionsModel.FilingSchedId == "17" ||
+                objFilingTransactionsModel.FilingSchedId == "20")
+            {
+                if (objFilingTransactionsModel.RItemized == "Y")
+                {
+                    if (objFilingTransactionsModel.PurposeCodeId == null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PURPOSE_CODE_ID - Column R";
+                        objImportErrorMessageModel.ErrorMessages = "Purpose Code is required";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                    else if (objFilingTransactionsModel.PurposeCodeId == "51")
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "PURPOSE_CODE_ID - Column R";
+                        objImportErrorMessageModel.ErrorMessages = "Purpose Code should be either NULL or blank.";
                         lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                     else
@@ -2816,7 +2849,7 @@ namespace CAPASFIDAS_EFS.Controllers
                 objImportErrorMessageModel.ColumnName = "R_ITEMIZED - Column AL";
                 objImportErrorMessageModel.ErrorMessages = "Invalid Is Transaction Itemized";
                 lstImportErrorMessageModel.Add(objImportErrorMessageModel);
-            }            
+            }
 
             //PCFB Field Validation
             if (Session["COMM_TYPE_ID"].ToString() == "23")
@@ -3059,6 +3092,34 @@ namespace CAPASFIDAS_EFS.Controllers
                             objImportErrorMessageModel.ErrorMessages = "Invalid Is Contributions";
                             lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                         }
+                    }
+                }
+
+                if (objFilingTransactionsModel.PurposeCodeId == "51")
+                {
+                    if (objFilingTransactionsModel.TransExplanation == null)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
+                        objImportErrorMessageModel.ErrorMessages = "Explanation is required";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                    else if (!objCommonErrorsServerSide.ValidateAlphaNumericAddress(objFilingTransactionsModel.TransExplanation)) // FIXED ON 03/02/2020
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
+                        objImportErrorMessageModel.ErrorMessages = "Letters, numbers and characters '# -., are allowed";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                    else if (objFilingTransactionsModel.TransExplanation.Count() > 250)
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "TRANS_EXPLNTN - Column AJ";
+                        objImportErrorMessageModel.ErrorMessages = "Explanation should be 250 characters";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                     }
                 }
             }
@@ -3541,9 +3602,23 @@ namespace CAPASFIDAS_EFS.Controllers
                     lstImportErrorMessageModel.Add(objImportErrorMessageModel);
                 }
             }
+            else
+            {
+                if (Session["COMM_TYPE_ID"].ToString() == "23")
+                {
+                    if (objFilingTransactionsModel.FilingSchedId == "20")
+                    {
+                        objImportErrorMessageModel = new ImportErrorMessageModel();
+                        objImportErrorMessageModel.RowNumber = rowNumber;
+                        objImportErrorMessageModel.ColumnName = "R_LIABILITY - Column AM";
+                        objImportErrorMessageModel.ErrorMessages = "Liability is required";
+                        lstImportErrorMessageModel.Add(objImportErrorMessageModel);
+                    }
+                }
+            }
 
-            //ELECTION_TYPE Validation
-            if (objFilingTransactionsModel.ElectionTypeId != null)
+                //ELECTION_TYPE Validation
+                if (objFilingTransactionsModel.ElectionTypeId != null)
             {
                 if (!objCommonErrorsServerSide.NumbersOnly(objFilingTransactionsModel.ElectionTypeId))
                 {
