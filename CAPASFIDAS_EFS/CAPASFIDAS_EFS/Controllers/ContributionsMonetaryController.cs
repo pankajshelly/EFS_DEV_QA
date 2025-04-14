@@ -3063,13 +3063,14 @@ namespace CAPASFIDAS_EFS.Controllers
         /// <param name="lstElectionType"></param>
         /// <param name="lstUCOfficeType"></param>
         /// <returns></returns>
-        public JsonResult GetFilingCutOffDateData_PCF_WCS(String lstElectionCycle, String lstElectionType, String lstUCOfficeType)
+        public JsonResult GetFilingCutOffDateData_PCF_WCS(String lstElectionCycle, String lstElectionType, String lstUCOfficeType, String strElectionDateId)
         {
             try
             {
                 Session["ElectionYearId"] = lstElectionCycle;
                 Session["OfficeTypeId"] = lstUCOfficeType;
                 Session["ElectionTypeId"] = lstElectionType;
+                Session["ElectionDateIdWCS"] = strElectionDateId;
 
 
                 if (lstUCOfficeType == "1")
@@ -3077,7 +3078,7 @@ namespace CAPASFIDAS_EFS.Controllers
 
                 IList<FilingCutOffDateModel> lstFilingCutOffDateModel = new List<FilingCutOffDateModel>();
 
-                lstFilingCutOffDateModel = objItemizedReportsBroker.GetFilingCutOffDateData_PCF_WCS_Broker(lstElectionCycle, lstElectionType, lstUCOfficeType);
+                lstFilingCutOffDateModel = objItemizedReportsBroker.GetFilingCutOffDateData_PCF_WCS_Broker(lstElectionCycle, lstElectionType, lstUCOfficeType, strElectionDateId);
 
                 Session["FilingAndCutOffDate_PCF_WCS"] = lstFilingCutOffDateModel;
 

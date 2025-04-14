@@ -12602,7 +12602,7 @@ namespace DAL
         /// <param name="strElectTypeId"></param>
         /// <param name="strOfficeTypeId"></param>
         /// <returns></returns>
-        internal IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_DAL(String strElectYearId, String strElectTypeId, String strOfficeTypeId)
+        internal IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_DAL(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId)
         {
             using (CAPASFIDAS_EFS_SERVICEClient client = new CAPASFIDAS_EFS_SERVICEClient())
             {
@@ -12612,7 +12612,7 @@ namespace DAL
                     IList<FilingCutOffDateModel> lstFilingCutOffDateModel = new List<FilingCutOffDateModel>();
                     FilingCutOffDateModel objFilingCutOffDateModel;
 
-                    var results = client.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId);
+                    var results = client.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
 
                     foreach (var item in results)
                     {

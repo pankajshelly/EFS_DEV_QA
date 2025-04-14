@@ -2467,7 +2467,7 @@ namespace CAPASFIDAS_EFS.Controllers
             IList<FilingCutOffDateModel> lstFilingDatesOffCycleModelResults = new List<FilingCutOffDateModel>();
             FilingCutOffDateModel objFilingDatesOffCycleModel;
 
-            lstFilingDatesOffCycleModelResults = objItemizedReportsBroker.GetFilingCutOffDateData_PCF_WCS_Broker(Session["ElectionYearId"].ToString(), Session["ElectionTypeId"].ToString(), Session["OfficeTypeId"].ToString());
+            lstFilingDatesOffCycleModelResults = objItemizedReportsBroker.GetFilingCutOffDateData_PCF_WCS_Broker(Session["ElectionYearId"].ToString(), Session["ElectionTypeId"].ToString(), Session["OfficeTypeId"].ToString(), Session["ElectionDateIdWCS"].ToString());
 
             objFilingDatesOffCycleModel = new FilingCutOffDateModel();
             objFilingDatesOffCycleModel.FilingDueDate = "- Select -";

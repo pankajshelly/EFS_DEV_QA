@@ -4683,6 +4683,25 @@ namespace CAPASFIDAS_EFS.Controllers
                             strCuttOffDateId = "";
                         }
                     }
+                    if (Session["VDR_ElectionTypeId"].ToString() == "1")
+                    {
+                        if (tempFilingDateVar == "04/14/2025")
+                        {
+                            strFilingDateId = "142";
+                            strCuttOffDateId = "143";
+                        }
+                        else if (tempFilingDateVar == "05/05/2025")
+                        {
+                            strFilingDateId = "144";
+                            strCuttOffDateId = "145";
+                        }
+                        else
+                        {
+                            strFilingDateId = "";
+                            strCuttOffDateId = "";
+                        }
+
+                    }
                     else
                     {
                         strFilingDateId = "";

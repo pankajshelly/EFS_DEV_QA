@@ -3584,11 +3584,11 @@ namespace BLL
         /// <param name="strElectTypeId"></param>
         /// <param name="strOfficeTypeId"></param>
         /// <returns></returns>
-        internal IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_BLL(String strElectYearId, String strElectTypeId, String strOfficeTypeId)
+        internal IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_BLL(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId)
         {
             IList<FilingCutOffDateModel> lstFilingCutOffDateModel = new List<FilingCutOffDateModel>();
 
-            lstFilingCutOffDateModel = objItemizedReportsDAL.GetFilingCutOffDateData_PCF_WCS_DAL(strElectYearId, strElectTypeId, strOfficeTypeId);
+            lstFilingCutOffDateModel = objItemizedReportsDAL.GetFilingCutOffDateData_PCF_WCS_DAL(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
 
             return lstFilingCutOffDateModel;
         }

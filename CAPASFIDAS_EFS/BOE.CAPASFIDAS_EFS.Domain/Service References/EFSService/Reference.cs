@@ -15,21 +15,63 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentMethodContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ViewSupportingDocumentsGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
-    public partial class PaymentMethodContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ViewSupportingDocumentsGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaymentTypeAbbrevField;
+        private string AmendedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaymentTypeDescField;
+        private string DateReceivedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaymentTypeIdField;
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DocumentTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectTypeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FileTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingMethodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PolCalDateIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string R_StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReportYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ScanDocIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupportDocIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -42,40 +84,1510 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaymentTypeAbbrev {
+        public string Amended {
             get {
-                return this.PaymentTypeAbbrevField;
+                return this.AmendedField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentTypeAbbrevField, value) != true)) {
-                    this.PaymentTypeAbbrevField = value;
-                    this.RaisePropertyChanged("PaymentTypeAbbrev");
+                if ((object.ReferenceEquals(this.AmendedField, value) != true)) {
+                    this.AmendedField = value;
+                    this.RaisePropertyChanged("Amended");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaymentTypeDesc {
+        public string DateReceived {
             get {
-                return this.PaymentTypeDescField;
+                return this.DateReceivedField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentTypeDescField, value) != true)) {
-                    this.PaymentTypeDescField = value;
-                    this.RaisePropertyChanged("PaymentTypeDesc");
+                if ((object.ReferenceEquals(this.DateReceivedField, value) != true)) {
+                    this.DateReceivedField = value;
+                    this.RaisePropertyChanged("DateReceived");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaymentTypeId {
+        public string DisclosurePeriod {
             get {
-                return this.PaymentTypeIdField;
+                return this.DisclosurePeriodField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentTypeIdField, value) != true)) {
-                    this.PaymentTypeIdField = value;
-                    this.RaisePropertyChanged("PaymentTypeId");
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DocumentType {
+            get {
+                return this.DocumentTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DocumentTypeField, value) != true)) {
+                    this.DocumentTypeField = value;
+                    this.RaisePropertyChanged("DocumentType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectTypeID {
+            get {
+                return this.ElectTypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectTypeIDField, value) != true)) {
+                    this.ElectTypeIDField = value;
+                    this.RaisePropertyChanged("ElectTypeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FileType {
+            get {
+                return this.FileTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileTypeField, value) != true)) {
+                    this.FileTypeField = value;
+                    this.RaisePropertyChanged("FileType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingMethod {
+            get {
+                return this.FilingMethodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingMethodField, value) != true)) {
+                    this.FilingMethodField = value;
+                    this.RaisePropertyChanged("FilingMethod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeTypeID {
+            get {
+                return this.OfficeTypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeIDField, value) != true)) {
+                    this.OfficeTypeIDField = value;
+                    this.RaisePropertyChanged("OfficeTypeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PolCalDateID {
+            get {
+                return this.PolCalDateIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PolCalDateIDField, value) != true)) {
+                    this.PolCalDateIDField = value;
+                    this.RaisePropertyChanged("PolCalDateID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string R_Status {
+            get {
+                return this.R_StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.R_StatusField, value) != true)) {
+                    this.R_StatusField = value;
+                    this.RaisePropertyChanged("R_Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReportYear {
+            get {
+                return this.ReportYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportYearField, value) != true)) {
+                    this.ReportYearField = value;
+                    this.RaisePropertyChanged("ReportYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ScanDocID {
+            get {
+                return this.ScanDocIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScanDocIDField, value) != true)) {
+                    this.ScanDocIDField = value;
+                    this.RaisePropertyChanged("ScanDocID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Size {
+            get {
+                return this.SizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SizeField, value) != true)) {
+                    this.SizeField = value;
+                    this.RaisePropertyChanged("Size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupportDocID {
+            get {
+                return this.SupportDocIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupportDocIDField, value) != true)) {
+                    this.SupportDocIDField = value;
+                    this.RaisePropertyChanged("SupportDocID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DisclosurePreiodContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class DisclosurePreiodContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingAbbrevField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingAbbrev {
+            get {
+                return this.FilingAbbrevField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingAbbrevField, value) != true)) {
+                    this.FilingAbbrevField = value;
+                    this.RaisePropertyChanged("FilingAbbrev");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingDesc {
+            get {
+                return this.FilingDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingDescField, value) != true)) {
+                    this.FilingDescField = value;
+                    this.RaisePropertyChanged("FilingDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTypeId {
+            get {
+                return this.FilingTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTypeIdField, value) != true)) {
+                    this.FilingTypeIdField = value;
+                    this.RaisePropertyChanged("FilingTypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ElectionYearContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ElectionYearContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYearId {
+            get {
+                return this.ElectionYearIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearIdField, value) != true)) {
+                    this.ElectionYearIdField = value;
+                    this.RaisePropertyChanged("ElectionYearId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYearValue {
+            get {
+                return this.ElectionYearValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearValueField, value) != true)) {
+                    this.ElectionYearValueField = value;
+                    this.RaisePropertyChanged("ElectionYearValue");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoanReceivedGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class LoanReceivedGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EntityNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransactionDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisclosurePeriod {
+            get {
+                return this.DisclosurePeriodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYear {
+            get {
+                return this.ElectionYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
+                    this.ElectionYearField = value;
+                    this.RaisePropertyChanged("ElectionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EntityName {
+            get {
+                return this.EntityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
+                    this.EntityNameField = value;
+                    this.RaisePropertyChanged("EntityName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransID {
+            get {
+                return this.FilingTransIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
+                    this.FilingTransIDField = value;
+                    this.RaisePropertyChanged("FilingTransID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransactionDate {
+            get {
+                return this.TransactionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
+                    this.TransactionDateField = value;
+                    this.RaisePropertyChanged("TransactionDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoanPaymentGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class LoanPaymentGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EntityNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalLoanDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransactionDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisclosurePeriod {
+            get {
+                return this.DisclosurePeriodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYear {
+            get {
+                return this.ElectionYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
+                    this.ElectionYearField = value;
+                    this.RaisePropertyChanged("ElectionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EntityName {
+            get {
+                return this.EntityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
+                    this.EntityNameField = value;
+                    this.RaisePropertyChanged("EntityName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransID {
+            get {
+                return this.FilingTransIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
+                    this.FilingTransIDField = value;
+                    this.RaisePropertyChanged("FilingTransID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalLoanDate {
+            get {
+                return this.OriginalLoanDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalLoanDateField, value) != true)) {
+                    this.OriginalLoanDateField = value;
+                    this.RaisePropertyChanged("OriginalLoanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransactionDate {
+            get {
+                return this.TransactionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
+                    this.TransactionDateField = value;
+                    this.RaisePropertyChanged("TransactionDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutstandingLiabilityGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class OutstandingLiabilityGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EntityNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OutstandingAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransactionDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisclosurePeriod {
+            get {
+                return this.DisclosurePeriodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYear {
+            get {
+                return this.ElectionYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
+                    this.ElectionYearField = value;
+                    this.RaisePropertyChanged("ElectionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EntityName {
+            get {
+                return this.EntityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
+                    this.EntityNameField = value;
+                    this.RaisePropertyChanged("EntityName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransID {
+            get {
+                return this.FilingTransIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
+                    this.FilingTransIDField = value;
+                    this.RaisePropertyChanged("FilingTransID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalAmount {
+            get {
+                return this.OriginalAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalAmountField, value) != true)) {
+                    this.OriginalAmountField = value;
+                    this.RaisePropertyChanged("OriginalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OutstandingAmount {
+            get {
+                return this.OutstandingAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
+                    this.OutstandingAmountField = value;
+                    this.RaisePropertyChanged("OutstandingAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransactionDate {
+            get {
+                return this.TransactionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
+                    this.TransactionDateField = value;
+                    this.RaisePropertyChanged("TransactionDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LiabilityLoanForgivenGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class LiabilityLoanForgivenGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EntityNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransactionDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisclosurePeriod {
+            get {
+                return this.DisclosurePeriodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYear {
+            get {
+                return this.ElectionYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
+                    this.ElectionYearField = value;
+                    this.RaisePropertyChanged("ElectionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EntityName {
+            get {
+                return this.EntityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
+                    this.EntityNameField = value;
+                    this.RaisePropertyChanged("EntityName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransID {
+            get {
+                return this.FilingTransIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
+                    this.FilingTransIDField = value;
+                    this.RaisePropertyChanged("FilingTransID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalDate {
+            get {
+                return this.OriginalDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalDateField, value) != true)) {
+                    this.OriginalDateField = value;
+                    this.RaisePropertyChanged("OriginalDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransactionDate {
+            get {
+                return this.TransactionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
+                    this.TransactionDateField = value;
+                    this.RaisePropertyChanged("TransactionDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpenditurePaymentGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ExpenditurePaymentGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DisclosurePeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ElectionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EntityNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExplanationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransactionDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisclosurePeriod {
+            get {
+                return this.DisclosurePeriodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
+                    this.DisclosurePeriodField = value;
+                    this.RaisePropertyChanged("DisclosurePeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionDate {
+            get {
+                return this.ElectionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
+                    this.ElectionDateField = value;
+                    this.RaisePropertyChanged("ElectionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionType {
+            get {
+                return this.ElectionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
+                    this.ElectionTypeField = value;
+                    this.RaisePropertyChanged("ElectionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ElectionYear {
+            get {
+                return this.ElectionYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
+                    this.ElectionYearField = value;
+                    this.RaisePropertyChanged("ElectionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EntityName {
+            get {
+                return this.EntityNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
+                    this.EntityNameField = value;
+                    this.RaisePropertyChanged("EntityName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Explanation {
+            get {
+                return this.ExplanationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExplanationField, value) != true)) {
+                    this.ExplanationField = value;
+                    this.RaisePropertyChanged("Explanation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransID {
+            get {
+                return this.FilingTransIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
+                    this.FilingTransIDField = value;
+                    this.RaisePropertyChanged("FilingTransID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeType {
+            get {
+                return this.OfficeTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
+                    this.OfficeTypeField = value;
+                    this.RaisePropertyChanged("OfficeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransactionDate {
+            get {
+                return this.TransactionDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
+                    this.TransactionDateField = value;
+                    this.RaisePropertyChanged("TransactionDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OriginalAmountContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class OriginalAmountContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalAmountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OutstandingAmountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalAmountId {
+            get {
+                return this.OriginalAmountIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalAmountIdField, value) != true)) {
+                    this.OriginalAmountIdField = value;
+                    this.RaisePropertyChanged("OriginalAmountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OutstandingAmount {
+            get {
+                return this.OutstandingAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
+                    this.OutstandingAmountField = value;
+                    this.RaisePropertyChanged("OutstandingAmount");
                 }
             }
         }
@@ -457,6 +1969,67 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CheckAmendStatusContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class CheckAmendStatusContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IsAmendField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Submit_DateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IsAmend {
+            get {
+                return this.IsAmendField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IsAmendField, value) != true)) {
+                    this.IsAmendField = value;
+                    this.RaisePropertyChanged("IsAmend");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Submit_Date {
+            get {
+                return this.Submit_DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Submit_DateField, value) != true)) {
+                    this.Submit_DateField = value;
+                    this.RaisePropertyChanged("Submit_Date");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="GetEditFlagDataContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
     public partial class GetEditFlagDataContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -502,6 +2075,451 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
                 if ((object.ReferenceEquals(this.VALIDATE_FILINGSField, value) != true)) {
                     this.VALIDATE_FILINGSField = value;
                     this.RaisePropertyChanged("VALIDATE_FILINGS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ContrInKindPartnersContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ContrInKindPartnersContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommTypeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingEntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerAmountAttributedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerExplanationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerFirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerLastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerMiddleNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerStreetNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerStreetNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnerZip5Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnershipCountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartnershipNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RContributionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RUnitemziedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransMappingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreaAddr1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreaAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreaCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreaStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreaZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerEmployerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerOccupationField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CommTypeID {
+            get {
+                return this.CommTypeIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommTypeIDField, value) != true)) {
+                    this.CommTypeIDField = value;
+                    this.RaisePropertyChanged("CommTypeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingEntityId {
+            get {
+                return this.FilingEntityIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
+                    this.FilingEntityIdField = value;
+                    this.RaisePropertyChanged("FilingEntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransId {
+            get {
+                return this.FilingTransIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
+                    this.FilingTransIdField = value;
+                    this.RaisePropertyChanged("FilingTransId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerAmountAttributed {
+            get {
+                return this.PartnerAmountAttributedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerAmountAttributedField, value) != true)) {
+                    this.PartnerAmountAttributedField = value;
+                    this.RaisePropertyChanged("PartnerAmountAttributed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerCity {
+            get {
+                return this.PartnerCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerCityField, value) != true)) {
+                    this.PartnerCityField = value;
+                    this.RaisePropertyChanged("PartnerCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerExplanation {
+            get {
+                return this.PartnerExplanationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerExplanationField, value) != true)) {
+                    this.PartnerExplanationField = value;
+                    this.RaisePropertyChanged("PartnerExplanation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerFirstName {
+            get {
+                return this.PartnerFirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerFirstNameField, value) != true)) {
+                    this.PartnerFirstNameField = value;
+                    this.RaisePropertyChanged("PartnerFirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerLastName {
+            get {
+                return this.PartnerLastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerLastNameField, value) != true)) {
+                    this.PartnerLastNameField = value;
+                    this.RaisePropertyChanged("PartnerLastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerMiddleName {
+            get {
+                return this.PartnerMiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerMiddleNameField, value) != true)) {
+                    this.PartnerMiddleNameField = value;
+                    this.RaisePropertyChanged("PartnerMiddleName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerState {
+            get {
+                return this.PartnerStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerStateField, value) != true)) {
+                    this.PartnerStateField = value;
+                    this.RaisePropertyChanged("PartnerState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerStreetName {
+            get {
+                return this.PartnerStreetNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerStreetNameField, value) != true)) {
+                    this.PartnerStreetNameField = value;
+                    this.RaisePropertyChanged("PartnerStreetName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerStreetNo {
+            get {
+                return this.PartnerStreetNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerStreetNoField, value) != true)) {
+                    this.PartnerStreetNoField = value;
+                    this.RaisePropertyChanged("PartnerStreetNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnerZip5 {
+            get {
+                return this.PartnerZip5Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnerZip5Field, value) != true)) {
+                    this.PartnerZip5Field = value;
+                    this.RaisePropertyChanged("PartnerZip5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnershipCountry {
+            get {
+                return this.PartnershipCountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnershipCountryField, value) != true)) {
+                    this.PartnershipCountryField = value;
+                    this.RaisePropertyChanged("PartnershipCountry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartnershipName {
+            get {
+                return this.PartnershipNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartnershipNameField, value) != true)) {
+                    this.PartnershipNameField = value;
+                    this.RaisePropertyChanged("PartnershipName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RContributions {
+            get {
+                return this.RContributionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RContributionsField, value) != true)) {
+                    this.RContributionsField = value;
+                    this.RaisePropertyChanged("RContributions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RUnitemzied {
+            get {
+                return this.RUnitemziedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RUnitemziedField, value) != true)) {
+                    this.RUnitemziedField = value;
+                    this.RaisePropertyChanged("RUnitemzied");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransMapping {
+            get {
+                return this.TransMappingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
+                    this.TransMappingField = value;
+                    this.RaisePropertyChanged("TransMapping");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreaAddr1 {
+            get {
+                return this.TreaAddr1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreaAddr1Field, value) != true)) {
+                    this.TreaAddr1Field = value;
+                    this.RaisePropertyChanged("TreaAddr1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreaAddress {
+            get {
+                return this.TreaAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreaAddressField, value) != true)) {
+                    this.TreaAddressField = value;
+                    this.RaisePropertyChanged("TreaAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreaCity {
+            get {
+                return this.TreaCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreaCityField, value) != true)) {
+                    this.TreaCityField = value;
+                    this.RaisePropertyChanged("TreaCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreaState {
+            get {
+                return this.TreaStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreaStateField, value) != true)) {
+                    this.TreaStateField = value;
+                    this.RaisePropertyChanged("TreaState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreaZipCode {
+            get {
+                return this.TreaZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreaZipCodeField, value) != true)) {
+                    this.TreaZipCodeField = value;
+                    this.RaisePropertyChanged("TreaZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerEmployer {
+            get {
+                return this.TreasurerEmployerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerEmployerField, value) != true)) {
+                    this.TreasurerEmployerField = value;
+                    this.RaisePropertyChanged("TreasurerEmployer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerOccupation {
+            get {
+                return this.TreasurerOccupationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerOccupationField, value) != true)) {
+                    this.TreasurerOccupationField = value;
+                    this.RaisePropertyChanged("TreasurerOccupation");
                 }
             }
         }
@@ -2211,27 +4229,39 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FilingCutOffDateContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EFSPDFRequestContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
-    public partial class FilingCutOffDateContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class EFSPDFRequestContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CutOffDateField;
+        private string ElectionDateIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingDueDateField;
+        private string ElectionTypeIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PoliticalCalDateIdField;
+        private string ElectionYearIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PoliticalCalLabelIdField;
+        private string FilerIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PriGenDateField;
+        private string FilingDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeTypeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReportNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubmitDateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2244,66 +4274,195 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CutOffDate {
+        public string ElectionDateID {
             get {
-                return this.CutOffDateField;
+                return this.ElectionDateIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.CutOffDateField, value) != true)) {
-                    this.CutOffDateField = value;
-                    this.RaisePropertyChanged("CutOffDate");
+                if ((object.ReferenceEquals(this.ElectionDateIDField, value) != true)) {
+                    this.ElectionDateIDField = value;
+                    this.RaisePropertyChanged("ElectionDateID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingDueDate {
+        public string ElectionTypeID {
             get {
-                return this.FilingDueDateField;
+                return this.ElectionTypeIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilingDueDateField, value) != true)) {
-                    this.FilingDueDateField = value;
-                    this.RaisePropertyChanged("FilingDueDate");
+                if ((object.ReferenceEquals(this.ElectionTypeIDField, value) != true)) {
+                    this.ElectionTypeIDField = value;
+                    this.RaisePropertyChanged("ElectionTypeID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PoliticalCalDateId {
+        public string ElectionYearId {
             get {
-                return this.PoliticalCalDateIdField;
+                return this.ElectionYearIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.PoliticalCalDateIdField, value) != true)) {
-                    this.PoliticalCalDateIdField = value;
-                    this.RaisePropertyChanged("PoliticalCalDateId");
+                if ((object.ReferenceEquals(this.ElectionYearIdField, value) != true)) {
+                    this.ElectionYearIdField = value;
+                    this.RaisePropertyChanged("ElectionYearId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PoliticalCalLabelId {
+        public string FilerId {
             get {
-                return this.PoliticalCalLabelIdField;
+                return this.FilerIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.PoliticalCalLabelIdField, value) != true)) {
-                    this.PoliticalCalLabelIdField = value;
-                    this.RaisePropertyChanged("PoliticalCalLabelId");
+                if ((object.ReferenceEquals(this.FilerIdField, value) != true)) {
+                    this.FilerIdField = value;
+                    this.RaisePropertyChanged("FilerId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PriGenDate {
+        public string FilingDate {
             get {
-                return this.PriGenDateField;
+                return this.FilingDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.PriGenDateField, value) != true)) {
-                    this.PriGenDateField = value;
-                    this.RaisePropertyChanged("PriGenDate");
+                if ((object.ReferenceEquals(this.FilingDateField, value) != true)) {
+                    this.FilingDateField = value;
+                    this.RaisePropertyChanged("FilingDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTypeId {
+            get {
+                return this.FilingTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTypeIdField, value) != true)) {
+                    this.FilingTypeIdField = value;
+                    this.RaisePropertyChanged("FilingTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeTypeId {
+            get {
+                return this.OfficeTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeTypeIdField, value) != true)) {
+                    this.OfficeTypeIdField = value;
+                    this.RaisePropertyChanged("OfficeTypeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReportName {
+            get {
+                return this.ReportNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportNameField, value) != true)) {
+                    this.ReportNameField = value;
+                    this.RaisePropertyChanged("ReportName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SubmitDate {
+            get {
+                return this.SubmitDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubmitDateField, value) != true)) {
+                    this.SubmitDateField = value;
+                    this.RaisePropertyChanged("SubmitDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EFSPDFResponseContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class EFSPDFResponseContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] fileByteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fileNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fileURLField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] fileByte {
+            get {
+                return this.fileByteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fileByteField, value) != true)) {
+                    this.fileByteField = value;
+                    this.RaisePropertyChanged("fileByte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fileNameField, value) != true)) {
+                    this.fileNameField = value;
+                    this.RaisePropertyChanged("fileName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fileURL {
+            get {
+                return this.fileURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fileURLField, value) != true)) {
+                    this.fileURLField = value;
+                    this.RaisePropertyChanged("fileURL");
                 }
             }
         }
@@ -4013,2428 +6172,6 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PurposeCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class PurposeCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeAbbrevField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PurposeCodeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeAbbrev {
-            get {
-                return this.PurposeCodeAbbrevField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeAbbrevField, value) != true)) {
-                    this.PurposeCodeAbbrevField = value;
-                    this.RaisePropertyChanged("PurposeCodeAbbrev");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeDesc {
-            get {
-                return this.PurposeCodeDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeDescField, value) != true)) {
-                    this.PurposeCodeDescField = value;
-                    this.RaisePropertyChanged("PurposeCodeDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PurposeCodeId {
-            get {
-                return this.PurposeCodeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PurposeCodeIdField, value) != true)) {
-                    this.PurposeCodeIdField = value;
-                    this.RaisePropertyChanged("PurposeCodeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ViewSupportingDocumentsGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ViewSupportingDocumentsGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmendedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DateReceivedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectTypeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FileTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingMethodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolCalDateIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string R_StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReportYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ScanDocIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SupportDocIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amended {
-            get {
-                return this.AmendedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmendedField, value) != true)) {
-                    this.AmendedField = value;
-                    this.RaisePropertyChanged("Amended");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DateReceived {
-            get {
-                return this.DateReceivedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateReceivedField, value) != true)) {
-                    this.DateReceivedField = value;
-                    this.RaisePropertyChanged("DateReceived");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentType {
-            get {
-                return this.DocumentTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentTypeField, value) != true)) {
-                    this.DocumentTypeField = value;
-                    this.RaisePropertyChanged("DocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectTypeID {
-            get {
-                return this.ElectTypeIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectTypeIDField, value) != true)) {
-                    this.ElectTypeIDField = value;
-                    this.RaisePropertyChanged("ElectTypeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FileType {
-            get {
-                return this.FileTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileTypeField, value) != true)) {
-                    this.FileTypeField = value;
-                    this.RaisePropertyChanged("FileType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingMethod {
-            get {
-                return this.FilingMethodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingMethodField, value) != true)) {
-                    this.FilingMethodField = value;
-                    this.RaisePropertyChanged("FilingMethod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeTypeID {
-            get {
-                return this.OfficeTypeIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeIDField, value) != true)) {
-                    this.OfficeTypeIDField = value;
-                    this.RaisePropertyChanged("OfficeTypeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PolCalDateID {
-            get {
-                return this.PolCalDateIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolCalDateIDField, value) != true)) {
-                    this.PolCalDateIDField = value;
-                    this.RaisePropertyChanged("PolCalDateID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string R_Status {
-            get {
-                return this.R_StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.R_StatusField, value) != true)) {
-                    this.R_StatusField = value;
-                    this.RaisePropertyChanged("R_Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportYear {
-            get {
-                return this.ReportYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportYearField, value) != true)) {
-                    this.ReportYearField = value;
-                    this.RaisePropertyChanged("ReportYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ScanDocID {
-            get {
-                return this.ScanDocIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ScanDocIDField, value) != true)) {
-                    this.ScanDocIDField = value;
-                    this.RaisePropertyChanged("ScanDocID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Size {
-            get {
-                return this.SizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SizeField, value) != true)) {
-                    this.SizeField = value;
-                    this.RaisePropertyChanged("Size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SupportDocID {
-            get {
-                return this.SupportDocIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SupportDocIDField, value) != true)) {
-                    this.SupportDocIDField = value;
-                    this.RaisePropertyChanged("SupportDocID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DisclosurePreiodContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class DisclosurePreiodContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingAbbrevField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingAbbrev {
-            get {
-                return this.FilingAbbrevField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingAbbrevField, value) != true)) {
-                    this.FilingAbbrevField = value;
-                    this.RaisePropertyChanged("FilingAbbrev");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingDesc {
-            get {
-                return this.FilingDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingDescField, value) != true)) {
-                    this.FilingDescField = value;
-                    this.RaisePropertyChanged("FilingDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTypeId {
-            get {
-                return this.FilingTypeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTypeIdField, value) != true)) {
-                    this.FilingTypeIdField = value;
-                    this.RaisePropertyChanged("FilingTypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ElectionYearContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ElectionYearContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYearId {
-            get {
-                return this.ElectionYearIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearIdField, value) != true)) {
-                    this.ElectionYearIdField = value;
-                    this.RaisePropertyChanged("ElectionYearId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYearValue {
-            get {
-                return this.ElectionYearValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearValueField, value) != true)) {
-                    this.ElectionYearValueField = value;
-                    this.RaisePropertyChanged("ElectionYearValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoanReceivedGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class LoanReceivedGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransactionDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYear {
-            get {
-                return this.ElectionYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
-                    this.ElectionYearField = value;
-                    this.RaisePropertyChanged("ElectionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransID {
-            get {
-                return this.FilingTransIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
-                    this.FilingTransIDField = value;
-                    this.RaisePropertyChanged("FilingTransID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransactionDate {
-            get {
-                return this.TransactionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
-                    this.TransactionDateField = value;
-                    this.RaisePropertyChanged("TransactionDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoanPaymentGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class LoanPaymentGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalLoanDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransactionDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYear {
-            get {
-                return this.ElectionYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
-                    this.ElectionYearField = value;
-                    this.RaisePropertyChanged("ElectionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransID {
-            get {
-                return this.FilingTransIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
-                    this.FilingTransIDField = value;
-                    this.RaisePropertyChanged("FilingTransID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalLoanDate {
-            get {
-                return this.OriginalLoanDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalLoanDateField, value) != true)) {
-                    this.OriginalLoanDateField = value;
-                    this.RaisePropertyChanged("OriginalLoanDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransactionDate {
-            get {
-                return this.TransactionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
-                    this.TransactionDateField = value;
-                    this.RaisePropertyChanged("TransactionDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OutstandingLiabilityGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class OutstandingLiabilityGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OutstandingAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransactionDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYear {
-            get {
-                return this.ElectionYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
-                    this.ElectionYearField = value;
-                    this.RaisePropertyChanged("ElectionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransID {
-            get {
-                return this.FilingTransIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
-                    this.FilingTransIDField = value;
-                    this.RaisePropertyChanged("FilingTransID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalAmount {
-            get {
-                return this.OriginalAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalAmountField, value) != true)) {
-                    this.OriginalAmountField = value;
-                    this.RaisePropertyChanged("OriginalAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OutstandingAmount {
-            get {
-                return this.OutstandingAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
-                    this.OutstandingAmountField = value;
-                    this.RaisePropertyChanged("OutstandingAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransactionDate {
-            get {
-                return this.TransactionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
-                    this.TransactionDateField = value;
-                    this.RaisePropertyChanged("TransactionDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LiabilityLoanForgivenGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class LiabilityLoanForgivenGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransactionDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYear {
-            get {
-                return this.ElectionYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
-                    this.ElectionYearField = value;
-                    this.RaisePropertyChanged("ElectionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransID {
-            get {
-                return this.FilingTransIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
-                    this.FilingTransIDField = value;
-                    this.RaisePropertyChanged("FilingTransID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalDate {
-            get {
-                return this.OriginalDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalDateField, value) != true)) {
-                    this.OriginalDateField = value;
-                    this.RaisePropertyChanged("OriginalDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransactionDate {
-            get {
-                return this.TransactionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
-                    this.TransactionDateField = value;
-                    this.RaisePropertyChanged("TransactionDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpenditurePaymentGridContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ExpenditurePaymentGridContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisclosurePeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExplanationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransactionDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisclosurePeriod {
-            get {
-                return this.DisclosurePeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisclosurePeriodField, value) != true)) {
-                    this.DisclosurePeriodField = value;
-                    this.RaisePropertyChanged("DisclosurePeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDate {
-            get {
-                return this.ElectionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateField, value) != true)) {
-                    this.ElectionDateField = value;
-                    this.RaisePropertyChanged("ElectionDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionType {
-            get {
-                return this.ElectionTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeField, value) != true)) {
-                    this.ElectionTypeField = value;
-                    this.RaisePropertyChanged("ElectionType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYear {
-            get {
-                return this.ElectionYearField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearField, value) != true)) {
-                    this.ElectionYearField = value;
-                    this.RaisePropertyChanged("ElectionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Explanation {
-            get {
-                return this.ExplanationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExplanationField, value) != true)) {
-                    this.ExplanationField = value;
-                    this.RaisePropertyChanged("Explanation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransID {
-            get {
-                return this.FilingTransIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIDField, value) != true)) {
-                    this.FilingTransIDField = value;
-                    this.RaisePropertyChanged("FilingTransID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeType {
-            get {
-                return this.OfficeTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeField, value) != true)) {
-                    this.OfficeTypeField = value;
-                    this.RaisePropertyChanged("OfficeType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransactionDate {
-            get {
-                return this.TransactionDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransactionDateField, value) != true)) {
-                    this.TransactionDateField = value;
-                    this.RaisePropertyChanged("TransactionDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OriginalAmountContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class OriginalAmountContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalAmountIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OutstandingAmountField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalAmountId {
-            get {
-                return this.OriginalAmountIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalAmountIdField, value) != true)) {
-                    this.OriginalAmountIdField = value;
-                    this.RaisePropertyChanged("OriginalAmountId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OutstandingAmount {
-            get {
-                return this.OutstandingAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
-                    this.OutstandingAmountField = value;
-                    this.RaisePropertyChanged("OutstandingAmount");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CheckAmendStatusContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class CheckAmendStatusContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IsAmendField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Submit_DateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IsAmend {
-            get {
-                return this.IsAmendField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IsAmendField, value) != true)) {
-                    this.IsAmendField = value;
-                    this.RaisePropertyChanged("IsAmend");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Submit_Date {
-            get {
-                return this.Submit_DateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Submit_DateField, value) != true)) {
-                    this.Submit_DateField = value;
-                    this.RaisePropertyChanged("Submit_Date");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContrInKindPartnersContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ContrInKindPartnersContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CommTypeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingEntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerAmountAttributedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerExplanationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerFirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerLastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerMiddleNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerStreetNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerStreetNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnerZip5Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnershipCountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PartnershipNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RContributionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RUnitemziedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransMappingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreaAddr1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreaAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreaCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreaStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreaZipCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerEmployerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerOccupationField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CommTypeID {
-            get {
-                return this.CommTypeIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommTypeIDField, value) != true)) {
-                    this.CommTypeIDField = value;
-                    this.RaisePropertyChanged("CommTypeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingEntityId {
-            get {
-                return this.FilingEntityIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
-                    this.FilingEntityIdField = value;
-                    this.RaisePropertyChanged("FilingEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransId {
-            get {
-                return this.FilingTransIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
-                    this.FilingTransIdField = value;
-                    this.RaisePropertyChanged("FilingTransId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerAmountAttributed {
-            get {
-                return this.PartnerAmountAttributedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerAmountAttributedField, value) != true)) {
-                    this.PartnerAmountAttributedField = value;
-                    this.RaisePropertyChanged("PartnerAmountAttributed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerCity {
-            get {
-                return this.PartnerCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerCityField, value) != true)) {
-                    this.PartnerCityField = value;
-                    this.RaisePropertyChanged("PartnerCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerExplanation {
-            get {
-                return this.PartnerExplanationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerExplanationField, value) != true)) {
-                    this.PartnerExplanationField = value;
-                    this.RaisePropertyChanged("PartnerExplanation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerFirstName {
-            get {
-                return this.PartnerFirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerFirstNameField, value) != true)) {
-                    this.PartnerFirstNameField = value;
-                    this.RaisePropertyChanged("PartnerFirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerLastName {
-            get {
-                return this.PartnerLastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerLastNameField, value) != true)) {
-                    this.PartnerLastNameField = value;
-                    this.RaisePropertyChanged("PartnerLastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerMiddleName {
-            get {
-                return this.PartnerMiddleNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerMiddleNameField, value) != true)) {
-                    this.PartnerMiddleNameField = value;
-                    this.RaisePropertyChanged("PartnerMiddleName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerState {
-            get {
-                return this.PartnerStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerStateField, value) != true)) {
-                    this.PartnerStateField = value;
-                    this.RaisePropertyChanged("PartnerState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerStreetName {
-            get {
-                return this.PartnerStreetNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerStreetNameField, value) != true)) {
-                    this.PartnerStreetNameField = value;
-                    this.RaisePropertyChanged("PartnerStreetName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerStreetNo {
-            get {
-                return this.PartnerStreetNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerStreetNoField, value) != true)) {
-                    this.PartnerStreetNoField = value;
-                    this.RaisePropertyChanged("PartnerStreetNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnerZip5 {
-            get {
-                return this.PartnerZip5Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnerZip5Field, value) != true)) {
-                    this.PartnerZip5Field = value;
-                    this.RaisePropertyChanged("PartnerZip5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnershipCountry {
-            get {
-                return this.PartnershipCountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnershipCountryField, value) != true)) {
-                    this.PartnershipCountryField = value;
-                    this.RaisePropertyChanged("PartnershipCountry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PartnershipName {
-            get {
-                return this.PartnershipNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PartnershipNameField, value) != true)) {
-                    this.PartnershipNameField = value;
-                    this.RaisePropertyChanged("PartnershipName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RContributions {
-            get {
-                return this.RContributionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RContributionsField, value) != true)) {
-                    this.RContributionsField = value;
-                    this.RaisePropertyChanged("RContributions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RUnitemzied {
-            get {
-                return this.RUnitemziedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RUnitemziedField, value) != true)) {
-                    this.RUnitemziedField = value;
-                    this.RaisePropertyChanged("RUnitemzied");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransMapping {
-            get {
-                return this.TransMappingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransMappingField, value) != true)) {
-                    this.TransMappingField = value;
-                    this.RaisePropertyChanged("TransMapping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreaAddr1 {
-            get {
-                return this.TreaAddr1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreaAddr1Field, value) != true)) {
-                    this.TreaAddr1Field = value;
-                    this.RaisePropertyChanged("TreaAddr1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreaAddress {
-            get {
-                return this.TreaAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreaAddressField, value) != true)) {
-                    this.TreaAddressField = value;
-                    this.RaisePropertyChanged("TreaAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreaCity {
-            get {
-                return this.TreaCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreaCityField, value) != true)) {
-                    this.TreaCityField = value;
-                    this.RaisePropertyChanged("TreaCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreaState {
-            get {
-                return this.TreaStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreaStateField, value) != true)) {
-                    this.TreaStateField = value;
-                    this.RaisePropertyChanged("TreaState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreaZipCode {
-            get {
-                return this.TreaZipCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreaZipCodeField, value) != true)) {
-                    this.TreaZipCodeField = value;
-                    this.RaisePropertyChanged("TreaZipCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerEmployer {
-            get {
-                return this.TreasurerEmployerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerEmployerField, value) != true)) {
-                    this.TreasurerEmployerField = value;
-                    this.RaisePropertyChanged("TreasurerEmployer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerOccupation {
-            get {
-                return this.TreasurerOccupationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerOccupationField, value) != true)) {
-                    this.TreasurerOccupationField = value;
-                    this.RaisePropertyChanged("TreasurerOccupation");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EFSPDFRequestContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class EFSPDFRequestContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionDateIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionTypeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ElectionYearIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilerIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OfficeTypeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReportNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SubmitDateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionDateID {
-            get {
-                return this.ElectionDateIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionDateIDField, value) != true)) {
-                    this.ElectionDateIDField = value;
-                    this.RaisePropertyChanged("ElectionDateID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionTypeID {
-            get {
-                return this.ElectionTypeIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionTypeIDField, value) != true)) {
-                    this.ElectionTypeIDField = value;
-                    this.RaisePropertyChanged("ElectionTypeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ElectionYearId {
-            get {
-                return this.ElectionYearIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectionYearIdField, value) != true)) {
-                    this.ElectionYearIdField = value;
-                    this.RaisePropertyChanged("ElectionYearId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilerId {
-            get {
-                return this.FilerIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilerIdField, value) != true)) {
-                    this.FilerIdField = value;
-                    this.RaisePropertyChanged("FilerId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingDate {
-            get {
-                return this.FilingDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingDateField, value) != true)) {
-                    this.FilingDateField = value;
-                    this.RaisePropertyChanged("FilingDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTypeId {
-            get {
-                return this.FilingTypeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTypeIdField, value) != true)) {
-                    this.FilingTypeIdField = value;
-                    this.RaisePropertyChanged("FilingTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OfficeTypeId {
-            get {
-                return this.OfficeTypeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OfficeTypeIdField, value) != true)) {
-                    this.OfficeTypeIdField = value;
-                    this.RaisePropertyChanged("OfficeTypeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportName {
-            get {
-                return this.ReportNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportNameField, value) != true)) {
-                    this.ReportNameField = value;
-                    this.RaisePropertyChanged("ReportName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SubmitDate {
-            get {
-                return this.SubmitDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubmitDateField, value) != true)) {
-                    this.SubmitDateField = value;
-                    this.RaisePropertyChanged("SubmitDate");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EFSPDFResponseContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class EFSPDFResponseContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] fileByteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fileNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string fileURLField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] fileByte {
-            get {
-                return this.fileByteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fileByteField, value) != true)) {
-                    this.fileByteField = value;
-                    this.RaisePropertyChanged("fileByte");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fileName {
-            get {
-                return this.fileNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fileNameField, value) != true)) {
-                    this.fileNameField = value;
-                    this.RaisePropertyChanged("fileName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fileURL {
-            get {
-                return this.fileURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.fileURLField, value) != true)) {
-                    this.fileURLField = value;
-                    this.RaisePropertyChanged("fileURL");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SchedR_ISExists_Contract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
     public partial class SchedR_ISExists_Contract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -8025,6 +7762,535 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
                 if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
                     this.ZipCodeField = value;
                     this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentMethodContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class PaymentMethodContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaymentTypeAbbrevField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaymentTypeDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaymentTypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaymentTypeAbbrev {
+            get {
+                return this.PaymentTypeAbbrevField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentTypeAbbrevField, value) != true)) {
+                    this.PaymentTypeAbbrevField = value;
+                    this.RaisePropertyChanged("PaymentTypeAbbrev");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaymentTypeDesc {
+            get {
+                return this.PaymentTypeDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentTypeDescField, value) != true)) {
+                    this.PaymentTypeDescField = value;
+                    this.RaisePropertyChanged("PaymentTypeDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaymentTypeId {
+            get {
+                return this.PaymentTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentTypeIdField, value) != true)) {
+                    this.PaymentTypeIdField = value;
+                    this.RaisePropertyChanged("PaymentTypeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FilingCutOffDateContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class FilingCutOffDateContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CutOffDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingDueDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PoliticalCalDateIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PoliticalCalLabelIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriGenDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CutOffDate {
+            get {
+                return this.CutOffDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CutOffDateField, value) != true)) {
+                    this.CutOffDateField = value;
+                    this.RaisePropertyChanged("CutOffDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingDueDate {
+            get {
+                return this.FilingDueDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingDueDateField, value) != true)) {
+                    this.FilingDueDateField = value;
+                    this.RaisePropertyChanged("FilingDueDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PoliticalCalDateId {
+            get {
+                return this.PoliticalCalDateIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PoliticalCalDateIdField, value) != true)) {
+                    this.PoliticalCalDateIdField = value;
+                    this.RaisePropertyChanged("PoliticalCalDateId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PoliticalCalLabelId {
+            get {
+                return this.PoliticalCalLabelIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PoliticalCalLabelIdField, value) != true)) {
+                    this.PoliticalCalLabelIdField = value;
+                    this.RaisePropertyChanged("PoliticalCalLabelId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PriGenDate {
+            get {
+                return this.PriGenDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriGenDateField, value) != true)) {
+                    this.PriGenDateField = value;
+                    this.RaisePropertyChanged("PriGenDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PurposeCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class PurposeCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeAbbrevField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurposeCodeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeAbbrev {
+            get {
+                return this.PurposeCodeAbbrevField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeAbbrevField, value) != true)) {
+                    this.PurposeCodeAbbrevField = value;
+                    this.RaisePropertyChanged("PurposeCodeAbbrev");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeDesc {
+            get {
+                return this.PurposeCodeDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeDescField, value) != true)) {
+                    this.PurposeCodeDescField = value;
+                    this.RaisePropertyChanged("PurposeCodeDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PurposeCodeId {
+            get {
+                return this.PurposeCodeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurposeCodeIdField, value) != true)) {
+                    this.PurposeCodeIdField = value;
+                    this.RaisePropertyChanged("PurposeCodeId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NonItemIETreasurerContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class NonItemIETreasurerContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PersonIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerCountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerEmployerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerOccupationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerStreetAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TreasurerZipField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AddressId {
+            get {
+                return this.AddressIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressIdField, value) != true)) {
+                    this.AddressIdField = value;
+                    this.RaisePropertyChanged("AddressId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PersonId {
+            get {
+                return this.PersonIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PersonIdField, value) != true)) {
+                    this.PersonIdField = value;
+                    this.RaisePropertyChanged("PersonId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerCity {
+            get {
+                return this.TreasurerCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerCityField, value) != true)) {
+                    this.TreasurerCityField = value;
+                    this.RaisePropertyChanged("TreasurerCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerCountry {
+            get {
+                return this.TreasurerCountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerCountryField, value) != true)) {
+                    this.TreasurerCountryField = value;
+                    this.RaisePropertyChanged("TreasurerCountry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerEmployer {
+            get {
+                return this.TreasurerEmployerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerEmployerField, value) != true)) {
+                    this.TreasurerEmployerField = value;
+                    this.RaisePropertyChanged("TreasurerEmployer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerName {
+            get {
+                return this.TreasurerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerNameField, value) != true)) {
+                    this.TreasurerNameField = value;
+                    this.RaisePropertyChanged("TreasurerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerOccupation {
+            get {
+                return this.TreasurerOccupationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerOccupationField, value) != true)) {
+                    this.TreasurerOccupationField = value;
+                    this.RaisePropertyChanged("TreasurerOccupation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerState {
+            get {
+                return this.TreasurerStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerStateField, value) != true)) {
+                    this.TreasurerStateField = value;
+                    this.RaisePropertyChanged("TreasurerState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerStreetAddress {
+            get {
+                return this.TreasurerStreetAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerStreetAddressField, value) != true)) {
+                    this.TreasurerStreetAddressField = value;
+                    this.RaisePropertyChanged("TreasurerStreetAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TreasurerZip {
+            get {
+                return this.TreasurerZipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreasurerZipField, value) != true)) {
+                    this.TreasurerZipField = value;
+                    this.RaisePropertyChanged("TreasurerZip");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ContributorNameContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ContributorNameContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContributorTypeAbbrevField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContributorTypeDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContributorTypeIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContributorTypeAbbrev {
+            get {
+                return this.ContributorTypeAbbrevField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContributorTypeAbbrevField, value) != true)) {
+                    this.ContributorTypeAbbrevField = value;
+                    this.RaisePropertyChanged("ContributorTypeAbbrev");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContributorTypeDesc {
+            get {
+                return this.ContributorTypeDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContributorTypeDescField, value) != true)) {
+                    this.ContributorTypeDescField = value;
+                    this.RaisePropertyChanged("ContributorTypeDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContributorTypeId {
+            get {
+                return this.ContributorTypeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContributorTypeIdField, value) != true)) {
+                    this.ContributorTypeIdField = value;
+                    this.RaisePropertyChanged("ContributorTypeId");
                 }
             }
         }
@@ -12868,6 +13134,509 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetSearchForScheduledIContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class GetSearchForScheduledIContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FILING_TRANS_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Loan_Lib_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Original_AmtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Trans_NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string filer_IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string flng_Ent_FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string flng_Ent_LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string flng_Ent_MiddleNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateField, value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FILING_TRANS_ID {
+            get {
+                return this.FILING_TRANS_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FILING_TRANS_IDField, value) != true)) {
+                    this.FILING_TRANS_IDField = value;
+                    this.RaisePropertyChanged("FILING_TRANS_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Loan_Lib_Number {
+            get {
+                return this.Loan_Lib_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Loan_Lib_NumberField, value) != true)) {
+                    this.Loan_Lib_NumberField = value;
+                    this.RaisePropertyChanged("Loan_Lib_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Original_Amt {
+            get {
+                return this.Original_AmtField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Original_AmtField, value) != true)) {
+                    this.Original_AmtField = value;
+                    this.RaisePropertyChanged("Original_Amt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Trans_Number {
+            get {
+                return this.Trans_NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Trans_NumberField, value) != true)) {
+                    this.Trans_NumberField = value;
+                    this.RaisePropertyChanged("Trans_Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string filer_Id {
+            get {
+                return this.filer_IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.filer_IdField, value) != true)) {
+                    this.filer_IdField = value;
+                    this.RaisePropertyChanged("filer_Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string flng_Ent_FirstName {
+            get {
+                return this.flng_Ent_FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.flng_Ent_FirstNameField, value) != true)) {
+                    this.flng_Ent_FirstNameField = value;
+                    this.RaisePropertyChanged("flng_Ent_FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string flng_Ent_LastName {
+            get {
+                return this.flng_Ent_LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.flng_Ent_LastNameField, value) != true)) {
+                    this.flng_Ent_LastNameField = value;
+                    this.RaisePropertyChanged("flng_Ent_LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string flng_Ent_MiddleName {
+            get {
+                return this.flng_Ent_MiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.flng_Ent_MiddleNameField, value) != true)) {
+                    this.flng_Ent_MiddleNameField = value;
+                    this.RaisePropertyChanged("flng_Ent_MiddleName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizedToSignCheckContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class AuthorizedToSignCheckContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EndDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MiddleNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrefixField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] SignatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SuffixField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CommID {
+            get {
+                return this.CommIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommIDField, value) != true)) {
+                    this.CommIDField = value;
+                    this.RaisePropertyChanged("CommID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreatedBy {
+            get {
+                return this.CreatedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatedByField, value) != true)) {
+                    this.CreatedByField = value;
+                    this.RaisePropertyChanged("CreatedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EndDate {
+            get {
+                return this.EndDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EndDateField, value) != true)) {
+                    this.EndDateField = value;
+                    this.RaisePropertyChanged("EndDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MiddleName {
+            get {
+                return this.MiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MiddleNameField, value) != true)) {
+                    this.MiddleNameField = value;
+                    this.RaisePropertyChanged("MiddleName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prefix {
+            get {
+                return this.PrefixField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrefixField, value) != true)) {
+                    this.PrefixField = value;
+                    this.RaisePropertyChanged("Prefix");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Signature {
+            get {
+                return this.SignatureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SignatureField, value) != true)) {
+                    this.SignatureField = value;
+                    this.RaisePropertyChanged("Signature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StartDate {
+            get {
+                return this.StartDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StartDateField, value) != true)) {
+                    this.StartDateField = value;
+                    this.RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Suffix {
+            get {
+                return this.SuffixField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SuffixField, value) != true)) {
+                    this.SuffixField = value;
+                    this.RaisePropertyChanged("Suffix");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpPaymentTransIdPopUpSchedFContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ExpPaymentTransIdPopUpSchedFContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingSchedIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrgAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ScheduleDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingSchedId {
+            get {
+                return this.FilingSchedIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingSchedIdField, value) != true)) {
+                    this.FilingSchedIdField = value;
+                    this.RaisePropertyChanged("FilingSchedId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgAmount {
+            get {
+                return this.OrgAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrgAmountField, value) != true)) {
+                    this.OrgAmountField = value;
+                    this.RaisePropertyChanged("OrgAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ScheduleDate {
+            get {
+                return this.ScheduleDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScheduleDateField, value) != true)) {
+                    this.ScheduleDateField = value;
+                    this.RaisePropertyChanged("ScheduleDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExpPaymentOriginalNameContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
     [System.SerializableAttribute()]
     public partial class ExpPaymentOriginalNameContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -14035,1342 +14804,6 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
                 if ((object.ReferenceEquals(this.Trans_Cand_IDField, value) != true)) {
                     this.Trans_Cand_IDField = value;
                     this.RaisePropertyChanged("Trans_Cand_ID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NonItemIETreasurerContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class NonItemIETreasurerContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PersonIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerCountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerEmployerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerOccupationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerStreetAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TreasurerZipField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AddressId {
-            get {
-                return this.AddressIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressIdField, value) != true)) {
-                    this.AddressIdField = value;
-                    this.RaisePropertyChanged("AddressId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PersonId {
-            get {
-                return this.PersonIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonIdField, value) != true)) {
-                    this.PersonIdField = value;
-                    this.RaisePropertyChanged("PersonId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerCity {
-            get {
-                return this.TreasurerCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerCityField, value) != true)) {
-                    this.TreasurerCityField = value;
-                    this.RaisePropertyChanged("TreasurerCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerCountry {
-            get {
-                return this.TreasurerCountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerCountryField, value) != true)) {
-                    this.TreasurerCountryField = value;
-                    this.RaisePropertyChanged("TreasurerCountry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerEmployer {
-            get {
-                return this.TreasurerEmployerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerEmployerField, value) != true)) {
-                    this.TreasurerEmployerField = value;
-                    this.RaisePropertyChanged("TreasurerEmployer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerName {
-            get {
-                return this.TreasurerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerNameField, value) != true)) {
-                    this.TreasurerNameField = value;
-                    this.RaisePropertyChanged("TreasurerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerOccupation {
-            get {
-                return this.TreasurerOccupationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerOccupationField, value) != true)) {
-                    this.TreasurerOccupationField = value;
-                    this.RaisePropertyChanged("TreasurerOccupation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerState {
-            get {
-                return this.TreasurerStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerStateField, value) != true)) {
-                    this.TreasurerStateField = value;
-                    this.RaisePropertyChanged("TreasurerState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerStreetAddress {
-            get {
-                return this.TreasurerStreetAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerStreetAddressField, value) != true)) {
-                    this.TreasurerStreetAddressField = value;
-                    this.RaisePropertyChanged("TreasurerStreetAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TreasurerZip {
-            get {
-                return this.TreasurerZipField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreasurerZipField, value) != true)) {
-                    this.TreasurerZipField = value;
-                    this.RaisePropertyChanged("TreasurerZip");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContributorNameContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ContributorNameContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContributorTypeAbbrevField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContributorTypeDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContributorTypeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContributorTypeAbbrev {
-            get {
-                return this.ContributorTypeAbbrevField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContributorTypeAbbrevField, value) != true)) {
-                    this.ContributorTypeAbbrevField = value;
-                    this.RaisePropertyChanged("ContributorTypeAbbrev");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContributorTypeDesc {
-            get {
-                return this.ContributorTypeDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContributorTypeDescField, value) != true)) {
-                    this.ContributorTypeDescField = value;
-                    this.RaisePropertyChanged("ContributorTypeDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContributorTypeId {
-            get {
-                return this.ContributorTypeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContributorTypeIdField, value) != true)) {
-                    this.ContributorTypeIdField = value;
-                    this.RaisePropertyChanged("ContributorTypeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoanerCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class LoanerCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoanerDescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoanerIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LoanerDesc {
-            get {
-                return this.LoanerDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoanerDescField, value) != true)) {
-                    this.LoanerDescField = value;
-                    this.RaisePropertyChanged("LoanerDesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LoanerID {
-            get {
-                return this.LoanerIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoanerIDField, value) != true)) {
-                    this.LoanerIDField = value;
-                    this.RaisePropertyChanged("LoanerID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OutstandingLiabilityContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class OutstandingLiabilityContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreditorNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DateIncurredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingEntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingEntityNameAndAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FlngEntCountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityExplanationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityStreetNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityZipCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OriginalAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OutstandingAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PayeeNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreditorName {
-            get {
-                return this.CreditorNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreditorNameField, value) != true)) {
-                    this.CreditorNameField = value;
-                    this.RaisePropertyChanged("CreditorName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DateIncurred {
-            get {
-                return this.DateIncurredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateIncurredField, value) != true)) {
-                    this.DateIncurredField = value;
-                    this.RaisePropertyChanged("DateIncurred");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingEntityId {
-            get {
-                return this.FilingEntityIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
-                    this.FilingEntityIdField = value;
-                    this.RaisePropertyChanged("FilingEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingEntityNameAndAddress {
-            get {
-                return this.FilingEntityNameAndAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingEntityNameAndAddressField, value) != true)) {
-                    this.FilingEntityNameAndAddressField = value;
-                    this.RaisePropertyChanged("FilingEntityNameAndAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransId {
-            get {
-                return this.FilingTransIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
-                    this.FilingTransIdField = value;
-                    this.RaisePropertyChanged("FilingTransId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FlngEntCountry {
-            get {
-                return this.FlngEntCountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FlngEntCountryField, value) != true)) {
-                    this.FlngEntCountryField = value;
-                    this.RaisePropertyChanged("FlngEntCountry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityAmount {
-            get {
-                return this.LiabilityAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityAmountField, value) != true)) {
-                    this.LiabilityAmountField = value;
-                    this.RaisePropertyChanged("LiabilityAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityCity {
-            get {
-                return this.LiabilityCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityCityField, value) != true)) {
-                    this.LiabilityCityField = value;
-                    this.RaisePropertyChanged("LiabilityCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityExplanation {
-            get {
-                return this.LiabilityExplanationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityExplanationField, value) != true)) {
-                    this.LiabilityExplanationField = value;
-                    this.RaisePropertyChanged("LiabilityExplanation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityState {
-            get {
-                return this.LiabilityStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityStateField, value) != true)) {
-                    this.LiabilityStateField = value;
-                    this.RaisePropertyChanged("LiabilityState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityStreetName {
-            get {
-                return this.LiabilityStreetNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityStreetNameField, value) != true)) {
-                    this.LiabilityStreetNameField = value;
-                    this.RaisePropertyChanged("LiabilityStreetName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityZipCode {
-            get {
-                return this.LiabilityZipCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityZipCodeField, value) != true)) {
-                    this.LiabilityZipCodeField = value;
-                    this.RaisePropertyChanged("LiabilityZipCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OriginalAmount {
-            get {
-                return this.OriginalAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalAmountField, value) != true)) {
-                    this.OriginalAmountField = value;
-                    this.RaisePropertyChanged("OriginalAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OutstandingAmount {
-            get {
-                return this.OutstandingAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
-                    this.OutstandingAmountField = value;
-                    this.RaisePropertyChanged("OutstandingAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PayeeName {
-            get {
-                return this.PayeeNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PayeeNameField, value) != true)) {
-                    this.PayeeNameField = value;
-                    this.RaisePropertyChanged("PayeeName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpPaymentLiabilityContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ExpPaymentLiabilityContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreditorNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DateIncurredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingEntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingTransIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityExplanationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityStreetNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LiabilityZipCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OrignalAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OutstandingAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PayeeNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreditorName {
-            get {
-                return this.CreditorNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreditorNameField, value) != true)) {
-                    this.CreditorNameField = value;
-                    this.RaisePropertyChanged("CreditorName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DateIncurred {
-            get {
-                return this.DateIncurredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateIncurredField, value) != true)) {
-                    this.DateIncurredField = value;
-                    this.RaisePropertyChanged("DateIncurred");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingEntityId {
-            get {
-                return this.FilingEntityIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
-                    this.FilingEntityIdField = value;
-                    this.RaisePropertyChanged("FilingEntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingTransId {
-            get {
-                return this.FilingTransIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
-                    this.FilingTransIdField = value;
-                    this.RaisePropertyChanged("FilingTransId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityCity {
-            get {
-                return this.LiabilityCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityCityField, value) != true)) {
-                    this.LiabilityCityField = value;
-                    this.RaisePropertyChanged("LiabilityCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityExplanation {
-            get {
-                return this.LiabilityExplanationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityExplanationField, value) != true)) {
-                    this.LiabilityExplanationField = value;
-                    this.RaisePropertyChanged("LiabilityExplanation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityState {
-            get {
-                return this.LiabilityStateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityStateField, value) != true)) {
-                    this.LiabilityStateField = value;
-                    this.RaisePropertyChanged("LiabilityState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityStreetName {
-            get {
-                return this.LiabilityStreetNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityStreetNameField, value) != true)) {
-                    this.LiabilityStreetNameField = value;
-                    this.RaisePropertyChanged("LiabilityStreetName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LiabilityZipCode {
-            get {
-                return this.LiabilityZipCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LiabilityZipCodeField, value) != true)) {
-                    this.LiabilityZipCodeField = value;
-                    this.RaisePropertyChanged("LiabilityZipCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OrignalAmount {
-            get {
-                return this.OrignalAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrignalAmountField, value) != true)) {
-                    this.OrignalAmountField = value;
-                    this.RaisePropertyChanged("OrignalAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OutstandingAmount {
-            get {
-                return this.OutstandingAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
-                    this.OutstandingAmountField = value;
-                    this.RaisePropertyChanged("OutstandingAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PayeeName {
-            get {
-                return this.PayeeNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PayeeNameField, value) != true)) {
-                    this.PayeeNameField = value;
-                    this.RaisePropertyChanged("PayeeName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GetSearchForScheduledIContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class GetSearchForScheduledIContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FILING_TRANS_IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Loan_Lib_NumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Original_AmtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Trans_NumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string filer_IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string flng_Ent_FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string flng_Ent_LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string flng_Ent_MiddleNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Amount {
-            get {
-                return this.AmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AmountField, value) != true)) {
-                    this.AmountField = value;
-                    this.RaisePropertyChanged("Amount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateField, value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FILING_TRANS_ID {
-            get {
-                return this.FILING_TRANS_IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FILING_TRANS_IDField, value) != true)) {
-                    this.FILING_TRANS_IDField = value;
-                    this.RaisePropertyChanged("FILING_TRANS_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Loan_Lib_Number {
-            get {
-                return this.Loan_Lib_NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Loan_Lib_NumberField, value) != true)) {
-                    this.Loan_Lib_NumberField = value;
-                    this.RaisePropertyChanged("Loan_Lib_Number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Original_Amt {
-            get {
-                return this.Original_AmtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Original_AmtField, value) != true)) {
-                    this.Original_AmtField = value;
-                    this.RaisePropertyChanged("Original_Amt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Trans_Number {
-            get {
-                return this.Trans_NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Trans_NumberField, value) != true)) {
-                    this.Trans_NumberField = value;
-                    this.RaisePropertyChanged("Trans_Number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string filer_Id {
-            get {
-                return this.filer_IdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.filer_IdField, value) != true)) {
-                    this.filer_IdField = value;
-                    this.RaisePropertyChanged("filer_Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string flng_Ent_FirstName {
-            get {
-                return this.flng_Ent_FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.flng_Ent_FirstNameField, value) != true)) {
-                    this.flng_Ent_FirstNameField = value;
-                    this.RaisePropertyChanged("flng_Ent_FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string flng_Ent_LastName {
-            get {
-                return this.flng_Ent_LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.flng_Ent_LastNameField, value) != true)) {
-                    this.flng_Ent_LastNameField = value;
-                    this.RaisePropertyChanged("flng_Ent_LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string flng_Ent_MiddleName {
-            get {
-                return this.flng_Ent_MiddleNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.flng_Ent_MiddleNameField, value) != true)) {
-                    this.flng_Ent_MiddleNameField = value;
-                    this.RaisePropertyChanged("flng_Ent_MiddleName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizedToSignCheckContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class AuthorizedToSignCheckContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CommIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MiddleNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrefixField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] SignatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StartDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SuffixField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CommID {
-            get {
-                return this.CommIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommIDField, value) != true)) {
-                    this.CommIDField = value;
-                    this.RaisePropertyChanged("CommID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreatedBy {
-            get {
-                return this.CreatedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatedByField, value) != true)) {
-                    this.CreatedByField = value;
-                    this.RaisePropertyChanged("CreatedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EndDate {
-            get {
-                return this.EndDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EndDateField, value) != true)) {
-                    this.EndDateField = value;
-                    this.RaisePropertyChanged("EndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MiddleName {
-            get {
-                return this.MiddleNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MiddleNameField, value) != true)) {
-                    this.MiddleNameField = value;
-                    this.RaisePropertyChanged("MiddleName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Prefix {
-            get {
-                return this.PrefixField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrefixField, value) != true)) {
-                    this.PrefixField = value;
-                    this.RaisePropertyChanged("Prefix");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Signature {
-            get {
-                return this.SignatureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SignatureField, value) != true)) {
-                    this.SignatureField = value;
-                    this.RaisePropertyChanged("Signature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StartDate {
-            get {
-                return this.StartDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StartDateField, value) != true)) {
-                    this.StartDateField = value;
-                    this.RaisePropertyChanged("StartDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Suffix {
-            get {
-                return this.SuffixField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SuffixField, value) != true)) {
-                    this.SuffixField = value;
-                    this.RaisePropertyChanged("Suffix");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpPaymentTransIdPopUpSchedFContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
-    [System.SerializableAttribute()]
-    public partial class ExpPaymentTransIdPopUpSchedFContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilingSchedIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OrgAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ScheduleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransNumberField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FilingSchedId {
-            get {
-                return this.FilingSchedIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilingSchedIdField, value) != true)) {
-                    this.FilingSchedIdField = value;
-                    this.RaisePropertyChanged("FilingSchedId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OrgAmount {
-            get {
-                return this.OrgAmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrgAmountField, value) != true)) {
-                    this.OrgAmountField = value;
-                    this.RaisePropertyChanged("OrgAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ScheduleDate {
-            get {
-                return this.ScheduleDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ScheduleDateField, value) != true)) {
-                    this.ScheduleDateField = value;
-                    this.RaisePropertyChanged("ScheduleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransNumber {
-            get {
-                return this.TransNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
-                    this.TransNumberField = value;
-                    this.RaisePropertyChanged("TransNumber");
                 }
             }
         }
@@ -19541,69 +18974,582 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoanerCodeContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class LoanerCodeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoanerDescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoanerIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LoanerDesc {
+            get {
+                return this.LoanerDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoanerDescField, value) != true)) {
+                    this.LoanerDescField = value;
+                    this.RaisePropertyChanged("LoanerDesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LoanerID {
+            get {
+                return this.LoanerIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoanerIDField, value) != true)) {
+                    this.LoanerIDField = value;
+                    this.RaisePropertyChanged("LoanerID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutstandingLiabilityContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class OutstandingLiabilityContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreditorNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateIncurredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingEntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingEntityNameAndAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FlngEntCountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityExplanationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityStreetNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OutstandingAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PayeeNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreditorName {
+            get {
+                return this.CreditorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreditorNameField, value) != true)) {
+                    this.CreditorNameField = value;
+                    this.RaisePropertyChanged("CreditorName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DateIncurred {
+            get {
+                return this.DateIncurredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateIncurredField, value) != true)) {
+                    this.DateIncurredField = value;
+                    this.RaisePropertyChanged("DateIncurred");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingEntityId {
+            get {
+                return this.FilingEntityIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
+                    this.FilingEntityIdField = value;
+                    this.RaisePropertyChanged("FilingEntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingEntityNameAndAddress {
+            get {
+                return this.FilingEntityNameAndAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingEntityNameAndAddressField, value) != true)) {
+                    this.FilingEntityNameAndAddressField = value;
+                    this.RaisePropertyChanged("FilingEntityNameAndAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransId {
+            get {
+                return this.FilingTransIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
+                    this.FilingTransIdField = value;
+                    this.RaisePropertyChanged("FilingTransId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FlngEntCountry {
+            get {
+                return this.FlngEntCountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlngEntCountryField, value) != true)) {
+                    this.FlngEntCountryField = value;
+                    this.RaisePropertyChanged("FlngEntCountry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityAmount {
+            get {
+                return this.LiabilityAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityAmountField, value) != true)) {
+                    this.LiabilityAmountField = value;
+                    this.RaisePropertyChanged("LiabilityAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityCity {
+            get {
+                return this.LiabilityCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityCityField, value) != true)) {
+                    this.LiabilityCityField = value;
+                    this.RaisePropertyChanged("LiabilityCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityExplanation {
+            get {
+                return this.LiabilityExplanationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityExplanationField, value) != true)) {
+                    this.LiabilityExplanationField = value;
+                    this.RaisePropertyChanged("LiabilityExplanation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityState {
+            get {
+                return this.LiabilityStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityStateField, value) != true)) {
+                    this.LiabilityStateField = value;
+                    this.RaisePropertyChanged("LiabilityState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityStreetName {
+            get {
+                return this.LiabilityStreetNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityStreetNameField, value) != true)) {
+                    this.LiabilityStreetNameField = value;
+                    this.RaisePropertyChanged("LiabilityStreetName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityZipCode {
+            get {
+                return this.LiabilityZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityZipCodeField, value) != true)) {
+                    this.LiabilityZipCodeField = value;
+                    this.RaisePropertyChanged("LiabilityZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalAmount {
+            get {
+                return this.OriginalAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalAmountField, value) != true)) {
+                    this.OriginalAmountField = value;
+                    this.RaisePropertyChanged("OriginalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OutstandingAmount {
+            get {
+                return this.OutstandingAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
+                    this.OutstandingAmountField = value;
+                    this.RaisePropertyChanged("OutstandingAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PayeeName {
+            get {
+                return this.PayeeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PayeeNameField, value) != true)) {
+                    this.PayeeNameField = value;
+                    this.RaisePropertyChanged("PayeeName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpPaymentLiabilityContract", Namespace="http://schemas.datacontract.org/2004/07/Contracts")]
+    [System.SerializableAttribute()]
+    public partial class ExpPaymentLiabilityContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreditorNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateIncurredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingEntityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilingTransIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityExplanationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityStreetNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LiabilityZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrignalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OutstandingAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PayeeNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreditorName {
+            get {
+                return this.CreditorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreditorNameField, value) != true)) {
+                    this.CreditorNameField = value;
+                    this.RaisePropertyChanged("CreditorName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DateIncurred {
+            get {
+                return this.DateIncurredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateIncurredField, value) != true)) {
+                    this.DateIncurredField = value;
+                    this.RaisePropertyChanged("DateIncurred");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingEntityId {
+            get {
+                return this.FilingEntityIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingEntityIdField, value) != true)) {
+                    this.FilingEntityIdField = value;
+                    this.RaisePropertyChanged("FilingEntityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FilingTransId {
+            get {
+                return this.FilingTransIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilingTransIdField, value) != true)) {
+                    this.FilingTransIdField = value;
+                    this.RaisePropertyChanged("FilingTransId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityCity {
+            get {
+                return this.LiabilityCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityCityField, value) != true)) {
+                    this.LiabilityCityField = value;
+                    this.RaisePropertyChanged("LiabilityCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityExplanation {
+            get {
+                return this.LiabilityExplanationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityExplanationField, value) != true)) {
+                    this.LiabilityExplanationField = value;
+                    this.RaisePropertyChanged("LiabilityExplanation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityState {
+            get {
+                return this.LiabilityStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityStateField, value) != true)) {
+                    this.LiabilityStateField = value;
+                    this.RaisePropertyChanged("LiabilityState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityStreetName {
+            get {
+                return this.LiabilityStreetNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityStreetNameField, value) != true)) {
+                    this.LiabilityStreetNameField = value;
+                    this.RaisePropertyChanged("LiabilityStreetName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LiabilityZipCode {
+            get {
+                return this.LiabilityZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LiabilityZipCodeField, value) != true)) {
+                    this.LiabilityZipCodeField = value;
+                    this.RaisePropertyChanged("LiabilityZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrignalAmount {
+            get {
+                return this.OrignalAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrignalAmountField, value) != true)) {
+                    this.OrignalAmountField = value;
+                    this.RaisePropertyChanged("OrignalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OutstandingAmount {
+            get {
+                return this.OutstandingAmountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OutstandingAmountField, value) != true)) {
+                    this.OutstandingAmountField = value;
+                    this.RaisePropertyChanged("OutstandingAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PayeeName {
+            get {
+                return this.PayeeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PayeeNameField, value) != true)) {
+                    this.PayeeNameField = value;
+                    this.RaisePropertyChanged("PayeeName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TransNumber {
+            get {
+                return this.TransNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransNumberField, value) != true)) {
+                    this.TransNumberField = value;
+                    this.RaisePropertyChanged("TransNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EFSService.ICAPASFIDAS_EFS_SERVICE")]
     public interface ICAPASFIDAS_EFS_SERVICE {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedA", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedAResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[] GetPaymentMethodDataForSchedA();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTemp", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTempResponse")]
+        string DoesTransNumberExistInTemp(string strTransNumber, string filerID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedA", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedAResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[]> GetPaymentMethodDataForSchedAAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDate", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDate(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDate", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImportResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDateImport(string filerId, string filingPeriodId, string electId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImportResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateImportAsync(string filerId, string filingPeriodId, string electId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedU", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedUResponse")]
-        string AddPublic_Fund_Payment_SchedU(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedU", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedUResponse")]
-        System.Threading.Tasks.Task<string> AddPublic_Fund_Payment_SchedUAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPayment", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPaymentRespo" +
-            "nse")]
-        bool UpdateFlngtrans_PublicFundPayment(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPayment", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPaymentRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<bool> UpdateFlngtrans_PublicFundPaymentAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCSRespons" +
-            "e")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[] GetFilingCutOffDateData_PCF_WCS(string strElectYearId, string strElectTypeId, string strOfficeTypeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCSRespons" +
-            "e")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[]> GetFilingCutOffDateData_PCF_WCSAsync(string strElectYearId, string strElectTypeId, string strOfficeTypeId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildDataResponse" +
-            "")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetFilingTransSchedR_ChildData(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildDataResponse" +
-            "")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[]> GetFilingTransSchedR_ChildDataAsync(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEditIETransData_WCS(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTemp", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTempResponse")]
+        System.Threading.Tasks.Task<string> DoesTransNumberExistInTempAsync(string strTransNumber, string filerID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetViewSupportingDocumentsGridDataResp" +
             "onse")]
@@ -20034,6 +19980,228 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundRecpt", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundRecptRespons" +
             "e")]
         System.Threading.Tasks.Task<bool> UpdateFlngtrans_PublicFundRecptAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedA", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedAResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[] GetPaymentMethodDataForSchedA();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedA", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPaymentMethodDataForSchedAResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[]> GetPaymentMethodDataForSchedAAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDate", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDate(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDate", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImportResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDateImport(string filerId, string filingPeriodId, string electId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditFlagPCFDueDateImportResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateImportAsync(string filerId, string filingPeriodId, string electId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedU", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedUResponse")]
+        string AddPublic_Fund_Payment_SchedU(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedU", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddPublic_Fund_Payment_SchedUResponse")]
+        System.Threading.Tasks.Task<string> AddPublic_Fund_Payment_SchedUAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPayment", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPaymentRespo" +
+            "nse")]
+        bool UpdateFlngtrans_PublicFundPayment(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPayment", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngtrans_PublicFundPaymentRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<bool> UpdateFlngtrans_PublicFundPaymentAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCSRespons" +
+            "e")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[] GetFilingCutOffDateData_PCF_WCS(string strElectYearId, string strElectTypeId, string strOfficeTypeId, string strPolCalMapId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingCutOffDateData_PCF_WCSRespons" +
+            "e")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[]> GetFilingCutOffDateData_PCF_WCSAsync(string strElectYearId, string strElectTypeId, string strOfficeTypeId, string strPolCalMapId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildDataResponse" +
+            "")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetFilingTransSchedR_ChildData(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransSchedR_ChildDataResponse" +
+            "")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[]> GetFilingTransSchedR_ChildDataAsync(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEditIETransData_WCS(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCS", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEditIETransData_WCSResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCF", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPurposeCodeData_PCFResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalanceResponse")]
+        string GetSummery_OpeningBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalanceResponse")]
+        System.Threading.Tasks.Task<string> GetSummery_OpeningBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalanceResponse")]
+        string GetSummery_ClosingBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalanceResponse")]
+        System.Threading.Tasks.Task<string> GetSummery_ClosingBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransDataRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEdit24HourNoticeTransData(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransDataRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEdit24HourNoticeTransDataAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
+            "a", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
+            "aResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIEWeeklyContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
+            "a", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
+            "aResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIEWeeklyContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerDataRes" +
+            "ponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[] GetIEWeeklyContrbutionTreasurerData(string strTreasurerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerDataRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[]> GetIEWeeklyContrbutionTreasurerDataAsync(string strTreasurerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTransRespon" +
+            "se")]
+        bool AddNonItemIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTransRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> AddNonItemIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTransResponse")]
+        bool UpdateIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> UpdateIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTransResponse")]
+        bool SubmitIEWeeklyContrFlngTrans(string strTransNumber, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> SubmitIEWeeklyContrFlngTransAsync(string strTransNumber, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryDataRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIETransHistoryData(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryDataRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIETransHistoryDataAsync(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactions", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactionsRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetItemizedNonItemIETransactions(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactions", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactionsRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetItemizedNonItemIETransactionsAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsDataResponse")]
+        bool AddItemizedIETransactionsData(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsDataResponse")]
+        System.Threading.Tasks.Task<bool> AddItemizedIETransactionsDataAsync(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
+            "ata", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
+            "ataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HourPIDAExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
+            "ata", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
+            "ataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HourPIDAExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTransResp" +
+            "onse")]
+        bool AddNonItemIE24HourPIDAExpFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTransResp" +
+            "onse")]
+        System.Threading.Tasks.Task<bool> AddNonItemIE24HourPIDAExpFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedC", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedCR" +
+            "esponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedC();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedC", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedCR" +
+            "esponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedCAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedD", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedDR" +
+            "esponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedD();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedD", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedDR" +
+            "esponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedDAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneDataRe" +
+            "sponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneDataRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
+            "Data", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
+            "DataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributionHistoryData(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
+            "Data", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
+            "DataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributionHistoryDataAsync(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypes", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypesResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetIE24HContrTransactionTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypes", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypesResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetIE24HContrTransactionTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTransResponse")]
+        bool AddNonItemIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> AddNonItemIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTransResponse")]
+        bool UpdateIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> UpdateIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTransResponse")]
+        bool SubmitIE24HContrFlngTrans(string strTransNumber, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> SubmitIE24HContrFlngTransAsync(string strTransNumber, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalancesResponse")]
+        string GetSummery_AllSchedBalances(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalancesResponse")]
+        System.Threading.Tasks.Task<string> GetSummery_AllSchedBalancesAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances_Sched_N", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances_Sched_NRes" +
             "ponse")]
@@ -20467,602 +20635,6 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransactionHasDetails", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransactionHasDetailsResponse")]
         System.Threading.Tasks.Task<string> TransactionHasDetailsAsync(string strTransNumber, string filerID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTemp", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTempResponse")]
-        string DoesTransNumberExistInTemp(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTemp", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DoesTransNumberExistInTempResponse")]
-        System.Threading.Tasks.Task<string> DoesTransNumberExistInTempAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalName", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalNameResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[] GetContributorOriginalName(string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalName", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalNameResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[]> GetContributorOriginalNameAsync(string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmountResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetContributorOriginalAmount(string strFilingEntityId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmountResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetContributorOriginalAmountAsync(string strFilingEntityId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
-            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
-            "Response")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[] GetContributorOriginalContributionDate(string strFilingEntityId, string strOriginalAmt, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
-            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
-            "Response")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[]> GetContributorOriginalContributionDateAsync(string strFilingEntityId, string strOriginalAmt, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefunded", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefundedResponse")]
-        string GetOutstaningAmtContrRefunded(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefunded", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefundedResponse")]
-        System.Threading.Tasks.Task<string> GetOutstaningAmtContrRefundedAsync(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedMResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetOriginalAmtRefundedSchedM(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedMResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedMAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedMResponse" +
-            "")]
-        string AddContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedMResponse" +
-            "")]
-        System.Threading.Tasks.Task<string> AddContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedMRespo" +
-            "nse")]
-        bool UpdateContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedMRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<bool> UpdateContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedNResponse")]
-        string AddOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedNResponse")]
-        System.Threading.Tasks.Task<string> AddOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedNRespon" +
-            "se")]
-        bool UpdateOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedNRespon" +
-            "se")]
-        System.Threading.Tasks.Task<bool> UpdateOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExistsRespons" +
-            "e")]
-        string OutstandingLiabilityChildExists(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExistsRespons" +
-            "e")]
-        System.Threading.Tasks.Task<string> OutstandingLiabilityChildExistsAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedNRespon" +
-            "se")]
-        bool DeleteOutstandingLiabilitySchedN(string strTransNumber, string strFilingsId, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedNRespon" +
-            "se")]
-        System.Threading.Tasks.Task<bool> DeleteOutstandingLiabilitySchedNAsync(string strTransNumber, string strFilingsId, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetEditTransactionData(string strFilingTransId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetEditTransactionDataAsync(string strFilingTransId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgiven", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgivenRespons" +
-            "e")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountForForgiven(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgiven", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgivenRespons" +
-            "e")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountForForgivenAsync(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfo", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfoResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[] GetAuthenticateFilerInfo(string userID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfo", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfoResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[]> GetAuthenticateFilerInfoAsync(string userID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedNResponse")]
-        string AddAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedNResponse")]
-        System.Threading.Tasks.Task<string> AddAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedNResponse")]
-        bool UpdateAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedNResponse")]
-        System.Threading.Tasks.Task<bool> UpdateAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmountResponse")]
-        string GetAllAmount(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmountResponse")]
-        System.Threading.Tasks.Task<string> GetAllAmountAsync(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOffice", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOfficeResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[] GetDistrictsForOffice(string strOfficeID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOffice", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOfficeResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[]> GetDistrictsForOfficeAsync(string strOfficeID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOffices", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOfficesResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[] GetOffices(string strMunicipalityID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOffices", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOfficesResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[]> GetOfficesAsync(string strMunicipalityID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetInLieuOfStatementData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetInLieuOfStatementDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedR", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedRResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[] GetAutoCompleteSchedR(string name, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedR", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedRResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[]> GetAutoCompleteSchedRAsync(string name, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatementResponse")]
-        bool AddInLieuOfStatement(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatementResponse")]
-        System.Threading.Tasks.Task<bool> AddInLieuOfStatementAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatementResponse")]
-        bool DeleteInLieuOfStatement(string strFilingsId, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatementResponse")]
-        System.Threading.Tasks.Task<bool> DeleteInLieuOfStatementAsync(string strFilingsId, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[] GetPersonNameAndTreasurerData(string strPersonId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[]> GetPersonNameAndTreasurerDataAsync(string strPersonId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamationResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[] GetFilerInforamation(string filerID, string person_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamationResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[]> GetFilerInforamationAsync(string filerID, string person_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoActivityReporttData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoActivityReporttDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReportResponse")]
-        bool AddNoActivityReport(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReportResponse")]
-        System.Threading.Tasks.Task<bool> AddNoActivityReportAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmitted", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmittedResponse")]
-        bool GetItemizedTransSubmitted(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmitted", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmittedResponse")]
-        System.Threading.Tasks.Task<bool> GetItemizedTransSubmittedAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalanceResponse")]
-        string TransferOutStandingBalance(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalanceResponse")]
-        System.Threading.Tasks.Task<string> TransferOutStandingBalanceAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipationResponse")]
-        bool AddNoticeOfNonParticipation(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipationResponse")]
-        System.Threading.Tasks.Task<bool> AddNoticeOfNonParticipationAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtDataRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoticeOfNonParticipationtData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtDataRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoticeOfNonParticipationtDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeDataRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetTransactionTypes24HNoticeData();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeDataRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetTransactionTypes24HNoticeDataAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeDataResponse" +
-            "")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeDataResponse" +
-            "")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTransRespons" +
-            "e")]
-        bool AddNonItem24HourNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTransRespons" +
-            "e")]
-        System.Threading.Tasks.Task<bool> AddNonItem24HourNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTransResponse")]
-        bool Update24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> Update24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTransResponse")]
-        bool Submit24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> Submit24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTransResponse")]
-        bool Delete24HNoticeFlngTrans(string strTransNumber, string strModifiedBy, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> Delete24HNoticeFlngTransAsync(string strTransNumber, string strModifiedBy, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExistsResponse")]
-        bool GetNonItemChildTransExists(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExistsResponse")]
-        System.Threading.Tasks.Task<bool> GetNonItemChildTransExistsAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExistsResponse")]
-        bool GetNonItemParentTransExists(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExistsResponse")]
-        System.Threading.Tasks.Task<bool> GetNonItemParentTransExistsAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryDataR" +
-            "esponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeHistoryData(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryDataR" +
-            "esponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeHistoryDataAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_Summery", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_SummeryResponse")]
-        bool SubmitFilings_Summery(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_Summery", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_SummeryResponse")]
-        System.Threading.Tasks.Task<bool> SubmitFilings_SummeryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummary", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummaryRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransactionsDataSummary(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummary", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummaryRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransactionsDataSummaryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalanceResponse")]
-        string GetSummery_OpeningBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_OpeningBalanceResponse")]
-        System.Threading.Tasks.Task<string> GetSummery_OpeningBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalanceResponse")]
-        string GetSummery_ClosingBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_ClosingBalanceResponse")]
-        System.Threading.Tasks.Task<string> GetSummery_ClosingBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransDataRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEdit24HourNoticeTransData(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetCommEdit24HourNoticeTransDataRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEdit24HourNoticeTransDataAsync(string strTransNumber, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
-            "a", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
-            "aResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIEWeeklyContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
-            "a", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIEWeeklyContributioneDat" +
-            "aResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIEWeeklyContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerDataRes" +
-            "ponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[] GetIEWeeklyContrbutionTreasurerData(string strTreasurerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIEWeeklyContrbutionTreasurerDataRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[]> GetIEWeeklyContrbutionTreasurerDataAsync(string strTreasurerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTransRespon" +
-            "se")]
-        bool AddNonItemIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIEWeeklyContrFlngTransRespon" +
-            "se")]
-        System.Threading.Tasks.Task<bool> AddNonItemIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTransResponse")]
-        bool UpdateIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIEWeeklyContrFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> UpdateIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTransResponse")]
-        bool SubmitIEWeeklyContrFlngTrans(string strTransNumber, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIEWeeklyContrFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> SubmitIEWeeklyContrFlngTransAsync(string strTransNumber, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryDataRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIETransHistoryData(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIETransHistoryDataRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIETransHistoryDataAsync(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactions", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactionsRespon" +
-            "se")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetItemizedNonItemIETransactions(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactions", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedNonItemIETransactionsRespon" +
-            "se")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetItemizedNonItemIETransactionsAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsDataResponse")]
-        bool AddItemizedIETransactionsData(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddItemizedIETransactionsDataResponse")]
-        System.Threading.Tasks.Task<bool> AddItemizedIETransactionsDataAsync(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
-            "ata", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
-            "ataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HourPIDAExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
-            "ata", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HourPIDAExpenditureD" +
-            "ataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HourPIDAExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTransResp" +
-            "onse")]
-        bool AddNonItemIE24HourPIDAExpFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HourPIDAExpFlngTransResp" +
-            "onse")]
-        System.Threading.Tasks.Task<bool> AddNonItemIE24HourPIDAExpFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedC", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedCR" +
-            "esponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedC();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedC", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedCR" +
-            "esponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedCAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedD", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedDR" +
-            "esponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedD();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedD", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorCodeIEWeeklyContrSchedDR" +
-            "esponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedDAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneDataRe" +
-            "sponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributioneDataRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
-            "Data", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
-            "DataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributionHistoryData(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
-            "Data", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransIE24HContributionHistory" +
-            "DataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributionHistoryDataAsync(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypes", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypesResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetIE24HContrTransactionTypes();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypes", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetIE24HContrTransactionTypesResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetIE24HContrTransactionTypesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTransResponse")]
-        bool AddNonItemIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItemIE24HContrFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> AddNonItemIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTransResponse")]
-        bool UpdateIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateIE24HContrFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> UpdateIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTransResponse")]
-        bool SubmitIE24HContrFlngTrans(string strTransNumber, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitIE24HContrFlngTransResponse")]
-        System.Threading.Tasks.Task<bool> SubmitIE24HContrFlngTransAsync(string strTransNumber, string strModifiedBy);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalancesResponse")]
-        string GetSummery_AllSchedBalances(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalances", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSummery_AllSchedBalancesResponse")]
-        System.Threading.Tasks.Task<string> GetSummery_AllSchedBalancesAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferIn", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferInResp" +
-            "onse")]
-        bool UpdateFilingTransaction_TransferIn(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferIn", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferInResp" +
-            "onse")]
-        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
-            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
-            "Response")]
-        string AddFilingTransaction_NonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
-            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
-            "Response")]
-        System.Threading.Tasks.Task<string> AddFilingTransaction_NonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceipts", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceiptsResp" +
-            "onse")]
-        bool UpdateFilingTransNonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceipts", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceiptsResp" +
-            "onse")]
-        System.Threading.Tasks.Task<bool> UpdateFilingTransNonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryDataResponse")]
-        string AddFlngTransContrMonetaryData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryDataResponse")]
-        System.Threading.Tasks.Task<string> AddFlngTransContrMonetaryDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrDataRespon" +
-            "se")]
-        bool UpdateFlngTransMonetaryContrData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrDataRespon" +
-            "se")]
-        System.Threading.Tasks.Task<bool> UpdateFlngTransMonetaryContrDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureDataResponse")]
-        string AddFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureDataResponse")]
-        System.Threading.Tasks.Task<string> AddFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOutRespon" +
-            "se")]
-        string AddFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOutRespon" +
-            "se")]
-        System.Threading.Tasks.Task<string> AddFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOutRes" +
-            "ponse")]
-        bool UpdateFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOutRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceivedRespo" +
-            "nse")]
-        string AddFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceivedRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<string> AddFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceivedRe" +
-            "sponse")]
-        bool UpdateFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceivedRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCode", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCodeResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[] GetLoanerCode();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCode", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCodeResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[]> GetLoanerCodeAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiab", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiabRespons" +
-            "e")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[] GetAutoCompleteCreditorNameLiab(string name, string strFilerId, string strNameFlag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiab", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiabRespons" +
-            "e")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[]> GetAutoCompleteCreditorNameLiabAsync(string name, string strFilerId, string strNameFlag);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[] GetDateIncurredLiabData(string strFilingEntityId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[]> GetDateIncurredLiabDataAsync(string strFilingEntityId, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountLiabData(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountLiabDataAsync(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExistsResponse")]
-        string GetExpenditureLiabilityExists(string strFilingEntityId, string strFlngEntyName, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExistsResponse")]
-        System.Threading.Tasks.Task<string> GetExpenditureLiabilityExistsAsync(string strFilingEntityId, string strFlngEntyName, string filerID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityDataResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[] GetExpPaymentsLiabilityData(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityDataResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[]> GetExpPaymentsLiabilityDataAsync(string strTransNumber, string strFilerId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureDataResponse" +
-            "")]
-        bool UpdateFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureDataResponse" +
-            "")]
-        System.Threading.Tasks.Task<bool> UpdateFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExistsResponse")]
-        bool GetSubcontracorsExists(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExistsResponse")]
-        System.Threading.Tasks.Task<bool> GetSubcontracorsExistsAsync(string strFilingTransId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetDate_SchedueledJ(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetDate_SchedueledJAsync(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetAmount_SchedueledJ(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetAmount_SchedueledJAsync(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJResponse")]
-        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetName_SchedueledJ(string filer_ID);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJResponse")]
-        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetName_SchedueledJAsync(string filer_ID);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetScheduleJ_EntityData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetScheduleJ_EntityDataResponse")]
         BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetScheduleJ_EntityData(string trans_Number, string filerID);
         
@@ -21362,6 +20934,286 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedL", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedLResponse")]
         System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedLAsync(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalName", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalNameResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[] GetContributorOriginalName(string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalName", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalNameResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[]> GetContributorOriginalNameAsync(string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmountResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetContributorOriginalAmount(string strFilingEntityId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalAmountResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetContributorOriginalAmountAsync(string strFilingEntityId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
+            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
+            "Response")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[] GetContributorOriginalContributionDate(string strFilingEntityId, string strOriginalAmt, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
+            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetContributorOriginalContributionDate" +
+            "Response")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[]> GetContributorOriginalContributionDateAsync(string strFilingEntityId, string strOriginalAmt, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefunded", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefundedResponse")]
+        string GetOutstaningAmtContrRefunded(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefunded", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstaningAmtContrRefundedResponse")]
+        System.Threading.Tasks.Task<string> GetOutstaningAmtContrRefundedAsync(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedMResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetOriginalAmtRefundedSchedM(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOriginalAmtRefundedSchedMResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedMAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedMResponse" +
+            "")]
+        string AddContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddContributionsRefundedSchedMResponse" +
+            "")]
+        System.Threading.Tasks.Task<string> AddContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedMRespo" +
+            "nse")]
+        bool UpdateContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedM", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateContributionsRefundedSchedMRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<bool> UpdateContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedNResponse")]
+        string AddOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddOutstandingLiabilitySchedNResponse")]
+        System.Threading.Tasks.Task<string> AddOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedNRespon" +
+            "se")]
+        bool UpdateOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateOutstandingLiabilitySchedNRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> UpdateOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExistsRespons" +
+            "e")]
+        string OutstandingLiabilityChildExists(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/OutstandingLiabilityChildExistsRespons" +
+            "e")]
+        System.Threading.Tasks.Task<string> OutstandingLiabilityChildExistsAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedNRespon" +
+            "se")]
+        bool DeleteOutstandingLiabilitySchedN(string strTransNumber, string strFilingsId, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteOutstandingLiabilitySchedNRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> DeleteOutstandingLiabilitySchedNAsync(string strTransNumber, string strFilingsId, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetEditTransactionData(string strFilingTransId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetEditTransactionDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetEditTransactionDataAsync(string strFilingTransId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgiven", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgivenRespons" +
+            "e")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountForForgiven(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgiven", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountForForgivenRespons" +
+            "e")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountForForgivenAsync(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfo", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfoResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[] GetAuthenticateFilerInfo(string userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfo", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAuthenticateFilerInfoResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[]> GetAuthenticateFilerInfoAsync(string userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedNResponse")]
+        string AddAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddAmountAllocationSchedNResponse")]
+        System.Threading.Tasks.Task<string> AddAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedNResponse")]
+        bool UpdateAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedN", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateAmountAllocationSchedNResponse")]
+        System.Threading.Tasks.Task<bool> UpdateAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmountResponse")]
+        string GetAllAmount(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmount", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAllAmountResponse")]
+        System.Threading.Tasks.Task<string> GetAllAmountAsync(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOffice", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOfficeResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[] GetDistrictsForOffice(string strOfficeID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOffice", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDistrictsForOfficeResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[]> GetDistrictsForOfficeAsync(string strOfficeID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOffices", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOfficesResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[] GetOffices(string strMunicipalityID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOffices", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOfficesResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[]> GetOfficesAsync(string strMunicipalityID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetInLieuOfStatementData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetInLieuOfStatementDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetInLieuOfStatementDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedR", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedRResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[] GetAutoCompleteSchedR(string name, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedR", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteSchedRResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[]> GetAutoCompleteSchedRAsync(string name, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatementResponse")]
+        bool AddInLieuOfStatement(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddInLieuOfStatementResponse")]
+        System.Threading.Tasks.Task<bool> AddInLieuOfStatementAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatementResponse")]
+        bool DeleteInLieuOfStatement(string strFilingsId, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatement", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/DeleteInLieuOfStatementResponse")]
+        System.Threading.Tasks.Task<bool> DeleteInLieuOfStatementAsync(string strFilingsId, string strModifiedBy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[] GetPersonNameAndTreasurerData(string strPersonId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetPersonNameAndTreasurerDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[]> GetPersonNameAndTreasurerDataAsync(string strPersonId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamationResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[] GetFilerInforamation(string filerID, string person_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilerInforamationResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[]> GetFilerInforamationAsync(string filerID, string person_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoActivityReporttData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoActivityReporttDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoActivityReporttDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReportResponse")]
+        bool AddNoActivityReport(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReport", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoActivityReportResponse")]
+        System.Threading.Tasks.Task<bool> AddNoActivityReportAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmitted", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmittedResponse")]
+        bool GetItemizedTransSubmitted(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmitted", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetItemizedTransSubmittedResponse")]
+        System.Threading.Tasks.Task<bool> GetItemizedTransSubmittedAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalanceResponse")]
+        string TransferOutStandingBalance(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalance", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/TransferOutStandingBalanceResponse")]
+        System.Threading.Tasks.Task<string> TransferOutStandingBalanceAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipationResponse")]
+        bool AddNoticeOfNonParticipation(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipation", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNoticeOfNonParticipationResponse")]
+        System.Threading.Tasks.Task<bool> AddNoticeOfNonParticipationAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtDataRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoticeOfNonParticipationtData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNoticeOfNonParticipationtDataRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoticeOfNonParticipationtDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeDataRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetTransactionTypes24HNoticeData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetTransactionTypes24HNoticeDataRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetTransactionTypes24HNoticeDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeDataResponse" +
+            "")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeDataResponse" +
+            "")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTransRespons" +
+            "e")]
+        bool AddNonItem24HourNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddNonItem24HourNoticeFlngTransRespons" +
+            "e")]
+        System.Threading.Tasks.Task<bool> AddNonItem24HourNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTransResponse")]
+        bool Update24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Update24HNoticeFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> Update24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTransResponse")]
+        bool Submit24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Submit24HNoticeFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> Submit24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTransResponse")]
+        bool Delete24HNoticeFlngTrans(string strTransNumber, string strModifiedBy, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTrans", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/Delete24HNoticeFlngTransResponse")]
+        System.Threading.Tasks.Task<bool> Delete24HNoticeFlngTransAsync(string strTransNumber, string strModifiedBy, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExistsResponse")]
+        bool GetNonItemChildTransExists(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemChildTransExistsResponse")]
+        System.Threading.Tasks.Task<bool> GetNonItemChildTransExistsAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExistsResponse")]
+        bool GetNonItemParentTransExists(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetNonItemParentTransExistsResponse")]
+        System.Threading.Tasks.Task<bool> GetNonItemParentTransExistsAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryDataR" +
+            "esponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeHistoryData(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTrans24HourNoticeHistoryDataR" +
+            "esponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeHistoryDataAsync(string strTransNumber, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_Summery", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_SummeryResponse")]
+        bool SubmitFilings_Summery(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_Summery", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/SubmitFilings_SummeryResponse")]
+        System.Threading.Tasks.Task<bool> SubmitFilings_SummeryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummary", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummaryRespon" +
+            "se")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransactionsDataSummary(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummary", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetFilingTransactionsDataSummaryRespon" +
+            "se")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransactionsDataSummaryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAddressData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAddressDataResponse")]
         BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowAddressContract[] GetAddressData(string strPersonId);
@@ -21774,6 +21626,154 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferIn", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferInRespons" +
             "e")]
         System.Threading.Tasks.Task<string> AddFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferIn", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferInResp" +
+            "onse")]
+        bool UpdateFilingTransaction_TransferIn(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferIn", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferInResp" +
+            "onse")]
+        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
+            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
+            "Response")]
+        string AddFilingTransaction_NonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
+            "", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_NonCompHKReceipts" +
+            "Response")]
+        System.Threading.Tasks.Task<string> AddFilingTransaction_NonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceipts", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceiptsResp" +
+            "onse")]
+        bool UpdateFilingTransNonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceipts", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransNonCompHKReceiptsResp" +
+            "onse")]
+        System.Threading.Tasks.Task<bool> UpdateFilingTransNonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryDataResponse")]
+        string AddFlngTransContrMonetaryData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransContrMonetaryDataResponse")]
+        System.Threading.Tasks.Task<string> AddFlngTransContrMonetaryDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrDataRespon" +
+            "se")]
+        bool UpdateFlngTransMonetaryContrData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransMonetaryContrDataRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> UpdateFlngTransMonetaryContrDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureDataResponse")]
+        string AddFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFlngTransExpenditureDataResponse")]
+        System.Threading.Tasks.Task<string> AddFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOutRespon" +
+            "se")]
+        string AddFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_TransferOutRespon" +
+            "se")]
+        System.Threading.Tasks.Task<string> AddFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOutRes" +
+            "ponse")]
+        bool UpdateFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOut", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_TransferOutRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceivedRespo" +
+            "nse")]
+        string AddFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/AddFilingTransaction_LoanReceivedRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<string> AddFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceivedRe" +
+            "sponse")]
+        bool UpdateFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceived", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFilingTransaction_LoanReceivedRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<bool> UpdateFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCode", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCodeResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[] GetLoanerCode();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCode", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetLoanerCodeResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[]> GetLoanerCodeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiab", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiabRespons" +
+            "e")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[] GetAutoCompleteCreditorNameLiab(string name, string strFilerId, string strNameFlag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiab", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAutoCompleteCreditorNameLiabRespons" +
+            "e")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[]> GetAutoCompleteCreditorNameLiabAsync(string name, string strFilerId, string strNameFlag);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[] GetDateIncurredLiabData(string strFilingEntityId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDateIncurredLiabDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[]> GetDateIncurredLiabDataAsync(string strFilingEntityId, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountLiabData(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetOutstandingAmountLiabDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountLiabDataAsync(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExistsResponse")]
+        string GetExpenditureLiabilityExists(string strFilingEntityId, string strFlngEntyName, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpenditureLiabilityExistsResponse")]
+        System.Threading.Tasks.Task<string> GetExpenditureLiabilityExistsAsync(string strFilingEntityId, string strFlngEntyName, string filerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityDataResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[] GetExpPaymentsLiabilityData(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetExpPaymentsLiabilityDataResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[]> GetExpPaymentsLiabilityDataAsync(string strTransNumber, string strFilerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureDataResponse" +
+            "")]
+        bool UpdateFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureData", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/UpdateFlngTransExpenditureDataResponse" +
+            "")]
+        System.Threading.Tasks.Task<bool> UpdateFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExistsResponse")]
+        bool GetSubcontracorsExists(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExists", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetSubcontracorsExistsResponse")]
+        System.Threading.Tasks.Task<bool> GetSubcontracorsExistsAsync(string strFilingTransId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetDate_SchedueledJ(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetDate_SchedueledJResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetDate_SchedueledJAsync(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetAmount_SchedueledJ(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetAmount_SchedueledJResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetAmount_SchedueledJAsync(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJResponse")]
+        BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetName_SchedueledJ(string filer_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJ", ReplyAction="http://tempuri.org/ICAPASFIDAS_EFS_SERVICE/GetName_SchedueledJResponse")]
+        System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetName_SchedueledJAsync(string filer_ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -21803,76 +21803,12 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
                 base(binding, remoteAddress) {
         }
         
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[] GetPaymentMethodDataForSchedA() {
-            return base.Channel.GetPaymentMethodDataForSchedA();
+        public string DoesTransNumberExistInTemp(string strTransNumber, string filerID) {
+            return base.Channel.DoesTransNumberExistInTemp(strTransNumber, filerID);
         }
         
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[]> GetPaymentMethodDataForSchedAAsync() {
-            return base.Channel.GetPaymentMethodDataForSchedAAsync();
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDate(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetEditFlagPCFDueDate(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetEditFlagPCFDueDateAsync(objFilingTransDataContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDateImport(string filerId, string filingPeriodId, string electId) {
-            return base.Channel.GetEditFlagPCFDueDateImport(filerId, filingPeriodId, electId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateImportAsync(string filerId, string filingPeriodId, string electId) {
-            return base.Channel.GetEditFlagPCFDueDateImportAsync(filerId, filingPeriodId, electId);
-        }
-        
-        public string AddPublic_Fund_Payment_SchedU(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddPublic_Fund_Payment_SchedU(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddPublic_Fund_Payment_SchedUAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddPublic_Fund_Payment_SchedUAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateFlngtrans_PublicFundPayment(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngtrans_PublicFundPayment(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFlngtrans_PublicFundPaymentAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngtrans_PublicFundPaymentAsync(objFilingTransactionsContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[] GetFilingCutOffDateData_PCF_WCS(string strElectYearId, string strElectTypeId, string strOfficeTypeId) {
-            return base.Channel.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[]> GetFilingCutOffDateData_PCF_WCSAsync(string strElectYearId, string strElectTypeId, string strOfficeTypeId) {
-            return base.Channel.GetFilingCutOffDateData_PCF_WCSAsync(strElectYearId, strElectTypeId, strOfficeTypeId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetFilingTransSchedR_ChildData(string strTransNumber, string strFilerId) {
-            return base.Channel.GetFilingTransSchedR_ChildData(strTransNumber, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[]> GetFilingTransSchedR_ChildDataAsync(string strTransNumber, string strFilerId) {
-            return base.Channel.GetFilingTransSchedR_ChildDataAsync(strTransNumber, strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEditIETransData_WCS(string strTransNumber, string filerID) {
-            return base.Channel.GetCommEditIETransData_WCS(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetCommEditIETransData_WCSAsync(strTransNumber, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF() {
-            return base.Channel.GetPurposeCodeData_PCF();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync() {
-            return base.Channel.GetPurposeCodeData_PCFAsync();
+        public System.Threading.Tasks.Task<string> DoesTransNumberExistInTempAsync(string strTransNumber, string filerID) {
+            return base.Channel.DoesTransNumberExistInTempAsync(strTransNumber, filerID);
         }
         
         public BOE.CAPASFIDAS_EFS.Domain.EFSService.ViewSupportingDocumentsGridContract[] GetViewSupportingDocumentsGridData(string strFilerID, string strReportYearID, string strDisclosurePeriodID) {
@@ -22387,6 +22323,254 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
             return base.Channel.UpdateFlngtrans_PublicFundRecptAsync(objFilingTransactionsContract);
         }
         
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[] GetPaymentMethodDataForSchedA() {
+            return base.Channel.GetPaymentMethodDataForSchedA();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PaymentMethodContract[]> GetPaymentMethodDataForSchedAAsync() {
+            return base.Channel.GetPaymentMethodDataForSchedAAsync();
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDate(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetEditFlagPCFDueDate(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetEditFlagPCFDueDateAsync(objFilingTransDataContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[] GetEditFlagPCFDueDateImport(string filerId, string filingPeriodId, string electId) {
+            return base.Channel.GetEditFlagPCFDueDateImport(filerId, filingPeriodId, electId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetEditFlagDataContract[]> GetEditFlagPCFDueDateImportAsync(string filerId, string filingPeriodId, string electId) {
+            return base.Channel.GetEditFlagPCFDueDateImportAsync(filerId, filingPeriodId, electId);
+        }
+        
+        public string AddPublic_Fund_Payment_SchedU(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddPublic_Fund_Payment_SchedU(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddPublic_Fund_Payment_SchedUAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddPublic_Fund_Payment_SchedUAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFlngtrans_PublicFundPayment(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngtrans_PublicFundPayment(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFlngtrans_PublicFundPaymentAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngtrans_PublicFundPaymentAsync(objFilingTransactionsContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[] GetFilingCutOffDateData_PCF_WCS(string strElectYearId, string strElectTypeId, string strOfficeTypeId, string strPolCalMapId) {
+            return base.Channel.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingCutOffDateContract[]> GetFilingCutOffDateData_PCF_WCSAsync(string strElectYearId, string strElectTypeId, string strOfficeTypeId, string strPolCalMapId) {
+            return base.Channel.GetFilingCutOffDateData_PCF_WCSAsync(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetFilingTransSchedR_ChildData(string strTransNumber, string strFilerId) {
+            return base.Channel.GetFilingTransSchedR_ChildData(strTransNumber, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[]> GetFilingTransSchedR_ChildDataAsync(string strTransNumber, string strFilerId) {
+            return base.Channel.GetFilingTransSchedR_ChildDataAsync(strTransNumber, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEditIETransData_WCS(string strTransNumber, string filerID) {
+            return base.Channel.GetCommEditIETransData_WCS(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEditIETransData_WCSAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetCommEditIETransData_WCSAsync(strTransNumber, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[] GetPurposeCodeData_PCF() {
+            return base.Channel.GetPurposeCodeData_PCF();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PurposeCodeContract[]> GetPurposeCodeData_PCFAsync() {
+            return base.Channel.GetPurposeCodeData_PCFAsync();
+        }
+        
+        public string GetSummery_OpeningBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date) {
+            return base.Channel.GetSummery_OpeningBalance(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, election_Date, filing_date);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetSummery_OpeningBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date) {
+            return base.Channel.GetSummery_OpeningBalanceAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, election_Date, filing_date);
+        }
+        
+        public string GetSummery_ClosingBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date) {
+            return base.Channel.GetSummery_ClosingBalance(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, cut_Off_date);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetSummery_ClosingBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date) {
+            return base.Channel.GetSummery_ClosingBalanceAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, cut_Off_date);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEdit24HourNoticeTransData(string strTransNumber, string filerID) {
+            return base.Channel.GetCommEdit24HourNoticeTransData(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEdit24HourNoticeTransDataAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetCommEdit24HourNoticeTransDataAsync(strTransNumber, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIEWeeklyContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIEWeeklyContributioneData(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIEWeeklyContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIEWeeklyContributioneDataAsync(objFilingTransDataContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[] GetIEWeeklyContrbutionTreasurerData(string strTreasurerId) {
+            return base.Channel.GetIEWeeklyContrbutionTreasurerData(strTreasurerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[]> GetIEWeeklyContrbutionTreasurerDataAsync(string strTreasurerId) {
+            return base.Channel.GetIEWeeklyContrbutionTreasurerDataAsync(strTreasurerId);
+        }
+        
+        public bool AddNonItemIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIEWeeklyContrFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNonItemIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIEWeeklyContrFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateIEWeeklyContrFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateIEWeeklyContrFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool SubmitIEWeeklyContrFlngTrans(string strTransNumber, string strModifiedBy) {
+            return base.Channel.SubmitIEWeeklyContrFlngTrans(strTransNumber, strModifiedBy);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SubmitIEWeeklyContrFlngTransAsync(string strTransNumber, string strModifiedBy) {
+            return base.Channel.SubmitIEWeeklyContrFlngTransAsync(strTransNumber, strModifiedBy);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIETransHistoryData(string strFilingTransId) {
+            return base.Channel.GetFilingTransIETransHistoryData(strFilingTransId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIETransHistoryDataAsync(string strFilingTransId) {
+            return base.Channel.GetFilingTransIETransHistoryDataAsync(strFilingTransId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetItemizedNonItemIETransactions(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate) {
+            return base.Channel.GetItemizedNonItemIETransactions(strFilerId, strElectionYearId, strOfficeTypeId, strElectionTypeId, strElectionDateId, strMunicipalityId, strFilingDate);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetItemizedNonItemIETransactionsAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate) {
+            return base.Channel.GetItemizedNonItemIETransactionsAsync(strFilerId, strElectionYearId, strOfficeTypeId, strElectionTypeId, strElectionDateId, strMunicipalityId, strFilingDate);
+        }
+        
+        public bool AddItemizedIETransactionsData(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate) {
+            return base.Channel.AddItemizedIETransactionsData(strTransNumber, strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strElectionTypeId, strElectionDateId, strCreatedBy, strFilingDate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddItemizedIETransactionsDataAsync(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate) {
+            return base.Channel.AddItemizedIETransactionsDataAsync(strTransNumber, strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strElectionTypeId, strElectionDateId, strCreatedBy, strFilingDate);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HourPIDAExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIE24HourPIDAExpenditureData(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HourPIDAExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIE24HourPIDAExpenditureDataAsync(objFilingTransDataContract);
+        }
+        
+        public bool AddNonItemIE24HourPIDAExpFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIE24HourPIDAExpFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNonItemIE24HourPIDAExpFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIE24HourPIDAExpFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedC() {
+            return base.Channel.GetContributorCodeIEWeeklyContrSchedC();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedCAsync() {
+            return base.Channel.GetContributorCodeIEWeeklyContrSchedCAsync();
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedD() {
+            return base.Channel.GetContributorCodeIEWeeklyContrSchedD();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedDAsync() {
+            return base.Channel.GetContributorCodeIEWeeklyContrSchedDAsync();
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIE24HContributioneData(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransIE24HContributioneDataAsync(objFilingTransDataContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributionHistoryData(string strFilingTransId) {
+            return base.Channel.GetFilingTransIE24HContributionHistoryData(strFilingTransId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributionHistoryDataAsync(string strFilingTransId) {
+            return base.Channel.GetFilingTransIE24HContributionHistoryDataAsync(strFilingTransId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetIE24HContrTransactionTypes() {
+            return base.Channel.GetIE24HContrTransactionTypes();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetIE24HContrTransactionTypesAsync() {
+            return base.Channel.GetIE24HContrTransactionTypesAsync();
+        }
+        
+        public bool AddNonItemIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIE24HContrFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNonItemIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItemIE24HContrFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateIE24HContrFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateIE24HContrFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool SubmitIE24HContrFlngTrans(string strTransNumber, string strModifiedBy) {
+            return base.Channel.SubmitIE24HContrFlngTrans(strTransNumber, strModifiedBy);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SubmitIE24HContrFlngTransAsync(string strTransNumber, string strModifiedBy) {
+            return base.Channel.SubmitIE24HContrFlngTransAsync(strTransNumber, strModifiedBy);
+        }
+        
+        public string GetSummery_AllSchedBalances(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID) {
+            return base.Channel.GetSummery_AllSchedBalances(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, filing_date, filingSchedID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetSummery_AllSchedBalancesAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID) {
+            return base.Channel.GetSummery_AllSchedBalancesAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, filing_date, filingSchedID);
+        }
+        
         public string GetSummery_AllSchedBalances_Sched_N(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID) {
             return base.Channel.GetSummery_AllSchedBalances_Sched_N(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, filing_date, filingSchedID);
         }
@@ -22891,694 +23075,6 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
             return base.Channel.TransactionHasDetailsAsync(strTransNumber, filerID);
         }
         
-        public string DoesTransNumberExistInTemp(string strTransNumber, string filerID) {
-            return base.Channel.DoesTransNumberExistInTemp(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<string> DoesTransNumberExistInTempAsync(string strTransNumber, string filerID) {
-            return base.Channel.DoesTransNumberExistInTempAsync(strTransNumber, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[] GetContributorOriginalName(string strFilerId) {
-            return base.Channel.GetContributorOriginalName(strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[]> GetContributorOriginalNameAsync(string strFilerId) {
-            return base.Channel.GetContributorOriginalNameAsync(strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetContributorOriginalAmount(string strFilingEntityId, string strFilerId) {
-            return base.Channel.GetContributorOriginalAmount(strFilingEntityId, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetContributorOriginalAmountAsync(string strFilingEntityId, string strFilerId) {
-            return base.Channel.GetContributorOriginalAmountAsync(strFilingEntityId, strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[] GetContributorOriginalContributionDate(string strFilingEntityId, string strOriginalAmt, string strFilerId) {
-            return base.Channel.GetContributorOriginalContributionDate(strFilingEntityId, strOriginalAmt, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[]> GetContributorOriginalContributionDateAsync(string strFilingEntityId, string strOriginalAmt, string strFilerId) {
-            return base.Channel.GetContributorOriginalContributionDateAsync(strFilingEntityId, strOriginalAmt, strFilerId);
-        }
-        
-        public string GetOutstaningAmtContrRefunded(string strTransNumber, string strFilerId) {
-            return base.Channel.GetOutstaningAmtContrRefunded(strTransNumber, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetOutstaningAmtContrRefundedAsync(string strTransNumber, string strFilerId) {
-            return base.Channel.GetOutstaningAmtContrRefundedAsync(strTransNumber, strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetOriginalAmtRefundedSchedM(string strTransNumber, string filerID) {
-            return base.Channel.GetOriginalAmtRefundedSchedM(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedMAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetOriginalAmtRefundedSchedMAsync(strTransNumber, filerID);
-        }
-        
-        public string AddContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddContributionsRefundedSchedM(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddContributionsRefundedSchedMAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateContributionsRefundedSchedM(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateContributionsRefundedSchedMAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddOutstandingLiabilitySchedN(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddOutstandingLiabilitySchedNAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateOutstandingLiabilitySchedN(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateOutstandingLiabilitySchedNAsync(objFilingTransactionsContract);
-        }
-        
-        public string OutstandingLiabilityChildExists(string strTransNumber, string filerID) {
-            return base.Channel.OutstandingLiabilityChildExists(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<string> OutstandingLiabilityChildExistsAsync(string strTransNumber, string filerID) {
-            return base.Channel.OutstandingLiabilityChildExistsAsync(strTransNumber, filerID);
-        }
-        
-        public bool DeleteOutstandingLiabilitySchedN(string strTransNumber, string strFilingsId, string strModifiedBy) {
-            return base.Channel.DeleteOutstandingLiabilitySchedN(strTransNumber, strFilingsId, strModifiedBy);
-        }
-        
-        public System.Threading.Tasks.Task<bool> DeleteOutstandingLiabilitySchedNAsync(string strTransNumber, string strFilingsId, string strModifiedBy) {
-            return base.Channel.DeleteOutstandingLiabilitySchedNAsync(strTransNumber, strFilingsId, strModifiedBy);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetEditTransactionData(string strFilingTransId, string strFilerId) {
-            return base.Channel.GetEditTransactionData(strFilingTransId, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetEditTransactionDataAsync(string strFilingTransId, string strFilerId) {
-            return base.Channel.GetEditTransactionDataAsync(strFilingTransId, strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountForForgiven(string strFilingTransId) {
-            return base.Channel.GetOutstandingAmountForForgiven(strFilingTransId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountForForgivenAsync(string strFilingTransId) {
-            return base.Channel.GetOutstandingAmountForForgivenAsync(strFilingTransId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[] GetAuthenticateFilerInfo(string userID) {
-            return base.Channel.GetAuthenticateFilerInfo(userID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[]> GetAuthenticateFilerInfoAsync(string userID) {
-            return base.Channel.GetAuthenticateFilerInfoAsync(userID);
-        }
-        
-        public string AddAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddAmountAllocationSchedN(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddAmountAllocationSchedNAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateAmountAllocationSchedN(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateAmountAllocationSchedNAsync(objFilingTransactionsContract);
-        }
-        
-        public string GetAllAmount(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID) {
-            return base.Channel.GetAllAmount(filing_Ent_ID, elect_Year, municipalityID, officeID, distID, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetAllAmountAsync(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID) {
-            return base.Channel.GetAllAmountAsync(filing_Ent_ID, elect_Year, municipalityID, officeID, distID, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[] GetDistrictsForOffice(string strOfficeID) {
-            return base.Channel.GetDistrictsForOffice(strOfficeID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[]> GetDistrictsForOfficeAsync(string strOfficeID) {
-            return base.Channel.GetDistrictsForOfficeAsync(strOfficeID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[] GetOffices(string strMunicipalityID) {
-            return base.Channel.GetOffices(strMunicipalityID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[]> GetOfficesAsync(string strMunicipalityID) {
-            return base.Channel.GetOfficesAsync(strMunicipalityID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetInLieuOfStatementData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
-            return base.Channel.GetInLieuOfStatementData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetInLieuOfStatementDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
-            return base.Channel.GetInLieuOfStatementDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[] GetAutoCompleteSchedR(string name, string strFilerId) {
-            return base.Channel.GetAutoCompleteSchedR(name, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[]> GetAutoCompleteSchedRAsync(string name, string strFilerId) {
-            return base.Channel.GetAutoCompleteSchedRAsync(name, strFilerId);
-        }
-        
-        public bool AddInLieuOfStatement(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddInLieuOfStatement(objAddInLieuOfStatementContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddInLieuOfStatementAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddInLieuOfStatementAsync(objAddInLieuOfStatementContract);
-        }
-        
-        public bool DeleteInLieuOfStatement(string strFilingsId, string strModifiedBy) {
-            return base.Channel.DeleteInLieuOfStatement(strFilingsId, strModifiedBy);
-        }
-        
-        public System.Threading.Tasks.Task<bool> DeleteInLieuOfStatementAsync(string strFilingsId, string strModifiedBy) {
-            return base.Channel.DeleteInLieuOfStatementAsync(strFilingsId, strModifiedBy);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[] GetPersonNameAndTreasurerData(string strPersonId) {
-            return base.Channel.GetPersonNameAndTreasurerData(strPersonId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[]> GetPersonNameAndTreasurerDataAsync(string strPersonId) {
-            return base.Channel.GetPersonNameAndTreasurerDataAsync(strPersonId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[] GetFilerInforamation(string filerID, string person_ID) {
-            return base.Channel.GetFilerInforamation(filerID, person_ID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[]> GetFilerInforamationAsync(string filerID, string person_ID) {
-            return base.Channel.GetFilerInforamationAsync(filerID, person_ID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoActivityReporttData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
-            return base.Channel.GetNoActivityReporttData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoActivityReporttDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
-            return base.Channel.GetNoActivityReporttDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
-        }
-        
-        public bool AddNoActivityReport(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddNoActivityReport(objAddInLieuOfStatementContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNoActivityReportAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddNoActivityReportAsync(objAddInLieuOfStatementContract);
-        }
-        
-        public bool GetItemizedTransSubmitted(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID) {
-            return base.Channel.GetItemizedTransSubmitted(strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strFilingCatId, strElectTypeID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> GetItemizedTransSubmittedAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID) {
-            return base.Channel.GetItemizedTransSubmittedAsync(strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strFilingCatId, strElectTypeID);
-        }
-        
-        public string TransferOutStandingBalance(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.TransferOutStandingBalance(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> TransferOutStandingBalanceAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.TransferOutStandingBalanceAsync(objFilingTransactionsContract);
-        }
-        
-        public bool AddNoticeOfNonParticipation(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddNoticeOfNonParticipation(objAddInLieuOfStatementContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNoticeOfNonParticipationAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
-            return base.Channel.AddNoticeOfNonParticipationAsync(objAddInLieuOfStatementContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoticeOfNonParticipationtData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId) {
-            return base.Channel.GetNoticeOfNonParticipationtData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strCountyId, strMunicipalityId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoticeOfNonParticipationtDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId) {
-            return base.Channel.GetNoticeOfNonParticipationtDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strCountyId, strMunicipalityId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetTransactionTypes24HNoticeData() {
-            return base.Channel.GetTransactionTypes24HNoticeData();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetTransactionTypes24HNoticeDataAsync() {
-            return base.Channel.GetTransactionTypes24HNoticeDataAsync();
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTrans24HourNoticeData(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTrans24HourNoticeDataAsync(objFilingTransDataContract);
-        }
-        
-        public bool AddNonItem24HourNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItem24HourNoticeFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNonItem24HourNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItem24HourNoticeFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool Update24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.Update24HNoticeFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> Update24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.Update24HNoticeFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool Submit24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.Submit24HNoticeFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> Submit24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.Submit24HNoticeFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool Delete24HNoticeFlngTrans(string strTransNumber, string strModifiedBy, string filerID) {
-            return base.Channel.Delete24HNoticeFlngTrans(strTransNumber, strModifiedBy, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> Delete24HNoticeFlngTransAsync(string strTransNumber, string strModifiedBy, string filerID) {
-            return base.Channel.Delete24HNoticeFlngTransAsync(strTransNumber, strModifiedBy, filerID);
-        }
-        
-        public bool GetNonItemChildTransExists(string strTransNumber, string filerID) {
-            return base.Channel.GetNonItemChildTransExists(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> GetNonItemChildTransExistsAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetNonItemChildTransExistsAsync(strTransNumber, filerID);
-        }
-        
-        public bool GetNonItemParentTransExists(string strTransNumber, string filerID) {
-            return base.Channel.GetNonItemParentTransExists(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<bool> GetNonItemParentTransExistsAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetNonItemParentTransExistsAsync(strTransNumber, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeHistoryData(string strTransNumber, string filerID) {
-            return base.Channel.GetFilingTrans24HourNoticeHistoryData(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeHistoryDataAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetFilingTrans24HourNoticeHistoryDataAsync(strTransNumber, filerID);
-        }
-        
-        public bool SubmitFilings_Summery(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.SubmitFilings_Summery(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> SubmitFilings_SummeryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.SubmitFilings_SummeryAsync(objFilingTransactionsContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransactionsDataSummary(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransactionsDataSummary(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransactionsDataSummaryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransactionsDataSummaryAsync(objFilingTransDataContract);
-        }
-        
-        public string GetSummery_OpeningBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date) {
-            return base.Channel.GetSummery_OpeningBalance(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, election_Date, filing_date);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetSummery_OpeningBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string election_Date, string filing_date) {
-            return base.Channel.GetSummery_OpeningBalanceAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, election_Date, filing_date);
-        }
-        
-        public string GetSummery_ClosingBalance(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date) {
-            return base.Channel.GetSummery_ClosingBalance(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, cut_Off_date);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetSummery_ClosingBalanceAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string cut_Off_date) {
-            return base.Channel.GetSummery_ClosingBalanceAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, cut_Off_date);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetCommEdit24HourNoticeTransData(string strTransNumber, string filerID) {
-            return base.Channel.GetCommEdit24HourNoticeTransData(strTransNumber, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetCommEdit24HourNoticeTransDataAsync(string strTransNumber, string filerID) {
-            return base.Channel.GetCommEdit24HourNoticeTransDataAsync(strTransNumber, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIEWeeklyContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIEWeeklyContributioneData(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIEWeeklyContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIEWeeklyContributioneDataAsync(objFilingTransDataContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[] GetIEWeeklyContrbutionTreasurerData(string strTreasurerId) {
-            return base.Channel.GetIEWeeklyContrbutionTreasurerData(strTreasurerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.NonItemIETreasurerContract[]> GetIEWeeklyContrbutionTreasurerDataAsync(string strTreasurerId) {
-            return base.Channel.GetIEWeeklyContrbutionTreasurerDataAsync(strTreasurerId);
-        }
-        
-        public bool AddNonItemIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIEWeeklyContrFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNonItemIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIEWeeklyContrFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateIEWeeklyContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateIEWeeklyContrFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateIEWeeklyContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateIEWeeklyContrFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool SubmitIEWeeklyContrFlngTrans(string strTransNumber, string strModifiedBy) {
-            return base.Channel.SubmitIEWeeklyContrFlngTrans(strTransNumber, strModifiedBy);
-        }
-        
-        public System.Threading.Tasks.Task<bool> SubmitIEWeeklyContrFlngTransAsync(string strTransNumber, string strModifiedBy) {
-            return base.Channel.SubmitIEWeeklyContrFlngTransAsync(strTransNumber, strModifiedBy);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIETransHistoryData(string strFilingTransId) {
-            return base.Channel.GetFilingTransIETransHistoryData(strFilingTransId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIETransHistoryDataAsync(string strFilingTransId) {
-            return base.Channel.GetFilingTransIETransHistoryDataAsync(strFilingTransId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetItemizedNonItemIETransactions(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate) {
-            return base.Channel.GetItemizedNonItemIETransactions(strFilerId, strElectionYearId, strOfficeTypeId, strElectionTypeId, strElectionDateId, strMunicipalityId, strFilingDate);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetItemizedNonItemIETransactionsAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strElectionTypeId, string strElectionDateId, string strMunicipalityId, string strFilingDate) {
-            return base.Channel.GetItemizedNonItemIETransactionsAsync(strFilerId, strElectionYearId, strOfficeTypeId, strElectionTypeId, strElectionDateId, strMunicipalityId, strFilingDate);
-        }
-        
-        public bool AddItemizedIETransactionsData(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate) {
-            return base.Channel.AddItemizedIETransactionsData(strTransNumber, strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strElectionTypeId, strElectionDateId, strCreatedBy, strFilingDate);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddItemizedIETransactionsDataAsync(string[] strTransNumber, string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strElectionTypeId, string strElectionDateId, string strCreatedBy, string strFilingDate) {
-            return base.Channel.AddItemizedIETransactionsDataAsync(strTransNumber, strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strElectionTypeId, strElectionDateId, strCreatedBy, strFilingDate);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HourPIDAExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIE24HourPIDAExpenditureData(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HourPIDAExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIE24HourPIDAExpenditureDataAsync(objFilingTransDataContract);
-        }
-        
-        public bool AddNonItemIE24HourPIDAExpFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIE24HourPIDAExpFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNonItemIE24HourPIDAExpFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIE24HourPIDAExpFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedC() {
-            return base.Channel.GetContributorCodeIEWeeklyContrSchedC();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedCAsync() {
-            return base.Channel.GetContributorCodeIEWeeklyContrSchedCAsync();
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[] GetContributorCodeIEWeeklyContrSchedD() {
-            return base.Channel.GetContributorCodeIEWeeklyContrSchedD();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ContributorNameContract[]> GetContributorCodeIEWeeklyContrSchedDAsync() {
-            return base.Channel.GetContributorCodeIEWeeklyContrSchedDAsync();
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributioneData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIE24HContributioneData(objFilingTransDataContract);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributioneDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
-            return base.Channel.GetFilingTransIE24HContributioneDataAsync(objFilingTransDataContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransIE24HContributionHistoryData(string strFilingTransId) {
-            return base.Channel.GetFilingTransIE24HContributionHistoryData(strFilingTransId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransIE24HContributionHistoryDataAsync(string strFilingTransId) {
-            return base.Channel.GetFilingTransIE24HContributionHistoryDataAsync(strFilingTransId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetIE24HContrTransactionTypes() {
-            return base.Channel.GetIE24HContrTransactionTypes();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetIE24HContrTransactionTypesAsync() {
-            return base.Channel.GetIE24HContrTransactionTypesAsync();
-        }
-        
-        public bool AddNonItemIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIE24HContrFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> AddNonItemIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddNonItemIE24HContrFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateIE24HContrFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateIE24HContrFlngTrans(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateIE24HContrFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateIE24HContrFlngTransAsync(objFilingTransactionsContract);
-        }
-        
-        public bool SubmitIE24HContrFlngTrans(string strTransNumber, string strModifiedBy) {
-            return base.Channel.SubmitIE24HContrFlngTrans(strTransNumber, strModifiedBy);
-        }
-        
-        public System.Threading.Tasks.Task<bool> SubmitIE24HContrFlngTransAsync(string strTransNumber, string strModifiedBy) {
-            return base.Channel.SubmitIE24HContrFlngTransAsync(strTransNumber, strModifiedBy);
-        }
-        
-        public string GetSummery_AllSchedBalances(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID) {
-            return base.Channel.GetSummery_AllSchedBalances(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, filing_date, filingSchedID);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetSummery_AllSchedBalancesAsync(string filerID, string election_Year_ID, string office_Type_ID, string filing_Type_ID, string filing_date, string filingSchedID) {
-            return base.Channel.GetSummery_AllSchedBalancesAsync(filerID, election_Year_ID, office_Type_ID, filing_Type_ID, filing_date, filingSchedID);
-        }
-        
-        public bool UpdateFilingTransaction_TransferIn(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_TransferIn(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_TransferInAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddFilingTransaction_NonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_NonCompHKReceipts(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddFilingTransaction_NonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_NonCompHKReceiptsAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateFilingTransNonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransNonCompHKReceipts(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFilingTransNonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransNonCompHKReceiptsAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddFlngTransContrMonetaryData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFlngTransContrMonetaryData(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddFlngTransContrMonetaryDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFlngTransContrMonetaryDataAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateFlngTransMonetaryContrData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngTransMonetaryContrData(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFlngTransMonetaryContrDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngTransMonetaryContrDataAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFlngTransExpenditureData(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFlngTransExpenditureDataAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_TransferOut(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_TransferOutAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_TransferOut(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_TransferOutAsync(objFilingTransactionsContract);
-        }
-        
-        public string AddFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_LoanReceived(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<string> AddFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.AddFilingTransaction_LoanReceivedAsync(objFilingTransactionsContract);
-        }
-        
-        public bool UpdateFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_LoanReceived(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFilingTransaction_LoanReceivedAsync(objFilingTransactionsContract);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[] GetLoanerCode() {
-            return base.Channel.GetLoanerCode();
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[]> GetLoanerCodeAsync() {
-            return base.Channel.GetLoanerCodeAsync();
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[] GetAutoCompleteCreditorNameLiab(string name, string strFilerId, string strNameFlag) {
-            return base.Channel.GetAutoCompleteCreditorNameLiab(name, strFilerId, strNameFlag);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[]> GetAutoCompleteCreditorNameLiabAsync(string name, string strFilerId, string strNameFlag) {
-            return base.Channel.GetAutoCompleteCreditorNameLiabAsync(name, strFilerId, strNameFlag);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[] GetDateIncurredLiabData(string strFilingEntityId, string strFilerId) {
-            return base.Channel.GetDateIncurredLiabData(strFilingEntityId, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[]> GetDateIncurredLiabDataAsync(string strFilingEntityId, string strFilerId) {
-            return base.Channel.GetDateIncurredLiabDataAsync(strFilingEntityId, strFilerId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountLiabData(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId) {
-            return base.Channel.GetOutstandingAmountLiabData(strFilingEntityId, strUpdateStatus, strFilingTransId, strFilingsId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountLiabDataAsync(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId) {
-            return base.Channel.GetOutstandingAmountLiabDataAsync(strFilingEntityId, strUpdateStatus, strFilingTransId, strFilingsId);
-        }
-        
-        public string GetExpenditureLiabilityExists(string strFilingEntityId, string strFlngEntyName, string filerID) {
-            return base.Channel.GetExpenditureLiabilityExists(strFilingEntityId, strFlngEntyName, filerID);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetExpenditureLiabilityExistsAsync(string strFilingEntityId, string strFlngEntyName, string filerID) {
-            return base.Channel.GetExpenditureLiabilityExistsAsync(strFilingEntityId, strFlngEntyName, filerID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[] GetExpPaymentsLiabilityData(string strTransNumber, string strFilerId) {
-            return base.Channel.GetExpPaymentsLiabilityData(strTransNumber, strFilerId);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[]> GetExpPaymentsLiabilityDataAsync(string strTransNumber, string strFilerId) {
-            return base.Channel.GetExpPaymentsLiabilityDataAsync(strTransNumber, strFilerId);
-        }
-        
-        public bool UpdateFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngTransExpenditureData(objFilingTransactionsContract);
-        }
-        
-        public System.Threading.Tasks.Task<bool> UpdateFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
-            return base.Channel.UpdateFlngTransExpenditureDataAsync(objFilingTransactionsContract);
-        }
-        
-        public bool GetSubcontracorsExists(string strFilingTransId) {
-            return base.Channel.GetSubcontracorsExists(strFilingTransId);
-        }
-        
-        public System.Threading.Tasks.Task<bool> GetSubcontracorsExistsAsync(string strFilingTransId) {
-            return base.Channel.GetSubcontracorsExistsAsync(strFilingTransId);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetDate_SchedueledJ(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
-            return base.Channel.GetDate_SchedueledJ(FILING_ENTITY_NAME, ORG_AMT, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetDate_SchedueledJAsync(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
-            return base.Channel.GetDate_SchedueledJAsync(FILING_ENTITY_NAME, ORG_AMT, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetAmount_SchedueledJ(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
-            return base.Channel.GetAmount_SchedueledJ(FILING_ENTITY_NAME, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetAmount_SchedueledJAsync(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
-            return base.Channel.GetAmount_SchedueledJAsync(FILING_ENTITY_NAME, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
-        }
-        
-        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetName_SchedueledJ(string filer_ID) {
-            return base.Channel.GetName_SchedueledJ(filer_ID);
-        }
-        
-        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetName_SchedueledJAsync(string filer_ID) {
-            return base.Channel.GetName_SchedueledJAsync(filer_ID);
-        }
-        
         public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract[] GetScheduleJ_EntityData(string trans_Number, string filerID) {
             return base.Channel.GetScheduleJ_EntityData(trans_Number, filerID);
         }
@@ -23921,6 +23417,342 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         
         public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedLAsync(string strTransNumber, string strFilerId) {
             return base.Channel.GetOriginalAmtRefundedSchedLAsync(strTransNumber, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[] GetContributorOriginalName(string strFilerId) {
+            return base.Channel.GetContributorOriginalName(strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalNameContract[]> GetContributorOriginalNameAsync(string strFilerId) {
+            return base.Channel.GetContributorOriginalNameAsync(strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetContributorOriginalAmount(string strFilingEntityId, string strFilerId) {
+            return base.Channel.GetContributorOriginalAmount(strFilingEntityId, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetContributorOriginalAmountAsync(string strFilingEntityId, string strFilerId) {
+            return base.Channel.GetContributorOriginalAmountAsync(strFilingEntityId, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[] GetContributorOriginalContributionDate(string strFilingEntityId, string strOriginalAmt, string strFilerId) {
+            return base.Channel.GetContributorOriginalContributionDate(strFilingEntityId, strOriginalAmt, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalExpenseDateContract[]> GetContributorOriginalContributionDateAsync(string strFilingEntityId, string strOriginalAmt, string strFilerId) {
+            return base.Channel.GetContributorOriginalContributionDateAsync(strFilingEntityId, strOriginalAmt, strFilerId);
+        }
+        
+        public string GetOutstaningAmtContrRefunded(string strTransNumber, string strFilerId) {
+            return base.Channel.GetOutstaningAmtContrRefunded(strTransNumber, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetOutstaningAmtContrRefundedAsync(string strTransNumber, string strFilerId) {
+            return base.Channel.GetOutstaningAmtContrRefundedAsync(strTransNumber, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[] GetOriginalAmtRefundedSchedM(string strTransNumber, string filerID) {
+            return base.Channel.GetOriginalAmtRefundedSchedM(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentOriginalAmountContract[]> GetOriginalAmtRefundedSchedMAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetOriginalAmtRefundedSchedMAsync(strTransNumber, filerID);
+        }
+        
+        public string AddContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddContributionsRefundedSchedM(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddContributionsRefundedSchedMAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateContributionsRefundedSchedM(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateContributionsRefundedSchedM(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateContributionsRefundedSchedMAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateContributionsRefundedSchedMAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddOutstandingLiabilitySchedN(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddOutstandingLiabilitySchedNAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateOutstandingLiabilitySchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateOutstandingLiabilitySchedN(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateOutstandingLiabilitySchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateOutstandingLiabilitySchedNAsync(objFilingTransactionsContract);
+        }
+        
+        public string OutstandingLiabilityChildExists(string strTransNumber, string filerID) {
+            return base.Channel.OutstandingLiabilityChildExists(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<string> OutstandingLiabilityChildExistsAsync(string strTransNumber, string filerID) {
+            return base.Channel.OutstandingLiabilityChildExistsAsync(strTransNumber, filerID);
+        }
+        
+        public bool DeleteOutstandingLiabilitySchedN(string strTransNumber, string strFilingsId, string strModifiedBy) {
+            return base.Channel.DeleteOutstandingLiabilitySchedN(strTransNumber, strFilingsId, strModifiedBy);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteOutstandingLiabilitySchedNAsync(string strTransNumber, string strFilingsId, string strModifiedBy) {
+            return base.Channel.DeleteOutstandingLiabilitySchedNAsync(strTransNumber, strFilingsId, strModifiedBy);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetEditTransactionData(string strFilingTransId, string strFilerId) {
+            return base.Channel.GetEditTransactionData(strFilingTransId, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetEditTransactionDataAsync(string strFilingTransId, string strFilerId) {
+            return base.Channel.GetEditTransactionDataAsync(strFilingTransId, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountForForgiven(string strFilingTransId) {
+            return base.Channel.GetOutstandingAmountForForgiven(strFilingTransId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountForForgivenAsync(string strFilingTransId) {
+            return base.Channel.GetOutstandingAmountForForgivenAsync(strFilingTransId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[] GetAuthenticateFilerInfo(string userID) {
+            return base.Channel.GetAuthenticateFilerInfo(userID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ValidateFilerInfoContract[]> GetAuthenticateFilerInfoAsync(string userID) {
+            return base.Channel.GetAuthenticateFilerInfoAsync(userID);
+        }
+        
+        public string AddAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddAmountAllocationSchedN(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddAmountAllocationSchedNAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateAmountAllocationSchedN(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateAmountAllocationSchedN(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateAmountAllocationSchedNAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateAmountAllocationSchedNAsync(objFilingTransactionsContract);
+        }
+        
+        public string GetAllAmount(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID) {
+            return base.Channel.GetAllAmount(filing_Ent_ID, elect_Year, municipalityID, officeID, distID, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetAllAmountAsync(string filing_Ent_ID, string elect_Year, string municipalityID, string officeID, string distID, string filerID) {
+            return base.Channel.GetAllAmountAsync(filing_Ent_ID, elect_Year, municipalityID, officeID, distID, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[] GetDistrictsForOffice(string strOfficeID) {
+            return base.Channel.GetDistrictsForOffice(strOfficeID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DistrictContract[]> GetDistrictsForOfficeAsync(string strOfficeID) {
+            return base.Channel.GetDistrictsForOfficeAsync(strOfficeID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[] GetOffices(string strMunicipalityID) {
+            return base.Channel.GetOffices(strMunicipalityID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OfficeContract[]> GetOfficesAsync(string strMunicipalityID) {
+            return base.Channel.GetOfficesAsync(strMunicipalityID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetInLieuOfStatementData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
+            return base.Channel.GetInLieuOfStatementData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetInLieuOfStatementDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
+            return base.Channel.GetInLieuOfStatementDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[] GetAutoCompleteSchedR(string name, string strFilerId) {
+            return base.Channel.GetAutoCompleteSchedR(name, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.AutoCompleteSchedRContract[]> GetAutoCompleteSchedRAsync(string name, string strFilerId) {
+            return base.Channel.GetAutoCompleteSchedRAsync(name, strFilerId);
+        }
+        
+        public bool AddInLieuOfStatement(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddInLieuOfStatement(objAddInLieuOfStatementContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddInLieuOfStatementAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddInLieuOfStatementAsync(objAddInLieuOfStatementContract);
+        }
+        
+        public bool DeleteInLieuOfStatement(string strFilingsId, string strModifiedBy) {
+            return base.Channel.DeleteInLieuOfStatement(strFilingsId, strModifiedBy);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteInLieuOfStatementAsync(string strFilingsId, string strModifiedBy) {
+            return base.Channel.DeleteInLieuOfStatementAsync(strFilingsId, strModifiedBy);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[] GetPersonNameAndTreasurerData(string strPersonId) {
+            return base.Channel.GetPersonNameAndTreasurerData(strPersonId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.PersonNameAndTreasurerDataContract[]> GetPersonNameAndTreasurerDataAsync(string strPersonId) {
+            return base.Channel.GetPersonNameAndTreasurerDataAsync(strPersonId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[] GetFilerInforamation(string filerID, string person_ID) {
+            return base.Channel.GetFilerInforamation(filerID, person_ID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilerInfoContract[]> GetFilerInforamationAsync(string filerID, string person_ID) {
+            return base.Channel.GetFilerInforamationAsync(filerID, person_ID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoActivityReporttData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
+            return base.Channel.GetNoActivityReporttData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoActivityReporttDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strFilingDate) {
+            return base.Channel.GetNoActivityReporttDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strFilingDate);
+        }
+        
+        public bool AddNoActivityReport(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddNoActivityReport(objAddInLieuOfStatementContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNoActivityReportAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddNoActivityReportAsync(objAddInLieuOfStatementContract);
+        }
+        
+        public bool GetItemizedTransSubmitted(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID) {
+            return base.Channel.GetItemizedTransSubmitted(strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strFilingCatId, strElectTypeID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GetItemizedTransSubmittedAsync(string strFilerId, string strElectionYearId, string strOfficeTypeId, string strFilingTypeId, string strFilingCatId, string strElectTypeID) {
+            return base.Channel.GetItemizedTransSubmittedAsync(strFilerId, strElectionYearId, strOfficeTypeId, strFilingTypeId, strFilingCatId, strElectTypeID);
+        }
+        
+        public string TransferOutStandingBalance(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.TransferOutStandingBalance(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> TransferOutStandingBalanceAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.TransferOutStandingBalanceAsync(objFilingTransactionsContract);
+        }
+        
+        public bool AddNoticeOfNonParticipation(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddNoticeOfNonParticipation(objAddInLieuOfStatementContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNoticeOfNonParticipationAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.AddInLieuOfStatementContract objAddInLieuOfStatementContract) {
+            return base.Channel.AddNoticeOfNonParticipationAsync(objAddInLieuOfStatementContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[] GetNoticeOfNonParticipationtData(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId) {
+            return base.Channel.GetNoticeOfNonParticipationtData(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strCountyId, strMunicipalityId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.InLieuOfStatementNonItemContract[]> GetNoticeOfNonParticipationtDataAsync(string strFilerid, string strElectionDate, string strElectionYearId, string strElectionYear, string strElectTypeId, string strOfficeTypeId, string strFilingTypeId, string strCountyId, string strMunicipalityId) {
+            return base.Channel.GetNoticeOfNonParticipationtDataAsync(strFilerid, strElectionDate, strElectionYearId, strElectionYear, strElectTypeId, strOfficeTypeId, strFilingTypeId, strCountyId, strMunicipalityId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[] GetTransactionTypes24HNoticeData() {
+            return base.Channel.GetTransactionTypes24HNoticeData();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.TransactionTypesContract[]> GetTransactionTypes24HNoticeDataAsync() {
+            return base.Channel.GetTransactionTypes24HNoticeDataAsync();
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTrans24HourNoticeData(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTrans24HourNoticeDataAsync(objFilingTransDataContract);
+        }
+        
+        public bool AddNonItem24HourNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItem24HourNoticeFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddNonItem24HourNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddNonItem24HourNoticeFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool Update24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.Update24HNoticeFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Update24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.Update24HNoticeFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool Submit24HNoticeFlngTrans(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.Submit24HNoticeFlngTrans(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Submit24HNoticeFlngTransAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.Submit24HNoticeFlngTransAsync(objFilingTransactionsContract);
+        }
+        
+        public bool Delete24HNoticeFlngTrans(string strTransNumber, string strModifiedBy, string filerID) {
+            return base.Channel.Delete24HNoticeFlngTrans(strTransNumber, strModifiedBy, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> Delete24HNoticeFlngTransAsync(string strTransNumber, string strModifiedBy, string filerID) {
+            return base.Channel.Delete24HNoticeFlngTransAsync(strTransNumber, strModifiedBy, filerID);
+        }
+        
+        public bool GetNonItemChildTransExists(string strTransNumber, string filerID) {
+            return base.Channel.GetNonItemChildTransExists(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GetNonItemChildTransExistsAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetNonItemChildTransExistsAsync(strTransNumber, filerID);
+        }
+        
+        public bool GetNonItemParentTransExists(string strTransNumber, string filerID) {
+            return base.Channel.GetNonItemParentTransExists(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GetNonItemParentTransExistsAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetNonItemParentTransExistsAsync(strTransNumber, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTrans24HourNoticeHistoryData(string strTransNumber, string filerID) {
+            return base.Channel.GetFilingTrans24HourNoticeHistoryData(strTransNumber, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTrans24HourNoticeHistoryDataAsync(string strTransNumber, string filerID) {
+            return base.Channel.GetFilingTrans24HourNoticeHistoryDataAsync(strTransNumber, filerID);
+        }
+        
+        public bool SubmitFilings_Summery(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.SubmitFilings_Summery(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SubmitFilings_SummeryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.SubmitFilings_SummeryAsync(objFilingTransactionsContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[] GetFilingTransactionsDataSummary(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransactionsDataSummary(objFilingTransDataContract);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionDataContract[]> GetFilingTransactionsDataSummaryAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransDataContract objFilingTransDataContract) {
+            return base.Channel.GetFilingTransactionsDataSummaryAsync(objFilingTransDataContract);
         }
         
         public BOE.CAPASFIDAS_EFS.Domain.EFSService.ShowAddressContract[] GetAddressData(string strPersonId) {
@@ -24433,6 +24265,174 @@ namespace BOE.CAPASFIDAS_EFS.Domain.EFSService {
         
         public System.Threading.Tasks.Task<string> AddFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
             return base.Channel.AddFilingTransaction_TransferInAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFilingTransaction_TransferIn(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_TransferIn(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferInAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_TransferInAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddFilingTransaction_NonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_NonCompHKReceipts(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddFilingTransaction_NonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_NonCompHKReceiptsAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFilingTransNonCompHKReceipts(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransNonCompHKReceipts(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFilingTransNonCompHKReceiptsAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransNonCompHKReceiptsAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddFlngTransContrMonetaryData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFlngTransContrMonetaryData(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddFlngTransContrMonetaryDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFlngTransContrMonetaryDataAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFlngTransMonetaryContrData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngTransMonetaryContrData(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFlngTransMonetaryContrDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngTransMonetaryContrDataAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFlngTransExpenditureData(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFlngTransExpenditureDataAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_TransferOut(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_TransferOutAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFilingTransaction_TransferOut(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_TransferOut(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_TransferOutAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_TransferOutAsync(objFilingTransactionsContract);
+        }
+        
+        public string AddFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_LoanReceived(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.AddFilingTransaction_LoanReceivedAsync(objFilingTransactionsContract);
+        }
+        
+        public bool UpdateFilingTransaction_LoanReceived(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_LoanReceived(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFilingTransaction_LoanReceivedAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFilingTransaction_LoanReceivedAsync(objFilingTransactionsContract);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[] GetLoanerCode() {
+            return base.Channel.GetLoanerCode();
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.LoanerCodeContract[]> GetLoanerCodeAsync() {
+            return base.Channel.GetLoanerCodeAsync();
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[] GetAutoCompleteCreditorNameLiab(string name, string strFilerId, string strNameFlag) {
+            return base.Channel.GetAutoCompleteCreditorNameLiab(name, strFilerId, strNameFlag);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OutstandingLiabilityContract[]> GetAutoCompleteCreditorNameLiabAsync(string name, string strFilerId, string strNameFlag) {
+            return base.Channel.GetAutoCompleteCreditorNameLiabAsync(name, strFilerId, strNameFlag);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[] GetDateIncurredLiabData(string strFilingEntityId, string strFilerId) {
+            return base.Channel.GetDateIncurredLiabData(strFilingEntityId, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.DateIncurredContract[]> GetDateIncurredLiabDataAsync(string strFilingEntityId, string strFilerId) {
+            return base.Channel.GetDateIncurredLiabDataAsync(strFilingEntityId, strFilerId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[] GetOutstandingAmountLiabData(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId) {
+            return base.Channel.GetOutstandingAmountLiabData(strFilingEntityId, strUpdateStatus, strFilingTransId, strFilingsId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.OriginalAmountContract[]> GetOutstandingAmountLiabDataAsync(string strFilingEntityId, string strUpdateStatus, string strFilingTransId, string strFilingsId) {
+            return base.Channel.GetOutstandingAmountLiabDataAsync(strFilingEntityId, strUpdateStatus, strFilingTransId, strFilingsId);
+        }
+        
+        public string GetExpenditureLiabilityExists(string strFilingEntityId, string strFlngEntyName, string filerID) {
+            return base.Channel.GetExpenditureLiabilityExists(strFilingEntityId, strFlngEntyName, filerID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetExpenditureLiabilityExistsAsync(string strFilingEntityId, string strFlngEntyName, string filerID) {
+            return base.Channel.GetExpenditureLiabilityExistsAsync(strFilingEntityId, strFlngEntyName, filerID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[] GetExpPaymentsLiabilityData(string strTransNumber, string strFilerId) {
+            return base.Channel.GetExpPaymentsLiabilityData(strTransNumber, strFilerId);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.ExpPaymentLiabilityContract[]> GetExpPaymentsLiabilityDataAsync(string strTransNumber, string strFilerId) {
+            return base.Channel.GetExpPaymentsLiabilityDataAsync(strTransNumber, strFilerId);
+        }
+        
+        public bool UpdateFlngTransExpenditureData(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngTransExpenditureData(objFilingTransactionsContract);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateFlngTransExpenditureDataAsync(BOE.CAPASFIDAS_EFS.Domain.EFSService.FilingTransactionsContract objFilingTransactionsContract) {
+            return base.Channel.UpdateFlngTransExpenditureDataAsync(objFilingTransactionsContract);
+        }
+        
+        public bool GetSubcontracorsExists(string strFilingTransId) {
+            return base.Channel.GetSubcontracorsExists(strFilingTransId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> GetSubcontracorsExistsAsync(string strFilingTransId) {
+            return base.Channel.GetSubcontracorsExistsAsync(strFilingTransId);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetDate_SchedueledJ(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
+            return base.Channel.GetDate_SchedueledJ(FILING_ENTITY_NAME, ORG_AMT, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetDate_SchedueledJAsync(string FILING_ENTITY_NAME, string ORG_AMT, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
+            return base.Channel.GetDate_SchedueledJAsync(FILING_ENTITY_NAME, ORG_AMT, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetAmount_SchedueledJ(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
+            return base.Channel.GetAmount_SchedueledJ(FILING_ENTITY_NAME, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetAmount_SchedueledJAsync(string FILING_ENTITY_NAME, string flng_Ent_FirstName, string flng_Ent_MiddleName, string flng_Ent_LastName, string filer_ID) {
+            return base.Channel.GetAmount_SchedueledJAsync(FILING_ENTITY_NAME, flng_Ent_FirstName, flng_Ent_MiddleName, flng_Ent_LastName, filer_ID);
+        }
+        
+        public BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[] GetName_SchedueledJ(string filer_ID) {
+            return base.Channel.GetName_SchedueledJ(filer_ID);
+        }
+        
+        public System.Threading.Tasks.Task<BOE.CAPASFIDAS_EFS.Domain.EFSService.GetSearchForScheduledIContract[]> GetName_SchedueledJAsync(string filer_ID) {
+            return base.Channel.GetName_SchedueledJAsync(filer_ID);
         }
     }
 }

@@ -3569,11 +3569,11 @@ namespace Broker
         /// <param name="strElectTypeId"></param>
         /// <param name="strOfficeTypeId"></param>
         /// <returns></returns>
-        public IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_Broker(String strElectYearId, String strElectTypeId, String strOfficeTypeId)
+        public IList<FilingCutOffDateModel> GetFilingCutOffDateData_PCF_WCS_Broker(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId)
         {
             IList<FilingCutOffDateModel> lstFilingCutOffDateModel = new List<FilingCutOffDateModel>();
 
-            lstFilingCutOffDateModel = objItemizedReportsBLL.GetFilingCutOffDateData_PCF_WCS_BLL(strElectYearId, strElectTypeId, strOfficeTypeId);
+            lstFilingCutOffDateModel = objItemizedReportsBLL.GetFilingCutOffDateData_PCF_WCS_BLL(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
 
             return lstFilingCutOffDateModel;
         }

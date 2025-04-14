@@ -1,318 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfPaymentMethodContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodContract" nillable="true" type="tns:PaymentMethodContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPaymentMethodContract" nillable="true" type="tns:ArrayOfPaymentMethodContract" />
-  <xs:complexType name="PaymentMethodContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="PaymentTypeAbbrev" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PaymentMethodContract" nillable="true" type="tns:PaymentMethodContract" />
-  <xs:complexType name="FilingTransDataContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CommTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CommitteeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Created_By" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CutOffDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DisclosurePeriod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DisclosureType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionDateId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingSchedID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTransID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LabelId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Loan_Lib_Num" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OfficeTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReportYear" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReportYearId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SchedName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FilingTransDataContract" nillable="true" type="tns:FilingTransDataContract" />
-  <xs:complexType name="ArrayOfGetEditFlagDataContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetEditFlagDataContract" nillable="true" type="tns:GetEditFlagDataContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGetEditFlagDataContract" nillable="true" type="tns:ArrayOfGetEditFlagDataContract" />
-  <xs:complexType name="GetEditFlagDataContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Is_Edit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="VALIDATE_FILINGS" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="GetEditFlagDataContract" nillable="true" type="tns:GetEditFlagDataContract" />
-  <xs:complexType name="FilingTransactionsContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CandBallotPropReference" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CommTypeID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributionTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorEmployer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorOccupation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DateIncurredOrgAmtId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DistOffCandBalProp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DistrictID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectYearId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionDateId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionYear" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ExistsLiabTransNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingsId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntCountry" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntFirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntLastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntMiddleName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntStrName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntStrNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntZip" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntZip4" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IEDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="InDistrict" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsAmtChanged" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsClaim" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsExistingLiab" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsExpPartialPay" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsExpSubcontractor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsLiabPartialForgiven" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityOrgAmt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityOwedAmt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityPartialAmt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityTransExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LoanOtherId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Loan_Lib_Number" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Lobbyist" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Minor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OfficeID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OfficeTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrgAmt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrgDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OtherAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OtherFilingSchedId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OtherTransExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OwedAmt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ParentFilingEntityId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PayDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PayNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PersonId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RAmend" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RBankLoan" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RContributions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RIEIncluded" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RIESupported" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RItemized" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLiability" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLiabilityExists" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RParent" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RSubcontractor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="R_Supported" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceiptCodeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceiptTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ResigTermTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SchedDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SchedID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SubmissionDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SupportOppose" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransMapping" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumberOrg" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransferTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerOccupation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Unique_Num" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Vendor" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FilingTransactionsContract" nillable="true" type="tns:FilingTransactionsContract" />
-  <xs:complexType name="ArrayOfFilingCutOffDateContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingCutOffDateContract" nillable="true" type="tns:FilingCutOffDateContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFilingCutOffDateContract" nillable="true" type="tns:ArrayOfFilingCutOffDateContract" />
-  <xs:complexType name="FilingCutOffDateContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CutOffDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingDueDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PoliticalCalDateId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PoliticalCalLabelId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PriGenDate" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FilingCutOffDateContract" nillable="true" type="tns:FilingCutOffDateContract" />
-  <xs:complexType name="ArrayOfFilingTransactionsContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingTransactionsContract" nillable="true" type="tns:FilingTransactionsContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFilingTransactionsContract" nillable="true" type="tns:ArrayOfFilingTransactionsContract" />
-  <xs:complexType name="ArrayOfFilingTransactionDataContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingTransactionDataContract" nillable="true" type="tns:FilingTransactionDataContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFilingTransactionDataContract" nillable="true" type="tns:ArrayOfFilingTransactionDataContract" />
-  <xs:complexType name="FilingTransactionDataContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CandBallotPropReference" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CandidateCommitteeName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CommTypeID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributionTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributionTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorEmployer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorOccupation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CountyDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CountyID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DBStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DateIncurredOrgAmtId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Decreased" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DisclosurePeriod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DisclosureType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ElectionYear" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilerType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingCountry" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntityName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingFirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingLastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingMiddleName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingSchedDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingStreetName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingStreetNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingZip" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingsId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IEDescription" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IESupported" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IEType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="InDistrict" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Increased" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LoanLiablityNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LoanerCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LoanerCodeID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MunicipalityDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Office" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Office_Desc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OriginalAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OriginalDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Original_Sched_Date" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OwedAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PayNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RAmend" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RClaim" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RContributions" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RIESupported" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RItemized" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLiability" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RLobbyist" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RMinor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RSubcontractor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RSupportOppose" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RVendor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceiptCodeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceiptCodeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceiptTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReportYear" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SchedDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SubmissionDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransMapping" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransferTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreaAddr1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreaAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreaCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreaState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreaZipCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerFirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerLastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerMiddleName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerOccuptaion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FilingTransactionDataContract" nillable="true" type="tns:FilingTransactionDataContract" />
-  <xs:complexType name="ArrayOfPurposeCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPurposeCodeContract" nillable="true" type="tns:ArrayOfPurposeCodeContract" />
-  <xs:complexType name="PurposeCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="PurposeCodeAbbrev" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
   <xs:complexType name="ArrayOfViewSupportingDocumentsGridContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewSupportingDocumentsGridContract" nillable="true" type="tns:ViewSupportingDocumentsGridContract" />
@@ -495,6 +182,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OriginalAmountContract" nillable="true" type="tns:OriginalAmountContract" />
+  <xs:complexType name="FilingTransDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommitteeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created_By" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CutOffDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisclosurePeriod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisclosureType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionDateId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingSchedID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTransID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LabelId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loan_Lib_Num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportYearId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchedName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilingTransDataContract" nillable="true" type="tns:FilingTransDataContract" />
   <xs:complexType name="ArrayOfCheckAmendStatusContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CheckAmendStatusContract" nillable="true" type="tns:CheckAmendStatusContract" />
@@ -508,6 +221,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CheckAmendStatusContract" nillable="true" type="tns:CheckAmendStatusContract" />
+  <xs:complexType name="ArrayOfGetEditFlagDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetEditFlagDataContract" nillable="true" type="tns:GetEditFlagDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetEditFlagDataContract" nillable="true" type="tns:ArrayOfGetEditFlagDataContract" />
+  <xs:complexType name="GetEditFlagDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Is_Edit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALIDATE_FILINGS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEditFlagDataContract" nillable="true" type="tns:GetEditFlagDataContract" />
   <xs:complexType name="ArrayOfContrInKindPartnersContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ContrInKindPartnersContract" nillable="true" type="tns:ContrInKindPartnersContract" />
@@ -545,6 +271,115 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContrInKindPartnersContract" nillable="true" type="tns:ContrInKindPartnersContract" />
+  <xs:complexType name="FilingTransactionsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CandBallotPropReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommTypeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributionTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateIncurredOrgAmtId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistOffCandBalProp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectYearId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionDateId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExistsLiabTransNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntStrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntStrNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntZip4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IEDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAmtChanged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsClaim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExistingLiab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExpPartialPay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExpSubcontractor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLiabPartialForgiven" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityOrgAmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityOwedAmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityPartialAmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityTransExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanOtherId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loan_Lib_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lobbyist" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Minor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgAmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherFilingSchedId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherTransExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwedAmt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentFilingEntityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAmend" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RBankLoan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RContributions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RIEIncluded" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RIESupported" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RItemized" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RLiability" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RLiabilityExists" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RParent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSubcontractor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="R_Supported" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptCodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResigTermTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchedID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmissionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportOppose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransMapping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumberOrg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransferTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unique_Num" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vendor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilingTransactionsContract" nillable="true" type="tns:FilingTransactionsContract" />
   <xs:complexType name="EFSPDFRequestContract">
     <xs:sequence>
       <xs:element minOccurs="0" name="ElectionDateID" nillable="true" type="xs:string" />
@@ -567,6 +402,121 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EFSPDFResponseContract" nillable="true" type="tns:EFSPDFResponseContract" />
+  <xs:complexType name="ArrayOfFilingTransactionDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingTransactionDataContract" nillable="true" type="tns:FilingTransactionDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilingTransactionDataContract" nillable="true" type="tns:ArrayOfFilingTransactionDataContract" />
+  <xs:complexType name="FilingTransactionDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CandBallotPropReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CandidateCommitteeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommTypeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributionTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributionTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountyDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DBStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateIncurredOrgAmtId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Decreased" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisclosurePeriod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisclosureType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectionYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingSchedDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingStreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingStreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IEDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IESupported" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IEType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Increased" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanLiablityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanerCodeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MunicipalityDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MunicipalityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Office" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Office_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Original_Sched_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwedAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAmend" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RClaim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RContributions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RIESupported" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RItemized" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RLiability" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RLobbyist" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RMinor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSubcontractor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSupportOppose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RVendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptCodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmissionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransMapping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransferTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreaAddr1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreaAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreaCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreaState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreaZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerOccuptaion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilingTransactionDataContract" nillable="true" type="tns:FilingTransactionDataContract" />
   <xs:complexType name="SchedR_ISExists_Contract">
     <xs:sequence>
       <xs:element minOccurs="0" name="District_Id" nillable="true" type="xs:string" />
@@ -669,6 +619,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FilingsForFilingCutOffDateContract" nillable="true" type="tns:FilingsForFilingCutOffDateContract" />
+  <xs:complexType name="ArrayOfFilingTransactionsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingTransactionsContract" nillable="true" type="tns:FilingTransactionsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilingTransactionsContract" nillable="true" type="tns:ArrayOfFilingTransactionsContract" />
   <xs:complexType name="VendorImportDataContract">
     <xs:sequence>
       <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
@@ -784,6 +740,85 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReportSourceContract" nillable="true" type="tns:ReportSourceContract" />
+  <xs:complexType name="ArrayOfPaymentMethodContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodContract" nillable="true" type="tns:PaymentMethodContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentMethodContract" nillable="true" type="tns:ArrayOfPaymentMethodContract" />
+  <xs:complexType name="PaymentMethodContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PaymentTypeAbbrev" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethodContract" nillable="true" type="tns:PaymentMethodContract" />
+  <xs:complexType name="ArrayOfFilingCutOffDateContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilingCutOffDateContract" nillable="true" type="tns:FilingCutOffDateContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilingCutOffDateContract" nillable="true" type="tns:ArrayOfFilingCutOffDateContract" />
+  <xs:complexType name="FilingCutOffDateContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CutOffDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingDueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoliticalCalDateId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoliticalCalLabelId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriGenDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilingCutOffDateContract" nillable="true" type="tns:FilingCutOffDateContract" />
+  <xs:complexType name="ArrayOfPurposeCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurposeCodeContract" nillable="true" type="tns:ArrayOfPurposeCodeContract" />
+  <xs:complexType name="PurposeCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PurposeCodeAbbrev" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeCodeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurposeCodeContract" nillable="true" type="tns:PurposeCodeContract" />
+  <xs:complexType name="ArrayOfNonItemIETreasurerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NonItemIETreasurerContract" nillable="true" type="tns:NonItemIETreasurerContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNonItemIETreasurerContract" nillable="true" type="tns:ArrayOfNonItemIETreasurerContract" />
+  <xs:complexType name="NonItemIETreasurerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NonItemIETreasurerContract" nillable="true" type="tns:NonItemIETreasurerContract" />
+  <xs:complexType name="ArrayOfContributorNameContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContributorNameContract" nillable="true" type="tns:ContributorNameContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContributorNameContract" nillable="true" type="tns:ArrayOfContributorNameContract" />
+  <xs:complexType name="ContributorNameContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContributorTypeAbbrev" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContributorNameContract" nillable="true" type="tns:ContributorNameContract" />
   <xs:complexType name="ArrayOfDateIncurredContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DateIncurredContract" nillable="true" type="tns:DateIncurredContract" />
@@ -1261,6 +1296,59 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TransactionDetailsGridContract" nillable="true" type="tns:TransactionDetailsGridContract" />
+  <xs:complexType name="ArrayOfGetSearchForScheduledIContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetSearchForScheduledIContract" nillable="true" type="tns:GetSearchForScheduledIContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetSearchForScheduledIContract" nillable="true" type="tns:ArrayOfGetSearchForScheduledIContract" />
+  <xs:complexType name="GetSearchForScheduledIContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FILING_TRANS_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loan_Lib_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Original_Amt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Trans_Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="filer_Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flng_Ent_FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flng_Ent_LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flng_Ent_MiddleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSearchForScheduledIContract" nillable="true" type="tns:GetSearchForScheduledIContract" />
+  <xs:complexType name="AuthorizedToSignCheckContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Signature" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorizedToSignCheckContract" nillable="true" type="tns:AuthorizedToSignCheckContract" />
+  <xs:complexType name="ArrayOfExpPaymentTransIdPopUpSchedFContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ExpPaymentTransIdPopUpSchedFContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ArrayOfExpPaymentTransIdPopUpSchedFContract" />
+  <xs:complexType name="ExpPaymentTransIdPopUpSchedFContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ExpPaymentTransIdPopUpSchedFContract" />
   <xs:complexType name="ArrayOfExpPaymentOriginalNameContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpPaymentOriginalNameContract" nillable="true" type="tns:ExpPaymentOriginalNameContract" />
@@ -1430,157 +1518,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FilerInfoContract" nillable="true" type="tns:FilerInfoContract" />
-  <xs:complexType name="ArrayOfNonItemIETreasurerContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NonItemIETreasurerContract" nillable="true" type="tns:NonItemIETreasurerContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfNonItemIETreasurerContract" nillable="true" type="tns:ArrayOfNonItemIETreasurerContract" />
-  <xs:complexType name="NonItemIETreasurerContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AddressId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PersonId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerCountry" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerEmployer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerOccupation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerStreetAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TreasurerZip" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="NonItemIETreasurerContract" nillable="true" type="tns:NonItemIETreasurerContract" />
-  <xs:complexType name="ArrayOfContributorNameContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContributorNameContract" nillable="true" type="tns:ContributorNameContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfContributorNameContract" nillable="true" type="tns:ArrayOfContributorNameContract" />
-  <xs:complexType name="ContributorNameContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ContributorTypeAbbrev" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContributorTypeId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ContributorNameContract" nillable="true" type="tns:ContributorNameContract" />
-  <xs:complexType name="ArrayOfLoanerCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanerCodeContract" nillable="true" type="tns:LoanerCodeContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLoanerCodeContract" nillable="true" type="tns:ArrayOfLoanerCodeContract" />
-  <xs:complexType name="LoanerCodeContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="LoanerDesc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LoanerID" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="LoanerCodeContract" nillable="true" type="tns:LoanerCodeContract" />
-  <xs:complexType name="ArrayOfOutstandingLiabilityContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutstandingLiabilityContract" nillable="true" type="tns:OutstandingLiabilityContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOutstandingLiabilityContract" nillable="true" type="tns:ArrayOfOutstandingLiabilityContract" />
-  <xs:complexType name="OutstandingLiabilityContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CreditorName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DateIncurred" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntityNameAndAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlngEntCountry" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityStreetName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityZipCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OriginalAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OutstandingAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OutstandingLiabilityContract" nillable="true" type="tns:OutstandingLiabilityContract" />
-  <xs:complexType name="ArrayOfExpPaymentLiabilityContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpPaymentLiabilityContract" nillable="true" type="tns:ExpPaymentLiabilityContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfExpPaymentLiabilityContract" nillable="true" type="tns:ArrayOfExpPaymentLiabilityContract" />
-  <xs:complexType name="ExpPaymentLiabilityContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CreditorName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DateIncurred" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityCity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityExplanation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityStreetName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LiabilityZipCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrignalAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OutstandingAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ExpPaymentLiabilityContract" nillable="true" type="tns:ExpPaymentLiabilityContract" />
-  <xs:complexType name="ArrayOfGetSearchForScheduledIContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetSearchForScheduledIContract" nillable="true" type="tns:GetSearchForScheduledIContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGetSearchForScheduledIContract" nillable="true" type="tns:ArrayOfGetSearchForScheduledIContract" />
-  <xs:complexType name="GetSearchForScheduledIContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FILING_TRANS_ID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Loan_Lib_Number" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Original_Amt" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Trans_Number" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="filer_Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="flng_Ent_FirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="flng_Ent_LastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="flng_Ent_MiddleName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="GetSearchForScheduledIContract" nillable="true" type="tns:GetSearchForScheduledIContract" />
-  <xs:complexType name="AuthorizedToSignCheckContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CommID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Signature" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AuthorizedToSignCheckContract" nillable="true" type="tns:AuthorizedToSignCheckContract" />
-  <xs:complexType name="ArrayOfExpPaymentTransIdPopUpSchedFContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ExpPaymentTransIdPopUpSchedFContract" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ArrayOfExpPaymentTransIdPopUpSchedFContract" />
-  <xs:complexType name="ExpPaymentTransIdPopUpSchedFContract">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="FilingSchedId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrgAmount" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ScheduleDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ExpPaymentTransIdPopUpSchedFContract" nillable="true" type="tns:ExpPaymentTransIdPopUpSchedFContract" />
   <xs:complexType name="ArrayOfShowAddressContract">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowAddressContract" nillable="true" type="tns:ShowAddressContract" />
@@ -2086,4 +2023,67 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ViewableColumnContract" nillable="true" type="tns:ViewableColumnContract" />
+  <xs:complexType name="ArrayOfLoanerCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanerCodeContract" nillable="true" type="tns:LoanerCodeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanerCodeContract" nillable="true" type="tns:ArrayOfLoanerCodeContract" />
+  <xs:complexType name="LoanerCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoanerDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanerID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanerCodeContract" nillable="true" type="tns:LoanerCodeContract" />
+  <xs:complexType name="ArrayOfOutstandingLiabilityContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutstandingLiabilityContract" nillable="true" type="tns:OutstandingLiabilityContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutstandingLiabilityContract" nillable="true" type="tns:ArrayOfOutstandingLiabilityContract" />
+  <xs:complexType name="OutstandingLiabilityContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreditorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateIncurred" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntityNameAndAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlngEntCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityStreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OutstandingAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutstandingLiabilityContract" nillable="true" type="tns:OutstandingLiabilityContract" />
+  <xs:complexType name="ArrayOfExpPaymentLiabilityContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpPaymentLiabilityContract" nillable="true" type="tns:ExpPaymentLiabilityContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpPaymentLiabilityContract" nillable="true" type="tns:ArrayOfExpPaymentLiabilityContract" />
+  <xs:complexType name="ExpPaymentLiabilityContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreditorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateIncurred" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingEntityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilingTransId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityStreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiabilityZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrignalAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OutstandingAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpPaymentLiabilityContract" nillable="true" type="tns:ExpPaymentLiabilityContract" />
 </xs:schema>
