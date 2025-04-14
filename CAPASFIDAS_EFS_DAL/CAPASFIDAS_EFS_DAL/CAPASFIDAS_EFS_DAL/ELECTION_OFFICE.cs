@@ -31,6 +31,7 @@ namespace CAPASFIDAS_EFS_DAL
         public Nullable<int> PARTY_ELECT_ID { get; set; }
         public Nullable<int> VOTE_FOR { get; set; }
         public Nullable<int> MUNICIPALITY_ID { get; set; }
+        public Nullable<int> OLD_ODM_ID { get; set; }
     
         public virtual ICollection<ELECTION_CANDIDATE> ELECTION_CANDIDATE { get; set; }
         public virtual MUNICIPALITY MUNICIPALITY { get; set; }

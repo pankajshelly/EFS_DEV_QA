@@ -82,6 +82,9 @@
     <Compile Include="AUTHORIZED_SIGNATORY.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="awsdms_truncation_safeguard.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="BALLOT_CORRESPONDENCE.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
@@ -477,7 +480,7 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILER_SECURITY.cs">
-      <DependentUpon>EFSRLSModel.tt</DependentUpon>
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
     </Compile>
     <Compile Include="FILER_STATEMENT.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
@@ -543,7 +546,7 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_IMPORT.cs">
-      <DependentUpon>EFSRLSModel.tt</DependentUpon>
+      <DependentUpon>EFSAuthentication.tt</DependentUpon>
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_MAPPING_OLD.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
@@ -663,6 +666,9 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PAYOFF_QUOTE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCFB_Threshold.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PERSON.cs">
@@ -2020,6 +2026,18 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TITLE.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tracker.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tracker1_Del.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tracker2_Del.cs">
+      <DependentUpon>EFSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tracker3_Del.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TRANSFER_TYPE.cs">

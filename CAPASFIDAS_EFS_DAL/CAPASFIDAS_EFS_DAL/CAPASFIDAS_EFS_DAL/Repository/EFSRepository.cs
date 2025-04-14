@@ -17688,7 +17688,7 @@ namespace Repository
         /// <param name="strElectTypeId"></param>
         /// <param name="strOfficeTypeId"></param>
         /// <returns></returns>
-        public IList<FilingCutOffDateEntity> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId)
+        public IList<FilingCutOffDateEntity> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId)
         {
             try
             {
@@ -17699,7 +17699,8 @@ namespace Repository
 
                     var results = entities.SP_S_FilingAndCutOffDate_PCF_WCS(string.IsNullOrEmpty(strElectYearId) ? (int?)null : Convert.ToInt32(strElectYearId), 
                         string.IsNullOrEmpty(strElectTypeId) ? (int?)null : Convert.ToInt32(strElectTypeId), 
-                        string.IsNullOrEmpty(strOfficeTypeId) ? (int?)null : Convert.ToInt32(strOfficeTypeId));
+                        string.IsNullOrEmpty(strOfficeTypeId) ? (int?)null : Convert.ToInt32(strOfficeTypeId),
+                        strPolCalMapId);
 
                     foreach (var item in results)
                     {

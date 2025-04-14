@@ -34,6 +34,7 @@ namespace CAPASFIDAS_EFS_DAL
         public Nullable<System.DateTime> WINNER_EFFECTIVE_DATE { get; set; }
         public Nullable<System.DateTime> WINNER_CERT_DATE { get; set; }
         public string R_UNCONTESTED { get; set; }
+        public Nullable<System.DateTime> RESIGNED_EFFECTIVE_DATE { get; set; }
         public string BALLOT_NAME_1 { get; set; }
         public string BALLOT_NAME_2 { get; set; }
         public string COUNTY_PETITION_ID { get; set; }

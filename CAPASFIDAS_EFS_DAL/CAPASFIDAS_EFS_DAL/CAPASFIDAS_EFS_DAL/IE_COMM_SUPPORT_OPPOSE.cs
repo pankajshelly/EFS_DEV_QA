@@ -30,6 +30,8 @@ namespace CAPASFIDAS_EFS_DAL
         public System.DateTime CREATED_DATE { get; set; }
         public string MODIFIED_BY { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+        public Nullable<int> OLD_OFFICE_ID { get; set; }
+        public Nullable<int> OLD_ODM_ID { get; set; }
     
         public virtual COMM_PURPOSE_TYPE COMM_PURPOSE_TYPE { get; set; }
         public virtual COMMITTEE COMMITTEE { get; set; }

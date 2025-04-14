@@ -83,6 +83,7 @@ namespace CAPASFIDAS_EFS_DAL
         public string R_CONTRIBUTIONS { get; set; }
         public string R_WEEKLY { get; set; }
         public string R_SUPPORT_OPPOSE { get; set; }
+        public Nullable<int> OLD_OFFICE_ID { get; set; }
     
         public virtual ICollection<COMPLIANCE_REVIEW> COMPLIANCE_REVIEW { get; set; }
         public virtual ICollection<NONITEM_TRANS_MAPPING> NONITEM_TRANS_MAPPING { get; set; }

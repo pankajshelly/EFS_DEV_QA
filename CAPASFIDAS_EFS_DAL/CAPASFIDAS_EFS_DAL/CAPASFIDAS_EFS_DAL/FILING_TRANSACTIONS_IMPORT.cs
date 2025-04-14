@@ -76,5 +76,6 @@ namespace CAPASFIDAS_EFS_DAL
         public string R_CONTRIBUTIONS { get; set; }
         public string R_WEEKLY { get; set; }
         public string R_SUPPORT_OPPOSE { get; set; }
+        public Nullable<int> OLD_OFFICE_ID { get; set; }
     }
 }

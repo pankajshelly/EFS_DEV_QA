@@ -34,6 +34,9 @@ namespace CAPASFIDAS_EFS_DAL
         public string MODIFIED_BY { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
         public string MASTER_OFFICE_STATUS { get; set; }
+        public Nullable<int> MASTER_OFFICE_ID { get; set; }
+        public Nullable<System.DateTime> EFFECTIVE_DATE { get; set; }
+        public Nullable<System.DateTime> INEFFECTIVE_DATE { get; set; }
     
         public virtual ICollection<COMMITTEE> COMMITTEEs { get; set; }
         public virtual ICollection<COMMITTEE_HISTORY> COMMITTEE_HISTORY { get; set; }

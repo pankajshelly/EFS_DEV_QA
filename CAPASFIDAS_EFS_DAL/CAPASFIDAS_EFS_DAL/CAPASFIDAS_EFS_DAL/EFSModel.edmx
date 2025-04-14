@@ -49,8 +49,6 @@
           <Property Name="CREATED_BY" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="CREATED_DATE" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="APPLICATION_USER_MAPPING">
           <Key>
             <PropertyRef Name="APP_USER_MAPPING" />
@@ -105,6 +103,17 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="awsdms_truncation_safeguard">
+          <Key>
+            <PropertyRef Name="latchTaskName" />
+            <PropertyRef Name="latchMachineGUID" />
+            <PropertyRef Name="LatchKey" />
+          </Key>
+          <Property Name="latchTaskName" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="latchMachineGUID" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="LatchKey" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="latchLocker" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="BALLOT_CORRESPONDENCE">
           <Key>
@@ -1166,6 +1175,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="WINNER_EFFECTIVE_DATE" Type="datetime2" Precision="7" />
           <Property Name="WINNER_CERT_DATE" Type="datetime2" Precision="7" />
           <Property Name="R_UNCONTESTED" Type="char" MaxLength="1" />
+          <Property Name="RESIGNED_EFFECTIVE_DATE" Type="datetime2" Precision="7" />
           <Property Name="BALLOT_NAME_1" Type="nvarchar" MaxLength="70" />
           <Property Name="BALLOT_NAME_2" Type="nvarchar" MaxLength="40" />
           <Property Name="COUNTY_PETITION_ID" Type="varchar" MaxLength="100" />
@@ -1269,6 +1279,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
           <Property Name="PARENT_OFF_DIST_MAP_ID" Type="int" />
           <Property Name="ELECTION_OFFICE_ID" Type="int" />
+          <Property Name="OLD_ODM_ID" Type="int" />
         </EntityType>
         <EntityType Name="ELECTION_CANDIDATE_HISTORY">
           <Key>
@@ -1331,6 +1342,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="PARTY_ELECT_ID" Type="int" />
           <Property Name="VOTE_FOR" Type="int" />
           <Property Name="MUNICIPALITY_ID" Type="int" />
+          <Property Name="OLD_ODM_ID" Type="int" />
         </EntityType>
         <EntityType Name="ELECTION_TYPE">
           <Key>
@@ -2316,6 +2328,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="R_CONTRIBUTIONS" Type="char" MaxLength="1" />
           <Property Name="R_WEEKLY" Type="char" MaxLength="1" />
           <Property Name="R_SUPPORT_OPPOSE" Type="char" MaxLength="1" />
+          <Property Name="OLD_OFFICE_ID" Type="int" />
         </EntityType>
         <EntityType Name="FILING_TRANSACTIONS_ENCRYPTED">
           <Key>
@@ -2506,6 +2519,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+          <Property Name="OLD_OFFICE_ID" Type="int" />
+          <Property Name="OLD_ODM_ID" Type="int" />
         </EntityType>
         <EntityType Name="IE_COMMITTEES">
           <Key>
@@ -2658,20 +2673,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.APPLICATION_USER_MAPPING' does not 
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MANUAL_PROD_UPDATES">
           <Key>
             <PropertyRef Name="MAN_PROD_UPDATE_ID" />
-            <PropertyRef Name="REQUESTOR" />
-            <PropertyRef Name="REQUEST_DATE" />
-            <PropertyRef Name="APPLICATION" />
-            <PropertyRef Name="TABLE_MODIFIED" />
-            <PropertyRef Name="TABLE_PRIM_KEY" />
-            <PropertyRef Name="DEVELOPER_EMAIL" />
-            <PropertyRef Name="EXPLANATION" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
           </Key>
           <Property Name="MAN_PROD_UPDATE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="REQUESTOR" Type="nvarchar" MaxLength="1000" Nullable="false" />
@@ -2765,6 +2769,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have 
           <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+          <Property Name="OLD_OFFICE_ID" Type="int" />
         </EntityType>
         <EntityType Name="NON_PARTICIPATION">
           <Key>
@@ -2828,6 +2833,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have 
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
           <Property Name="MASTER_OFFICE_STATUS" Type="char" MaxLength="1" />
+          <Property Name="MASTER_OFFICE_ID" Type="int" />
+          <Property Name="EFFECTIVE_DATE" Type="datetime2" Precision="0" />
+          <Property Name="INEFFECTIVE_DATE" Type="datetime2" Precision="0" />
         </EntityType>
         <EntityType Name="OFFICE_DISTRICT_MAPPING">
           <Key>
@@ -2980,6 +2988,22 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have 
           <Property Name="STAFF_MIDDLE_NAME" Type="nvarchar" MaxLength="100" />
           <Property Name="STAFF_LAST_NAME" Type="nvarchar" MaxLength="100" />
           <Property Name="ENF_TITLE_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="PCFB_Threshold">
+          <Key>
+            <PropertyRef Name="PCFB_THRESHOLD_ID" />
+          </Key>
+          <Property Name="PCFB_THRESHOLD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OFF_DIST_MAP_ID" Type="int" Nullable="false" />
+          <Property Name="MIN_MATCH_CONTRIB_RAISED" Type="money" Nullable="false" />
+          <Property Name="MIN_RESIDENT" Type="int" Nullable="false" />
+          <Property Name="DATE_FROM" Type="datetime" />
+          <Property Name="DATE_TO" Type="datetime" />
+          <Property Name="R_STATUS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CREATED_BY" Type="varchar" MaxLength="100" />
+          <Property Name="CREATED_DATE" Type="datetime2" Precision="7" />
+          <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
+          <Property Name="MODIFIED_DATE" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="PERSON">
           <Key>
@@ -3295,14 +3319,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.MANUAL_PROD_UPDATES' does not have 
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="50" />
           <Property Name="MODIFIED_DATE" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.PMF_PAYMENT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PMF_PAYMENT">
           <Key>
             <PropertyRef Name="PMF_PAYMENT_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
           </Key>
           <Property Name="PMF_PAYMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FILER_ID" Type="bigint" />
@@ -3563,6 +3582,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.PMF_PAYMENT' does not have a primar
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
           <Property Name="FILER_TYPE_ID" Type="int" />
+          <Property Name="PREVIOUS_FILER_ID" Type="varchar" MaxLength="6" />
         </EntityType>
         <EntityType Name="RESIGNATION_TERMINATION_TYPE">
           <Key>
@@ -3985,16 +4005,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.PMF_PAYMENT' does not have a primar
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="40" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="7" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CAPASFIDAS.dbo.STATE_COMMITTEE_PARTY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STATE_COMMITTEE_PARTY">
           <Key>
             <PropertyRef Name="STATE_COMM_PARTY_ID" />
-            <PropertyRef Name="OFF_DIST_MAP_ID" />
-            <PropertyRef Name="PARTY_ELECT_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
           </Key>
           <Property Name="STATE_COMM_PARTY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OFF_DIST_MAP_ID" Type="int" Nullable="false" />
@@ -4096,8 +4109,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.STATE_COMMITTEE_PARTY' does not hav
           <Property Name="SUB_TREAS_ID" Type="bigint" />
           <Property Name="DATE_CERTIFIED" Type="datetime2" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="int" />
-          <Property Name="CABINET_LOCATION" Type="nchar" MaxLength="100" />
-          <Property Name="S3_ID" Type="bigint" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -4158,6 +4169,42 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.STATE_COMMITTEE_PARTY' does not hav
           <Property Name="CREATED_DATE" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="MODIFIED_BY" Type="varchar" MaxLength="100" />
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="Tracker">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="date" Nullable="false" />
+          <Property Name="RPO" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tracker1_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="date" Nullable="false" />
+          <Property Name="RPO" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tracker2_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="date" Nullable="false" />
+          <Property Name="RPO" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tracker3_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="date" Nullable="false" />
+          <Property Name="RPO" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TRANSFER_TYPE">
           <Key>
@@ -13138,6 +13185,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Parameter Name="ELECTION_CYCLE_ID" Type="nvarchar" Mode="In" />
           <Parameter Name="DISCLOSURE_PERIOD_ID" Type="nvarchar" Mode="In" />
           <Parameter Name="REVIEWER_ID" Type="nvarchar" Mode="In" />
+          <Parameter Name="UNIT_ID" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_S_AssignReviewData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="OFFICE_TYPE_ID" Type="nvarchar" Mode="In" />
@@ -13811,6 +13859,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Parameter Name="ELECT_YEAR_ID" Type="int" Mode="In" />
           <Parameter Name="ELECT_TYPE_ID" Type="int" Mode="In" />
           <Parameter Name="OFFICE_TYPE_ID" Type="int" Mode="In" />
+          <Parameter Name="POL_CAL_DATE_ID" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_S_FilingDatesIEWeekly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ELECT_YEAR_ID" Type="int" Mode="In" />
@@ -15892,9 +15941,11 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADDRESS_TYPE" EntityType="Self.ADDRESS_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="APPLICATION" EntityType="Self.APPLICATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPLICATION_USER_MAPPING" EntityType="Self.APPLICATION_USER_MAPPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUDIT_TRAIL" EntityType="Self.AUDIT_TRAIL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUTHORIZATION_TYPE" EntityType="Self.AUTHORIZATION_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUTHORIZED_SIGNATORY" EntityType="Self.AUTHORIZED_SIGNATORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="awsdms_truncation_safeguard" EntityType="Self.awsdms_truncation_safeguard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BALLOT_CORRESPONDENCE" EntityType="Self.BALLOT_CORRESPONDENCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BALLOT_ORDER" EntityType="Self.BALLOT_ORDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BALLOT_PROPOSAL_TYPE" EntityType="Self.BALLOT_PROPOSAL_TYPE" Schema="dbo" store:Type="Tables" />
@@ -16048,6 +16099,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="LOAN_OTHER" EntityType="Self.LOAN_OTHER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOGIN_MENU_MAPPING" EntityType="Self.LOGIN_MENU_MAPPING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="Self.MANUAL_PROD_UPDATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MASTER_LOOKUP" EntityType="Self.MASTER_LOOKUP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MASTER_TYPE" EntityType="Self.MASTER_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MENU" EntityType="Self.MENU" Schema="dbo" store:Type="Tables" />
@@ -16068,6 +16120,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="PARTY_ELECTION_HISTORY" EntityType="Self.PARTY_ELECTION_HISTORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PAYMENT_TYPE" EntityType="Self.PAYMENT_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PAYOFF_QUOTE" EntityType="Self.PAYOFF_QUOTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PCFB_Threshold" EntityType="Self.PCFB_Threshold" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSON_ADDR_MAPPING" EntityType="Self.PERSON_ADDR_MAPPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSON_CONTACT_MAPPING" EntityType="Self.PERSON_CONTACT_MAPPING" Schema="dbo" store:Type="Tables" />
@@ -16086,6 +16139,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="PETITION_VACANCY_MAPPING" EntityType="Self.PETITION_VACANCY_MAPPING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PETITION_VOLUME" EntityType="Self.PETITION_VOLUME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PMF_DOCUMENT_NUMBER" EntityType="Self.PMF_DOCUMENT_NUMBER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMF_PAYMENT" EntityType="Self.PMF_PAYMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POLITICAL_CALENDAR_DATE_HIST" EntityType="Self.POLITICAL_CALENDAR_DATE_HIST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POLITICAL_CALENDAR_DATES" EntityType="Self.POLITICAL_CALENDAR_DATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POLITICAL_CALENDAR_FORM_MAP" EntityType="Self.POLITICAL_CALENDAR_FORM_MAP" Schema="dbo" store:Type="Tables" />
@@ -16131,6 +16185,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="STATE" EntityType="Self.STATE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STATE_COMMITTEE" EntityType="Self.STATE_COMMITTEE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STATE_COMMITTEE_DISTRICT" EntityType="Self.STATE_COMMITTEE_DISTRICT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="Self.STATE_COMMITTEE_PARTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUB_TREASURER" EntityType="Self.SUB_TREASURER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUB_TREASURER_HISTORY" EntityType="Self.SUB_TREASURER_HISTORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUBDIVISION_TYPE" EntityType="Self.SUBDIVISION_TYPE" Schema="dbo" store:Type="Tables" />
@@ -16140,6 +16195,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="TERMINATION_DETAILS" EntityType="Self.TERMINATION_DETAILS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TERMINATION_REVIEW" EntityType="Self.TERMINATION_REVIEW" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TITLE" EntityType="Self.TITLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracker" EntityType="Self.Tracker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracker1_Del" EntityType="Self.Tracker1_Del" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracker2_Del" EntityType="Self.Tracker2_Del" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracker3_Del" EntityType="Self.Tracker3_Del" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRANSFER_TYPE" EntityType="Self.TRANSFER_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TREASURER" EntityType="Self.TREASURER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TREASURER_HISTORY" EntityType="Self.TREASURER_HISTORY" Schema="dbo" store:Type="Tables" />
@@ -16149,64 +16208,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="VOTER_REG_REQUEST" EntityType="Self.VOTER_REG_REQUEST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XML" EntityType="Self.XML" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZIPCODE" EntityType="Self.ZIPCODE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="APPLICATION_USER_MAPPING" EntityType="Self.APPLICATION_USER_MAPPING" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [APPLICATION_USER_MAPPING].[APP_USER_MAPPING] AS [APP_USER_MAPPING], 
-    [APPLICATION_USER_MAPPING].[APPLICATION_ID] AS [APPLICATION_ID], 
-    [APPLICATION_USER_MAPPING].[ROLE_ID] AS [ROLE_ID], 
-    [APPLICATION_USER_MAPPING].[EMP_ID] AS [EMP_ID], 
-    [APPLICATION_USER_MAPPING].[EMP_EMAIL_ID] AS [EMP_EMAIL_ID], 
-    [APPLICATION_USER_MAPPING].[R_STATUS] AS [R_STATUS], 
-    [APPLICATION_USER_MAPPING].[CREATED_BY] AS [CREATED_BY], 
-    [APPLICATION_USER_MAPPING].[CREATED_DATE] AS [CREATED_DATE], 
-    [APPLICATION_USER_MAPPING].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [APPLICATION_USER_MAPPING].[MODIFIED_DATE] AS [MODIFIED_DATE]
-    FROM [dbo].[APPLICATION_USER_MAPPING] AS [APPLICATION_USER_MAPPING]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="Self.MANUAL_PROD_UPDATES" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [MANUAL_PROD_UPDATES].[MAN_PROD_UPDATE_ID] AS [MAN_PROD_UPDATE_ID], 
-    [MANUAL_PROD_UPDATES].[REQUESTOR] AS [REQUESTOR], 
-    [MANUAL_PROD_UPDATES].[REQUEST_DATE] AS [REQUEST_DATE], 
-    [MANUAL_PROD_UPDATES].[APPLICATION] AS [APPLICATION], 
-    [MANUAL_PROD_UPDATES].[TABLE_MODIFIED] AS [TABLE_MODIFIED], 
-    [MANUAL_PROD_UPDATES].[TABLE_PRIM_KEY] AS [TABLE_PRIM_KEY], 
-    [MANUAL_PROD_UPDATES].[DEVELOPER_EMAIL] AS [DEVELOPER_EMAIL], 
-    [MANUAL_PROD_UPDATES].[EXPLANATION] AS [EXPLANATION], 
-    [MANUAL_PROD_UPDATES].[CREATED_BY] AS [CREATED_BY], 
-    [MANUAL_PROD_UPDATES].[CREATED_DATE] AS [CREATED_DATE]
-    FROM [dbo].[MANUAL_PROD_UPDATES] AS [MANUAL_PROD_UPDATES]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="PMF_PAYMENT" EntityType="Self.PMF_PAYMENT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PMF_PAYMENT].[PMF_PAYMENT_ID] AS [PMF_PAYMENT_ID], 
-    [PMF_PAYMENT].[FILER_ID] AS [FILER_ID], 
-    [PMF_PAYMENT].[FI_STATUS_ID] AS [FI_STATUS_ID], 
-    [PMF_PAYMENT].[VENDOR_ID] AS [VENDOR_ID], 
-    [PMF_PAYMENT].[TRANSACTION_DATE] AS [TRANSACTION_DATE], 
-    [PMF_PAYMENT].[ORG_AMT] AS [ORG_AMT], 
-    [PMF_PAYMENT].[BUDGET_YEAR_ID] AS [BUDGET_YEAR_ID], 
-    [PMF_PAYMENT].[Board_Approval_Date] AS [Board_Approval_Date], 
-    [PMF_PAYMENT].[CSV_TO_SFS_DATE] AS [CSV_TO_SFS_DATE], 
-    [PMF_PAYMENT].[R_STATUS] AS [R_STATUS], 
-    [PMF_PAYMENT].[CREATED_BY] AS [CREATED_BY], 
-    [PMF_PAYMENT].[CREATED_DATE] AS [CREATED_DATE], 
-    [PMF_PAYMENT].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [PMF_PAYMENT].[MODIFIED_DATE] AS [MODIFIED_DATE]
-    FROM [dbo].[PMF_PAYMENT] AS [PMF_PAYMENT]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="Self.STATE_COMMITTEE_PARTY" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [STATE_COMMITTEE_PARTY].[STATE_COMM_PARTY_ID] AS [STATE_COMM_PARTY_ID], 
-    [STATE_COMMITTEE_PARTY].[OFF_DIST_MAP_ID] AS [OFF_DIST_MAP_ID], 
-    [STATE_COMMITTEE_PARTY].[PARTY_ELECT_ID] AS [PARTY_ELECT_ID], 
-    [STATE_COMMITTEE_PARTY].[R_STATUS] AS [R_STATUS], 
-    [STATE_COMMITTEE_PARTY].[CREATED_BY] AS [CREATED_BY], 
-    [STATE_COMMITTEE_PARTY].[CREATED_DATE] AS [CREATED_DATE], 
-    [STATE_COMMITTEE_PARTY].[MODIFIED_BY] AS [MODIFIED_BY], 
-    [STATE_COMMITTEE_PARTY].[MODIFIED_DATE] AS [MODIFIED_DATE]
-    FROM [dbo].[STATE_COMMITTEE_PARTY] AS [STATE_COMMITTEE_PARTY]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="VW_BANKINFORMATION" EntityType="Self.VW_BANKINFORMATION" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VW_BANKINFORMATION].[BANK_ID] AS [BANK_ID], 
@@ -21635,6 +21636,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <Parameter Name="ELECTION_CYCLE_ID" Mode="In" Type="String" />
             <Parameter Name="DISCLOSURE_PERIOD_ID" Mode="In" Type="String" />
             <Parameter Name="REVIEWER_ID" Mode="In" Type="String" />
+            <Parameter Name="UNIT_ID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_S_ContributorCodeIEWeeklyContrSchedC" ReturnType="Collection(EFSModel.SP_S_ContributorCodeIEWeeklyContrSchedC_Result)" />
           <FunctionImport Name="SP_S_ContributorCodeIEWeeklyContrSchedD" ReturnType="Collection(EFSModel.SP_S_ContributorCodeIEWeeklyContrSchedD_Result)" />
@@ -23601,6 +23603,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <Parameter Name="ELECT_YEAR_ID" Mode="In" Type="Int32" />
             <Parameter Name="ELECT_TYPE_ID" Mode="In" Type="Int32" />
             <Parameter Name="OFFICE_TYPE_ID" Mode="In" Type="Int32" />
+            <Parameter Name="POL_CAL_DATE_ID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_S_EFS_SCHED_R_CHILD_Data" ReturnType="Collection(EFSModel.SP_S_EFS_SCHED_R_CHILD_Data_Result)">
             <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
@@ -23610,12 +23613,15 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <Parameter Name="TRANS_NUMBER" Mode="In" Type="String" />
             <Parameter Name="FILER_ID" Mode="In" Type="Int64" />
           </FunctionImport>
+          <FunctionImport Name="SP_S_PurposeCode_PCF" ReturnType="Collection(EFSModel.SP_S_PurposeCode_PCF_Result)" />
           <EntitySet Name="ADDRESSes" EntityType="EFSModel.ADDRESS" />
           <EntitySet Name="ADDRESS_TYPE" EntityType="EFSModel.ADDRESS_TYPE" />
           <EntitySet Name="APPLICATIONs" EntityType="EFSModel.APPLICATION" />
+          <EntitySet Name="APPLICATION_USER_MAPPING" EntityType="EFSModel.APPLICATION_USER_MAPPING" />
           <EntitySet Name="AUDIT_TRAIL" EntityType="EFSModel.AUDIT_TRAIL" />
           <EntitySet Name="AUTHORIZATION_TYPE" EntityType="EFSModel.AUTHORIZATION_TYPE" />
           <EntitySet Name="AUTHORIZED_SIGNATORY" EntityType="EFSModel.AUTHORIZED_SIGNATORY" />
+          <EntitySet Name="awsdms_truncation_safeguard" EntityType="EFSModel.awsdms_truncation_safeguard" />
           <EntitySet Name="BALLOT_CORRESPONDENCE" EntityType="EFSModel.BALLOT_CORRESPONDENCE" />
           <EntitySet Name="BALLOT_ORDER" EntityType="EFSModel.BALLOT_ORDER" />
           <EntitySet Name="BALLOT_PROPOSAL_TYPE" EntityType="EFSModel.BALLOT_PROPOSAL_TYPE" />
@@ -23769,6 +23775,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="LOAN_OTHER" EntityType="EFSModel.LOAN_OTHER" />
           <EntitySet Name="LOGINs" EntityType="EFSModel.LOGIN" />
           <EntitySet Name="LOGIN_MENU_MAPPING" EntityType="EFSModel.LOGIN_MENU_MAPPING" />
+          <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="EFSModel.MANUAL_PROD_UPDATES" />
           <EntitySet Name="MASTER_LOOKUP" EntityType="EFSModel.MASTER_LOOKUP" />
           <EntitySet Name="MASTER_TYPE" EntityType="EFSModel.MASTER_TYPE" />
           <EntitySet Name="MENUs" EntityType="EFSModel.MENU" />
@@ -23789,6 +23796,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="PARTY_ELECTION_HISTORY" EntityType="EFSModel.PARTY_ELECTION_HISTORY" />
           <EntitySet Name="PAYMENT_TYPE" EntityType="EFSModel.PAYMENT_TYPE" />
           <EntitySet Name="PAYOFF_QUOTE" EntityType="EFSModel.PAYOFF_QUOTE" />
+          <EntitySet Name="PCFB_Threshold" EntityType="EFSModel.PCFB_Threshold" />
           <EntitySet Name="People" EntityType="EFSModel.PERSON" />
           <EntitySet Name="PERSON_ADDR_MAPPING" EntityType="EFSModel.PERSON_ADDR_MAPPING" />
           <EntitySet Name="PERSON_CONTACT_MAPPING" EntityType="EFSModel.PERSON_CONTACT_MAPPING" />
@@ -23807,6 +23815,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="PETITION_VACANCY_MAPPING" EntityType="EFSModel.PETITION_VACANCY_MAPPING" />
           <EntitySet Name="PETITION_VOLUME" EntityType="EFSModel.PETITION_VOLUME" />
           <EntitySet Name="PMF_DOCUMENT_NUMBER" EntityType="EFSModel.PMF_DOCUMENT_NUMBER" />
+          <EntitySet Name="PMF_PAYMENT" EntityType="EFSModel.PMF_PAYMENT" />
           <EntitySet Name="POLITICAL_CALENDAR_DATE_HIST" EntityType="EFSModel.POLITICAL_CALENDAR_DATE_HIST" />
           <EntitySet Name="POLITICAL_CALENDAR_DATES" EntityType="EFSModel.POLITICAL_CALENDAR_DATES" />
           <EntitySet Name="POLITICAL_CALENDAR_FORM_MAP" EntityType="EFSModel.POLITICAL_CALENDAR_FORM_MAP" />
@@ -23852,6 +23861,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="STATEs" EntityType="EFSModel.STATE" />
           <EntitySet Name="STATE_COMMITTEE" EntityType="EFSModel.STATE_COMMITTEE" />
           <EntitySet Name="STATE_COMMITTEE_DISTRICT" EntityType="EFSModel.STATE_COMMITTEE_DISTRICT" />
+          <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="EFSModel.STATE_COMMITTEE_PARTY" />
           <EntitySet Name="SUB_TREASURER" EntityType="EFSModel.SUB_TREASURER" />
           <EntitySet Name="SUB_TREASURER_HISTORY" EntityType="EFSModel.SUB_TREASURER_HISTORY" />
           <EntitySet Name="SUBDIVISION_TYPE" EntityType="EFSModel.SUBDIVISION_TYPE" />
@@ -23861,6 +23871,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="TERMINATION_DETAILS" EntityType="EFSModel.TERMINATION_DETAILS" />
           <EntitySet Name="TERMINATION_REVIEW" EntityType="EFSModel.TERMINATION_REVIEW" />
           <EntitySet Name="TITLEs" EntityType="EFSModel.TITLE" />
+          <EntitySet Name="Trackers" EntityType="EFSModel.Tracker" />
+          <EntitySet Name="Tracker1_Del" EntityType="EFSModel.Tracker1_Del" />
+          <EntitySet Name="Tracker2_Del" EntityType="EFSModel.Tracker2_Del" />
+          <EntitySet Name="Tracker3_Del" EntityType="EFSModel.Tracker3_Del" />
           <EntitySet Name="TRANSFER_TYPE" EntityType="EFSModel.TRANSFER_TYPE" />
           <EntitySet Name="TREASURERs" EntityType="EFSModel.TREASURER" />
           <EntitySet Name="TREASURER_HISTORY" EntityType="EFSModel.TREASURER_HISTORY" />
@@ -23870,10 +23884,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySet Name="VOTER_REG_REQUEST" EntityType="EFSModel.VOTER_REG_REQUEST" />
           <EntitySet Name="XMLs" EntityType="EFSModel.XML" />
           <EntitySet Name="ZIPCODEs" EntityType="EFSModel.ZIPCODE" />
-          <EntitySet Name="APPLICATION_USER_MAPPING" EntityType="EFSModel.APPLICATION_USER_MAPPING" />
-          <EntitySet Name="MANUAL_PROD_UPDATES" EntityType="EFSModel.MANUAL_PROD_UPDATES" />
-          <EntitySet Name="PMF_PAYMENT" EntityType="EFSModel.PMF_PAYMENT" />
-          <EntitySet Name="STATE_COMMITTEE_PARTY" EntityType="EFSModel.STATE_COMMITTEE_PARTY" />
           <EntitySet Name="VW_BANKINFORMATION" EntityType="EFSModel.VW_BANKINFORMATION" />
           <EntitySet Name="VW_BCP_ENFORCEMENT_JOB" EntityType="EFSModel.VW_BCP_ENFORCEMENT_JOB" />
           <EntitySet Name="VW_BCP_PCFB_CHANGES" EntityType="EFSModel.VW_BCP_PCFB_CHANGES" />
@@ -25422,6 +25432,10 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <End Role="REVIEW_DETAILS" EntitySet="REVIEW_DETAILS" />
             <End Role="PETITION_REVIEW" EntitySet="PETITION_REVIEW" />
           </AssociationSet>
+          <AssociationSet Name="FK_PMF_PAYMENT_REQUIRED_FILER" Association="EFSModel.FK_PMF_PAYMENT_REQUIRED_FILER">
+            <End Role="REQUIRED_FILER" EntitySet="REQUIRED_FILER" />
+            <End Role="PMF_PAYMENT" EntitySet="PMF_PAYMENT" />
+          </AssociationSet>
           <AssociationSet Name="FK_POLITICAL_CALENDAR_FORM_MAP_POLITICAL_CALENDAR_LABEL" Association="EFSModel.FK_POLITICAL_CALENDAR_FORM_MAP_POLITICAL_CALENDAR_LABEL">
             <End Role="POLITICAL_CALENDAR_LABEL" EntitySet="POLITICAL_CALENDAR_LABEL" />
             <End Role="POLITICAL_CALENDAR_FORM_MAP" EntitySet="POLITICAL_CALENDAR_FORM_MAP" />
@@ -25445,10 +25459,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <AssociationSet Name="FK_POLITICAL_CALENDAR_SUBHEADING_POLITICAL_CALENDAR_HEADING" Association="EFSModel.FK_POLITICAL_CALENDAR_SUBHEADING_POLITICAL_CALENDAR_HEADING">
             <End Role="POLITICAL_CALENDAR_HEADING" EntitySet="POLITICAL_CALENDAR_HEADING" />
             <End Role="POLITICAL_CALENDAR_SUBHEADING" EntitySet="POLITICAL_CALENDAR_SUBHEADING" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PMF_PAYMENT_REQUIRED_FILER" Association="EFSModel.FK_PMF_PAYMENT_REQUIRED_FILER">
-            <End Role="REQUIRED_FILER" EntitySet="REQUIRED_FILER" />
-            <End Role="PMF_PAYMENT" EntitySet="PMF_PAYMENT" />
           </AssociationSet>
           <AssociationSet Name="FK_REVIEW_DATE_TYPE_MAPPING_REVIEW_DATE_TYPE_MAPPING" Association="EFSModel.FK_REVIEW_DATE_TYPE_MAPPING_REVIEW_DATE_TYPE_MAPPING">
             <End Role="REVIEW_DATE_TYPE_MAPPING" EntitySet="REVIEW_DATE_TYPE_MAPPING" />
@@ -25474,7 +25484,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             <End Role="TREASURER" EntitySet="TREASURERs" />
             <End Role="TREASURER_HISTORY" EntitySet="TREASURER_HISTORY" />
           </AssociationSet>
-          <FunctionImport Name="SP_S_PurposeCode_PCF" ReturnType="Collection(EFSModel.SP_S_PurposeCode_PCF_Result)" />
           </EntityContainer>
         <ComplexType Name="SP_S_AddKeyDateTypes_Result">
           <Property Type="Int32" Name="REVIEW_DATE_TYPE_ID" Nullable="false" />
@@ -29896,6 +29905,11 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Type="String" Name="R_WEEKLY" Nullable="true" MaxLength="1" />
           <Property Type="String" Name="R_SUPPORT_OPPOSE" Nullable="true" MaxLength="1" />
         </ComplexType>
+        <ComplexType Name="SP_S_PurposeCode_PCF_Result">
+          <Property Type="Int32" Name="PURPOSE_CODE_ID" Nullable="false" />
+          <Property Type="String" Name="PURPOSE_CODE_DESC" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="PURPOSE_CODE_ABBREV" Nullable="false" MaxLength="15" />
+        </ComplexType>
         <EntityType Name="ADDRESS">
           <Key>
             <PropertyRef Name="ADDR_ID" />
@@ -29963,6 +29977,21 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="ERROR_LOG" Relationship="EFSModel.APP_ERRL_FK" FromRole="APPLICATION" ToRole="ERROR_LOG" />
         </EntityType>
+        <EntityType Name="APPLICATION_USER_MAPPING">
+          <Key>
+            <PropertyRef Name="APP_USER_MAPPING" />
+          </Key>
+          <Property Name="APP_USER_MAPPING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPLICATION_ID" Type="Int32" />
+          <Property Name="ROLE_ID" Type="Int32" />
+          <Property Name="EMP_ID" Type="Int32" />
+          <Property Name="EMP_EMAIL_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="R_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="AUDIT_TRAIL">
           <Key>
             <PropertyRef Name="AUDIT_TRAIL_ID" />
@@ -30006,6 +30035,17 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="COMMITTEE" Relationship="EFSModel.COMMITTEE_AUTHSIG_FK" FromRole="AUTHORIZED_SIGNATORY" ToRole="COMMITTEE" />
           <NavigationProperty Name="PERSON" Relationship="EFSModel.PERSON_AUTHSIG_FK" FromRole="AUTHORIZED_SIGNATORY" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="awsdms_truncation_safeguard">
+          <Key>
+            <PropertyRef Name="latchTaskName" />
+            <PropertyRef Name="latchMachineGUID" />
+            <PropertyRef Name="LatchKey" />
+          </Key>
+          <Property Name="latchTaskName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="latchMachineGUID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LatchKey" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="latchLocker" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="BALLOT_CORRESPONDENCE">
           <Key>
@@ -31319,6 +31359,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="WINNER_EFFECTIVE_DATE" Type="DateTime" Precision="7" />
           <Property Name="WINNER_CERT_DATE" Type="DateTime" Precision="7" />
           <Property Name="R_UNCONTESTED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RESIGNED_EFFECTIVE_DATE" Type="DateTime" Precision="7" />
           <Property Name="BALLOT_NAME_1" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="BALLOT_NAME_2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="COUNTY_PETITION_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -31435,6 +31476,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="PARENT_OFF_DIST_MAP_ID" Type="Int32" />
           <Property Name="ELECTION_OFFICE_ID" Type="Int32" />
+          <Property Name="OLD_ODM_ID" Type="Int32" />
           <NavigationProperty Name="BALLOT_CORRESPONDENCE" Relationship="EFSModel.FK_BALLOT_CORRESPONDENCE_BALLOT_CORRESPONDENCE" FromRole="ELECTION_CANDIDATE" ToRole="BALLOT_CORRESPONDENCE" />
           <NavigationProperty Name="BANK_MAPPING" Relationship="EFSModel.FK_BANK_MAPPING_ELECTION_CANDIDATE" FromRole="ELECTION_CANDIDATE" ToRole="BANK_MAPPING" />
           <NavigationProperty Name="CANDIDATE" Relationship="EFSModel.CAN_ELEC_FK" FromRole="ELECTION_CANDIDATE" ToRole="CANDIDATE" />
@@ -31533,6 +31575,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="PARTY_ELECT_ID" Type="Int32" />
           <Property Name="VOTE_FOR" Type="Int32" />
           <Property Name="MUNICIPALITY_ID" Type="Int32" />
+          <Property Name="OLD_ODM_ID" Type="Int32" />
           <NavigationProperty Name="ELECTION_CANDIDATE" Relationship="EFSModel.FK_ELECTION_CANDIDATE_ELECTION_OFFICE" FromRole="ELECTION_OFFICE" ToRole="ELECTION_CANDIDATE" />
           <NavigationProperty Name="MUNICIPALITY" Relationship="EFSModel.FK_ELECTION_OFFICE_MUNICIPALITY" FromRole="ELECTION_OFFICE" ToRole="MUNICIPALITY" />
           <NavigationProperty Name="OFFICE_DISTRICT_MAPPING" Relationship="EFSModel.FK_ELECTION_OFFICE_OFFICE_DISTRICT_MAPPING" FromRole="ELECTION_OFFICE" ToRole="OFFICE_DISTRICT_MAPPING" />
@@ -32631,6 +32674,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="R_CONTRIBUTIONS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_WEEKLY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_SUPPORT_OPPOSE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OLD_OFFICE_ID" Type="Int32" />
           <NavigationProperty Name="COMPLIANCE_REVIEW" Relationship="EFSModel.FILTRANS_COMREV_FK" FromRole="FILING_TRANSACTIONS" ToRole="COMPLIANCE_REVIEW" />
           <NavigationProperty Name="NONITEM_TRANS_MAPPING" Relationship="EFSModel.CHILDFILTRAN_NITRANSMAP_FK" FromRole="FILING_TRANSACTIONS" ToRole="NONITEM_TRANS_MAPPING" />
           <NavigationProperty Name="NONITEM_TRANS_MAPPING1" Relationship="EFSModel.PARENTFILTRAN_NITRANSMAP_FK" FromRole="FILING_TRANSACTIONS" ToRole="NONITEM_TRANS_MAPPING" />
@@ -32854,6 +32898,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="OLD_OFFICE_ID" Type="Int32" />
+          <Property Name="OLD_ODM_ID" Type="Int32" />
           <NavigationProperty Name="COMM_PURPOSE_TYPE" Relationship="EFSModel.FK_IE_COMM_SUPPORT_OPPOSE_COMM_PURPOSE_TYPE" FromRole="IE_COMM_SUPPORT_OPPOSE" ToRole="COMM_PURPOSE_TYPE" />
           <NavigationProperty Name="COMMITTEE" Relationship="EFSModel.FK_IE_COMM_SUPPORT_OPPOSE_COMMITTEE" FromRole="IE_COMM_SUPPORT_OPPOSE" ToRole="COMMITTEE" />
           <NavigationProperty Name="OFFICE" Relationship="EFSModel.FK_IE_COMM_SUPPORT_OPPOSE_OFFICE" FromRole="IE_COMM_SUPPORT_OPPOSE" ToRole="OFFICE" />
@@ -33024,6 +33070,21 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="MENU" Relationship="EFSModel.MENU_LOGMENUMAP_FK" FromRole="LOGIN_MENU_MAPPING" ToRole="MENU" />
         </EntityType>
+        <EntityType Name="MANUAL_PROD_UPDATES">
+          <Key>
+            <PropertyRef Name="MAN_PROD_UPDATE_ID" />
+          </Key>
+          <Property Name="MAN_PROD_UPDATE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REQUESTOR" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="REQUEST_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="APPLICATION" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TABLE_MODIFIED" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TABLE_PRIM_KEY" Type="Int64" Nullable="false" />
+          <Property Name="DEVELOPER_EMAIL" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="EXPLANATION" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="MASTER_LOOKUP">
           <Key>
             <PropertyRef Name="MASTER_LOOKUP_ID" />
@@ -33137,6 +33198,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="OLD_OFFICE_ID" Type="Int32" />
           <NavigationProperty Name="MUNICIPALITY" Relationship="EFSModel.MUN_MUNO_FK" FromRole="MUNICIPALITY_OFFICES" ToRole="MUNICIPALITY" />
           <NavigationProperty Name="OFFICE_TERM_MAPPING" Relationship="EFSModel.FK_OFFICE_TERM_MAPPING_MUNICIPALITY_OFFICES" FromRole="MUNICIPALITY_OFFICES" ToRole="OFFICE_TERM_MAPPING" />
           <NavigationProperty Name="OFFICE" Relationship="EFSModel.OFF_MUNO_FK" FromRole="MUNICIPALITY_OFFICES" ToRole="OFFICE" />
@@ -33211,6 +33273,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="MASTER_OFFICE_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MASTER_OFFICE_ID" Type="Int32" />
+          <Property Name="EFFECTIVE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="INEFFECTIVE_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="COMMITTEEs" Relationship="EFSModel.FK_COMMITTEE_OFFICE" FromRole="OFFICE" ToRole="COMMITTEE" />
           <NavigationProperty Name="COMMITTEE_HISTORY" Relationship="EFSModel.OFF_COMMH_FK" FromRole="OFFICE" ToRole="COMMITTEE_HISTORY" />
           <NavigationProperty Name="CONTRIBUTION_LIMIT" Relationship="EFSModel.OFFICE_CNTRBLMT_FK" FromRole="OFFICE" ToRole="CONTRIBUTION_LIMIT" />
@@ -33411,6 +33476,22 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="STAFF_LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ENF_TITLE_ID" Type="Int32" />
           <NavigationProperty Name="ENFORCEMENT" Relationship="EFSModel.FK_PAYOFF_QUOTE_ENFORCEMENT" FromRole="PAYOFF_QUOTE" ToRole="ENFORCEMENT" />
+        </EntityType>
+        <EntityType Name="PCFB_Threshold">
+          <Key>
+            <PropertyRef Name="PCFB_THRESHOLD_ID" />
+          </Key>
+          <Property Name="PCFB_THRESHOLD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OFF_DIST_MAP_ID" Type="Int32" Nullable="false" />
+          <Property Name="MIN_MATCH_CONTRIB_RAISED" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MIN_RESIDENT" Type="Int32" Nullable="false" />
+          <Property Name="DATE_FROM" Type="DateTime" Precision="3" />
+          <Property Name="DATE_TO" Type="DateTime" Precision="3" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="7" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="7" />
         </EntityType>
         <EntityType Name="PERSON">
           <Key>
@@ -33817,6 +33898,26 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="PMF_PAYMENT">
+          <Key>
+            <PropertyRef Name="PMF_PAYMENT_ID" />
+          </Key>
+          <Property Name="PMF_PAYMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILER_ID" Type="Int64" />
+          <Property Name="FI_STATUS_ID" Type="Int32" />
+          <Property Name="VENDOR_ID" Type="Int32" />
+          <Property Name="TRANSACTION_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ORG_AMT" Type="Double" />
+          <Property Name="BUDGET_YEAR_ID" Type="Int32" />
+          <Property Name="Board_Approval_Date" Type="DateTime" Precision="3" />
+          <Property Name="CSV_TO_SFS_DATE" Type="DateTime" Precision="3" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="REQUIRED_FILER" Relationship="EFSModel.FK_PMF_PAYMENT_REQUIRED_FILER" FromRole="PMF_PAYMENT" ToRole="REQUIRED_FILER" />
+        </EntityType>
         <EntityType Name="POLITICAL_CALENDAR_DATE_HIST">
           <Key>
             <PropertyRef Name="POL_CAL_DATE_HIST_ID" />
@@ -34081,6 +34182,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="FILER_TYPE_ID" Type="Int32" />
+          <Property Name="PREVIOUS_FILER_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CANDIDATE" Relationship="EFSModel.FK_REQUIRED_FILER_CANDIDATE" FromRole="REQUIRED_FILER" ToRole="CANDIDATE" />
           <NavigationProperty Name="CANDIDATE_HISTORY" Relationship="EFSModel.FK_CANDIDATE_HISTORY_REQUIRED_FILER" FromRole="REQUIRED_FILER" ToRole="CANDIDATE_HISTORY" />
           <NavigationProperty Name="COM_TREAS_SUBTREAS_MAPPING" Relationship="EFSModel.FK_COMMITTEE_TREASURER_SUB_TREASURER_MAPPING_REQUIRE_FILER" FromRole="REQUIRED_FILER" ToRole="COM_TREAS_SUBTREAS_MAPPING" />
@@ -34545,6 +34647,19 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_BY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="7" />
         </EntityType>
+        <EntityType Name="STATE_COMMITTEE_PARTY">
+          <Key>
+            <PropertyRef Name="STATE_COMM_PARTY_ID" />
+          </Key>
+          <Property Name="STATE_COMM_PARTY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OFF_DIST_MAP_ID" Type="Int32" Nullable="false" />
+          <Property Name="PARTY_ELECT_ID" Type="Int32" Nullable="false" />
+          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="SUB_TREASURER">
           <Key>
             <PropertyRef Name="SUB_TREAS_ID" />
@@ -34643,8 +34758,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="SUB_TREAS_ID" Type="Int64" />
           <Property Name="DATE_CERTIFIED" Type="DateTime" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="Int32" />
-          <Property Name="CABINET_LOCATION" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="S3_ID" Type="Int64" />
           <NavigationProperty Name="CANDIDATE_COMMITTEE_AUTH" Relationship="EFSModel.FK_CANDIDATE_COMMITTEE_AUTH_SUPPORTING_DOCUMENTS" FromRole="SUPPORTING_DOCUMENTS" ToRole="CANDIDATE_COMMITTEE_AUTH" />
           <NavigationProperty Name="COMMUNICATION_TYPE" Relationship="EFSModel.FK_SUPPORTING_DOCUMENTS_COMMUNICATION_TYPE" FromRole="SUPPORTING_DOCUMENTS" ToRole="COMMUNICATION_TYPE" />
           <NavigationProperty Name="DOCUMENT_TYPE" Relationship="EFSModel.DOCTYPE_SUPDOCS_FK" FromRole="SUPPORTING_DOCUMENTS" ToRole="DOCUMENT_TYPE" />
@@ -34719,6 +34832,42 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="People" Relationship="EFSModel.TI_PERS_FK" FromRole="TITLE" ToRole="PERSON" />
           <NavigationProperty Name="PERSON_NAME_MAPPING" Relationship="EFSModel.FK_PERSON_NAME_MAPPING_TITLE" FromRole="TITLE" ToRole="PERSON_NAME_MAPPING" />
+        </EntityType>
+        <EntityType Name="Tracker">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RPO" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tracker1_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RPO" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tracker2_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RPO" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tracker3_Del">
+          <Key>
+            <PropertyRef Name="Date1" />
+            <PropertyRef Name="RPO" />
+          </Key>
+          <Property Name="Date1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RPO" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TRANSFER_TYPE">
           <Key>
@@ -34889,86 +35038,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="ZIP_ID" Type="Int32" Nullable="false" />
           <Property Name="ZIP_DESC" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="ZIP_EXT" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="APPLICATION_USER_MAPPING">
-          <Key>
-            <PropertyRef Name="APP_USER_MAPPING" />
-          </Key>
-          <Property Name="APP_USER_MAPPING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="APPLICATION_ID" Type="Int32" />
-          <Property Name="ROLE_ID" Type="Int32" />
-          <Property Name="EMP_ID" Type="Int32" />
-          <Property Name="EMP_EMAIL_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="R_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
-          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="MANUAL_PROD_UPDATES">
-          <Key>
-            <PropertyRef Name="MAN_PROD_UPDATE_ID" />
-            <PropertyRef Name="REQUESTOR" />
-            <PropertyRef Name="REQUEST_DATE" />
-            <PropertyRef Name="APPLICATION" />
-            <PropertyRef Name="TABLE_MODIFIED" />
-            <PropertyRef Name="TABLE_PRIM_KEY" />
-            <PropertyRef Name="DEVELOPER_EMAIL" />
-            <PropertyRef Name="EXPLANATION" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="MAN_PROD_UPDATE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="REQUESTOR" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="REQUEST_DATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="APPLICATION" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TABLE_MODIFIED" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TABLE_PRIM_KEY" Type="Int64" Nullable="false" />
-          <Property Name="DEVELOPER_EMAIL" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="EXPLANATION" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="PMF_PAYMENT">
-          <Key>
-            <PropertyRef Name="PMF_PAYMENT_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="PMF_PAYMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FILER_ID" Type="Int64" />
-          <Property Name="FI_STATUS_ID" Type="Int32" />
-          <Property Name="VENDOR_ID" Type="Int32" />
-          <Property Name="TRANSACTION_DATE" Type="DateTime" Precision="3" />
-          <Property Name="ORG_AMT" Type="Double" />
-          <Property Name="BUDGET_YEAR_ID" Type="Int32" />
-          <Property Name="Board_Approval_Date" Type="DateTime" Precision="3" />
-          <Property Name="CSV_TO_SFS_DATE" Type="DateTime" Precision="3" />
-          <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="MODIFIED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="REQUIRED_FILER" Relationship="EFSModel.FK_PMF_PAYMENT_REQUIRED_FILER" FromRole="PMF_PAYMENT" ToRole="REQUIRED_FILER" />
-        </EntityType>
-        <EntityType Name="STATE_COMMITTEE_PARTY">
-          <Key>
-            <PropertyRef Name="STATE_COMM_PARTY_ID" />
-            <PropertyRef Name="OFF_DIST_MAP_ID" />
-            <PropertyRef Name="PARTY_ELECT_ID" />
-            <PropertyRef Name="R_STATUS" />
-            <PropertyRef Name="CREATED_BY" />
-            <PropertyRef Name="CREATED_DATE" />
-          </Key>
-          <Property Name="STATE_COMM_PARTY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OFF_DIST_MAP_ID" Type="Int32" Nullable="false" />
-          <Property Name="PARTY_ELECT_ID" Type="Int32" Nullable="false" />
           <Property Name="R_STATUS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="CREATED_BY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="0" />
@@ -41162,6 +41231,18 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PMF_PAYMENT_REQUIRED_FILER">
+          <End Type="EFSModel.REQUIRED_FILER" Role="REQUIRED_FILER" Multiplicity="0..1" />
+          <End Type="EFSModel.PMF_PAYMENT" Role="PMF_PAYMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUIRED_FILER">
+              <PropertyRef Name="FILER_ID" />
+            </Principal>
+            <Dependent Role="PMF_PAYMENT">
+              <PropertyRef Name="FILER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_POLITICAL_CALENDAR_FORM_MAP_POLITICAL_CALENDAR_LABEL">
           <End Type="EFSModel.POLITICAL_CALENDAR_LABEL" Role="POLITICAL_CALENDAR_LABEL" Multiplicity="1" />
           <End Type="EFSModel.POLITICAL_CALENDAR_FORM_MAP" Role="POLITICAL_CALENDAR_FORM_MAP" Multiplicity="*" />
@@ -41231,18 +41312,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             </Principal>
             <Dependent Role="POLITICAL_CALENDAR_SUBHEADING">
               <PropertyRef Name="POL_CAL_HEADING_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PMF_PAYMENT_REQUIRED_FILER">
-          <End Type="EFSModel.REQUIRED_FILER" Role="REQUIRED_FILER" Multiplicity="0..1" />
-          <End Type="EFSModel.PMF_PAYMENT" Role="PMF_PAYMENT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="REQUIRED_FILER">
-              <PropertyRef Name="FILER_ID" />
-            </Principal>
-            <Dependent Role="PMF_PAYMENT">
-              <PropertyRef Name="FILER_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -41318,11 +41387,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="SP_S_PurposeCode_PCF_Result">
-          <Property Type="Int32" Name="PURPOSE_CODE_ID" Nullable="false" />
-          <Property Type="String" Name="PURPOSE_CODE_DESC" Nullable="false" MaxLength="80" />
-          <Property Type="String" Name="PURPOSE_CODE_ABBREV" Nullable="false" MaxLength="15" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -46821,6 +46885,15 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_S_PurposeCode_PCF" FunctionName="EFSModel.Store.SP_S_PurposeCode_PCF">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EFSModel.SP_S_PurposeCode_PCF_Result">
+                <ScalarProperty Name="PURPOSE_CODE_ID" ColumnName="PURPOSE_CODE_ID" />
+                <ScalarProperty Name="PURPOSE_CODE_DESC" ColumnName="PURPOSE_CODE_DESC" />
+                <ScalarProperty Name="PURPOSE_CODE_ABBREV" ColumnName="PURPOSE_CODE_ABBREV" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="ADDRESSes">
             <EntityTypeMapping TypeName="EFSModel.ADDRESS">
               <MappingFragment StoreEntitySet="ADDRESS">
@@ -46868,6 +46941,22 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="APPLICATION_USER_MAPPING">
+            <EntityTypeMapping TypeName="EFSModel.APPLICATION_USER_MAPPING">
+              <MappingFragment StoreEntitySet="APPLICATION_USER_MAPPING">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="EMP_EMAIL_ID" ColumnName="EMP_EMAIL_ID" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
+                <ScalarProperty Name="APP_USER_MAPPING" ColumnName="APP_USER_MAPPING" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="AUDIT_TRAIL">
             <EntityTypeMapping TypeName="EFSModel.AUDIT_TRAIL">
               <MappingFragment StoreEntitySet="AUDIT_TRAIL">
@@ -46908,6 +46997,16 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="COMM_ID" ColumnName="COMM_ID" />
                 <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
                 <ScalarProperty Name="AUTH_SIGN_ID" ColumnName="AUTH_SIGN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="awsdms_truncation_safeguard">
+            <EntityTypeMapping TypeName="EFSModel.awsdms_truncation_safeguard">
+              <MappingFragment StoreEntitySet="awsdms_truncation_safeguard">
+                <ScalarProperty Name="latchLocker" ColumnName="latchLocker" />
+                <ScalarProperty Name="LatchKey" ColumnName="LatchKey" />
+                <ScalarProperty Name="latchMachineGUID" ColumnName="latchMachineGUID" />
+                <ScalarProperty Name="latchTaskName" ColumnName="latchTaskName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -48036,6 +48135,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="COUNTY_PETITION_ID" ColumnName="COUNTY_PETITION_ID" />
                 <ScalarProperty Name="BALLOT_NAME_2" ColumnName="BALLOT_NAME_2" />
                 <ScalarProperty Name="BALLOT_NAME_1" ColumnName="BALLOT_NAME_1" />
+                <ScalarProperty Name="RESIGNED_EFFECTIVE_DATE" ColumnName="RESIGNED_EFFECTIVE_DATE" />
                 <ScalarProperty Name="R_UNCONTESTED" ColumnName="R_UNCONTESTED" />
                 <ScalarProperty Name="WINNER_CERT_DATE" ColumnName="WINNER_CERT_DATE" />
                 <ScalarProperty Name="WINNER_EFFECTIVE_DATE" ColumnName="WINNER_EFFECTIVE_DATE" />
@@ -48116,6 +48216,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="ELECTION_CANDIDATE">
             <EntityTypeMapping TypeName="EFSModel.ELECTION_CANDIDATE">
               <MappingFragment StoreEntitySet="ELECTION_CANDIDATE">
+                <ScalarProperty Name="OLD_ODM_ID" ColumnName="OLD_ODM_ID" />
                 <ScalarProperty Name="ELECTION_OFFICE_ID" ColumnName="ELECTION_OFFICE_ID" />
                 <ScalarProperty Name="PARENT_OFF_DIST_MAP_ID" ColumnName="PARENT_OFF_DIST_MAP_ID" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
@@ -48198,6 +48299,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="ELECTION_OFFICE">
             <EntityTypeMapping TypeName="EFSModel.ELECTION_OFFICE">
               <MappingFragment StoreEntitySet="ELECTION_OFFICE">
+                <ScalarProperty Name="OLD_ODM_ID" ColumnName="OLD_ODM_ID" />
                 <ScalarProperty Name="MUNICIPALITY_ID" ColumnName="MUNICIPALITY_ID" />
                 <ScalarProperty Name="VOTE_FOR" ColumnName="VOTE_FOR" />
                 <ScalarProperty Name="PARTY_ELECT_ID" ColumnName="PARTY_ELECT_ID" />
@@ -49191,6 +49293,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="FILING_TRANSACTIONS">
             <EntityTypeMapping TypeName="EFSModel.FILING_TRANSACTIONS">
               <MappingFragment StoreEntitySet="FILING_TRANSACTIONS">
+                <ScalarProperty Name="OLD_OFFICE_ID" ColumnName="OLD_OFFICE_ID" />
                 <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
                 <ScalarProperty Name="R_WEEKLY" ColumnName="R_WEEKLY" />
                 <ScalarProperty Name="R_CONTRIBUTIONS" ColumnName="R_CONTRIBUTIONS" />
@@ -49436,6 +49539,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="IE_COMM_SUPPORT_OPPOSE">
             <EntityTypeMapping TypeName="EFSModel.IE_COMM_SUPPORT_OPPOSE">
               <MappingFragment StoreEntitySet="IE_COMM_SUPPORT_OPPOSE">
+                <ScalarProperty Name="OLD_ODM_ID" ColumnName="OLD_ODM_ID" />
+                <ScalarProperty Name="OLD_OFFICE_ID" ColumnName="OLD_OFFICE_ID" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
@@ -49616,6 +49721,22 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MANUAL_PROD_UPDATES">
+            <EntityTypeMapping TypeName="EFSModel.MANUAL_PROD_UPDATES">
+              <MappingFragment StoreEntitySet="MANUAL_PROD_UPDATES">
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
+                <ScalarProperty Name="DEVELOPER_EMAIL" ColumnName="DEVELOPER_EMAIL" />
+                <ScalarProperty Name="TABLE_PRIM_KEY" ColumnName="TABLE_PRIM_KEY" />
+                <ScalarProperty Name="TABLE_MODIFIED" ColumnName="TABLE_MODIFIED" />
+                <ScalarProperty Name="APPLICATION" ColumnName="APPLICATION" />
+                <ScalarProperty Name="REQUEST_DATE" ColumnName="REQUEST_DATE" />
+                <ScalarProperty Name="REQUESTOR" ColumnName="REQUESTOR" />
+                <ScalarProperty Name="MAN_PROD_UPDATE_ID" ColumnName="MAN_PROD_UPDATE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MASTER_LOOKUP">
             <EntityTypeMapping TypeName="EFSModel.MASTER_LOOKUP">
               <MappingFragment StoreEntitySet="MASTER_LOOKUP">
@@ -49693,6 +49814,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="MUNICIPALITY_OFFICES">
             <EntityTypeMapping TypeName="EFSModel.MUNICIPALITY_OFFICES">
               <MappingFragment StoreEntitySet="MUNICIPALITY_OFFICES">
+                <ScalarProperty Name="OLD_OFFICE_ID" ColumnName="OLD_OFFICE_ID" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
@@ -49759,6 +49881,9 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="OFFICEs">
             <EntityTypeMapping TypeName="EFSModel.OFFICE">
               <MappingFragment StoreEntitySet="OFFICE">
+                <ScalarProperty Name="INEFFECTIVE_DATE" ColumnName="INEFFECTIVE_DATE" />
+                <ScalarProperty Name="EFFECTIVE_DATE" ColumnName="EFFECTIVE_DATE" />
+                <ScalarProperty Name="MASTER_OFFICE_ID" ColumnName="MASTER_OFFICE_ID" />
                 <ScalarProperty Name="MASTER_OFFICE_STATUS" ColumnName="MASTER_OFFICE_STATUS" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
@@ -49930,6 +50055,23 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="PAYOFF_DATE" ColumnName="PAYOFF_DATE" />
                 <ScalarProperty Name="ENFORCEMENT_ID" ColumnName="ENFORCEMENT_ID" />
                 <ScalarProperty Name="PAYOFF_QUOTE_ID" ColumnName="PAYOFF_QUOTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PCFB_Threshold">
+            <EntityTypeMapping TypeName="EFSModel.PCFB_Threshold">
+              <MappingFragment StoreEntitySet="PCFB_Threshold">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="DATE_TO" ColumnName="DATE_TO" />
+                <ScalarProperty Name="DATE_FROM" ColumnName="DATE_FROM" />
+                <ScalarProperty Name="MIN_RESIDENT" ColumnName="MIN_RESIDENT" />
+                <ScalarProperty Name="MIN_MATCH_CONTRIB_RAISED" ColumnName="MIN_MATCH_CONTRIB_RAISED" />
+                <ScalarProperty Name="OFF_DIST_MAP_ID" ColumnName="OFF_DIST_MAP_ID" />
+                <ScalarProperty Name="PCFB_THRESHOLD_ID" ColumnName="PCFB_THRESHOLD_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -50265,6 +50407,26 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PMF_PAYMENT">
+            <EntityTypeMapping TypeName="EFSModel.PMF_PAYMENT">
+              <MappingFragment StoreEntitySet="PMF_PAYMENT">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="CSV_TO_SFS_DATE" ColumnName="CSV_TO_SFS_DATE" />
+                <ScalarProperty Name="Board_Approval_Date" ColumnName="Board_Approval_Date" />
+                <ScalarProperty Name="BUDGET_YEAR_ID" ColumnName="BUDGET_YEAR_ID" />
+                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
+                <ScalarProperty Name="TRANSACTION_DATE" ColumnName="TRANSACTION_DATE" />
+                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+                <ScalarProperty Name="FI_STATUS_ID" ColumnName="FI_STATUS_ID" />
+                <ScalarProperty Name="FILER_ID" ColumnName="FILER_ID" />
+                <ScalarProperty Name="PMF_PAYMENT_ID" ColumnName="PMF_PAYMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="POLITICAL_CALENDAR_DATE_HIST">
             <EntityTypeMapping TypeName="EFSModel.POLITICAL_CALENDAR_DATE_HIST">
               <MappingFragment StoreEntitySet="POLITICAL_CALENDAR_DATE_HIST">
@@ -50512,6 +50674,7 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="REQUIRED_FILER">
             <EntityTypeMapping TypeName="EFSModel.REQUIRED_FILER">
               <MappingFragment StoreEntitySet="REQUIRED_FILER">
+                <ScalarProperty Name="PREVIOUS_FILER_ID" ColumnName="PREVIOUS_FILER_ID" />
                 <ScalarProperty Name="FILER_TYPE_ID" ColumnName="FILER_TYPE_ID" />
                 <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
                 <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
@@ -50976,6 +51139,20 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="STATE_COMMITTEE_PARTY">
+            <EntityTypeMapping TypeName="EFSModel.STATE_COMMITTEE_PARTY">
+              <MappingFragment StoreEntitySet="STATE_COMMITTEE_PARTY">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
+                <ScalarProperty Name="PARTY_ELECT_ID" ColumnName="PARTY_ELECT_ID" />
+                <ScalarProperty Name="OFF_DIST_MAP_ID" ColumnName="OFF_DIST_MAP_ID" />
+                <ScalarProperty Name="STATE_COMM_PARTY_ID" ColumnName="STATE_COMM_PARTY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SUB_TREASURER">
             <EntityTypeMapping TypeName="EFSModel.SUB_TREASURER">
               <MappingFragment StoreEntitySet="SUB_TREASURER">
@@ -51043,8 +51220,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="SUPPORTING_DOCUMENTS">
             <EntityTypeMapping TypeName="EFSModel.SUPPORTING_DOCUMENTS">
               <MappingFragment StoreEntitySet="SUPPORTING_DOCUMENTS">
-                <ScalarProperty Name="S3_ID" ColumnName="S3_ID" />
-                <ScalarProperty Name="CABINET_LOCATION" ColumnName="CABINET_LOCATION" />
                 <ScalarProperty Name="ELECTION_YEAR_ID" ColumnName="ELECTION_YEAR_ID" />
                 <ScalarProperty Name="DATE_CERTIFIED" ColumnName="DATE_CERTIFIED" />
                 <ScalarProperty Name="SUB_TREAS_ID" ColumnName="SUB_TREAS_ID" />
@@ -51136,6 +51311,42 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
                 <ScalarProperty Name="TITLE_DESC" ColumnName="TITLE_DESC" />
                 <ScalarProperty Name="TITLE_ID" ColumnName="TITLE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trackers">
+            <EntityTypeMapping TypeName="EFSModel.Tracker">
+              <MappingFragment StoreEntitySet="Tracker">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RPO" ColumnName="RPO" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracker1_Del">
+            <EntityTypeMapping TypeName="EFSModel.Tracker1_Del">
+              <MappingFragment StoreEntitySet="Tracker1_Del">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RPO" ColumnName="RPO" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracker2_Del">
+            <EntityTypeMapping TypeName="EFSModel.Tracker2_Del">
+              <MappingFragment StoreEntitySet="Tracker2_Del">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RPO" ColumnName="RPO" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracker3_Del">
+            <EntityTypeMapping TypeName="EFSModel.Tracker3_Del">
+              <MappingFragment StoreEntitySet="Tracker3_Del">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RPO" ColumnName="RPO" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -51296,72 +51507,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
                 <ScalarProperty Name="ZIP_EXT" ColumnName="ZIP_EXT" />
                 <ScalarProperty Name="ZIP_DESC" ColumnName="ZIP_DESC" />
                 <ScalarProperty Name="ZIP_ID" ColumnName="ZIP_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="APPLICATION_USER_MAPPING">
-            <EntityTypeMapping TypeName="EFSModel.APPLICATION_USER_MAPPING">
-              <MappingFragment StoreEntitySet="APPLICATION_USER_MAPPING">
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="EMP_EMAIL_ID" ColumnName="EMP_EMAIL_ID" />
-                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
-                <ScalarProperty Name="APPLICATION_ID" ColumnName="APPLICATION_ID" />
-                <ScalarProperty Name="APP_USER_MAPPING" ColumnName="APP_USER_MAPPING" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MANUAL_PROD_UPDATES">
-            <EntityTypeMapping TypeName="EFSModel.MANUAL_PROD_UPDATES">
-              <MappingFragment StoreEntitySet="MANUAL_PROD_UPDATES">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="EXPLANATION" ColumnName="EXPLANATION" />
-                <ScalarProperty Name="DEVELOPER_EMAIL" ColumnName="DEVELOPER_EMAIL" />
-                <ScalarProperty Name="TABLE_PRIM_KEY" ColumnName="TABLE_PRIM_KEY" />
-                <ScalarProperty Name="TABLE_MODIFIED" ColumnName="TABLE_MODIFIED" />
-                <ScalarProperty Name="APPLICATION" ColumnName="APPLICATION" />
-                <ScalarProperty Name="REQUEST_DATE" ColumnName="REQUEST_DATE" />
-                <ScalarProperty Name="REQUESTOR" ColumnName="REQUESTOR" />
-                <ScalarProperty Name="MAN_PROD_UPDATE_ID" ColumnName="MAN_PROD_UPDATE_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PMF_PAYMENT">
-            <EntityTypeMapping TypeName="EFSModel.PMF_PAYMENT">
-              <MappingFragment StoreEntitySet="PMF_PAYMENT">
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="CSV_TO_SFS_DATE" ColumnName="CSV_TO_SFS_DATE" />
-                <ScalarProperty Name="Board_Approval_Date" ColumnName="Board_Approval_Date" />
-                <ScalarProperty Name="BUDGET_YEAR_ID" ColumnName="BUDGET_YEAR_ID" />
-                <ScalarProperty Name="ORG_AMT" ColumnName="ORG_AMT" />
-                <ScalarProperty Name="TRANSACTION_DATE" ColumnName="TRANSACTION_DATE" />
-                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
-                <ScalarProperty Name="FI_STATUS_ID" ColumnName="FI_STATUS_ID" />
-                <ScalarProperty Name="FILER_ID" ColumnName="FILER_ID" />
-                <ScalarProperty Name="PMF_PAYMENT_ID" ColumnName="PMF_PAYMENT_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STATE_COMMITTEE_PARTY">
-            <EntityTypeMapping TypeName="EFSModel.STATE_COMMITTEE_PARTY">
-              <MappingFragment StoreEntitySet="STATE_COMMITTEE_PARTY">
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="R_STATUS" ColumnName="R_STATUS" />
-                <ScalarProperty Name="PARTY_ELECT_ID" ColumnName="PARTY_ELECT_ID" />
-                <ScalarProperty Name="OFF_DIST_MAP_ID" ColumnName="OFF_DIST_MAP_ID" />
-                <ScalarProperty Name="STATE_COMM_PARTY_ID" ColumnName="STATE_COMM_PARTY_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -52604,15 +52749,6 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_S_PurposeCode_PCF" FunctionName="EFSModel.Store.SP_S_PurposeCode_PCF">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EFSModel.SP_S_PurposeCode_PCF_Result">
-                <ScalarProperty Name="PURPOSE_CODE_ID" ColumnName="PURPOSE_CODE_ID" />
-                <ScalarProperty Name="PURPOSE_CODE_DESC" ColumnName="PURPOSE_CODE_DESC" />
-                <ScalarProperty Name="PURPOSE_CODE_ABBREV" ColumnName="PURPOSE_CODE_ABBREV" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

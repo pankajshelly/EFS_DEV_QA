@@ -12,25 +12,18 @@ namespace CAPASFIDAS_EFS_DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class MUNICIPALITY_OFFICES
+    public partial class PCFB_Threshold
     {
-        public MUNICIPALITY_OFFICES()
-        {
-            this.OFFICE_TERM_MAPPING = new HashSet<OFFICE_TERM_MAPPING>();
-        }
-    
-        public int MUNICIPALITY_OFFICE_ID { get; set; }
-        public int MUNICIPALITY_ID { get; set; }
-        public int OFFICE_ID { get; set; }
+        public int PCFB_THRESHOLD_ID { get; set; }
+        public int OFF_DIST_MAP_ID { get; set; }
+        public decimal MIN_MATCH_CONTRIB_RAISED { get; set; }
+        public int MIN_RESIDENT { get; set; }
+        public Nullable<System.DateTime> DATE_FROM { get; set; }
+        public Nullable<System.DateTime> DATE_TO { get; set; }
         public string R_STATUS { get; set; }
         public string CREATED_BY { get; set; }
-        public System.DateTime CREATED_DATE { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
         public string MODIFIED_BY { get; set; }
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
-        public Nullable<int> OLD_OFFICE_ID { get; set; }
-    
-        public virtual MUNICIPALITY MUNICIPALITY { get; set; }
-        public virtual ICollection<OFFICE_TERM_MAPPING> OFFICE_TERM_MAPPING { get; set; }
-        public virtual OFFICE OFFICE { get; set; }
     }
 }

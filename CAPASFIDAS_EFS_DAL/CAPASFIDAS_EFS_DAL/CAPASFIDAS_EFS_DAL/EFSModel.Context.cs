@@ -37,9 +37,11 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<ADDRESS> ADDRESSes { get; set; }
         public virtual DbSet<ADDRESS_TYPE> ADDRESS_TYPE { get; set; }
         public virtual DbSet<APPLICATION> APPLICATIONs { get; set; }
+        public virtual DbSet<APPLICATION_USER_MAPPING> APPLICATION_USER_MAPPING { get; set; }
         public virtual DbSet<AUDIT_TRAIL> AUDIT_TRAIL { get; set; }
         public virtual DbSet<AUTHORIZATION_TYPE> AUTHORIZATION_TYPE { get; set; }
         public virtual DbSet<AUTHORIZED_SIGNATORY> AUTHORIZED_SIGNATORY { get; set; }
+        public virtual DbSet<awsdms_truncation_safeguard> awsdms_truncation_safeguard { get; set; }
         public virtual DbSet<BALLOT_CORRESPONDENCE> BALLOT_CORRESPONDENCE { get; set; }
         public virtual DbSet<BALLOT_ORDER> BALLOT_ORDER { get; set; }
         public virtual DbSet<BALLOT_PROPOSAL_TYPE> BALLOT_PROPOSAL_TYPE { get; set; }
@@ -193,6 +195,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<LOAN_OTHER> LOAN_OTHER { get; set; }
         public virtual DbSet<LOGIN> LOGINs { get; set; }
         public virtual DbSet<LOGIN_MENU_MAPPING> LOGIN_MENU_MAPPING { get; set; }
+        public virtual DbSet<MANUAL_PROD_UPDATES> MANUAL_PROD_UPDATES { get; set; }
         public virtual DbSet<MASTER_LOOKUP> MASTER_LOOKUP { get; set; }
         public virtual DbSet<MASTER_TYPE> MASTER_TYPE { get; set; }
         public virtual DbSet<MENU> MENUs { get; set; }
@@ -213,6 +216,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<PARTY_ELECTION_HISTORY> PARTY_ELECTION_HISTORY { get; set; }
         public virtual DbSet<PAYMENT_TYPE> PAYMENT_TYPE { get; set; }
         public virtual DbSet<PAYOFF_QUOTE> PAYOFF_QUOTE { get; set; }
+        public virtual DbSet<PCFB_Threshold> PCFB_Threshold { get; set; }
         public virtual DbSet<PERSON> People { get; set; }
         public virtual DbSet<PERSON_ADDR_MAPPING> PERSON_ADDR_MAPPING { get; set; }
         public virtual DbSet<PERSON_CONTACT_MAPPING> PERSON_CONTACT_MAPPING { get; set; }
@@ -231,6 +235,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<PETITION_VACANCY_MAPPING> PETITION_VACANCY_MAPPING { get; set; }
         public virtual DbSet<PETITION_VOLUME> PETITION_VOLUME { get; set; }
         public virtual DbSet<PMF_DOCUMENT_NUMBER> PMF_DOCUMENT_NUMBER { get; set; }
+        public virtual DbSet<PMF_PAYMENT> PMF_PAYMENT { get; set; }
         public virtual DbSet<POLITICAL_CALENDAR_DATE_HIST> POLITICAL_CALENDAR_DATE_HIST { get; set; }
         public virtual DbSet<POLITICAL_CALENDAR_DATES> POLITICAL_CALENDAR_DATES { get; set; }
         public virtual DbSet<POLITICAL_CALENDAR_FORM_MAP> POLITICAL_CALENDAR_FORM_MAP { get; set; }
@@ -276,6 +281,7 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<STATE> STATEs { get; set; }
         public virtual DbSet<STATE_COMMITTEE> STATE_COMMITTEE { get; set; }
         public virtual DbSet<STATE_COMMITTEE_DISTRICT> STATE_COMMITTEE_DISTRICT { get; set; }
+        public virtual DbSet<STATE_COMMITTEE_PARTY> STATE_COMMITTEE_PARTY { get; set; }
         public virtual DbSet<SUB_TREASURER> SUB_TREASURER { get; set; }
         public virtual DbSet<SUB_TREASURER_HISTORY> SUB_TREASURER_HISTORY { get; set; }
         public virtual DbSet<SUBDIVISION_TYPE> SUBDIVISION_TYPE { get; set; }
@@ -285,6 +291,10 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<TERMINATION_DETAILS> TERMINATION_DETAILS { get; set; }
         public virtual DbSet<TERMINATION_REVIEW> TERMINATION_REVIEW { get; set; }
         public virtual DbSet<TITLE> TITLEs { get; set; }
+        public virtual DbSet<Tracker> Trackers { get; set; }
+        public virtual DbSet<Tracker1_Del> Tracker1_Del { get; set; }
+        public virtual DbSet<Tracker2_Del> Tracker2_Del { get; set; }
+        public virtual DbSet<Tracker3_Del> Tracker3_Del { get; set; }
         public virtual DbSet<TRANSFER_TYPE> TRANSFER_TYPE { get; set; }
         public virtual DbSet<TREASURER> TREASURERs { get; set; }
         public virtual DbSet<TREASURER_HISTORY> TREASURER_HISTORY { get; set; }
@@ -294,10 +304,6 @@ namespace CAPASFIDAS_EFS_DAL
         public virtual DbSet<VOTER_REG_REQUEST> VOTER_REG_REQUEST { get; set; }
         public virtual DbSet<XML> XMLs { get; set; }
         public virtual DbSet<ZIPCODE> ZIPCODEs { get; set; }
-        public virtual DbSet<APPLICATION_USER_MAPPING> APPLICATION_USER_MAPPING { get; set; }
-        public virtual DbSet<MANUAL_PROD_UPDATES> MANUAL_PROD_UPDATES { get; set; }
-        public virtual DbSet<PMF_PAYMENT> PMF_PAYMENT { get; set; }
-        public virtual DbSet<STATE_COMMITTEE_PARTY> STATE_COMMITTEE_PARTY { get; set; }
         public virtual DbSet<VW_BANKINFORMATION> VW_BANKINFORMATION { get; set; }
         public virtual DbSet<VW_BCP_ENFORCEMENT_JOB> VW_BCP_ENFORCEMENT_JOB { get; set; }
         public virtual DbSet<VW_BCP_PCFB_CHANGES> VW_BCP_PCFB_CHANGES { get; set; }
@@ -10215,7 +10221,7 @@ namespace CAPASFIDAS_EFS_DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_I_NonItemizedIEWeeklyContrFlngTrans", fILER_IDParameter, pERSON_IDParameter, tREAS_IDParameter, aDDR_IDParameter, fILING_SCHED_IDParameter, sCHED_DATEParameter, pAYMENT_TYPE_IDParameter, cNTRBR_TYPE_IDParameter, cNTRBN_TYPE_IDParameter, lOAN_OTHER_IDParameter, pAY_NUMBERParameter, oRG_AMTParameter, tRANS_EXPLNTNParameter, mUNCIPALITY_IDParameter, r_AMENDParameter, eLECTION_DATEParameter, eLECTION_DATE_IDParameter, eLECTION_TYPE_IDParameter, oFFICE_TYPE_IDParameter, eLECT_YEAR_IDParameter, eLECTION_YEARParameter, fLNG_ENT_IDParameter, fLNG_ENT_NAMEParameter, fLNG_ENT_FIRST_NAMEParameter, fLNG_ENT_LAST_NAMEParameter, fLNG_ENT_MIDDLE_NAMEParameter, fLNG_ENT_STR_NAMEParameter, fLNG_ENT_CITYParameter, fLNG_ENT_STATEParameter, fLNG_ENT_ZIPParameter, fLNG_ENT_COUNTRYParameter, tREAS_OCCUPATIONParameter, tREAS_EMPLOYERParameter, aDDR_ADDR1Parameter, aDDR_CITYParameter, aDDR_STATEParameter, aDDR_ZIPParameter, dIST_OFF_CAND_BAL_PROPParameter, iE_CNTRBR_OCCParameter, iE_CNTRBR_EMPParameter, iE_DESCParameter, r_IE_SUPPORTEDParameter, cREATED_BYParameter, fILING_DATEParameter);
         }
     
-        public virtual int SP_S_AllReview_Search(string rEVIEW_STATUS, string fILER_ID, string cOMMITTEETYPE_ID, string eLECTION_CYCLE_ID, string dISCLOSURE_PERIOD_ID, string rEVIEWER_ID)
+        public virtual int SP_S_AllReview_Search(string rEVIEW_STATUS, string fILER_ID, string cOMMITTEETYPE_ID, string eLECTION_CYCLE_ID, string dISCLOSURE_PERIOD_ID, string rEVIEWER_ID, string uNIT_ID)
         {
             var rEVIEW_STATUSParameter = rEVIEW_STATUS != null ?
                 new ObjectParameter("REVIEW_STATUS", rEVIEW_STATUS) :
@@ -10241,7 +10247,11 @@ namespace CAPASFIDAS_EFS_DAL
                 new ObjectParameter("REVIEWER_ID", rEVIEWER_ID) :
                 new ObjectParameter("REVIEWER_ID", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_S_AllReview_Search", rEVIEW_STATUSParameter, fILER_IDParameter, cOMMITTEETYPE_IDParameter, eLECTION_CYCLE_IDParameter, dISCLOSURE_PERIOD_IDParameter, rEVIEWER_IDParameter);
+            var uNIT_IDParameter = uNIT_ID != null ?
+                new ObjectParameter("UNIT_ID", uNIT_ID) :
+                new ObjectParameter("UNIT_ID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_S_AllReview_Search", rEVIEW_STATUSParameter, fILER_IDParameter, cOMMITTEETYPE_IDParameter, eLECTION_CYCLE_IDParameter, dISCLOSURE_PERIOD_IDParameter, rEVIEWER_IDParameter, uNIT_IDParameter);
         }
     
         public virtual ObjectResult<SP_S_ContributorCodeIEWeeklyContrSchedC_Result> SP_S_ContributorCodeIEWeeklyContrSchedC()
@@ -17381,7 +17391,7 @@ namespace CAPASFIDAS_EFS_DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_U_PublicFundPayment_Schd_U", fILER_IDParameter, tRANS_NUMBERParameter, sCHED_DATEParameter, pAYMENT_TYPE_IDParameter, pAY_NUMBERParameter, oRG_AMTParameter, tRANS_EXPLNTNParameter, mODIFIED_BYParameter);
         }
     
-        public virtual ObjectResult<SP_S_FilingAndCutOffDate_PCF_WCS_Result> SP_S_FilingAndCutOffDate_PCF_WCS(Nullable<int> eLECT_YEAR_ID, Nullable<int> eLECT_TYPE_ID, Nullable<int> oFFICE_TYPE_ID)
+        public virtual ObjectResult<SP_S_FilingAndCutOffDate_PCF_WCS_Result> SP_S_FilingAndCutOffDate_PCF_WCS(Nullable<int> eLECT_YEAR_ID, Nullable<int> eLECT_TYPE_ID, Nullable<int> oFFICE_TYPE_ID, string pOL_CAL_DATE_ID)
         {
             var eLECT_YEAR_IDParameter = eLECT_YEAR_ID.HasValue ?
                 new ObjectParameter("ELECT_YEAR_ID", eLECT_YEAR_ID) :
@@ -17395,7 +17405,11 @@ namespace CAPASFIDAS_EFS_DAL
                 new ObjectParameter("OFFICE_TYPE_ID", oFFICE_TYPE_ID) :
                 new ObjectParameter("OFFICE_TYPE_ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_S_FilingAndCutOffDate_PCF_WCS_Result>("SP_S_FilingAndCutOffDate_PCF_WCS", eLECT_YEAR_IDParameter, eLECT_TYPE_IDParameter, oFFICE_TYPE_IDParameter);
+            var pOL_CAL_DATE_IDParameter = pOL_CAL_DATE_ID != null ?
+                new ObjectParameter("POL_CAL_DATE_ID", pOL_CAL_DATE_ID) :
+                new ObjectParameter("POL_CAL_DATE_ID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_S_FilingAndCutOffDate_PCF_WCS_Result>("SP_S_FilingAndCutOffDate_PCF_WCS", eLECT_YEAR_IDParameter, eLECT_TYPE_IDParameter, oFFICE_TYPE_IDParameter, pOL_CAL_DATE_IDParameter);
         }
     
         public virtual ObjectResult<SP_S_EFS_SCHED_R_CHILD_Data_Result> SP_S_EFS_SCHED_R_CHILD_Data(string tRANS_NUMBER, Nullable<long> fILER_ID)

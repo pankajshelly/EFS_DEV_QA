@@ -68,6 +68,7 @@ namespace CAPASFIDAS_EFS_DAL
         public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
         public Nullable<int> PARENT_OFF_DIST_MAP_ID { get; set; }
         public Nullable<int> ELECTION_OFFICE_ID { get; set; }
+        public Nullable<int> OLD_ODM_ID { get; set; }
     
         public virtual ICollection<BALLOT_CORRESPONDENCE> BALLOT_CORRESPONDENCE { get; set; }
         public virtual ICollection<BANK_MAPPING> BANK_MAPPING { get; set; }

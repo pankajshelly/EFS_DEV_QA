@@ -71,6 +71,7 @@
           <Property Name="R_CONTRIBUTIONS" Type="char" MaxLength="1" />
           <Property Name="R_WEEKLY" Type="char" MaxLength="1" />
           <Property Name="R_SUPPORT_OPPOSE" Type="char" MaxLength="1" />
+          <Property Name="OLD_OFFICE_ID" Type="int" />
         </EntityType>
         <EntityType Name="FILING_TRANSACTIONS_IMPORT">
           <Key>
@@ -138,6 +139,7 @@
           <Property Name="R_CONTRIBUTIONS" Type="char" MaxLength="1" />
           <Property Name="R_WEEKLY" Type="char" MaxLength="1" />
           <Property Name="R_SUPPORT_OPPOSE" Type="char" MaxLength="1" />
+          <Property Name="OLD_OFFICE_ID" Type="int" />
         </EntityType>
         <EntityType Name="ROLE">
           <Key>
@@ -320,6 +322,7 @@ warning 6002: The table/view 'CAPASFIDAS_RLS.security.FILER_SECURITY' does not h
           <Property Name="R_CONTRIBUTIONS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_WEEKLY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_SUPPORT_OPPOSE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OLD_OFFICE_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="FILING_TRANSACTIONS_IMPORT">
           <Key>
@@ -387,6 +390,7 @@ warning 6002: The table/view 'CAPASFIDAS_RLS.security.FILER_SECURITY' does not h
           <Property Name="R_CONTRIBUTIONS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_WEEKLY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="R_SUPPORT_OPPOSE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OLD_OFFICE_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="ROLE">
           <Key>
@@ -446,6 +450,7 @@ warning 6002: The table/view 'CAPASFIDAS_RLS.security.FILER_SECURITY' does not h
           <EntitySetMapping Name="FILING_TRANSACTIONS">
             <EntityTypeMapping TypeName="CAPASFIDASTEMPModel.FILING_TRANSACTIONS">
               <MappingFragment StoreEntitySet="FILING_TRANSACTIONS">
+                <ScalarProperty Name="OLD_OFFICE_ID" ColumnName="OLD_OFFICE_ID" />
                 <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
                 <ScalarProperty Name="R_WEEKLY" ColumnName="R_WEEKLY" />
                 <ScalarProperty Name="R_CONTRIBUTIONS" ColumnName="R_CONTRIBUTIONS" />
@@ -514,6 +519,7 @@ warning 6002: The table/view 'CAPASFIDAS_RLS.security.FILER_SECURITY' does not h
           <EntitySetMapping Name="FILING_TRANSACTIONS_IMPORT">
             <EntityTypeMapping TypeName="CAPASFIDASTEMPModel.FILING_TRANSACTIONS_IMPORT">
               <MappingFragment StoreEntitySet="FILING_TRANSACTIONS_IMPORT">
+                <ScalarProperty Name="OLD_OFFICE_ID" ColumnName="OLD_OFFICE_ID" />
                 <ScalarProperty Name="R_SUPPORT_OPPOSE" ColumnName="R_SUPPORT_OPPOSE" />
                 <ScalarProperty Name="R_WEEKLY" ColumnName="R_WEEKLY" />
                 <ScalarProperty Name="R_CONTRIBUTIONS" ColumnName="R_CONTRIBUTIONS" />
