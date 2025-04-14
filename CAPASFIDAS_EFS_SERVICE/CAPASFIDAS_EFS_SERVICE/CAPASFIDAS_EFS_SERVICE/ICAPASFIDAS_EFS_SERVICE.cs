@@ -1039,7 +1039,7 @@ namespace CAPASFIDAS_EFS_SERVICE
         Boolean UpdateFlngtrans_PublicFundPayment(FilingTransactionsContract objFilingTransactionsContract);
 
         [OperationContract]
-        IList<FilingCutOffDateContract> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId);
+        IList<FilingCutOffDateContract> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId);
 
         [OperationContract]
         IList<FilingTransactionsContract> GetFilingTransSchedR_ChildData(String strTransNumber, String strFilerId);

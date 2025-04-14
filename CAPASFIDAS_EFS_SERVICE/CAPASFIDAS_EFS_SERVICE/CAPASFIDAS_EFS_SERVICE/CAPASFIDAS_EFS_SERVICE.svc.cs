@@ -11127,12 +11127,12 @@ namespace CAPASFIDAS_EFS_SERVICE
         /// <param name="strElectTypeId"></param>
         /// <param name="strOfficeTypeId"></param>
         /// <returns></returns>
-        public IList<FilingCutOffDateContract> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId)
+        public IList<FilingCutOffDateContract> GetFilingCutOffDateData_PCF_WCS(String strElectYearId, String strElectTypeId, String strOfficeTypeId, String strPolCalMapId)
         {
             IList<FilingCutOffDateContract> lstFilingCutOffDateContract = new List<FilingCutOffDateContract>();
             FilingCutOffDateContract objFilingCutOffDateContract;
 
-            var results = objEFSRepository.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId);
+            var results = objEFSRepository.GetFilingCutOffDateData_PCF_WCS(strElectYearId, strElectTypeId, strOfficeTypeId, strPolCalMapId);
 
             foreach (var item in results)
             {
