@@ -405,6 +405,44 @@
           <Property Name="MODIFIED_BY" Type="nvarchar" MaxLength="50" />
           <Property Name="MODIFIED_DATE" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.CFU_FDS_JUDGEMENT_TABLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CFU_FDS_JUDGEMENT_TABLE">
+          <Property Name="COM_ID" Type="varchar" MaxLength="10" />
+          <Property Name="TREASURER_TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="TF_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="TL_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_FILING_DUE" Type="datetime2" Precision="7" />
+          <Property Name="INDEX_NUMBER" Type="varchar" MaxLength="10" />
+          <Property Name="JUDGEMENT_DATE" Type="datetime2" Precision="7" />
+          <Property Name="JUDGEMENT_AMOUNT" Type="float" />
+          <Property Name="JUDGEMENT_PAID" Type="float" />
+          <Property Name="EXPLAINATION" Type="varchar" MaxLength="85" />
+          <Property Name="COMMITTEE_NAME" Type="varchar" MaxLength="85" />
+          <Property Name="TM_NAME" Type="varchar" MaxLength="15" />
+          <Property Name="CRE_REC_UID" Type="varchar" MaxLength="15" />
+          <Property Name="CRE_REC_DATE" Type="datetime2" Precision="7" />
+          <Property Name="UPD_REC_UID" Type="varchar" MaxLength="15" />
+          <Property Name="UPD_REC_DATE" Type="datetime2" Precision="7" />
+          <Property Name="ADDRESS_1" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_2" Type="varchar" MaxLength="35" />
+          <Property Name="CITY" Type="varchar" MaxLength="35" />
+          <Property Name="STATE" Type="varchar" MaxLength="2" />
+          <Property Name="ZIP" Type="varchar" MaxLength="10" />
+          <Property Name="TRANSMITTAL_NUMBER" Type="float" />
+          <Property Name="TRANSMIT_TO_COLLECTOR" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSMITTAL_DATE" Type="datetime2" Precision="7" />
+          <Property Name="TRANSMITTAL_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="SERVICE_NOTICE_DATE" Type="datetime2" Precision="7" />
+          <Property Name="JUDGEMENT_PD_DATE" Type="datetime2" Precision="7" />
+          <Property Name="PROCESS_SERVER_COST" Type="float" />
+          <Property Name="JUDGMENT_STATUS" Type="varchar" MaxLength="30" />
+          <Property Name="FILING_RECIEVED" Type="datetime2" Precision="7" />
+          <Property Name="PENALTY" Type="float" />
+          <Property Name="CORES_KEY" Type="varchar" MaxLength="5" />
+          <Property Name="JUDGMENT_COST" Type="float" />
+          <Property Name="POSTAGE" Type="float" />
+        </EntityType>-->
         <EntityType Name="CITY">
           <Key>
             <PropertyRef Name="CITY_ID" />
@@ -2834,8 +2872,8 @@
           <Property Name="MODIFIED_DATE" Type="datetime2" Precision="0" />
           <Property Name="MASTER_OFFICE_STATUS" Type="char" MaxLength="1" />
           <Property Name="MASTER_OFFICE_ID" Type="int" />
-          <Property Name="EFFECTIVE_DATE" Type="datetime2" Precision="0" />
-          <Property Name="INEFFECTIVE_DATE" Type="datetime2" Precision="0" />
+          <Property Name="EFFECTIVE_DATE" Type="date" />
+          <Property Name="INEFFECTIVE_DATE" Type="date" />
         </EntityType>
         <EntityType Name="OFFICE_DISTRICT_MAPPING">
           <Key>
@@ -4109,6 +4147,8 @@
           <Property Name="SUB_TREAS_ID" Type="bigint" />
           <Property Name="DATE_CERTIFIED" Type="datetime2" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="int" />
+          <Property Name="CABINET_LOCATION" Type="nvarchar" MaxLength="100" />
+          <Property Name="S3_LOCATION" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -4579,6 +4619,444 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BCP_PMF_WEEKLY_SUBMISIONS_JOB_HE
           <Property Name="NUMBER_OF_TRANSACTIONS" Type="varchar" MaxLength="22" Nullable="false" />
           <Property Name="AUDITOR" Type="varchar" MaxLength="7" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_04012021' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_04012021">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_COURT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_COURT">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_COURT_DATA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_COURT_DATA">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="104" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="306" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="104" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="104" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="104" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="104" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="104" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="104" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="104" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="104" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="104" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="104" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_COURT_DATA_1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_COURT_DATA_1">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="104" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="306" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="104" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="104" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="104" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="104" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="104" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="104" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="104" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="104" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="104" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="104" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="104" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="104" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="104" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="104" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="104" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_ENFORCE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_ENFORCE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+          <Property Name="SUBMIT_DATE" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_ENFORCEMENT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_ENFORCEMENT">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILINGS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_CODE" Type="nvarchar" MaxLength="102" />
+          <Property Name="MUNICIPALITY_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="TREAS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="ADDR_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="PART_FLNG_ENT_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE_FT" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_BANK_LOAN" Type="nvarchar" MaxLength="102" />
+          <Property Name="IE_CNTRBR_OCC" Type="nvarchar" MaxLength="102" />
+          <Property Name="IE_CNTRBR_EMP" Type="nvarchar" MaxLength="102" />
+          <Property Name="IE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TREAS_OCCUPATION" Type="nvarchar" MaxLength="102" />
+          <Property Name="TREAS_EMPLOYER" Type="nvarchar" MaxLength="102" />
+          <Property Name="EXISTS_LIAB_TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_IE_SUPPORTED" Type="nvarchar" MaxLength="102" />
+          <Property Name="SUBMIT_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_IE_INCLUDED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_STATUS" Type="nvarchar" MaxLength="102" />
+          <Property Name="CREATED_BY" Type="nvarchar" MaxLength="102" />
+          <Property Name="CREATED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="MODIFIED_BY" Type="nvarchar" MaxLength="102" />
+          <Property Name="MODIFIED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_PARENT" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_CLAIM" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_IN_DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_MINOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_VENDOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LOBBYIST" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_CONTRIBUTIONS" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_WEEKLY" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_ENFORCEMENT_WITH_SUBMITDATE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_ENFORCEMENT_WITH_SUBMITDATE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+          <Property Name="SUBMIT_DATE" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_HEADER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_BUP_ALL_HEADER">
@@ -5054,6 +5532,496 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_HEADER_ENFORCEMENT_WITH_
           <Property Name="SUBMIT_DATE" Type="varchar" MaxLength="13" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_LAST_3_YEARS_DATA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_LAST_3_YEARS_DATA">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_LAST_5_YEARS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_LAST_5_YEARS">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_TOP1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_TOP1">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_ALL_TOP1000' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_ALL_TOP1000">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_CANDIDATE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_CANDIDATE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_CANDIDATE_ACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_CANDIDATE_ACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_CANDIDATE_INACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_CANDIDATE_INACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_COMMITTEE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_COMMITTEE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_COMMITTEE_ACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_COMMITTEE_ACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_COUNTY_COMMITTEE_INACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_COUNTY_COMMITTEE_INACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_FILER_DATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_BUP_FILER_DATA">
           <Key>
@@ -5171,6 +6139,349 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_BUP_FILER_DATA_HEADER' does not 
           <Property Name="STATE" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="ZIPCODE" Type="varchar" MaxLength="9" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_General' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_General">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="502" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_CANDIDATE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_CANDIDATE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="304" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_CANDIDATE_ACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_CANDIDATE_ACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_CANDIDATE_INACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_CANDIDATE_INACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_COMMITTEE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_COMMITTEE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="102" />
+          <Property Name="CAND_COMM_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="102" />
+          <Property Name="COUNTY_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="102" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="102" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="102" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="102" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="102" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar(max)" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="102" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="102" />
+          <Property Name="ELECTION_YEAR_R" Type="nvarchar" MaxLength="102" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="102" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="102" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="102" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_COMMITTEE_ACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_COMMITTEE_ACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CAPASFIDAS.dbo.VW_BUP_STATE_COMMITTEE_INACTIVE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_BUP_STATE_COMMITTEE_INACTIVE">
+          <Property Name="FILER_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILER_PREVIOUS_ID" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECT_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_TYPE" Type="nvarchar" MaxLength="32" />
+          <Property Name="COUNTY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_AMEND" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_CAT_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_ABBREV" Type="nvarchar" MaxLength="32" />
+          <Property Name="FILING_SCHED_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_LIB_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_MAPPING" Type="nvarchar" MaxLength="32" />
+          <Property Name="SCHED_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_DATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBR_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="CNTRBN_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANSFER_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="RECEIPT_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PURPOSE_CODE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_SUBCONTRACTOR" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_FIRST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_MIDDLE_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_LAST_NAME" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR1" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ADDR2" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_CITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_STATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_ZIP" Type="nvarchar" MaxLength="32" />
+          <Property Name="FLNG_ENT_COUNTRY" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAYMENT_TYPE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="PAY_NUMBER" Type="nvarchar" MaxLength="32" />
+          <Property Name="OWED_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="ORG_AMT" Type="nvarchar" MaxLength="32" />
+          <Property Name="LOAN_OTHER_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="TRANS_EXPLNTN" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_ITEMIZED" Type="nvarchar" MaxLength="32" />
+          <Property Name="R_LIABILITY" Type="nvarchar" MaxLength="32" />
+          <Property Name="ELECTION_YEAR" Type="nvarchar" MaxLength="32" />
+          <Property Name="OFFICE_DESC" Type="nvarchar" MaxLength="32" />
+          <Property Name="DISTRICT" Type="nvarchar" MaxLength="32" />
+          <Property Name="DIST_OFF_CAND_BAL_PROP" Type="nvarchar" MaxLength="32" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CAPASFIDAS.dbo.VW_CandidateCommittee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CandidateCommittee">
@@ -34758,6 +36069,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <Property Name="SUB_TREAS_ID" Type="Int64" />
           <Property Name="DATE_CERTIFIED" Type="DateTime" Precision="0" />
           <Property Name="ELECTION_YEAR_ID" Type="Int32" />
+          <Property Name="CABINET_LOCATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="S3_LOCATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CANDIDATE_COMMITTEE_AUTH" Relationship="EFSModel.FK_CANDIDATE_COMMITTEE_AUTH_SUPPORTING_DOCUMENTS" FromRole="SUPPORTING_DOCUMENTS" ToRole="CANDIDATE_COMMITTEE_AUTH" />
           <NavigationProperty Name="COMMUNICATION_TYPE" Relationship="EFSModel.FK_SUPPORTING_DOCUMENTS_COMMUNICATION_TYPE" FromRole="SUPPORTING_DOCUMENTS" ToRole="COMMUNICATION_TYPE" />
           <NavigationProperty Name="DOCUMENT_TYPE" Relationship="EFSModel.DOCTYPE_SUPDOCS_FK" FromRole="SUPPORTING_DOCUMENTS" ToRole="DOCUMENT_TYPE" />
@@ -51220,6 +52533,8 @@ warning 6002: The table/view 'CAPASFIDAS.dbo.VW_WhoFiled' does not have a primar
           <EntitySetMapping Name="SUPPORTING_DOCUMENTS">
             <EntityTypeMapping TypeName="EFSModel.SUPPORTING_DOCUMENTS">
               <MappingFragment StoreEntitySet="SUPPORTING_DOCUMENTS">
+                <ScalarProperty Name="S3_LOCATION" ColumnName="S3_LOCATION" />
+                <ScalarProperty Name="CABINET_LOCATION" ColumnName="CABINET_LOCATION" />
                 <ScalarProperty Name="ELECTION_YEAR_ID" ColumnName="ELECTION_YEAR_ID" />
                 <ScalarProperty Name="DATE_CERTIFIED" ColumnName="DATE_CERTIFIED" />
                 <ScalarProperty Name="SUB_TREAS_ID" ColumnName="SUB_TREAS_ID" />

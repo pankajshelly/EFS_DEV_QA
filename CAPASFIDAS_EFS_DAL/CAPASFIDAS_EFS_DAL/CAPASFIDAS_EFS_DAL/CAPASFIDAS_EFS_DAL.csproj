@@ -480,7 +480,7 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILER_SECURITY.cs">
-      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+      <DependentUpon>EFSRLSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILER_STATEMENT.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>
@@ -546,7 +546,7 @@
       <DependentUpon>EFSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_IMPORT.cs">
-      <DependentUpon>EFSAuthentication.tt</DependentUpon>
+      <DependentUpon>EFSRLSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FILING_TRANSACTIONS_MAPPING_OLD.cs">
       <DependentUpon>EFSModel.tt</DependentUpon>

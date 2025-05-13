@@ -46,6 +46,8 @@ namespace CAPASFIDAS_EFS_DAL
         public Nullable<long> SUB_TREAS_ID { get; set; }
         public Nullable<System.DateTime> DATE_CERTIFIED { get; set; }
         public Nullable<int> ELECTION_YEAR_ID { get; set; }
+        public string CABINET_LOCATION { get; set; }
+        public string S3_LOCATION { get; set; }
     
         public virtual ICollection<CANDIDATE_COMMITTEE_AUTH> CANDIDATE_COMMITTEE_AUTH { get; set; }
         public virtual COMMUNICATION_TYPE COMMUNICATION_TYPE { get; set; }
